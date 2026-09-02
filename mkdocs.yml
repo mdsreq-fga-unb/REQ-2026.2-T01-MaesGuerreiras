@@ -1,1 +1,35 @@
-site_name: My Docs
+site_name: Mães Guerreiras
+
+theme:
+  name: material
+  language: pt
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: pt

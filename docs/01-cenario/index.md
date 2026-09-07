@@ -60,16 +60,6 @@ A comunicação interna acontece por reuniões presenciais e grupos de WhatsApp,
 
 ![Rich Picture da Associação Mães Guerreiras da Cidade Estrutural](../assets/rich-picture.jpg)
 
-O Rich Picture ilustra o cenário atual da associação: o Instagram e o WhatsApp como único canal de
-divulgação, pressionados pela demanda crescente de apoio de doadores e da comunidade; as doações de
-itens recebidas de parceiros institucionais e da comunidade, anotadas em caderno e sem controle do
-que entra e do que é distribuído; a coordenação e o voluntariado sustentando manualmente a gestão
-(caderno de doações, cadastro no computador da sede, chamada em papel) e os programas da ONG,
-com atividades que param sem aviso por falta de material; e uma prestação de contas que hoje depende
-apenas da memória das coordenadoras, sem números por período. Daiane, como stakeholder do
-produto, e a equipe de desenvolvimento aparecem na base do diagrama, traduzindo as necessidades e
-prioridades levantadas nesse cenário em requisitos para a Plataforma Mães Guerreiras.
-
 ## 1.4 Identificação da Oportunidade ou Problema
 
 A associação tem uma operação consolidada, parceiros institucionais reconhecidos e alcance real na

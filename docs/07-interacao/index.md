@@ -33,7 +33,6 @@ A equipe de desenvolvimento será composta por:
 		<p class="team-card__role">Desenvolvedora Front-end</p>
 	</article>
 
-<div class="team-grid">
     <article class="team-card">
         <img class="team-card__photo" src="https://github.com/Luiskr34.png?size=240" alt="Foto de Luis no GitHub" loading="lazy" />
         <h3 class="team-card__name">Luis</h3>

@@ -17,8 +17,8 @@ associação não era a arrecadação financeira, e sim a perda de registros do 
 
 Makio segue com papel central no projeto: é ele quem primeiro recebe e avalia o que a equipe produz,
 antes de levar para validação da coordenação (Daiane e as demais coordenadoras). Por isso, ele
-participa diretamente de todas as revisões de sprint (seção [7.2](../07-interacao/comunicacao.md)) e
-segue com influência alta no mapa de stakeholders (seção [1.6](../01-cenario/stakeholders.md)).
+participa diretamente de todas as revisões de sprint (seção [7.2](../07-interacao/index.md#72-comunicacao)) e
+segue com influência alta no mapa de stakeholders (seção [1.6](../01-cenario/index.md#16-mapa-de-stakeholders)).
 
 ## Principais mudanças
 

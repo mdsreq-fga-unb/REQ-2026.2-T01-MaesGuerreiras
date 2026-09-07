@@ -28,6 +28,6 @@ dos marcos de avaliação de cada unidade.
 4. **Entregas parciais priorizadas:** o MVP (CP1 e CP2) é entregue nas primeiras sprints, garantindo
    que as dores mais urgentes (informação dispersa e doações não registradas) sejam resolvidas o
    quanto antes.
-5. **Aprendizado da equipe:** conforme definido na seção [2.6](../02-solucao/viabilidade.md), a Sprint 1
+5. **Aprendizado da equipe:** conforme definido na seção [2.6](../02-solucao/index.md#26-viabilidade-da-proposta), a Sprint 1
    reserva tempo para o aprendizado das tecnologias escolhidas antes do início do desenvolvimento
    das funcionalidades.

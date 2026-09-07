@@ -12,7 +12,7 @@ O objetivo do produto é substituir os controles manuais da Associação Mães G
 doações, cadastro isolado no computador da sede e listas de chamada em papel) por uma plataforma
 web simples, que registre em poucos cliques as doações de itens recebidas e distribuídas, o cadastro das
 famílias e a presença nas atividades, e que transforme esses registros em relatórios de impacto capazes
-de sustentar a prestação de contas aos parceiros. Saiba mais no [Objetivo Geral do Produto](02-solucao/objetivo-geral.md).
+de sustentar a prestação de contas aos parceiros. Saiba mais no [Objetivo Geral do Produto](02-solucao/index.md#21-objetivo-geral-do-produto).
 
 ## Estrutura da documentação
 

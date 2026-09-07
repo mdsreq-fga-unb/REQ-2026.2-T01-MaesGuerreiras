@@ -33,6 +33,7 @@ A equipe de desenvolvimento será composta por:
 		<p class="team-card__role">Desenvolvedora Front-end</p>
 	</article>
 
+
     <article class="team-card">
         <img class="team-card__photo" src="https://github.com/Luiskr34.png?size=240" alt="Foto de Luis no GitHub" loading="lazy" />
         <h3 class="team-card__name">Luis</h3>
@@ -47,12 +48,12 @@ A equipe de desenvolvimento será composta por:
 		<p class="team-card__role">Analista de Requisitos</p>
 	</article>
 
-	<article class="team-card team-card--placeholder">
-		<div class="team-card__photo team-card__photo--placeholder"></div>
-		<h3 class="team-card__name">Pedro</h3>
-		<span class="team-card__handle team-card__handle--placeholder">(adicionar @ do GitHub)</span>
-		<p class="team-card__role">Analista de QA</p>
-	</article>
+    <article class="team-card">
+        <img class="team-card__photo" src="https://github.com/PedroGomes-phgr.png?size=240" alt="Foto de Pedro no GitHub" loading="lazy" />
+        <h3 class="team-card__name">Pedro</h3>
+        <a class="team-card__handle" href="https://github.com/PedroGomes-phgr" target="_blank" rel="noopener noreferrer">@PedroGomes-phgr</a>
+        <p class="team-card__role">Analista de QA</p>
+    </article>
 
 	<article class="team-card">
         <img class="team-card__photo" src="https://github.com/Vitorlustosa.png?size=240" alt="Foto do Vitor" loading="lazy" />
@@ -70,8 +71,6 @@ A equipe de desenvolvimento será composta por:
   utiliza no dia a dia, tanto entre as voluntárias quanto para avisar a comunidade sobre as
   distribuições e novas turmas. Também será usado para a comunicação diária entre os integrantes da
   equipe.
-- **Reuniões presenciais na sede:** a associação já se organiza por reuniões presenciais, e visitas à
-  sede serão usadas para elicitação, observação das atividades e validação das entregas em uso real.
 - **Google Meet:** utilizado para reuniões da equipe e para conversas com a coordenação quando não
   for possível o encontro presencial, por ser gratuito e de fácil acesso.
 - **Microsoft Teams:** utilizado para reuniões internas da equipe e alinhamentos acadêmicos com a
@@ -96,7 +95,7 @@ A equipe de desenvolvimento será composta por:
 
 ### Frequência de Interações com o Cliente
 
-- **Revisões de sprint (a cada 1 semana):** Makio participa diretamente das revisões, validando as
+- **Revisões de sprint (ao final de cada sprint):** Makio participa diretamente das revisões, validando as
   entregas e dando feedback; as demais coordenadoras participam quando a entrega envolve sua área
   de responsabilidade.
 - **Interações contínuas por WhatsApp:** a coordenação tem acesso direto à equipe pelo WhatsApp

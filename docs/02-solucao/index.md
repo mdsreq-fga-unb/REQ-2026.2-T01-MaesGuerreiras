@@ -1,6 +1,6 @@
 # 2. Solução Proposta
 
-Esta seção apresenta a solução proposta para a Associação Mães Guerreiras: seus objetivos, as
+Esta seção apresenta a solução proposta para a Associação Mães Guerreiras: Seus objetivos, as
 características de produto que a compõem, as tecnologias escolhidas, a análise competitiva, a
 viabilidade da proposta e os benefícios esperados para o cliente e para os usuários.
 
@@ -87,12 +87,12 @@ a seguir compara essas alternativas com o que a solução proposta pretende reso
 
 A solução proposta se diferencia por três aspectos:
 
-- **Feita para a operação real da associação:** trabalha com o vocabulário e as regras que já existem
+- **Feita para a operação real da associação:** Trabalha com o vocabulário e as regras que já existem
   (rodízio mensal do Domingo Recreativo e a regra de cinco faltas), em vez de exigir que a associação
   se adapte a um sistema genérico;
-- **Registro rápido no lugar do caderno:** o registro é desenhado para levar menos tempo do que a
+- **Registro rápido no lugar do caderno:** O registro é desenhado para levar menos tempo do que a
   anotação manual, que é a causa direta das doações não registradas hoje;
-- **Dados que viram prestação de contas:** os mesmos registros do dia a dia geram automaticamente
+- **Dados que viram prestação de contas:** Os mesmos registros do dia a dia geram automaticamente
   os relatórios de impacto que a associação hoje não consegue produzir para seus parceiros.
 
 ## 2.6 Viabilidade da Proposta
@@ -114,15 +114,15 @@ características (CP3 a CP7) seguem nos ciclos posteriores, conforme a prioriza�
 
 ### Riscos e mitigação
 
-- **Risco de não adoção:** se o registro digital não for mais rápido do que anotar no caderno, a
+- **Risco de não adoção:** Se o registro digital não for mais rápido do que anotar no caderno, a
   coordenação voltará ao papel. *Mitigação:* protótipos validados antes de programar e teste da
   funcionalidade com as próprias coordenadoras, sem ajuda da equipe, ao final de cada sprint.
-- **Escopo ambicioso frente ao prazo:** a associação tem muitas frentes. *Mitigação:* MVP restrito a
+- **Escopo ambicioso frente ao prazo:** A associação tem muitas frentes. *Mitigação:* MVP restrito a
   CP1 e CP2, com as demais características priorizadas ciclo a ciclo.
-- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* perfis de acesso (CP7),
+- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* Perfis de acesso (CP7),
   coleta mínima de dados e publicação de fotos e depoimentos apenas após a obtenção das
   autorizações de uso de imagem.
-- **Disponibilidade da coordenação:** todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
+- **Disponibilidade da coordenação:** Todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
   validações curtas.
 
 Assim, a proposta é considerada viável, desde que o escopo do MVP permaneça controlado, as
@@ -131,12 +131,12 @@ aprendizado das tecnologias escolhidas.
 
 ## 2.7 Benefícios Esperados
 
-- **Para o cliente:** fim da perda de registros de doações por falta de tempo; visibilidade sobre o que a
+- **Para o cliente:** Fim da perda de registros de doações por falta de tempo; visibilidade sobre o que a
   associação recebe e distribui; relatórios prontos para prestação de contas a CEASA-DF, ASFA, UDF e
   demais parceiros, hoje inexistentes; redução do trabalho manual da coordenação com cadernos e
   listas de chamada; acesso organizado por perfil entre as cinco coordenadoras; e um canal
   institucional próprio que mostra o trabalho realizado de forma permanente, apoiando a captação de
   novos apoiadores.
-- **Para os usuários:** famílias beneficiárias com informação clara sobre o que está ativo, em que dias e
+- **Para os usuários:** Famílias beneficiárias com informação clara sobre o que está ativo, em que dias e
   horários, e como participar; voluntárias e voluntários com um canal claro para saber onde ajudar; e
   doadores com informação objetiva sobre o que a associação precisa e como entregar suas doações.

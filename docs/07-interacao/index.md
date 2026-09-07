@@ -33,12 +33,13 @@ A equipe de desenvolvimento será composta por:
 		<p class="team-card__role">Desenvolvedora Front-end</p>
 	</article>
 
-	<article class="team-card team-card--placeholder">
-		<div class="team-card__photo team-card__photo--placeholder"></div>
-		<h3 class="team-card__name">Luis</h3>
-		<span class="team-card__handle team-card__handle--placeholder">(adicionar @ do GitHub)</span>
-		<p class="team-card__role">Desenvolvedor Back-end</p>
-	</article>
+<div class="team-grid">
+    <article class="team-card">
+        <img class="team-card__photo" src="https://github.com/Luiskr34.png?size=240" alt="Foto de Luis no GitHub" loading="lazy" />
+        <h3 class="team-card__name">Luis</h3>
+        <a class="team-card__handle" href="https://github.com/Luiskr34" target="_blank" rel="noopener noreferrer">@Luiskr34</a>
+        <p class="team-card__role">Desenvolvedor Back-end</p>
+    </article>
 
 	<article class="team-card">
 		<img class="team-card__photo" src="https://github.com/ianpedersoli.png?size=240" alt="Foto de Ian no GitHub" loading="lazy" />

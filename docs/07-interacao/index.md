@@ -71,8 +71,7 @@ A equipe de desenvolvimento será composta por:
   utiliza no dia a dia, tanto entre as voluntárias quanto para avisar a comunidade sobre as
   distribuições e novas turmas. Também será usado para a comunicação diária entre os integrantes da
   equipe.
-- **Google Meet:** utilizado para reuniões da equipe e para conversas com a coordenação quando não
-  for possível o encontro presencial, por ser gratuito e de fácil acesso.
+- **Google Meet:** utilizado para reuniões da equipe e para conversas com a coordenação, por ser gratuito e de fácil acesso.
 - **Microsoft Teams:** utilizado para reuniões internas da equipe e alinhamentos acadêmicos com a
   disciplina.
 - **Google Docs:** utilizado para a produção colaborativa da documentação do projeto entre os

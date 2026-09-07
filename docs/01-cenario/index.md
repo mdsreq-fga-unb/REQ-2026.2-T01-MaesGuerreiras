@@ -87,16 +87,17 @@ programas federais Computadores para Inclusão e Programando o Futuro.
 
 ## 1.3 Rich Picture
 
-*(inserir imagem do Rich Picture atualizado)*
+![Rich Picture da Associação Mães Guerreiras da Cidade Estrutural](../assets/rich-picture.jpg)
 
-O Rich Picture ilustra o cenário atual da associação: as doações de itens que chegam sem periodicidade
-definida e são anotadas em cadernos; o cadastro das famílias isolado em um computador da sede; a
-chamada em papel nas atividades com controle de frequência; a organização do atendimento da Sacola
-Verde por senhas; a comunicação dividida entre Instagram, Facebook, panfletos e grupos de WhatsApp;
-e as coordenadoras no centro, sustentando manualmente todos esses fluxos. Em contraste, apresenta-se
-a proposta da Plataforma Mães Guerreiras, reunindo em um único ambiente o portal institucional com a
-agenda das atividades, o registro das doações, o cadastro das famílias, a chamada digital e os relatórios
-de impacto para os parceiros.
+O Rich Picture ilustra o cenário atual da associação: o Instagram e o WhatsApp como único canal de
+divulgação, pressionados pela demanda crescente de apoio de doadores e da comunidade; as doações de
+itens recebidas de parceiros institucionais e da comunidade, anotadas em caderno e sem controle do
+que entra e do que é distribuído; a coordenação e o voluntariado sustentando manualmente a gestão
+(caderno de doações, cadastro no computador da sede, chamada em papel) e os programas da ONG,
+com atividades que param sem aviso por falta de material; e uma prestação de contas que hoje depende
+apenas da memória das coordenadoras, sem números por período. Daiane, como stakeholder do
+produto, e a equipe de desenvolvimento aparecem na base do diagrama, traduzindo as necessidades e
+prioridades levantadas nesse cenário em requisitos para a Plataforma Mães Guerreiras.
 
 ## 1.4 Identificação da Oportunidade ou Problema
 

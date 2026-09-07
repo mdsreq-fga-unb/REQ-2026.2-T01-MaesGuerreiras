@@ -27,9 +27,9 @@ A equipe de desenvolvimento será composta por:
 	</article>
 
 	<article class="team-card team-card--placeholder">
-		<div class="team-card__photo team-card__photo--placeholder"></div>
+		<img class="team-card__photo" src="https://github.com/IsaLL24.png?size=240" alt="Foto de Isabella no GitHub" loading="lazy" />
 		<h3 class="team-card__name">Isabella</h3>
-		<span class="team-card__handle team-card__handle--placeholder">(adicionar @ do GitHub)</span>
+		<a class="team-card__handle" href="https://github.com/IsaLL24" target="_blank" rel="noopener noreferrer">@IsaLL24</a>
 		<p class="team-card__role">Desenvolvedora Front-end</p>
 	</article>
 

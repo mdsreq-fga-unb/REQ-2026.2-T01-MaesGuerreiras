@@ -6,97 +6,59 @@ desafios do projeto, o mapa de stakeholders e a segmentação dos usuários da f
 
 ## 1.1 Identificação do Cliente/Parceiro
 
-- **Nome:** Associação Mães Guerreiras da Cidade Estrutural (fundada em 01/10/2019, CNPJ
-  48.320.842/0001-57).
+- **Nome:** Associação Mães Guerreiras da Cidade Estrutural 
 - **Tipo:** Associação comunitária sem fins lucrativos, mantida integralmente por trabalho voluntário.
 - **Representante:** Daiane, coordenadora da associação, responsável por definir prioridades e validar
   as entregas do projeto.
 - **Outros contatos:** Makio Augusto Cândido, voluntário e principal ponte entre a equipe e a
   associação, responsável por receber e avaliar as entregas antes de levá-las à coordenação; Maria
   Guerra (presidente); e as coordenadoras Luzia, Liz e Cleide.
-- **Forma de contato:** telefone e WhatsApp (61) 99617-1330, reuniões presenciais na sede (SI 02,
-  quadra 2, lote 13, Santa Luzia, Cidade Estrutural/DF) e Instagram institucional
+- **Forma de contato:** Telefone, WhatsApp e Instagram institucional
   (@maesguerreiras_df).
-- **Vínculo com o projeto:** Cliente real e parte interessada principal, responsável por fornecer
-  informações sobre a operação da associação, validar as decisões do projeto e avaliar as entregas ao
-  longo do desenvolvimento.
+- **Vínculo com o projeto:** Cliente real e parte interessada principal, responsável por fornecer informações sobre a operação da associação, validar as decisões do projeto e avaliar as entregas ao longo do desenvolvimento.
 
 ## 1.2 Introdução ao Negócio e Contexto
 
-A Associação Mães Guerreiras da Cidade Estrutural nasceu em 2019 da mobilização de mães em situação
-de vulnerabilidade da comunidade de Santa Luzia, na Cidade Estrutural (DF), região marcada pela
-ausência de saneamento básico, água potável e infraestrutura urbana. A associação é mantida por cerca
-de 35 voluntárias e voluntários (não há funcionários contratados) e é conduzida por uma presidente,
+A Associação Mães Guerreiras da Cidade Estrutural nasceu em 2019 da mobilização de mães em situação de vulnerabilidade da comunidade de Santa Luzia, na Cidade Estrutural (DF), região marcada pela ausência de saneamento básico, água potável e infraestrutura urbana. A associação é mantida por cerca de 35 voluntárias e voluntários (não há funcionários contratados) e é conduzida por uma presidente,
 Maria Guerra, e por um grupo de coordenadoras responsáveis pelas diferentes frentes de atuação.
-
 A associação atua praticamente de domingo a domingo, com ações organizadas em quatro eixos:
 educação e capacitação, segurança alimentar, convivência e bem-estar, e geração de renda. Na doação
 de alimentos, já foram atendidas mais de mil famílias da comunidade.
 
 ### Educação e capacitação
 
-- **Reforço Escolar:** às terças e sextas-feiras, das 8h30 às 10h30 e das 14h30 às 16h30, em Português e
+- **Reforço Escolar:** Às terças e sextas-feiras, das 8h30 às 10h30 e das 14h30 às 16h30, em Português e
   Matemática, para alunos do Ensino Fundamental e Médio.
-- **Informática Básica:** curso gratuito de 60 horas com emissão de certificado, realizado no laboratório
-  de informática mantido em parceria com os programas Computadores para Inclusão e Programando o
-  Futuro (Ministério das Comunicações). Está temporariamente suspenso, aguardando a organização do
-  segundo andar da sede.
+- **Informática Básica:** Curso gratuito de 60 horas com emissão de certificado, realizado no laboratório de informática mantido em parceria com os programas Computadores para Inclusão e Programando o Futuro (Ministério das Comunicações). Está temporariamente suspenso, aguardando a organização do segundo andar da sede.
 
 ### Segurança alimentar
 
-- **Sacola Verde (entrega de verduras):** às quintas-feiras e aos domingos, das 14h30 às 15h30, com
-  apoio da CEASA-DF. O atendimento é organizado por ordem de chegada, com entrega de senhas.
-- **Doação de sopa e cozinha solidária:** às quartas-feiras, com apoio da ASFA, voltada a pessoas em
-  situação de vulnerabilidade.
-- **Doação de mantimentos e cestas básicas:** cestas básicas, frangos, peixes e pães, distribuídos
-  ocasionalmente e avisados no grupo de WhatsApp. Como não há doadores fixos, não existe data
-  definida para as distribuições.
+- **Sacola Verde (entrega de verduras):** Às quintas-feiras e aos domingos, das 14h30 às 15h30, com apoio da CEASA-DF. O atendimento é organizado por ordem de chegada, com entrega de senhas.
+- **Doação de sopa e cozinha solidária:** Às quartas-feiras, com apoio da ASFA, voltada a pessoas em situação de vulnerabilidade.
+- **Doação de mantimentos e cestas básicas:** Cestas básicas, frangos, peixes e pães, distribuídos ocasionalmente e avisados no grupo de WhatsApp. Como não há doadores fixos, não existe data definida para as distribuições.
 
 ### Convivência, cultura e bem-estar
 
-- **Domingo Recreativo:** realizado em dois domingos por mês, reúne em média 80 crianças, com
-  futebol, pintura, café da manhã e almoço. Para alcançar mais crianças, a associação faz um rodízio
-  mensal entre os grupos. Sua realização depende do recebimento de doações.
-- **Futebol:** aos domingos pela manhã, voltado ao desenvolvimento físico e ao trabalho em equipe. É a
-  única atividade que não é divulgada nas redes sociais.
-- **Carimbó:** grupo de voluntárias que ensaia uma vez por semana e se apresenta quando a associação
-  é convidada e dispõe de recursos para participar.
-- **Yoga e Hitbox:** Yoga às segundas-feiras e hitbox às quartas-feiras, das 9h às 10h, voltados à saúde e
-  ao bem-estar das mulheres da comunidade.
-- **Roda de Conversa com psicólogo:** aos sábados, das 15h às 16h, conduzida por estudantes de
-  Psicologia da UDF, com foco em escuta e acolhimento das mães.
-- **Oficinas com mulheres e atividades com idosos:** encontros de aprendizado, convivência e
-  valorização das pessoas idosas da comunidade.
+- **Domingo Recreativo:** Realizado em dois domingos por mês, reúne em média 80 crianças, com futebol, pintura, café da manhã e almoço. Para alcançar mais crianças, a associação faz um rodízio mensal entre os grupos. Sua realização depende do recebimento de doações.
+- **Futebol:** Aos domingos pela manhã, voltado ao desenvolvimento físico e ao trabalho em equipe. É a única atividade que não é divulgada nas redes sociais.
+- **Carimbó:** Grupo de voluntárias que ensaia uma vez por semana e se apresenta quando a associação é convidada e dispõe de recursos para participar.
+- **Yoga e Hitbox:** Yoga às segundas-feiras e hitbox às quartas-feiras, das 9h às 10h, voltados à saúde e ao bem-estar das mulheres da comunidade.
+- **Roda de Conversa com psicólogo:** Aos sábados, das 15h às 16h, conduzida por estudantes de Psicologia da UDF, com foco em escuta e acolhimento das mães.
+- **Oficinas com mulheres e atividades com idosos:** Encontros de aprendizado, convivência e valorização das pessoas idosas da comunidade.
 
 ### Geração de renda
 
-- **Crochê e bordado:** oficina voltada à autoestima e à geração de renda extra das mães. Está
-  temporariamente suspensa, aguardando equipamentos ou recursos para a compra de materiais.
+- **Crochê e bordado:** Oficina voltada à autoestima e à geração de renda extra das mães. Está temporariamente suspensa, aguardando equipamentos ou recursos para a compra de materiais.
 
 ### Como a associação se organiza hoje
 
-Toda a gestão é feita de forma manual. As doações recebidas são anotadas em cadernos e, por falta de
-tempo e de organização, nem sempre chegam a ser registradas. O cadastro das famílias é mantido em
-um computador da sede, com nome, idade, endereço e telefone, e o acompanhamento da participação
-também acontece pelo grupo das mães no WhatsApp. A chamada das crianças é feita à mão, em papel.
+Toda a gestão é feita de forma manual. As doações recebidas são anotadas em cadernos e, por falta de tempo e de organização, nem sempre chegam a ser registradas. O cadastro das famílias é mantido em um computador da sede, com nome, idade, endereço e telefone, e o acompanhamento da participação também acontece pelo grupo das mães no WhatsApp. A chamada das crianças é feita à mão, em papel.
 
-A comunicação interna acontece por reuniões presenciais e grupos de WhatsApp, e a divulgação para a
-comunidade é feita pelo Instagram (@maesguerreiras_df), pelo Facebook, por panfletos e por cartões de
-divulgação. A associação conta ainda com parceiros institucionais como CEASA-DF, ASFA, UDF e os
-programas federais Computadores para Inclusão e Programando o Futuro.
+A comunicação interna acontece por reuniões presenciais e grupos de WhatsApp, e a divulgação para a comunidade é feita pelo Instagram (@maesguerreiras_df), pelo Facebook, por panfletos e por cartões de divulgação. A associação conta ainda com parceiros institucionais como CEASA-DF, ASFA, UDF e os programas federais Computadores para Inclusão e Programando o Futuro.
 
 ## 1.3 Rich Picture
 
-*(inserir imagem do Rich Picture atualizado)*
-
-O Rich Picture ilustra o cenário atual da associação: as doações de itens que chegam sem periodicidade
-definida e são anotadas em cadernos; o cadastro das famílias isolado em um computador da sede; a
-chamada em papel nas atividades com controle de frequência; a organização do atendimento da Sacola
-Verde por senhas; a comunicação dividida entre Instagram, Facebook, panfletos e grupos de WhatsApp;
-e as coordenadoras no centro, sustentando manualmente todos esses fluxos. Em contraste, apresenta-se
-a proposta da Plataforma Mães Guerreiras, reunindo em um único ambiente o portal institucional com a
-agenda das atividades, o registro das doações, o cadastro das famílias, a chamada digital e os relatórios
-de impacto para os parceiros.
+![Rich Picture da Associação Mães Guerreiras da Cidade Estrutural](../assets/rich-picture.jpg)
 
 ## 1.4 Identificação da Oportunidade ou Problema
 
@@ -125,10 +87,6 @@ concretos:
   cartões, e as vagas em novas turmas são divulgadas apenas nos grupos de WhatsApp, alcançando
   quem já está próximo da associação.
 
-A oportunidade é substituir os cadernos e as folhas de chamada por ferramentas digitais simples, que
-registrem em poucos cliques o que hoje se perde, e reunir em um canal próprio a informação
-institucional que hoje está espalhada, transformando o trabalho já realizado em dados capazes de
-sustentar a prestação de contas e a captação de novos apoios.
 
 ## 1.5 Desafios do Projeto
 
@@ -174,13 +132,13 @@ A seguir, é apresentado um quadro resumo dos stakeholders.
 
 ## 1.7 Segmentação de "Clientes" (usuários da plataforma)
 
-- **Coordenação da associação:** as cinco coordenadoras que registram doações, cadastros e presença,
+- **Coordenação da associação:** As cinco coordenadoras que registram doações, cadastros e presença,
   com necessidades de acesso distintas conforme sua responsabilidade;
-- **Voluntárias e voluntários:** cerca de 35 pessoas que conduzem as atividades e precisam saber onde
+- **Voluntárias e voluntários:** Cerca de 35 pessoas que conduzem as atividades e precisam saber onde
   e quando ajudar;
-- **Famílias beneficiárias:** moradoras de Santa Luzia que participam das atividades e recebem
+- **Famílias beneficiárias:** Moradoras de Santa Luzia que participam das atividades e recebem
   doações, incluindo mães, crianças e pessoas idosas;
-- **Doadores de itens:** pessoas da comunidade, comércios e apoiadores que doam alimentos, roupas,
+- **Doadores de itens:** Pessoas da comunidade, comércios e apoiadores que doam alimentos, roupas,
   brinquedos e mantimentos;
-- **Parceiros institucionais e potenciais patrocinadores:** organizações como CEASA-DF, ASFA e UDF,
+- **Parceiros institucionais e potenciais patrocinadores:** Organizações como CEASA-DF, ASFA e UDF,
   que apoiam a associação e precisam acompanhar o impacto do apoio concedido.

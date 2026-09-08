@@ -103,7 +103,7 @@ esteja em processo de aprendizado das tecnologias escolhidas, a proposta foi est
 compatível com essa realidade, com entregas incrementais, priorização das funcionalidades essenciais e
 validações frequentes com a coordenação.
 
-Para organizar o trabalho, serão utilizadas sprints de 1 semana, totalizando 12 sprints. Esse ritmo
+Para organizar o trabalho, serão utilizadas sprints de 2 semanas, totalizando 7 sprints. Esse ritmo
 permite ajustar o escopo a cada ciclo, reservar a primeira sprint também para o aprendizado das
 tecnologias e garantir a entrega de um MVP (Produto Mínimo Viável) funcional.
 

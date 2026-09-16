@@ -47,3 +47,17 @@ organizado, como o trabalho voluntário é registrado e como a associação se r
 institucionais, exigindo que os requisitos considerem tanto os benefícios esperados quanto os efeitos
 não previstos do uso real do sistema, especialmente os riscos de exclusão digital e de exposição de
 dados em uma comunidade marcada por vulnerabilidade social.
+
+## Dos efeitos emergentes a requisitos e ações
+
+Cada efeito emergente identificado acima foi convertido em um requisito ou ação concreta do projeto,
+para que não permaneça apenas como uma preocupação registrada, mas oriente decisões técnicas:
+
+| Efeito identificado | Resposta esperada |
+| :--- | :--- |
+| Dependência tecnológica da associação | Plano de transição, documentação operacional e definição de um responsável institucional pela manutenção após o fim do projeto (seção [2.6](../02-solucao/index.md#26-viabilidade-da-proposta)) |
+| Abandono da plataforma em favor do caderno | Testes de adoção com as coordenadoras e acompanhamento do uso real a cada sprint (seção [7.3](../07-interacao/index.md#73-processo-de-validacao)) |
+| Exclusão digital de famílias, doadores e voluntárias | Manutenção de WhatsApp, redes sociais e panfletos como canais complementares, e requisitos de acessibilidade na interface |
+| Exposição de dados pessoais de famílias em vulnerabilidade | Requisitos não funcionais de segurança, privacidade e retenção de dados, e perfis de acesso por responsabilidade (CP7) |
+| Duplicidade entre caderno e sistema | Estratégia de migração gradual e definição clara de qual registro passa a ser o oficial a partir de cada entrega |
+| Formalização percebida como controle ou burocracia | Validação das telas e fluxos diretamente com famílias e voluntários antes de tornar o registro obrigatório |

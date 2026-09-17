@@ -8,7 +8,7 @@ viabilidade da proposta e os benefícios esperados para o cliente e para os usu�
 
 O objetivo do produto é substituir os controles manuais da Associação Mães Guerreiras (cadernos de
 doações, cadastro isolado no computador da sede e listas de chamada em papel) por uma plataforma
-web simples, que registre em poucos cliques as doações de itens recebidas e distribuídas, o cadastro das
+web simples, que registre as doações de itens recebidas e distribuídas, o cadastro das
 famílias e a presença nas atividades, e que transforme esses registros em relatórios de impacto capazes
 de sustentar a prestação de contas aos parceiros. A plataforma oferece ainda um canal institucional
 próprio, onde a comunidade encontra a agenda atualizada das atividades, sua situação atual e as formas
@@ -36,13 +36,13 @@ seguintes características, mapeadas com os Objetivos Específicos do Produto:
 
 | ID | Característica de Produto (CP) | Descrição resumida | VN | Valor de negócio (VN) principal |
 | :--- | :--- | :--- | :--- | :--- |
-| CP1 | Portal institucional e agenda de atividades | A solução deverá apresentar a história da associação, seus parceiros e a agenda das atividades com dias, horários e situação atual (ativa, suspensa ou dependente de doação), além de exibir as formas de doar já divulgadas pela associação, incluindo o endereço da sede. | VN1 | Informação sempre acessível à comunidade e aos apoiadores, sem depender de destaques do Instagram, de panfletos ou do grupo de WhatsApp. |
-| CP2 | Registro de doações de itens | A solução deverá permitir registrar, de forma rápida, as doações de itens recebidas (alimentos, roupas, brinquedos, cestas básicas) e sua distribuição, substituindo os cadernos usados atualmente. | VN2 | Fim da perda de registros por falta de tempo e visibilidade sobre o que entra e o que é distribuído. |
-| CP3 | Cadastro de famílias e participantes | A solução deverá centralizar o cadastro das famílias (nome, idade, endereço e telefone), permitindo que uma mesma família participe de várias atividades e que esse histórico fique registrado em conjunto. | VN3 | Substituição do cadastro isolado no computador da sede por um registro único, consultável por todas as coordenadoras. |
-| CP4 | Inscrição em atividades e organização do atendimento | A solução deverá apoiar a inscrição nas atividades e a organização do atendimento da Sacola Verde, hoje feita por ordem de chegada com entrega de senhas, registrando quem foi atendido em cada distribuição. | VN4 | Atendimento mais organizado e justo, com registro de quem foi atendido em cada entrega. |
-| CP5 | Chamada digital e controle de frequência | A solução deverá permitir o registro de presença nas atividades que fazem chamada (Reforço Escolar, futebol e Domingo Recreativo) e sinalizar à coordenação quando uma criança atingir cinco faltas sem justificativa, conforme a regra já praticada pela associação. | VN5 | Fim da conferência manual em papel e aplicação consistente da regra de faltas, liberando vagas para outras crianças. |
-| CP6 | Relatórios e indicadores de impacto | A solução deverá gerar relatórios simples a partir dos dados registrados: doações recebidas por período e por tipo de item, famílias atendidas, presença nas atividades e número de voluntários envolvidos. | VN6 | Prestação de contas a parceiros como CEASA-DF, ASFA e UDF e argumento concreto para captar novos apoiadores. |
-| CP7 | Perfis de acesso e proteção de dados | A solução deverá oferecer acesso ao painel administrativo por perfil, conforme a responsabilidade de cada coordenadora, protegendo os dados pessoais das famílias atendidas. | VN7 | Segurança dos dados das famílias em situação de vulnerabilidade e conformidade com a LGPD. |
+| CP1 | Portal institucional e agenda de atividades | Disponibilização das informações institucionais e das atividades da associação. | VN1 | Centralização das informações destinadas à comunidade e aos apoiadores. |
+| CP2 | Registro de doações de itens | Gestão das doações de itens recebidas e distribuídas. | VN2 | Redução de registros de doações não realizados e maior visibilidade sobre os itens recebidos e distribuídos. |
+| CP3 | Cadastro de famílias e participantes | Gestão dos dados das famílias e participantes atendidos. | VN3 | Centralização dos dados atualmente mantidos de forma isolada. |
+| CP4 | Inscrição em atividades e organização do atendimento | Gestão das inscrições e dos atendimentos nas atividades. | VN4 | Organização e rastreabilidade dos atendimentos realizados. |
+| CP5 | Chamada digital e controle de frequência | Gestão da frequência dos participantes nas atividades. | VN5 | Redução da conferência manual de presença e apoio à aplicação da regra de faltas. |
+| CP6 | Relatórios e indicadores de impacto | Acompanhamento dos resultados e indicadores da associação. | VN6 | Apoio à prestação de contas e à captação de novos apoiadores. |
+| CP7 | Perfis de acesso e proteção de dados | Controle de acesso e proteção dos dados tratados pela solução. | VN7 | Proteção dos dados das famílias atendidas e conformidade com a LGPD. |
 
 O quadro a seguir apresenta a contribuição de cada característica para os Objetivos Específicos (OE1 a
 OE6) definidos na seção anterior.
@@ -52,10 +52,10 @@ OE6) definidos na seção anterior.
 | CP1 | Portal institucional e agenda de atividades | OE1 | OE5 |
 | CP2 | Registro de doações de itens | OE2 | OE5 |
 | CP3 | Cadastro de famílias e participantes | OE3 | OE6 |
-| CP4 | Inscrição em atividades e organização do atendimento | OE3 | OE4 |
+| CP4 | Inscrição em atividades e organização do atendimento | OE3 | — |
 | CP5 | Chamada digital e controle de frequência | OE4 | OE5 |
-| CP6 | Relatórios e indicadores de impacto | OE5 | OE1 |
-| CP7 | Perfis de acesso e proteção de dados | OE6 | OE3 |
+| CP6 | Relatórios e indicadores de impacto | OE5 | — |
+| CP7 | Perfis de acesso e proteção de dados | OE6 | — |
 
 ## 2.4 Tecnologias a Serem Utilizadas
 
@@ -74,26 +74,18 @@ conforme exigido pela disciplina.
 
 ## 2.5 Pesquisa de Mercado e Análise Competitiva
 
-A associação não utiliza hoje nenhum sistema de gestão. Suas ferramentas atuais são as redes sociais, os
-grupos de WhatsApp, os cadernos de anotação e um cadastro isolado no computador da sede. O quadro
-a seguir compara essas alternativas com o que a solução proposta pretende resolver.
+Foram pesquisadas soluções disponíveis no mercado destinadas à gestão de organizações sociais,
+beneficiários, doações e indicadores de impacto.
 
-| Alternativa | O que resolve hoje | Limitações para a associação |
+| Solução similar | Recursos relacionados à proposta | Limitações em relação ao contexto da associação |
 | :--- | :--- | :--- |
-| Instagram e Facebook | Divulgação das ações, alcance da comunidade e captação de novos apoiadores. | Conteúdo temporário e de difícil navegação; não organiza agenda nem situação das atividades; nenhuma ferramenta de gestão. |
-| Cadernos, papel e cadastro isolado no computador | Registro das doações, do cadastro das famílias e da chamada das crianças. | Registros se perdem por falta de tempo; dados não se conectam; nenhum relatório; consulta depende de quem está com o caderno. |
-| Grupos de WhatsApp | Comunicação interna entre voluntárias e aviso rápido de distribuições e novas turmas. | Informação se perde no histórico; não gera registro nem relatório; não organiza inscrição nem presença. |
-| Ferramentas genéricas gratuitas (formulários e planilhas online) | Coleta de dados e planilhas simples, sem custo. | Exigem montagem e manutenção técnica; vocabulário genérico; não tratam senhas, rodízio nem a regra de faltas da associação; dados pessoais espalhados em planilhas sem controle de acesso. |
+| [Bússola Social](https://www.bussolasocial.com.br/) | Gestão de projetos, beneficiários, indicadores, evidências, inscrições e relatórios de impacto. | Não apresenta foco específico no controle de doações de itens, na chamada das atividades ou nas regras próprias da associação. |
+| [Ongsys](https://site.ongsys.com.br/) | Gestão financeira por projeto, doadores, voluntários, documentos, relatórios e prestação de contas. | Possui maior foco financeiro, contábil e administrativo do que no acompanhamento cotidiano das famílias e atividades oferecidas. |
+| [Trackmob](https://trackmob.com.br/) | Gestão de doadores, doações financeiras, relacionamento e captação de recursos. | É orientada principalmente à captação e ao processamento de doações financeiras, enquanto a proposta trata doações de itens. |
 
-A solução proposta se diferencia por três aspectos:
-
-- **Feita para a operação real da associação:** Trabalha com o vocabulário e as regras que já existem
-  (rodízio mensal do Domingo Recreativo e a regra de cinco faltas), em vez de exigir que a associação
-  se adapte a um sistema genérico;
-- **Registro rápido no lugar do caderno:** O registro é desenhado para levar menos tempo do que a
-  anotação manual, que é a causa direta das doações não registradas hoje;
-- **Dados que viram prestação de contas:** Os mesmos registros do dia a dia geram automaticamente
-  os relatórios de impacto que a associação hoje não consegue produzir para seus parceiros.
+As soluções analisadas centralizam dados e apoiam a produção de relatórios, mas não reúnem, no mesmo
+fluxo, o registro de doações de itens, a gestão das famílias, as inscrições e a frequência conforme as
+regras praticadas pelas Mães Guerreiras. A solução proposta busca atender esse contexto específico.
 
 ## 2.6 Viabilidade da Proposta
 
@@ -107,10 +99,11 @@ Para organizar o trabalho, serão utilizadas sprints de 2 semanas, totalizando 7
 permite ajustar o escopo a cada ciclo, reservar a primeira sprint também para o aprendizado das
 tecnologias e garantir a entrega de um MVP (Produto Mínimo Viável) funcional.
 
-O MVP será composto pelo portal institucional com a agenda das atividades (CP1) e pelo registro digital
-das doações de itens (CP2), por serem as duas frentes que atacam as dores mais imediatas relatadas pela
-associação: a informação dispersa e as doações que se perdem por não serem registradas. As demais
-características (CP3 a CP7) seguem nos ciclos posteriores, conforme a priorização do backlog.
+O MVP será composto pelo portal institucional com a agenda das atividades (CP1), pelo registro digital
+das doações de itens (CP2), por autenticação administrativa mínima (parte da CP7) e por consulta ou
+exportação simples dos registros de doações (parte da CP6). Esse recorte permite que o registro seja
+utilizado com controle de acesso básico e que os dados possam apoiar a prestação de contas. Os
+relatórios completos e os perfis de acesso detalhados permanecem nos ciclos posteriores.
 
 ### Riscos e mitigação
 
@@ -124,6 +117,19 @@ características (CP3 a CP7) seguem nos ciclos posteriores, conforme a prioriza�
   autorizações de uso de imagem.
 - **Disponibilidade da coordenação:** Todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
   validações curtas.
+- **Manutenção após o semestre:** A associação pode não dispor de equipe técnica para manter a
+  solução. *Mitigação:* entrega do código-fonte, da documentação e de orientações básicas de manutenção.
+- **Responsabilidade pelas contas e hospedagem:** As contas do Supabase e da hospedagem não devem
+  permanecer vinculadas somente a um integrante. *Mitigação:* criação ou transferência das contas
+  para um endereço institucional indicado pela associação antes da entrega final.
+- **Backup e recuperação dos dados:** Falhas ou exclusões podem comprometer os registros.
+  *Mitigação:* definição de uma rotina de exportação e teste de recuperação antes da entrega.
+- **Treinamento das coordenadoras:** A falta de familiaridade pode prejudicar a adoção. *Mitigação:*
+  realização de treinamento e entrega de um guia de uso.
+- **Limites dos serviços gratuitos:** O crescimento do uso pode gerar custos futuros. *Mitigação:*
+  acompanhamento dos limites gratuitos e comunicação à associação antes da adoção de plano pago.
+- **Dados pessoais durante os testes:** Dados de adultos e crianças podem ser expostos indevidamente.
+  *Mitigação:* uso de dados fictícios ou anonimizados nos testes e restrição do acesso aos dados reais.
 
 Assim, a proposta é considerada viável, desde que o escopo do MVP permaneça controlado, as
 prioridades sejam mantidas ao longo das sprints e a equipe reserve tempo na primeira sprint para o
@@ -131,8 +137,8 @@ aprendizado das tecnologias escolhidas.
 
 ## 2.7 Benefícios Esperados
 
-- **Para o cliente:** Fim da perda de registros de doações por falta de tempo; visibilidade sobre o que a
-  associação recebe e distribui; relatórios prontos para prestação de contas a CEASA-DF, ASFA, UDF e
+- **Para o cliente:** Redução do percentual de doações sem registro; visibilidade sobre o que a
+  associação recebe e distribui; apoio à prestação de contas a CEASA-DF, ASFA, UDF e
   demais parceiros, hoje inexistentes; redução do trabalho manual da coordenação com cadernos e
   listas de chamada; acesso organizado por perfil entre as cinco coordenadoras; e um canal
   institucional próprio que mostra o trabalho realizado de forma permanente, apoiando a captação de
@@ -140,3 +146,8 @@ aprendizado das tecnologias escolhidas.
 - **Para os usuários:** Famílias beneficiárias com informação clara sobre o que está ativo, em que dias e
   horários, e como participar; voluntárias e voluntários com um canal claro para saber onde ajudar; e
   doadores com informação objetiva sobre o que a associação precisa e como entregar suas doações.
+
+Como metas iniciais verificáveis, a equipe pretende permitir o registro de uma doação em até dois
+minutos durante o teste com as coordenadoras e reduzir em pelo menos 80% a quantidade de doações sem
+registro em comparação com a linha de base levantada antes da implantação. As metas serão confirmadas
+com a cliente durante a validação do MVP.

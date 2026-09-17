@@ -27,16 +27,6 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
 - **Ação de melhoria:** A equipe assumiu seu papel de mediadora, focando em orientar o projeto para a geração de valor real, e não apenas para a entrega de funcionalidades solicitadas. Para as próximas etapas, mitigaremos essas divergências aplicando técnicas de priorização colaborativa com o cliente, como o método MoSCoW (para separar o que é essencial do que é apenas desejável) ou a Matriz de Valor de Negócio × Esforço Técnico. Assim, garantimos que os requisitos negociados tragam benefícios concretos sem complicar a rotina do projeto Mães Guerreiras.
 
 
-
-**Principal aprendizado de cada integrante:**
-
-- **Luan:** *(preencher)*
-- **Isabella:** Priorizar comunicação curta e rápida tanto com integrantes da equipe, como com os stakeholders para concesso de ativiades a serem feitas.
-- **Luis:** *(preencher)*
-- **Ian:** *(preencher)*
-- **Pedro:** *(preencher)*
-- **Vitor:** *(preencher)*
-
 ## Unidade 2
 
 **O que funcionou bem:**

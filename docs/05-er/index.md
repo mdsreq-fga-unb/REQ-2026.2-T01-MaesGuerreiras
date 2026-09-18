@@ -3,8 +3,9 @@
 A partir das informações apresentadas nas seções anteriores, foram estabelecidas as atividades da
 Engenharia de Requisitos (ER), suas práticas e técnicas, em alinhamento ao processo ScrumXP definido
 na seção [4](../04-estrategias/index.md). Como a operação da associação é predominantemente manual
-e conduzida por voluntárias com pouco tempo disponível, foram priorizadas técnicas de contato direto e
-observação, e não apenas de documentação.
+e conduzida por voluntárias com pouco tempo disponível, foram priorizadas técnicas de contato direto
+(entrevistas e brainstorming) e de análise dos registros já existentes, viáveis dentro da disponibilidade
+real da equipe e da coordenação.
 
 Ao longo desta seção, distingue-se **prática** (o objetivo exercido, ex.: priorizar requisitos), **técnica**
 (o método concreto usado para isso, ex.: MoSCoW) e **artefato/resultado** (o produto gerado pela
@@ -21,17 +22,9 @@ técnicas em si.
 - **Entrevistas:** entrevistas com Daiane e com as demais coordenadoras (Maria Guerra, Luzia, Liz e
   Cleide) para entender como funcionam hoje o registro das doações de itens em caderno, o cadastro das
   famílias e a chamada em papel.
-- **Observação in loco:** acompanhar uma entrega da Sacola Verde (quinta-feira ou domingo) e uma
-  chamada do Reforço Escolar na sede permite ver como o atendimento por senha e o registro de
-  presença acontecem na prática, revelando necessidades que não aparecem em entrevista. Realizada
-  na primeira sprint do projeto, por até dois integrantes da equipe, agendada previamente com Makio.
-  Caso o acesso à sede não seja viável na data, a alternativa é uma videochamada guiada por Daiane ou
-  por uma das coordenadoras, narrando o processo em tempo real.
 - **Análise Documental:** analisar os cadernos de doações, o cadastro existente no computador da
   sede e as listas de chamada em papel ajuda a identificar quais dados já são coletados e em que
-  formato. Realizada também na primeira sprint, por um integrante designado, mediante cópia ou
-  fotografia dos registros autorizada por Daiane, com cuidado redobrado por envolver dados pessoais
-  de famílias em vulnerabilidade.
+  formato, a partir de cópias ou fotografias dos registros compartilhadas por Daiane ou Makio.
 - **Brainstorming:** sessões com a equipe e a coordenação para levantar ideias sobre o portal
   institucional, o registro de doações de itens e os relatórios desejados pelos parceiros.
 
@@ -141,9 +134,9 @@ técnicas em si.
 
 **Elicitação e Descoberta:**
 
-- **Workshops, Análise de Domínio de Negócio:** workshops com a coordenação para identificar novas
-  necessidades a partir do uso real da plataforma e de frentes que voltarem a funcionar, como a
-  Informática Básica e o Crochê e Bordado.
+- **Entrevistas de Acompanhamento e Análise de Domínio de Negócio:** conversas de acompanhamento
+  com a coordenação para identificar novas necessidades a partir do uso real da plataforma e de
+  frentes que voltarem a funcionar, como a Informática Básica e o Crochê e Bordado.
 
 **Análise e Consenso:**
 
@@ -174,7 +167,7 @@ Objetivo Específico (OE) → Característica de Produto (CP) → Requisito Func
   [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)), que determinam se o requisito compõe o
   MVP (CP1 e CP2) ou releases futuras.
 - Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs
-  decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como
+  decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao/index.md), como
   privacidade e proteção de dados pessoais.
 - Cada requisito é declarado como parte de um épico e detalhado em uma ou mais user stories, que
   por sua vez possuem critérios de aceitação no formato Given-When-Then.
@@ -200,7 +193,7 @@ processo ScrumXP definido para a condução do projeto.
 
 | Momentos do ScrumXP | Atividades da ER | Prática | Técnica | Resultados Esperados |
 | :--- | :--- | :--- | :--- | :--- |
-| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Observação in loco, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
+| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP (CP1 e CP2) priorizado e acordado com a coordenação. |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Temas, Épicos e User Stories | Temas, épicos e histórias registrados com o vocabulário usado pela associação, servindo também como estrutura de organização do backlog. |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
@@ -215,7 +208,7 @@ processo ScrumXP definido para a condução do projeto.
 | Revisão da Sprint | Organização e Atualização | Atualização dos Requisitos | Revisão das Histórias de Usuário, Critérios de Aceitação e Prioridades | Requisitos e backlog atualizados conforme o feedback, respeitando o escopo do [MVP](../02-solucao/index.md#26-viabilidade-da-proposta). |
 | Retrospectiva da Sprint | Análise e Consenso | Análise de Problemas da ER | Retrospectiva Start/Stop/Continue | Problemas relacionados aos requisitos e à comunicação identificados e analisados. |
 | Retrospectiva da Sprint | Organização e Atualização | Atualização da Organização dos Requisitos | Ações de Melhoria Contínua | Melhorias incorporadas à organização e atualização dos requisitos. |
-| Planejamento da Próxima Release | Elicitação e Descoberta | Identificação de Novos Requisitos | Workshops, Análise de Domínio de Negócio | Novos requisitos identificados e requisitos existentes revisados a partir do uso real da plataforma. |
+| Planejamento da Próxima Release | Elicitação e Descoberta | Identificação de Novos Requisitos | Entrevistas de Acompanhamento, Análise de Domínio de Negócio | Novos requisitos identificados e requisitos existentes revisados a partir do uso real da plataforma. |
 | Planejamento da Próxima Release | Análise e Consenso | Priorização Estratégica | Priorização MoSCoW, Mapeamento de Valor | Requisitos priorizados para atender às necessidades da próxima release. |
 | Planejamento da Próxima Release | Declaração | Definição de Épicos e User Stories | Criação de Épicos e User Stories | User stories claramente definidas e vinculadas aos objetivos da próxima release. |
 | Planejamento da Próxima Release | Organização e Atualização | Revisão do Backlog | Revisão e Reordenação do Backlog | Backlog da release atualizado e preparado para o próximo ciclo. |

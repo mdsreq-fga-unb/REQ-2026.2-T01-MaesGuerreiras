@@ -18,7 +18,7 @@ de apoiar a associação.
 
 - **OE1:** Apresentar de forma permanente e acessível as atividades da associação, com dias, horários e
   situação atual, além das formas de doar e de fazer parte;
-- **OE2:** Substituir o registro em caderno por um registro digital rápido das doações de itens recebidas
+- **OE2:** Substituir o registro em caderno pelo registro digital das doações de itens recebidas
   e distribuídas;
 - **OE3:** Centralizar o cadastro das famílias e as inscrições nas atividades, permitindo que uma mesma
   família participe de várias frentes;
@@ -74,18 +74,46 @@ conforme exigido pela disciplina.
 
 ## 2.5 Pesquisa de Mercado e Análise Competitiva
 
+### Ferramentas utilizadas atualmente pela associação
+
+A associação não utiliza hoje nenhum sistema de gestão. Suas ferramentas atuais são as redes sociais,
+os grupos de WhatsApp, os cadernos de anotação e um cadastro isolado no computador da sede.
+
+| Alternativa | O que resolve hoje | Limitações para a associação |
+| :--- | :--- | :--- |
+| Instagram e Facebook | Divulgação das ações, alcance da comunidade e captação de novos apoiadores. | Não centralizam os registros de doações, inscrições e frequência; informações sobre atividades ficam dispersas entre publicações. |
+| Cadernos, papel e cadastro isolado no computador | Registro das doações, do cadastro das famílias e da chamada das crianças. | Parte das doações não é registrada; os dados não se conectam; a consulta depende da disponibilidade dos registros e a elaboração de relatórios exige consolidação manual. |
+| Grupos de WhatsApp | Comunicação interna entre voluntárias e aviso rápido de distribuições e novas turmas. | Informações se dispersam no histórico; não há registro estruturado e integrado de inscrições, presença e doações. |
+| Ferramentas genéricas gratuitas (formulários e planilhas online) | Alternativa para coleta de dados e controles simples. | Exigem configuração dos campos, vínculos e permissões de acesso pela equipe; não oferecem prontas as regras específicas da associação. |
+
+Formulários e planilhas são apresentados como alternativa genérica de comparação, sem pressupor sua
+adoção atual pela associação.
+
+### Soluções similares disponíveis no mercado
+
 Foram pesquisadas soluções disponíveis no mercado destinadas à gestão de organizações sociais,
-beneficiários, doações e indicadores de impacto.
+beneficiários e indicadores de impacto, bem como ao controle de doações de itens e ao registro de
+frequência em projetos sociais. A comparação utiliza informações públicas dos fornecedores, consultadas
+em 18/09/2026; recursos não confirmados nessas fontes não são considerados inexistentes.
 
 | Solução similar | Recursos relacionados à proposta | Limitações em relação ao contexto da associação |
 | :--- | :--- | :--- |
-| [Bússola Social](https://www.bussolasocial.com.br/) | Gestão de projetos, beneficiários, indicadores, evidências, inscrições e relatórios de impacto. | Não apresenta foco específico no controle de doações de itens, na chamada das atividades ou nas regras próprias da associação. |
+| [Bússola Social](https://www.bussolasocial.com.br/) | Gestão de organizações sociais por meio de projetos, beneficiários, indicadores, evidências, inscrições e relatórios de impacto. | O atendimento ao fluxo de doações de itens e às regras específicas de frequência da associação não foi confirmado nas fontes consultadas. |
 | [Ongsys](https://site.ongsys.com.br/) | Gestão financeira por projeto, doadores, voluntários, documentos, relatórios e prestação de contas. | Possui maior foco financeiro, contábil e administrativo do que no acompanhamento cotidiano das famílias e atividades oferecidas. |
 | [Trackmob](https://trackmob.com.br/) | Gestão de doadores, doações financeiras, relacionamento e captação de recursos. | É orientada principalmente à captação e ao processamento de doações financeiras, enquanto a proposta trata doações de itens. |
+| [PantrySoft](https://www.pantrysoft.com/feature/donations-and-inventory/) | Controle de doações de itens, recebimentos e estoque; acompanhamento da distribuição por beneficiário, conforme a [documentação de relatórios](https://support.pantrysoft.com/inventory-reports). | Voltado a bancos de alimentos e atendimento de necessidades básicas. O suporte à chamada e à regra de cinco faltas das atividades da associação não foi confirmado nas fontes consultadas. |
+| [TraxSolutions / TraxAttendance — nFocus](https://www.nfocus.com/) | Gestão de participantes e frequência em programas sociais. O [TRAX Attendance Manager](https://play.google.com/store/apps/details?id=com.nfocus.tam) registra presença nas instalações e atividades, inclusive offline, com sincronização posterior. | O suporte integrado a doações de itens e à regra de cinco faltas sem justificativa não foi confirmado nas fontes consultadas. |
 
-As soluções analisadas centralizam dados e apoiam a produção de relatórios, mas não reúnem, no mesmo
-fluxo, o registro de doações de itens, a gestão das famílias, as inscrições e a frequência conforme as
-regras praticadas pelas Mães Guerreiras. A solução proposta busca atender esse contexto específico.
+A pesquisa contempla as cinco frentes solicitadas: gestão de organizações sociais (Bússola Social e
+Ongsys), doações de itens (PantrySoft), beneficiários (Bússola Social e PantrySoft), frequência
+(TraxSolutions/TraxAttendance) e indicadores e relatórios de impacto (Bússola Social). Trackmob
+complementa a comparação com soluções de captação financeira.
+
+Existem soluções para essas frentes. Entretanto, a consulta às fontes públicas não demonstrou o
+atendimento conjunto a todas as necessidades e regras específicas das Mães Guerreiras. A proposta
+busca integrar esses processos à rotina da associação; essa adequação deverá ser validada com a
+coordenação. Não se conclui, apenas com esta pesquisa, que os produtos analisados sejam incapazes
+de atender ao contexto mediante configuração ou adaptação.
 
 ## 2.6 Viabilidade da Proposta
 
@@ -99,9 +127,10 @@ Para organizar o trabalho, serão utilizadas sprints de 2 semanas, totalizando 7
 permite ajustar o escopo a cada ciclo, reservar a primeira sprint também para o aprendizado das
 tecnologias e garantir a entrega de um MVP (Produto Mínimo Viável) funcional.
 
-O MVP será composto pelo portal institucional com a agenda das atividades (CP1), pelo registro digital
-das doações de itens (CP2), por autenticação administrativa mínima (parte da CP7) e por consulta ou
-exportação simples dos registros de doações (parte da CP6). Esse recorte permite que o registro seja
+O MVP será composto pelo registro digital das doações de itens (CP2), por autenticação e autorização
+administrativas mínimas (parte da CP7) e por consulta ou exportação simples dos registros de doações
+(parte da CP6). A inclusão do portal institucional com agenda (CP1) no MVP fica condicionada à
+confirmação de sua prioridade pela coordenação, com registro dessa decisão. Esse recorte permite que o registro seja
 utilizado com controle de acesso básico e que os dados possam apoiar a prestação de contas. Os
 relatórios completos e os perfis de acesso detalhados permanecem nos ciclos posteriores.
 
@@ -111,7 +140,9 @@ relatórios completos e os perfis de acesso detalhados permanecem nos ciclos pos
   coordenação voltará ao papel. *Mitigação:* protótipos validados antes de programar e teste da
   funcionalidade com as próprias coordenadoras, sem ajuda da equipe, ao final de cada sprint.
 - **Escopo ambicioso frente ao prazo:** A associação tem muitas frentes. *Mitigação:* MVP restrito a
-  CP1 e CP2, com as demais características priorizadas ciclo a ciclo.
+  CP2, controle de acesso administrativo mínimo (parte da CP7) e consulta ou exportação simples
+  (parte da CP6), incluindo CP1 caso sua prioridade seja confirmada pela coordenação. As demais
+  capacidades serão priorizadas ciclo a ciclo.
 - **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* Perfis de acesso (CP7),
   coleta mínima de dados e publicação de fotos e depoimentos apenas após a obtenção das
   autorizações de uso de imagem.
@@ -139,7 +170,7 @@ aprendizado das tecnologias escolhidas.
 
 - **Para o cliente:** Redução do percentual de doações sem registro; visibilidade sobre o que a
   associação recebe e distribui; apoio à prestação de contas a CEASA-DF, ASFA, UDF e
-  demais parceiros, hoje inexistentes; redução do trabalho manual da coordenação com cadernos e
+  demais parceiros; redução do trabalho manual da coordenação com cadernos e
   listas de chamada; acesso organizado por perfil entre as cinco coordenadoras; e um canal
   institucional próprio que mostra o trabalho realizado de forma permanente, apoiando a captação de
   novos apoiadores.
@@ -149,5 +180,6 @@ aprendizado das tecnologias escolhidas.
 
 Como metas iniciais verificáveis, a equipe pretende permitir o registro de uma doação em até dois
 minutos durante o teste com as coordenadoras e reduzir em pelo menos 80% a quantidade de doações sem
-registro em comparação com a linha de base levantada antes da implantação. As metas serão confirmadas
-com a cliente durante a validação do MVP.
+registro em comparação com a linha de base levantada antes da implantação. Os valores de dois minutos
+e 80% são propostas preliminares, pendentes de discussão na próxima reunião da equipe e posterior
+validação com a cliente; não representam metas já acordadas.

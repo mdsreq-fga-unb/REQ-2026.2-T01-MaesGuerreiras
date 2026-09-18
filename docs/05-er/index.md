@@ -171,8 +171,9 @@ Objetivo Específico (OE) → Característica de Produto (CP) → Requisito Func
 
 - Cada Objetivo Específico (seção [2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto))
   se conecta a uma ou mais Características de Produto (CP1 a CP7, seção
-  [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)), que determinam se o requisito compõe o
-  MVP (CP1 e CP2) ou releases futuras.
+  [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)). A priorização e as dependências determinam
+  se o requisito compõe o MVP: CP2 e partes mínimas de CP6 e CP7, com CP1 condicionada à confirmação
+  da prioridade pela coordenação, conforme a seção [2.6](../02-solucao/index.md#26-viabilidade-da-proposta).
 - Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs
   decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como
   privacidade e proteção de dados pessoais.
@@ -181,17 +182,18 @@ Objetivo Específico (OE) → Característica de Produto (CP) → Requisito Func
 - Cada critério de aceitação é validado por uma evidência concreta — teste automatizado, teste com
   usuária real ou registro da homologação com Makio ou Daiane.
 
-A tabela a seguir aplica essa cadeia às duas características que compõem o MVP (CP1 e CP2), como
+A tabela a seguir exemplifica essa cadeia com CP1 e CP2, sem representar todo o escopo do MVP, como
 ponto de partida da matriz de rastreabilidade a ser mantida pela equipe (planilha ou quadro no board do
 projeto) e atualizada a cada sprint:
 
 | OE | CP | RF/RNF (exemplo) | Épico → User Story | Critério de Aceitação | Evidência de Validação |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| OE2 | CP2 — Registro de doações de itens | RF: registrar entrada e saída de itens doados (tipo, quantidade, data); RNF: registro mais rápido que anotar no caderno | Registro de Doações → "Como coordenadora, quero registrar uma doação em poucos cliques, para não perder o registro por falta de tempo" | Dado uma doação recebida, quando a coordenadora registra tipo e quantidade, então o sistema salva o registro em poucos segundos | Teste com Cleide, Luzia ou Liz registrando uma doação real, sem apoio da equipe |
+| OE2 | CP2 — Registro de doações de itens | RF: registrar entrada e saída de itens doados (tipo, quantidade, data); RNF: meta preliminar de concluir o registro em até dois minutos, pendente de validação conforme a seção 2.7 | Registro de Doações → "Como coordenadora, quero registrar uma doação digitalmente, para não perder o registro por falta de tempo" | Dada uma doação fictícia e uma coordenadora autorizada, quando ela informa os dados e confirma o registro, então os dados ficam disponíveis para consulta; medir o tempo total da tarefa para avaliar a meta preliminar da seção 2.7 | Teste com Cleide, Luzia ou Liz usando dados fictícios, sem apoio da equipe, com registro do tempo da tarefa |
 | OE1 | CP1 — Portal institucional e agenda de atividades | RF: exibir a agenda com a situação de cada atividade (ativa, suspensa ou dependente de doação) | Portal Institucional → "Como visitante, quero ver quais atividades estão ativas, para saber como participar ou ajudar" | Dado que uma atividade está suspensa, quando o visitante acessa a agenda, então essa situação aparece de forma clara | Homologação com Makio antes da publicação da página |
 
-As demais características (CP3 a CP7) seguem o mesmo modelo de rastreabilidade conforme entram no
-backlog das próximas releases.
+As demais características seguem o mesmo modelo de rastreabilidade. As partes mínimas de CP6 e CP7
+necessárias ao MVP devem ser detalhadas no backlog junto à CP2; as demais capacidades serão
+priorizadas nas releases seguintes.
 
 ## 5.3 Engenharia de Requisitos e o ScrumXP
 
@@ -201,7 +203,7 @@ processo ScrumXP definido para a condução do projeto.
 | Momentos do ScrumXP | Atividades da ER | Prática | Técnica | Resultados Esperados |
 | :--- | :--- | :--- | :--- | :--- |
 | Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Observação in loco, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
-| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP (CP1 e CP2) priorizado e acordado com a coordenação. |
+| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP priorizado e acordado com a coordenação: CP2, controle de acesso mínimo (parte da CP7) e consulta/exportação (parte da CP6); CP1 condicionada à confirmação de sua prioridade. |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Temas, Épicos e User Stories | Temas, épicos e histórias registrados com o vocabulário usado pela associação, servindo também como estrutura de organização do backlog. |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |

@@ -1,4 +1,4 @@
-# 8. Lições Aprendidas
+# 11. Lições Aprendidas
 
 Esta seção registra, ao final de cada unidade da disciplina, o que a equipe aprendeu com o processo de
 Engenharia de Requisitos, com o ScrumXP e com o contato real com a Associação Mães Guerreiras. Cada

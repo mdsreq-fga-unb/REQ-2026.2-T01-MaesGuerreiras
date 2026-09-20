@@ -167,7 +167,7 @@ Objetivo Específico (OE) → Característica de Produto (CP) → Requisito Func
   [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)), que determinam se o requisito compõe o
   MVP (CP1 e CP2) ou releases futuras.
 - Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs
-  decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao/index.md), como
+  decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como
   privacidade e proteção de dados pessoais.
 - Cada requisito é declarado como parte de um épico e detalhado em uma ou mais user stories, que
   por sua vez possuem critérios de aceitação no formato Given-When-Then.

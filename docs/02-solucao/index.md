@@ -103,26 +103,31 @@ esteja em processo de aprendizado das tecnologias escolhidas, a proposta foi est
 compatível com essa realidade, com entregas incrementais, priorização das funcionalidades essenciais e
 validações frequentes com a coordenação.
 
-Para organizar o trabalho, serão utilizadas sprints de 2 semanas, totalizando 7 sprints. Esse ritmo
-permite ajustar o escopo a cada ciclo, reservar a primeira sprint também para o aprendizado das
-tecnologias e garantir a entrega de um MVP (Produto Mínimo Viável) funcional.
+Para organizar o trabalho, serão utilizadas **sprints de 2 semanas**, totalizando 7 sprints de
+desenvolvimento mais um período de fechamento. Esse ritmo permite ajustar o escopo a cada ciclo,
+reservar as primeiras sprints também para o aprendizado das tecnologias e garantir a entrega de um
+MVP (Produto Mínimo Viável) funcional.
 
-O MVP será composto pelo portal institucional com a agenda das atividades (CP1) e pelo registro digital
-das doações de itens (CP2), por serem as duas frentes que atacam as dores mais imediatas relatadas pela
-associação: a informação dispersa e as doações que se perdem por não serem registradas. As demais
-características (CP3 a CP7) seguem nos ciclos posteriores, conforme a priorização do backlog.
+O MVP administrativo é composto pelo controle de acesso (CP7) e pelo registro digital das doações de
+itens (CP2). CP7 é entregue primeiro, pois é condição de segurança para qualquer sprint que manipule
+dados pessoais de famílias: nenhum dado real é inserido no sistema antes de CP7 estar verificado e o
+ambiente protegido. CP1 (portal institucional, sem dados pessoais) é entregue em paralelo, por ser a
+frente de maior visibilidade imediata para a comunidade. As demais características (CP3 a CP6) seguem
+nos ciclos posteriores, conforme a priorização do backlog.
 
 ### Riscos e mitigação
 
-- **Risco de não adoção:** Se o registro digital não for mais rápido do que anotar no caderno, a
+- **Risco de não adoção:** se o registro digital não for mais rápido do que anotar no caderno, a
   coordenação voltará ao papel. *Mitigação:* protótipos validados antes de programar e teste da
   funcionalidade com as próprias coordenadoras, sem ajuda da equipe, ao final de cada sprint.
-- **Escopo ambicioso frente ao prazo:** A associação tem muitas frentes. *Mitigação:* MVP restrito a
-  CP1 e CP2, com as demais características priorizadas ciclo a ciclo.
-- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* Perfis de acesso (CP7),
-  coleta mínima de dados e publicação de fotos e depoimentos apenas após a obtenção das
+- **Escopo ambicioso frente ao prazo:** a associação tem muitas frentes. *Mitigação:* MVP restrito a
+  CP1, CP7 e CP2, com as demais características priorizadas ciclo a ciclo.
+- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* CP7 (perfis de acesso
+  e proteção de dados) é entregue antes de CP2 e CP3; os primeiros testes usam dados sintéticos ou
+  anonimizados; dados reais de famílias só entram após CP7 verificado, backup configurado e
+  autorização institucional confirmada; publicação de fotos e depoimentos apenas após obtenção das
   autorizações de uso de imagem.
-- **Disponibilidade da coordenação:** Todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
+- **Disponibilidade da coordenação:** todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
   validações curtas.
 
 Assim, a proposta é considerada viável, desde que o escopo do MVP permaneça controlado, as

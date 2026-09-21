@@ -139,7 +139,7 @@ processo ScrumXP definido para a condução do projeto.
 | Momentos do ScrumXP | Atividades da ER | Prática | Técnica | Resultados Esperados |
 | :--- | :--- | :--- | :--- | :--- |
 | Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Observação in loco, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
-| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP (CP1 e CP2) priorizado e acordado com a coordenação. |
+| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP (CP1, CP7 e CP2) priorizado e acordado com a coordenação. |
 | Planejamento da Release | Declaração | Registro dos Requisitos | Temas, Épicos e User Stories | User stories registradas com o vocabulário usado pela associação. |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Discussões em Equipe | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |

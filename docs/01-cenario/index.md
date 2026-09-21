@@ -106,39 +106,34 @@ concretos:
 
 ## 1.6 Mapa de Stakeholders
 
-Os principais stakeholders do projeto são: Daiane, coordenadora e representante do cliente, responsável
-por definir prioridades e validar as entregas; Maria Guerra, presidente da associação, responsável
-institucional pela organização; as demais coordenadoras (Luzia, Liz e Cleide), que utilizarão o painel
-administrativo no dia a dia e precisarão de acessos compatíveis com suas responsabilidades; as cerca de
-35 voluntárias e voluntários que conduzem as atividades; as famílias beneficiárias, impactadas pelo
-cadastro, pelas inscrições e pela organização do atendimento; os doadores de itens, que precisam saber
-o que a associação precisa e como entregar; os parceiros institucionais (CEASA-DF, ASFA, UDF e os
+Os principais stakeholders do projeto são: Daiane, coordenadora e representante do cliente, responsável por garantir que a solução represente as necessidades da associação e apoie a captação de parcerias; Makio Augusto Cândido, voluntário principal que faz a ponte de comunicação entre a equipe e a associação e é responsável por validar o escopo, as prioridades e as entregas do projeto; as demais coordenadoras (Luzia, Liz e Cleide), que utilizarão o painel
+administrativo no dia a dia e precisarão de acessos compatíveis com suas responsabilidades; as voluntárias e os voluntários que conduzem as atividades; as famílias beneficiárias, impactadas pelo
+cadastro, pelas inscrições e pela organização do atendimento; os doadores de itens, que precisam saber o que a associação necessita e como realizar as entregas; os parceiros institucionais (CEASA-DF, ASFA, UDF e os
 programas federais Computadores para Inclusão e Programando o Futuro), destinatários da prestação de
 contas; e a equipe de desenvolvimento, responsável por construir a solução, garantir sua simplicidade de
 uso e a proteção dos dados.
 
-A seguir, é apresentado um quadro resumo dos stakeholders.
+Para diferenciar o poder de decisão de cada stakeholder dos efeitos que a implantação produzirá sobre ele, o mapa considera três dimensões: poder de decisão, impacto sofrido pela implantação e participação esperada na Engenharia de Requisitos.
 
-| Stakeholder | Relação com a solução | Interesse principal | Influência |
-| :--- | :--- | :--- | :--- |
-| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alta |
-| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação da equipe com a associação | Validar escopo, prioridades e entregas do projeto | Alta |
-| Demais coordenadoras (Luzia, Liz e Cleide) | Usuárias internas do painel administrativo | Registrar doações, cadastros e presença de forma rápida, com acesso conforme sua responsabilidade | Alta |
-| Voluntárias e voluntários (cerca de 35) | Usuários internos e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Média |
-| Famílias beneficiárias | Impactadas pela solução | Saber o que está ativo, como participar e ser atendidas com organização | Média |
-| Doadores de itens (pessoas e comércios) | Usuários externos | Doar de forma simples e ver o destino das doações | Média |
-| Parceiros institucionais (CEASA-DF, ASFA, UDF, Programando o Futuro) | Apoiadores e destinatários da prestação de contas | Acompanhar o impacto do apoio concedido | Alta |
-| Equipe de desenvolvimento | Responsável pela construção do produto | Entregar uma solução viável, simples de usar e de qualidade | Alta |
+| Stakeholder | Relação com a solução | Interesse principal | Poder de decisão | Impacto sofrido | Participação esperada na Engenharia de Requisitos |
+| --- | --- | --- | --- | --- | --- |
+| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alto | Alto | Apresentará as necessidades da associação e esclarecerá as regras do negócio |
+| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação entre a equipe e a associação | Validar o escopo, as prioridades e as entregas do projeto | Alto | Médio | Validará o escopo, as prioridades e as entregas do projeto |
+| Demais coordenadoras (Luzia, Liz e Cleide) | Usuárias diretas do painel administrativo | Registrar doações, cadastros e presença de forma rápida, com acesso conforme suas responsabilidades | Médio | Alto | Explicarão os processos atuais, esclarecerão regras operacionais e avaliarão as funcionalidades relacionadas às suas atividades |
+| Voluntárias e voluntários | Usuários diretos do painel administrativo e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades serão apresentadas pelas coordenadoras |
+| Famílias beneficiárias | Pessoas impactadas pela solução e usuárias do portal público | Saber o que está ativo, como participar e ser atendidas com organização | Baixo | Alto | Não participarão das atividades de Engenharia de Requisitos; suas necessidades serão representadas pela coordenação |
+| Doadores de itens — pessoas e comércios | Usuários do portal público | Doar de forma simples e consultar as necessidades da associação | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades relacionadas ao portal serão apresentadas pela coordenação |
+| Parceiros institucionais — CEASA-DF, ASFA, UDF, Computadores para Inclusão e Programando o Futuro | Apoiadores institucionais e consumidores de relatórios | Acompanhar o impacto do apoio concedido | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades de relatórios e prestação de contas serão apresentadas pela coordenação |
+| Equipe de desenvolvimento | Responsável pela construção do produto | Entregar uma solução viável, simples de usar e de qualidade | Médio, restrito às decisões técnicas | Alto | Elicitará, analisará, documentará, verificará e atualizará os requisitos, além de implementar a solução |
 
 ## 1.7 Segmentação de "Clientes" (usuários da plataforma)
 
-- **Coordenação da associação:** As cinco coordenadoras que registram doações, cadastros e presença,
-  com necessidades de acesso distintas conforme sua responsabilidade;
-- **Voluntárias e voluntários:** Cerca de 35 pessoas que conduzem as atividades e precisam saber onde
-  e quando ajudar;
-- **Famílias beneficiárias:** Moradoras de Santa Luzia que participam das atividades e recebem
-  doações, incluindo mães, crianças e pessoas idosas;
-- **Doadores de itens:** Pessoas da comunidade, comércios e apoiadores que doam alimentos, roupas,
-  brinquedos e mantimentos;
-- **Parceiros institucionais e potenciais patrocinadores:** Organizações como CEASA-DF, ASFA e UDF,
-  que apoiam a associação e precisam acompanhar o impacto do apoio concedido.
+Os públicos foram segmentados conforme a forma como utilizarão, validarão ou serão impactados pela plataforma. Um mesmo stakeholder pode pertencer a mais de um segmento quando possuir diferentes relações com a solução.
+
+| Segmento | Integrantes | Relação com a solução |
+| --- | --- | --- |
+| Usuários diretos do painel administrativo | Daiane, as demais coordenadoras e voluntárias e voluntários autorizados | As coordenadoras registrarão doações, cadastros e presença, com acessos compatíveis com suas responsabilidades. Os voluntários consultarão onde e quando poderão ajudar e registrarão as atividades que conduzirem |
+| Usuários do portal público | Famílias beneficiárias, doadores de itens, pessoas da comunidade, comércios e potenciais apoiadores | As famílias consultarão as atividades disponíveis e as formas de participação. Os doadores consultarão as necessidades da associação e as informações para entrega de alimentos, roupas, brinquedos e mantimentos |
+| Pessoas apenas impactadas | Mães, crianças, pessoas idosas e demais moradores de Santa Luzia que participam das atividades ou recebem doações, mas não utilizarão diretamente a plataforma | Serão beneficiados pela melhoria na organização dos cadastros, das inscrições, da presença, das doações e dos atendimentos |
+| Parceiros que consomem relatórios | CEASA-DF, ASFA, UDF, Computadores para Inclusão, Programando o Futuro e potenciais patrocinadores | Receberão informações e relatórios sobre as atividades realizadas, as doações registradas e o impacto do apoio concedido |
+| Representantes envolvidos na validação do produto | Makio, Daiane e as demais coordenadoras | Makio validará formalmente o escopo, as prioridades e as entregas. Daiane e as demais coordenadoras avaliarão se as funcionalidades representam as necessidades e a rotina da associação |

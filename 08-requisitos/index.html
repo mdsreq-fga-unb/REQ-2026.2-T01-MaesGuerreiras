@@ -1,0 +1,1296 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../07-interacao/">
+      
+      
+        <link rel="next" href="../09-dor-dod/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>8·Requisitos - Mães Guerreiras</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8-requisitos-de-software" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Mães Guerreiras" class="md-header__button md-logo" aria-label="Mães Guerreiras" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mães Guerreiras
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8·Requisitos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00-evolucao/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Evolução da Proposta
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00-evidencias/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Evidências e Gravações
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00-atas/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Atas de Reunião
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-cenario/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentação
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Mães Guerreiras" class="md-nav__button md-logo" aria-label="Mães Guerreiras" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Mães Guerreiras
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-evolucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evolução da Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-evidencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evidências e Gravações
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-atas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atas de Reunião
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../01-cenario/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-solucao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2·Solução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-intervencao-social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3·Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-estrategias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4·Estratégias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5·ER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6·Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-interacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7·Equipe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8·Requisitos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8·Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-lista-de-requisitos-funcionais-rfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Lista de Requisitos Funcionais (RFs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-lista-de-requisitos-nao-funcionais-rnfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lista de Requisitos Não Funcionais (RNFs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-dor-dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9·DoR e DoD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10·Backlog de Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-licoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11·Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12·Referências
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-lista-de-requisitos-funcionais-rfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Lista de Requisitos Funcionais (RFs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-lista-de-requisitos-nao-funcionais-rnfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lista de Requisitos Não Funcionais (RNFs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="8-requisitos-de-software">8. Requisitos de Software<a class="headerlink" href="#8-requisitos-de-software" title="Permanent link">&para;</a></h1>
+<p>Esta seção descreve os requisitos necessários para o desenvolvimento do software, divididos em
+requisitos funcionais e não funcionais, conforme a Atividade 1 (prazo 22/09, 12h) proposta pelo
+professor George Marsicano Correa.</p>
+<h2 id="81-lista-de-requisitos-funcionais-rfs">8.1 Lista de Requisitos Funcionais (RFs)<a class="headerlink" href="#81-lista-de-requisitos-funcionais-rfs" title="Permanent link">&para;</a></h2>
+<p><strong>CP1 – Portal institucional e agenda de atividades</strong></p>
+<ul>
+<li>
+<p>RF01 – Publicar conteúdo institucional: Permitir a publicação das informações da associação, como histórico, missão, endereço e formas de contato, na área pública.</p>
+</li>
+<li>
+<p>RF02 – Atualizar conteúdo institucional: Permitir a alteração das informações institucionais já publicadas.</p>
+</li>
+<li>
+<p>RF03 – Cadastrar atividade na agenda: Permitir o cadastro de uma atividade com data, horário, local e público a que se destina.</p>
+</li>
+<li>
+<p>RF04 – Atualizar atividade na agenda: Permitir a alteração dos dados de uma atividade já divulgada, incluindo seu cancelamento.</p>
+</li>
+<li>
+<p>RF05 – Consultar agenda de atividades: Permitir a consulta pública às atividades divulgadas, com filtro por período e por tipo de atividade.</p>
+</li>
+<li>
+<p>RF06 – Registrar solicitação de contato: Permitir que um visitante envie uma solicitação de contato à associação, registrando-a para atendimento posterior.</p>
+</li>
+</ul>
+<p><strong>CP2 – Registro de doações de itens</strong></p>
+<ul>
+<li>
+<p>RF07 – Cadastrar doador: Permitir o cadastro de pessoas e organizações que doam itens à associação.</p>
+</li>
+<li>
+<p>RF08 – Registrar doação recebida: Permitir o registro da entrada de itens doados, com tipo de item, quantidade, data e doador de origem.</p>
+</li>
+<li>
+<p>RF09 – Registrar destinação de doação: Permitir o registro da saída de itens doados, indicando quantidade, data e a família ou atividade que os recebeu.</p>
+</li>
+<li>
+<p>RF10 – Cadastrar categoria de item: Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). </p>
+</li>
+<li>
+<p>RF11 – Consultar saldo de itens: Permitir a consulta à quantidade atual de cada item doado, por categoria.</p>
+</li>
+<li>
+<p>RF12 – Publicar lista de itens necessários: Permitir a divulgação dos itens de que a associação precisa no momento, na área pública.</p>
+</li>
+</ul>
+<p><strong>CP3 – Cadastro de famílias e participantes</strong></p>
+<ul>
+<li>
+<p>RF13 – Cadastrar família: Permitir o cadastro de uma família atendida, com dados de identificação, endereço e contato.</p>
+</li>
+<li>
+<p>RF14 – Atualizar cadastro de família: Permitir a alteração dos dados de uma família já cadastrada.</p>
+</li>
+<li>
+<p>RF15 – Cadastrar participante: Permitir o cadastro de uma pessoa atendida, com dados de identificação e data de nascimento.</p>
+</li>
+<li>
+<p>RF16 – Atualizar cadastro de participante: Permitir a alteração dos dados de um participante já cadastrado.</p>
+</li>
+<li>
+<p>RF17 – Vincular participante a família: Permitir a associação de um participante à família a que pertence, registrando o responsável legal quando houver.</p>
+</li>
+<li>
+<p>RF18 – Consultar cadastro de participantes: Permitir a busca de participantes cadastrados por nome, família e atividade em que estão inscritos.</p>
+</li>
+</ul>
+<p><strong>CP4 – Inscrição em atividades e organização do atendimento</strong></p>
+<ul>
+<li>
+<p>RF19 – Cadastrar turma de atividade: Permitir o cadastro de uma turma, com atividade, período de realização, dias de encontro e quantidade de vagas.</p>
+</li>
+<li>
+<p>RF20 – Atualizar turma de atividade: Permitir a alteração dos dados de uma turma em andamento, como período de realização, dias de encontro e quantidade de vagas.</p>
+</li>
+<li>
+<p>RF21 – Encerrar turma de atividade: Permitir o encerramento de uma turma, ao fim de seu período ou por decisão da coordenação, registrando a data de encerramento.</p>
+</li>
+<li>
+<p>RF22 – Inscrever participante em turma: Permitir a inscrição de um participante cadastrado em uma turma. </p>
+</li>
+<li>
+<p>RF23 – Cancelar inscrição de participante: Permitir o cancelamento de uma inscrição, registrando o motivo informado.</p>
+</li>
+<li>
+<p>RF24 – Registrar participante em lista de espera: Permitir o registro de um participante em lista de espera quando a turma não tiver vaga disponível.</p>
+</li>
+<li>
+<p>RF25 – Consultar inscritos da turma: Permitir a consulta à relação de participantes inscritos e em espera em cada turma.</p>
+</li>
+</ul>
+<p><strong>CP5 – Chamada digital e controle de frequência</strong></p>
+<ul>
+<li>
+<p>RF26 – Abrir chamada de atividade: Permitir a abertura da chamada de um encontro de turma, listando os participantes inscritos. (Esses termos devem estar no glossário)</p>
+</li>
+<li>
+<p>RF27 – Registrar presença do participante: Permitir o registro da presença de cada participante no encontro em chamada.</p>
+</li>
+<li>
+<p>RF28 – Registrar falta justificada: Permitir o registro de falta com justificativa, informando o motivo apresentado.</p>
+</li>
+<li>
+<p>RF29 – Corrigir registro de frequência: Permitir a correção de um registro de presença ou falta já efetuado, preservando o registro anterior.</p>
+</li>
+<li>
+<p>RF30 – Consultar frequência do participante: Permitir a consulta ao histórico de presenças e faltas de um participante por turma e por período.</p>
+</li>
+<li>
+<p>RF31 – Sinalizar participante: O sistema deve sinalizar automaticamente, a partir dos registros de frequência, o participante que atingir o limite de faltas não justificadas definido pela associação, tornando-o visível à coordenação para contato. </p>
+</li>
+</ul>
+<p><strong>CP6 – Relatórios e indicadores de impacto</strong></p>
+<ul>
+<li>
+<p>RF32 – Gerar relatório de doações recebidas: Permitir a geração de relatório dos itens recebidos por período, categoria e doador.</p>
+</li>
+<li>
+<p>RF33 – Gerar relatório de doações distribuídas: Permitir a geração de relatório dos itens destinados por período, categoria e família atendida.</p>
+</li>
+<li>
+<p>RF34 – Gerar relatório de frequência por turma: Permitir a geração de relatório com presenças e faltas registradas em cada turma por período.</p>
+</li>
+<li>
+<p>RF35 – Gerar relatório de famílias atendidas: Permitir a geração de relatório das famílias com atendimento registrado no período consultado.</p>
+</li>
+<li>
+<p>RF36 – Consultar painel de indicadores: Permitir a consulta aos indicadores de atendimento da associação, como famílias atendidas, participantes ativos, itens recebidos e itens distribuídos no período.</p>
+</li>
+<li>
+<p>RF37 – Exportar relatório gerado: Permitir a exportação de um relatório gerado em formato adequado ao envio a apoiadores e a órgãos de prestação de contas.</p>
+</li>
+</ul>
+<p><strong>CP7 – Perfis de acesso e proteção de dados</strong></p>
+<ul>
+<li>
+<p>RF38 – Cadastrar usuário do sistema: Permitir o cadastro das pessoas da associação que operarão a solução.</p>
+</li>
+<li>
+<p>RF39 – Atribuir perfil de acesso ao usuário: Permitir a atribuição de perfil a um usuário, delimitando as funcionalidades e os dados a que ele tem acesso.</p>
+</li>
+<li>
+<p>RF40 – Autenticar usuário: Permitir o acesso à área restrita mediante autenticação do usuário cadastrado.</p>
+</li>
+<li>
+<p>RF41 – Registrar consentimento de tratamento de dados pessoais: Permitir o registro do consentimento do titular, ou de seu responsável legal quando o titular for criança ou adolescente, para a coleta e o uso de seus dados pessoais nas finalidades informadas pela associação, com a data do registro.</p>
+</li>
+<li>
+<p>RF42 – Registrar autorização de uso de imagem: Permitir o registro da autorização ou da recusa do titular, ou de seu responsável legal, para o uso de sua imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação.</p>
+</li>
+<li>
+<p>RF43 – Registrar solicitação de exclusão de dados: Permitir o registro e o acompanhamento das solicitações de exclusão de dados feitas pelos titulares.</p>
+</li>
+<li>
+<p>RF44 – Consultar histórico de alterações de cadastro: Permitir a consulta ao registro de quem alterou dados pessoais, o que foi alterado e quando.</p>
+</li>
+</ul>
+<h2 id="82-lista-de-requisitos-nao-funcionais-rnfs">8.2 Lista de Requisitos Não Funcionais (RNFs)<a class="headerlink" href="#82-lista-de-requisitos-nao-funcionais-rnfs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>RNF01 - Usabilidade (Usability): A solução deve ser operável por voluntárias e voluntários sem formação técnica. O registro de uma doação recebida e a conclusão de uma chamada devem ser alcançáveis em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros.</p>
+</li>
+<li>
+<p>RNF02 - Usabilidade (Usability): A solução deve ser acompanhada de guia de uso em linguagem simples, cobrindo as rotinas de doação, cadastro, inscrição e chamada, validado pela coordenação da associação antes da entrega final.</p>
+</li>
+<li>
+<p>RNF03 - Desempenho (Performance): As telas de consulta devem apresentar resultados em até 3 segundos para 95% das requisições, com até 30 acessos simultâneos em conexão móvel 3G/4G.
+RNF04 - Desempenho (Performance): O sistema deve suportar 30 acessos simultâneos nos dias de maior movimento, como distribuição de itens e início de turmas, mantendo o tempo de resposta definido no RNF03.</p>
+</li>
+<li>
+<p>RNF05 - Confiabilidade (Reliability): O sistema deve realizar cópia de segurança diária dos dados, com restauração concluída em até 4 horas após uma falha, sem perda dos registros de doações, cadastros e frequência.</p>
+</li>
+<li>
+<p>RNF06 - Confiabilidade (Reliability): O sistema deve apresentar disponibilidade mensal de 99% no intervalo de 8h às 18h, período em que a associação recebe e atende o público.</p>
+</li>
+<li>
+<p>RNF07 - Segurança (Security): Os dados pessoais das famílias e dos participantes devem trafegar sob conexão cifrada e ser acessíveis apenas conforme o perfil do usuário. As credenciais devem ser armazenadas de forma irreversível, e o sistema deve manter trilha de auditoria dos acessos a dados pessoais.
+ Classificação: Sommerville – requisito de produto (segurança).</p>
+</li>
+<li>
+<p>RNF08 - Suportabilidade (Supportability): O sistema deve funcionar corretamente em Google Chrome (versão 90 ou superior), Mozilla Firefox (versão 88 ou superior) e Safari (versão 14 ou superior), além de ser compatível com Android (versão 10 ou superior) e iOS (versão 13 ou superior).
+RNF09 - Suportabilidade (Supportability): Todas as funcionalidades devem ser operadas em telas a partir de 360 px de largura, sem rolagem horizontal, uma vez que o uso principal ocorre em celular durante o atendimento.</p>
+</li>
+<li>
+<p>RNF10 - Requisitos Físicos: O sistema deve executar as rotinas de chamada e cadastro sem travamentos ou encerramento inesperado em aparelhos com 2 GB de memória.</p>
+</li>
+<li>
+<p>RNF11 - Requisitos de Interface: A comunicação entre a interface e o serviço de dados deve ocorrer por meio de contrato documentado, com trocas realizadas em formato JSON sobre HTTPS.</p>
+</li>
+<li>
+<p>RNF12 - Restrições de Design: O projeto é conduzido sem orçamento e a associação não pode assumir custo de operação. A hospedagem e os serviços de apoio devem implicar custo mensal igual a zero para a associação.</p>
+</li>
+<li>
+<p>RNF13 - Requisito Externo Legislativo (LGPD): O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.</p>
+</li>
+<li>
+<p>RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF41) para cada pessoa identificável nas imagens publicadas pela associação. </p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../07-interacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 7·Equipe">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                7·Equipe
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-dor-dod/" class="md-footer__link md-footer__link--next" aria-label="Próximo: 9·DoR e DoD">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                9·DoR e DoD
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

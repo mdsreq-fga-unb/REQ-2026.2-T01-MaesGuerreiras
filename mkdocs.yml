@@ -55,6 +55,7 @@ nav:
   - Home: index.md
   - "Evolução da Proposta": 00-evolucao/index.md
   - "Evidências e Gravações": 00-evidencias/index.md
+  - "Atas de Reunião": 00-atas/index.md
   - "Documentação":
     - "1·Cenário": 01-cenario/index.md
     - "2·Solução": 02-solucao/index.md

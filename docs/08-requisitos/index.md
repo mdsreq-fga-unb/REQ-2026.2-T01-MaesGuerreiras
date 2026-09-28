@@ -1,9 +1,5 @@
 # 8. Requisitos de Software
 
-Esta seção descreve os requisitos necessários para o desenvolvimento do software, divididos em
-requisitos funcionais e não funcionais, conforme a Atividade 1 (prazo 22/09, 12h) proposta pelo
-professor George Marsicano Correa.
-
 ## 8.1 Lista de Requisitos Funcionais (RFs)
 
 **CP1 – Portal institucional e agenda de atividades**
@@ -151,3 +147,105 @@ professor George Marsicano Correa.
 
 - RNF19 – Requisito de Segurança : Toda alteração em dados pessoais, em frequência (inclusive RF29) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF44.
 
+
+## 8.3 Glossário
+
+| Termo | Definição |
+| --- | --- |
+| Atividade | Oficina ou evento oferecido pela associação, como crochê, bordado, Carimbó ou Domingo Criativo. É o mesmo termo na agenda (RF03) e nas turmas (RF19). |
+| Turma | Grupo de participantes que faz uma atividade durante um período, com dias de encontro e quantidade de vagas. |
+| Encontro | Cada dia em que a turma se reúne. |
+| Chamada | Registro de quem veio e de quem faltou em um encontro. |
+| Inscrição | Vínculo de um participante ativo com uma turma. |
+| Lista de espera | Fila de participantes que aguardam vaga em uma turma cheia, na ordem em que foram registrados. |
+| Frequência | Conjunto de presenças e faltas de um participante. |
+| Falta justificada | Falta em que foi informado o motivo. Ela não conta para o limite de faltas do RF31. |
+| Categoria de item | Grupo de itens doados, como alimentos, roupas, higiene e material escolar, com sua unidade de medida (RF10). |
+| Doação recebida | Entrada de itens na associação, vinda de um doador. |
+| Destinação | Saída de itens doados para uma família ou atividade. |
+| Saldo | Quantidade atual de uma categoria: o que entrou menos o que saiu. |
+| Família | Grupo atendido pela associação, com um responsável familiar. |
+| Participante | Pessoa atendida que faz atividades, ligada a uma família. |
+| Responsável legal | Pessoa que responde por um participante menor de 18 anos, como pais ou tutor. |
+| Titular | Pessoa a quem os dados pessoais pertencem (termo da LGPD). |
+| Consentimento | Autorização do titular, ou do responsável legal, para usar seus dados em uma finalidade específica. |
+| Autorização de uso de imagem | Permissão, separada por meio (site, redes sociais, impresso), para divulgar a imagem da pessoa. |
+| Solicitação de contato | Mensagem enviada por um Visitante pela área pública. |
+| Sinalização | Aviso automático de que um participante passou do limite de faltas não justificadas. |
+| Perfil de acesso | Conjunto de permissões de um usuário: Voluntário ou Coordenação. |
+| Visitante | Quem usa a área pública sem fazer login. |
+
+## 8.4 Perfis, agentes e rastreabilidade
+
+Há três agentes: o Visitante (sem login), o Voluntário e a Coordenação (ambos com login). A divisão abaixo é uma proposta e precisa da confirmação da Daiane.
+
+### Permissões por perfil
+
+| Área (RFs) | Visitante | Voluntário | Coordenação |
+| --- | --- | --- | --- |
+| Conteúdo institucional e agenda (RF01 a RF05) | Consulta agenda e conteúdo público | Consulta | Publica e atualiza |
+| Contato (RF06, RF45) | Envia solicitação | Sem acesso | Consulta e marca como atendida |
+| Doações (RF07 a RF09, RF11) | Sem acesso | Registra e consulta | Registra e consulta |
+| Categorias e lista de itens necessários (RF10, RF12) | Vê a lista pública | Sem acesso | Cadastra e publica |
+| Famílias e participantes (RF13 a RF18) | Sem acesso | Cadastra, atualiza e consulta | Tudo do Voluntário, mais inativar |
+| Turmas (RF19 a RF21) | Sem acesso | Sem acesso | Cadastra, atualiza e encerra |
+| Inscrições e espera (RF22 a RF25) | Sem acesso | Sim | Sim |
+| Chamada e frequência (RF26 a RF28, RF30) | Sem acesso | Sim | Sim |
+| Corrigir frequência (RF29) | Sem acesso | Só as suas, até o fim do dia | Qualquer uma, com motivo |
+| Sinalização, relatórios e painel (RF31 a RF37) | Sem acesso | Sem acesso | Sim |
+| Usuários e perfis (RF38, RF39) | Sem acesso | Sem acesso | Sim |
+| Consentimento e imagem (RF41, RF42, RF46) | Sem acesso | Registra e consulta | Registra e consulta |
+| Exclusão de dados e histórico (RF43, RF44) | Sem acesso | Sem acesso | Sim |
+
+### Matriz de rastreabilidade
+
+CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18. A coluna de RNFs lista só os que se aplicam de forma específica.
+
+| RF | CP | Agente | RNFs específicos |
+| --- | --- | --- | --- |
+| RF01 | CP1 | Coordenação | |
+| RF02 | CP1 | Coordenação | |
+| RF03 | CP1 | Coordenação | |
+| RF04 | CP1 | Coordenação | |
+| RF05 | CP1 | Visitante | RNF03 |
+| RF06 | CP1 | Visitante | RNF13 |
+| RF45 | CP1 | Coordenação | RNF07, RNF13 |
+| RF07 | CP2 | Voluntário, Coordenação | RNF01 |
+| RF08 | CP2 | Voluntário, Coordenação | RNF01, RNF19 |
+| RF09 | CP2 | Voluntário, Coordenação | RNF19 |
+| RF10 | CP2 | Coordenação | |
+| RF11 | CP2 | Voluntário, Coordenação | RNF03 |
+| RF12 | CP2 | Coordenação | RNF03 |
+| RF13 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF14 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF15 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF16 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF17 | CP3 | Voluntário, Coordenação | RNF07, RNF13 |
+| RF18 | CP3 | Voluntário, Coordenação | RNF03, RNF07 |
+| RF19 | CP4 | Coordenação | |
+| RF20 | CP4 | Coordenação | |
+| RF21 | CP4 | Coordenação | |
+| RF22 | CP4 | Voluntário, Coordenação | |
+| RF23 | CP4 | Voluntário, Coordenação | |
+| RF24 | CP4 | Voluntário, Coordenação | |
+| RF25 | CP4 | Voluntário, Coordenação | RNF03, RNF07 |
+| RF26 | CP5 | Voluntário, Coordenação | RNF01, RNF10, RNF16 |
+| RF27 | CP5 | Voluntário, Coordenação | RNF01, RNF10, RNF16 |
+| RF28 | CP5 | Voluntário, Coordenação | RNF01, RNF16 |
+| RF29 | CP5 | Voluntário (mesmo dia), Coordenação | RNF19 |
+| RF30 | CP5 | Voluntário, Coordenação | RNF03, RNF07 |
+| RF31 | CP5 | Sistema, vista pela Coordenação | RNF07 |
+| RF32 | CP6 | Coordenação | RNF03 |
+| RF33 | CP6 | Coordenação | RNF03, RNF07 |
+| RF34 | CP6 | Coordenação | RNF03, RNF07 |
+| RF35 | CP6 | Coordenação | RNF03, RNF07 |
+| RF36 | CP6 | Coordenação | RNF03 |
+| RF37 | CP6 | Coordenação | RNF03 |
+| RF38 | CP7 | Coordenação | RNF07, RNF15 |
+| RF39 | CP7 | Coordenação | RNF07 |
+| RF40 | CP7 | Voluntário, Coordenação | RNF07, RNF15 |
+| RF41 | CP7 | Voluntário, Coordenação | RNF13 |
+| RF42 | CP7 | Voluntário, Coordenação | RNF14 |
+| RF43 | CP7 | Coordenação | RNF13 |
+| RF44 | CP7 | Coordenação | RNF07, RNF19 |
+| RF46 | CP7 | Voluntário, Coordenação | RNF14 |

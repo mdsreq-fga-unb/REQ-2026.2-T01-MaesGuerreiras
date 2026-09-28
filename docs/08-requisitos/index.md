@@ -117,7 +117,8 @@ professor George Marsicano Correa.
 - RNF02 - Usabilidade (Usability): A solução deve ser acompanhada de guia de uso em linguagem simples, cobrindo as rotinas de doação, cadastro, inscrição e chamada, validado pela coordenação da associação antes da entrega final.
 
 - RNF03 - Desempenho (Performance): As telas de consulta devem apresentar resultados em até 3 segundos para 95% das requisições, com até 30 acessos simultâneos em conexão móvel 3G/4G.
-RNF04 - Desempenho (Performance): O sistema deve suportar 30 acessos simultâneos nos dias de maior movimento, como distribuição de itens e início de turmas, mantendo o tempo de resposta definido no RNF03.
+  
+- RNF04 - Desempenho (Performance): O sistema deve suportar 30 acessos simultâneos nos dias de maior movimento, como distribuição de itens e início de turmas, mantendo o tempo de resposta definido no RNF03.
 
 - RNF05 - Confiabilidade (Reliability): O sistema deve realizar cópia de segurança diária dos dados, com restauração concluída em até 4 horas após uma falha, sem perda dos registros de doações, cadastros e frequência.
 
@@ -127,14 +128,15 @@ RNF04 - Desempenho (Performance): O sistema deve suportar 30 acessos simultâneo
  Classificação: Sommerville – requisito de produto (segurança).
 
 - RNF08 - Suportabilidade (Supportability): O sistema deve funcionar corretamente em Google Chrome (versão 90 ou superior), Mozilla Firefox (versão 88 ou superior) e Safari (versão 14 ou superior), além de ser compatível com Android (versão 10 ou superior) e iOS (versão 13 ou superior).
-RNF09 - Suportabilidade (Supportability): Todas as funcionalidades devem ser operadas em telas a partir de 360 px de largura, sem rolagem horizontal, uma vez que o uso principal ocorre em celular durante o atendimento.
+  
+- RNF09 - Usabilidade (Usability): Todas as funcionalidades devem ser operadas em telas a partir de 360 px de largura, sem rolagem horizontal, uma vez que o uso principal ocorre em celular durante o atendimento.
 
-- RNF10 - Requisitos Físicos: O sistema deve executar as rotinas de chamada e cadastro sem travamentos ou encerramento inesperado em aparelhos com 2 GB de memória.
-
+- RNF10 - Desempenho (Performance): O sistema deve executar as rotinas de chamada e cadastro em aparelhos com 2 GB de memória sem exceder a memória disponível. A conformidade é verificada pela execução de 10 chamadas seguidas nesse aparelho, sem travamentos ou encerramento inesperado.
+    
 - RNF11 - Requisitos de Interface: A comunicação entre a interface e o serviço de dados deve ocorrer por meio de contrato documentado, com trocas realizadas em formato JSON sobre HTTPS.
 
-- RNF12 - Restrições de Design: O projeto é conduzido sem orçamento e a associação não pode assumir custo de operação. A hospedagem e os serviços de apoio devem implicar custo mensal igual a zero para a associação.
-
+- RNF12 - Requisito Organizacional: O projeto é conduzido sem orçamento e a associação não pode assumir custo de operação. A hospedagem e os serviços de apoio devem implicar custo mensal igual a zero para a associação. O custo mensal de R$ 0,00 é conferido no fim de cada sprint.
+  
 - RNF13 - Requisito Externo Legislativo (LGPD): O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.
 
 - RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF41) para cada pessoa identificável nas imagens publicadas pela associação. 

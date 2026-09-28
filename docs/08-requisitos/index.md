@@ -116,11 +116,11 @@ professor George Marsicano Correa.
 
 - RNF02 - Usabilidade (Usability): A solução deve ser acompanhada de guia de uso em linguagem simples, cobrindo as rotinas de doação, cadastro, inscrição e chamada, validado pela coordenação da associação antes da entrega final.
 
-- RNF03 - Desempenho (Performance): As telas de consulta devem apresentar resultados em até 3 segundos para 95% das requisições, com até 30 acessos simultâneos em conexão móvel 3G/4G.
+- RNF03 - Desempenho (Performance): As telas de consulta devem apresentar resultados em até 3 segundos para 95% das requisições, em conexão móvel 3G/4G.
   
 - RNF04 - Desempenho (Performance): O sistema deve suportar 30 acessos simultâneos nos dias de maior movimento, como distribuição de itens e início de turmas, mantendo o tempo de resposta definido no RNF03.
 
-- RNF05 - Confiabilidade (Reliability): O sistema deve realizar cópia de segurança diária dos dados, com restauração concluída em até 4 horas após uma falha, sem perda dos registros de doações, cadastros e frequência.
+- RNF05 - Confiabilidade (Reliability): Em caso de falha, o sistema deve ser restaurado em até 4 horas, com perda máxima de 24 horas de dados, a partir de cópia de segurança diária automatizada pela infraestrutura (Supabase).
 
 - RNF06 - Confiabilidade (Reliability): O sistema deve apresentar disponibilidade mensal de 99% no intervalo de 8h às 18h, período em que a associação recebe e atende o público.
 

@@ -124,10 +124,9 @@ professor George Marsicano Correa.
 
 - RNF06 - Confiabilidade (Reliability): O sistema deve apresentar disponibilidade mensal de 99% no intervalo de 8h às 18h, período em que a associação recebe e atende o público.
 
-- RNF07 - Segurança (Security): Os dados pessoais das famílias e dos participantes devem trafegar sob conexão cifrada e ser acessíveis apenas conforme o perfil do usuário. As credenciais devem ser armazenadas de forma irreversível, e o sistema deve manter trilha de auditoria dos acessos a dados pessoais.
- Classificação: Sommerville – requisito de produto (segurança).
+- RNF07 - Segurança (Security): Os dados pessoais das famílias e dos participantes devem trafegar cifrados, ser acessíveis somente conforme o perfil do usuário e ter as credenciais armazenadas de forma irreversível. O sistema deve manter trilha dos acessos a dados pessoais. Classificação: Sommerville – requisito de produto (segurança).
 
-- RNF08 - Suportabilidade (Supportability): O sistema deve funcionar corretamente em Google Chrome (versão 90 ou superior), Mozilla Firefox (versão 88 ou superior) e Safari (versão 14 ou superior), além de ser compatível com Android (versão 10 ou superior) e iOS (versão 13 ou superior).
+- RNF08 - Suportabilidade (Supportability): O sistema deve funcionar corretamente em Google Chrome (versão 90 ou superior), Mozilla Firefox (versão 88 ou superior), Safari (versão 14 ou superior), Android (versão 10 ou superior) e iOS (versão 14 ou superior). “Funcionar corretamente” significa concluir os fluxos principais de registrar doação, cadastrar família, inscrever participante, realizar chamada e consultar agenda sem erros e sem elementos cortados ou inoperantes.
   
 - RNF09 - Usabilidade (Usability): Todas as funcionalidades devem ser operadas em telas a partir de 360 px de largura, sem rolagem horizontal, uma vez que o uso principal ocorre em celular durante o atendimento.
 

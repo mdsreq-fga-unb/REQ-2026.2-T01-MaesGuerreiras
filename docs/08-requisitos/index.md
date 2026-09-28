@@ -10,7 +10,7 @@ professor George Marsicano Correa.
 
 - RF01 – Publicar conteúdo institucional: Permitir a publicação das informações da associação, como histórico, missão, endereço e formas de contato, na área pública.
 
-- RF02 – Atualizar conteúdo institucional: Permitir a alteração das informações institucionais já publicadas.
+- RF02 – Atualizar conteúdo institucional: Permitir que a Coordenação altere o histórico, a missão, o endereço e as formas de contato publicados (os mesmos campos do RF01).
 
 - RF03 – Cadastrar atividade na agenda: Permitir o cadastro de uma atividade com data, horário, local e público a que se destina.
 
@@ -18,95 +18,100 @@ professor George Marsicano Correa.
 
 - RF05 – Consultar agenda de atividades: Permitir a consulta pública às atividades divulgadas, com filtro por período e por tipo de atividade.
 
-- RF06 – Registrar solicitação de contato: Permitir que um visitante envie uma solicitação de contato à associação, registrando-a para atendimento posterior.
+- RF06 – Registrar solicitação de contato: Permitir que o Visitante envie uma solicitação de contato a coordenação informando nome*, telefone ou e-mail* (ao menos um) e mensagem*. Registrando-a para atendimento posterior.
+
+- RF07 – Consultar solicitações de contato: Permitir que a Coordenação consulte as solicitações registradas no RF06 e marque cada uma como atendida.
+
 
 **CP2 – Registro de doações de itens**
 
-- RF07 – Cadastrar doador: Permitir o cadastro de pessoas e organizações que doam itens à associação.
+- RF08 – Cadastrar ou atualizar doador: Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação..
 
-- RF08 – Registrar doação recebida: Permitir o registro da entrada de itens doados, com tipo de item, quantidade, data e doador de origem.
+- RF09 – Registrar doação recebida: Permitir que Voluntário ou Coordenação registrem a entrada de itens doados, com categoria de item, quantidade, data e doador de origem.
 
-- RF09 – Registrar destinação de doação: Permitir o registro da saída de itens doados, indicando quantidade, data e a família ou atividade que os recebeu.
+- RF10 – Registrar destinação de doação: Permitir que Voluntário ou Coordenação registrem a saída de itens doados, com categoria de item, quantidade, data e a família ou atividade que os recebeu.
 
-- RF10 – Cadastrar categoria de item: Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). 
+- RF11 – Cadastrar categoria de item: Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). 
 
-- RF11 – Consultar saldo de itens: Permitir a consulta à quantidade atual de cada item doado, por categoria.
+- RF12 – Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria.
 
-- RF12 – Publicar lista de itens necessários: Permitir a divulgação dos itens de que a associação precisa no momento, na área pública.
+- RF13 – Publicar lista de itens necessários: Permitir que a Coordenação inclua e remova manualmente, na área pública, os itens de que a associação precisa no momento, com a categoria e, se quiser, a quantidade desejada.
 
 **CP3 – Cadastro de famílias e participantes**
 
-- RF13 – Cadastrar família: Permitir o cadastro de uma família atendida, com dados de identificação, endereço e contato.
+- RF14 – Cadastrar família: Permitir que Voluntário ou Coordenação cadastrem uma família atendida com nome do responsável familiar*, telefone*, endereço* (logradouro, complemento e cidade), número de moradores e observações. O sistema registra a data do cadastro e a situação "ativa". 
 
-- RF14 – Atualizar cadastro de família: Permitir a alteração dos dados de uma família já cadastrada.
+- RF15 – Atualizar ou inativar cadastro de família: Permitir que Voluntário ou Coordenação alterem os dados da família, e que a Coordenação a inative. A família inativa some das buscas padrão, mas o histórico de atendimento e os relatórios do período continuam.
 
-- RF15 – Cadastrar participante: Permitir o cadastro de uma pessoa atendida, com dados de identificação e data de nascimento.
+- RF16 – Cadastrar participante: Permitir que Voluntário ou Coordenação cadastrem uma pessoa atendida com nome completo*, data de nascimento*, telefone e observações. O sistema registra a data do cadastro e a situação "ativo".
 
-- RF16 – Atualizar cadastro de participante: Permitir a alteração dos dados de um participante já cadastrado.
+- RF17 – Atualizar ou inativar cadastro de participante: Permitir que Voluntário ou Coordenação alterem os dados do participante, e que a Coordenação o inative, mantendo o histórico. Ao inativar, as inscrições em turmas em andamento são canceladas com o motivo "desligamento da associação".
 
-- RF17 – Vincular participante a família: Permitir a associação de um participante à família a que pertence, registrando o responsável legal quando houver.
+- RF18 – Vincular participante a família: Permitir que Voluntário ou Coordenação associem o participante à sua família e indiquem o responsável legal. Para menor de 18 anos o responsável legal é obrigatório; a exceção (ex.: criança em acolhimento) exige motivo registrado.
 
-- RF18 – Consultar cadastro de participantes: Permitir a busca de participantes cadastrados por nome, família e atividade em que estão inscritos.
+- RF19 – Consultar cadastro de participantes: Permitir que Voluntário ou Coordenação busquem participantes cadastrados por nome, família e atividade em que estão inscritos.
 
 **CP4 – Inscrição em atividades e organização do atendimento**
 
-- RF19 – Cadastrar turma de atividade: Permitir o cadastro de uma turma, com atividade, período de realização, dias de encontro e quantidade de vagas.
+- RF20 – Cadastrar turma de atividade: Permitir que a Coordenação cadastre uma turma com atividade*, período (data de início e de término, com término depois do início), dias de encontro (dias da semana e horário) e quantidade de vagas.
 
-- RF20 – Atualizar turma de atividade: Permitir a alteração dos dados de uma turma em andamento, como período de realização, dias de encontro e quantidade de vagas.
+- RF21 – Atualizar turma de atividade: Permitir que a Coordenação altere período, dias de encontro e vagas de uma turma em andamento. Se as novas vagas forem menos que os inscritos, o sistema recusa e informa o total de inscritos. Se aumentarem e houver lista de espera, o sistema avisa (RF24).
 
-- RF21 – Encerrar turma de atividade: Permitir o encerramento de uma turma, ao fim de seu período ou por decisão da coordenação, registrando a data de encerramento.
+- RF22 – Encerrar turma de atividade: Permitir que a Coordenação encerre uma turma, registrando a data. O encerramento antes do fim do período exige o motivo.
 
-- RF22 – Inscrever participante em turma: Permitir a inscrição de um participante cadastrado em uma turma. 
+- RF23 – Inscrever participante em turma: Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema não inscreve e oferece o encaminhamento à lista de espera (RF24).
 
-- RF23 – Cancelar inscrição de participante: Permitir o cancelamento de uma inscrição, registrando o motivo informado.
+- RF24 – Cancelar inscrição de participante: Permitir que Voluntário ou Coordenação cancelem uma inscrição, com motivo obrigatório escolhido em lista: desistência, mudança de endereço, conflito de horário, desligamento da associação ou outro (texto livre obrigatório só nesse caso).
 
-- RF24 – Registrar participante em lista de espera: Permitir o registro de um participante em lista de espera quando a turma não tiver vaga disponível.
+- RF25 – Registrar participante em lista de espera: Permitir que Voluntário ou Coordenação registrem o participante em lista de espera quando a turma não tiver vaga. A ordem é a de registro. Quando abrir vaga, o sistema avisa a Coordenação, que confirma a inscrição manualmente (RF23).
 
-- RF25 – Consultar inscritos da turma: Permitir a consulta à relação de participantes inscritos e em espera em cada turma.
+- RF26 – Consultar inscritos da turma: Permitir que Voluntário ou Coordenação consultem os inscritos e os participantes em espera de cada turma, esses na ordem da lista.
 
 **CP5 – Chamada digital e controle de frequência**
 
-- RF26 – Abrir chamada de atividade: Permitir a abertura da chamada de um encontro de turma, listando os participantes inscritos. (Esses termos devem estar no glossário)
+- RF27 – Abrir chamada do encontro: Permitir que Voluntário ou Coordenação abram a chamada de um encontro de turma, na data do encontro, listando os participantes inscritos.
 
-- RF27 – Registrar presença do participante: Permitir o registro da presença de cada participante no encontro em chamada.
+- RF28 – Registrar frequência do participante: Permitir que Voluntário ou Coordenação registrem, para cada participante listado em uma chamada aberta, se esteve presente ou ausente.
 
-- RF28 – Registrar falta justificada: Permitir o registro de falta com justificativa, informando o motivo apresentado.
+- RF29 – Justificar falta: Permitir que Voluntário ou Coordenação informem o motivo de uma falta já registrada, que passa a constar como falta justificada.
 
-- RF29 – Corrigir registro de frequência: Permitir a correção de um registro de presença ou falta já efetuado, preservando o registro anterior.
+- RF30 – Corrigir registro de frequência: Permitir que o Voluntário que fez a chamada corrija um registro até o fim do mesmo dia, e que a Coordenação corrija a qualquer momento, informando o motivo. O registro anterior é preservado.
 
-- RF30 – Consultar frequência do participante: Permitir a consulta ao histórico de presenças e faltas de um participante por turma e por período.
+- RF31 – Consultar frequência do participante: Permitir que Voluntário ou Coordenação consultem o histórico de presenças e faltas de um participante por turma e por período.
 
-- RF31 – Sinalizar participante: O sistema deve sinalizar automaticamente, a partir dos registros de frequência, o participante que atingir o limite de faltas não justificadas definido pela associação, tornando-o visível à coordenação para contato. 
+- RF32 – Sinalizar participante com faltas acima do limite: Permitir que o sistema sinalize automaticamente o participante que atingir o limite de faltas não justificadas definido pela Coordenação. A sinalização aparece na seção "Participantes sinalizados" do painel (RF37), com nome, turma e telefone da família.
 
 **CP6 – Relatórios e indicadores de impacto**
 
-- RF32 – Gerar relatório de doações recebidas: Permitir a geração de relatório dos itens recebidos por período, categoria e doador.
+- RF33 – Gerar relatório de doações recebidas: Permitir que a Coordenação gere relatório dos itens recebidos por período, categoria e doador.
 
-- RF33 – Gerar relatório de doações distribuídas: Permitir a geração de relatório dos itens destinados por período, categoria e família atendida.
+- RF34 – Gerar relatório de doações distribuídas: Permitir que a Coordenação gere relatório dos itens destinados por período, categoria e família atendida.
 
-- RF34 – Gerar relatório de frequência por turma: Permitir a geração de relatório com presenças e faltas registradas em cada turma por período.
+- RF35 – Gerar relatório de frequência por turma: Permitir que a Coordenação gere o relatório de presenças e faltas de uma turma por período, ou de um encontro específico.
 
-- RF35 – Gerar relatório de famílias atendidas: Permitir a geração de relatório das famílias com atendimento registrado no período consultado.
+- RF36 – Gerar relatório de famílias atendidas: Permitir que a Coordenação gere relatório das famílias com atendimento registrado no período consultado.
 
-- RF36 – Consultar painel de indicadores: Permitir a consulta aos indicadores de atendimento da associação, como famílias atendidas, participantes ativos, itens recebidos e itens distribuídos no período.
+- RF37 –  Consultar painel de indicadores: Permitir que a Coordenação consulte os indicadores de atendimento da associação, como famílias atendidas, participantes ativos, itens recebidos e itens distribuídos no período, incluindo a seção de participantes sinalizados (RF32).
 
-- RF37 – Exportar relatório gerado: Permitir a exportação de um relatório gerado em formato adequado ao envio a apoiadores e a órgãos de prestação de contas.
+- RF38 – Exportar relatório gerado: Permitir que a Coordenação exporte um relatório gerado em PDF (envio a apoiadores e prestação de contas) ou CSV (planilha).
 
 **CP7 – Perfis de acesso e proteção de dados**
 
-- RF38 – Cadastrar usuário do sistema: Permitir o cadastro das pessoas da associação que operarão a solução.
+- RF39 – Cadastrar usuário do sistema: Permitir que a Coordenação cadastre Voluntários e outros membros da Coordenação. A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação.
 
-- RF39 – Atribuir perfil de acesso ao usuário: Permitir a atribuição de perfil a um usuário, delimitando as funcionalidades e os dados a que ele tem acesso.
+- RF40 – Atribuir perfil de acesso ao usuário: Permitir que a Coordenação atribua a cada usuário o perfil Voluntário ou Coordenação, conforme a tabela de permissões (seção 8.3).
 
-- RF40 – Autenticar usuário: Permitir o acesso à área restrita mediante autenticação do usuário cadastrado.
+- RF41 – Autenticar usuário: Permitir que Voluntário ou Coordenação acessem a área restrita mediante autenticação do usuário cadastrado.
 
-- RF41 – Registrar consentimento de tratamento de dados pessoais: Permitir o registro do consentimento do titular, ou de seu responsável legal quando o titular for criança ou adolescente, para a coleta e o uso de seus dados pessoais nas finalidades informadas pela associação, com a data do registro.
+- RF42 – Registrar consentimento de tratamento de dados pessoais: Permitir que Voluntário ou Coordenação registrem o consentimento do titular, ou do responsável legal, para cada finalidade: cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores. Cada consentimento leva a data do registro.
 
-- RF42 – Registrar autorização de uso de imagem: Permitir o registro da autorização ou da recusa do titular, ou de seu responsável legal, para o uso de sua imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação.
+- RF43 – Registrar autorização de uso de imagem: Permitir que Voluntário ou Coordenação registrem a autorização ou a recusa do titular, ou de seu responsável legal, para o uso de sua imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação.
 
-- RF43 – Registrar solicitação de exclusão de dados: Permitir o registro e o acompanhamento das solicitações de exclusão de dados feitas pelos titulares.
+- RF44 – Registrar e acompanhar solicitação de exclusão de dados: Permitir que a Coordenação registre a solicitação do titular e acompanhe as etapas: recebida, em análise, atendida ou negada com justificativa. Cada etapa guarda a data, e a resposta guarda a data em que o titular foi avisado.
 
-- RF44 – Consultar histórico de alterações de cadastro: Permitir a consulta ao registro de quem alterou dados pessoais, o que foi alterado e quando.
+- RF45 – Consultar histórico de alterações de cadastro: Permitir que a Coordenação consulte quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando.
+
+- RF46 - Consultar autorização de uso de imagem vigente: Permitir que Voluntário ou Coordenação consultem, por titular, a autorização em vigor para cada meio (site, redes sociais, material impresso) e se ela foi revogada, antes de divulgar a imagem.
 
 
 

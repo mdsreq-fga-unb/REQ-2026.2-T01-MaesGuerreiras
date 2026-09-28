@@ -144,3 +144,10 @@ professor George Marsicano Correa.
 - RNF13 - Requisito Externo Legislativo (LGPD): O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.
 
 - RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF41) para cada pessoa identificável nas imagens publicadas pela associação. 
+ 
+- RNF17 – Requisito de Manutenibilidade : O código deve ficar versionado no GitHub, com README que explique como instalar e rodar, e com testes automatizados para as regras de doação, inscrição e frequência, para que outra pessoa dê continuidade. Alguém de fora da equipe roda o projeto só com o README em até 1 hora. Os testes passam a cada entrega.
+
+- RNF18 – Requisito de Acessibilidade : As telas principais (chamada, cadastro, doação e agenda pública) devem atender à WCAG 2.1, nível AA. Auditoria automática (Lighthouse ou axe) sem violação crítica, mais checklist manual: contraste mínimo 4,5:1, navegação por teclado e rótulo em todo campo.
+
+- RNF19 – Requisito de Segurança : Toda alteração em dados pessoais, em frequência (inclusive RF29) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF44.
+

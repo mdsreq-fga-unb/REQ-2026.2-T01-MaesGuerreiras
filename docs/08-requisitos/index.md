@@ -140,7 +140,11 @@
 - RNF13 - Requisito Externo Legislativo (LGPD): O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.
 
 - RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF41) para cada pessoa identificável nas imagens publicadas pela associação. 
- 
+
+- RNF15 - Segurança (acesso e sessão): O acesso à área restrita deve exigir senha de pelo menos 8 caracteres, encerrar a sessão após 30 minutos sem atividade e bloquear novas tentativas de autenticação por 15 minutos após 5 tentativas consecutivas incorretas. A verificação deve testar a rejeição de senhas mais curtas, a expiração da sessão e o bloqueio na quinta tentativa. Os valores definidos para senha, sessão e bloqueio são preliminares e devem ser validados pela equipe.
+
+- RNF16 - Confiabilidade (conexão instável): Se a conexão cair durante uma chamada ou um cadastro, os dados já preenchidos não devem ser perdidos e devem ser enviados quando a conexão for restabelecida. A verificação deve interromper a conexão por 5 minutos durante cada uma dessas rotinas e confirmar que nenhum registro preenchido foi perdido nem duplicado após a reconexão.
+
 - RNF17 – Requisito de Manutenibilidade : O código deve ficar versionado no GitHub, com README que explique como instalar e rodar, e com testes automatizados para as regras de doação, inscrição e frequência, para que outra pessoa dê continuidade. Alguém de fora da equipe roda o projeto só com o README em até 1 hora. Os testes passam a cada entrega.
 
 - RNF18 – Requisito de Acessibilidade : As telas principais (chamada, cadastro, doação e agenda pública) devem atender à WCAG 2.1, nível AA. Auditoria automática (Lighthouse ou axe) sem violação crítica, mais checklist manual: contraste mínimo 4,5:1, navegação por teclado e rótulo em todo campo.
@@ -184,18 +188,18 @@ Há três agentes: o Visitante (sem login), o Voluntário e a Coordenação (amb
 | Área (RFs) | Visitante | Voluntário | Coordenação |
 | --- | --- | --- | --- |
 | Conteúdo institucional e agenda (RF01 a RF05) | Consulta agenda e conteúdo público | Consulta | Publica e atualiza |
-| Contato (RF06, RF45) | Envia solicitação | Sem acesso | Consulta e marca como atendida |
-| Doações (RF07 a RF09, RF11) | Sem acesso | Registra e consulta | Registra e consulta |
-| Categorias e lista de itens necessários (RF10, RF12) | Vê a lista pública | Sem acesso | Cadastra e publica |
-| Famílias e participantes (RF13 a RF18) | Sem acesso | Cadastra, atualiza e consulta | Tudo do Voluntário, mais inativar |
-| Turmas (RF19 a RF21) | Sem acesso | Sem acesso | Cadastra, atualiza e encerra |
-| Inscrições e espera (RF22 a RF25) | Sem acesso | Sim | Sim |
-| Chamada e frequência (RF26 a RF28, RF30) | Sem acesso | Sim | Sim |
-| Corrigir frequência (RF29) | Sem acesso | Só as suas, até o fim do dia | Qualquer uma, com motivo |
-| Sinalização, relatórios e painel (RF31 a RF37) | Sem acesso | Sem acesso | Sim |
-| Usuários e perfis (RF38, RF39) | Sem acesso | Sem acesso | Sim |
-| Consentimento e imagem (RF41, RF42, RF46) | Sem acesso | Registra e consulta | Registra e consulta |
-| Exclusão de dados e histórico (RF43, RF44) | Sem acesso | Sem acesso | Sim |
+| Contato (RF06, RF07) | Envia solicitação | Sem acesso | Consulta e marca como atendida |
+| Doações (RF08 a RF10, RF12) | Sem acesso | Registra e consulta | Registra e consulta |
+| Categorias e lista de itens necessários (RF11, RF13) | Vê a lista pública | Sem acesso | Cadastra e publica |
+| Famílias e participantes (RF14 a RF19) | Sem acesso | Cadastra, atualiza e consulta | Tudo do Voluntário, mais inativar |
+| Turmas (RF20 a RF22) | Sem acesso | Sem acesso | Cadastra, atualiza e encerra |
+| Inscrições e espera (RF23 a RF26) | Sem acesso | Sim | Sim |
+| Chamada e frequência (RF27 a RF29, RF31) | Sem acesso | Sim | Sim |
+| Corrigir frequência (RF30) | Sem acesso | Só as suas, até o fim do dia | Qualquer uma, com motivo |
+| Sinalização, relatórios e painel (RF32 a RF38) | Sem acesso | Sem acesso | Sim |
+| Usuários e perfis (RF39 a RF41) | Sem acesso | Sem acesso | Cadastra, atribui perfil e acessa |
+| Consentimento e imagem (RF42, RF43, RF46) | Sem acesso | Registra e consulta | Registra e consulta |
+| Exclusão de dados e histórico (RF44, RF45) | Sem acesso | Sem acesso | Sim |
 
 ### Matriz de rastreabilidade
 
@@ -209,43 +213,43 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, R
 | RF04 | CP1 | Coordenação | |
 | RF05 | CP1 | Visitante | RNF03 |
 | RF06 | CP1 | Visitante | RNF13 |
-| RF45 | CP1 | Coordenação | RNF07, RNF13 |
-| RF07 | CP2 | Voluntário, Coordenação | RNF01 |
-| RF08 | CP2 | Voluntário, Coordenação | RNF01, RNF19 |
-| RF09 | CP2 | Voluntário, Coordenação | RNF19 |
-| RF10 | CP2 | Coordenação | |
-| RF11 | CP2 | Voluntário, Coordenação | RNF03 |
-| RF12 | CP2 | Coordenação | RNF03 |
-| RF13 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
-| RF14 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF07 | CP1 | Coordenação | RNF07, RNF13 |
+| RF08 | CP2 | Voluntário, Coordenação | RNF01 |
+| RF09 | CP2 | Voluntário, Coordenação | RNF01, RNF19 |
+| RF10 | CP2 | Voluntário, Coordenação | RNF19 |
+| RF11 | CP2 | Coordenação | |
+| RF12 | CP2 | Voluntário, Coordenação | RNF03 |
+| RF13 | CP2 | Coordenação | RNF03 |
+| RF14 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF16, RNF19 |
 | RF15 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
-| RF16 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
-| RF17 | CP3 | Voluntário, Coordenação | RNF07, RNF13 |
-| RF18 | CP3 | Voluntário, Coordenação | RNF03, RNF07 |
-| RF19 | CP4 | Coordenação | |
+| RF16 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF16, RNF19 |
+| RF17 | CP3 | Voluntário, Coordenação | RNF07, RNF13, RNF19 |
+| RF18 | CP3 | Voluntário, Coordenação | RNF07, RNF13 |
+| RF19 | CP3 | Voluntário, Coordenação | RNF03, RNF07 |
 | RF20 | CP4 | Coordenação | |
 | RF21 | CP4 | Coordenação | |
-| RF22 | CP4 | Voluntário, Coordenação | |
+| RF22 | CP4 | Coordenação | |
 | RF23 | CP4 | Voluntário, Coordenação | |
 | RF24 | CP4 | Voluntário, Coordenação | |
-| RF25 | CP4 | Voluntário, Coordenação | RNF03, RNF07 |
-| RF26 | CP5 | Voluntário, Coordenação | RNF01, RNF10, RNF16 |
+| RF25 | CP4 | Voluntário, Coordenação | |
+| RF26 | CP4 | Voluntário, Coordenação | RNF03, RNF07 |
 | RF27 | CP5 | Voluntário, Coordenação | RNF01, RNF10, RNF16 |
-| RF28 | CP5 | Voluntário, Coordenação | RNF01, RNF16 |
-| RF29 | CP5 | Voluntário (mesmo dia), Coordenação | RNF19 |
-| RF30 | CP5 | Voluntário, Coordenação | RNF03, RNF07 |
-| RF31 | CP5 | Sistema, vista pela Coordenação | RNF07 |
-| RF32 | CP6 | Coordenação | RNF03 |
-| RF33 | CP6 | Coordenação | RNF03, RNF07 |
+| RF28 | CP5 | Voluntário, Coordenação | RNF01, RNF10, RNF16 |
+| RF29 | CP5 | Voluntário, Coordenação | RNF01, RNF16 |
+| RF30 | CP5 | Voluntário (mesmo dia), Coordenação | RNF19 |
+| RF31 | CP5 | Voluntário, Coordenação | RNF03, RNF07 |
+| RF32 | CP5 | Sistema, vista pela Coordenação | RNF07 |
+| RF33 | CP6 | Coordenação | RNF03 |
 | RF34 | CP6 | Coordenação | RNF03, RNF07 |
 | RF35 | CP6 | Coordenação | RNF03, RNF07 |
-| RF36 | CP6 | Coordenação | RNF03 |
+| RF36 | CP6 | Coordenação | RNF03, RNF07 |
 | RF37 | CP6 | Coordenação | RNF03 |
-| RF38 | CP7 | Coordenação | RNF07, RNF15 |
-| RF39 | CP7 | Coordenação | RNF07 |
-| RF40 | CP7 | Voluntário, Coordenação | RNF07, RNF15 |
-| RF41 | CP7 | Voluntário, Coordenação | RNF13 |
-| RF42 | CP7 | Voluntário, Coordenação | RNF14 |
-| RF43 | CP7 | Coordenação | RNF13 |
-| RF44 | CP7 | Coordenação | RNF07, RNF19 |
+| RF38 | CP6 | Coordenação | RNF03 |
+| RF39 | CP7 | Coordenação | RNF07, RNF15 |
+| RF40 | CP7 | Coordenação | RNF07 |
+| RF41 | CP7 | Voluntário, Coordenação | RNF07, RNF15 |
+| RF42 | CP7 | Voluntário, Coordenação | RNF13 |
+| RF43 | CP7 | Voluntário, Coordenação | RNF14 |
+| RF44 | CP7 | Coordenação | RNF13 |
+| RF45 | CP7 | Coordenação | RNF07, RNF19 |
 | RF46 | CP7 | Voluntário, Coordenação | RNF14 |

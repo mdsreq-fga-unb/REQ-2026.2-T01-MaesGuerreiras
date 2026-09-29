@@ -74,15 +74,37 @@ Foram validados e aprovados 18 Requisitos Funcionais (Prioridade 4) que compõem
 | **Turmas e Chamada** | RF20, RF23, RF26, RF27, RF28 | Cadastrar turma, Inscrever participante, Consultar inscritos/lista de espera, Abrir chamada, Registrar frequência |
 
 ### Quais RNFs (Requisitos Não Funcionais) serão aplicáveis ao MVP:
-Com base no roteiro levantado, aplicam-se ao MVP:
+Os RNFs foram classificados conforme sua aplicação aos 18 RFs selecionados. Os obrigatórios e os
+associados a RFs do MVP integram o escopo, mesmo sem posição individual na matriz de valor de
+negócio × esforço técnico.
 
-- Segurança e Controle de Acesso: O sistema deve garantir restrição por perfis (Voluntário e Coordenação), limitando ações críticas (ex.: inativar cadastro, corrigir chamadas retroativas e criar turmas) apenas à Coordenação.
+| RNF | Classificação | Justificativa |
+| :--- | :--- | :--- |
+| RNF01 | Obrigatório para o MVP | Cobre o registro de doação (RF09) e a conclusão de chamada (RF27/RF28), ambos no núcleo do MVP. |
+| RNF02 | Obrigatório para o MVP | O guia de uso cobre doação, cadastro, inscrição e chamada, rotinas incluídas no MVP. |
+| RNF03 | Obrigatório para o MVP | Aplica-se às consultas de saldo (RF12), cadastro de participantes (RF19) e inscritos da turma (RF26). |
+| RNF04 | Obrigatório para o MVP | Complementa o tempo de resposta do RNF03 durante os acessos simultâneos previstos para a operação. |
+| RNF05 | Obrigatório para o MVP | Protege os dados de doações, famílias e participantes registrados pelo MVP. A restauração fica sob responsabilidade técnica da infraestrutura, conforme definido na validação. |
+| RNF06 | Obrigatório para o MVP | Define a disponibilidade mínima do sistema durante o atendimento da associação. |
+| RNF07 | Obrigatório para o MVP | Protege os dados de famílias e participantes (RF14, RF16, RF18 e RF19) e os consentimentos (RF42). |
+| RNF08 | Obrigatório para o MVP | Cobre os fluxos de doação, cadastro de família, inscrição e chamada. A consulta à agenda, também citada no RNF original, fica fora da verificação do MVP. |
+| RNF09 | Obrigatório para o MVP | As telas de doação, cadastro e chamada do MVP precisam funcionar em celular. |
+| RNF10 | Obrigatório para o MVP | Aplica-se às rotinas de chamada (RF27/RF28) e cadastro de doador, família e participante (RF08/RF14/RF16). |
+| RNF11 | Obrigatório para o MVP | A comunicação entre interface e serviço de dados é necessária às funções da área restrita incluídas no MVP. |
+| RNF12 | Obrigatório para o MVP | A associação não pode assumir custo mensal de operação; a restrição vale para todo o MVP. |
+| RNF13 | Obrigatório para o MVP | O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF44 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão. |
+| RNF14 | Não aplicável ao MVP | O registro e a consulta de autorização de imagem (RF43/RF46) ficaram fora dos 18 RFs selecionados. |
+| RNF15 | Obrigatório para o MVP | Cadastro de usuários, perfis e autenticação (RF39–RF41) estão no MVP. |
+| RNF16 | Associado a RFs do MVP | Aplica-se aos cadastros RF14/RF16 e à chamada RF27/RF28; portanto, entra no MVP. |
+| RNF17 | Obrigatório para o MVP | O MVP inclui doação, inscrição e frequência, rotinas cobertas pelo README e pelos testes previstos no RNF. |
+| RNF18 | Obrigatório para o MVP | A verificação de acessibilidade abrange as telas selecionadas de cadastro, doação e chamada. A agenda pública, citada no RNF original, ficou fora desse recorte. |
+| RNF19 | Associado a RFs do MVP | No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF45. As correções de frequência (RF30) e as demais alterações fora dos RFs selecionados ficam para versões futuras. |
 
-- Auditoria e Rastreabilidade: O sistema deve registrar o motivo/justificativa quando a Coordenação alterar uma chamada em dias posteriores. O registro de consentimentos (RF42) deve gravar a data em que foi concedido.
-
-- Privacidade e Proteção de Dados (LGPD): O sistema deve estar preparado para tratar solicitações de exclusão de dados com um SLA de resposta de 15 dias. Os termos de consentimento devem ser segregados em 4 finalidades específicas.
-
-- Backup e Recuperação: O processo de restauração e contingência de banco de dados ficará sob responsabilidade técnica da equipe de hospedagem, sem necessidade de interface nativa de restauração para o cliente no MVP.
+Na validação de 28/09, foram registrados o prazo de resposta de 15 dias para solicitações de exclusão
+e as quatro finalidades de consentimento. O procedimento de recebimento e atendimento dessas
+solicitações sem o RF44 ainda precisa ser definido com a associação. A classificação do RNF19
+delimita o que será verificado no MVP; o texto completo desse RNF também cobre alterações de
+frequência e de doações em versões posteriores.
 
 ### Quais requisitos ficaram para entregas futuras:
 Os módulos classificados com prioridade 1, 2 e 3 foram postergados para as próximas versões do sistema:

@@ -262,3 +262,49 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, R
 | **3 — Alto** | — | — | RF41, RF42, RF43, RF44, RF46 | — |
 | **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF45 | RF32, RF33, RF34, RF35, RF36, RF37 |
 | **1 — Baixo** | — | — | — | — |
+
+## 8.6 RFs selecionados para o MVP
+
+Na validação registrada em [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp),
+foram selecionados 18 RFs para o núcleo do MVP:
+
+| Área | RFs selecionados |
+| :--- | :--- |
+| Acesso e proteção de dados | RF39, RF40, RF41, RF42 |
+| Doações de itens | RF08, RF09, RF10, RF11, RF12 |
+| Famílias e participantes | RF14, RF16, RF18, RF19 |
+| Turmas e chamada | RF20, RF23, RF26, RF27, RF28 |
+
+## 8.7 RNFs aplicáveis ao MVP
+
+Os RNFs foram classificados conforme sua aplicação aos 18 RFs selecionados. Os obrigatórios e os
+associados a RFs do MVP integram o escopo, mesmo sem posição individual na matriz de valor de
+negócio × esforço técnico.
+
+| RNF | Classificação | Justificativa |
+| :--- | :--- | :--- |
+| RNF01 | Obrigatório para o MVP | Cobre o registro de doação (RF09) e a conclusão de chamada (RF27/RF28), ambos no núcleo do MVP. |
+| RNF02 | Obrigatório para o MVP | O guia de uso cobre doação, cadastro, inscrição e chamada, rotinas incluídas no MVP. |
+| RNF03 | Obrigatório para o MVP | Aplica-se às consultas de saldo (RF12), cadastro de participantes (RF19) e inscritos da turma (RF26). |
+| RNF04 | Obrigatório para o MVP | Complementa o tempo de resposta do RNF03 durante os acessos simultâneos previstos para a operação. |
+| RNF05 | Obrigatório para o MVP | Protege os dados de doações, famílias e participantes registrados pelo MVP. A restauração fica sob responsabilidade técnica da infraestrutura, conforme definido na validação. |
+| RNF06 | Obrigatório para o MVP | Define a disponibilidade mínima do sistema durante o atendimento da associação. |
+| RNF07 | Obrigatório para o MVP | Protege os dados de famílias e participantes (RF14, RF16, RF18 e RF19) e os consentimentos (RF42). |
+| RNF08 | Obrigatório para o MVP | Cobre os fluxos de doação, cadastro de família, inscrição e chamada. A consulta à agenda, também citada no RNF original, fica fora da verificação do MVP. |
+| RNF09 | Obrigatório para o MVP | As telas de doação, cadastro e chamada do MVP precisam funcionar em celular. |
+| RNF10 | Obrigatório para o MVP | Aplica-se às rotinas de chamada (RF27/RF28) e cadastro de doador, família e participante (RF08/RF14/RF16). |
+| RNF11 | Obrigatório para o MVP | A comunicação entre interface e serviço de dados é necessária às funções da área restrita incluídas no MVP. |
+| RNF12 | Obrigatório para o MVP | A associação não pode assumir custo mensal de operação; a restrição vale para todo o MVP. |
+| RNF13 | Obrigatório para o MVP | O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF44 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão. |
+| RNF14 | Não aplicável ao MVP | O registro e a consulta de autorização de imagem (RF43/RF46) ficaram fora dos 18 RFs selecionados. |
+| RNF15 | Obrigatório para o MVP | Cadastro de usuários, perfis e autenticação (RF39–RF41) estão no MVP. |
+| RNF16 | Associado a RFs do MVP | Aplica-se aos cadastros RF14/RF16 e à chamada RF27/RF28; portanto, entra no MVP. |
+| RNF17 | Obrigatório para o MVP | O MVP inclui doação, inscrição e frequência, rotinas cobertas pelo README e pelos testes previstos no RNF. |
+| RNF18 | Obrigatório para o MVP | A verificação de acessibilidade abrange as telas selecionadas de cadastro, doação e chamada. A agenda pública, citada no RNF original, ficou fora desse recorte. |
+| RNF19 | Associado a RFs do MVP | No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF45. As correções de frequência (RF30) e as demais alterações fora dos RFs selecionados ficam para versões futuras. |
+
+Na validação de 28/09, foram registrados o prazo de resposta de 15 dias para solicitações de exclusão
+e as quatro finalidades de consentimento. O procedimento de recebimento e atendimento dessas
+solicitações sem o RF44 ainda precisa ser definido com a associação. A classificação do RNF19
+delimita o que será verificado no MVP; o texto completo desse RNF também cobre alterações de
+frequência e de doações em versões posteriores.

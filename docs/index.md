@@ -52,6 +52,31 @@ de sustentar a prestação de contas aos parceiros. Saiba mais no [Objetivo Gera
     <h3>Equipe</h3>
     <p>Composição da equipe, comunicação e processo de validação.</p>
   </a>
+  <a href="08-requisitos/" class="topic-card">
+    <span class="topic-card__num">08</span>
+    <h3>Requisitos</h3>
+    <p>Requisitos funcionais e não funcionais do software.</p>
+  </a>
+  <a href="09-dor-dod/" class="topic-card">
+    <span class="topic-card__num">09</span>
+    <h3>DoR e DoD</h3>
+    <p>Definition of Ready e Definition of Done adotados pela equipe.</p>
+  </a>
+  <a href="10-backlog/" class="topic-card">
+    <span class="topic-card__num">10</span>
+    <h3>Backlog de Produto</h3>
+    <p>Histórias de usuário e priorização do backlog.</p>
+  </a>
+  <a href="08-licoes/" class="topic-card">
+    <span class="topic-card__num">11</span>
+    <h3>Lições Aprendidas</h3>
+    <p>Aprendizados da equipe registrados ao final de cada unidade.</p>
+  </a>
+  <a href="12-referencias/" class="topic-card">
+    <span class="topic-card__num">12</span>
+    <h3>Referências</h3>
+    <p>Referências bibliográficas utilizadas no projeto.</p>
+  </a>
 </div>
 
 ## Identificação e Histórico de Revisão

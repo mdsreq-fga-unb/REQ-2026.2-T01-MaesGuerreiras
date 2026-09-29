@@ -12,11 +12,56 @@ priorização dessas funcionalidades e da definição do escopo do MVP.
 
 ## 10.2 Priorização do Backlog Geral e MVP
 
-##  10.  Validação do MVP
-Participantes: Makio(Cliente), Vitor, Isabella, Luan, Luis, Ian e Pedro
+A priorização considerou duas perspectivas complementares: o **valor de negócio**, avaliado com a
+participação do cliente, e o **esforço técnico**, avaliado pela equipe. Os resultados foram
+cruzados na matriz 4 × 4 (seção [8.5](../08-requisitos/index.md#85-matriz-4x4)).
 
+### Critérios e escala de avaliação do valor de negócio
 
-Data: 28/09
+A equipe adotou o método MoSCoW, associado a uma escala numérica de 1 a 4:
+
+| Pontuação | Classificação | Interpretação |
+| :--- | :--- | :--- |
+| 4 | Must have | Indispensável para resolver o problema central ou viabilizar o produto |
+| 3 | Should have | Muito importante, mas o produto ainda pode operar temporariamente sem o requisito |
+| 2 | Could have | Agrega valor, mas pode ser adiado sem comprometer o objetivo principal |
+| 1 | Won't have now | Não é prioritário para a versão atual |
+
+### Critérios e escala de avaliação do esforço técnico
+
+A avaliação técnica considerou três critérios, cada um em uma escala de 1 a 4: esforço de
+implementação, complexidade técnica e lacuna de capacidade da equipe (domínio das tecnologias
+envolvidas). O esforço técnico consolidado de cada RF é a média dos três critérios, arredondada
+para a escala de 1 a 4.
+
+| Pontuação | Esforço | Complexidade | Lacuna de capacidade |
+| :--- | :--- | :--- | :--- |
+| 1 | Até 2 horas | Baixa | A equipe domina plenamente os conhecimentos necessários |
+| 2 | Entre 2 e 6 horas | Moderada | A equipe possui conhecimento suficiente, com pouca aprendizagem adicional |
+| 3 | Entre 6 e 12 horas | Alta | A equipe precisa desenvolver conhecimentos relevantes |
+| 4 | Mais de 12 horas | Muito alta | A equipe ainda não possui os conhecimentos ou recursos necessários |
+
+### Avaliação consolidada dos RFs
+
+A tabela abaixo agrupa os RFs pela combinação de valor de negócio e esforço técnico consolidado
+que resultou na matriz 4 × 4. As justificativas de negócio e as decisões de regra associadas a
+cada bloco estão detalhadas na validação do MVP, adiante.
+
+| Valor de negócio | Esforço técnico | RFs |
+| :--- | :--- | :--- |
+| 4 — Must have | 2 — Moderado | RF25 |
+| 4 — Must have | 3 — Alto | RF07 a RF24, RF26 a RF31, RF38, RF39, RF40 |
+| 3 — Should have | 3 — Alto | RF41, RF42, RF43, RF44, RF46 |
+| 2 — Could have | 3 — Alto | RF01 a RF06, RF45 |
+| 2 — Could have | 4 — Muito alto | RF32 a RF37 |
+
+### Validação do MVP com o cliente
+
+**Participantes:** Makio (cliente), Vitor, Isabella, Luan, Luis, Ian e Pedro
+
+**Data:** 28/09/2026
+
+**Evidência:** gravação da reunião disponível na página de [Evidências e Gravações](../00-evidencias/index.md).
 
 ### Quais RFs foram aprovados para o MVP:
 Foram validados e aprovados 18 Requisitos Funcionais (Prioridade 4) que compõem o núcleo do sistema:

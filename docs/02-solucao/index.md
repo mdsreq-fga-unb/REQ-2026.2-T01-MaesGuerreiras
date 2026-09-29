@@ -123,17 +123,20 @@ esteja em processo de aprendizado das tecnologias escolhidas, a proposta foi est
 compatível com essa realidade, com entregas incrementais, priorização das funcionalidades essenciais e
 validações frequentes com a coordenação.
 
-Para organizar o trabalho, serão utilizadas **sprints de 2 semanas**, totalizando 7 sprints de
+Para organizar o trabalho, serão utilizadas **sprints de 2 semanas**, totalizando 8 sprints de
 desenvolvimento mais um período de fechamento. Esse ritmo permite ajustar o escopo a cada ciclo,
 reservar as primeiras sprints também para o aprendizado das tecnologias e garantir a entrega de um
 MVP (Produto Mínimo Viável) funcional.
 
-O MVP administrativo é composto pelo controle de acesso (CP7) e pelo registro digital das doações de
-itens (CP2). CP7 é entregue primeiro, pois é condição de segurança para qualquer sprint que manipule
-dados pessoais de famílias: nenhum dado real é inserido no sistema antes de CP7 estar verificado e o
-ambiente protegido. CP1 (portal institucional, sem dados pessoais) é entregue em paralelo, por ser a
-frente de maior visibilidade imediata para a comunidade. As demais características (CP3 a CP6) seguem
-nos ciclos posteriores, conforme a priorização do backlog.
+O núcleo do MVP foi definido com Makio em 29/09/2026, a partir da classificação de obrigatoriedade
+dos requisitos não funcionais (seção [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)):
+registro de doações e consulta de saldo (CP2), cadastro de famílias e participantes (CP3), cadastro
+de turma, inscrição e consulta de inscritos (parte do CP4) e chamada digital com registro de
+frequência (CP5). A autenticação, os perfis de acesso mínimos e o consentimento de tratamento de
+dados (parte do CP7) entram junto com a primeira sprint que trata dados pessoais, em vez de ocupar
+uma sprint isolada anterior a todas as outras. Portal institucional e agenda pública (CP1) e
+relatórios de impacto (CP6) ficam fora do núcleo e são entregues depois, nas últimas sprints e no
+fechamento, conforme a priorização do backlog.
 
 ### Riscos e mitigação
 

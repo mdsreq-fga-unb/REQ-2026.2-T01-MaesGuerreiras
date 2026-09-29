@@ -21,13 +21,12 @@ Data: 28/09
 ### Quais RFs foram aprovados para o MVP:
 Foram validados e aprovados 18 Requisitos Funcionais (Prioridade 4) que compõem o núcleo do sistema:
 
-- Acesso e proteção de dados : RF39 (Cadastrar usuário), RF40 (Atribuir perfil), RF41 (Autenticar usuário) e RF42 (Registrar consentimentos).
-
-- Doações: RF08 (Cadastrar/atualizar doador), RF09 (Registrar entrada), RF10 (Registrar saída/destinação), RF11 (Cadastrar categoria de item) e RF12 (Consultar saldo).
-
-- Famílias e Participantes: RF14 (Cadastrar família), RF16 (Cadastrar participante), RF18 (Vincular participante à família) e RF19 (Consultar participantes).
-
-- Turmas e Chamada: RF20 (Cadastrar turma), RF23 (Inscrever participante), RF26 (Consultar inscritos/lista de espera), RF27 (Abrir chamada) e RF28 (Registrar frequência).
+| Módulo / Categoria | Códigos | Descrição dos Requisitos |
+| :--- | :--- | :--- |
+| **Acesso e proteção de dados** | RF39, RF40, RF41, RF42 | Cadastrar usuário, Atribuir perfil, Autenticar usuário, Registrar consentimentos |
+| **Doações** | RF08, RF09, RF10, RF11, RF12 | Cadastrar/atualizar doador, Registrar entrada, Registrar saída/destinação, Cadastrar categoria de item, Consultar saldo |
+| **Famílias e Participantes** | RF14, RF16, RF18, RF19 | Cadastrar família, Cadastrar participante, Vincular participante à família, Consultar participantes |
+| **Turmas e Chamada** | RF20, RF23, RF26, RF27, RF28 | Cadastrar turma, Inscrever participante, Consultar inscritos/lista de espera, Abrir chamada, Registrar frequência |
 
 ### Quais RNFs (Requisitos Não Funcionais) serão aplicáveis ao MVP:
 Com base no roteiro levantado, aplicam-se ao MVP:

@@ -253,3 +253,12 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, R
 | RF44 | CP7 | Coordenação | RNF13 |
 | RF45 | CP7 | Coordenação | RNF07, RNF19 |
 | RF46 | CP7 | Voluntário, Coordenação | RNF14 |
+
+## 8.5 Matriz 4x4
+
+| Valor de negócio ↓ / Esforço técnico → | 1 — Baixo | 2 — Moderado | 3 — Alto | 4 — Muito alto |
+|---|---|---|---|---|
+| **4 — Muito alto** | — | RF25 | RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF26, RF27, RF28, RF29, RF30, RF31, RF38, RF39, RF40 | — |
+| **3 — Alto** | — | — | RF41, RF42, RF43, RF44, RF46 | — |
+| **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF45 | RF32, RF33, RF34, RF35, RF36, RF37 |
+| **1 — Baixo** | — | — | — | — |

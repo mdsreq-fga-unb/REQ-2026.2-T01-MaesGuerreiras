@@ -107,11 +107,10 @@ segue o valor de negócio (VN) da sua característica.
 | RF39 – Cadastrar usuário do sistema | **US39** (MVP) – Como membro da coordenação, quero cadastrar voluntários e outros membros da coordenação, para que só pessoas autorizadas usem a área restrita. | RNF07, RNF15 |
 | RF40 – Atribuir perfil de acesso ao usuário | **US40** (MVP) – Como membro da coordenação, quero atribuir a cada usuário o perfil Voluntário ou Coordenação, para que cada pessoa acesse apenas o que sua função permite. | RNF07 |
 | RF41 – Autenticar usuário | **US41** (MVP) – Como voluntário, quero entrar na área restrita com meu usuário e senha, para usar as funções do meu perfil com segurança. | RNF07, RNF15 |
-| RF42 – Registrar consentimento de tratamento de dados pessoais | **US42** (MVP) – Como voluntário, quero registrar o consentimento do titular ou do responsável legal para cada finalidade de uso dos dados, para tratar os dados das famílias de acordo com a LGPD. | RNF13 |
-| RF43 – Registrar autorização de uso de imagem | **US43** – Como voluntário, quero registrar a autorização ou a recusa de uso de imagem de uma pessoa, por meio de divulgação, para que a associação só divulgue imagens autorizadas. | RNF14 |
-| RF44 – Registrar e acompanhar solicitação de exclusão de dados | **US44** – Como membro da coordenação, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. | RNF13 |
-| RF45 – Consultar histórico de alterações de cadastro | **US45** – Como membro da coordenação, quero consultar quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando, para ter controle sobre as alterações feitas no sistema. | RNF07, RNF19 |
-| RF46 – Consultar autorização de uso de imagem vigente | **US46** – Como voluntário, quero consultar, por pessoa, a autorização de imagem em vigor para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
+| RF42 – Registrar consentimentos e autorizações (LGPD e Imagem) | **US42** (MVP) – Como voluntário, quero registrar o consentimento do titular (ou responsável legal) para as finalidades de tratamento de dados pessoais e a autorização de uso de imagem, para garantir a conformidade legal das ações da associação. | RNF13, RNF14 |
+| RF43 – Registrar e acompanhar solicitação de exclusão de dados | **US43** – Como membro da coordenação, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. | RNF13 |
+| RF44 – Consultar histórico de alterações de cadastro | **US44** – Como membro da coordenação, quero consultar quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando, para ter controle sobre as alterações feitas no sistema. | RNF07, RNF19 |
+| RF45 – Consultar autorização de uso de imagem vigente | **US45** – Como voluntário, quero consultar, por pessoa, a autorização de imagem em vigor para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
 
 ## 10.2 Priorização do Backlog Geral e MVP
 
@@ -154,8 +153,8 @@ cada bloco estão detalhadas na validação do MVP, adiante.
 | :--- | :--- | :--- |
 | 4 — Must have | 2 — Moderado | RF25 |
 | 4 — Must have | 3 — Alto | RF07 a RF24, RF26 a RF31, RF38, RF39, RF40 |
-| 3 — Should have | 3 — Alto | RF41, RF42, RF43, RF44, RF46 |
-| 2 — Could have | 3 — Alto | RF01 a RF06, RF45 |
+| 3 — Should have | 3 — Alto | RF41, RF42, RF43, RF45 |
+| 2 — Could have | 3 — Alto | RF01 a RF06, RF44 |
 | 2 — Could have | 4 — Muito alto | RF32 a RF37 |
 
 ### Priorização das user stories
@@ -201,7 +200,7 @@ A prioridade sugerida combina o quadrante com a decisão de MVP tomada com o cli
 | US39 | Cadastrar usuário do sistema | RF39 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
 | US40 | Atribuir perfil de acesso ao usuário | RF40 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
 | US41 | Autenticar usuário | RF41 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US42 | Registrar consentimento de tratamento de dados pessoais | RF42 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
+| US42 | Registrar consentimentos e autorizações (LGPD e Imagem) | RF42 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
 | US25 | Registrar participante em lista de espera | RF25 | 4 – Must | 2 – Moderado | Q1 – Alto valor / Baixa carga | Prioridade 2 |
 | US07 | Consultar solicitações de contato | RF07 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
 | US13 | Publicar lista de itens necessários | RF13 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
@@ -214,16 +213,15 @@ A prioridade sugerida combina o quadrante com a decisão de MVP tomada com o cli
 | US30 | Corrigir registro de frequência | RF30 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
 | US31 | Consultar frequência do participante | RF31 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
 | US38 | Exportar relatório gerado | RF38 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US43 | Registrar autorização de uso de imagem | RF43 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
-| US44 | Registrar e acompanhar solicitação de exclusão de dados | RF44 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
-| US46 | Consultar autorização de uso de imagem vigente | RF46 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
+| US43 | Registrar e acompanhar solicitação de exclusão de dados | RF43 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
+| US45 | Consultar autorização de uso de imagem vigente | RF45 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
 | US01 | Publicar conteúdo institucional | RF01 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US02 | Atualizar conteúdo institucional | RF02 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US03 | Cadastrar atividade na agenda | RF03 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US04 | Atualizar atividade na agenda | RF04 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US05 | Consultar agenda de atividades | RF05 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US06 | Registrar solicitação de contato | RF06 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US45 | Consultar histórico de alterações de cadastro | RF45 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
+| US44 | Consultar histórico de alterações de cadastro | RF44 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US32 | Sinalizar participante com faltas acima do limite | RF32 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US33 | Gerar relatório de doações recebidas | RF33 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
 | US34 | Gerar relatório de doações distribuídas | RF34 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
@@ -258,9 +256,9 @@ não se aplica ao MVP.
 ### Quais requisitos ficaram para entregas futuras:
 Os módulos classificados com prioridade 1, 2 e 3 foram postergados para as próximas versões do sistema:
 
-- Portal e agenda: (RF01 a RF06 e RF45) - Proposta: 2
+- Portal e agenda: (RF01 a RF06 e RF44) - Proposta: 2
 - Relatórios: (RF32 a RF37) - Proposta: 2
-- Fluxos avançados de LGPD: Pedido de exclusão pelo usuário final (RF43 e RF44 - Proposta 3, sujeito a confirmação) e autorizações complementares de imagem (RF46 - Proposta 3, sujeito a confirmação).
+- Fluxos avançados de LGPD: Pedido de exclusão pelo usuário final (RF43 - Proposta 3, sujeito a confirmação) e autorizações complementares de imagem (RF45 - Proposta 3, sujeito a confirmação).
 
 ### Quais ajustes foram solicitados (Regras de Negócio):
 Obrigatoriedade de Campos:
@@ -296,12 +294,12 @@ critérios de aceitação dessas histórias precisam cobrir a regra, incluindo o
 | RN16 | Falta com motivo informado passa a constar como falta justificada e não conta para o limite de faltas. | US29, US32 | RF29 |
 | RN17 | O Voluntário só corrige a chamada que ele mesmo fez, e só até o fim do mesmo dia. Depois disso, a correção é exclusiva da Coordenação e exige motivo. O registro anterior é sempre preservado. | US30 | RF30 e validação de 28/09/2026 |
 | RN18 | O participante é sinalizado para contato com a família ao atingir 3 faltas seguidas sem justificativa. O limite é definido pela Coordenação. | US32, US37 | RF32 e validação de 28/09/2026 |
-| RN19 | O consentimento de tratamento de dados é registrado separadamente para cada uma de quatro finalidades (cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores), cada uma com a data do registro. Dados reais de famílias só entram no sistema depois do consentimento. | US14, US16, US42 | RF42, validação de 28/09/2026 e seção 9 |
+| RN19 | O consentimento de tratamento de dados é registrado separadamente para cada uma de quatro finalidades (cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores), cada uma com a data do registro. No mesmo fluxo, é registrada a autorização ou recusa de uso de imagem, com os meios autorizados (site, redes sociais, materiais impressos) e a data. Dados reais de famílias só entram no sistema depois do consentimento. | US14, US16, US42 | RF42, validação de 28/09/2026 e seção 9 |
 | RN20 | A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação; as demais contas são criadas pela Coordenação. | US39 | RF39 |
 
 ### Quais decisões ou divergências foram registradas:
 
-- Decisão sobre LGPD: A autorização da família será explicitamente fracionada em 4 usos distintos (cadastro/atendimento, frequência, contato com a família e relatório a apoiador).
+- Decisão sobre LGPD e Imagem: A autorização da família será explicitamente fracionada em 4 usos distintos (cadastro/atendimento, frequência, contato com a família e relatório a apoiador). A autorização de uso de imagem (meios autorizados e revogação) é registrada no mesmo fluxo, consolidando RF42 e RF43 em um único requisito.
 - Decisão sobre Estoque: Optou-se pela gestão 100% manual (adição e remoção de itens) da lista de faltas pela Coordenação, mantendo a simplicidade do MVP.
 - Pendente (Divergência de Informação): O volume atual de famílias/participantes atendidos e o fluxo mensal de doações ainda não foram definidos e serão validados junto à coordenação para fins de dimensionamento do banco de dados e infraestrutura.
 - Pendente (Priorização): Confirmar com a coordenação a prioridade exata do bloco de consentimentos avançados/imagem e processos automatizados de pedido de exclusão, para fechar se algum componente adicional precisa subir para o MVP.

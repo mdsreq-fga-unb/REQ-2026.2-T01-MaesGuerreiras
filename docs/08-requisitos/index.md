@@ -99,15 +99,13 @@
 
 - RF41 – Autenticar usuário: Permitir que Voluntário ou Coordenação acessem a área restrita mediante autenticação do usuário cadastrado.
 
-- RF42 – Registrar consentimento de tratamento de dados pessoais: Permitir que Voluntário ou Coordenação registrem o consentimento do titular, ou do responsável legal, para cada finalidade: cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores. Cada consentimento leva a data do registro.
+- RF42 – Registrar consentimentos e autorizações (LGPD e Imagem): Permitir que Voluntário ou Coordenação registrem, em um único fluxo, o consentimento do titular, ou do responsável legal, para cada finalidade de tratamento de dados pessoais (cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores) e a autorização ou recusa de uso de imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação. Cada consentimento e autorização leva a data do registro.
 
-- RF43 – Registrar autorização de uso de imagem: Permitir que Voluntário ou Coordenação registrem a autorização ou a recusa do titular, ou de seu responsável legal, para o uso de sua imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação.
+- RF43 – Registrar e acompanhar solicitação de exclusão de dados: Permitir que a Coordenação registre a solicitação do titular e acompanhe as etapas: recebida, em análise, atendida ou negada com justificativa. Cada etapa guarda a data, e a resposta guarda a data em que o titular foi avisado.
 
-- RF44 – Registrar e acompanhar solicitação de exclusão de dados: Permitir que a Coordenação registre a solicitação do titular e acompanhe as etapas: recebida, em análise, atendida ou negada com justificativa. Cada etapa guarda a data, e a resposta guarda a data em que o titular foi avisado.
+- RF44 – Consultar histórico de alterações de cadastro: Permitir que a Coordenação consulte quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando.
 
-- RF45 – Consultar histórico de alterações de cadastro: Permitir que a Coordenação consulte quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando.
-
-- RF46 - Consultar autorização de uso de imagem vigente: Permitir que Voluntário ou Coordenação consultem, por titular, a autorização em vigor para cada meio (site, redes sociais, material impresso) e se ela foi revogada, antes de divulgar a imagem.
+- RF45 – Consultar autorização de uso de imagem vigente: Permitir que Voluntário ou Coordenação consultem, por titular, a autorização em vigor para cada meio (site, redes sociais, material impresso) e se ela foi revogada, antes de divulgar a imagem.
 
 
 
@@ -149,7 +147,7 @@
 
 - RNF18 – Requisito de Acessibilidade : As telas principais (chamada, cadastro, doação e agenda pública) devem atender à WCAG 2.1, nível AA. Auditoria automática (Lighthouse ou axe) sem violação crítica, mais checklist manual: contraste mínimo 4,5:1, navegação por teclado e rótulo em todo campo.
 
-- RNF19 – Requisito de Segurança : Toda alteração em dados pessoais, em frequência (inclusive RF29) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF44.
+- RNF19 – Requisito de Segurança : Toda alteração em dados pessoais, em frequência (inclusive RF29) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF43.
 
 
 ## 8.3 Glossário
@@ -198,8 +196,8 @@ Há três agentes: o Visitante (sem login), o Voluntário e a Coordenação (amb
 | Corrigir frequência (RF30) | Sem acesso | Só as suas, até o fim do dia | Qualquer uma, com motivo |
 | Sinalização, relatórios e painel (RF32 a RF38) | Sem acesso | Sem acesso | Sim |
 | Usuários e perfis (RF39 a RF41) | Sem acesso | Sem acesso | Cadastra, atribui perfil e acessa |
-| Consentimento e imagem (RF42, RF43, RF46) | Sem acesso | Registra e consulta | Registra e consulta |
-| Exclusão de dados e histórico (RF44, RF45) | Sem acesso | Sem acesso | Sim |
+| Consentimento e imagem (RF42, RF45) | Sem acesso | Registra e consulta | Registra e consulta |
+| Exclusão de dados e histórico (RF43, RF44) | Sem acesso | Sem acesso | Sim |
 
 ### Matriz de rastreabilidade
 
@@ -248,19 +246,18 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, R
 | RF39 | CP7 | Coordenação | RNF07, RNF15 |
 | RF40 | CP7 | Coordenação | RNF07 |
 | RF41 | CP7 | Voluntário, Coordenação | RNF07, RNF15 |
-| RF42 | CP7 | Voluntário, Coordenação | RNF13 |
-| RF43 | CP7 | Voluntário, Coordenação | RNF14 |
-| RF44 | CP7 | Coordenação | RNF13 |
-| RF45 | CP7 | Coordenação | RNF07, RNF19 |
-| RF46 | CP7 | Voluntário, Coordenação | RNF14 |
+| RF42 | CP7 | Voluntário, Coordenação | RNF13, RNF14 |
+| RF43 | CP7 | Coordenação | RNF13 |
+| RF44 | CP7 | Coordenação | RNF07, RNF19 |
+| RF45 | CP7 | Voluntário, Coordenação | RNF14 |
 
 ## 8.5 Matriz 4x4
 
 | Valor de negócio ↓ / Esforço técnico → | 1 — Baixo | 2 — Moderado | 3 — Alto | 4 — Muito alto |
 |---|---|---|---|---|
 | **4 — Muito alto** | — | RF25 | RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF26, RF27, RF28, RF29, RF30, RF31, RF38, RF39, RF40 | — |
-| **3 — Alto** | — | — | RF41, RF42, RF43, RF44, RF46 | — |
-| **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF45 | RF32, RF33, RF34, RF35, RF36, RF37 |
+| **3 — Alto** | — | — | RF41, RF42, RF43, RF45 | — |
+| **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF44 | RF32, RF33, RF34, RF35, RF36, RF37 |
 | **1 — Baixo** | — | — | — | — |
 
 ## 8.6 RFs selecionados para o MVP
@@ -295,16 +292,16 @@ negócio × esforço técnico.
 | RNF10 | Obrigatório para o MVP | Aplica-se às rotinas de chamada (RF27/RF28) e cadastro de doador, família e participante (RF08/RF14/RF16). |
 | RNF11 | Obrigatório para o MVP | A comunicação entre interface e serviço de dados é necessária às funções da área restrita incluídas no MVP. |
 | RNF12 | Obrigatório para o MVP | A associação não pode assumir custo mensal de operação; a restrição vale para todo o MVP. |
-| RNF13 | Obrigatório para o MVP | O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF44 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão. |
-| RNF14 | Não aplicável ao MVP | O registro e a consulta de autorização de imagem (RF43/RF46) ficaram fora dos 18 RFs selecionados. |
+| RNF13 | Obrigatório para o MVP | O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF43 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão. |
+| RNF14 | Não aplicável ao MVP | O registro de autorização de imagem foi incorporado ao RF42 (fundido com RF43 original), e a consulta (RF45) ficaram fora dos 18 RFs selecionados. |
 | RNF15 | Obrigatório para o MVP | Cadastro de usuários, perfis e autenticação (RF39–RF41) estão no MVP. |
 | RNF16 | Associado a RFs do MVP | Aplica-se aos cadastros RF14/RF16 e à chamada RF27/RF28; portanto, entra no MVP. |
 | RNF17 | Obrigatório para o MVP | O MVP inclui doação, inscrição e frequência, rotinas cobertas pelo README e pelos testes previstos no RNF. |
 | RNF18 | Obrigatório para o MVP | A verificação de acessibilidade abrange as telas selecionadas de cadastro, doação e chamada. A agenda pública, citada no RNF original, ficou fora desse recorte. |
-| RNF19 | Associado a RFs do MVP | No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF45. As correções de frequência (RF30) e as demais alterações fora dos RFs selecionados ficam para versões futuras. |
+| RNF19 | Associado a RFs do MVP | No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF44. As correções de frequência (RF30) e as demais alterações fora dos RFs selecionados ficam para versões futuras. |
 
 Na validação de 28/09, foram registrados o prazo de resposta de 15 dias para solicitações de exclusão
 e as quatro finalidades de consentimento. O procedimento de recebimento e atendimento dessas
-solicitações sem o RF44 ainda precisa ser definido com a associação. A classificação do RNF19
+solicitações sem o RF43 ainda precisa ser definido com a associação. A classificação do RNF19
 delimita o que será verificado no MVP; o texto completo desse RNF também cobre alterações de
 frequência e de doações em versões posteriores.

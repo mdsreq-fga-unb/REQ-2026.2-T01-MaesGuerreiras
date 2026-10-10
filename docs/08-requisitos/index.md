@@ -29,7 +29,7 @@
 
 - RF11 – Cadastrar categoria de item: Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). 
 
-- RF12 – Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria.
+- RF12 – Consultar saldo de itens doados: ermitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria.
 
 - RF13 – Publicar lista de itens necessários: Permitir que a Coordenação inclua e remova manualmente, na área pública, os itens de que a associação precisa no momento, com a categoria e, se quiser, a quantidade desejada.
 

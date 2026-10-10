@@ -29,57 +29,27 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
 
 ## Unidade 2
 
-**O que funcionou bem:**
+**1. Tratamento do feedback da outra equipe na revisão por pares**
 
-- *(preencher)*
+- **Desafio:** A equipe que fez nossa correçāo de requisitos estava em um nível de abstraçāo diferente da nossa, implicando que deveriamos adicionar aos requisitos detalhes que nāo tinham prioridade no momento.
 
-**O que pode melhorar:**
+- **Ação de melhoria:** Após o feedback do professor ficou definido que antes das correçōes com outra equipe é necessario entender em que nível de abstraçāo cada uma esta trabalhando, evitando retralhado.
 
-- *(preencher)*
+**2. Fronteira entre requisito funcional e regra de negócio**
 
-**Principal aprendizado de cada integrante:**
+- **Desafio:** Os RFs foram escritos com regras de negócio misturadas ao texto, como campos obrigatórios, limite de vagas e prazo para corrigir a chamada. O monitor apontou o problema, e a equipe ficou em dúvida sobre até onde um apontamento era RF ou regra (RF19 e RF20 ficaram pendentes na ata de 28/09).
 
-- **Luan:** *(preencher)*
-- **Isabella:** *(preencher)*
-- **Luis:** *(preencher)*
-- **Ian:** *(preencher)*
-- **Pedro:** *(preencher)*
-- **Vitor:** *(preencher)*
+- **Ação de melhoria:** As regras de negócio passam a ficar numa lista própria (RN01, RN02, ...), registrada na seção 10.2 e ligada às user stories que as aplicam. O RF descreve só a capacidade (verbo + objeto). Separar as regras também virou item da Definição de Preparado (seção 9).
+
+**3. Priorização com o cliente**
+
+- **Desafio:** Na avaliação de valor de negócio, a maioria dos RFs recebeu nota 4 (Must have), o que dificultou separar o que era de fato essencial. O MVP acabou exigindo uma segunda escolha, e ficaram RFs "Must" fora dele sem uma justificativa registrada.
+
+- **Ação de melhoria:** Nas próximas priorizações, a equipe vai limitar a quantidade de itens "Must" por rodada, ou pedir ao cliente que escolha os N mais importantes de cada característica. A justificativa de cada item que ficar fora do MVP será registrada na ata.
+
 
 ## Unidade 3
 
-**O que funcionou bem:**
-
-- *(preencher)*
-
-**O que pode melhorar:**
-
-- *(preencher)*
-
-**Principal aprendizado de cada integrante:**
-
-- **Luan:** *(preencher)*
-- **Isabella:** *(preencher)*
-- **Luis:** *(preencher)*
-- **Ian:** *(preencher)*
-- **Pedro:** *(preencher)*
-- **Vitor:** *(preencher)*
 
 ## Unidade 4
 
-**O que funcionou bem:**
-
-- *(preencher)*
-
-**O que pode melhorar:**
-
-- *(preencher)*
-
-**Principal aprendizado de cada integrante:**
-
-- **Luan:** *(preencher)*
-- **Isabella:** *(preencher)*
-- **Luis:** *(preencher)*
-- **Ian:** *(preencher)*
-- **Pedro:** *(preencher)*
-- **Vitor:** *(preencher)*

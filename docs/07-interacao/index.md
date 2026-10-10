@@ -13,7 +13,7 @@ A equipe de desenvolvimento será composta por:
 | Gerente de Projeto / Scrum Master | Coordena o projeto, garante a comunicação com a coordenação da associação e controla prazos e entregas das sprints. | Luan | Isabella |
 | Desenvolvedor(a) Front-end | Responsável pela interface do portal e do painel administrativo, em Nuxt.js, com foco na simplicidade exigida pela coordenação. | Isabella | Vitor, Pedro |
 | Desenvolvedor(a) Back-end | Implementa a lógica de negócio, a integração com o Supabase (banco de dados e autenticação) e as server routes em Nuxt.js, incluindo o controle de perfis de acesso. | Luis | Luan, Vitor |
-| Analista de Requisitos | Conduz o processo de Engenharia de Requisitos (elicitação, análise e consenso, declaração, verificação e validação, organização e atualização, seção [5](../05-er/index.md)) a cada sprint, define os requisitos funcionais e não funcionais e garante que as regras da associação (senhas, rodízio, cinco faltas) sejam atendidas. | Ian | Isabella, Pedro |
+| Analista de Requisitos | Conduz o processo de Engenharia de Requisitos (elicitação, análise e consenso, declaração, verificação e validação, organização e atualização, seção [5](../05-er/index.md)) a cada sprint, define os requisitos funcionais e não funcionais e garante que as regras da associação (senhas, rodízio, 3 faltas) sejam atendidas. | Ian | Isabella, Pedro |
 | Analista de QA | Garante a qualidade do produto, testando os fluxos críticos: registro de doações, chamada, senhas da Sacola Verde e geração de relatórios. | Pedro | Luan, Ian |
 
 ### Integrantes

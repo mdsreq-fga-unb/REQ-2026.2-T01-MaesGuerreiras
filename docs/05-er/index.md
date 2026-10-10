@@ -48,7 +48,7 @@ técnicas em si.
 **Elicitação e Descoberta:**
 
 - **Entrevistas:** conversas pontuais com a coordenadora responsável pela frente tratada na sprint,
-  para detalhar regras como a das 3 faltas sem justificativa e o rodízio mensal do Domingo
+  para detalhar regras como a das 3 faltas seguidas sem justificativa e o rodízio mensal do Domingo
   Recreativo.
 - **Análise de Tarefas:** analisar as etapas realizadas pelas coordenadoras para registrar uma doação de itens, realizar a chamada ou organizar o atendimento, identificando dificuldades, decisões e oportunidades de simplificação.
 - **Análise Documental:** revisar os registros existentes daquela frente (caderno de doações, lista de

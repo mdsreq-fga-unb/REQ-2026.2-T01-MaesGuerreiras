@@ -77,7 +77,7 @@ concretos:
 - O cadastro das famílias existe em um computador da sede, mas não se conecta ao controle de
   presença nem ao registro das doações distribuídas;
 - A chamada das crianças no Reforço Escolar, no futebol e no Domingo Recreativo é feita em papel, e
-  a regra de liberar a vaga após cinco faltas sem justificativa depende de conferência manual;
+  a regra de liberar a vaga após 5 faltas sem justificativa depende de conferência manual;
 - O atendimento da Sacola Verde é organizado por ordem de chegada com entrega de senhas, sem
   registro de quem foi atendido em cada distribuição;
 - A comunidade não tem onde consultar o que está ativo: atividades suspensas (Informática Básica e

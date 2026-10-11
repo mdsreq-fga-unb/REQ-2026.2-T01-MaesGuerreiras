@@ -164,7 +164,7 @@ Problema ([1.4](../01-cenario/index.md)) → Objetivo Geral ([2.1](../02-solucao
 - Cada Objetivo Específico (seção [2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) se conecta a uma ou mais Características de Produto (CP1 a CP7, seção [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)).
 - Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como privacidade e proteção de dados pessoais. A ligação de cada RF com sua CP, seu agente e seus RNFs está na matriz da seção [8.4](../08-requisitos/index.md).
 - Cada característica de produto é um épico dentro de um dos quatro temas do backlog, e cada RF é declarado como uma user story com o mesmo número (RF01 → US01), conforme a seção [10.1](../10-backlog/index.md#101-backlog-geral).
-- Cada user story recebe critérios de aceitação no formato Dado/Quando/Então antes de entrar em uma sprint, conforme a Definição de Preparado (seção [9](../09-dor-dod/index.md)), e as regras de negócio que ela aplica ficam registradas na lista de regras da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp).
+- Cada user story recebe critérios de aceitação, escritos como lista de condições de satisfação, antes de entrar em uma sprint, conforme a Definição de Preparado (seção [9](../09-dor-dod/index.md)), e as regras de negócio que ela aplica ficam registradas na lista de regras da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp).
 - Cada critério de aceitação é validado por uma evidência concreta: teste automatizado, teste com usuária real ou registro da revisão da sprint com Makio ou Daiane, conforme a Definição de Pronto (seção [9](../09-dor-dod/index.md)).
 
 ### Do problema às características de produto
@@ -193,7 +193,7 @@ Problema ([1.4](../01-cenario/index.md)) → Objetivo Geral ([2.1](../02-solucao
 | OE5 | CP6 – Relatórios e indicadores de impacto | Relatórios e acessos | RF33 a RF38 → US33 a US38 | RNF03, RNF07 | — |
 | OE6 | CP7 – Perfis de acesso e proteção de dados | Relatórios e acessos | RF39 a RF45 → US39 a US45 | RNF07, RNF13, RNF14, RNF15, RNF19 | US39 a US42 |
 
-Os RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as características (seção [8.4](../08-requisitos/index.md)).
+Os RNF02, RNF04, RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as características (seção [8.4](../08-requisitos/index.md)).
 
 ### Exemplo da cadeia completa
 
@@ -201,7 +201,7 @@ A tabela a seguir mostra a cadeia completa para uma história do MVP. As demais 
 
 | Problema | OE | CP / Épico | RF / RNF | User Story | Regra de negócio | Critério de Aceitação | Evidência de Validação |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Doações anotadas em cadernos e nem sempre registradas | OE2 | CP2 – Registro de doações de itens | RF09 – Registrar doação recebida; RNF01, RNF19 | US09 – Como voluntário, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para que nenhuma doação recebida deixe de ser registrada. | RN02 – a quantidade usa a unidade de medida da categoria | Dado um voluntário autenticado e uma categoria cadastrada, quando ele informa categoria, quantidade, data e doador e confirma, então a entrada aparece na consulta de saldo (US12) com a quantidade somada | Teste automatizado no pipeline de CI e teste com uma voluntária, sem apoio da equipe, na revisão da Sprint 5 |
+| Doações anotadas em cadernos e nem sempre registradas | OE2 | CP2 – Registro de doações de itens | RF09 – Registrar doação recebida; RNF01, RNF19 | US09 – Como voluntário, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para que nenhuma doação recebida deixe de ser registrada. | RN02 – a quantidade usa a unidade de medida da categoria | (1) O voluntário autenticado consegue informar categoria cadastrada, quantidade, data e doador e confirmar o registro; (2) a entrada registrada aparece na consulta de saldo (US12) com a quantidade somada | Teste automatizado no pipeline de CI e teste com uma voluntária, sem apoio da equipe, na revisão da Sprint 5 |
 
 ## 5.3 Engenharia de Requisitos e o ScrumXP
 
@@ -215,7 +215,7 @@ O quadro a seguir apresenta o mapeamento das atividades, práticas e técnicas d
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Mapa de Histórias, Matriz de Rastreabilidade | Histórias organizadas em fatias de entrega com a linha do MVP (seção [10.1](../10-backlog/index.md#101-backlog-geral)) e rastreadas do problema à história (seção [5.2](#52-rastreabilidade-dos-requisitos)). |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
-| Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Especificação Dado/Quando/Então, Lista de Regras de Negócio | User stories com critérios de aceitação e regras de negócio registradas na lista da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp). |
+| Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | User stories com critérios de aceitação e regras de negócio registradas na lista da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), Critério INVEST | Apenas histórias que passam em todos os itens da DoR (seção [9](../09-dor-dod/index.md)) entram na sprint. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Backlog Grooming | Backlog refinado com a coordenação antes do início da sprint. |
 | Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com usuárias de baixa familiaridade digital. |

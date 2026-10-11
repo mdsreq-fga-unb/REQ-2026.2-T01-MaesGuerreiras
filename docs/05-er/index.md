@@ -156,70 +156,81 @@ técnicas em si.
 
 ## 5.2 Rastreabilidade dos Requisitos
 
-Para que cada requisito possa ser rastreado desde sua origem estratégica até sua validação, a equipe
-adota a seguinte cadeia de rastreabilidade, ligando artefatos já definidos nas demais seções do projeto:
+Para que cada requisito possa ser rastreado desde o problema que lhe deu origem até a sua validação, a equipe adota a seguinte cadeia de rastreabilidade, ligando artefatos já definidos nas demais seções do projeto:
 
-Objetivo Específico (OE) → Característica de Produto (CP) → Requisito Funcional/Não Funcional
-(RF/RNF) → Épico → User Story → Critério de Aceitação → Evidência de Validação
+Problema ([1.4](../01-cenario/index.md)) → Objetivo Geral ([2.1](../02-solucao/index.md)) → Objetivo Específico ([2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) → Característica de Produto ([2.3](../02-solucao/index.md#23-caracteristicas-de-produto)) → Requisito Funcional / Não Funcional ([8.1](../08-requisitos/index.md#81-lista-de-requisitos-funcionais-rfs), [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)) → Tema e Épico (5.1, [10.1](../10-backlog/index.md#101-backlog-geral)) → User Story ([10.1](../10-backlog/index.md#101-backlog-geral)) → Critério de Aceitação → Evidência de Validação
 
-- Cada Objetivo Específico (seção [2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto))
-  se conecta a uma ou mais Características de Produto (CP1 a CP7, seção
-  [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)). A priorização e as dependências determinam
-  se o requisito compõe o MVP: CP2 e partes mínimas de CP6 e CP7, com CP1 condicionada à confirmação
-  da prioridade pela coordenação, conforme a seção [2.6](../02-solucao/index.md#26-viabilidade-da-proposta).
-- Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs
-  decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como
-  privacidade e proteção de dados pessoais.
-- Cada requisito é declarado como parte de um épico e detalhado em uma ou mais user stories, que
-  por sua vez possuem critérios de aceitação escritos como condições de satisfação verificáveis —
-  o que precisa ser verdade para o requisito estar correto, sem depender do formato Given-When-Then.
-- Cada critério de aceitação é validado por uma evidência concreta — teste automatizado, teste com
-  usuária real ou registro da homologação com Makio ou Daiane.
+- Cada problema identificado na seção [1.4](../01-cenario/index.md) é atendido por um ou mais Objetivos Específicos, que detalham o Objetivo Geral do produto (seção [2.1](../02-solucao/index.md)).
+- Cada Objetivo Específico (seção [2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) se conecta a uma ou mais Características de Produto (CP1 a CP7, seção [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)).
+- Cada característica de produto origina requisitos funcionais e não funcionais, incluindo RNFs decorrentes dos efeitos emergentes identificados na seção [3](../03-intervencao-social/index.md), como privacidade e proteção de dados pessoais. A ligação de cada RF com sua CP, seu agente e seus RNFs está na matriz da seção [8.4](../08-requisitos/index.md).
+- Cada característica de produto é um épico dentro de um dos quatro temas do backlog, e cada RF é declarado como uma user story com o mesmo número (RF01 → US01), conforme a seção [10.1](../10-backlog/index.md#101-backlog-geral).
+- Cada user story recebe critérios de aceitação no formato Dado/Quando/Então antes de entrar em uma sprint, conforme a Definição de Preparado (seção [9](../09-dor-dod/index.md)), e as regras de negócio que ela aplica ficam registradas na lista de regras da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp).
+- Cada critério de aceitação é validado por uma evidência concreta: teste automatizado, teste com usuária real ou registro da revisão da sprint com Makio ou Daiane, conforme a Definição de Pronto (seção [9](../09-dor-dod/index.md)).
 
-A tabela a seguir traz os exemplos de CP1 e CP2, mais as histórias das RFs que compõem a Sprint 5
-(base de acesso e doações), como ponto de partida da matriz de rastreabilidade a ser mantida pela
-equipe (planilha ou quadro no board do projeto) e atualizada a cada sprint:
+### Do problema às características de produto
 
-| OE | CP | RF/RNF | Épico → User Story | Critério de Aceitação | Evidência de Validação |
+| Problema identificado (1.4) | Objetivo Específico (2.2) | Característica de Produto (2.3) |
+| :--- | :--- | :--- |
+| Doações de itens anotadas em cadernos e, por falta de tempo, nem sempre registradas | OE2 | CP2 – Registro de doações de itens |
+| Não existe relatório organizado do que foi recebido e distribuído | OE5 | CP6 – Relatórios e indicadores de impacto |
+| A prestação de contas aos parceiros depende da memória das coordenadoras | OE5 | CP6 – Relatórios e indicadores de impacto |
+| O cadastro das famílias fica em um computador da sede, sem ligação com a presença e as doações | OE3 | CP3 – Cadastro de famílias e participantes; CP4 – Inscrição em atividades |
+| A chamada é feita em papel e a regra de faltas depende de conferência manual | OE4 | CP5 – Chamada digital e controle de frequência |
+| A Sacola Verde não registra quem foi atendido em cada distribuição | OE2 (parcial) | CP2 – a saída de itens para a família fica registrada no RF10; o sistema de senhas ficou fora do escopo (seção [11](../08-licoes/index.md), Unidade 1) |
+| A comunidade não sabe quais atividades estão ativas, suspensas ou dependem de doação | OE1 | CP1 – Portal institucional e agenda de atividades |
+| Informações institucionais e vagas dependem de Instagram, panfletos e grupos de WhatsApp | OE1 | CP1 – Portal institucional e agenda de atividades |
+| Tratamento de dados pessoais de famílias em vulnerabilidade (efeito emergente, seção [3](../03-intervencao-social/index.md)) | OE6 | CP7 – Perfis de acesso e proteção de dados |
+
+### Das características de produto às user stories
+
+| OE | CP / Épico | Tema | RFs → User Stories | RNFs específicos | No MVP |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| OE2 | CP2 — Registro de doações de itens | RF: registrar entrada e saída de itens doados (tipo, quantidade, data); RNF: meta preliminar de concluir o registro em até dois minutos, pendente de validação conforme a seção 2.7 | Registro de Doações → "Como coordenadora, quero registrar uma doação digitalmente, para não perder o registro por falta de tempo" | O sistema registra a doação informada por uma coordenadora autorizada e a torna disponível para consulta imediatamente após a confirmação; o tempo total da tarefa é medido para avaliar a meta preliminar da seção 2.7 | Teste com Cleide, Luzia ou Liz usando dados fictícios, sem apoio da equipe, com registro do tempo da tarefa |
-| OE1 | CP1 — Portal institucional e agenda de atividades | RF: exibir a agenda com a situação de cada atividade (ativa, suspensa ou dependente de doação) | Portal Institucional → "Como visitante, quero ver quais atividades estão ativas, para saber como participar ou ajudar" | Quando uma atividade está suspensa, essa situação aparece de forma clara para o visitante que acessa a agenda | Homologação com Makio antes da publicação da página |
-| OE6 | CP7 — Perfis de acesso e proteção de dados | RF41 — Autenticar usuário | Perfis de Acesso e Proteção de Dados → "Como voluntária ou coordenadora, quero entrar na área restrita com usuário e senha, para acessar só as funcionalidades do meu perfil" | O sistema só libera o acesso à área restrita para usuário e senha cadastrados e válidos; uma tentativa com credencial inválida é recusada, sem indicar qual dado está errado | Teste de autenticação com uma coordenadora usando credencial própria, antes da entrega da Sprint 5 |
-| OE6 | CP7 — Perfis de acesso e proteção de dados | RF42 — Registrar consentimento de tratamento de dados pessoais | Perfis de Acesso e Proteção de Dados → "Como voluntária ou coordenadora, quero registrar o consentimento do titular por finalidade, para que o uso dos dados esteja de acordo com a LGPD antes de cadastrar informações pessoais" | O sistema registra o consentimento vinculado à finalidade específica (cadastro/atendimento, frequência, contato com a família, relatório a apoiador) e à data do registro; nenhum cadastro de dado pessoal é permitido sem o consentimento da finalidade correspondente | Checklist de verificação de consentimento revisado com Makio, antes de qualquer dado real de família ser inserido |
-| OE2 | CP2 — Registro de doações de itens | RF08 — Cadastrar ou atualizar doador | Registro de Doações → "Como voluntária ou coordenadora, quero cadastrar ou corrigir os dados de um doador, para manter o registro de quem contribui com a associação" | O sistema permite cadastrar um novo doador e corrigir os dados de um doador já existente; não é possível salvar o cadastro sem o nome do doador preenchido | Teste de usabilidade com uma coordenadora cadastrando um doador sem ajuda da equipe |
-| OE2 | CP2 — Registro de doações de itens | RF09 — Registrar doação recebida | Registro de Doações → "Como voluntária ou coordenadora, quero registrar a entrada de uma doação, para não perder o registro por falta de tempo" | O sistema registra a doação com categoria, quantidade, data e doador de origem, e a torna disponível na consulta de saldo imediatamente após a confirmação | Teste de usabilidade: uma coordenadora registra doações sem ajuda da equipe (seção 6) |
-| OE2 | CP2 — Registro de doações de itens | RF12 — Consultar saldo de itens | Registro de Doações → "Como voluntária ou coordenadora, quero consultar a quantidade atual de cada item doado, para saber o que a associação tem disponível antes de uma distribuição" | A consulta de saldo mostra a quantidade atual por categoria de item, refletindo as doações já registradas; o resultado aparece em até 3 segundos, conforme o RNF03 | Teste de usabilidade com a coordenação e verificação do tempo de resposta (RNF03) |
+| OE1, OE5 | CP1 – Portal institucional e agenda de atividades | Portal institucional | RF01 a RF07 → US01 a US07 | RNF03, RNF07, RNF13 | — |
+| OE2, OE5 | CP2 – Registro de doações de itens | Doações de itens | RF08 a RF13 → US08 a US13 | RNF01, RNF03, RNF19 | US08 a US12 |
+| OE3, OE6 | CP3 – Cadastro de famílias e participantes | Cadastro e presença | RF14 a RF19 → US14 a US19 | RNF03, RNF07, RNF13, RNF16, RNF19 | US14, US16, US18, US19 |
+| OE3 | CP4 – Inscrição em atividades e organização do atendimento | Cadastro e presença | RF20 a RF26 → US20 a US26 | RNF03, RNF07 | US20, US23, US26 |
+| OE4, OE5 | CP5 – Chamada digital e controle de frequência | Cadastro e presença | RF27 a RF32 → US27 a US32 | RNF01, RNF03, RNF07, RNF10, RNF16, RNF19 | US27, US28 |
+| OE5 | CP6 – Relatórios e indicadores de impacto | Relatórios e acessos | RF33 a RF38 → US33 a US38 | RNF03, RNF07 | — |
+| OE6 | CP7 – Perfis de acesso e proteção de dados | Relatórios e acessos | RF39 a RF45 → US39 a US45 | RNF07, RNF13, RNF14, RNF15, RNF19 | US39 a US42 |
 
-As demais características seguem o mesmo modelo de rastreabilidade. As partes mínimas de CP6 e CP7
-necessárias ao MVP devem ser detalhadas no backlog junto à CP2; as demais capacidades serão
-priorizadas nas releases seguintes.
+Os RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as características (seção [8.4](../08-requisitos/index.md)).
+
+### Exemplo da cadeia completa
+
+A tabela a seguir mostra a cadeia completa para uma história do MVP. As demais histórias seguem o mesmo modelo e terão critérios e evidências registrados a cada sprint.
+
+| Problema | OE | CP / Épico | RF / RNF | User Story | Regra de negócio | Critério de Aceitação | Evidência de Validação |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Doações anotadas em cadernos e nem sempre registradas | OE2 | CP2 – Registro de doações de itens | RF09 – Registrar doação recebida; RNF01, RNF19 | US09 – Como voluntário, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para que nenhuma doação recebida deixe de ser registrada. | RN02 – a quantidade usa a unidade de medida da categoria | Dado um voluntário autenticado e uma categoria cadastrada, quando ele informa categoria, quantidade, data e doador e confirma, então a entrada aparece na consulta de saldo (US12) com a quantidade somada | Teste automatizado no pipeline de CI e teste com uma voluntária, sem apoio da equipe, na revisão da Sprint 5 |
 
 ## 5.3 Engenharia de Requisitos e o ScrumXP
 
-O quadro a seguir apresenta o mapeamento das atividades, práticas e técnicas da ER aos momentos do
-processo ScrumXP definido para a condução do projeto.
+O quadro a seguir apresenta o mapeamento das atividades, práticas e técnicas da ER aos momentos do processo ScrumXP definido para a condução do projeto.
 
 | Momentos do ScrumXP | Atividades da ER | Prática | Técnica | Resultados Esperados |
 | :--- | :--- | :--- | :--- | :--- |
-| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
-| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Análise de Custo/Benefício | Escopo do MVP priorizado e acordado com a coordenação: CP2, controle de acesso mínimo (parte da CP7) e consulta/exportação (parte da CP6); CP1 condicionada à confirmação de sua prioridade. |
-| Planejamento da Release | Declaração | Especificação dos Requisitos | Temas, Épicos e User Stories | Temas, épicos e histórias registrados com o vocabulário usado pela associação, servindo também como estrutura de organização do backlog. |
+| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Questionário, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
+| Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP de 18 RFs validado com Makio em 28/09/2026 (seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp)): doações (CP2), famílias e participantes (CP3), turma e inscrição (parte do CP4), chamada (CP5) e acesso e consentimento (parte do CP7). Portal (CP1) e relatórios (CP6) ficam para depois do MVP. |
+| Planejamento da Release | Declaração | Especificação dos Requisitos | Lista de RFs e RNFs, Temas, Épicos e User Stories | RFs e RNFs declarados (seção [8](../08-requisitos/index.md)) e backlog de 45 user stories organizado em 4 temas e 7 épicos (seção [10.1](../10-backlog/index.md#101-backlog-geral)), com o vocabulário usado pela associação. |
+| Planejamento da Release | Organização e Atualização | Organização do Backlog | Mapa de Histórias, Matriz de Rastreabilidade | Histórias organizadas em fatias de entrega com a linha do MVP (seção [10.1](../10-backlog/index.md#101-backlog-geral)) e rastreadas do problema à história (seção [5.2](#52-rastreabilidade-dos-requisitos)). |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
-| Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação | Especificação Given-When-Then | User stories com critérios de aceitação — o artefato produzido — claros e bem definidos. |
+| Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Especificação Dado/Quando/Então, Lista de Regras de Negócio | User stories com critérios de aceitação e regras de negócio registradas na lista da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp). |
+| Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), Critério INVEST | Apenas histórias que passam em todos os itens da DoR (seção [9](../09-dor-dod/index.md)) entram na sprint. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Backlog Grooming | Backlog refinado com a coordenação antes do início da sprint. |
-| Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes — o artefato produzido — validados com usuárias de baixa familiaridade digital. |
+| Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com usuárias de baixa familiaridade digital. |
 | Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Checklist, Revisão de Critérios de Aceitação, Critério INVEST | Requisitos e histórias verificados quanto à clareza, consistência, completude e testabilidade. |
 | Execução da Sprint | Organização e Atualização | Acompanhamento do Backlog | Reuniões Diárias (Daily) | Backlog atualizado e alinhado com os objetivos da sprint em andamento. |
+| Revisão da Sprint | Verificação e Validação | Verificação da Conclusão | Checklist da Definição de Pronto (DoD) | Só são apresentadas na revisão as histórias que passam em todos os itens da DoD (seção [9](../09-dor-dod/index.md)); as demais voltam ao backlog. |
 | Revisão da Sprint | Verificação e Validação | Validação com a Coordenação | Coleta de Feedback, Teste com Usuárias Reais | Requisitos e funcionalidades validados pelas coordenadoras em situações reais de uso, com feedback coletado. |
 | Revisão da Sprint | Análise e Consenso | Negociação das Alterações | Análise do Feedback, Negociação | Alterações analisadas e classificadas como incorporadas, adiadas ou retiradas do escopo. |
-| Revisão da Sprint | Organização e Atualização | Atualização dos Requisitos | Revisão das Histórias de Usuário, Critérios de Aceitação e Prioridades | Requisitos e backlog atualizados conforme o feedback, respeitando o escopo do [MVP](../02-solucao/index.md#26-viabilidade-da-proposta). |
+| Revisão da Sprint | Organização e Atualização | Atualização dos Requisitos | Revisão das Histórias de Usuário, Critérios de Aceitação e Prioridades | Requisitos, backlog e rastreabilidade atualizados conforme o feedback, respeitando o escopo do MVP. |
 | Retrospectiva da Sprint | Análise e Consenso | Análise de Problemas da ER | Retrospectiva Start/Stop/Continue | Problemas relacionados aos requisitos e à comunicação identificados e analisados. |
-| Retrospectiva da Sprint | Organização e Atualização | Atualização da Organização dos Requisitos | Ações de Melhoria Contínua | Melhorias incorporadas à organização e atualização dos requisitos. |
+| Retrospectiva da Sprint | Organização e Atualização | Atualização da Organização dos Requisitos | Ações de Melhoria Contínua | Melhorias incorporadas à organização dos requisitos e registradas nas Lições Aprendidas (seção [11](../08-licoes/index.md)). |
 | Planejamento da Próxima Release | Elicitação e Descoberta | Identificação de Novos Requisitos | Entrevistas de Acompanhamento, Análise de Domínio de Negócio | Novos requisitos identificados e requisitos existentes revisados a partir do uso real da plataforma. |
-| Planejamento da Próxima Release | Análise e Consenso | Priorização Estratégica | Priorização MoSCoW, Mapeamento de Valor | Requisitos priorizados para atender às necessidades da próxima release. |
+| Planejamento da Próxima Release | Análise e Consenso | Priorização Estratégica | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico | Histórias das fatias 2 e 3 do mapa repriorizadas para a próxima release. |
 | Planejamento da Próxima Release | Declaração | Definição de Épicos e User Stories | Criação de Épicos e User Stories | User stories claramente definidas e vinculadas aos objetivos da próxima release. |
-| Planejamento da Próxima Release | Organização e Atualização | Revisão do Backlog | Revisão e Reordenação do Backlog | Backlog da release atualizado e preparado para o próximo ciclo. |
+| Planejamento da Próxima Release | Organização e Atualização | Revisão do Backlog | Revisão e Reordenação do Backlog, Mapa de Histórias | Backlog e mapa de histórias atualizados e preparados para o próximo ciclo. |
 
 ## 5.4 Integração da ER com as Práticas de XP
 

@@ -8,7 +8,7 @@ O calendário da disciplina de Requisitos de Software (Unidades 1 a 4, de 11/08/
 para referência, não como origem das entregas do produto.
 
 A cadência adotada é de **sprints de 2 semanas**, totalizando 8 sprints de desenvolvimento mais
-um período de fechamento. O núcleo do MVP foi definido com Makio em 29/09/2026, a partir da
+um período de fechamento. O núcleo do MVP foi validado com Makio em 28/09/2026, a partir da
 classificação de obrigatoriedade dos RNFs (seção [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)):
 doações (CP2), cadastro de famílias e participantes (CP3), inscrição em turma e consulta de
 inscritos (parte do CP4), chamada digital (CP5) e o consentimento de tratamento de dados (parte

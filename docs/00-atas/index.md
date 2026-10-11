@@ -27,9 +27,11 @@ Isabella vai dividir essa parte entre a equipe.
 
 ### 3. Reunião com o cliente (Makio)
 
-Ficaram alinhadas duas reuniões com Makio em 29/09: uma para avaliação de negócio e esforço
-técnico (definição do MVP) e outra para validação do MVP, com a entrega da Atividade 4 prevista
-para o mesmo dia.
+A avaliação do valor de negócio dos requisitos com Makio foi realizada em **25/09/2026**, e a
+validação do escopo do MVP ocorreu em **28/09/2026**. As gravações estão disponíveis na página
+de Evidências e Gravações: [avaliação do valor de negócio](../00-evidencias/index.md#avaliacao-do-valor-de-negocio-25092026)
+e [validação do MVP](../00-evidencias/index.md#validacao-do-mvp-28092026).
+
 
 ## Ata de 22/09/2026
 

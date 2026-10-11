@@ -49,11 +49,11 @@ valem para o RF antes dele entrar em sprint. RF09 (Registrar doação recebida) 
 RNF01 (usabilidade, até três passos) e ao RNF07 (segurança); implementar RF09 sem saber disso
 tende a deixar esses atributos de fora.
 
-**O critério de aceitação está escrito no formato Dado/Quando/Então?**
+**O critério de aceitação está escrito como condições de satisfação verificáveis?**
 
-Sem Given-When-Then redigido, como nos exemplos da seção
-[5.2](../05-er/index.md#52-rastreabilidade-dos-requisitos), a equipe de teste não tem o que
-automatizar e a Revisão de Sprint vira debate de opinião sobre "se ficou bom".
+Sem uma lista objetiva do que precisa ser verdade para o requisito estar correto, como nos
+exemplos da seção [5.2](../05-er/index.md#52-rastreabilidade-dos-requisitos), a equipe de teste
+não tem o que automatizar e a Revisão de Sprint vira debate de opinião sobre "se ficou bom".
 
 **As dependências com outros requisitos estão mapeadas?**
 
@@ -92,8 +92,7 @@ o desenvolvimento, a seção 8 é atualizada antes de o requisito ser considerad
 RF23 precisa realmente bloquear a inscrição quando não há vaga e oferecer o encaminhamento à
 lista de espera (RF25) — não só inscrever sempre e ignorar o limite de vagas definido em RF20.
 
-**O critério de aceitação Given-When-Then passa integralmente, incluindo os cenários de
-exceção?**
+**Os critérios de aceitação passam integralmente, incluindo os cenários de exceção?**
 
 RF18 (Vincular participante a família) tem dois cenários: responsável legal informado, e a
 exceção de criança em acolhimento com motivo registrado. Os dois precisam passar, não só o
@@ -149,7 +148,7 @@ avançar.
 | ☐ | O perfil de acesso está definido na tabela de permissões (8.4)? |
 | ☐ | Existe protótipo validado com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
-| ☐ | O critério de aceitação está em Dado/Quando/Então? |
+| ☐ | O critério de aceitação está escrito como condições de satisfação verificáveis? |
 | ☐ | As dependências com outros RFs estão mapeadas? |
 | ☐ | O esforço técnico foi estimado e cabe na sprint? |
 | ☐ | O requisito já foi apresentado a Makio ou Daiane, com registro? |

@@ -118,7 +118,7 @@ O mapa a seguir organiza as user stories por tema e épico (na horizontal) e por
 (na vertical). Tudo o que fica acima da linha do MVP compõe o núcleo validado com o cliente;
 as fatias 2 e 3 seguem as prioridades da seção [10.2](index.md#102-priorizacao-do-backlog-geral-e-mvp).
 
-![Mapa de histórias do projeto](/docs/assets/mapa-historias.png)
+![Mapa de histórias do projeto](../assets/mapa-historias.png)
 
 ## 10.2 Priorização do Backlog Geral e MVP
 

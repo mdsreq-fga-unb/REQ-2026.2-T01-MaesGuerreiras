@@ -128,28 +128,15 @@ desenvolvimento mais um período de fechamento. Esse ritmo permite ajustar o esc
 reservar as primeiras sprints também para o aprendizado das tecnologias e garantir a entrega de um
 MVP (Produto Mínimo Viável) funcional.
 
-O núcleo do MVP foi definido com Makio em 29/09/2026, a partir da classificação de obrigatoriedade
-dos requisitos não funcionais (seção [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)):
-registro de doações e consulta de saldo (CP2), cadastro de famílias e participantes (CP3), cadastro
-de turma, inscrição e consulta de inscritos (parte do CP4) e chamada digital com registro de
-frequência (CP5). A autenticação, os perfis de acesso mínimos e o consentimento de tratamento de
-dados (parte do CP7) entram junto com a primeira sprint que trata dados pessoais, em vez de ocupar
-uma sprint isolada anterior a todas as outras. Portal institucional e agenda pública (CP1) e
-relatórios de impacto (CP6) ficam fora do núcleo e são entregues depois, nas últimas sprints e no
-fechamento, conforme a priorização do backlog.
+O núcleo do MVP foi validado com Makio em 28/09/2026, a partir da priorização por valor de negócio (MoSCoW) e esforço técnico, cruzados na matriz 4 × 4 (seções [8.5](../08-requisitos/index.md#85-matriz-4x4) e [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp)). Foram selecionados 18 RFs: registro de doações e consulta de saldo (CP2), cadastro de famílias e participantes (CP3), cadastro de turma, inscrição e consulta de inscritos (parte do CP4), chamada digital com registro de frequência (CP5) e cadastro de usuários, perfis, autenticação e registro de consentimentos (parte do CP7). A base de acesso e consentimento entra junto com a primeira sprint que trata dados pessoais, em vez de ocupar uma sprint isolada anterior a todas as outras. Portal institucional e agenda pública (CP1) e relatórios de impacto (CP6) ficam fora do núcleo e são entregues depois, nas últimas sprints e no fechamento, conforme o cronograma (seção [6](../06-cronograma/index.md#6-cronograma-e-entregas)).
 
 ### Riscos e mitigação
 
 - **Risco de não adoção:** se o registro digital não for mais rápido do que anotar no caderno, a
   coordenação voltará ao papel. *Mitigação:* protótipos validados antes de programar e teste da
   funcionalidade com as próprias coordenadoras, sem ajuda da equipe, ao final de cada sprint.
-- **Escopo ambicioso frente ao prazo:** a associação tem muitas frentes. *Mitigação:* MVP restrito a
-  CP1, CP7 e CP2, com as demais características priorizadas ciclo a ciclo.
-- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* CP7 (perfis de acesso
-  e proteção de dados) é entregue antes de CP2 e CP3; os primeiros testes usam dados sintéticos ou
-  anonimizados; dados reais de famílias só entram após CP7 verificado, backup configurado e
-  autorização institucional confirmada; publicação de fotos e depoimentos apenas após obtenção das
-  autorizações de uso de imagem.
+- **Escopo ambicioso frente ao prazo:** a associação tem muitas frentes. *Mitigação:* MVP restrito aos 18 RFs validados com o cliente (seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp)), com as demais histórias priorizadas ciclo a ciclo.
+- **Tratamento de dados pessoais de famílias em vulnerabilidade:** *Mitigação:* autenticação, perfis de acesso e registro de consentimento (parte de CP7) entram na Sprint 5, antes do cadastro de famílias e participantes (CP3); os primeiros testes usam dados sintéticos ou anonimizados; dados reais de famílias só entram após a base de acesso verificada, backup configurado e autorização institucional confirmada; publicação de fotos e depoimentos apenas após o registro das autorizações de uso de imagem.
 - **Disponibilidade da coordenação:** todas atuam voluntariamente e têm agenda cheia. *Mitigação:*
   validações curtas.
 - **Manutenção após o semestre:** A associação pode não dispor de equipe técnica para manter a
@@ -166,9 +153,7 @@ fechamento, conforme a priorização do backlog.
 - **Dados pessoais durante os testes:** Dados de adultos e crianças podem ser expostos indevidamente.
   *Mitigação:* uso de dados fictícios ou anonimizados nos testes e restrição do acesso aos dados reais.
 
-Assim, a proposta é considerada viável, desde que o escopo do MVP permaneça controlado, as
-prioridades sejam mantidas ao longo das sprints e a equipe reserve tempo na primeira sprint para o
-aprendizado das tecnologias escolhidas.
+Assim, a proposta é considerada viável, desde que o escopo do MVP permaneça controlado, as prioridades sejam mantidas ao longo das sprints e a equipe mantenha o tempo de aprendizado das tecnologias previsto nas primeiras sprints (seção [6](../06-cronograma/index.md#6-cronograma-e-entregas)).
 
 ## 2.7 Benefícios Esperados
 

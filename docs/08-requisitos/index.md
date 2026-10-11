@@ -51,11 +51,11 @@
 
 - RF20 – Cadastrar turma de atividade: Permitir que a Coordenação cadastre uma turma com atividade*, período (data de início e de término, com término depois do início), dias de encontro (dias da semana e horário) e quantidade de vagas.
 
-- RF21 – Atualizar turma de atividade: Permitir que a Coordenação altere período, dias de encontro e vagas de uma turma em andamento. Se as novas vagas forem menos que os inscritos, o sistema recusa e informa o total de inscritos. Se aumentarem e houver lista de espera, o sistema avisa (RF24).
+- RF21 – Atualizar turma de atividade: Permitir que a Coordenação altere período, dias de encontro e vagas de uma turma em andamento. Se as novas vagas forem menos que os inscritos, o sistema recusa e informa o total de inscritos. Se aumentarem e houver lista de espera, o sistema avisa (RF25).
 
 - RF22 – Encerrar turma de atividade: Permitir que a Coordenação encerre uma turma, registrando a data. O encerramento antes do fim do período exige o motivo.
 
-- RF23 – Inscrever participante em turma: Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema não inscreve e oferece o encaminhamento à lista de espera (RF24).
+- RF23 – Inscrever participante em turma: Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema não inscreve e oferece o encaminhamento à lista de espera (RF25).
 
 - RF24 – Cancelar inscrição de participante: Permitir que Voluntário ou Coordenação cancelem uma inscrição, com motivo obrigatório escolhido em lista: desistência, mudança de endereço, conflito de horário, desligamento da associação ou outro (texto livre obrigatório só nesse caso).
 
@@ -95,7 +95,7 @@
 
 - RF39 – Cadastrar usuário do sistema: Permitir que a Coordenação cadastre Voluntários e outros membros da Coordenação. A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação.
 
-- RF40 – Atribuir perfil de acesso ao usuário: Permitir que a Coordenação atribua a cada usuário o perfil Voluntário ou Coordenação, conforme a tabela de permissões (seção 8.3).
+- RF40 – Atribuir perfil de acesso ao usuário: Permitir que a Coordenação atribua a cada usuário o perfil Voluntário ou Coordenação, conforme a tabela de permissões (seção 8.4).
 
 - RF41 – Autenticar usuário: Permitir que Voluntário ou Coordenação acessem a área restrita mediante autenticação do usuário cadastrado.
 
@@ -201,7 +201,7 @@ Há três agentes: o Visitante (sem login), o Voluntário e a Coordenação (amb
 
 ### Matriz de rastreabilidade
 
-CP é a característica de produto de cada RF. Valem para todos os RFs: RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18. A coluna de RNFs lista só os que se aplicam de forma específica.
+CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, RNF04, RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18. A coluna de RNFs lista só os que se aplicam de forma específica.
 
 | RF | CP | Agente | RNFs específicos |
 | --- | --- | --- | --- |
@@ -293,7 +293,7 @@ negócio × esforço técnico.
 | RNF11 | Obrigatório para o MVP | A comunicação entre interface e serviço de dados é necessária às funções da área restrita incluídas no MVP. |
 | RNF12 | Obrigatório para o MVP | A associação não pode assumir custo mensal de operação; a restrição vale para todo o MVP. |
 | RNF13 | Obrigatório para o MVP | O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF43 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão. |
-| RNF14 | Não aplicável ao MVP | O registro de autorização de imagem foi incorporado ao RF42 (fundido com RF43 original), e a consulta (RF45) ficaram fora dos 18 RFs selecionados. |
+| RNF14 | Obrigatório para o MVP | O RF42 registra a autorização de imagem junto com o consentimento, e esse registro está entre os 18 RFs do MVP. A consulta da autorização vigente (RF45) fica fora do MVP. |
 | RNF15 | Obrigatório para o MVP | Cadastro de usuários, perfis e autenticação (RF39–RF41) estão no MVP. |
 | RNF16 | Associado a RFs do MVP | Aplica-se aos cadastros RF14/RF16 e à chamada RF27/RF28; portanto, entra no MVP. |
 | RNF17 | Obrigatório para o MVP | O MVP inclui doação, inscrição e frequência, rotinas cobertas pelo README e pelos testes previstos no RNF. |

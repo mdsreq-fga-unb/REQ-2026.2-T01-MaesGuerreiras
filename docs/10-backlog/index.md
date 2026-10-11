@@ -112,6 +112,14 @@ segue o valor de negócio (VN) da sua característica.
 | RF44 – Consultar histórico de alterações de cadastro | **US44** – Como membro da coordenação, quero consultar quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando, para ter controle sobre as alterações feitas no sistema. | RNF07, RNF19 |
 | RF45 – Consultar autorização de uso de imagem vigente | **US45** – Como voluntário, quero consultar, por pessoa, a autorização de imagem em vigor para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
 
+### Mapa de histórias
+
+O mapa a seguir organiza as user stories por tema e épico (na horizontal) e por fatia de entrega
+(na vertical). Tudo o que fica acima da linha do MVP compõe o núcleo validado com o cliente;
+as fatias 2 e 3 seguem as prioridades da seção [10.2](index.md#102-priorizacao-do-backlog-geral-e-mvp).
+
+![Mapa de histórias do projeto](/docs/assets/mapa-historias.png)
+
 ## 10.2 Priorização do Backlog Geral e MVP
 
 A priorização considerou duas perspectivas complementares: o **valor de negócio**, avaliado com a

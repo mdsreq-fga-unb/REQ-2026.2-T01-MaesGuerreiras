@@ -17,7 +17,7 @@ segue o valor de negócio (VN) da sua característica.
 
 **Observações:**
 
-- Os RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as histórias
+- Os RNF02, RNF04, RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as histórias
   (seção 8.4). A coluna "RNFs relacionados" lista só os que se aplicam de forma específica.
 - Quando o RF permite o uso por Voluntário e por Coordenação, a história é escrita do ponto de vista
   do voluntário, porque a Coordenação tem todas as permissões do Voluntário (tabela de permissões da
@@ -44,7 +44,7 @@ segue o valor de negócio (VN) da sua característica.
 
 | RF | User Story derivada | RNFs relacionados |
 | :--- | :--- | :--- |
-| RF08 – Cadastrar ou atualizar doador | **US08** (MVP) – Como voluntário, quero cadastrar e, se necessário, corrigir os dados de pessoas e organizações que doam itens, para saber de onde veio cada doação. | RNF01 |
+| RF08 – Cadastrar ou atualizar doador | **US08** (MVP) – Como voluntário, quero cadastrar e, se necessário, corrigir os dados de pessoas e organizações que doam itens, para saber de onde veio cada doação. | RNF01, RNF19 |
 | RF09 – Registrar doação recebida | **US09** (MVP) – Como voluntário, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para que nenhuma doação recebida deixe de ser registrada. | RNF01, RNF19 |
 | RF10 – Registrar destinação de doação | **US10** (MVP) – Como voluntário, quero registrar a saída de itens doados com categoria, quantidade, data e a família ou atividade que os recebeu, para saber para onde foi cada doação. | RNF19 |
 | RF11 – Cadastrar categoria de item | **US11** (MVP) – Como membro da coordenação, quero cadastrar categorias de item com nome e unidade de medida, para que as entradas e saídas sejam contadas sempre da mesma forma. | — |
@@ -111,6 +111,120 @@ segue o valor de negócio (VN) da sua característica.
 | RF43 – Registrar e acompanhar solicitação de exclusão de dados | **US43** – Como membro da coordenação, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. | RNF13 |
 | RF44 – Consultar histórico de alterações de cadastro | **US44** – Como membro da coordenação, quero consultar quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando, para ter controle sobre as alterações feitas no sistema. | RNF07, RNF19 |
 | RF45 – Consultar autorização de uso de imagem vigente | **US45** – Como voluntário, quero consultar, por pessoa, a autorização de imagem em vigor para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
+
+### Critérios de aceitação — US08 a US12 e US39 a US42
+
+Os critérios abaixo descrevem as condições de satisfação das histórias US08 a US12 e US39 a US42,
+relacionando cada história aos requisitos funcionais, não funcionais e às regras de negócio
+aplicáveis. Para cada história, são indicadas as evidências previstas para a verificação pela
+equipe e a validação com a coordenação, conforme a DoR e a DoD da [seção
+9](../09-dor-dod/index.md). Os RNFs gerais apresentados nas observações da seção 10.1 também
+se aplicam a essas histórias.
+
+#### US08 — Cadastrar ou atualizar doador
+
+**Origem e RNFs:** RF08; CP2; RNF01 (seção 8.4) e RNF19 para correções de doador (seção 8.7).  
+**Regras relacionadas:** Não há RN específica na lista RN01–RN20.
+
+- **CA-US08-01:** Voluntário e Coordenação conseguem cadastrar pessoas e organizações doadoras, conforme o RF08.
+- **CA-US08-02:** A correção realizada por um desses perfis é persistida no cadastro do doador.
+- **CA-US08-03:** As correções de dados do doador registram autor, data, hora, valor anterior e valor novo, conforme o RNF19 e seu recorte na seção 8.7; o registro pode ser verificado no log sem a tela RF44.
+
+*Evidência prevista:* Verificação: teste de cadastro, correção e consulta do log de alteração. Validação: uma coordenadora cadastra e corrige um doador fictício sem ajuda da equipe, em revisão a registrar.
+
+
+#### US09 — Registrar doação recebida
+
+**Origem e RNFs:** RF09; CP2; RNF01 e RNF19.  
+**Regras relacionadas:** RN02.
+
+- **CA-US09-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e doador de origem.
+- **CA-US09-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a entrada soma essa quantidade ao saldo consultado na US12.
+- **CA-US09-03:** O registro pode ser concluído em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros, conforme o RNF01.
+
+*Evidência prevista:* Verificação: teste do registro de entrada, da unidade de medida e da soma no saldo. Validação: uma voluntária registra uma doação fictícia sem ajuda da equipe, com contagem dos passos a partir da tela inicial da área restrita.
+
+
+#### US10 — Registrar destinação de doação
+
+**Origem e RNFs:** RF10; CP2; RNF19.  
+**Regras relacionadas:** RN02.
+
+- **CA-US10-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.
+- **CA-US10-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a saída subtrai essa quantidade do saldo consultado na US12.
+
+*Evidência prevista:* Verificação: teste do registro de destinação, da unidade de medida e da subtração no saldo. Validação: a coordenação registra uma saída fictícia para família ou atividade; os cadastros necessários ao cenário de teste devem estar disponíveis.
+
+
+#### US11 — Cadastrar categoria de item
+
+**Origem e RNFs:** RF11; CP2; RNFs gerais.  
+**Regras relacionadas:** RN02.
+
+- **CA-US11-01:** A Coordenação consegue cadastrar uma categoria com nome e unidade de medida; o perfil Voluntário não consegue executar o cadastro, inclusive por acesso direto à função.
+- **CA-US11-02:** Entradas, saídas e consulta de saldo usam a unidade cadastrada para a categoria, conforme a RN02.
+
+*Evidência prevista:* Verificação: teste de cadastro pela Coordenação, recusa para Voluntário inclusive por acesso direto e disponibilidade da categoria nos fluxos de entrada, saída e saldo. Validação: revisão do cadastro de categorias e das unidades de medida com a coordenação.
+
+
+#### US12 — Consultar saldo de itens doados
+
+**Origem e RNFs:** RF12; CP2; RNF03.  
+**Regras relacionadas:** RN02.
+
+- **CA-US12-01:** Voluntário e Coordenação conseguem consultar o saldo por categoria, calculado pelas entradas menos as saídas, na unidade correspondente (RN02).
+- **CA-US12-02:** A consulta apresenta resultados em até 3 segundos para pelo menos 95% das requisições em conexão móvel 3G/4G, conforme o RNF03.
+
+*Evidência prevista:* Verificação: teste do cálculo do saldo com entradas e saídas fictícias e medição do tempo de consulta em conexão móvel 3G/4G, registrando quantidade de requisições, volume de dados e condições de conexão. Validação: conferência dos saldos de um conjunto de movimentações fictícias com a coordenação.
+
+
+#### US39 — Cadastrar usuário do sistema
+
+**Origem e RNFs:** RF39; CP7; RNF07 e RNF15.  
+**Regras relacionadas:** RN20.
+
+- **CA-US39-01:** A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação; as demais contas são criadas pela Coordenação (RN20).
+- **CA-US39-02:** A Coordenação consegue cadastrar Voluntários e outros membros da Coordenação; o perfil Voluntário não consegue criar contas do sistema, inclusive por acesso direto à função.
+- **CA-US39-03:** Senhas com menos de 8 caracteres são recusadas, e as credenciais aceitas são armazenadas de forma irreversível, conforme os RNF15 e RNF07.
+
+*Evidência prevista:* Verificação: teste de cadastro pela Coordenação, recusa para Voluntário inclusive por acesso direto, rejeição de senha curta e inspeção do armazenamento irreversível das credenciais. Validação: a coordenação cadastra uma conta de teste e confere o acesso concedido.
+
+
+#### US40 — Atribuir perfil de acesso ao usuário
+
+**Origem e RNFs:** RF40; CP7; RNF07.  
+**Regras relacionadas:** Tabela de permissões da seção 8.4.
+
+- **CA-US40-01:** A Coordenação consegue atribuir ao usuário cadastrado o perfil Voluntário ou Coordenação; o perfil Voluntário não consegue atribuir perfis.
+- **CA-US40-02:** As operações e os dados acessíveis ao usuário respeitam o perfil atribuído e a tabela de permissões da seção 8.4; operações não autorizadas são recusadas, inclusive por acesso direto à função, conforme o RNF07.
+
+*Evidência prevista:* Verificação: teste da atribuição dos dois perfis e da recusa de operações não permitidas, inclusive por acesso direto. Validação: revisão das permissões com a coordenação usando contas de teste.
+
+
+#### US41 — Autenticar usuário
+
+**Origem e RNFs:** RF41; CP7; RNF07 e RNF15.  
+**Regras relacionadas:** Condições de acesso e sessão do RNF15.
+
+- **CA-US41-01:** Voluntário e Coordenação conseguem autenticar-se com credenciais válidas; credenciais incorretas não concedem acesso.
+- **CA-US41-02:** As funções restritas exigem autenticação, e as credenciais trafegam cifradas, conforme o RNF07.
+- **CA-US41-03:** A sessão é encerrada após 30 minutos sem atividade, conforme o RNF15.
+- **CA-US41-04:** Após cinco tentativas consecutivas incorretas, novas tentativas são bloqueadas por 15 minutos, conforme o RNF15.
+
+*Evidência prevista:* Verificação: testes de credenciais válidas e inválidas, acesso sem autenticação, bloqueio após cinco tentativas incorretas, expiração após 30 minutos sem atividade e comunicação cifrada. Validação: teste de entrada e acesso às funções do perfil com a coordenação.
+
+
+#### US42 — Registrar consentimentos e autorizações (LGPD e Imagem)
+
+**Origem e RNFs:** RF42; CP7; RNF13 e RNF14.  
+**Regras relacionadas:** RN19.
+
+- **CA-US42-01:** Voluntário e Coordenação conseguem registrar separadamente, por titular ou responsável legal, os consentimentos para cadastro e atendimento, frequência, contato com a família e relatórios a apoiadores, com a data de cada registro (RN19).
+- **CA-US42-02:** No mesmo fluxo, a autorização ou recusa de uso de imagem é registrada separadamente dos consentimentos de tratamento de dados, com data e meios autorizados: site, redes sociais e materiais impressos (RF42 e RN19).
+- **CA-US42-03:** A eventual revogação da autorização de imagem pode ser registrada, conforme o RF42.
+- **CA-US42-04:** No fluxo integrado com US14 e US16, dados reais de famílias só entram no sistema depois do consentimento correspondente, conforme a RN19.
+
+*Evidência prevista:* Verificação: testes de consentimento por finalidade, autorização e recusa de imagem, registro de revogação de imagem e integração com o cadastro de famílias e participantes. Validação: revisão do fluxo de consentimentos e autorizações com a coordenação; os testes usam dados fictícios.
 
 ### Mapa de histórias
 
@@ -246,7 +360,7 @@ A prioridade sugerida combina o quadrante com a decisão de MVP tomada com o cli
 **Evidência:** gravação da reunião disponível na página de [Evidências e Gravações](../00-evidencias/index.md).
 
 ### Quais RFs foram aprovados para o MVP:
-Foram validados e aprovados 18 Requisitos Funcionais (Prioridade 4) que compõem o núcleo do sistema:
+Foram validados e aprovados 18 requisitos funcionais que compõem o núcleo do sistema:
 
 | Módulo / Categoria | Códigos | Descrição dos Requisitos |
 | :--- | :--- | :--- |
@@ -258,11 +372,10 @@ Foram validados e aprovados 18 Requisitos Funcionais (Prioridade 4) que compõem
 ### Quais RNFs (Requisitos Não Funcionais) serão aplicáveis ao MVP:
 
 A classificação completa dos RNF01 a RNF19 está na seção [8.7 — RNFs aplicáveis ao MVP](../08-requisitos/index.md#87-rnfs-aplicaveis-ao-mvp).
-Dos 19 RNFs analisados, 16 são obrigatórios, dois estão associados a RFs selecionados e um
-não se aplica ao MVP.
+Dos 19 RNFs analisados, 17 são obrigatórios para o MVP e dois estão associados a RFs selecionados.
 
 ### Quais requisitos ficaram para entregas futuras:
-Os módulos classificados com prioridade 1, 2 e 3 foram postergados para as próximas versões do sistema:
+As histórias classificadas com prioridades 2, 3 e 4 ficaram para entregas posteriores ao núcleo do MVP, conforme a tabela de priorização desta seção.
 
 - Portal e agenda: (RF01 a RF06 e RF44) - Proposta: 2
 - Relatórios: (RF32 a RF37) - Proposta: 2
@@ -307,7 +420,7 @@ critérios de aceitação dessas histórias precisam cobrir a regra, incluindo o
 
 ### Quais decisões ou divergências foram registradas:
 
-- Decisão sobre LGPD e Imagem: A autorização da família será explicitamente fracionada em 4 usos distintos (cadastro/atendimento, frequência, contato com a família e relatório a apoiador). A autorização de uso de imagem (meios autorizados e revogação) é registrada no mesmo fluxo, consolidando RF42 e RF43 em um único requisito.
+- Decisão sobre LGPD e Imagem: A autorização da família será explicitamente fracionada em 4 usos distintos (cadastro/atendimento, frequência, contato com a família e relatório a apoiador). A autorização ou recusa de uso de imagem, com os meios autorizados e eventual revogação, é registrada no mesmo fluxo do RF42. Na numeração atual, o RF43 trata do registro e acompanhamento de solicitações de exclusão de dados.
 - Decisão sobre Estoque: Optou-se pela gestão 100% manual (adição e remoção de itens) da lista de faltas pela Coordenação, mantendo a simplicidade do MVP.
 - Pendente (Divergência de Informação): O volume atual de famílias/participantes atendidos e o fluxo mensal de doações ainda não foram definidos e serão validados junto à coordenação para fins de dimensionamento do banco de dados e infraestrutura.
 - Pendente (Priorização): Confirmar com a coordenação a prioridade exata do bloco de consentimentos avançados/imagem e processos automatizados de pedido de exclusão, para fechar se algum componente adicional precisa subir para o MVP.

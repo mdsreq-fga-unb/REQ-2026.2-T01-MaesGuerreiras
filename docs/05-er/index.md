@@ -158,7 +158,7 @@ técnicas em si.
 
 Para que cada requisito possa ser rastreado desde o problema que lhe deu origem até a sua validação, a equipe adota a seguinte cadeia de rastreabilidade, ligando artefatos já definidos nas demais seções do projeto:
 
-Problema ([1.4](../01-cenario/index.md)) → Objetivo Geral ([2.1](../02-solucao/index.md)) → Objetivo Específico ([2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) → Característica de Produto ([2.3](../02-solucao/index.md#23-caracteristicas-de-produto)) → Requisito Funcional / Não Funcional ([8.1](../08-requisitos/index.md#81-lista-de-requisitos-funcionais-rfs), [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)) → Tema e Épico (5.1, [10.1](../10-backlog/index.md#101-backlog-geral)) → User Story ([10.1](../10-backlog/index.md#101-backlog-geral)) → Critério de Aceitação → Evidência de Validação
+Problema ([1.4](../01-cenario/index.md)) → Objetivo Geral ([2.1](../02-solucao/index.md)) → Objetivo Específico ([2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) → Característica de Produto ([2.3](../02-solucao/index.md#23-caracteristicas-de-produto)) → Requisito Funcional / Não Funcional ([8.1](../08-requisitos/index.md#81-lista-de-requisitos-funcionais-rfs), [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)) → Tema e Épico ([10.1](../10-backlog/index.md#101-backlog-geral)) → User Story ([10.1](../10-backlog/index.md#101-backlog-geral)) → Critério de Aceitação → Evidência de Validação
 
 - Cada problema identificado na seção [1.4](../01-cenario/index.md) é atendido por um ou mais Objetivos Específicos, que detalham o Objetivo Geral do produto (seção [2.1](../02-solucao/index.md)).
 - Cada Objetivo Específico (seção [2.2](../02-solucao/index.md#22-objetivos-especificos-oe-do-produto)) se conecta a uma ou mais Características de Produto (CP1 a CP7, seção [2.3](../02-solucao/index.md#23-caracteristicas-de-produto)).
@@ -250,3 +250,41 @@ equipe (seção [4.4](../04-estrategias/index.md#44-praticas-de-xp-adotadas)):
 - **Propriedade coletiva do código:** a rastreabilidade descrita na seção [5.2](#52-rastreabilidade-dos-requisitos)
   permite que qualquer integrante entenda o requisito por trás de um trecho de código que não
   escreveu.
+
+## 5.5 Declaração dos Requisitos
+
+Esta seção reúne, em um só lugar, como a equipe declara os requisitos: quais tipos de declaração
+são usados, em que nível de abstração (negócio, usuário ou produto) e em que momento do ScrumXP
+cada um aparece. O quadro abaixo mostra cada tipo de declaração como um post-it, colorido pela
+família a que pertence (narrativa, estruturada, orientada a valor, catálogo ou multimodal).
+Post-its com borda tracejada são declarações previstas no processo que ainda não foram
+produzidas.
+
+![Quadro de declarações dos requisitos do projeto Mães Guerreiras](../assets/quadro-declaracoes.png)
+
+### Tipos de declaração por nível
+
+| Nível | O que responde | Tipos de declaração usados | Onde está no site |
+| :--- | :--- | :--- | :--- |
+| Negócio | Por que o produto existe? | Narrativa em texto livre (contexto, problema, objetivo geral), declarações curtas (OE1 a OE6), narrativas de impacto (VN1 a VN7) | Seções 1, 2.1, 2.2, 2.7 e 3 |
+| Usuário | O que o produto precisa oferecer? | Tabela de características de produto (CP1 a CP7), temas e épicos | Seções 2.3 e 10.1 |
+| Produto | Como cada requisito se comporta? | Lista de RFs (verbo + objeto, com agente), catálogo de RNFs com critério verificável, glossário, tabela de permissões, regras de negócio (RN01 a RN20), user stories (US01 a US45) e critérios de aceitação | Seções 8, 10.1 e 10.2 |
+
+Os níveis se ligam pela cadeia de rastreabilidade descrita na seção 5.2: problema → objetivo geral
+→ OE → CP → RF/RNF → épico → user story → critério de aceitação → evidência.
+
+### Fatores que influenciaram as escolhas
+
+| Fator de influência | Escolha feita pela equipe |
+| :--- | :--- |
+| Cliente próximo e sem formação técnica | User stories curtas, no formato "Como..., quero..., para...", fáceis de discutir com Makio e a coordenação nas reuniões de validação. |
+| Abordagem ágil (ScrumXP) | Backlog de histórias que amadurecem a cada sprint, em vez de uma especificação completa no início do projeto. Os critérios de aceitação são escritos para as histórias da próxima sprint, e não para o backlog inteiro de uma vez. |
+| Equipe em formação | Critérios de aceitação escritos como condições de satisfação simples e numeradas (por exemplo, CA-US09-01), sem notação BDD, que podem virar testes automatizados diretamente (seção 5.4). |
+| Dados pessoais de famílias e crianças (LGPD) | RNFs declarados em catálogo, cada um com critério verificável, e regras de negócio separadas do texto dos RFs, para que possam ser verificadas e alteradas sem reescrever os requisitos. |
+
+### O que não é declaração
+
+Alguns artefatos do site apoiam a Engenharia de Requisitos, mas não declaram requisitos: o mapa
+de stakeholders (apoio à identificação), a matriz de valor × esforço e o MVP (análise e consenso,
+seções 8.5 e 10.2), o mapa de histórias (organização do backlog, seção 10.1) e a DoR e a DoD
+(verificação, seção 9).

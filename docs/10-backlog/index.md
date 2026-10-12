@@ -375,11 +375,19 @@ A classificação completa dos RNF01 a RNF19 está na seção [8.7 — RNFs apli
 Dos 19 RNFs analisados, 17 são obrigatórios para o MVP e dois estão associados a RFs selecionados.
 
 ### Quais requisitos ficaram para entregas futuras:
-As histórias classificadas com prioridades 2, 3 e 4 ficaram para entregas posteriores ao núcleo do MVP, conforme a tabela de priorização desta seção.
+As histórias classificadas com prioridades 2, 3 e 4 ficaram para entregas posteriores ao núcleo do
+MVP, conforme a tabela de priorização desta seção. Para cada grupo, indica-se o valor de negócio
+atribuído pelo cliente (escala de 1 a 4) e a prioridade resultante. A justificativa de cada RF de
+valor 4 que ficou fora do MVP está na leitura dos quadrantes da seção
+[8.5.1](../08-requisitos/index.md#851-leitura-dos-quadrantes).
 
-- Portal e agenda: (RF01 a RF06 e RF44) - Proposta: 2
-- Relatórios: (RF32 a RF37) - Proposta: 2
-- Fluxos avançados de LGPD: Pedido de exclusão pelo usuário final (RF43 - Proposta 3, sujeito a confirmação) e autorizações complementares de imagem (RF45 - Proposta 3, sujeito a confirmação).
+- **Complementos dos fluxos do MVP:** RF07, RF13, RF15, RF17, RF21, RF22, RF24, RF25, RF29, RF30,
+  RF31 e RF38 (valor de negócio 4, Prioridade 2). São os primeiros a entrar depois do MVP.
+- **Fluxos avançados de LGPD:** pedido de exclusão de dados pelo titular (RF43) e consulta da
+  autorização de imagem vigente (RF45) (valor de negócio 3, Prioridade 3), sujeitos à confirmação
+  da coordenação.
+- **Portal e agenda:** RF01 a RF06 e RF44 (valor de negócio 2, Prioridade 4).
+- **Sinalização de faltas e relatórios:** RF32 a RF37 (valor de negócio 2, Prioridade 4).
 
 ### Quais ajustes foram solicitados (Regras de Negócio):
 Obrigatoriedade de Campos:

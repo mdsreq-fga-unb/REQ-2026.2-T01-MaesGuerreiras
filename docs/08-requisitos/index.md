@@ -259,6 +259,54 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, R
 | **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF44 | RF32, RF33, RF34, RF35, RF36, RF37 |
 | **1 — Baixo** | — | — | — | — |
 
+### 8.5.1 Leitura dos quadrantes
+
+| Quadrante | Requisitos | Encaminhamento |
+| :--- | :--- | :--- |
+| **Prioridade máxima** (valor 4 · esforço 1) | — | Nenhum requisito caiu aqui: todos os RFs exigem ao menos esforço moderado, porque a equipe ainda está aprendendo Nuxt.js e Supabase (lacuna de capacidade). |
+| **Forte candidato ao MVP** (valor 4 · esforço 2) | RF25 | Alto valor e custo moderado, mas não é pré-requisito do fluxo mínimo de inscrição: ficou para a Fatia 2 (ver abaixo). |
+| **Avaliar viabilidade** (valor 4 · esforço 3) | RF07 a RF24, RF26 a RF31, RF38 a RF40 | Exigiram decisão explícita com o cliente. Entraram no MVP os 16 RFs que formam o fluxo mínimo de cada frente (registrar e consultar); os outros 11 completam esses fluxos e ficaram para a Fatia 2. |
+| **Avaliar contexto** (valor 3 · esforço 3) | RF41, RF42, RF43, RF45 | RF41 e RF42 entraram no MVP por dependência técnica e legal; RF43 e RF45 aguardam confirmação da coordenação sobre o bloco avançado de LGPD. |
+| **Entrega futura** (valor 2 · esforço 3) | RF01 a RF06, RF44 | Portal institucional, agenda e histórico de alterações: adiados para depois do MVP. |
+| **Baixa prioridade** (valor 2 · esforço 4) | RF32 a RF37 | Sinalização de faltas e relatórios: maior esforço da matriz e valor complementar; ficam para depois do MVP. |
+| **Quadrantes de valor 1** | — | Nenhum requisito do escopo atual recebeu valor 1, o que é coerente com o levantamento feito diretamente com a associação. |
+
+> **A matriz orienta, não decide.** O MVP não é simplesmente "todos os RFs de valor 4". Dos 28 RFs
+> com valor 4, 16 entraram no MVP; e 2 RFs com valor 3 (RF41 e RF42) também entraram. As duas
+> tabelas a seguir explicam essas escolhas. No total, o MVP tem **18 RFs: 16 de valor 4 e 2 de
+> valor 3**.
+
+#### Por que RF41 e RF42 (valor 3) entraram no MVP
+
+| RF | Motivo |
+| :--- | :--- |
+| RF41 – Autenticar usuário | **Dependência técnica.** Todos os outros RFs do MVP são da área restrita. Sem autenticação, não há como aplicar os perfis do RF39 e do RF40 nem cumprir os RNF07 e RNF15, classificados como obrigatórios para o MVP (seção 8.7). |
+| RF42 – Registrar consentimentos e autorizações | **Dependência legal.** O MVP cadastra famílias, participantes e frequência de crianças (RF14, RF16, RF18, RF28). Pela LGPD (RNF13) e pela Definição de Preparado (seção 9), dados reais só podem entrar no sistema depois do consentimento registrado. |
+
+O valor de negócio 3 reflete como o cliente percebe esses requisitos: eles não resolvem diretamente
+a dor do dia a dia. Mas, sem eles, o restante do MVP não pode ser usado com dados reais.
+
+#### Por que 12 RFs de valor 4 ficaram fora do MVP
+
+O critério de corte foi manter, em cada frente, apenas o fluxo mínimo que substitui o registro em
+papel (cadastrar, registrar e consultar), dentro da capacidade de desenvolvimento do semestre. Os
+RFs abaixo completam esses fluxos ou dependem de partes que ficaram fora do MVP, e são os primeiros
+da Fatia 2 (seção 10.2).
+
+| RF | Motivo |
+| :--- | :--- |
+| RF07 – Consultar solicitações de contato | Depende do RF06 (envio de contato pelo visitante), que faz parte do portal (CP1), fora do MVP. |
+| RF13 – Publicar lista de itens necessários | É publicada na área pública do portal (CP1), fora do MVP. Até lá, a lista segue sendo divulgada pelos canais atuais, de forma manual, como decidido com o cliente. |
+| RF38 – Exportar relatório gerado | Só exporta relatórios gerados pelos RF33 a RF37, que ficaram fora do MVP. |
+| RF15 e RF17 – Atualizar ou inativar família e participante | Completam o ciclo de vida do cadastro. A inativação é rara no início do uso; os dados registrados no MVP continuam disponíveis para atualização quando esses RFs entrarem. |
+| RF21 e RF22 – Atualizar e encerrar turma | No MVP, as turmas são cadastradas com período definido; alterações e encerramento antecipado são exceções no início do uso. |
+| RF24 – Cancelar inscrição | Complementa a inscrição (RF23); no início do uso, as desistências podem ser tratadas pela Coordenação fora do sistema. |
+| RF25 – Registrar lista de espera | O RF23 já impede a inscrição em turma sem vaga (RN12). A lista de espera é necessária só quando as turmas lotarem, e até lá pode ser mantida como hoje. |
+| RF29 – Justificar falta | A justificativa só muda o cálculo do limite de faltas, feito pelo RF32, que ficou fora do MVP. |
+| RF30 – Corrigir registro de frequência | Complementa o registro da chamada (RF28). A regra de correção (RN17) já está validada e entra junto com a Fatia 2. |
+| RF31 – Consultar frequência do participante | O MVP já registra a frequência (RF27 e RF28); o histórico acumulado poderá ser consultado quando o RF31 entrar, sem perda de dados. |
+
+
 ## 8.6 RFs selecionados para o MVP
 
 Na validação registrada em [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp),

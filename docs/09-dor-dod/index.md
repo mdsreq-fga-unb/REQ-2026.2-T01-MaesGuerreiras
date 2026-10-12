@@ -14,9 +14,7 @@ aplicadas a todo RF ou RNF, com resultado binário — passou ou não passou —
 
 O texto do RF precisa listar os campos obrigatórios e opcionais, não só citar que "dados são
 cadastrados". O RF14 (Cadastrar família) é o modelo: lista nome do responsável, telefone e
-endereço como obrigatórios, e número de moradores e observações como opcionais. Um requisito
-como o RF11 (Cadastrar categoria de item), que ainda não detalha se a unidade de medida é de
-texto livre ou lista fechada, não está pronto para entrar em sprint até essa lacuna ser fechada.
+endereço como obrigatórios, e número de moradores e observações como opcionais. O RF11 (Cadastrar categoria de item) é um exemplo de lacuna que essa pergunta revelou: a primeira versão não dizia se unidade de medida era texto livre ou lista fechada, e por isso não estava pronta para sprint. A lacuna foi fechada com a lista fechada "unidade, quilo ou pacote" (RN02 e critério CA-US11-01).
 
 **As regras de negócio do requisito estão identificadas e separadas do texto do RF?**
 

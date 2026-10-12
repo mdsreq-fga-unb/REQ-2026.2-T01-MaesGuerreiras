@@ -141,8 +141,11 @@ se aplicam a essas histórias.
 - **CA-US09-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e doador de origem.
 - **CA-US09-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a entrada soma essa quantidade ao saldo consultado na US12.
 - **CA-US09-03:** O registro pode ser concluído em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros, conforme o RNF01.
+- **CA-US09-04 (exceção):** Se faltar categoria, quantidade, data ou doador, a entrada não é salva e o sistema indica qual campo falta.
+- **CA-US09-05 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não é alterado.
+- **CA-US09-06 (exceção):** A categoria é escolhida entre as cadastradas na US11; não é possível digitar uma categoria nova no registro de entrada.
 
-*Evidência prevista:* Verificação: teste do registro de entrada, da unidade de medida e da soma no saldo. Validação: uma voluntária registra uma doação fictícia sem ajuda da equipe, com contagem dos passos a partir da tela inicial da área restrita.
+*Evidência prevista:* Verificação: teste do registro de entrada, da unidade de medida, da soma no saldo e das recusas por campo faltante e por quantidade inválida. Validação: uma voluntária registra uma doação fictícia sem ajuda da equipe, com contagem dos passos a partir da tela inicial da área restrita.
 
 
 #### US10 — Registrar destinação de doação
@@ -152,8 +155,12 @@ se aplicam a essas histórias.
 
 - **CA-US10-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.
 - **CA-US10-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a saída subtrai essa quantidade do saldo consultado na US12.
+- **CA-US10-03 (exceção):** Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica qual campo falta.
+- **CA-US10-04 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não é alterado.
+- **CA-US10-05 (exceção):** Uma saída maior que o saldo atual da categoria é recusada, e o sistema mostra o saldo disponível.
+- **CA-US10-06 (exceção):** O destinatário é escolhido entre as famílias e atividades cadastradas, sem texto livre.
 
-*Evidência prevista:* Verificação: teste do registro de destinação, da unidade de medida e da subtração no saldo. Validação: a coordenação registra uma saída fictícia para família ou atividade; os cadastros necessários ao cenário de teste devem estar disponíveis.
+*Evidência prevista:* Verificação: teste do registro de destinação, da unidade de medida, da subtração no saldo e das recusas por campo faltante, quantidade inválida e saldo insuficiente. Validação: a coordenação registra uma saída fictícia para família ou atividade; os cadastros necessários ao cenário de teste devem estar disponíveis.
 
 
 #### US11 — Cadastrar categoria de item
@@ -161,11 +168,13 @@ se aplicam a essas histórias.
 **Origem e RNFs:** RF11; CP2; RNFs gerais.  
 **Regras relacionadas:** RN02.
 
-- **CA-US11-01:** A Coordenação consegue cadastrar uma categoria com nome e unidade de medida; o perfil Voluntário não consegue executar o cadastro, inclusive por acesso direto à função.
+- **CA-US11-01:** A Coordenação consegue cadastrar uma categoria com nome e unidade de medida, escolhida em lista fechada: unidade, quilo ou pacote (RN02). Não há opção de texto livre nem outras unidades.
 - **CA-US11-02:** Entradas, saídas e consulta de saldo usam a unidade cadastrada para a categoria, conforme a RN02.
+- **CA-US11-03 (exceção):** O perfil Voluntário não consegue executar o cadastro, inclusive por acesso direto à função.
+- **CA-US11-04 (exceção):** Uma categoria sem nome ou sem unidade de medida não é salva, e o sistema indica qual campo falta.
+- **CA-US11-05 (exceção):** Não é possível cadastrar duas categorias com o mesmo nome.
 
-*Evidência prevista:* Verificação: teste de cadastro pela Coordenação, recusa para Voluntário inclusive por acesso direto e disponibilidade da categoria nos fluxos de entrada, saída e saldo. Validação: revisão do cadastro de categorias e das unidades de medida com a coordenação.
-
+*Evidência prevista:* Verificação: teste de cadastro pela Coordenação com cada uma das três unidades, recusa para Voluntário inclusive por acesso direto, recusa de categoria incompleta ou duplicada e disponibilidade da categoria nos fluxos de entrada, saída e saldo. Validação: revisão do cadastro de categorias e das unidades de medida com a coordenação.
 
 #### US12 — Consultar saldo de itens doados
 

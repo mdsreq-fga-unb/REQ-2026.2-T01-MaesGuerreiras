@@ -137,7 +137,7 @@
   
 - RNF13 - Requisito Externo Legislativo (LGPD): O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.
 
-- RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF41) para cada pessoa identificável nas imagens publicadas pela associação. 
+- RNF14 - Requisito Externo Legislativo (Direito de Imagem): A solução deve estar em conformidade com a legislação de proteção ao direito de imagem: Constituição Federal (art. 5º, X), Código Civil (art. 20) e, para crianças e adolescentes, Estatuto da Criança e do Adolescente (arts. 17 e 18). A conformidade é verificada pela existência de autorização registrada (RF43) para cada pessoa identificável nas imagens publicadas pela associação. 
 
 - RNF15 - Segurança (acesso e sessão): O acesso à área restrita deve exigir senha de pelo menos 8 caracteres, encerrar a sessão após 30 minutos sem atividade e bloquear novas tentativas de autenticação por 15 minutos após 5 tentativas consecutivas incorretas. A verificação deve testar a rejeição de senhas mais curtas, a expiração da sessão e o bloqueio na quinta tentativa. Os valores definidos para senha, sessão e bloqueio são preliminares e devem ser validados pela equipe.
 
@@ -147,22 +147,21 @@
 
 - RNF18 – Requisito de Acessibilidade : As telas principais (chamada, cadastro, doação e agenda pública) devem atender à WCAG 2.1, nível AA. Auditoria automática (Lighthouse ou axe) sem violação crítica, mais checklist manual: contraste mínimo 4,5:1, navegação por teclado e rótulo em todo campo.
 
-- RNF19 – Requisito de Segurança : Toda alteração em dados pessoais, em frequência (inclusive RF29) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF43.
-
+- RNF19 – Requisito de Segurança: Toda alteração em dados pessoais, em frequência (inclusive justificativa de falta, RF29, e correção de chamada, RF30) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do RF45.
 
 ## 8.3 Glossário
 
 | Termo | Definição |
 | --- | --- |
-| Atividade | Oficina ou evento oferecido pela associação, como crochê, bordado, Carimbó ou Domingo Criativo. É o mesmo termo na agenda (RF03) e nas turmas (RF19). |
+| Atividade | Oficina ou evento oferecido pela associação, como crochê, bordado, Carimbó ou Domingo Criativo. É o mesmo termo na agenda (RF03) e nas turmas (RF20). |
 | Turma | Grupo de participantes que faz uma atividade durante um período, com dias de encontro e quantidade de vagas. |
 | Encontro | Cada dia em que a turma se reúne. |
 | Chamada | Registro de quem veio e de quem faltou em um encontro. |
 | Inscrição | Vínculo de um participante ativo com uma turma. |
 | Lista de espera | Fila de participantes que aguardam vaga em uma turma cheia, na ordem em que foram registrados. |
 | Frequência | Conjunto de presenças e faltas de um participante. |
-| Falta justificada | Falta em que foi informado o motivo. Ela não conta para o limite de faltas do RF31. |
-| Categoria de item | Grupo de itens doados, como alimentos, roupas, higiene e material escolar, com sua unidade de medida (RF10). |
+| Falta justificada | Falta em que foi informado o motivo. Ela não conta para o limite de faltas do RF32. |
+| Categoria de item | Grupo de itens doados, como alimentos, roupas, higiene e material escolar, com sua unidade de medida (RF11). |
 | Doação recebida | Entrada de itens na associação, vinda de um doador. |
 | Destinação | Saída de itens doados para uma família ou atividade. |
 | Saldo | Quantidade atual de uma categoria: o que entrou menos o que saiu. |

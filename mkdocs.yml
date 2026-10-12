@@ -37,6 +37,7 @@ theme:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/matriz.css
 
 markdown_extensions:
   - admonition

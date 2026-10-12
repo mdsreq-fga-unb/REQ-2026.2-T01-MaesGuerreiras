@@ -252,12 +252,45 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, R
 
 ## 8.5 Matriz 4x4
 
-| Valor de negócio ↓ / Esforço técnico → | 1 — Baixo | 2 — Moderado | 3 — Alto | 4 — Muito alto |
-|---|---|---|---|---|
-| **4 — Muito alto** | — | RF25 | RF07, RF08, RF09, RF10, RF11, RF12, RF13, RF14, RF15, RF16, RF17, RF18, RF19, RF20, RF21, RF22, RF23, RF24, RF26, RF27, RF28, RF29, RF30, RF31, RF38, RF39, RF40 | — |
-| **3 — Alto** | — | — | RF41, RF42, RF43, RF45 | — |
-| **2 — Moderado** | — | — | RF01, RF02, RF03, RF04, RF05, RF06, RF44 | RF32, RF33, RF34, RF35, RF36, RF37 |
-| **1 — Baixo** | — | — | — | — |
+<div class="matriz" markdown="0">
+<table>
+<thead>
+<tr><th>Valor de negócio ↓ / Esforço técnico →</th><th>1 — Baixo</th><th>2 — Moderado</th><th>3 — Alto</th><th>4 — Muito alto</th></tr>
+</thead>
+<tbody>
+<tr>
+<th>4 — Muito alto</th>
+<td class="vazio">—</td>
+<td><div class="chips"><span class="rf">RF25</span></div></td>
+<td><div class="chips"><span class="rf">RF07</span><span class="rf mvp">RF08</span><span class="rf mvp">RF09</span><span class="rf mvp">RF10</span><span class="rf mvp">RF11</span><span class="rf mvp">RF12</span><span class="rf">RF13</span><span class="rf mvp">RF14</span><span class="rf">RF15</span><span class="rf mvp">RF16</span><span class="rf">RF17</span><span class="rf mvp">RF18</span><span class="rf mvp">RF19</span><span class="rf mvp">RF20</span><span class="rf">RF21</span><span class="rf">RF22</span><span class="rf mvp">RF23</span><span class="rf">RF24</span><span class="rf mvp">RF26</span><span class="rf mvp">RF27</span><span class="rf mvp">RF28</span><span class="rf">RF29</span><span class="rf">RF30</span><span class="rf">RF31</span><span class="rf">RF38</span><span class="rf mvp">RF39</span><span class="rf mvp">RF40</span></div></td>
+<td class="vazio">—</td>
+</tr>
+<tr>
+<th>3 — Alto</th>
+<td class="vazio">—</td>
+<td class="vazio">—</td>
+<td><div class="chips"><span class="rf mvp">RF41</span><span class="rf mvp">RF42</span><span class="rf">RF43</span><span class="rf">RF45</span></div></td>
+<td class="vazio">—</td>
+</tr>
+<tr>
+<th>2 — Moderado</th>
+<td class="vazio">—</td>
+<td class="vazio">—</td>
+<td><div class="chips"><span class="rf">RF01</span><span class="rf">RF02</span><span class="rf">RF03</span><span class="rf">RF04</span><span class="rf">RF05</span><span class="rf">RF06</span><span class="rf">RF44</span></div></td>
+<td><div class="chips"><span class="rf">RF32</span><span class="rf">RF33</span><span class="rf">RF34</span><span class="rf">RF35</span><span class="rf">RF36</span><span class="rf">RF37</span></div></td>
+</tr>
+<tr>
+<th>1 — Baixo</th>
+<td class="vazio">—</td>
+<td class="vazio">—</td>
+<td class="vazio">—</td>
+<td class="vazio">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p class="matriz-legenda"><span class="rf mvp">RF20</span> selecionado para o MVP (18 RFs) · <span class="rf">RF21</span> fora do núcleo, para a Fatia 2 ou entregas futuras.</p>
 
 ### 8.5.1 Leitura dos quadrantes
 

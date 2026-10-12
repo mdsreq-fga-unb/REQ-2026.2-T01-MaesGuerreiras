@@ -9,7 +9,7 @@ restrição de tempo, não como origem das entregas do produto.
 
 A cadência adotada é de **sprints de 2 semanas**, totalizando 8 sprints de desenvolvimento mais
 um período de fechamento. O núcleo do MVP foi validado com Makio em 28/09/2026, a partir da
-classificação de obrigatoriedade dos RNFs (seção [8.2](../08-requisitos/index.md#82-lista-de-requisitos-nao-funcionais-rnfs)):
+priorização por valor de negócio e esforço técnico (seções [8.5](../08-requisitos/index.md#85-matriz-4x4) e [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp)):
 doações (CP2), cadastro de famílias e participantes (CP3), inscrição em turma e consulta de
 inscritos (parte do CP4), chamada digital (CP5) e o consentimento de tratamento de dados (parte
 do CP7). Portal institucional e agenda pública (CP1) e relatórios de impacto (CP6) ficam fora do
@@ -45,15 +45,15 @@ disponível da equipe e foram considerados no planejamento das sprints:
 2. **Cadência única de 2 semanas:** todas as sprints de desenvolvimento (1 a 8) têm duração de 2
    semanas. O Fechamento é mais curto e concentrado na transição operacional para a associação e
    nos marcos finais da disciplina.
-3. **Núcleo do MVP definido com o cliente:** a partir da classificação de obrigatoriedade dos
-   RNFs (seção 8.2), o núcleo do MVP é doações (CP2), famílias e participantes (CP3), inscrição em
-   turma e consulta de inscritos (parte do CP4) e chamada digital (CP5), com a base de
-   autenticação, perfis e consentimento de dados entrando junto com essas sprints (Sprint 4 fica
-   dedicada só a ambiente e infraestrutura). Portal institucional (CP1) e relatórios de impacto
-   (CP6) ficam fora do núcleo: CP1 na Sprint 8 e CP6 no Fechamento, separados para não empilhar os
-   dois no mesmo período de 2 semanas que também contém a apresentação da equipe (24/11 a 26/11).
-   Se a Sprint 8 for comprometida pela apresentação, CP1 pode encolher para o mínimo (institucional
-   sem agenda) e CP6 assume o que sobrar.
+3. **Núcleo do MVP definido com o cliente:** a partir da priorização por valor de negócio e
+   esforço técnico (seção 10.2), o núcleo do MVP é doações (CP2), famílias e participantes (CP3),
+   inscrição em turma e consulta de inscritos (parte do CP4) e chamada digital (CP5), com a base de
+   autenticação, perfis e consentimento de dados entrando junto com essas sprints (a Sprint 4
+   prepara o ambiente e o esqueleto de autenticação, completado na Sprint 5). Portal institucional
+   (CP1) e relatórios de impacto (CP6) ficam fora do núcleo: CP1 na Sprint 8 e CP6 no Fechamento,
+   separados para não empilhar os dois no mesmo período de 2 semanas que também contém a
+   apresentação da equipe (24/11 a 26/11). Se a Sprint 8 for comprometida pela apresentação, CP1
+   pode encolher para o mínimo (institucional sem agenda) e CP6 assume o que sobrar.
 4. **Dados sintéticos até a base de acesso verificada:** os testes anteriores à Sprint 5 utilizam
    dados fictícios ou anonimizados. O primeiro teste com dados reais ocorre a partir da Sprint 5,
    após autenticação, perfis de acesso e autorização institucional confirmados.

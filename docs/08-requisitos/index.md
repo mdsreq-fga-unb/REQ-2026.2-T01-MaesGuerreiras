@@ -212,7 +212,7 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, R
 | RF05 | CP1 | Visitante | RNF03 |
 | RF06 | CP1 | Visitante | RNF13 |
 | RF07 | CP1 | Coordenação | RNF07, RNF13 |
-| RF08 | CP2 | Voluntário, Coordenação | RNF01 |
+| RF08 | CP2 | Voluntário, Coordenação | RNF01, RNF19 |
 | RF09 | CP2 | Voluntário, Coordenação | RNF01, RNF19 |
 | RF10 | CP2 | Voluntário, Coordenação | RNF19 |
 | RF11 | CP2 | Coordenação | |

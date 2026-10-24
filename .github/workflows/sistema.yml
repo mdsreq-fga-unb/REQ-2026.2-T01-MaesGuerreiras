@@ -1,0 +1,35 @@
+name: sistema
+on:
+  pull_request:
+    paths:
+      - sistema/**
+      - .github/workflows/sistema.yml
+  push:
+    branches:
+      - main
+    paths:
+      - sistema/**
+      - .github/workflows/sistema.yml
+permissions:
+  contents: read
+defaults:
+  run:
+    working-directory: sistema
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: http://127.0.0.1:54321
+      SUPABASE_KEY: chave-falsa-para-ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sistema/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run build

@@ -33,42 +33,6 @@ chamada das atividades, e protege os dados pessoais por meio de perfis de acesso
 | OE5 | Gerar relatórios de impacto para prestação de contas aos parceiros e captação de novos apoiadores |
 | OE6 | Organizar o acesso ao painel administrativo por perfil, protegendo os dados pessoais das famílias atendidas |
 
-**Características do produto**
-
-| ID | Característica | Contribui para |
-|---|---|---|
-| CP1 | Portal institucional e agenda de atividades | OE1 (secundário: OE5) |
-| CP2 | Registro de doações de itens | OE2 (secundário: OE5) |
-| CP3 | Cadastro de famílias e participantes | OE3 (secundário: OE6) |
-| CP4 | Inscrição em atividades e organização do atendimento | OE3 |
-| CP5 | Chamada digital e controle de frequência | OE4 (secundário: OE5) |
-| CP6 | Relatórios e indicadores de impacto | OE5 |
-| CP7 | Perfis de acesso e proteção de dados | OE6 |
-
-Detalhamento, rastreabilidade e justificativas na
-[documentação](https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-MaesGuerreiras/02-solucao/).
-
-## Processo
-
-Abordagem **ágil**, ciclo de vida **iterativo e incremental**, processo **ScrumXP**, com
-sprints de duas semanas (7 sprints mais um período de Fechamento). O **MVP** reúne o portal
-institucional (CP1) e o registro de doações de itens (CP2). A segurança (CP7) é entregue
-antes de qualquer sprint que manipule dados pessoais de famílias.
-
-| Sprint | Período | Objetivo principal |
-|---|---|---|
-| 1 | 11/08 – 24/08 | Levantamento inicial do cliente e do negócio |
-| 2 | 25/08 – 07/09 | Aprofundamento do levantamento e Visão do Produto e Projeto |
-| 3 | 08/09 – 21/09 | Planejamento técnico, ambiente e backlog detalhado |
-| 4 | 22/09 – 05/10 | Portal institucional e agenda de atividades (CP1) |
-| 5 | 06/10 – 19/10 | Perfis de acesso e proteção de dados (CP7) |
-| 6 | 20/10 – 02/11 | Registro de doações de itens (CP2), MVP administrativo |
-| 7 | 03/11 – 16/11 | Cadastro de famílias, inscrições, chamada digital e frequência (CP3, CP4, CP5) |
-| Fechamento | 17/11 – 10/12 | Relatórios de impacto (CP6), testes gerais e transição para a associação |
-
-O [cronograma completo](https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-MaesGuerreiras/06-cronograma/)
-traz as entregas, os artefatos de ER e a validação do cliente em cada sprint.
-
 ## Tecnologias
 
 `Nuxt.js` · `Supabase` · `Vercel` ou `Netlify` · `MkDocs Material` + `GitHub Pages`

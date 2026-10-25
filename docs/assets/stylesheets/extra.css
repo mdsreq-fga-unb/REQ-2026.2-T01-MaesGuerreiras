@@ -1,4 +1,4 @@
-[data-md-color-primary="custom"] {
+﻿[data-md-color-primary="custom"] {
   --md-primary-fg-color: #2b0e46;
   --md-primary-fg-color--light: #4a1f73;
   --md-primary-fg-color--dark: #1a0830;
@@ -182,4 +182,88 @@
   margin: 0.4rem 0 0;
   font-size: 0.85rem;
   color: var(--md-default-fg-color--light);
+}
+
+
+/* Fonte ajustada */
+
+.md-typeset {
+  font-size: 0.92rem;
+}
+
+/* === Modo claro === */
+
+[data-md-color-scheme="default"] .md-main,
+[data-md-color-scheme="default"] .md-main__inner,
+[data-md-color-scheme="default"] .md-content,
+[data-md-color-scheme="default"] .md-content__inner {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+[data-md-color-scheme="default"] .md-typeset,
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3,
+[data-md-color-scheme="default"] .md-typeset h4,
+[data-md-color-scheme="default"] .md-typeset h5,
+[data-md-color-scheme="default"] .md-typeset h6,
+[data-md-color-scheme="default"] .md-typeset p,
+[data-md-color-scheme="default"] .md-typeset li {
+  color: #000000;
+}
+
+/* === Card hero (branco nos dois modos) === */
+
+.hero__text h1,
+[data-md-color-scheme="default"] .md-typeset .hero__text h1 {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.hero__text p,
+[data-md-color-scheme="default"] .md-typeset .hero__text p {
+  color: #ffffff;
+  font-size: 0.92rem;
+}
+/* === Modo escuro: corrige nav links roxos ilegíveis === */
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: var(--md-default-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover,
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: var(--md-default-fg-color);
+}
+
+/* === Links inline no conteudo === */
+
+/* Modo claro: roxo mais vivo e legivel */
+[data-md-color-scheme="default"] .md-typeset a {
+  color: #6b3fa0;
+}
+[data-md-color-scheme="default"] .md-typeset a:hover {
+  color: #c9a227;
+}
+
+/* Modo escuro: dourado legivel no fundo escuro */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #c9a227;
+}
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #e2b83a;
+}
+
+/* TOC (Nesta página) no modo escuro */
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link {
+  color: var(--md-default-fg-color);
+}
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link:hover {
+  color: #c9a227;
 }

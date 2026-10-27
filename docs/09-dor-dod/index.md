@@ -6,7 +6,9 @@ verifica se o que foi construído a partir dele cumpre os critérios de qualidad
 de ser mostrado à coordenação na Revisão da Sprint. As duas são **verificação** feita pela
 equipe — a validação com o cliente (seção [7.3](../07-interacao/index.md#73-processo-de-validacao))
 é uma etapa posterior e separada. Há uma única DoR e uma única DoD para o projeto inteiro,
-aplicadas a todo RF ou RNF, com resultado binário — passou ou não passou — nunca um percentual.
+aplicadas a cada história de usuário. Cada item tem um de três resultados — **passou**, **não
+passou** ou **não se aplica**, este sempre com justificativa —, nunca um percentual. A história
+está pronta quando nenhum item ficou como "não passou".
 
 ## 9.1 Definition of Ready (DoR)
 
@@ -21,7 +23,7 @@ endereço como obrigatórios, e número de moradores e observações como opcion
 Regra de negócio embutida no meio da descrição do RF atrasa a implementação, porque muda sem
 avisar quem está codando. O RF23 (Inscrever participante em turma) depende da regra "sem vaga,
 oferece encaminhamento à lista de espera (RF25)"; essa regra precisa estar registrada na lista de
-regras de negócio da seção [10.2](../10-backlog/index.md#102-priorizacao-do-backlog-geral-e-mvp),
+regras de negócio da seção [10.6](../10-backlog/index.md#106-regras-de-negocio),
 não só mencionada de passagem no RF.
 
 **O agente que executa o requisito está definido na tabela de permissões?**
@@ -44,8 +46,8 @@ desse critério.
 A matriz de rastreabilidade (seção 8.4) e a classificação de obrigatoriedade para o MVP (seção
 [8.7](../08-requisitos/index.md#87-rnfs-aplicaveis-ao-mvp)) precisam apontar quais RNFs
 valem para o RF antes dele entrar em sprint. RF09 (Registrar doação recebida) está ligado ao
-RNF01 (usabilidade, até três passos) e ao RNF07 (segurança); implementar RF09 sem saber disso
-tende a deixar esses atributos de fora.
+RNF01 (registro em até três passos) e ao RNF19 (histórico de alterações em registros de doação);
+implementar RF09 sem saber disso tende a deixar esses atributos de fora.
 
 **O critério de aceitação está escrito como condições de satisfação verificáveis?**
 
@@ -61,7 +63,7 @@ checada.
 
 **O esforço técnico já foi estimado e cabe na sprint de 2 semanas?**
 
-A estimativa de esforço, complexidade e lacuna de capacidade (seção 10.2 e matriz 4×4, seção
+A estimativa de esforço, complexidade e lacuna de capacidade (seção 10.7 e matriz 4×4, seção
 [8.5](../08-requisitos/index.md#85-matriz-4x4)) precisa existir antes do planejamento da sprint,
 não ser feita de improviso na reunião de planejamento.
 
@@ -87,8 +89,11 @@ o desenvolvimento, a seção 8 é atualizada antes de o requisito ser considerad
 
 **As regras de negócio foram implementadas, não só o caminho feliz?**
 
-RF23 precisa realmente bloquear a inscrição quando não há vaga e oferecer o encaminhamento à
-lista de espera (RF25) — não só inscrever sempre e ignorar o limite de vagas definido em RF20.
+RF23 precisa realmente recusar a inscrição quando a turma não tem vaga e informar que ela está
+cheia (RN12) — não só inscrever sempre e ignorar o limite de vagas definido em RF20. A DoD de cada
+história cobre só os critérios dela: o encaminhamento à lista de espera é critério da US25 (RF25).
+Quando a US25 for concluída, o teste de regressão garante que o bloqueio da US23 continua
+funcionando.
 
 **Os critérios de aceitação passam integralmente, incluindo os cenários de exceção?**
 
@@ -119,30 +124,53 @@ commit final.
 
 **Os RNFs aplicáveis ao requisito foram verificados de fato, não assumidos?**
 
-RF09 precisa responder em até 3 segundos sob carga simulada (RNF03), não só "parecer rápido" no
-teste manual de um desenvolvedor.
+Cada RNF é verificado com a medida que ele mesmo declara. RF12 (Consultar saldo) é uma tela de
+consulta: precisa apresentar o resultado em até 3 segundos em 95% das requisições, com conexão
+3G/4G simulada (RNF03), não só "parecer rápido" no teste manual de um desenvolvedor. RF09
+(Registrar doação) é uma gravação, e o RNF03 não se aplica a ela: o que se verifica é o RNF01,
+contando com uma voluntária os passos até concluir o registro (no máximo três).
 
 **Dados pessoais envolvidos respeitam a LGPD?**
 
 Consentimento (RF42) registrado antes do uso, acesso restrito por perfil, e nenhum dado real de
 família ou criança usado em teste sem anonimização — conforme o RNF07 e o RNF13.
 
-**Não há entrega parcial: se um critério falhar, o requisito inteiro volta ao backlog?**
+**O que não está concluído aparece como "em andamento", e não como pronto?**
 
-Um requisito "quase pronto" não é levado à Revisão de Sprint como se estivesse concluído. Ele
-fica registrado como em andamento e retorna ao backlog da sprint seguinte.
+Uma história "quase pronta" não conta como concluída nem entra na velocidade da sprint: ela fica
+registrada como em andamento e volta ao backlog da sprint seguinte. Isso não impede a equipe de
+mostrar na Revisão de Sprint um impedimento, uma tela incompleta ou um protótipo para obter
+feedback da coordenação, desde que fique claro o que está concluído e o que continua em
+desenvolvimento.
 
-## 9.3 Checklist de fechamento
+## 9.3 Itens que não se aplicam
 
-Usado ao final de cada sprint, antes da Revisão, para decidir rapidamente se um requisito pode
-avançar.
+Nem todo item da DoR ou da DoD faz sentido para toda história. Quando um item não se aplica, ele
+é marcado como **não se aplica**, com a justificativa ao lado, e não conta como falha. Exemplos:
+
+| Item | História | Justificativa |
+| :--- | :--- | :--- |
+| Protótipo validado (DoR) | US32 – Sinalizar faltas | Não tem tela própria; a sinalização aparece no painel da US37. |
+| Dados pessoais respeitam a LGPD (DoD) | US11 – Cadastrar categoria | A categoria não contém dado pessoal. |
+| RNF03 – tempo de consulta (DoD) | US09 – Registrar doação | É gravação, não tela de consulta. |
+| Comportamento igual à seção 8 (DoD) | T01 – Ambiente | Item técnico, sem RF; verificado pelo CI e pelo deploy. |
+
+Os RNFs que valem para o projeto inteiro e não dependem do código de uma história — como o RNF12
+(custo mensal zero) e o RNF05 (cópia de segurança diária) — não são verificados história por
+história. Eles são conferidos uma vez por sprint, no fechamento, e registrados na revisão.
+
+## 9.4 Checklist de fechamento
+
+A DoR é preenchida no planejamento da sprint e a DoD ao final, antes da Revisão, para cada
+história. Em cada item, marque **passou**, **não passou** ou **não se aplica** (com justificativa,
+seção 9.3).
 
 ### DoR
 
 | Verificado | Pergunta |
 | :---: | :--- |
 | ☐ | O requisito tem os dados mínimos (campos obrigatórios/opcionais) descritos? |
-| ☐ | As regras de negócio estão separadas do texto do RF e registradas na seção 10.2? |
+| ☐ | As regras de negócio estão separadas do texto do RF e registradas na seção 10.6? |
 | ☐ | O perfil de acesso está definido na tabela de permissões (8.4)? |
 | ☐ | Existe protótipo validado com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
@@ -165,4 +193,26 @@ avançar.
 | ☐ | A funcionalidade está implantada no ambiente de homologação? |
 | ☐ | Os RNFs aplicáveis foram verificados de fato? |
 | ☐ | Os dados pessoais envolvidos respeitam a LGPD? |
-| ☐ | Não há entrega parcial — o que falhou volta ao backlog, não é mostrado como pronto? |
+| ☐ | O que não está concluído aparece como "em andamento", e não como pronto? |
+
+## 9.5 Exemplo de aplicação: US09 – Registrar doação recebida
+
+O exemplo mostra, para uma história do MVP (Sprint 6), como cada item da DoD se liga aos critérios
+de aceitação (seção [10.5](../10-backlog/index.md#105-criterios-de-aceitacao-topo-do-iceberg)),
+à forma de verificação e à evidência registrada. A coluna de evidência é preenchida pela equipe
+quando a história é verificada.
+
+| Item da DoD | Critério ou requisito | Como é verificado | Resultado | Evidência |
+| :--- | :--- | :--- | :--- | :--- |
+| Comportamento igual à seção 8 | RF09; CA-US09-01 | Revisão do PR conferindo os campos categoria, quantidade, data e doador com o RF09 | | |
+| Regras de negócio | RN02; CA-US09-02 | Teste automatizado: a quantidade usa a unidade da categoria e soma ao saldo | | |
+| Critérios, incluindo exceções | CA-US09-04, CA-US09-05, CA-US09-06 | Testes automatizados: campo faltando, quantidade zero ou negativa, categoria fora da lista | | |
+| Padrões de código | — | Lint sem erros no CI | | |
+| Testes das regras críticas | RN02; CA-US09-02, 04, 05 | Testes acima passando no CI | | |
+| Regressão | — | Suíte inteira passando no CI | | |
+| Implantado em homologação | — | Deploy publicado a partir do commit final | | |
+| RNFs aplicáveis | RNF01; CA-US09-03 | Uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos (no máximo três) | | |
+| RNFs aplicáveis | RNF19 | Uma alteração de teste em um registro de doação aparece com autor, data, hora, valor anterior e novo | | |
+| RNFs aplicáveis | RNF03 | Não se aplica: gravação, não tela de consulta | Não se aplica | — |
+| Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis da tabela 8.4; apenas dados sintéticos até o portão de uso real (seção [6.4](../06-cronograma/index.md#64-portao-de-liberacao-para-uso-real)) | | |
+| Em andamento × pronto | — | Se qualquer linha acima não passar, a US09 fica "em andamento" e não entra na velocidade | | |

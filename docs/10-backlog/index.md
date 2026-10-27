@@ -1,443 +1,448 @@
 # 10. Backlog de Produto
 
-Todas as user stories (US) desta seção derivam da lista de requisitos funcionais da seção
-[8.1](../08-requisitos/index.md#81-lista-de-requisitos-funcionais-rfs): cada RF gera uma US com o
-mesmo número (RF01 → US01). Esta é uma lista preliminar e será ajustada sempre que necessário
-durante o desenvolvimento, a partir do feedback da coordenação nas revisões de sprint (seção 5.1).
-Antes de entrar em uma sprint, cada US precisa atender à Definição de Preparado (DoR) da seção
-[9](../09-dor-dod/index.md), o que inclui ter os critérios de aceitação escritos.
+> **Situação em 27/10/2026 (Sprint 6, de 20/10 a 02/11).** RFs concluídos pela DoD: **0 de 45** (última medição: 17/10). A próxima atualização acontece na revisão da Sprint 6, em 02/11/2026. O registro de cada mudança está em [10.8 Refinamentos do backlog](#108-refinamentos-do-backlog).
 
-## 10.1 Backlog Geral
+O backlog é a **única fonte do trabalho** da equipe: requisitos funcionais, itens técnicos (ambiente, deploy, CI) e tarefas de lançamento (transição, treinamento). O que não está aqui não é trabalho da equipe.
 
-A tabela a seguir apresenta cada requisito funcional declarado com a técnica de user story, no
-formato "Como [perfil], quero [ação], para [benefício]", e a rastreabilidade com os requisitos não
-funcionais. As histórias estão organizadas nos quatro temas definidos na seção 5.1; dentro de cada
-tema, cada característica de produto (CP) da seção 2.3 é um épico, e o benefício de cada história
-segue o valor de negócio (VN) da sua característica.
+O backlog é **emergente**. Ele é refinado em toda sprint, por cerca de 10% do tempo da equipe, e segue o modelo do **iceberg**:
 
-**Observações:**
+- **Topo:** os itens da sprint atual e da próxima ficam em histórias pequenas, com critérios de aceitação e protótipo.
+- **Meio:** os itens seguintes ficam em histórias escritas, ainda sem todos os critérios.
+- **Base:** o restante fica em épicos (atividades do mapa), com detalhe suficiente só para estimar e priorizar.
 
-- Os RNF02, RNF04, RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as histórias
-  (seção 8.4). A coluna "RNFs relacionados" lista só os que se aplicam de forma específica.
-- Quando o RF permite o uso por Voluntário e por Coordenação, a história é escrita do ponto de vista
-  do voluntário, porque a Coordenação tem todas as permissões do Voluntário (tabela de permissões da
-  seção 8.4).
-- As histórias marcadas com **MVP** são as 18 aprovadas com o cliente em 28/09/2026 (seção 10.2).
+**Abordagem de granularidade (User Story):**
 
-### Tema: Portal institucional
+| Nível | Neste backlog | Exemplo |
+|---|---|---|
+| Tema | Jornada de uma persona | Jornada A – Fazer a doação chegar às famílias |
+| Épico | Atividade da jornada (um verbo) | A2 – Receber doações |
+| História | User story, com um único ator | US09 – Registrar doação recebida |
+| Task | Tarefa técnica na sprint (quadro) | Criar tabela `doacao` no Supabase |
 
-**Épico CP1 – Portal institucional e agenda de atividades** (VN1: centralizar as informações destinadas à comunidade e aos apoiadores)
+A rastreabilidade RF → US continua valendo, mas **um RF pode gerar mais de uma história** quando envolve atores ou comportamentos diferentes. As histórias divididas recebem letra: US15 vira US15a e US15b.
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF01 – Publicar conteúdo institucional | **US01** – Como membro da coordenação, quero publicar o histórico, a missão, o endereço e as formas de contato da associação na área pública, para que a comunidade e os apoiadores encontrem essas informações em um só lugar. | — |
-| RF02 – Atualizar conteúdo institucional | **US02** – Como membro da coordenação, quero alterar o histórico, a missão, o endereço e as formas de contato publicados, para manter corretas as informações públicas da associação. | — |
-| RF03 – Cadastrar atividade na agenda | **US03** – Como membro da coordenação, quero cadastrar uma atividade com data, horário, local e público a que se destina, para divulgar as oficinas e os eventos da associação. | — |
-| RF04 – Atualizar atividade na agenda | **US04** – Como membro da coordenação, quero alterar ou cancelar uma atividade já divulgada, para que ninguém compareça com base em informação desatualizada. | — |
-| RF05 – Consultar agenda de atividades | **US05** – Como visitante, quero consultar as atividades divulgadas, filtrando por período e por tipo, para saber quando e onde posso participar. | RNF03 |
-| RF06 – Registrar solicitação de contato | **US06** – Como visitante, quero enviar uma solicitação de contato com meu nome, um telefone ou e-mail e uma mensagem, para ser atendido pela coordenação sem precisar ir até a associação. | RNF13 |
-| RF07 – Consultar solicitações de contato | **US07** – Como membro da coordenação, quero consultar as solicitações de contato e marcar cada uma como atendida, para que nenhum pedido da comunidade fique sem resposta. | RNF07, RNF13 |
+O acompanhamento diário (responsável, situação e tasks) fica no quadro do GitHub Projects: **[link do quadro – a incluir]**.
 
-### Tema: Doações de itens
+---
 
-**Épico CP2 – Registro de doações de itens** (VN2: reduzir doações não registradas e dar visibilidade aos itens recebidos e distribuídos)
+## 10.1 Personas e objetivos
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF08 – Cadastrar ou atualizar doador | **US08** (MVP) – Como voluntário, quero cadastrar e, se necessário, corrigir os dados de pessoas e organizações que doam itens, para saber de onde veio cada doação. | RNF01, RNF19 |
-| RF09 – Registrar doação recebida | **US09** (MVP) – Como voluntário, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para que nenhuma doação recebida deixe de ser registrada. | RNF01, RNF19 |
-| RF10 – Registrar destinação de doação | **US10** (MVP) – Como voluntário, quero registrar a saída de itens doados com categoria, quantidade, data e a família ou atividade que os recebeu, para saber para onde foi cada doação. | RNF19 |
-| RF11 – Cadastrar categoria de item | **US11** (MVP) – Como membro da coordenação, quero cadastrar categorias de item com nome e unidade de medida, para que as entradas e saídas sejam contadas sempre da mesma forma. | — |
-| RF12 – Consultar saldo de itens doados | **US12** (MVP) – Como voluntário, quero consultar a quantidade atual de cada item doado, por categoria, para saber o que há disponível antes de fazer uma distribuição. | RNF03 |
-| RF13 – Publicar lista de itens necessários | **US13** – Como membro da coordenação, quero incluir e remover na área pública os itens de que a associação precisa no momento, para orientar os apoiadores sobre o que doar. | RNF03 |
+As personas foram definidas a partir das entrevistas com a coordenação e da validação de 28/09/2026. **Hipóteses a confirmar com a coordenação** na revisão da Sprint 6: quem registra as doações no dia a dia e quem faz a chamada.
 
-### Tema: Cadastro e presença
+| Persona | Perfil no sistema (seção 8.4) | Quem é | Objetivos |
+|---|---|---|---|
+| **Coordenadora** | Coordenação | Responsável pela associação; decide quem usa o sistema e presta contas aos apoiadores. | Saber o que entrou, o que há disponível e para onde foi cada doação. Garantir que nenhum dado de família seja usado sem consentimento. Mostrar o impacto da associação aos apoiadores. |
+| **Voluntária de atendimento** | Voluntário | Recebe as doações e atende as famílias (por exemplo, na Sacola Verde). | Registrar o recebimento sem atrasar o atendimento. Encontrar a família rapidamente. Entregar só o que está disponível. |
+| **Educadora voluntária** | Voluntário | Conduz oficinas e o Reforço Escolar. | Fazer a chamada no próprio dia, pelo celular, sem lista em papel. Saber quem está faltando para avisar a coordenação a tempo. |
+| **Visitante ou apoiador** | Público (sem login) | Comunidade, doadores e parceiros. | Saber o que a associação faz, quando há atividades e o que doar. Falar com a associação sem precisar ir até lá. |
 
-**Épico CP3 – Cadastro de famílias e participantes** (VN3: centralizar os dados hoje mantidos de forma isolada)
+---
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF14 – Cadastrar família | **US14** (MVP) – Como voluntário, quero cadastrar uma família atendida com o nome do responsável, telefone e endereço, para reunir em um só lugar os dados das famílias acompanhadas. | RNF07, RNF13, RNF16, RNF19 |
-| RF15 – Atualizar ou inativar cadastro de família | **US15** – Como voluntário, quero atualizar os dados de uma família, e, como membro da coordenação, quero inativá-la, para manter o cadastro em dia sem perder o histórico de atendimento. | RNF07, RNF13, RNF19 |
-| RF16 – Cadastrar participante | **US16** (MVP) – Como voluntário, quero cadastrar um participante com nome completo e data de nascimento, para registrar cada pessoa atendida pela associação. | RNF07, RNF13, RNF16, RNF19 |
-| RF17 – Atualizar ou inativar cadastro de participante | **US17** – Como voluntário, quero atualizar os dados de um participante, e, como membro da coordenação, quero inativá-lo, para manter o cadastro em dia, liberar as vagas que ele ocupava e preservar o histórico. | RNF07, RNF13, RNF19 |
-| RF18 – Vincular participante a família | **US18** (MVP) – Como voluntário, quero vincular o participante à sua família e indicar o responsável legal, para saber quem responde por cada criança ou adolescente atendido. | RNF07, RNF13 |
-| RF19 – Consultar cadastro de participantes | **US19** (MVP) – Como voluntário, quero buscar participantes por nome, família ou atividade, para encontrar o cadastro rapidamente durante o atendimento. | RNF03, RNF07 |
+## 10.2 Mapa de histórias
 
-**Épico CP4 – Inscrição em atividades e organização do atendimento** (VN4: organizar e rastrear os atendimentos realizados)
+O mapa é organizado por **jornada**. Na horizontal ficam as **atividades** de cada persona, na ordem em que acontecem no trabalho. Embaixo de cada atividade ficam as histórias que a apoiam. Na vertical, as **releases** recortam conjuntos de histórias que permitem concluir um objetivo da persona de ponta a ponta.
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF20 – Cadastrar turma de atividade | **US20** (MVP) – Como membro da coordenação, quero cadastrar uma turma com atividade, período, dias de encontro e quantidade de vagas, para organizar a oferta das oficinas. | — |
-| RF21 – Atualizar turma de atividade | **US21** – Como membro da coordenação, quero alterar o período, os dias de encontro e as vagas de uma turma em andamento, para ajustar a oferta sem prejudicar quem já está inscrito. | — |
-| RF22 – Encerrar turma de atividade | **US22** – Como membro da coordenação, quero encerrar uma turma registrando a data, para manter o histórico das turmas realizadas. | — |
-| RF23 – Inscrever participante em turma | **US23** (MVP) – Como voluntário, quero inscrever um participante ativo em uma turma com vaga, para registrar quem frequenta cada atividade. | — |
-| RF24 – Cancelar inscrição de participante | **US24** – Como voluntário, quero cancelar uma inscrição informando o motivo, para liberar a vaga e saber por que o participante saiu. | — |
-| RF25 – Registrar participante em lista de espera | **US25** – Como voluntário, quero registrar o participante na lista de espera de uma turma sem vaga, para que ele seja chamado na ordem de registro quando abrir uma vaga. | — |
-| RF26 – Consultar inscritos da turma | **US26** (MVP) – Como voluntário, quero consultar os inscritos e a lista de espera de cada turma, para saber quem participa e quem aguarda vaga. | RNF03, RNF07 |
+Legenda das releases:
 
-**Épico CP5 – Chamada digital e controle de frequência** (VN5: reduzir a conferência manual de presença e apoiar a regra de faltas)
+- **R1 – A doação chega à família:** a coordenadora e a voluntária registram uma doação e a entregam a uma família cadastrada com consentimento.
+- **R2 – A educadora faz a chamada:** uma educadora faz a chamada de uma turma e as faltas ficam registradas e justificadas.
+- **R3 – Manter os cadastros em dia:** atualizações, inativações e cancelamentos, sem perder histórico.
+- **R4 – Prestar contas e proteger dados:** relatórios, painel e LGPD avançada.
+- **Trilha paralela (CP1):** portal institucional, que não depende dos outros módulos.
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF27 – Abrir chamada do encontro | **US27** (MVP) – Como voluntário, quero abrir a chamada de um encontro com a lista de inscritos da turma, para registrar a presença no próprio dia, sem lista em papel. | RNF01, RNF10, RNF16 |
-| RF28 – Registrar frequência do participante | **US28** (MVP) – Como voluntário, quero marcar cada participante da chamada como presente ou ausente, para acabar com a conferência manual da presença. | RNF01, RNF10, RNF16 |
-| RF29 – Justificar falta | **US29** – Como voluntário, quero informar o motivo de uma falta já registrada, para que a falta justificada não conte para o limite de faltas. | RNF01, RNF16 |
-| RF30 – Corrigir registro de frequência | **US30** – Como voluntário que fez a chamada, quero corrigir um registro até o fim do mesmo dia, e, como membro da coordenação, quero corrigir a qualquer momento informando o motivo, para corrigir erros sem perder o registro anterior. | RNF19 |
-| RF31 – Consultar frequência do participante | **US31** – Como voluntário, quero consultar o histórico de presenças e faltas de um participante por turma e por período, para acompanhar a participação dele. | RNF03, RNF07 |
-| RF32 – Sinalizar participante com faltas acima do limite | **US32** – Como membro da coordenação, quero que o sistema sinalize o participante que atingir o limite de faltas não justificadas, para entrar em contato com a família a tempo. | RNF07 |
+R1 e R2 formam o **MVP**.
 
-### Tema: Relatórios e acessos
+### Jornada A – Fazer a doação chegar às famílias
 
-**Épico CP6 – Relatórios e indicadores de impacto** (VN6: apoiar a prestação de contas e a captação de novos apoiadores)
+*Personas: Coordenadora e Voluntária de atendimento*
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF33 – Gerar relatório de doações recebidas | **US33** – Como membro da coordenação, quero gerar o relatório dos itens recebidos por período, categoria e doador, para prestar contas aos apoiadores. | RNF03 |
-| RF34 – Gerar relatório de doações distribuídas | **US34** – Como membro da coordenação, quero gerar o relatório dos itens destinados por período, categoria e família atendida, para mostrar como as doações foram distribuídas. | RNF03, RNF07 |
-| RF35 – Gerar relatório de frequência por turma | **US35** – Como membro da coordenação, quero gerar o relatório de presenças e faltas de uma turma por período ou de um encontro, para acompanhar a participação nas atividades. | RNF03, RNF07 |
-| RF36 – Gerar relatório de famílias atendidas | **US36** – Como membro da coordenação, quero gerar o relatório das famílias com atendimento registrado no período, para demonstrar o alcance da associação. | RNF03, RNF07 |
-| RF37 – Consultar painel de indicadores | **US37** – Como membro da coordenação, quero consultar um painel com famílias atendidas, participantes ativos, itens recebidos e distribuídos e participantes sinalizados, para acompanhar o impacto da associação em um só lugar. | RNF03 |
-| RF38 – Exportar relatório gerado | **US38** – Como membro da coordenação, quero exportar um relatório em PDF ou CSV, para enviá-lo a apoiadores e usá-lo em planilhas. | RNF03 |
+| Release | A1 Dar acesso à equipe | A2 Receber doações | A3 Acolher a família | A4 Distribuir itens | A5 Manter cadastros | A6 Prestar contas |
+|---|---|---|---|---|---|---|
+| **R1** | US41 Autenticar<br>US39 Cadastrar usuário<br>US40 Atribuir perfil | US11 Cadastrar categoria<br>US08 Cadastrar doador<br>US09 Registrar entrada | US42 Registrar consentimento<br>US14 Cadastrar família | US12 Consultar saldo<br>US10 Registrar destinação | | |
+| **R2** | | | US16 Cadastrar participante<br>US18 Vincular à família | | | |
+| **R3** | | | | | US15a Atualizar família<br>US15b Inativar família<br>US17a Atualizar participante<br>US17b Inativar participante | |
+| **R4** | | | | | | US33 Relatório de doações recebidas<br>US34 Relatório de doações distribuídas<br>US36 Relatório de famílias<br>US38 Exportar relatório<br>US37 Painel de indicadores |
 
-**Épico CP7 – Perfis de acesso e proteção de dados** (VN7: proteger os dados das famílias atendidas e cumprir a LGPD)
+### Jornada B – Garantir que as crianças frequentem as atividades
 
-| RF | User Story derivada | RNFs relacionados |
-| :--- | :--- | :--- |
-| RF39 – Cadastrar usuário do sistema | **US39** (MVP) – Como membro da coordenação, quero cadastrar voluntários e outros membros da coordenação, para que só pessoas autorizadas usem a área restrita. | RNF07, RNF15 |
-| RF40 – Atribuir perfil de acesso ao usuário | **US40** (MVP) – Como membro da coordenação, quero atribuir a cada usuário o perfil Voluntário ou Coordenação, para que cada pessoa acesse apenas o que sua função permite. | RNF07 |
-| RF41 – Autenticar usuário | **US41** (MVP) – Como voluntário, quero entrar na área restrita com meu usuário e senha, para usar as funções do meu perfil com segurança. | RNF07, RNF15 |
-| RF42 – Registrar consentimentos e autorizações (LGPD e Imagem) | **US42** (MVP) – Como voluntário, quero registrar o consentimento do titular (ou responsável legal) para as finalidades de tratamento de dados pessoais e a autorização de uso de imagem, para garantir a conformidade legal das ações da associação. | RNF13, RNF14 |
-| RF43 – Registrar e acompanhar solicitação de exclusão de dados | **US43** – Como membro da coordenação, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. | RNF13 |
-| RF44 – Consultar histórico de alterações de cadastro | **US44** – Como membro da coordenação, quero consultar quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando, para ter controle sobre as alterações feitas no sistema. | RNF07, RNF19 |
-| RF45 – Consultar autorização de uso de imagem vigente | **US45** – Como voluntário, quero consultar, por pessoa, a autorização de imagem em vigor para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
+*Personas: Educadora voluntária e Coordenadora*
 
-### Critérios de aceitação — US08 a US12 e US39 a US42
+| Release | B1 Montar turmas | B2 Inscrever participantes | B3 Fazer a chamada | B4 Ajustar a chamada | B5 Acompanhar faltas |
+|---|---|---|---|---|---|
+| **R2** | US20 Cadastrar turma<br>US21 Atualizar turma<br>US22 Encerrar turma | US23 Inscrever<br>US25 Lista de espera<br>US19 Buscar participante<br>US26 Consultar inscritos | US27 Abrir chamada<br>US28 Registrar frequência | US29 Justificar falta<br>US30a Corrigir no mesmo dia<br>US30b Corrigir com motivo | US31 Consultar frequência |
+| **R3** | | US24 Cancelar inscrição | | | |
+| **R4** | | | | | US32 Sinalizar faltas<br>US35 Relatório de frequência |
 
-Os critérios abaixo descrevem as condições de satisfação das histórias US08 a US12 e US39 a US42,
-relacionando cada história aos requisitos funcionais, não funcionais e às regras de negócio
-aplicáveis. Para cada história, são indicadas as evidências previstas para a verificação pela
-equipe e a validação com a coordenação, conforme a DoR e a DoD da [seção
-9](../09-dor-dod/index.md). Os RNFs gerais apresentados nas observações da seção 10.1 também
-se aplicam a essas histórias.
+### Jornada C – Conhecer e apoiar a associação (trilha paralela)
 
-#### US08 — Cadastrar ou atualizar doador
+*Persona: Visitante ou apoiador; a Coordenadora mantém o conteúdo*
 
-**Origem e RNFs:** RF08; CP2; RNF01 (seção 8.4) e RNF19 para correções de doador (seção 8.7).  
-**Regras relacionadas:** Não há RN específica na lista RN01–RN20.
+| Release | C1 Conhecer a associação | C2 Ver a agenda | C3 Saber o que doar | C4 Falar com a associação |
+|---|---|---|---|---|
+| **Trilha CP1** | US01 Publicar conteúdo<br>US02 Atualizar conteúdo | US03 Cadastrar atividade<br>US04 Atualizar atividade<br>US05 Consultar agenda | US13 Publicar itens necessários | US06 Enviar contato<br>US07 Consultar contatos |
 
-- **CA-US08-01:** Voluntário e Coordenação conseguem cadastrar pessoas e organizações doadoras, conforme o RF08.
-- **CA-US08-02:** A correção realizada por um desses perfis é persistida no cadastro do doador.
-- **CA-US08-03:** As correções de dados do doador registram autor, data, hora, valor anterior e valor novo, conforme o RNF19 e seu recorte na seção 8.7; o registro pode ser verificado no log sem a tela RF44.
+### Jornada D – Proteger os dados das famílias
 
-*Evidência prevista:* Verificação: teste de cadastro, correção e consulta do log de alteração. Validação: uma coordenadora cadastra e corrige um doador fictício sem ajuda da equipe, em revisão a registrar.
+*Persona: Coordenadora*
 
+| Release | D1 Responder ao titular | D2 Auditar alterações |
+|---|---|---|
+| **R4** | US43 Solicitação de exclusão<br>US45 Consultar autorização de imagem | US44 Histórico de alterações |
+
+O registro do consentimento (US42) fica na Jornada A, em "Acolher a família", porque acontece no momento do cadastro (RN19).
+
+---
+
+## 10.3 Backlog geral
+
+Histórias no formato "Como [persona], quero [ação], para [objetivo]". Os RNF02, RNF04, RNF05, RNF06, RNF08, RNF09, RNF11, RNF12, RNF17 e RNF18 valem para todas as histórias (seção 8.4); a coluna "RNFs" lista só os específicos.
+
+### Itens técnicos e de lançamento
+
+| ID | Item | Por que é necessário | Sprint |
+|---|---|---|---|
+| T01 | Ambiente de desenvolvimento: Nuxt.js, Supabase, deploy e CI | Sem ele nenhuma história passa na DoD (precisa estar publicada e testada). | 6 |
+| T02 | Plano de transição | A associação precisa assumir o sistema ao fim da disciplina. | 8 |
+| T03 | Treinamento e manual de uso | A coordenação e as voluntárias precisam usar o sistema sem a equipe. | Fechamento |
+| T04 | Titularidade das contas e backup | As contas (Supabase, deploy, domínio) precisam ficar em nome da associação. | Fechamento |
+
+Defeitos encontrados nas revisões entram nesta tabela com o prefixo D (D01, D02…), no topo do backlog.
+
+### Jornada A – Fazer a doação chegar às famílias
+
+| ID | RF | User story | RNFs |
+|---|---|---|---|
+| US41 | RF41 | Como **voluntária de atendimento**, quero entrar na área restrita com meu usuário e senha, para usar as funções do meu perfil com segurança. | RNF07, RNF15 |
+| US39 | RF39 | Como **coordenadora**, quero cadastrar voluntárias e outros membros da coordenação, para que só pessoas autorizadas usem a área restrita. | RNF07, RNF15 |
+| US40 | RF40 | Como **coordenadora**, quero atribuir a cada usuário o perfil Voluntário ou Coordenação, para que cada pessoa acesse apenas o que sua função permite. | RNF07 |
+| US11 | RF11 | Como **coordenadora**, quero cadastrar categorias de item com nome e unidade de medida, para que entradas e saídas sejam contadas sempre da mesma forma. | — |
+| US08 | RF08 | Como **voluntária de atendimento**, quero cadastrar e corrigir os dados de pessoas e organizações que doam, para saber de onde veio cada doação. | RNF01, RNF19 |
+| US09 | RF09 | Como **voluntária de atendimento**, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para registrar o recebimento sem atrasar o atendimento. | RNF01, RNF19 |
+| US42 | RF42 | Como **voluntária de atendimento**, quero registrar o consentimento do titular (ou responsável legal) para cada finalidade e a autorização de uso de imagem, para que nenhum dado da família seja usado sem permissão. | RNF13, RNF14 |
+| US14 | RF14 | Como **voluntária de atendimento**, quero cadastrar uma família com nome do responsável, telefone e endereço, para poder destinar doações e inscrever seus membros. | RNF07, RNF13, RNF16, RNF19 |
+| US12 | RF12 | Como **voluntária de atendimento**, quero consultar a quantidade atual de cada item por categoria, para entregar só o que está disponível. | RNF03 |
+| US10 | RF10 | Como **voluntária de atendimento**, quero registrar a saída de itens com a família ou atividade que os recebeu, para que a coordenadora saiba para onde foi cada doação. | RNF19 |
+| US16 | RF16 | Como **voluntária de atendimento**, quero cadastrar um participante com nome completo e data de nascimento, para registrar cada pessoa atendida. | RNF07, RNF13, RNF16, RNF19 |
+| US18 | RF18 | Como **voluntária de atendimento**, quero vincular o participante à família e indicar o responsável legal, para saber quem responde por cada criança ou adolescente. | RNF07, RNF13 |
+| US15a | RF15 | Como **voluntária de atendimento**, quero atualizar os dados de uma família, para manter o contato em dia. | RNF07, RNF13, RNF19 |
+| US15b | RF15 | Como **coordenadora**, quero inativar uma família que deixou de ser atendida, para tirá-la das buscas sem perder o histórico de atendimento. | RNF07, RNF19 |
+| US17a | RF17 | Como **voluntária de atendimento**, quero atualizar os dados de um participante, para manter o cadastro em dia. | RNF07, RNF13, RNF19 |
+| US17b | RF17 | Como **coordenadora**, quero inativar um participante, para liberar as vagas que ele ocupava e preservar o histórico. | RNF07, RNF19 |
+| US33 | RF33 | Como **coordenadora**, quero gerar o relatório dos itens recebidos por período, categoria e doador, para prestar contas aos apoiadores. | RNF03 |
+| US34 | RF34 | Como **coordenadora**, quero gerar o relatório dos itens destinados por período, categoria e família, para mostrar como as doações foram distribuídas. | RNF03, RNF07 |
+| US36 | RF36 | Como **coordenadora**, quero gerar o relatório das famílias atendidas no período, para demonstrar o alcance da associação. | RNF03, RNF07 |
+| US38 | RF38 | Como **coordenadora**, quero exportar um relatório em PDF ou CSV, para enviá-lo a apoiadores e usá-lo em planilhas. | RNF03 |
+| US37 | RF37 | Como **coordenadora**, quero um painel com famílias atendidas, participantes ativos, itens recebidos e distribuídos e participantes sinalizados, para acompanhar o impacto em um só lugar. | RNF03 |
+
+### Jornada B – Garantir que as crianças frequentem as atividades
+
+| ID | RF | User story | RNFs |
+|---|---|---|---|
+| US20 | RF20 | Como **coordenadora**, quero cadastrar uma turma com atividade, período, dias de encontro e vagas, para organizar a oferta das oficinas. | — |
+| US21 | RF21 | Como **coordenadora**, quero alterar período, dias de encontro e vagas de uma turma em andamento, para ajustar a oferta sem prejudicar quem já está inscrito. | — |
+| US22 | RF22 | Como **coordenadora**, quero encerrar uma turma registrando a data, para manter o histórico das turmas realizadas. | — |
+| US23 | RF23 | Como **educadora voluntária**, quero inscrever um participante ativo em uma turma com vaga, para saber quem frequenta cada atividade. | — |
+| US25 | RF25 | Como **educadora voluntária**, quero registrar o participante na lista de espera de uma turma cheia, para que ele seja chamado na ordem quando abrir vaga. | — |
+| US19 | RF19 | Como **educadora voluntária**, quero buscar participantes por nome, família ou atividade, para encontrar o cadastro rapidamente durante o atendimento. | RNF03, RNF07 |
+| US26 | RF26 | Como **educadora voluntária**, quero consultar os inscritos e a lista de espera de cada turma, para saber quem participa e quem aguarda vaga. | RNF03, RNF07 |
+| US27 | RF27 | Como **educadora voluntária**, quero abrir a chamada do encontro com a lista de inscritos, para registrar a presença no próprio dia, sem papel. | RNF01, RNF10, RNF16 |
+| US28 | RF28 | Como **educadora voluntária**, quero marcar cada participante como presente ou ausente, para acabar com a conferência manual da presença. | RNF01, RNF10, RNF16 |
+| US29 | RF29 | Como **educadora voluntária**, quero informar o motivo de uma falta, para que a falta justificada não conte para o limite de faltas. | RNF01, RNF16 |
+| US30a | RF30 | Como **educadora voluntária**, quero corrigir a chamada que eu fiz até o fim do mesmo dia, para consertar um erro de marcação. | RNF19 |
+| US30b | RF30 | Como **coordenadora**, quero corrigir qualquer registro de frequência informando o motivo, para resolver erros depois do dia sem perder o registro anterior. | RNF19 |
+| US31 | RF31 | Como **educadora voluntária**, quero consultar o histórico de presenças e faltas de um participante por turma e período, para acompanhar a participação dele. | RNF03, RNF07 |
+| US24 | RF24 | Como **educadora voluntária**, quero cancelar uma inscrição informando o motivo, para liberar a vaga e saber por que o participante saiu. | — |
+| US32 | RF32 | Como **coordenadora**, quero que o sistema sinalize quem atingiu o limite de faltas sem justificativa, para entrar em contato com a família a tempo. | RNF07 |
+| US35 | RF35 | Como **coordenadora**, quero gerar o relatório de presenças e faltas de uma turma por período ou encontro, para acompanhar a participação nas atividades. | RNF03, RNF07 |
+
+### Jornada C – Conhecer e apoiar a associação
+
+| ID | RF | User story | RNFs |
+|---|---|---|---|
+| US01 | RF01 | Como **coordenadora**, quero publicar o histórico, a missão, o endereço e os contatos da associação, para que a comunidade e os apoiadores encontrem essas informações em um só lugar. | — |
+| US02 | RF02 | Como **coordenadora**, quero alterar as informações institucionais publicadas, para mantê-las corretas. | — |
+| US03 | RF03 | Como **coordenadora**, quero cadastrar uma atividade com data, horário, local e público, para divulgar oficinas e eventos. | — |
+| US04 | RF04 | Como **coordenadora**, quero alterar ou cancelar uma atividade divulgada, para que ninguém compareça com base em informação desatualizada. | — |
+| US05 | RF05 | Como **visitante**, quero consultar as atividades divulgadas por período e tipo, para saber quando e onde posso participar. | RNF03 |
+| US13 | RF13 | Como **coordenadora**, quero incluir e remover na área pública os itens de que a associação precisa, para orientar os apoiadores sobre o que doar. | RNF03 |
+| US06 | RF06 | Como **visitante**, quero enviar meu nome, um telefone ou e-mail e uma mensagem, para ser atendido sem precisar ir até a associação. | RNF13 |
+| US07 | RF07 | Como **coordenadora**, quero consultar as solicitações de contato e marcar cada uma como atendida, para que nenhum pedido fique sem resposta. | RNF07, RNF13 |
+
+### Jornada D – Proteger os dados das famílias
+
+| ID | RF | User story | RNFs |
+|---|---|---|---|
+| US43 | RF43 | Como **coordenadora**, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. | RNF13 |
+| US45 | RF45 | Como **voluntária de atendimento**, quero consultar a autorização de imagem em vigor de uma pessoa para cada meio, para não divulgar uma imagem sem permissão. | RNF14 |
+| US44 | RF44 | Como **coordenadora**, quero consultar quem alterou dados pessoais ou registros de frequência, o que mudou e quando, para ter controle sobre as alterações. | RNF07, RNF19 |
+
+---
+
+## 10.4 Backlog ordenado
+
+A ordem considera os **quatro fatores** de priorização: **valor** (com a fonte que o justifica), **risco** (incerteza técnica ou de negócio, que deve ser atacada cedo), **capacidade de entrega** (cada release precisa fechar um objetivo da persona) e **dependências** (o item do qual outros dependem vem antes).
+
+Sprints 7, 8 e Fechamento são **previsão**, recalculada em cada revisão com a velocidade medida. Só a Sprint 6 é compromisso.
+
+**Escalas.** Valor: 4 Must, 3 Should, 2 Could, 1 Won't now (MoSCoW, seção 8.5). Risco: Alto, Médio ou Baixo, proposto pela equipe. Nível no iceberg: **Topo** (pronta pela DoR ou em refinamento final), **Meio** (história escrita, critérios em rascunho), **Base** (épico, só estimado).
+
+**Situação:** Concluída (passou na DoD) · Em andamento · Pronta (passou na DoR) · A refinar · Não iniciada.
+
+| # | Item | Atividade | Valor | Fonte do valor | Risco | Depende de | Release | Nível | Sprint | Situação (27/10) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | T01 Ambiente | — | 4 | Condição para a DoD | **Alto**: stack nova para a equipe | — | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 2 | US41 Autenticar | A1 | 3 | Validação 28/09 | **Alto**: segurança (RNF15) | T01 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 3 | US39 Cadastrar usuário | A1 | 4 | Validação 28/09 | Médio | US41 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 4 | US40 Atribuir perfil | A1 | 4 | Validação 28/09 | **Alto**: permissões por perfil | US39 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 5 | US42 Consentimento | A3 | 3 | Validação 28/09; RN19 | **Alto**: LGPD | US41 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 6 | US11 Categoria | A2 | 4 | Validação 28/09 | Baixo | US40 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 7 | US08 Doador | A2 | 4 | Validação 28/09 | Baixo | US41 | R1 | Topo | 6 | Em andamento *(confirmar)*; critérios refinados em 27/10 |
+| 8 | US09 Entrada | A2 | 4 | Validação 28/09 | Médio: até 3 passos (RNF01) | US08, US11 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 9 | US12 Saldo | A4 | 4 | Validação 28/09 | Médio: 3 s em 3G (RNF03) | US09 | R1 | Topo | 6 | Em andamento *(confirmar)* |
+| 10 | US14 Cadastrar família | A3 | 4 | Validação 28/09; RN04 | Médio: dados pessoais | US42 | R1 | Topo | 7 | A refinar |
+| 11 | US10 Destinação | A4 | 4 | Validação 28/09 | Médio | US12, US14 | R1 | Topo | 7 | Pronta pela DoR, exceto protótipo |
+| 12 | US16 Participante | A3 | 4 | Validação 28/09; RN05 | Médio | US42 | R2 | Topo | 7 | A refinar |
+| 13 | US18 Vincular à família | A3 | 4 | Validação 28/09; RN08 | Baixo | US14, US16 | R2 | Topo | 7 | A refinar |
+| 14 | US20 Cadastrar turma | B1 | 4 | Validação 28/09 | Baixo | US40 | R2 | Topo | 7 | A refinar (texto pendente na ata de 28/09) |
+| 15 | US23 Inscrever | B2 | 4 | Validação 28/09; RN12 | Médio | US16, US20 | R2 | Topo | 7 | A refinar |
+| 16 | US25 Lista de espera | B2 | 4 | Validação 28/09; RN14 | Baixo | US23 | R2 | Topo | 7 | A refinar |
+| 17 | US19 Buscar participante | B2 | 4 | Validação 28/09 | Baixo | US23 | R2 | Topo | 7 | A refinar (texto pendente na ata de 28/09) |
+| 18 | US26 Consultar inscritos | B2 | 4 | Validação 28/09 | Baixo | US23, US25 | R2 | Topo | 7 | A refinar |
+| 19 | US27 Abrir chamada | B3 | 4 | Validação 28/09; RN15 | **Alto**: uso no celular (RNF10) | US26 | R2 | Topo | 7 | A refinar |
+| 20 | US28 Registrar frequência | B3 | 4 | Validação 28/09 | Médio | US27 | R2 | Topo | 7 | A refinar |
+| 21 | US21 Atualizar turma | B1 | 4 | Ata 28/09; RN10 | Baixo | US20 | R2 | Meio | 7 | Não iniciada |
+| 22 | US22 Encerrar turma | B1 | 4 | Ata 28/09; RN11 | Baixo | US20 | R2 | Meio | 7 | Não iniciada |
+| 23 | US29 Justificar falta | B4 | 4 | Validação 28/09; no MVP pelo cronograma de 17/10 *(confirmar)* | Baixo | US28 | R2 | Meio | 8 | Não iniciada |
+| 24 | US30a Corrigir no mesmo dia | B4 | 4 | Validação 28/09; RN17 | Médio | US28 | R2 | Meio | 8 | Não iniciada |
+| 25 | US30b Corrigir com motivo | B4 | 4 | Validação 28/09; RN17 | Médio | US30a | R2 | Meio | 8 | Não iniciada |
+| 26 | US31 Consultar frequência | B5 | 4 | Validação 28/09; no MVP pelo cronograma de 17/10 *(confirmar)* | Baixo | US28 | R2 | Meio | 8 | Não iniciada |
+| 27 | US24 Cancelar inscrição | B2 | 4 | RN13 | Baixo | US23 | R3 | Meio | 8 | Não iniciada |
+| 28 | US17a Atualizar participante | A5 | 4 | Validação 28/09 | Baixo | US16 | R3 | Meio | 8 | Não iniciada |
+| 29 | US17b Inativar participante | A5 | 4 | RN06, RN07 | Médio | US24 | R3 | Meio | 8 | Não iniciada |
+| 30 | US15a Atualizar família | A5 | 4 | Validação 28/09 | Baixo | US14 | R3 | Meio | 8 | Não iniciada |
+| 31 | US15b Inativar família | A5 | 4 | RN06 | Baixo | US14 | R3 | Meio | 8 | Não iniciada |
+| 32 | US33 Relatório de recebidas | A6 | 2 | Validação 28/09 | **Alto**: esforço 4 | US09 | R4 | Base | 8 | Não iniciada |
+| 33 | US34 Relatório de distribuídas | A6 | 2 | Validação 28/09 | **Alto**: esforço 4 | US10 | R4 | Base | 8 | Não iniciada |
+| 34 | US36 Relatório de famílias | A6 | 2 | Validação 28/09 | Médio | US14 | R4 | Base | 8 | Não iniciada |
+| 35 | US38 Exportar relatório | A6 | 4 | Validação 28/09 | Médio | US33 | R4 | Base | 8 | Não iniciada |
+| 36 | US32 Sinalizar faltas | B5 | 2 | Validação 28/09; RN18 | Médio | US29 | R4 | Base | 8 | Não iniciada |
+| 37 | US37 Painel de indicadores | A6 | 2 | Validação 28/09 | **Alto**: esforço 4 | US32, US33, US34 | R4 | Base | 8 | Não iniciada |
+| 38 | US35 Relatório de frequência | B5 | 2 | Validação 28/09 | Médio | US28 | R4 | Base | 8 | Não iniciada |
+| 39 | US43 Exclusão de dados | D1 | 3 | Aguarda a coordenação | Médio: LGPD | US42 | R4 | Base | Fechamento | Não iniciada |
+| 40 | US45 Autorização de imagem | D1 | 3 | Aguarda a coordenação | Baixo | US42 | R4 | Base | Fechamento | Não iniciada |
+| 41 | US44 Histórico de alterações | D2 | 2 | Validação 28/09 | Médio | log do RNF19 | R4 | Base | Fechamento | Não iniciada |
+
+**Trilha paralela (CP1)**, ordem própria:
+
+| # | Item | Atividade | Valor | Depende de | Nível | Sprint | Situação (27/10) |
+|---|---|---|---|---|---|---|---|
+| P1 | US01 Publicar conteúdo | C1 | 2 | T01 | Topo | 7 | A refinar |
+| P2 | US02 Atualizar conteúdo | C1 | 2 | US01 | Topo | 7 | A refinar |
+| P3 | US03 Cadastrar atividade | C2 | 2 | US01 | Topo | 7 | A refinar |
+| P4 | US04 Atualizar atividade | C2 | 2 | US03 | Topo | 7 | A refinar |
+| P5 | US05 Consultar agenda | C2 | 2 | US03 | Meio | 8 | Não iniciada |
+| P6 | US13 Itens necessários | C3 | 4 | US01, US11 | Meio | 8 | Não iniciada |
+| P7 | US06 Enviar contato | C4 | 2 *(rever)* | US01 | Meio | 8 | Não iniciada |
+| P8 | US07 Consultar contatos | C4 | 4 *(rever)* | US06 | Meio | 8 | Não iniciada |
+
+**Contagem por sprint (RFs):** Sprint 6 = 8; Sprint 7 = 13 + 4 da trilha = 17; Sprint 8 = 13 + 4 da trilha = 17; Fechamento = 3. Total: 45.
+
+**Itens em risco.** Se a velocidade da Sprint 6 ficar abaixo de 8 RFs, os itens do fim da ordem (R4: relatórios, painel e LGPD avançada) são comunicados ao professor e ao cliente na revisão de 02/11, conforme a seção 5 do cronograma.
+
+---
+
+## 10.5 Critérios de aceitação (topo do iceberg)
+
+Só os itens do topo têm critérios completos. Os do meio recebem critérios durante a sprint anterior à sua entrada, pela parte da equipe dedicada à ER.
+
+#### US08 — Cadastrar ou corrigir doador
+
+**Origem:** RF08; RNF01 e RNF19 (seção 8.7). **Regras:** nenhuma RN específica.
+
+- **CA-US08-01:** Voluntário e Coordenação cadastram doadores do tipo **pessoa** ou **organização**, informando nome e pelo menos um meio de contato (telefone ou e-mail).
+- **CA-US08-02:** A correção feita por um desses perfis é persistida no cadastro do doador.
+- **CA-US08-03:** As correções registram autor, data, hora, valor anterior e valor novo (RNF19); o registro pode ser verificado no log sem a tela RF44.
+- **CA-US08-04 (exceção, proposta a validar):** Um doador sem nome não é salvo, e o sistema indica o campo que falta.
+- **CA-US08-05 (exceção, proposta a validar):** Se já existir um doador com o mesmo nome e o mesmo telefone ou e-mail, o sistema avisa e oferece usar o cadastro existente.
+- **CA-US08-06 (exceção, proposta a validar):** É possível registrar doação anônima sem cadastrar um doador. *(Confirmar com a coordenação se doações anônimas existem.)*
+
+*Evidência prevista:* teste de cadastro, correção, recusa por campo faltante, aviso de duplicidade e consulta do log. Validação: uma coordenadora cadastra e corrige um doador fictício sem ajuda.
 
 #### US09 — Registrar doação recebida
 
-**Origem e RNFs:** RF09; CP2; RNF01 e RNF19.  
-**Regras relacionadas:** RN02.
+**Origem:** RF09; RNF01 e RNF19. **Regras:** RN02.
 
-- **CA-US09-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e doador de origem.
-- **CA-US09-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a entrada soma essa quantidade ao saldo consultado na US12.
-- **CA-US09-03:** O registro pode ser concluído em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros, conforme o RNF01.
-- **CA-US09-04 (exceção):** Se faltar categoria, quantidade, data ou doador, a entrada não é salva e o sistema indica qual campo falta.
-- **CA-US09-05 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não é alterado.
-- **CA-US09-06 (exceção):** A categoria é escolhida entre as cadastradas na US11; não é possível digitar uma categoria nova no registro de entrada.
+- **CA-US09-01:** O registro feito por Voluntário ou Coordenação contém categoria, quantidade, data e doador.
+- **CA-US09-02:** A quantidade usa a unidade de medida da categoria (RN02), e a entrada soma a quantidade ao saldo da US12.
+- **CA-US09-03:** O registro é concluído em até três passos a partir da tela inicial da área restrita, sem ajuda (RNF01).
+- **CA-US09-04 (exceção):** Se faltar categoria, quantidade, data ou doador, a entrada não é salva e o sistema indica o campo que falta.
+- **CA-US09-05 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não muda.
+- **CA-US09-06 (exceção):** A categoria é escolhida entre as cadastradas na US11, sem texto livre.
 
-*Evidência prevista:* Verificação: teste do registro de entrada, da unidade de medida, da soma no saldo e das recusas por campo faltante e por quantidade inválida. Validação: uma voluntária registra uma doação fictícia sem ajuda da equipe, com contagem dos passos a partir da tela inicial da área restrita.
-
+*Evidência prevista:* teste do registro, da unidade, da soma no saldo e das recusas. Validação: uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos.
 
 #### US10 — Registrar destinação de doação
 
-**Origem e RNFs:** RF10; CP2; RNF19.  
-**Regras relacionadas:** RN02.
+**Origem:** RF10; RNF19. **Regras:** RN02.
 
-- **CA-US10-01:** O registro efetuado por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.
-- **CA-US10-02:** A quantidade registrada usa a unidade de medida da categoria (RN02), e a saída subtrai essa quantidade do saldo consultado na US12.
-- **CA-US10-03 (exceção):** Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica qual campo falta.
-- **CA-US10-04 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não é alterado.
-- **CA-US10-05 (exceção):** Uma saída maior que o saldo atual da categoria é recusada, e o sistema mostra o saldo disponível.
+- **CA-US10-01:** O registro feito por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.
+- **CA-US10-02:** A quantidade usa a unidade da categoria (RN02), e a saída subtrai a quantidade do saldo da US12.
+- **CA-US10-03 (exceção):** Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica o campo que falta.
+- **CA-US10-04 (exceção):** Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não muda.
+- **CA-US10-05 (exceção):** Saída maior que o saldo da categoria é recusada, e o sistema mostra o saldo disponível.
 - **CA-US10-06 (exceção):** O destinatário é escolhido entre as famílias e atividades cadastradas, sem texto livre.
 
-*Evidência prevista:* Verificação: teste do registro de destinação, da unidade de medida, da subtração no saldo e das recusas por campo faltante, quantidade inválida e saldo insuficiente. Validação: a coordenação registra uma saída fictícia para família ou atividade; os cadastros necessários ao cenário de teste devem estar disponíveis.
-
+*Evidência prevista:* teste do registro, da subtração e das recusas. Validação: a coordenação registra uma saída fictícia para uma família cadastrada.
 
 #### US11 — Cadastrar categoria de item
 
-**Origem e RNFs:** RF11; CP2; RNFs gerais.  
-**Regras relacionadas:** RN02.
+**Origem:** RF11. **Regras:** RN02.
 
-- **CA-US11-01:** A Coordenação consegue cadastrar uma categoria com nome e unidade de medida, escolhida em lista fechada: unidade, quilo ou pacote (RN02). Não há opção de texto livre nem outras unidades.
-- **CA-US11-02:** Entradas, saídas e consulta de saldo usam a unidade cadastrada para a categoria, conforme a RN02.
-- **CA-US11-03 (exceção):** O perfil Voluntário não consegue executar o cadastro, inclusive por acesso direto à função.
-- **CA-US11-04 (exceção):** Uma categoria sem nome ou sem unidade de medida não é salva, e o sistema indica qual campo falta.
+- **CA-US11-01:** A Coordenação cadastra uma categoria com nome e unidade de medida, escolhida entre unidade, quilo ou pacote (RN02), sem texto livre.
+- **CA-US11-02:** Entradas, saídas e saldo usam a unidade cadastrada para a categoria.
+- **CA-US11-03 (exceção):** O perfil Voluntário não consegue cadastrar categorias, inclusive por acesso direto à função.
+- **CA-US11-04 (exceção):** Categoria sem nome ou sem unidade não é salva, e o sistema indica o campo que falta.
 - **CA-US11-05 (exceção):** Não é possível cadastrar duas categorias com o mesmo nome.
 
-*Evidência prevista:* Verificação: teste de cadastro pela Coordenação com cada uma das três unidades, recusa para Voluntário inclusive por acesso direto, recusa de categoria incompleta ou duplicada e disponibilidade da categoria nos fluxos de entrada, saída e saldo. Validação: revisão do cadastro de categorias e das unidades de medida com a coordenação.
+*Evidência prevista:* teste com as três unidades, recusa para Voluntário e recusa de categoria incompleta ou duplicada. Validação: revisão das categorias com a coordenação.
 
 #### US12 — Consultar saldo de itens doados
 
-**Origem e RNFs:** RF12; CP2; RNF03.  
-**Regras relacionadas:** RN02.
+**Origem:** RF12; RNF03. **Regras:** RN02.
 
-- **CA-US12-01:** Voluntário e Coordenação conseguem consultar o saldo por categoria, calculado pelas entradas menos as saídas, na unidade correspondente (RN02).
-- **CA-US12-02:** A consulta apresenta resultados em até 3 segundos para pelo menos 95% das requisições em conexão móvel 3G/4G, conforme o RNF03.
+- **CA-US12-01:** Voluntário e Coordenação consultam o saldo por categoria (entradas menos saídas), na unidade correspondente.
+- **CA-US12-02:** A consulta responde em até 3 segundos em pelo menos 95% das requisições em conexão móvel 3G/4G (RNF03).
 
-*Evidência prevista:* Verificação: teste do cálculo do saldo com entradas e saídas fictícias e medição do tempo de consulta em conexão móvel 3G/4G, registrando quantidade de requisições, volume de dados e condições de conexão. Validação: conferência dos saldos de um conjunto de movimentações fictícias com a coordenação.
-
+*Evidência prevista:* teste do cálculo com movimentações fictícias e medição de tempo em 3G/4G. Validação: conferência dos saldos com a coordenação.
 
 #### US39 — Cadastrar usuário do sistema
 
-**Origem e RNFs:** RF39; CP7; RNF07 e RNF15.  
-**Regras relacionadas:** RN20.
+**Origem:** RF39; RNF07 e RNF15. **Regras:** RN20.
 
-- **CA-US39-01:** A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação; as demais contas são criadas pela Coordenação (RN20).
-- **CA-US39-02:** A Coordenação consegue cadastrar Voluntários e outros membros da Coordenação; o perfil Voluntário não consegue criar contas do sistema, inclusive por acesso direto à função.
-- **CA-US39-03:** Senhas com menos de 8 caracteres são recusadas, e as credenciais aceitas são armazenadas de forma irreversível, conforme os RNF15 e RNF07.
+- **CA-US39-01:** A primeira conta de Coordenação é criada pela equipe na implantação; as demais são criadas pela Coordenação (RN20).
+- **CA-US39-02:** A Coordenação cadastra Voluntários e outros membros da Coordenação; o Voluntário não cria contas, inclusive por acesso direto.
+- **CA-US39-03:** Senhas com menos de 8 caracteres são recusadas, e as credenciais são armazenadas de forma irreversível (RNF15 e RNF07).
 
-*Evidência prevista:* Verificação: teste de cadastro pela Coordenação, recusa para Voluntário inclusive por acesso direto, rejeição de senha curta e inspeção do armazenamento irreversível das credenciais. Validação: a coordenação cadastra uma conta de teste e confere o acesso concedido.
+*Evidência prevista:* teste de cadastro, recusa para Voluntário, rejeição de senha curta e inspeção do armazenamento. Validação: a coordenação cadastra uma conta de teste.
 
+#### US40 — Atribuir perfil de acesso
 
-#### US40 — Atribuir perfil de acesso ao usuário
+**Origem:** RF40; RNF07. **Regras:** tabela de permissões da seção 8.4.
 
-**Origem e RNFs:** RF40; CP7; RNF07.  
-**Regras relacionadas:** Tabela de permissões da seção 8.4.
+- **CA-US40-01:** A Coordenação atribui o perfil Voluntário ou Coordenação; o Voluntário não atribui perfis.
+- **CA-US40-02:** Operações e dados respeitam o perfil e a tabela da seção 8.4; operações não autorizadas são recusadas, inclusive por acesso direto (RNF07).
 
-- **CA-US40-01:** A Coordenação consegue atribuir ao usuário cadastrado o perfil Voluntário ou Coordenação; o perfil Voluntário não consegue atribuir perfis.
-- **CA-US40-02:** As operações e os dados acessíveis ao usuário respeitam o perfil atribuído e a tabela de permissões da seção 8.4; operações não autorizadas são recusadas, inclusive por acesso direto à função, conforme o RNF07.
-
-*Evidência prevista:* Verificação: teste da atribuição dos dois perfis e da recusa de operações não permitidas, inclusive por acesso direto. Validação: revisão das permissões com a coordenação usando contas de teste.
-
+*Evidência prevista:* teste dos dois perfis e das recusas. Validação: revisão das permissões com contas de teste.
 
 #### US41 — Autenticar usuário
 
-**Origem e RNFs:** RF41; CP7; RNF07 e RNF15.  
-**Regras relacionadas:** Condições de acesso e sessão do RNF15.
+**Origem:** RF41; RNF07 e RNF15.
 
-- **CA-US41-01:** Voluntário e Coordenação conseguem autenticar-se com credenciais válidas; credenciais incorretas não concedem acesso.
-- **CA-US41-02:** As funções restritas exigem autenticação, e as credenciais trafegam cifradas, conforme o RNF07.
-- **CA-US41-03:** A sessão é encerrada após 30 minutos sem atividade, conforme o RNF15.
-- **CA-US41-04:** Após cinco tentativas consecutivas incorretas, novas tentativas são bloqueadas por 15 minutos, conforme o RNF15.
+- **CA-US41-01:** Voluntário e Coordenação entram com credenciais válidas; credenciais incorretas não dão acesso.
+- **CA-US41-02:** Funções restritas exigem autenticação, e as credenciais trafegam cifradas (RNF07).
+- **CA-US41-03:** A sessão termina após 30 minutos sem atividade (RNF15).
+- **CA-US41-04:** Após cinco tentativas incorretas seguidas, novas tentativas ficam bloqueadas por 15 minutos (RNF15).
 
-*Evidência prevista:* Verificação: testes de credenciais válidas e inválidas, acesso sem autenticação, bloqueio após cinco tentativas incorretas, expiração após 30 minutos sem atividade e comunicação cifrada. Validação: teste de entrada e acesso às funções do perfil com a coordenação.
+*Evidência prevista:* testes de credenciais, acesso sem login, bloqueio, expiração e cifragem. Validação: entrada e acesso às funções do perfil com a coordenação.
 
+#### US42 — Registrar consentimentos e autorizações
 
-#### US42 — Registrar consentimentos e autorizações (LGPD e Imagem)
+**Origem:** RF42; RNF13 e RNF14. **Regras:** RN19.
 
-**Origem e RNFs:** RF42; CP7; RNF13 e RNF14.  
-**Regras relacionadas:** RN19.
+- **CA-US42-01:** Voluntário e Coordenação registram separadamente, por titular ou responsável legal, os consentimentos para cadastro e atendimento, frequência, contato com a família e relatórios a apoiadores, com a data de cada um (RN19).
+- **CA-US42-02:** No mesmo fluxo, a autorização ou recusa de uso de imagem é registrada à parte, com data e meios autorizados (site, redes sociais, materiais impressos).
+- **CA-US42-03:** A revogação da autorização de imagem pode ser registrada.
+- **CA-US42-04:** No fluxo com US14 e US16, dados reais só entram no sistema depois do consentimento (RN19).
 
-- **CA-US42-01:** Voluntário e Coordenação conseguem registrar separadamente, por titular ou responsável legal, os consentimentos para cadastro e atendimento, frequência, contato com a família e relatórios a apoiadores, com a data de cada registro (RN19).
-- **CA-US42-02:** No mesmo fluxo, a autorização ou recusa de uso de imagem é registrada separadamente dos consentimentos de tratamento de dados, com data e meios autorizados: site, redes sociais e materiais impressos (RF42 e RN19).
-- **CA-US42-03:** A eventual revogação da autorização de imagem pode ser registrada, conforme o RF42.
-- **CA-US42-04:** No fluxo integrado com US14 e US16, dados reais de famílias só entram no sistema depois do consentimento correspondente, conforme a RN19.
+*Evidência prevista:* testes por finalidade, de autorização e recusa de imagem, de revogação e de integração com o cadastro. Validação: revisão do fluxo com a coordenação, com dados fictícios.
 
-*Evidência prevista:* Verificação: testes de consentimento por finalidade, autorização e recusa de imagem, registro de revogação de imagem e integração com o cadastro de famílias e participantes. Validação: revisão do fluxo de consentimentos e autorizações com a coordenação; os testes usam dados fictícios.
+---
 
-### Mapa de histórias
+## 10.6 Regras de negócio
 
-O mapa a seguir organiza as user stories por tema e épico (na horizontal) e por fatia de entrega
-(na vertical). Tudo o que fica acima da linha do MVP compõe o núcleo validado com o cliente;
-as fatias 2 e 3 seguem as prioridades da seção [10.2](index.md#102-priorizacao-do-backlog-geral-e-mvp).
-
-![Mapa de histórias do projeto](../assets/mapa-historias.png)
-
-## 10.2 Priorização do Backlog Geral e MVP
-
-A priorização considerou duas perspectivas complementares: o **valor de negócio**, avaliado com a
-participação do cliente, e o **esforço técnico**, avaliado pela equipe. Os resultados foram
-cruzados na matriz 4 × 4 (seção [8.5](../08-requisitos/index.md#85-matriz-4x4)).
-
-### Critérios e escala de avaliação do valor de negócio
-
-A equipe adotou o método MoSCoW, associado a uma escala numérica de 1 a 4:
-
-| Pontuação | Classificação | Interpretação |
-| :--- | :--- | :--- |
-| 4 | Must have | Indispensável para resolver o problema central ou viabilizar o produto |
-| 3 | Should have | Muito importante, mas o produto ainda pode operar temporariamente sem o requisito |
-| 2 | Could have | Agrega valor, mas pode ser adiado sem comprometer o objetivo principal |
-| 1 | Won't have now | Não é prioritário para a versão atual |
-
-### Critérios e escala de avaliação do esforço técnico
-
-A avaliação técnica considerou três critérios, cada um em uma escala de 1 a 4: esforço de
-implementação, complexidade técnica e lacuna de capacidade da equipe (domínio das tecnologias
-envolvidas). O esforço técnico consolidado de cada RF é a média dos três critérios, arredondada
-para a escala de 1 a 4.
-
-| Pontuação | Esforço | Complexidade | Lacuna de capacidade |
-| :--- | :--- | :--- | :--- |
-| 1 | Até 2 horas | Baixa | A equipe domina plenamente os conhecimentos necessários |
-| 2 | Entre 2 e 6 horas | Moderada | A equipe possui conhecimento suficiente, com pouca aprendizagem adicional |
-| 3 | Entre 6 e 12 horas | Alta | A equipe precisa desenvolver conhecimentos relevantes |
-| 4 | Mais de 12 horas | Muito alta | A equipe ainda não possui os conhecimentos ou recursos necessários |
-
-### Avaliação consolidada dos RFs
-
-A tabela abaixo agrupa os RFs pela combinação de valor de negócio e esforço técnico consolidado
-que resultou na matriz 4 × 4. As justificativas de negócio e as decisões de regra associadas a
-cada bloco estão detalhadas na validação do MVP, adiante.
-
-| Valor de negócio | Esforço técnico | RFs |
-| :--- | :--- | :--- |
-| 4 — Must have | 2 — Moderado | RF25 |
-| 4 — Must have | 3 — Alto | RF07 a RF24, RF26 a RF31, RF38, RF39, RF40 |
-| 3 — Should have | 3 — Alto | RF41, RF42, RF43, RF45 |
-| 2 — Could have | 3 — Alto | RF01 a RF06, RF44 |
-| 2 — Could have | 4 — Muito alto | RF32 a RF37 |
-
-### Priorização das user stories
-
-Cada user story herda a avaliação do RF de origem: o valor de negócio (escala MoSCoW de 1 a 4) e o
-esforço técnico consolidado (escala de 1 a 4) apresentados acima. A partir deles, cada história é
-posicionada em um dos quatro quadrantes da matriz de valor × carga técnica:
-
-| Quadrante | Critério | Leitura |
-| :--- | :--- | :--- |
-| Q1 – Alto valor / Baixa carga técnica | Valor 3 ou 4 e esforço 1 ou 2 | Entregar o quanto antes: muito valor com pouco esforço |
-| Q2 – Alto valor / Alta carga técnica | Valor 3 ou 4 e esforço 3 ou 4 | Essencial, mas exige planejamento e divisão em sprints |
-| Q3 – Baixo valor / Baixa carga técnica | Valor 1 ou 2 e esforço 1 ou 2 | Encaixar quando sobrar capacidade na sprint |
-| Q4 – Baixo valor / Alta carga técnica | Valor 1 ou 2 e esforço 3 ou 4 | Adiar para versões futuras |
-
-A prioridade sugerida combina o quadrante com a decisão de MVP tomada com o cliente:
-
-- **Prioridade 1 – MVP:** as 18 histórias aprovadas na validação de 28/09/2026.
-- **Prioridade 2:** histórias com valor 4 (Must have) que não entraram no MVP; são as primeiras
-  candidatas depois dele, pois completam fluxos já iniciados no MVP (correção de chamada, lista de
-  espera, inativação de cadastros).
-- **Prioridade 3:** histórias com valor 3 (Should have) fora do MVP, do bloco de imagem e exclusão
-  de dados da LGPD, cuja prioridade ainda será confirmada com a coordenação.
-- **Prioridade 4:** histórias com valor 2 (Could have): portal, agenda, relatórios e histórico de
-  alterações.
-
-| US | Descrição | RF | Valor de negócio | Esforço técnico | Quadrante | Prioridade sugerida |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| US08 | Cadastrar ou atualizar doador | RF08 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US09 | Registrar doação recebida | RF09 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US10 | Registrar destinação de doação | RF10 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US11 | Cadastrar categoria de item | RF11 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US12 | Consultar saldo de itens doados | RF12 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US14 | Cadastrar família | RF14 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US16 | Cadastrar participante | RF16 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US18 | Vincular participante a família | RF18 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US19 | Consultar cadastro de participantes | RF19 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US20 | Cadastrar turma de atividade | RF20 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US23 | Inscrever participante em turma | RF23 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US26 | Consultar inscritos da turma | RF26 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US27 | Abrir chamada do encontro | RF27 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US28 | Registrar frequência do participante | RF28 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US39 | Cadastrar usuário do sistema | RF39 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US40 | Atribuir perfil de acesso ao usuário | RF40 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US41 | Autenticar usuário | RF41 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US42 | Registrar consentimentos e autorizações (LGPD e Imagem) | RF42 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 1 – MVP |
-| US25 | Registrar participante em lista de espera | RF25 | 4 – Must | 2 – Moderado | Q1 – Alto valor / Baixa carga | Prioridade 2 |
-| US07 | Consultar solicitações de contato | RF07 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US13 | Publicar lista de itens necessários | RF13 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US15 | Atualizar ou inativar cadastro de família | RF15 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US17 | Atualizar ou inativar cadastro de participante | RF17 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US21 | Atualizar turma de atividade | RF21 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US22 | Encerrar turma de atividade | RF22 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US24 | Cancelar inscrição de participante | RF24 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US29 | Justificar falta | RF29 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US30 | Corrigir registro de frequência | RF30 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US31 | Consultar frequência do participante | RF31 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US38 | Exportar relatório gerado | RF38 | 4 – Must | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 2 |
-| US43 | Registrar e acompanhar solicitação de exclusão de dados | RF43 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
-| US45 | Consultar autorização de uso de imagem vigente | RF45 | 3 – Should | 3 – Alto | Q2 – Alto valor / Alta carga | Prioridade 3 |
-| US01 | Publicar conteúdo institucional | RF01 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US02 | Atualizar conteúdo institucional | RF02 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US03 | Cadastrar atividade na agenda | RF03 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US04 | Atualizar atividade na agenda | RF04 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US05 | Consultar agenda de atividades | RF05 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US06 | Registrar solicitação de contato | RF06 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US44 | Consultar histórico de alterações de cadastro | RF44 | 2 – Could | 3 – Alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US32 | Sinalizar participante com faltas acima do limite | RF32 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US33 | Gerar relatório de doações recebidas | RF33 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US34 | Gerar relatório de doações distribuídas | RF34 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US35 | Gerar relatório de frequência por turma | RF35 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US36 | Gerar relatório de famílias atendidas | RF36 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-| US37 | Consultar painel de indicadores | RF37 | 2 – Could | 4 – Muito alto | Q4 – Baixo valor / Alta carga | Prioridade 4 |
-
-### Validação do MVP com o cliente
-
-**Participantes:** Makio (cliente), Vitor, Isabella, Luan, Luis, Ian e Pedro
-
-**Data:** 28/09/2026
-
-**Evidência:** gravação da reunião disponível na página de [Evidências e Gravações](../00-evidencias/index.md).
-
-### Quais RFs foram aprovados para o MVP:
-Foram validados e aprovados 18 requisitos funcionais que compõem o núcleo do sistema:
-
-| Módulo / Categoria | Códigos | Descrição dos Requisitos |
-| :--- | :--- | :--- |
-| **Acesso e proteção de dados** | RF39, RF40, RF41, RF42 | Cadastrar usuário, Atribuir perfil, Autenticar usuário, Registrar consentimentos |
-| **Doações** | RF08, RF09, RF10, RF11, RF12 | Cadastrar/atualizar doador, Registrar entrada, Registrar saída/destinação, Cadastrar categoria de item, Consultar saldo |
-| **Famílias e Participantes** | RF14, RF16, RF18, RF19 | Cadastrar família, Cadastrar participante, Vincular participante à família, Consultar participantes |
-| **Turmas e Chamada** | RF20, RF23, RF26, RF27, RF28 | Cadastrar turma, Inscrever participante, Consultar inscritos/lista de espera, Abrir chamada, Registrar frequência |
-
-### Quais RNFs (Requisitos Não Funcionais) serão aplicáveis ao MVP:
-
-A classificação completa dos RNF01 a RNF19 está na seção [8.7 — RNFs aplicáveis ao MVP](../08-requisitos/index.md#87-rnfs-aplicaveis-ao-mvp).
-Dos 19 RNFs analisados, 17 são obrigatórios para o MVP e dois estão associados a RFs selecionados.
-
-### Quais requisitos ficaram para entregas futuras:
-As histórias classificadas com prioridades 2, 3 e 4 ficaram para entregas posteriores ao núcleo do
-MVP, conforme a tabela de priorização desta seção. Para cada grupo, indica-se o valor de negócio
-atribuído pelo cliente (escala de 1 a 4) e a prioridade resultante. A justificativa de cada RF de
-valor 4 que ficou fora do MVP está na leitura dos quadrantes da seção
-[8.5.1](../08-requisitos/index.md#851-leitura-dos-quadrantes).
-
-- **Complementos dos fluxos do MVP:** RF07, RF13, RF15, RF17, RF21, RF22, RF24, RF25, RF29, RF30,
-  RF31 e RF38 (valor de negócio 4, Prioridade 2). São os primeiros a entrar depois do MVP.
-- **Fluxos avançados de LGPD:** pedido de exclusão de dados pelo titular (RF43) e consulta da
-  autorização de imagem vigente (RF45) (valor de negócio 3, Prioridade 3), sujeitos à confirmação
-  da coordenação.
-- **Portal e agenda:** RF01 a RF06 e RF44 (valor de negócio 2, Prioridade 4).
-- **Sinalização de faltas e relatórios:** RF32 a RF37 (valor de negócio 2, Prioridade 4).
-
-### Quais ajustes foram solicitados (Regras de Negócio):
-Obrigatoriedade de Campos:
-
-- Família: Obrigatórios apenas Nome do responsável, Telefone e Endereço. (Número de moradores e observações são opcionais).
-- Participante: Obrigatórios apenas Nome completo e Data de nascimento. (Telefone e observações são opcionais).
-- Correção de Chamada: O perfil "Voluntário" só pode editar uma chamada até o fim do mesmo dia. Após essa data, o bloqueio deve ser feito e a edição passa a ser exclusiva da "Coordenação", exigindo informação do motivo.
-- Regra de Frequência: Parametrizar o alerta de contato com a família para ser acionado após 3 faltas seguidas sem justificativa.
-
-### Lista de regras de negócio
-
-Conforme a Definição de Preparado (seção [9](../09-dor-dod/index.md)), as regras de negócio ficam
-separadas do texto do RF e registradas aqui. Cada regra indica as histórias que a aplicam; os
-critérios de aceitação dessas histórias precisam cobrir a regra, incluindo os casos de exceção.
+As regras ficam separadas do texto das histórias (DoR, seção 9). Os critérios de aceitação das histórias indicadas precisam cobrir cada regra, inclusive as exceções.
 
 | Código | Regra de negócio | Histórias | Origem |
-| :--- | :--- | :--- | :--- |
+|---|---|---|---|
 | RN01 | A solicitação de contato exige nome, mensagem e ao menos um meio de retorno (telefone ou e-mail). | US06 | RF06 |
-| RN02 | Cada categoria de item tem uma unidade de medida (unidade, quilo ou pacote), usada em todas as entradas, saídas e no saldo daquela categoria. | US09, US10, US11, US12 | RF11 |
-| RN03 | A lista pública de itens necessários é mantida manualmente pela Coordenação; o sistema não a calcula a partir do saldo. | US13 | Validação de 28/09/2026 |
-| RN04 | No cadastro de família, são obrigatórios apenas o nome do responsável, o telefone e o endereço; número de moradores e observações são opcionais. | US14 | Validação de 28/09/2026 |
-| RN05 | No cadastro de participante, são obrigatórios apenas o nome completo e a data de nascimento; telefone e observações são opcionais. | US16 | Validação de 28/09/2026 |
-| RN06 | Só a Coordenação inativa famílias e participantes. O cadastro inativo sai das buscas padrão, mas o histórico de atendimento e os relatórios do período continuam disponíveis. | US15, US17 | RF15, RF17 |
-| RN07 | Ao inativar um participante, as inscrições dele em turmas em andamento são canceladas com o motivo "desligamento da associação". | US17, US24 | RF17 |
-| RN08 | Participante menor de 18 anos precisa de responsável legal indicado; a exceção (por exemplo, criança em acolhimento) exige motivo registrado. | US18 | RF18 |
-| RN09 | A data de término da turma deve ser posterior à data de início. | US20, US21 | RF20 |
-| RN10 | As vagas de uma turma não podem ser reduzidas para menos que o número de inscritos; nesse caso, o sistema recusa a alteração e informa o total de inscritos. | US21 | RF21 |
+| RN02 | Cada categoria de item tem uma unidade de medida (unidade, quilo ou pacote), usada em todas as entradas, saídas e no saldo. | US09, US10, US11, US12 | RF11 |
+| RN03 | A lista pública de itens necessários é mantida manualmente pela Coordenação; o sistema não a calcula a partir do saldo. | US13 | Validação 28/09 |
+| RN04 | No cadastro de família, são obrigatórios só o nome do responsável, o telefone e o endereço. | US14 | Validação 28/09 |
+| RN05 | No cadastro de participante, são obrigatórios só o nome completo e a data de nascimento. | US16 | Validação 28/09 |
+| RN06 | Só a Coordenação inativa famílias e participantes. O cadastro inativo sai das buscas padrão, mas o histórico e os relatórios do período continuam disponíveis. | US15b, US17b | RF15, RF17 |
+| RN07 | Ao inativar um participante, as inscrições em turmas em andamento são canceladas com o motivo "desligamento da associação". | US17b, US24 | RF17 |
+| RN08 | Participante menor de 18 anos precisa de responsável legal; a exceção (por exemplo, acolhimento) exige motivo registrado. | US18 | RF18 |
+| RN09 | A data de término da turma deve ser posterior à de início. | US20, US21 | RF20 |
+| RN10 | As vagas não podem ser reduzidas para menos que o número de inscritos; o sistema recusa e informa o total. | US21 | RF21 |
 | RN11 | Encerrar uma turma antes do fim do período exige motivo. | US22 | RF22 |
-| RN12 | Só participante ativo pode ser inscrito, e só em turma com vaga. Sem vaga, o sistema não inscreve e oferece o registro na lista de espera. | US23, US25 | RF23 |
-| RN13 | O cancelamento de inscrição exige motivo escolhido em lista (desistência, mudança de endereço, conflito de horário, desligamento da associação ou outro); o texto livre é obrigatório apenas para "outro". | US24 | RF24 |
-| RN14 | A lista de espera segue a ordem de registro. Quando abre vaga, o sistema avisa a Coordenação, que confirma a inscrição manualmente. Se as vagas de uma turma aumentarem e houver lista de espera, o sistema também avisa. | US21, US25, US26 | RF21, RF25 |
-| RN15 | A chamada só pode ser aberta na data do encontro e lista apenas os participantes inscritos na turma. | US27, US28 | RF27 |
-| RN16 | Falta com motivo informado passa a constar como falta justificada e não conta para o limite de faltas. | US29, US32 | RF29 |
-| RN17 | O Voluntário só corrige a chamada que ele mesmo fez, e só até o fim do mesmo dia. Depois disso, a correção é exclusiva da Coordenação e exige motivo. O registro anterior é sempre preservado. | US30 | RF30 e validação de 28/09/2026 |
-| RN18 | O participante é sinalizado para contato com a família ao atingir 3 faltas seguidas sem justificativa. O limite é definido pela Coordenação. | US32, US37 | RF32 e validação de 28/09/2026 |
-| RN19 | O consentimento de tratamento de dados é registrado separadamente para cada uma de quatro finalidades (cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores), cada uma com a data do registro. No mesmo fluxo, é registrada a autorização ou recusa de uso de imagem, com os meios autorizados (site, redes sociais, materiais impressos) e a data. Dados reais de famílias só entram no sistema depois do consentimento. | US14, US16, US42 | RF42, validação de 28/09/2026 e seção 9 |
-| RN20 | A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação; as demais contas são criadas pela Coordenação. | US39 | RF39 |
+| RN12 | Só participante ativo é inscrito, e só em turma com vaga. Sem vaga, o sistema oferece a lista de espera. | US23, US25 | RF23 |
+| RN13 | O cancelamento de inscrição exige motivo de uma lista (desistência, mudança de endereço, conflito de horário, desligamento ou outro); texto livre só para "outro". | US24 | RF24 |
+| RN14 | A lista de espera segue a ordem de registro. Quando abre vaga ou as vagas aumentam, o sistema avisa a Coordenação, que confirma a inscrição. | US21, US25, US26 | RF21, RF25 |
+| RN15 | A chamada só é aberta na data do encontro e lista apenas os inscritos na turma. | US27, US28 | RF27 |
+| RN16 | Falta com motivo informado vira falta justificada e não conta para o limite. | US29, US32 | RF29 |
+| RN17 | A Educadora (Voluntário) só corrige a chamada que fez, até o fim do mesmo dia. Depois, só a Coordenação corrige, com motivo. O registro anterior é sempre preservado. | US30a, US30b | RF30; validação 28/09 |
+| RN18 | O participante é sinalizado ao atingir 3 faltas seguidas sem justificativa. O limite é definido pela Coordenação. | US32, US37 | RF32; validação 28/09 |
+| RN19 | O consentimento é registrado separadamente para quatro finalidades (cadastro e atendimento, frequência, contato com a família, relatórios a apoiadores), cada uma com data. No mesmo fluxo, registra-se a autorização ou recusa de imagem, com meios e data. Dados reais só entram depois do consentimento. | US14, US16, US42 | RF42; validação 28/09; seção 9 |
+| RN20 | A primeira conta de Coordenação é criada pela equipe na implantação; as demais, pela Coordenação. | US39 | RF39 |
 
-### Quais decisões ou divergências foram registradas:
+---
 
-- Decisão sobre LGPD e Imagem: A autorização da família será explicitamente fracionada em 4 usos distintos (cadastro/atendimento, frequência, contato com a família e relatório a apoiador). A autorização ou recusa de uso de imagem, com os meios autorizados e eventual revogação, é registrada no mesmo fluxo do RF42. Na numeração atual, o RF43 trata do registro e acompanhamento de solicitações de exclusão de dados.
-- Decisão sobre Estoque: Optou-se pela gestão 100% manual (adição e remoção de itens) da lista de faltas pela Coordenação, mantendo a simplicidade do MVP.
-- Pendente (Divergência de Informação): O volume atual de famílias/participantes atendidos e o fluxo mensal de doações ainda não foram definidos e serão validados junto à coordenação para fins de dimensionamento do banco de dados e infraestrutura.
-- Pendente (Priorização): Confirmar com a coordenação a prioridade exata do bloco de consentimentos avançados/imagem e processos automatizados de pedido de exclusão, para fechar se algum componente adicional precisa subir para o MVP.
+## 10.7 Priorização e MVP
+
+### Critérios
+
+A priorização usa quatro fatores:
+
+1. **Valor de negócio**, avaliado com o cliente na escala MoSCoW de 1 a 4. Cada valor indica a **fonte** que o justifica (ata, validação, questionário).
+2. **Risco**, avaliado pela equipe: itens com tecnologia nova, segurança ou LGPD vêm cedo, para que um eventual fracasso aconteça enquanto ainda dá tempo de mudar a arquitetura.
+3. **Capacidade de entrega**: as histórias são agrupadas em releases que fecham um objetivo da persona (seção 10.2), para gerar feedback útil da coordenação.
+4. **Dependências**: o item do qual outros dependem vem antes. Quando possível, a dependência é resolvida combinando histórias ou extraindo a parte comum.
+
+O esforço técnico continua avaliado de 1 a 4 (esforço, complexidade e lacuna de capacidade, seção 8.5) e é usado no planejamento da sprint.
+
+### Validação do MVP
+
+**Participantes:** Makio (cliente), Vitor, Isabella, Luan, Luis, Ian e Pedro. **Data:** 28/09/2026. **Evidência:** gravação na página [Evidências e Gravações](https://mdsreq-fga-unb.github.io/REQ-2026.2-T01-MaesGuerreiras/00-evidencias/).
+
+O MVP corresponde às releases **R1** (a doação chega à família) e **R2** (a educadora faz a chamada).
+
+| Release | Histórias |
+|---|---|
+| R1 | US41, US39, US40, US42, US11, US08, US09, US12, US14, US10 |
+| R2 | US16, US18, US20, US21, US22, US23, US25, US19, US26, US27, US28, US29, US30a, US30b, US31 |
+
+> **Divergência a resolver:** a validação de 28/09 aprovou 18 RFs, incluindo RF12 e RF26 e sem RF29, RF30 e RF31. O cronograma de 17/10 incluiu RF29, RF30 e RF31 no MVP e moveu RF12 e RF26 para a Fatia 2. A recomposição por releases precisa ser confirmada com Makio na revisão da Sprint 6 e registrada em ata.
+
+### Decisões e pendências
+
+- **LGPD e imagem:** o consentimento é dividido em 4 finalidades. A autorização ou recusa de imagem, com meios e revogação, fica no fluxo do RF42. O RF43 trata da solicitação de exclusão de dados.
+- **Itens necessários:** a lista pública é 100% manual pela Coordenação (RN03).
+- **Pendente:** volume de famílias e participantes e fluxo mensal de doações, para dimensionar banco e infraestrutura.
+- **Pendente:** prioridade do bloco de LGPD avançada (US43, US45), a confirmar com a coordenação.
+- **Pendente:** valor do RF06 (2) e do RF07 (4) é contraditório; rever com a coordenação qual dado justifica cada um.
+
+---
+
+## 10.8 Refinamentos do backlog
+
+Cada refinamento registra o que mudou, por quê e de onde veio a mudança.
+
+| Data | O que mudou | Por quê | Origem |
+|---|---|---|---|
+| 28/09/2026 | Priorização com a matriz 4x4 e validação do MVP (18 RFs). | Primeira priorização com o cliente. | Reunião com Makio |
+| 17/10/2026 | Replanejamento: escopo e prazo fixos (45 RFs até 10/12); RF29–31 no MVP; RF12 e RF26 na Fatia 2. | Nenhuma funcionalidade implementada até a Sprint 5. | Cronograma replanejado |
+| 27/10/2026 | Criadas personas, objetivos e jornadas; mapa de histórias reorganizado por atividades e releases. | Issue #27. | Revisão do professor |
+| 27/10/2026 | US15, US17 e US30 divididas por ator (a e b); fim da regra "um RF, uma US". | Issue #26. | Revisão do professor |
+| 27/10/2026 | Backlog ordenado com valor, risco, entrega e dependências; US06 antes da US07, US01 antes da US13, relatórios antes da US38. | Issue #26. | Revisão do professor |
+| 27/10/2026 | Critérios de aceitação da US08 ampliados com dados obrigatórios e exceções (propostas a validar). | Issue #26. | Revisão do professor |
+| 27/10/2026 | Regras de negócio movidas para seção própria (10.6). | Issue #26. | Revisão do professor |
+| 27/10/2026 | Itens técnicos e de lançamento (T01–T04) incluídos no backlog; coluna de situação acrescentada. | Backlog como única fonte do trabalho; issue #26. | Revisão do professor |
+
+### Verificação DEEP (27/10/2026)
+
+| Característica | Situação |
+|---|---|
+| **D**etalhado adequadamente | Topo com critérios de aceitação (US08–US12, US39–US42); falta protótipo validado. Sprint 7 ainda sem critérios. |
+| **E**stimado | Esforço de 1 a 4 por RF; velocidade ainda não medida (primeira medição em 02/11). |
+| **E**mergente | Refinamentos registrados nesta seção a partir de 27/10. |
+| **P**riorizado | Ordem única com os quatro fatores (seção 10.4). |

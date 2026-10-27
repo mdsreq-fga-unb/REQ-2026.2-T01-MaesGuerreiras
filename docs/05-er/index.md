@@ -260,7 +260,7 @@ família a que pertence (narrativa, estruturada, orientada a valor, catálogo ou
 Post-its com borda tracejada são declarações previstas no processo que ainda não foram
 produzidas.
 
-![Quadro de declarações dos requisitos do projeto Mães Guerreiras](../assets/quadro-declaracoes.png)
+![Quadro de declarações dos requisitos do projeto Mães Guerreiras](../assets/quadro-de-declaracoes.png)
 
 ### Tipos de declaração por nível
 

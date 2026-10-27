@@ -97,3 +97,4 @@ de sustentar a prestação de contas aos parceiros. Saiba mais no [Objetivo Gera
 | 14/08/2026 | 0.1 | Proposta inicial de projeto Mães Guerreiras | Isabella Lacerda |
 | 04/09/2026 | 0.2 | Inclusão das seções 1.6, 2.3, 2.4, 2.6, 2.7, 3, 4, 5, 6 e 7 | Isabella Lacerda |
 | 04/09/2026 | 0.3 | Refatoração completa do documento a partir das respostas do questionário aplicado à associação e do material institucional recebido | Isabella Lacerda |
+|	13/10/2026 | 0.4 | Requisitos declarados, MVP validado com o cliente, backlog com critérios de aceitação, rastreabilidade, DoR e DoD

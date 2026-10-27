@@ -247,7 +247,7 @@ Sprints 7, 8 e Fechamento são **previsão**, recalculada em cada revisão com a
 
 **Contagem por sprint (RFs):** Sprint 6 = 8; Sprint 7 = 13 + 4 da trilha = 17; Sprint 8 = 13 + 4 da trilha = 17; Fechamento = 3. Total: 45.
 
-**Itens em risco.** Se a velocidade da Sprint 6 ficar abaixo de 8 RFs, os itens do fim da ordem (R4: relatórios, painel e LGPD avançada) são comunicados ao professor e ao cliente na revisão de 02/11, conforme a seção 5 do cronograma.
+**Itens em risco.** Se a velocidade da Sprint 6 ficar abaixo de 8 RFs, os itens do fim da ordem (R4: relatórios, painel e LGPD avançada) são comunicados ao professor e ao cliente na revisão de 02/11, conforme a seção [6.3](../06-cronograma/index.md#63-velocidade-necessaria) do cronograma.
 
 ---
 

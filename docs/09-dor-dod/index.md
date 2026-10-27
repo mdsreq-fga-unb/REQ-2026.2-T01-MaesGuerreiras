@@ -75,7 +75,7 @@ coberto?**
 
 Requisitos como RF14 (Cadastrar família) ou RF16 (Cadastrar participante) só entram em sprint com
 dados reais depois que a base de consentimento e controle de acesso estiver pronta, conforme a
-seção [6](../06-cronograma/index.md#consideracoes-importantes). Antes disso, só com dados
+seção [6](../06-cronograma/index.md#64-portao-de-liberacao-para-uso-real). Antes disso, só com dados
 sintéticos.
 
 ## 9.2 Definition of Done (DoD)

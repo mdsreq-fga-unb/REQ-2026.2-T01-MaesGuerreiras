@@ -247,7 +247,7 @@ Sprints 7, 8 e Fechamento são **previsão**, recalculada em cada revisão com a
 
 **Contagem por sprint (RFs):** Sprint 6 = 8; Sprint 7 = 13 + 4 da trilha = 17; Sprint 8 = 13 + 4 da trilha = 17; Fechamento = 3. Total: 45.
 
-**Itens em risco.** Se a velocidade da Sprint 6 ficar abaixo de 8 RFs, os itens do fim da ordem (R4: relatórios, painel e LGPD avançada) são comunicados ao professor e ao cliente na revisão de 02/11, conforme a seção 5 do cronograma.
+**Itens em risco.** Se a velocidade da Sprint 6 ficar abaixo de 8 RFs, os itens do fim da ordem (R4: relatórios, painel e LGPD avançada) são comunicados ao professor e ao cliente na revisão de 02/11, conforme a seção [6.3](../06-cronograma/index.md#63-velocidade-necessaria) do cronograma.
 
 ---
 
@@ -375,7 +375,7 @@ As regras ficam separadas do texto das histórias (DoR, seção 9). Os critério
 | RN09 | A data de término da turma deve ser posterior à de início. | US20, US21 | RF20 |
 | RN10 | As vagas não podem ser reduzidas para menos que o número de inscritos; o sistema recusa e informa o total. | US21 | RF21 |
 | RN11 | Encerrar uma turma antes do fim do período exige motivo. | US22 | RF22 |
-| RN12 | Só participante ativo é inscrito, e só em turma com vaga. Sem vaga, o sistema oferece a lista de espera. | US23, US25 | RF23 |
+| RN12 | Só participante ativo é inscrito, e só em turma com vaga. Sem vaga, a inscrição é recusada e o sistema informa que a turma está cheia (US23); o encaminhamento à lista de espera é oferecido a partir da US25. | US23, US25 | RF23, RF25 |
 | RN13 | O cancelamento de inscrição exige motivo de uma lista (desistência, mudança de endereço, conflito de horário, desligamento ou outro); texto livre só para "outro". | US24 | RF24 |
 | RN14 | A lista de espera segue a ordem de registro. Quando abre vaga ou as vagas aumentam, o sistema avisa a Coordenação, que confirma a inscrição. | US21, US25, US26 | RF21, RF25 |
 | RN15 | A chamada só é aberta na data do encontro e lista apenas os inscritos na turma. | US27, US28 | RF27 |

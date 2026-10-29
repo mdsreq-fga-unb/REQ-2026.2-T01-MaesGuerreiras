@@ -21,7 +21,7 @@
 
 **CP2 – Registro de doações de itens**
 
-- RF08 – Cadastrar ou atualizar doador: Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação..
+- RF08 – Cadastrar ou atualizar doador: Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação.
 
 - RF09 – Registrar doação recebida: Permitir que Voluntário ou Coordenação registrem a entrada de itens doados, com categoria de item, quantidade, data e doador de origem.
 
@@ -29,7 +29,7 @@
 
 - RF11 – Cadastrar categoria de item: Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). 
 
-- RF12 – Consultar saldo de itens doados: ermitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria.
+- RF12 – Consultar saldo de itens doados: Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria.
 
 - RF13 – Publicar lista de itens necessários: Permitir que a Coordenação inclua e remova manualmente, na área pública, os itens de que a associação precisa no momento, com a categoria e, se quiser, a quantidade desejada.
 
@@ -260,29 +260,29 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, R
 <tbody>
 <tr>
 <th>4 — Muito alto</th>
+<td><div class="chips"><span class="rf mvp">RF11</span><span class="rf mvp">RF20</span><span class="rf mvp">RF28</span><span class="rf mvp">RF39</span></div></td>
+<td><div class="chips"><span class="rf mvp">RF08</span><span class="rf mvp">RF09</span><span class="rf mvp">RF10</span><span class="rf mvp">RF14</span><span class="rf mvp">RF16</span><span class="rf mvp">RF18</span><span class="rf mvp">RF19</span><span class="rf mvp">RF23</span><span class="rf mvp">RF27</span><span class="rf mvp">RF40</span><span class="rf mvp">RF41</span><span class="rf mvp">RF42</span></div></td>
 <td class="vazio">—</td>
-<td><div class="chips"><span class="rf">RF25</span></div></td>
-<td><div class="chips"><span class="rf">RF07</span><span class="rf mvp">RF08</span><span class="rf mvp">RF09</span><span class="rf mvp">RF10</span><span class="rf mvp">RF11</span><span class="rf mvp">RF12</span><span class="rf">RF13</span><span class="rf mvp">RF14</span><span class="rf">RF15</span><span class="rf mvp">RF16</span><span class="rf">RF17</span><span class="rf mvp">RF18</span><span class="rf mvp">RF19</span><span class="rf mvp">RF20</span><span class="rf">RF21</span><span class="rf">RF22</span><span class="rf mvp">RF23</span><span class="rf">RF24</span><span class="rf mvp">RF26</span><span class="rf mvp">RF27</span><span class="rf mvp">RF28</span><span class="rf">RF29</span><span class="rf">RF30</span><span class="rf">RF31</span><span class="rf">RF38</span><span class="rf mvp">RF39</span><span class="rf mvp">RF40</span></div></td>
 <td class="vazio">—</td>
 </tr>
 <tr>
 <th>3 — Alto</th>
-<td class="vazio">—</td>
-<td class="vazio">—</td>
-<td><div class="chips"><span class="rf mvp">RF41</span><span class="rf mvp">RF42</span><span class="rf">RF43</span><span class="rf">RF45</span></div></td>
+<td><div class="chips"><span class="rf">RF29</span><span class="rf">RF30</span><span class="rf">RF31</span></div></td>
+<td><div class="chips"><span class="rf mvp">RF12</span><span class="rf">RF13</span><span class="rf">RF24</span><span class="rf">RF25</span><span class="rf mvp">RF26</span><span class="rf">RF32</span><span class="rf">RF33</span><span class="rf">RF34</span><span class="rf">RF36</span><span class="rf">RF38</span><span class="rf">RF43</span><span class="rf">RF45</span></div></td>
+<td><div class="chips"><span class="rf">RF15</span><span class="rf">RF17</span></div></td>
 <td class="vazio">—</td>
 </tr>
 <tr>
 <th>2 — Moderado</th>
+<td><div class="chips"><span class="rf">RF02</span><span class="rf">RF22</span></div></td>
+<td><div class="chips"><span class="rf">RF01</span><span class="rf">RF03</span><span class="rf">RF04</span><span class="rf">RF35</span><span class="rf">RF37</span><span class="rf">RF44</span></div></td>
+<td><div class="chips"><span class="rf">RF05</span><span class="rf">RF21</span></div></td>
 <td class="vazio">—</td>
-<td class="vazio">—</td>
-<td><div class="chips"><span class="rf">RF01</span><span class="rf">RF02</span><span class="rf">RF03</span><span class="rf">RF04</span><span class="rf">RF05</span><span class="rf">RF06</span><span class="rf">RF44</span></div></td>
-<td><div class="chips"><span class="rf">RF32</span><span class="rf">RF33</span><span class="rf">RF34</span><span class="rf">RF35</span><span class="rf">RF36</span><span class="rf">RF37</span></div></td>
 </tr>
 <tr>
 <th>1 — Baixo</th>
 <td class="vazio">—</td>
-<td class="vazio">—</td>
+<td><div class="chips"><span class="rf">RF06</span><span class="rf">RF07</span></div></td>
 <td class="vazio">—</td>
 <td class="vazio">—</td>
 </tr>
@@ -292,53 +292,113 @@ CP é a característica de produto de cada RF. Valem para todos os RFs: RNF02, R
 
 <p class="matriz-legenda"><span class="rf mvp">RF20</span> selecionado para o MVP (18 RFs) · <span class="rf">RF21</span> fora do núcleo, para a Fatia 2 ou entregas futuras.</p>
 
+Notas de cada RF (esforço em horas, complexidade e lacuna de capacidade, de 1 a 4). O esforço técnico consolidado é a média das três notas, com uma casa decimal, e a coluna da matriz é esse valor arredondado para o inteiro mais próximo.
+
+| RF | Requisito | Esforço | Complexidade | Lacuna | Consolidado | Coluna | Valor | MVP |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RF01 | Publicar conteúdo institucional | 2 | 2 | 2 | 2,0 | 2 | 2 | — |
+| RF02 | Atualizar conteúdo institucional | 1 | 1 | 1 | 1,0 | 1 | 2 | — |
+| RF03 | Cadastrar atividade na agenda | 3 | 2 | 2 | 2,3 | 2 | 2 | — |
+| RF04 | Atualizar atividade na agenda | 2 | 2 | 2 | 2,0 | 2 | 2 | — |
+| RF05 | Consultar agenda de atividades | 3 | 2 | 3 | 2,7 | 3 | 2 | — |
+| RF06 | Registrar solicitação de contato | 2 | 3 | 2 | 2,3 | 2 | 1 | — |
+| RF07 | Consultar solicitações de contato | 2 | 2 | 1 | 1,7 | 2 | 1 | — |
+| RF08 | Cadastrar ou atualizar doador | 2 | 3 | 1 | 2,0 | 2 | 4 | Sim |
+| RF09 | Registrar doação recebida | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF10 | Registrar destinação de doação | 2 | 3 | 2 | 2,3 | 2 | 4 | Sim |
+| RF11 | Cadastrar categoria de item | 1 | 1 | 1 | 1,0 | 1 | 4 | Sim |
+| RF12 | Consultar saldo de itens doados | 1 | 2 | 2 | 1,7 | 2 | 3 | Sim |
+| RF13 | Publicar lista de itens necessários | 2 | 1 | 2 | 1,7 | 2 | 3 | — |
+| RF14 | Cadastrar família | 3 | 2 | 2 | 2,3 | 2 | 4 | Sim |
+| RF15 | Atualizar ou inativar cadastro de família | 3 | 3 | 2 | 2,7 | 3 | 3 | — |
+| RF16 | Cadastrar participante | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF17 | Atualizar ou inativar cadastro de participante | 3 | 3 | 3 | 3,0 | 3 | 3 | — |
+| RF18 | Vincular participante a família | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF19 | Consultar cadastro de participantes | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF20 | Cadastrar turma de atividade | 2 | 1 | 1 | 1,3 | 1 | 4 | Sim |
+| RF21 | Atualizar turma de atividade | 3 | 3 | 2 | 2,7 | 3 | 2 | — |
+| RF22 | Encerrar turma de atividade | 2 | 1 | 1 | 1,3 | 1 | 2 | — |
+| RF23 | Inscrever participante em turma | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF24 | Cancelar inscrição de participante | 2 | 2 | 1 | 1,7 | 2 | 3 | — |
+| RF25 | Registrar participante em lista de espera | 3 | 2 | 2 | 2,3 | 2 | 3 | — |
+| RF26 | Consultar inscritos da turma | 2 | 2 | 1 | 1,7 | 2 | 3 | Sim |
+| RF27 | Abrir chamada do encontro | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF28 | Registrar frequência do participante | 1 | 1 | 1 | 1,0 | 1 | 4 | Sim |
+| RF29 | Justificar falta | 1 | 1 | 1 | 1,0 | 1 | 3 | — |
+| RF30 | Corrigir registro de frequência | 1 | 1 | 1 | 1,0 | 1 | 3 | — |
+| RF31 | Consultar frequência do participante | 2 | 1 | 1 | 1,3 | 1 | 3 | — |
+| RF32 | Sinalizar participante com faltas acima do limite | 2 | 2 | 1 | 1,7 | 2 | 3 | — |
+| RF33 | Gerar relatório de doações recebidas | 3 | 2 | 2 | 2,3 | 2 | 3 | — |
+| RF34 | Gerar relatório de doações distribuídas | 3 | 2 | 2 | 2,3 | 2 | 3 | — |
+| RF35 | Gerar relatório de frequência por turma | 3 | 2 | 2 | 2,3 | 2 | 2 | — |
+| RF36 | Gerar relatório de famílias atendidas | 3 | 2 | 2 | 2,3 | 2 | 3 | — |
+| RF37 | Consultar painel de indicadores | 3 | 2 | 2 | 2,3 | 2 | 2 | — |
+| RF38 | Exportar relatório gerado | 2 | 2 | 1 | 1,7 | 2 | 3 | — |
+| RF39 | Cadastrar usuário do sistema | 2 | 1 | 1 | 1,3 | 1 | 4 | Sim |
+| RF40 | Atribuir perfil de acesso ao usuário | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF41 | Autenticar usuário | 3 | 3 | 1 | 2,3 | 2 | 4 | Sim |
+| RF42 | Registrar consentimentos e autorizações (LGPD e Imagem) | 2 | 2 | 2 | 2,0 | 2 | 4 | Sim |
+| RF43 | Registrar e acompanhar solicitação de exclusão de dados | 3 | 2 | 2 | 2,3 | 2 | 3 | — |
+| RF44 | Consultar histórico de alterações de cadastro | 3 | 2 | 2 | 2,3 | 2 | 2 | — |
+| RF45 | Consultar autorização de uso de imagem vigente | 2 | 2 | 2 | 2,0 | 2 | 3 | — |
+
+A capacidade da equipe veio da autoavaliação de domínio técnico de cada integrante (1 = domina, 4 = nunca usou), que embasou a nota de lacuna. As áreas com maior lacuna são as de requisitos não funcionais: funcionamento com conexão instável (RNF16, média 2,8), testes automatizados (RNF17, 2,5), acessibilidade (RNF18, 2,5) e hospedagem na Vercel (RNF12, 2,5). Por isso o trabalho dos RNFs entra na conta do MVP, avaliado nas mesmas escalas. O RNF15 (login, expiração de sessão e bloqueio por tentativas) já está contado na nota do RF41.
+
+| RNF | Trabalho | Esforço | Complexidade | Lacuna | Consolidado |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| RNF12 | Hospedagem sem custo (Vercel) | 1 | 1 | 3 | 1,7 |
+| RNF16 | Funcionamento com conexão instável (não perder dados de chamada e cadastro) | 3 | 3 | 3 | 3,0 |
+| RNF17 | Testes automatizados das regras de doação, inscrição e frequência | 3 | 2 | 3 | 2,7 |
+| RNF18 | Acessibilidade (contraste, navegação por teclado e rótulos de campo) | 2 | 2 | 3 | 2,3 |
+
+Somando as faixas de horas da escala de esforço, os 18 RFs do MVP somam entre 38 e 108 horas (3 RFs de até 2 horas, 13 de 2 a 6 horas e 2 de 6 a 12 horas), e os quatro RNFs somam entre 14 e 32 horas, num total de 52 a 140 horas. Com 6 integrantes e 3 sprints (5 a 7), isso equivale a cerca de 3 a 8 horas por pessoa por sprint, valor reconferido no planejamento de cada sprint (seção 5.3).
+
 ### 8.5.1 Leitura dos quadrantes
 
 | Quadrante | Requisitos | Encaminhamento |
 | :--- | :--- | :--- |
-| **Prioridade máxima** (valor 4 · esforço 1) | — | Nenhum requisito caiu aqui: todos os RFs exigem ao menos esforço moderado, porque a equipe ainda está aprendendo Nuxt.js e Supabase (lacuna de capacidade). |
-| **Forte candidato ao MVP** (valor 4 · esforço 2) | RF25 | Alto valor e custo moderado, mas não é pré-requisito do fluxo mínimo de inscrição: ficou para a Fatia 2 (ver abaixo). |
-| **Avaliar viabilidade** (valor 4 · esforço 3) | RF07 a RF24, RF26 a RF31, RF38 a RF40 | Exigiram decisão explícita com o cliente. Entraram no MVP os 16 RFs que formam o fluxo mínimo de cada frente (registrar e consultar); os outros 11 completam esses fluxos e ficaram para a Fatia 2. |
-| **Avaliar contexto** (valor 3 · esforço 3) | RF41, RF42, RF43, RF45 | RF41 e RF42 entraram no MVP por dependência técnica e legal; RF43 e RF45 aguardam confirmação da coordenação sobre o bloco avançado de LGPD. |
-| **Entrega futura** (valor 2 · esforço 3) | RF01 a RF06, RF44 | Portal institucional, agenda e histórico de alterações: adiados para depois do MVP. |
-| **Baixa prioridade** (valor 2 · esforço 4) | RF32 a RF37 | Sinalização de faltas e relatórios: maior esforço da matriz e valor complementar; ficam para depois do MVP. |
-| **Quadrantes de valor 1** | — | Nenhum requisito do escopo atual recebeu valor 1, o que é coerente com o levantamento feito diretamente com a associação. |
+| **Prioridade máxima** (valor 4 · esforço 1) | RF11, RF20, RF28, RF39 | Todos entraram no MVP. |
+| **Forte candidato ao MVP** (valor 4 · esforço 2, e valor 3 · esforço 1) | RF08, RF09, RF10, RF14, RF16, RF18, RF19, RF23, RF27, RF40, RF41, RF42 (valor 4); RF29, RF30, RF31 (valor 3) | Os 12 RFs de valor 4 entraram no MVP. RF29, RF30 e RF31 (frequência) ficaram para depois dele, com procedimento provisório (ver abaixo). |
+| **Candidato ao MVP** (valor 3 · esforço 2) | RF12, RF13, RF24, RF25, RF26, RF32, RF33, RF34, RF36, RF38, RF43, RF45 | RF12 e RF26 entraram no MVP, por serem consultas de baixo esforço dos fluxos de doação e de inscrição. Os demais ficaram para depois (ver abaixo). |
+| **Avaliar contexto** (valor 3 · esforço 3) | RF15, RF17 | Ficaram fora do MVP; a correção de telefone e endereço segue o procedimento provisório (ver abaixo). |
+| **Avaliar oportunidade** (valor 2 · esforço 1) | RF02, RF22 | Adiados para depois do MVP. |
+| **Entrega futura** (valor 2 · esforço 2 ou 3) | RF01, RF03, RF04, RF35, RF37, RF44 (esforço 2); RF05, RF21 (esforço 3) | Portal, agenda, relatório de frequência, painel, histórico de alterações e atualização de turma: adiados para depois do MVP. |
+| **Baixa prioridade** (valor 1 · esforço 2) | RF06, RF07 | Formulário de contato e sua consulta: adiados. |
 
-> **A matriz orienta, não decide.** O MVP não é simplesmente "todos os RFs de valor 4". Dos 28 RFs
-> com valor 4, 16 entraram no MVP; e 2 RFs com valor 3 (RF41 e RF42) também entraram. As duas
-> tabelas a seguir explicam essas escolhas. No total, o MVP tem **18 RFs: 16 de valor 4 e 2 de
-> valor 3**.
+> **A matriz orienta, não decide.** Todos os 16 RFs de valor 4 entraram no MVP, mas só 2 dos 17 RFs
+> de valor 3 (RF12 e RF26). No total, o MVP tem **18 RFs: 16 de valor 4 e 2 de valor 3**. A tabela a
+> seguir explica por que os outros 15 RFs de valor 3 ficaram fora.
 
-#### Por que RF41 e RF42 (valor 3) entraram no MVP
+#### Por que RF12 e RF26 (valor 3) entraram no MVP
 
 | RF | Motivo |
 | :--- | :--- |
-| RF41 – Autenticar usuário | **Dependência técnica.** Todos os outros RFs do MVP são da área restrita. Sem autenticação, não há como aplicar os perfis do RF39 e do RF40 nem cumprir os RNF07 e RNF15, classificados como obrigatórios para o MVP (seção 8.7). |
-| RF42 – Registrar consentimentos e autorizações | **Dependência legal.** O MVP cadastra famílias, participantes e frequência de crianças (RF14, RF16, RF18, RF28). Pela LGPD (RNF13) e pela Definição de Preparado (seção 9), dados reais só podem entrar no sistema depois do consentimento registrado. |
+| RF12 – Consultar saldo de itens doados | Esforço baixo (1,7) e mostra o saldo calculado a partir das entradas (RF09) e das saídas (RF10) registradas no MVP. |
+| RF26 – Consultar inscritos da turma | Esforço baixo (1,7) e permite conferir quem está inscrito na turma, base da chamada (RF27). |
 
-O valor de negócio 3 reflete como o cliente percebe esses requisitos: eles não resolvem diretamente
-a dor do dia a dia. Mas, sem eles, o restante do MVP não pode ser usado com dados reais.
-
-#### Por que 12 RFs de valor 4 ficaram fora do MVP
+#### Por que 15 RFs de valor 3 ficaram fora do MVP
 
 O critério de corte foi manter, em cada frente, apenas o fluxo mínimo que substitui o registro em
-papel (cadastrar, registrar e consultar), dentro da capacidade de desenvolvimento do semestre. Os
-RFs abaixo completam esses fluxos ou dependem de partes que ficaram fora do MVP, e são os primeiros
-da Fatia 2 (seção 10.2).
+papel (cadastrar, registrar e consultar), dentro da capacidade de desenvolvimento do semestre (notas
+e capacidade, seção 8.5). Os RFs abaixo completam esses fluxos ou dependem de partes que ficaram
+fora do MVP, e ficam para depois dele. Até lá, os ajustes que dependem deles são pedidos pela
+Coordenação à equipe de desenvolvimento, que os aplica diretamente no banco e anota o motivo
+(procedimento provisório, a validar com a associação).
 
 | RF | Motivo |
 | :--- | :--- |
-| RF07 – Consultar solicitações de contato | Depende do RF06 (envio de contato pelo visitante), que faz parte do portal (CP1), fora do MVP. |
 | RF13 – Publicar lista de itens necessários | É publicada na área pública do portal (CP1), fora do MVP. Até lá, a lista segue sendo divulgada pelos canais atuais, de forma manual, como decidido com o cliente. |
-| RF38 – Exportar relatório gerado | Só exporta relatórios gerados pelos RF33 a RF37, que ficaram fora do MVP. |
-| RF15 e RF17 – Atualizar ou inativar família e participante | Completam o ciclo de vida do cadastro. A inativação é rara no início do uso; os dados registrados no MVP continuam disponíveis para atualização quando esses RFs entrarem. |
-| RF21 e RF22 – Atualizar e encerrar turma | No MVP, as turmas são cadastradas com período definido; alterações e encerramento antecipado são exceções no início do uso. |
-| RF24 – Cancelar inscrição | Complementa a inscrição (RF23); no início do uso, as desistências podem ser tratadas pela Coordenação fora do sistema. |
+| RF15 e RF17 – Atualizar ou inativar família e participante | Completam o ciclo de vida do cadastro. A inativação é rara no início do uso; os dados registrados no MVP continuam disponíveis para atualização quando esses RFs entrarem. Até lá, telefone e endereço podem ser corrigidos pela equipe a pedido da Coordenação. |
+| RF24 – Cancelar inscrição | Complementa a inscrição (RF23); no início do uso, as desistências podem ser tratadas pela Coordenação fora do sistema. Quem desiste continua inscrito e aparece na chamada, mas o MVP não sinaliza faltas (RF32 fica fora) nem gera relatórios (CP6 fica fora), então a ausência a mais não gera alerta nem relatório incorreto. A Coordenação pede à equipe o cancelamento da inscrição para liberar a vaga. |
 | RF25 – Registrar lista de espera | O RF23 já impede a inscrição em turma sem vaga (RN12). A lista de espera é necessária só quando as turmas lotarem, e até lá pode ser mantida como hoje. |
 | RF29 – Justificar falta | A justificativa só muda o cálculo do limite de faltas, feito pelo RF32, que ficou fora do MVP. |
-| RF30 – Corrigir registro de frequência | Complementa o registro da chamada (RF28). A regra de correção (RN17) já está validada e entra junto com a Fatia 2. |
-| RF31 – Consultar frequência do participante | O MVP já registra a frequência (RF27 e RF28); o histórico acumulado poderá ser consultado quando o RF31 entrar, sem perda de dados. |
-
+| RF30 – Corrigir registro de frequência | Complementa o registro da chamada (RF28). A regra de correção (RN17) já está validada e entra junto com a Fatia 2. Até lá, um erro de chamada é corrigido pela equipe a pedido da Coordenação, com o motivo anotado. |
+| RF31 – Consultar frequência do participante | O MVP já registra a frequência (RF27 e RF28); o histórico acumulado poderá ser consultado quando o RF31 entrar, sem perda de dados. Até lá, a Coordenação pede à equipe o histórico de um participante. |
+| RF32 – Sinalizar participante com faltas acima do limite | Depende do RF29 (para não sinalizar quem justificou a falta) e exibe os sinalizados no painel (RF37); os dois ficaram fora do MVP. |
+| RF33, RF34 e RF36 – Relatórios de doações recebidas, de doações distribuídas e de famílias atendidas | Dependem dos registros que o MVP passa a fazer (doações, destinações e famílias) e fazem parte do CP6, fora do núcleo. |
+| RF38 – Exportar relatório gerado | Só exporta relatórios gerados pelos RF33 a RF37, que ficaram fora do MVP. |
+| RF43 – Registrar e acompanhar solicitação de exclusão de dados | Aguarda a confirmação da coordenação sobre o bloco avançado de LGPD. Até lá, as solicitações seguem o procedimento provisório descrito na seção 8.7. |
+| RF45 – Consultar autorização de uso de imagem vigente | O RF42 já registra as autorizações no MVP; a consulta por titular e meio aguarda a confirmação da coordenação sobre o bloco avançado de LGPD. |
 
 ## 8.6 RFs selecionados para o MVP
 
@@ -381,7 +441,6 @@ negócio × esforço técnico.
 | RNF19 | Associado a RFs do MVP | No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF44. As correções de frequência (RF30) e as demais alterações fora dos RFs selecionados ficam para versões futuras. |
 
 Na validação de 28/09, foram registrados o prazo de resposta de 15 dias para solicitações de exclusão
-e as quatro finalidades de consentimento. O procedimento de recebimento e atendimento dessas
-solicitações sem o RF43 ainda precisa ser definido com a associação. A classificação do RNF19
+e as quatro finalidades de consentimento. Sem o RF43, as solicitações de exclusão seguem um procedimento provisório, que será validado com a associação antes de qualquer uso de dados reais: a Coordenação recebe o pedido, registra a data e acompanha as etapas (recebida, em análise, atendida ou negada com justificativa), responde ao titular em até 15 dias e, quando o pedido é atendido, pede à equipe de desenvolvimento a exclusão dos dados do titular no sistema. A classificação do RNF19
 delimita o que será verificado no MVP; o texto completo desse RNF também cobre alterações de
 frequência e de doações em versões posteriores.

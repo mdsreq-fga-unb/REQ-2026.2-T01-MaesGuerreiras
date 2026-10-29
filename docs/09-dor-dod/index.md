@@ -33,12 +33,12 @@ Nenhum RF entra em sprint sem perfil de acesso confirmado na seção
 sistema) é exclusivo da Coordenação; RF41 (Autenticar usuário) é Voluntário ou Coordenação. Se o
 RF ainda estiver com o agente em aberto, ele não está pronto.
 
-**Existe protótipo de baixa fidelidade validado com a coordenação, quando o requisito tiver
-interface?**
+**Existe protótipo de baixa fidelidade validado com o cliente ou com a coordenação, quando o
+requisito tiver interface?**
 
 Requisitos de tela — como RF20 (Cadastrar turma de atividade) ou RF27 (Abrir chamada do
-encontro) — só entram em sprint depois de um wireframe revisado com Daiane, registrado como
-evidência. Requisitos sem interface própria (ex.: RF32, sinalização automática) não dependem
+encontro) — só entram em sprint depois de um wireframe revisado com o cliente (Makio) ou com a
+coordenação (Daiane), registrado como evidência. Requisitos sem interface própria (ex.: RF32, sinalização automática) não dependem
 desse critério.
 
 **Os RNFs aplicáveis ao requisito estão listados?**
@@ -172,7 +172,7 @@ seção 9.3).
 | ☐ | O requisito tem os dados mínimos (campos obrigatórios/opcionais) descritos? |
 | ☐ | As regras de negócio estão separadas do texto do RF e registradas na seção 10.6? |
 | ☐ | O perfil de acesso está definido na tabela de permissões (8.4)? |
-| ☐ | Existe protótipo validado com a coordenação (quando aplicável)? |
+| ☐ | Existe protótipo validado com o cliente ou com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
 | ☐ | O critério de aceitação está escrito como condições de satisfação verificáveis? |
 | ☐ | As dependências com outros RFs estão mapeadas? |

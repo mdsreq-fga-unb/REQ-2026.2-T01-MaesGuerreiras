@@ -21,14 +21,14 @@ endereço como obrigatórios, e número de moradores e observações como opcion
 **As regras de negócio do requisito estão identificadas e separadas do texto do RF?**
 
 Regra de negócio embutida no meio da descrição do RF atrasa a implementação, porque muda sem
-avisar quem está codando. O RF23 (Inscrever participante em turma) depende da regra "sem vaga,
-oferece encaminhamento à lista de espera (RF25)"; essa regra precisa estar registrada na lista de
+avisar quem está codando. O RF09 (Registrar doação recebida) depende da regra de que a quantidade 
+usa a unidade de medida da categoria (RN02); essa regra precisa estar registrada na lista de
 regras de negócio da seção [10.6](../10-backlog/index.md#106-regras-de-negocio),
 não só mencionada de passagem no RF.
 
 **O agente que executa o requisito está definido na tabela de permissões?**
 
-Nenhum RF entra em sprint sem perfil de acesso confirmado na seção
+Nenhum RF entra em sprint sem perfil de acesso definido na seção
 [8.4](../08-requisitos/index.md#84-perfis-agentes-e-rastreabilidade). RF39 (Cadastrar usuário do
 sistema) é exclusivo da Coordenação; RF41 (Autenticar usuário) é Voluntário ou Coordenação. Se o
 RF ainda estiver com o agente em aberto, ele não está pronto.
@@ -67,9 +67,10 @@ A estimativa de esforço, complexidade e lacuna de capacidade (seção 10.7 e ma
 [8.5](../08-requisitos/index.md#85-matriz-4x4)) precisa existir antes do planejamento da sprint,
 não ser feita de improviso na reunião de planejamento.
 
-**O requisito já foi apresentado a Makio ou Daiane, com registro em ata ou gravação?**
+**O comportamento do requisito foi confirmado por Makio ou Daiane, com a decisão registrada em ata ou gravação?**
 
-Nenhum requisito entra em sprint sem pelo menos uma menção prévia ao cliente, registrada nas
+Mencionar o requisito em uma reunião não basta: nenhum requisito entra em sprint sem que o cliente 
+tenha confirmado o comportamento esperado, com a decisão registrada nas
 [Atas de Reunião](../00-atas/index.md) ou nas [Evidências e Gravações](../00-evidencias/index.md).
 
 **Se o requisito envolve dado pessoal de família ou criança, o consentimento (RF42) já está
@@ -159,7 +160,7 @@ Os RNFs que valem para o projeto inteiro e não dependem do código de uma hist�
 (custo mensal zero) e o RNF05 (cópia de segurança diária) — não são verificados história por
 história. Eles são conferidos uma vez por sprint, no fechamento, e registrados na revisão.
 
-## 9.4 Checklist de fechamento
+## 9.4 Checklists da DoR e da DoD
 
 A DoR é preenchida no planejamento da sprint e a DoD ao final, antes da Revisão, para cada
 história. Em cada item, marque **passou**, **não passou** ou **não se aplica** (com justificativa,
@@ -171,13 +172,13 @@ seção 9.3).
 | :---: | :--- |
 | ☐ | O requisito tem os dados mínimos (campos obrigatórios/opcionais) descritos? |
 | ☐ | As regras de negócio estão separadas do texto do RF e registradas na seção 10.6? |
-| ☐ | O perfil de acesso está definido na tabela de permissões (8.4)? |
+| ☐ | O perfil de acesso está definido na tabela de permissões (8.4) e confirmado pela Daiane ou Makio? |
 | ☐ | Existe protótipo validado com o cliente ou com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
 | ☐ | O critério de aceitação está escrito como condições de satisfação verificáveis? |
 | ☐ | As dependências com outros RFs estão mapeadas? |
 | ☐ | O esforço técnico foi estimado e cabe na sprint? |
-| ☐ | O requisito já foi apresentado a Makio ou Daiane, com registro? |
+| ☐ | O comportamento do requisito foi confirmado por Makio ou Daiane, com a decisão registrada? |
 | ☐ | Se envolve dado pessoal, o consentimento (RF42) está coberto antes de dados reais? |
 
 ### DoD
@@ -216,3 +217,31 @@ quando a história é verificada.
 | RNFs aplicáveis | RNF03 | Não se aplica: gravação, não tela de consulta | Não se aplica | — |
 | Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis da tabela 8.4; apenas dados sintéticos até o portão de uso real (seção [6.4](../06-cronograma/index.md#64-portao-de-liberacao-para-uso-real)) | | |
 | Em andamento × pronto | — | Se qualquer linha acima não passar, a US09 fica "em andamento" e não entra na velocidade | | |
+
+## 9.6 Aplicação da DoR às histórias da Sprint 6
+
+Situação em 28/10/2026. As oito histórias da Sprint 6 (seção 10.4) passaram pela DoR abaixo. Legenda: ✔ passou · ✖ não passou · — não se aplica · ? a confirmar pela equipe.
+
+| História | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| US41 – Autenticar usuário | ✔ | — | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US39 – Cadastrar usuário | ? | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US40 – Atribuir perfil | ✔ | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US42 – Registrar consentimentos | ✔ | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| US11 – Cadastrar categoria | ✔ | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US08 – Cadastrar doador | ✔ | — | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US09 – Registrar doação recebida | ✔ | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+| US12 – Consultar saldo | — | ✔ | ? | ✖ | ✔ | ✔ | ✔ | ✔ | ? | — |
+
+Itens (na ordem da seção 9.4): D1 dados mínimos · D2 regras de negócio na 10.6 · D3 perfil na 8.4, confirmado pela Daiane · D4 protótipo validado · D5 RNFs listados · D6 critérios de aceitação · D7 dependências · D8 esforço estimado · D9 comportamento confirmado pelo cliente · D10 consentimento antes de dados reais.
+
+**Justificativas dos "não se aplica":** US41 e US08 não têm regra de negócio própria na 10.6 (D2). A US12 é uma consulta, sem campos de entrada (D1). Nenhuma história da Sprint 6 trata dado de família ou criança, e os testes usam dados sintéticos (D10).
+
+**Pendências desta sprint:**
+
+- **D4:** nenhuma das oito histórias tem wireframe validado registrado como evidência (seção 10.8).
+- **D3:** a tabela de permissões da 8.4 ainda é proposta, à espera da confirmação da Daiane.
+- **D9:** só o consentimento (US42) tem decisão do cliente registrada em ata ou gravação; nas demais, a validação de 28/09 aprovou o requisito, e falta registrar a confirmação do comportamento detalhado (na US08, os critérios CA-US08-04 a 06 ainda são propostas).
+- **D1:** os campos do cadastro de usuário (US39) ainda não estão definidos no RF nem nos critérios.
+
+**Pendências que impedem a entrada das demais histórias (Sprint 7):** os critérios de aceitação ainda não foram escritos (seção 10.8); falta protótipo validado; as histórias US19 e US20 têm texto pendente desde a ata de 28/09; e as dependências com o consentimento (US42) precisam estar prontas antes do cadastro de famílias e participantes (US14, US16).

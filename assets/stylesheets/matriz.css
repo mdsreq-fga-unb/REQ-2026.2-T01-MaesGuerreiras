@@ -1,0 +1,101 @@
+
+/* Matriz 4x4 (seção 8.5) */
+
+.md-typeset .matriz,
+.md-typeset .matriz-legenda {
+  --mz-borda: #e3d9ef;
+  --mz-cabecalho: #f3edf9;
+  --mz-destaque: #faf7fd;
+  --mz-chip-bg: #efe6f8;
+  --mz-chip-fg: #4a1f73;
+  --mz-mvp-bg: #6b3fa0;
+  --mz-mvp-fg: #ffffff;
+}
+
+.md-typeset .matriz {
+  overflow-x: auto;
+  border: 1px solid var(--mz-borda);
+  border-radius: 0.6rem;
+  margin: 1rem 0 0.5rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .matriz,
+[data-md-color-scheme="slate"] .md-typeset .matriz-legenda {
+  --mz-borda: #3b3150;
+  --mz-cabecalho: #2a2140;
+  --mz-destaque: #241c36;
+  --mz-chip-bg: #3a2b55;
+  --mz-chip-fg: #e2d3f7;
+  --mz-mvp-bg: #9b6fd0;
+  --mz-mvp-fg: #140a22;
+}
+
+.md-typeset .matriz table {
+  display: table;
+  width: 100%;
+  min-width: 640px;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.md-typeset .matriz th,
+.md-typeset .matriz td {
+  border: 1px solid var(--mz-borda);
+  padding: 0.7rem 0.8rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.md-typeset .matriz thead th {
+  background: var(--mz-cabecalho);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .matriz tbody th {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.md-typeset .matriz tbody tr:nth-child(3) {
+  background: var(--mz-destaque);
+}
+
+.md-typeset .matriz td strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.md-typeset .matriz .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.md-typeset .rf {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.3rem;
+  background: var(--mz-chip-bg, #efe6f8);
+  color: var(--mz-chip-fg, #4a1f73);
+  font-family: var(--md-code-font-family);
+  font-size: 0.68rem;
+}
+
+.md-typeset .rf.mvp {
+  background: var(--mz-mvp-bg, #6b3fa0);
+  color: var(--mz-mvp-fg, #ffffff);
+  font-weight: 700;
+}
+
+.md-typeset .matriz .vazio {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .matriz-legenda {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}

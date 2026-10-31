@@ -15,6 +15,7 @@
     "db:start": "supabase start",
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
+    "db:test": "supabase test db",
     "db:types": "supabase gen types typescript --local > app/types/database.types.ts && eslint --fix app/types/database.types.ts"
   },
   "dependencies": {

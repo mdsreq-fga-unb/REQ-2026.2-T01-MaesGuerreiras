@@ -1,9 +1,9 @@
-# 11. Lições Aprendidas
+# 15. Lições Aprendidas
 
 Esta seção registra, ao final de cada unidade da disciplina, o que a equipe aprendeu com o processo de
 Engenharia de Requisitos, com o ScrumXP e com o contato real com a Associação Mães Guerreiras. Cada
 bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unidade correspondente
-(seção [5.1](../05-er/index.md#51-atividades-e-tecnicas-da-er-e-scrumxp)).
+(seção [5.1](../01-visao-produto/index.md#51-atividades-e-tecnicas-da-er-e-scrumxp)).
 
 ## Unidade 1
 
@@ -47,6 +47,19 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
 
 - **Ação de melhoria:** Nas próximas priorizações, a equipe vai limitar a quantidade de itens "Must" por rodada, ou pedir ao cliente que escolha os N mais importantes de cada característica. A justificativa de cada item que ficar fora do MVP será registrada na ata.
 
+
+**4. Organização do escopo no site**
+
+- **Desafio:** O mesmo requisito aparecia em várias seções (declaração, matriz de rastreabilidade,
+  matriz 4×4, lista do MVP, backlog geral, backlog ordenado, critérios, regras e releases). Para
+  entender um requisito era preciso abrir até 13 trechos, e a repetição já gerava divergências,
+  como duas composições diferentes do MVP e links para seções que tinham mudado de número. O
+  professor usou o nosso site como exemplo em aula (29/10/2026).
+
+- **Ação de melhoria:** Criamos um catálogo integrado com uma ficha por RF, que reúne declaração,
+  intenção, origem, condições, critérios, prioridade, entrega, situação e evolução. As páginas de
+  priorização, MVP e rastreabilidade passaram a explicar o método e a consultar o catálogo. Toda
+  mudança agora é feita na ficha e registrada no histórico de evolução.
 
 ## Unidade 3
 

@@ -33,3 +33,15 @@ jobs:
       - run: npm run typecheck
       - run: npm run test
       - run: npm run build
+  banco:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sistema/package-lock.json
+      - run: npm ci
+      - run: npx supabase db start
+      - run: npm run db:test

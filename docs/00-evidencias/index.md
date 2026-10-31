@@ -30,3 +30,11 @@ Reunião com Makio para validação do escopo do MVP definido pela equipe.
 Gravação da apresentação do projeto referente à Unidade 2 da disciplina.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/yLagJ1zh3Kw" title="Apresentação da Unidade 2, 12/10/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Priorização de requisitos, versão 2 - outubro de 2026
+
+Planilha em que a cliente avaliou o valor de negócio de cada requisito (RF01 a RF45), com critério e
+justificativa, e a equipe avaliou esforço, complexidade e lacuna de capacidade. Substitui a avaliação
+por característica de produto e é a base da matriz do [MVP](../10-mvp/index.md#104-matriz-que-leva-a-escolha-do-mvp).
+
+[Abrir a planilha de priorização v2](https://docs.google.com/spreadsheets/d/1k2YFjudQxFV-SecOvGi2Ta5RNQU3BmGNQqUgQscksvA/edit?usp=sharing)

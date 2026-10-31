@@ -8,6 +8,29 @@ ao estado do documento ao final de uma unidade.
 | v0.1 | 14/08/2026 | Unidade 1 | Proposta inicial, focada em visibilidade institucional e doações financeiras |
 | v0.3 | 04/09/2026 | Unidade 1 | Mudança de foco para a perda dos registros manuais (doações de itens, cadastro e chamada) |
 | v0.4 | 13/10/2026 | Unidade 2 | Requisitos declarados, MVP validado com o cliente, backlog com critérios de aceitação, rastreabilidade, DoR e DoD |
+| v0.5 | 29/10/2026 | Unidade 2 | Escopo reorganizado em catálogo integrado, com uma ficha por requisito |
+
+## Unidade 2: v0.4 → v0.5
+
+### O que motivou as mudanças
+
+Na aula de Organização e Atualização de Requisitos (29/10/2026), o professor usou o nosso site
+como caso. A estrutura lógica (problema → objetivos → características → requisitos) estava adequada,
+mas a apresentação repetia cada requisito em várias páginas: declaração, priorização, MVP e
+rastreabilidade. Uma mudança exigia conferir vários lugares, e algumas informações já estavam
+divergentes. A orientação foi refazer a estrutura antes de continuar, com um catálogo único.
+
+### Principais mudanças
+
+| Aspecto | v0.4 | v0.5 |
+| :--- | :--- | :--- |
+| Requisitos (8) | Lista de RFs, matriz RF × CP × RNF, matriz 4×4 com os RFs em cada célula, lista do MVP | Catálogo integrado: uma ficha por RF, com filtros por característica, MVP, release, sprint e situação |
+| Histórias de usuário | 48 histórias com ID próprio (US01 a US45, com a e b), uma camada a mais sobre os RFs | Intenção "Como…, quero…, para…" dentro da ficha do RF, sem ID próprio |
+| Critérios de aceitação | Seção 10.5, separados dos requisitos | Dentro da ficha do RF (CA-RF##-nn) |
+| Priorização e MVP | Repetiam a lista de RFs em quadrantes e releases | Explicam método, critério do recorte e validação; o resultado está na ficha |
+| Rastreabilidade | Cadeia na seção 5.2 e matrizes em 8.4 | Tipos de vínculo e onde cada um é mantido (seção 11); vínculos na ficha |
+| Histórico | Refinamentos ao fim do backlog | Página própria (seção 14), ligada às fichas |
+| Visão do produto e processo | Sete páginas (1 a 7), com papéis, riscos, benefícios, práticas e reuniões descritos em mais de um lugar | Uma página, Visão do Produto, com as sete seções e cada assunto em um só lugar |
 
 ## Unidade 2: v0.3 → v0.4
 
@@ -72,8 +95,8 @@ associação não era a arrecadação financeira, e sim a perda de registros do 
 
 Makio segue com papel central no projeto: é ele quem primeiro recebe e avalia o que a equipe produz,
 antes de levar para validação da coordenação (Daiane e as demais coordenadoras). Por isso, ele
-participa diretamente de todas as revisões de sprint (seção [7.2](../07-interacao/index.md#72-comunicacao)) e
-segue com influência alta no mapa de stakeholders (seção [1.6](../01-cenario/index.md#16-mapa-de-stakeholders)).
+participa diretamente de todas as revisões de sprint (seção [7.2](../01-visao-produto/index.md#72-comunicacao)) e
+segue com influência alta no mapa de stakeholders (seção [1.6](../01-visao-produto/index.md#16-mapa-de-stakeholders)).
 
 ### Principais mudanças
 

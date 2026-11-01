@@ -1,4 +1,4 @@
----
+﻿---
 hide:
   - toc
 ---
@@ -229,16 +229,16 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação. |
+| Declaração vigente | Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação. *(Campos marcados com \* são obrigatórios nas fichas desta seção.)* |
 | Intenção e valor | Como **voluntária de atendimento**, quero cadastrar e corrigir os dados de pessoas e organizações que doam, para saber de onde veio cada doação. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A2 Receber doações](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
-| Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF41](#rf41) |
+| Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN21](regras.md#rn21)<br>**Depende de:** [RF41](#rf41) |
 | Critérios de aceitação | **CA-RF08-01**: Voluntário e Coordenação cadastram doadores do tipo **pessoa** ou **organização**, informando nome e pelo menos um meio de contato (telefone ou e-mail).<br>**CA-RF08-02**: A correção feita por um desses perfis é persistida no cadastro do doador.<br>**CA-RF08-03**: As correções registram autor, data, hora, valor anterior e valor novo (RNF19); o registro pode ser verificado no log sem a tela RF44.<br>**CA-RF08-04** *(exceção, proposta a validar)*: Um doador sem nome não é salvo, e o sistema indica o campo que falta.<br>**CA-RF08-05** *(exceção, proposta a validar)*: Se já existir um doador com o mesmo nome e o mesmo telefone ou e-mail, o sistema avisa e oferece usar o cadastro existente.<br>**CA-RF08-06** *(exceção, proposta a validar)*: É possível registrar doação anônima sem cadastrar um doador. *(Confirmar com a coordenação se doações anônimas existem.)*<br>*Evidência prevista:* teste de cadastro, correção, recusa por campo faltante, aviso de duplicidade e consulta do log. Validação: uma coordenadora cadastra e corrige um doador fictício sem ajuda. |
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Baixo · Posição **7** na ordem<br>**Valor (cliente):** Must have, critério: dependência para viabilizar outras funcionalidades. «O RF09 exige o doador de origem. Também alimenta o relatório por doador (RF33), usado para agradecer e fidelizar apoiadores. Sugestão: aceitar "doador anônimo" e deixar o contato opcional, para não travar o registro.»<br>**Esforço (equipe):** esforço 2 · complexidade 3 · lacuna 1 → consolidado 2,0<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **6** · Iceberg: Topo |
 | Situação | Em andamento (a confirmar); critérios refinados em 27/10 |
-| Evolução | 27/10/2026 · Critérios de aceitação ampliados com dados obrigatórios e exceções (propostas a validar). Revisão do professor, issue #26.<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 27/10/2026 · Critérios de aceitação ampliados com dados obrigatórios e exceções (propostas a validar). Revisão do professor, issue #26.<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -256,7 +256,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio: até 3 passos (RNF01) · Posição **8** na ordem<br>**Valor (cliente):** Must have, critério: importância para resolver o problema central. «É a troca direta do caderno de doações. Ataca a dor nº 1 (doações não registradas) e é a base da meta preliminar de reduzir em 80% as doações sem registro.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. Na nova avaliação, o esforço caiu para 2: o registro de doação reaproveita a estrutura de doador e categoria. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **6** · Iceberg: Topo |
 | Situação | Em andamento (a confirmar) |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -265,16 +265,16 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que Voluntário ou Coordenação registrem a saída de itens doados, com categoria de item, quantidade, data e a família ou atividade que os recebeu. |
-| Intenção e valor | Como **voluntária de atendimento**, quero registrar a saída de itens com a família ou atividade que os recebeu, para que a coordenadora saiba para onde foi cada doação. |
+| Declaração vigente | Permitir que Voluntário ou Coordenação registrem a saída de itens doados, com categoria de item, quantidade, data e o destinatário: uma família atendida ou uma turma de atividade (uso interno na associação). |
+| Intenção e valor | Como **voluntária de atendimento**, quero registrar a saída de itens indicando a família que os recebeu ou a turma que os usou internamente, para que a coordenadora saiba para onde foi cada doação. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A4 Distribuir itens](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
-| Condições | **RNFs:** [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF12](#rf12), [RF14](#rf14) |
-| Critérios de aceitação | **CA-RF10-01**: O registro feito por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.<br>**CA-RF10-02**: A quantidade usa a unidade da categoria (RN02), e a saída subtrai a quantidade do saldo do RF12.<br>**CA-RF10-03** *(exceção)*: Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica o campo que falta.<br>**CA-RF10-04** *(exceção)*: Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não muda.<br>**CA-RF10-05** *(exceção)*: Saída maior que o saldo da categoria é recusada, e o sistema mostra o saldo disponível.<br>**CA-RF10-06** *(exceção)*: O destinatário é escolhido entre as famílias e atividades cadastradas, sem texto livre.<br>*Evidência prevista:* teste do registro, da subtração e das recusas. Validação: a coordenação registra uma saída fictícia para uma família cadastrada. |
+| Condições | **RNFs:** [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF12](#rf12), [RF14](#rf14), [RF20](#rf20) |
+| Critérios de aceitação | **CA-RF10-01**: O registro feito por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.<br>**CA-RF10-02**: A quantidade usa a unidade da categoria (RN02), e a saída subtrai a quantidade do saldo do RF12.<br>**CA-RF10-03** *(exceção)*: Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica o campo que falta.<br>**CA-RF10-04** *(exceção)*: Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não muda.<br>**CA-RF10-05** *(exceção)*: Saída maior que o saldo da categoria é recusada, e o sistema mostra o saldo disponível.<br>**CA-RF10-06**: O destinatário é selecionado em lista: famílias cadastradas (RF14) ou turmas de atividade cadastradas (RF20). Itens destinados a uma turma representam uso interno na associação; não há texto livre.<br>*Evidência prevista:* teste do registro, da subtração e das recusas; registro de saída para uma família e para uma turma. Validação: a coordenação registra uma saída fictícia para uma família cadastrada e para uma turma cadastrada. |
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **11** na ordem<br>**Valor (cliente):** Must have, critério: obrigatoriedade legal, normativa ou institucional. «Sem a saída, o saldo fica errado e não dá para provar para onde os itens foram (ex.: Sacola Verde). É o que responde "onde foi parar minha doação?" na prestação de contas.»<br>**Esforço (equipe):** esforço 2 · complexidade 3 · lacuna 2 → consolidado 2,3. Exige relacionar a saída à família ou atividade e garantir que a quantidade seja descontada corretamente do saldo.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **7** · Iceberg: Topo |
 | Situação | Pronta pela DoR, exceto protótipo |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -351,7 +351,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio: dados pessoais · Posição **10** na ordem<br>**Valor (cliente):** Must have, critério: importância para resolver o problema central. «Substitui o cadastro isolado no computador da sede (OE3). O RF10 precisa da família para registrar a destinação, e o RF36 precisa dela para contar famílias atendidas.»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 2 → consolidado 2,3. Formulário com mais campos e validações, além da integração com consentimento e controle de acesso.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -387,7 +387,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **12** na ordem<br>**Valor (cliente):** Must have, critério: dependência para viabilizar outras funcionalidades. «Inscrição (RF23) e chamada (RF27) precisam do participante. Sem ele, o CP4 e o CP5 inteiros não existem.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Formulário com poucos campos, que pode aproveitar a estrutura do cadastro de família. Precisa integrar o consentimento.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R2** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -423,7 +423,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Baixo · Posição **13** na ordem<br>**Valor (cliente):** Must have, critério: contribuição para os objetivos do projeto. «Mesma lógica do RF15. Pesa um pouco mais porque, ao inativar, cancela as inscrições: sem ele, quem saiu da associação continua aparecendo na chamada como ausente.» *(texto igual ao do RF17 na planilha: revisar)*<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Precisa relacionar participante e família, verificar a idade e exigir responsável legal para menores, tratando as exceções.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R2** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -441,7 +441,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Baixo · Posição **16** na ordem<br>**Valor (cliente):** Must have, critério: frequência ou abrangência de uso. «Toda inscrição e todo atendimento começam com uma busca. Sem ela, a voluntária cadastra a mesma pessoa de novo, e o sistema recria o problema que veio resolver: dados duplicados e desencontrados.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Consulta simples, mas com três filtros. Leva um tempo para juntar as tabelas.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R2** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar (texto pendente na ata de 28/09) |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -509,8 +509,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema não inscreve e oferece o encaminhamento à lista de espera (RF25). |
-| Intenção e valor | Como **educadora voluntária**, quero inscrever um participante ativo em uma turma com vaga, para saber quem frequenta cada atividade. |
+| Declaração vigente | Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema recusa a inscrição e informa que a turma está cheia. O encaminhamento à lista de espera estará disponível a partir do RF25 (fora do MVP). |
+| Intenção e valor | Como **educadora voluntária**, quero inscrever um participante ativo em uma turma com vaga, para saber quem frequenta cada atividade. Quando a turma estiver cheia, quero ser informada para poder registrar o participante na lista de espera assim que o RF25 estiver disponível. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN12](regras.md#rn12)<br>**Depende de:** [RF16](#rf16), [RF20](#rf20) |
@@ -518,7 +518,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **15** na ordem<br>**Valor (cliente):** Must have, critério: dependência para viabilizar outras funcionalidades. «Substitui as inscrições soltas em WhatsApp e papel (OE3). A chamada (RF27) lista exatamente os inscritos; sem inscrição, não há chamada.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Não é difícil, mas precisa checar vaga e situação do participante antes de inscrever.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R2** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -563,16 +563,16 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que Voluntário ou Coordenação consultem os inscritos e os participantes em espera de cada turma, esses na ordem da lista. |
-| Intenção e valor | Como **educadora voluntária**, quero consultar os inscritos e a lista de espera de cada turma, para saber quem participa e quem aguarda vaga. |
+| Declaração vigente | Permitir que Voluntário ou Coordenação consultem os inscritos de cada turma. A exibição da lista de espera, na ordem de registro, estará disponível a partir do RF25 (fora do MVP). |
+| Intenção e valor | Como **educadora voluntária**, quero consultar os inscritos de cada turma, para saber quem participa. Quando o RF25 estiver disponível, quero ver também a lista de espera na ordem de registro. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
-| Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN14](regras.md#rn14)<br>**Depende de:** [RF23](#rf23), [RF25](#rf25) |
+| Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN14](regras.md#rn14)<br>**Depende de:** [RF23](#rf23) *(a exibição da lista de espera dependerá do RF25, fora do MVP)* |
 | Critérios de aceitação | Ainda não escritos. São escritos antes da sprint do item, conforme a [DoR](../13-dor-dod/index.md#131-definition-of-ready-dor). |
 | Priorização | Valor **3** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Baixo · Posição **24** na ordem<br>**Valor (cliente):** Should have, critério: frequência ou abrangência de uso. «Útil para preparar material (quantos kits de crochê?). No dia do encontro, a própria chamada (RF27) já mostra os inscritos, então não é indispensável. Barato; deve cair em "Forte candidato ao MVP".»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 1 → consolidado 1,7. A parte da listagem é fácil, mas precisa mostrar também a lista de espera.<br>**Leitura da matriz:** Candidato ao MVP (valor 3 · esforço 2). Entre os primeiros da Fatia 2, conforme a capacidade das sprints. Pode antecipar se sobrar tempo. |
 | Entrega | MVP: **complemento** (Fatia 2), conforme a nova matriz (planilha v2) · Release **R3** · Sprint **8** · Iceberg: Meio |
 | Situação | A refinar |
-| Evolução | 17/10/2026 · O replanejamento moveu este RF para a Fatia 2; a validação de 28/09 o mantinha no MVP. Resolvido pela nova matriz (29/10/2026).<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 3; esforço 3 → 2; MVP: sim → complemento.<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R2 → R3; sprint 7 → 8. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 17/10/2026 · O replanejamento moveu este RF para a Fatia 2; a validação de 28/09 o mantinha no MVP. Resolvido pela nova matriz (29/10/2026).<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 3; esforço 3 → 2; MVP: sim → complemento.<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R2 → R3; sprint 7 → 8. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Declaração ajustada: no MVP, o RF26 exibe apenas inscritos confirmados. A lista de espera fica para quando o RF25 for implementado; dependência atualizada. |
 
 </details>
 
@@ -595,7 +595,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Alto: uso no celular (RNF10) · Posição **17** na ordem<br>**Valor (cliente):** Must have, critério: importância para resolver o problema central. «Substitui a lista de presença em papel e acaba com a conferência manual pela coordenação (dor citada na seção 2). É o núcleo do OE4.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Simples de fazer e essencial pro MVP. Pode ser implementado junto da RF28.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R2** · Sprint **7** · Iceberg: Topo |
 | Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -640,7 +640,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que o Voluntário que fez a chamada corrija um registro até o fim do mesmo dia, e que a Coordenação corrija a qualquer momento, informando o motivo. O registro anterior é preservado. |
+| Declaração vigente | Permitir a correção de um registro de frequência já concluído, conforme as permissões de cada perfil (ver RN17). O registro anterior é sempre preservado. |
 | Intenção e valor | a) Como **educadora voluntária**, quero corrigir a chamada que eu fiz até o fim do mesmo dia, para consertar um erro de marcação.<br>b) Como **coordenadora**, quero corrigir qualquer registro de frequência informando o motivo, para resolver erros depois do dia sem perder o registro anterior. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B4 Ajustar a chamada](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário (mesmo dia), Coordenação |
@@ -839,7 +839,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Alto: permissões por perfil · Posição **4** na ordem<br>**Valor (cliente):** Must have, critério: obrigatoriedade legal, normativa ou institucional. «A voluntária da chamada não precisa ver o endereço de todas as famílias. Limitar o acesso ao necessário é exigência da LGPD (OE6). Com só dois perfis, pode ser um campo simples do RF39.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0. Só dois perfis, mas precisa aplicar a [tabela de permissões](glossario.md#permissoes-por-perfil), inclusive a exceção do RF30. Depende do banco (média da equipe 2,2; Vitor marcou 4).<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **6** · Iceberg: Topo |
 | Situação | Em andamento (a confirmar) |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 
@@ -911,7 +911,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **39** na ordem<br>**Valor (cliente):** Could have, critério: frequência ou abrangência de uso. «O registro das alterações é obrigatório pelo RNF19, mas isso é gravar no banco. A tela para consultar só é usada quando surge uma dúvida ou contestação, o que deve ser raro.»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 2 → consolidado 2,3. Tela de consulta sobre o log do RNF19 (autor, data, valor anterior e novo). Esforço 3 se o log for feito junto; 2 se já existir.<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 2). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **R4** · **Fechamento** · Iceberg: Base |
 | Situação | Não iniciada |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md). |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. Ver o [histórico](../14-historico/index.md).<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. |
 
 </details>
 

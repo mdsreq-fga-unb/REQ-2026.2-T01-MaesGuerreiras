@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// Esqueleto do RF41 (Autenticar usuário). Critérios de aceitação: US41, seção 10.1.
-const supabase = useSupabaseClient()
+import { mensagemErro } from '~/utils/http'
 
 const email = ref('')
 const senha = ref('')
@@ -10,17 +9,19 @@ const enviando = ref(false)
 async function entrar() {
   erro.value = ''
   enviando.value = true
-  const { error } = await supabase.auth.signInWithPassword({
-    email: email.value,
-    password: senha.value,
-  })
-  enviando.value = false
-
-  if (error) {
-    erro.value = 'E-mail ou senha incorretos.'
-    return
+  try {
+    await $fetch('/api/acesso/entrar', {
+      method: 'POST',
+      body: { email: email.value, senha: senha.value },
+    })
+    await navigateTo('/painel', { external: true })
   }
-  await navigateTo('/painel')
+  catch (falha: unknown) {
+    erro.value = mensagemErro(falha)
+  }
+  finally {
+    enviando.value = false
+  }
 }
 </script>
 

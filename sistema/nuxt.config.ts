@@ -20,7 +20,9 @@ export default defineNuxtConfig({
   },
 
   // Área restrita exige login (RF41). Rotas da área pública ficam em `exclude`.
+  // A service role (SUPABASE_SERVICE_KEY) fica só no servidor, para cadastro de usuários (RF39).
   supabase: {
+    types: '~/types/database.types.ts',
     redirectOptions: {
       login: '/login',
       callback: '/confirmar',

@@ -1,4 +1,4 @@
-# 8.1 Requisitos não funcionais
+﻿# 8.1 Requisitos não funcionais
 
 Cada RNF tem um registro próprio, com o critério verificável e a classificação para o MVP. Quais RNFs
 se aplicam a cada RF está **na ficha do RF**, no [catálogo](index.md).
@@ -13,7 +13,7 @@ segurança) são conferidos uma vez por sprint, no fechamento.
 
 ### RNF01 · Usabilidade (Usability) {#rnf01}
 
-A solução deve ser operável por voluntárias e voluntários sem formação técnica. O registro de uma doação recebida e a conclusão de uma chamada devem ser alcançáveis em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros.
+A solução deve ser operável por voluntárias e voluntários sem formação técnica. O registro de uma doação recebida e a conclusão de uma chamada devem ser alcançáveis em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros. *Definição de passo:* cada tela ou estado distinto que o usuário precisa navegar conta como um passo; o preenchimento de campos dentro de uma mesma tela não conta como passo adicional. Os três passos referem-se à navegação até o formulário (alcançar a funcionalidade), não ao preenchimento e envio (concluir a tarefa).
 
 - **Escopo:** Específico (ver fichas no catálogo)
 - **No MVP:** Obrigatório para o MVP. Cobre o registro de doação (RF09) e a conclusão de chamada (RF27/RF28), ambos no núcleo do MVP.

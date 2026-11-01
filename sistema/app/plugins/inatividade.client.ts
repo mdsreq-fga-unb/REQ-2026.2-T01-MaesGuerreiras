@@ -18,7 +18,7 @@ export default defineNuxtPlugin(() => {
       if (!user.value) return
       if (!sessaoExpirouPorInatividade(ultimo, Date.now())) return
       await supabase.auth.signOut()
-      await navigateTo('/login')
+      await navigateTo('/login?motivo=sessao')
     }, 30_000)
   }
 })

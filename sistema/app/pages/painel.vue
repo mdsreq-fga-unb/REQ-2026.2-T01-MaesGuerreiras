@@ -16,42 +16,16 @@ async function sair() {
 </script>
 
 <template>
-  <div>
-    <header>
-      <p>Área restrita — {{ sessao?.usuario.email }} ({{ ehCoord ? 'Coordenação' : 'Voluntário' }})</p>
-      <nav>
-        <NuxtLink to="/painel">
-          Início
-        </NuxtLink>
-        <NuxtLink
-          v-if="ehCoord"
-          to="/painel/usuarios"
-        >
-          Usuários
-        </NuxtLink>
-        <NuxtLink to="/painel/consentimentos">
-          Consentimentos
-        </NuxtLink>
-        <NuxtLink
-          v-if="ehCoord"
-          to="/painel/categorias"
-        >
-          Categorias
-        </NuxtLink>
-        <NuxtLink to="/painel/doadores">
-          Doadores
-        </NuxtLink>
-        <NuxtLink to="/painel/doacoes">
-          Doações
-        </NuxtLink>
-        <button
-          type="button"
-          @click="sair"
-        >
-          Sair
-        </button>
-      </nav>
-    </header>
-    <NuxtPage />
+  <div class="moldura">
+    <div class="moldura__menu">
+      <MenuLateral
+        :eh-coord="ehCoord"
+        :email="sessao?.usuario.email"
+        @sair="sair"
+      />
+    </div>
+    <div class="moldura__conteudo">
+      <NuxtPage />
+    </div>
   </div>
 </template>

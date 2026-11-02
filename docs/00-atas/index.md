@@ -58,6 +58,7 @@ sem decisões definitivas nesta reunião. A PR #12 já propõe essas correções
 cadência em sprints de 2 semanas, antecipação da CP7 para antes do registro de doações e do
 cadastro de famílias, e inclusão de artefatos de Engenharia de Requisitos em cada sprint) e
 segue aberta, pendente de revisão.
+*(Situação vigente: o cronograma foi reestruturado nas sprints subsequentes. O planejamento atual está no [catálogo integrado de requisitos](../08-requisitos/index.md), com releases e sprints alinhadas à nova matriz de priorização.)*
 
 ## Ata de 26/10/2026
 
@@ -88,5 +89,6 @@ Nos feedbacks enviados pelo WhatsApp, Makio solicitou:
 - Retirar o selo “Baixo” do saldo caso não exista uma regra definida para essa classificação.
 - Preencher a data do registro de doação com o dia atual, incluir um botão de incremento (“+”) e não iniciar a quantidade em zero.
 - Retirar da tela inicial os atalhos “Fazer chamada” e “Registrar saída” enquanto essas funcionalidades não estiverem disponíveis, evitando confusão durante os testes.
+*(Situação vigente: Ajustes informados e encaminhamentos.)*
 
 **Evidências:** [vídeo da reunião e feedbacks pelo WhatsApp](../00-evidencias/index.md#avaliacao-do-prototipo-26102026).

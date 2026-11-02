@@ -25,13 +25,6 @@ Reunião com Makio para validação do escopo do MVP definido pela equipe.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/0LL0tytCAfM" title="Validação do MVP, 28/09/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Avaliação do protótipo - 26/10/2026
-
-Reunião com Makio para apresentação e avaliação do protótipo do MVP. Os ajustes solicitados estão
-na [ata de 26/10/2026](../00-atas/index.md#ata-de-26102026).
-
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/EPVsBDcXRdI" title="Avaliação do protótipo com Makio, 26/10/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 ## Sprint 6 — back-end de acesso, consentimentos e doações (issue #33)
 
 - Migrations:
@@ -67,3 +60,62 @@ justificativa, e a equipe avaliou esforço, complexidade e lacuna de capacidade.
 por característica de produto e é a base da matriz do [MVP](../10-mvp/index.md#104-matriz-que-leva-a-escolha-do-mvp).
 
 [Abrir a planilha de priorização v2](https://docs.google.com/spreadsheets/d/1k2YFjudQxFV-SecOvGi2Ta5RNQU3BmGNQqUgQscksvA/edit?usp=sharing)
+
+## Avaliação do protótipo - 26/10/2026
+
+Reunião com Makio para apresentação e avaliação do protótipo do MVP. Os ajustes solicitados estão na [ata de 26/10/2026](../00-atas/index.md#ata-de-26102026).
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/EPVsBDcXRdI" title="Avaliação do protótipo com Makio, 26/10/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h3 id="feedback-complementar-pelo-whatsapp">Feedback complementar pelo WhatsApp</h3>
+
+<p>
+  Após a apresentação, Makio explorou o protótipo e enviou sua avaliação
+  e os ajustes solicitados pelo WhatsApp. As capturas também incluem
+  a resposta da equipe.
+</p>
+
+<p><small>Clique em uma imagem para ampliar.</small></p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start;">
+
+  <figure style="flex: 1 1 180px; min-width: 0; max-width: 260px; margin: 0;">
+    <a href="../assets/evidencias/feedback-makio-01.jpg" target="_blank" rel="noopener">
+      <img
+        src="../assets/evidencias/feedback-makio-01.jpg"
+        alt="Avaliação geral do protótipo por Makio"
+        style="display: block; width: 100%; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.15);">
+    </a>
+    <figcaption style="margin-top: 10px; text-align: center; font-size: 0.85em;">
+      <strong>1. Avaliação geral</strong><br>
+      Impressões sobre o protótipo.
+    </figcaption>
+  </figure>
+
+  <figure style="flex: 1 1 180px; min-width: 0; max-width: 260px; margin: 0;">
+    <a href="../assets/evidencias/feedback-makio-02.jpg" target="_blank" rel="noopener">
+      <img
+        src="../assets/evidencias/feedback-makio-02.jpg"
+        alt="Ajustes solicitados por Makio"
+        style="display: block; width: 100%; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.15);">
+    </a>
+    <figcaption style="margin-top: 10px; text-align: center; font-size: 0.85em;">
+      <strong>2. Ajustes solicitados</strong><br>
+      Pontos levantados pelo cliente.
+    </figcaption>
+  </figure>
+
+  <figure style="flex: 1 1 180px; min-width: 0; max-width: 260px; margin: 0;">
+    <a href="../assets/evidencias/feedback-makio-03.jpg" target="_blank" rel="noopener">
+      <img
+        src="../assets/evidencias/feedback-makio-03.jpg"
+        alt="Resposta da equipe aos feedbacks de Makio"
+        style="display: block; width: 100%; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.15);">
+    </a>
+    <figcaption style="margin-top: 10px; text-align: center; font-size: 0.85em;">
+      <strong>3. Resposta da equipe</strong><br>
+      Ajustes informados e encaminhamentos.
+    </figcaption>
+  </figure>
+
+</div>

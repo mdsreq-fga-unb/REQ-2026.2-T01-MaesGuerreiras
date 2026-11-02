@@ -1,40 +1,38 @@
 <script setup lang="ts">
-import { ehCoordenacao, ehPerfilValido, type Perfil } from '~/utils/perfis'
+import type { SaldoResposta } from '~/types/contratos'
+import { mensagemErro } from '~/utils/http'
 
-// Área restrita: o módulo do Supabase redireciona para /login quem não está autenticado.
-const supabase = useSupabaseClient()
-const user = useSupabaseUser()
-
-const { data: perfil } = await useAsyncData('perfil', async () => {
-  const { data: { user: autenticado } } = await supabase.auth.getUser()
-  if (!autenticado) return null
-
-  const { data } = await supabase
-    .from('perfis')
-    .select('perfil')
-    .eq('id', autenticado.id)
-    .maybeSingle()
-  return ehPerfilValido(data?.perfil) ? data.perfil as Perfil : null
-})
-
-async function sair() {
-  await supabase.auth.signOut()
-  await navigateTo('/login')
-}
+const { data: saldos, error } = await useFetch<SaldoResposta[]>('/api/doacoes/saldos')
 </script>
 
 <template>
   <main>
     <h1>Painel</h1>
-    <p>Conectado como {{ user?.email }}</p>
-    <p v-if="perfil">
-      Perfil: {{ ehCoordenacao(perfil) ? 'Coordenação' : 'Voluntário' }}
+    <p>Saldo atual por categoria (RF12). Famílias, participantes e destinação real ficam na Sprint 7.</p>
+    <p
+      v-if="error"
+      role="alert"
+    >
+      {{ mensagemErro(error) }}
     </p>
-    <p v-else>
-      Seu usuário ainda não tem perfil de acesso. Procure a Coordenação.
-    </p>
-    <button @click="sair">
-      Sair
-    </button>
+    <table v-else>
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Saldo</th>
+          <th>Unidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="item in saldos"
+          :key="item.categoriaId"
+        >
+          <td>{{ item.nome }}</td>
+          <td>{{ item.saldo }}</td>
+          <td>{{ item.unidade }}</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </template>

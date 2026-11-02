@@ -37,7 +37,10 @@ theme:
 
 extra_css:
   - assets/stylesheets/extra.css
-  - assets/stylesheets/matriz.css
+  - assets/stylesheets/catalogo.css
+
+extra_javascript:
+  - assets/javascripts/catalogo.js
 
 markdown_extensions:
   - admonition
@@ -54,19 +57,21 @@ plugins:
 
 nav:
   - Home: index.md
+  - "Visão do Produto": 01-visao-produto/index.md
   - "Evolução da Proposta": 00-evolucao/index.md
   - "Evidências e Gravações": 00-evidencias/index.md
   - "Atas de Reunião": 00-atas/index.md
-  - "Documentação":
-    - "1·Cenário": 01-cenario/index.md
-    - "2·Solução": 02-solucao/index.md
-    - "3·Intervenção Social": 03-intervencao-social/index.md
-    - "4·Estratégias": 04-estrategias/index.md
-    - "5·ER": 05-er/index.md
-    - "6·Cronograma": 06-cronograma/index.md
-    - "7·Equipe": 07-interacao/index.md
-    - "8·Requisitos": 08-requisitos/index.md
-    - "9·DoR e DoD": 09-dor-dod/index.md
-    - "10·Backlog de Produto": 10-backlog/index.md
-    - "11·Lições Aprendidas": 08-licoes/index.md
-    - "12·Referências": 12-referencias/index.md
+  - "Requisitos":
+    - "8·Catálogo integrado": 08-requisitos/index.md
+    - "8.1·RNFs": 08-requisitos/rnf.md
+    - "8.2·Regras de negócio": 08-requisitos/regras.md
+    - "8.3·Glossário e perfis": 08-requisitos/glossario.md
+    - "9·Priorização": 09-priorizacao/index.md
+    - "10·MVP": 10-mvp/index.md
+    - "11·Rastreabilidade": 11-rastreabilidade/index.md
+    - "12·Mapa de histórias": 12-mapa/index.md
+  - "Qualidade e memória":
+    - "13·DoR e DoD": 13-dor-dod/index.md
+    - "14·Histórico de evolução": 14-historico/index.md
+    - "15·Lições Aprendidas": 15-licoes/index.md
+    - "16·Referências": 16-referencias/index.md

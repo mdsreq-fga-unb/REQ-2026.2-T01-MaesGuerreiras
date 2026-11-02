@@ -25,3 +25,4 @@ logs
 
 # Backups do banco (dados podem ser reais)
 backup-*.sql
+.vercel

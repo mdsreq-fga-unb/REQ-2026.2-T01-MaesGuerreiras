@@ -25,6 +25,13 @@ Reunião com Makio para validação do escopo do MVP definido pela equipe.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/0LL0tytCAfM" title="Validação do MVP, 28/09/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## Avaliação do protótipo - 26/10/2026
+
+Reunião com Makio para apresentação e avaliação do protótipo do MVP. Os ajustes solicitados estão
+na [ata de 26/10/2026](../00-atas/index.md#ata-de-26102026).
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/EPVsBDcXRdI" title="Avaliação do protótipo com Makio, 26/10/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Sprint 6 — back-end de acesso, consentimentos e doações (issue #33)
 
 - Migrations:

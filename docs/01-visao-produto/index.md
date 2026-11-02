@@ -691,8 +691,8 @@ A equipe de desenvolvimento é composta por:
   disciplina.
 - **Google Docs:** utilizado para a produção colaborativa da documentação do projeto entre os
   integrantes da equipe.
-- **Trello:** acompanhamento das tarefas de cada sprint, de forma visual e simples para a equipe e
-  para o cliente. O que construir e em que ordem fica no [catálogo integrado](../08-requisitos/index.md).
+- **GitHub Projects:** [quadro da equipe](https://github.com/orgs/mdsreq-fga-unb/projects/131){target="_blank"} com as issues de cada sprint,
+  o responsável e a situação (A fazer, Em andamento, Pronto). O que construir e em que ordem fica no [catálogo integrado](../08-requisitos/index.md).
 
 #### Eventos e frequência
 

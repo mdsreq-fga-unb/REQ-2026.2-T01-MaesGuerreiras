@@ -12,7 +12,11 @@ As personas foram definidas a partir das entrevistas com a coordenação e da va
 dia e quem faz a chamada.
 
 | Persona | Perfil no sistema ([8.3](../08-requisitos/glossario.md)) | Quem é | Objetivos |
-|
+|---|---|---|---|
+| **Coordenadora** | Coordenação | Responsável pela associação; decide quem usa o sistema e presta contas aos apoiadores. | Saber o que entrou, o que há disponível e para onde foi cada doação. Garantir que nenhum dado de família seja usado sem consentimento. Mostrar o impacto da associação aos apoiadores. |
+| **Voluntária de atendimento** | Voluntário | Recebe as doações e atende as famílias (por exemplo, na Sacola Verde). | Registrar o recebimento sem atrasar o atendimento. Encontrar a família rapidamente. Entregar só o que está disponível. |
+| **Educadora voluntária** | Voluntário | Conduz oficinas e o Reforço Escolar. | Fazer a chamada no próprio dia, pelo celular, sem lista em papel. Saber quem está faltando para avisar a coordenação a tempo. |
+| **Visitante ou apoiador** | Público (sem login) | Comunidade, doadores e parceiros. | Saber o que a associação faz, quando há atividades e o que doar. Falar com a associação sem precisar ir até lá. |
 
 ## 12.2 Jornadas e releases
 
@@ -22,7 +26,7 @@ conjuntos que permitem concluir um objetivo da persona de ponta a ponta.
 
 Legenda das releases:
 
-- **R1 – A doação chega à família:** a coordenadora e a voluntária registram uma doação e a entregam a uma família cadastrada com consentimento.
+- **R1 – A doação chega à família:** a coordenadora e a voluntária registram uma doação e a entregam a uma família cadastrada com consentimento. Para que a destinação (RF10) só entregue o que está disponível, a R1 inclui o **cálculo de saldo do RF12 no back-end**, antecipado na Sprint 6. A tela de consulta de saldo continua na R3.
 - **R2 – A educadora faz a chamada:** uma educadora faz a chamada de uma turma e as faltas ficam registradas e justificadas.
 - **R3 – Completar os fluxos e manter os cadastros em dia:** consulta de saldo, lista de espera, consulta de inscritos, atualizações, inativações e cancelamentos, sem perder histórico.
 - **R4 – Prestar contas e proteger dados:** relatórios, painel e LGPD avançada.
@@ -36,9 +40,9 @@ R1 e R2 formam o **MVP** e têm exatamente os 19 requisitos escolhidos pela [mat
 
 | Release | A1 Dar acesso à equipe | A2 Receber doações | A3 Acolher a família | A4 Distribuir itens | A5 Manter cadastros | A6 Prestar contas |
 |---|---|---|---|---|---|---|
-| **R1** | [RF41](../08-requisitos/index.md#rf41) Autenticar<br>[RF39](../08-requisitos/index.md#rf39) Cadastrar usuário<br>[RF40](../08-requisitos/index.md#rf40) Atribuir perfil | [RF11](../08-requisitos/index.md#rf11) Cadastrar categoria<br>[RF08](../08-requisitos/index.md#rf08) Cadastrar doador<br>[RF09](../08-requisitos/index.md#rf09) Registrar entrada | [RF42](../08-requisitos/index.md#rf42) Registrar consentimento<br>[RF14](../08-requisitos/index.md#rf14) Cadastrar família | [RF10](../08-requisitos/index.md#rf10) Registrar destinação | | |
+| **R1** | [RF41](../08-requisitos/index.md#rf41) Autenticar<br>[RF39](../08-requisitos/index.md#rf39) Cadastrar usuário<br>[RF40](../08-requisitos/index.md#rf40) Atribuir perfil | [RF11](../08-requisitos/index.md#rf11) Cadastrar categoria<br>[RF08](../08-requisitos/index.md#rf08) Cadastrar doador<br>[RF09](../08-requisitos/index.md#rf09) Registrar entrada | [RF42](../08-requisitos/index.md#rf42) Registrar consentimento<br>[RF14](../08-requisitos/index.md#rf14) Cadastrar família | [RF10](../08-requisitos/index.md#rf10) Registrar destinação *(usa o cálculo de saldo do RF12)* | | |
 | **R2** | | | [RF16](../08-requisitos/index.md#rf16) Cadastrar participante<br>[RF18](../08-requisitos/index.md#rf18) Vincular à família | | | |
-| **R3** | | | | [RF12](../08-requisitos/index.md#rf12) Consultar saldo *(antecipado na Sprint 6)* | [RF15](../08-requisitos/index.md#rf15) (a) Atualizar família<br>[RF15](../08-requisitos/index.md#rf15) (b) Inativar família<br>[RF17](../08-requisitos/index.md#rf17) (a) Atualizar participante<br>[RF17](../08-requisitos/index.md#rf17) (b) Inativar participante | |
+| **R3** | | | | [RF12](../08-requisitos/index.md#rf12) Consultar saldo *(tela; cálculo já entra na R1)* | [RF15](../08-requisitos/index.md#rf15) (a) Atualizar família<br>[RF15](../08-requisitos/index.md#rf15) (b) Inativar família<br>[RF17](../08-requisitos/index.md#rf17) (a) Atualizar participante<br>[RF17](../08-requisitos/index.md#rf17) (b) Inativar participante | |
 | **R4** | | | | | | [RF33](../08-requisitos/index.md#rf33) Relatório de doações recebidas<br>[RF34](../08-requisitos/index.md#rf34) Relatório de doações distribuídas<br>[RF36](../08-requisitos/index.md#rf36) Relatório de famílias<br>[RF38](../08-requisitos/index.md#rf38) Exportar relatório<br>[RF37](../08-requisitos/index.md#rf37) Painel de indicadores |
 
 ### Jornada B – Garantir que as crianças frequentem as atividades {#jornada-b}

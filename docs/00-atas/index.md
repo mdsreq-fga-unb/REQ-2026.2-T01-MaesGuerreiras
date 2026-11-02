@@ -54,5 +54,39 @@ reclassificação do RNF07 como Segurança e inclusão de um RNF específico par
 ### 2. Mudanças de cronograma
 
 A equipe discutiu, em conversa, as mudanças necessárias no cronograma para atender à issue #8,
-sem decisões definitivas nesta reunião. A PR #12 já propõe essas correções (unificação da cadência em sprints de 2 semanas, antecipação da CP7 para antes do registro de doações e do cadastro de famílias, e inclusão de artefatos de Engenharia de Requisitos em cada sprint) e segue aberta, pendente de revisão.
-*(Situação vigente: o cronograma foi reestruturado nas sprints subsequentes. O planejamento atual está no [catálogo integrado de requisitos](../08-requisitos/index.md), com releases e sprints alinhadas à nova matriz de priorização.)*
+sem decisões definitivas nesta reunião. A PR #12 já propõe essas correções (unificação da
+cadência em sprints de 2 semanas, antecipação da CP7 para antes do registro de doações e do
+cadastro de famílias, e inclusão de artefatos de Engenharia de Requisitos em cada sprint) e
+segue aberta, pendente de revisão.
+
+## Ata de 26/10/2026
+
+**Participantes:** Isabella, Luan, Luis, Ian, Pedro, Vitor e Makio (representante do cliente).
+
+**Pauta:**
+
+- Apresentação e validação do protótipo do MVP.
+- Levantamento de ajustes e feedback complementar pelo WhatsApp.
+
+### 1. Apresentação e avaliação do protótipo
+
+A equipe apresentou o protótipo do MVP a Makio, que o aprovou com ajustes, detalhados nesta ata. Além da reunião, Makio explorou o protótipo e encaminhou feedbacks pelo WhatsApp.
+
+Foram avaliados positivamente a identidade visual da associação, o fluxo de registro de doações em três passos, a unidade de medida vinculada à categoria e a apresentação das entradas, saídas e saldo. Makio também destacou a separação dos consentimentos por finalidade e a restrição da gestão de usuários e categorias à Coordenação.
+
+### 2. Ajustes solicitados
+
+Nos feedbacks enviados pelo WhatsApp, Makio solicitou:
+
+- Disponibilizar uma forma de a Coordenação redefinir a senha de usuários.
+- Apresentar os formulários de criação de usuário, doador e categoria.
+- Mostrar mensagens de erro, incluindo senha incorreta e campos obrigatórios vazios.
+- Apresentar a interface do perfil Voluntário e o comportamento ao tentar acessar uma área restrita à Coordenação.
+- Apresentar um aviso para evitar cadastros duplicados de doadores e o registro de quem corrigiu seus dados.
+- Posicionar o consentimento antes do cadastro de dados pessoais.
+- Disponibilizar o registro de revogação da autorização de uso de imagem.
+- Retirar o selo “Baixo” do saldo caso não exista uma regra definida para essa classificação.
+- Preencher a data do registro de doação com o dia atual, incluir um botão de incremento (“+”) e não iniciar a quantidade em zero.
+- Retirar da tela inicial os atalhos “Fazer chamada” e “Registrar saída” enquanto essas funcionalidades não estiverem disponíveis, evitando confusão durante os testes.
+
+**Evidências:** [vídeo da reunião e feedbacks pelo WhatsApp](../00-evidencias/index.md#avaliacao-do-prototipo-26102026).

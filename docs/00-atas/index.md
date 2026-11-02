@@ -87,4 +87,4 @@ Nos feedbacks enviados pelo WhatsApp, Makio solicitou:
 - Preencher a data do registro de doação com o dia atual, incluir um botão de incremento (“+”) e não iniciar a quantidade em zero.
 - Retirar da tela inicial os atalhos “Fazer chamada” e “Registrar saída” enquanto essas funcionalidades não estiverem disponíveis, evitando confusão durante os testes.
 
-**Evidências:** [gravação da reunião](../00-evidencias/index.md#avaliacao-do-prototipo-26102026).
+**Evidências:** [vídeo da reunião e feedbacks pelo WhatsApp](../00-evidencias/index.md#avaliacao-do-prototipo-26102026).

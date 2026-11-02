@@ -1,4 +1,4 @@
-# 8.2 Regras de negócio
+﻿# 8.2 Regras de negócio
 
 As regras ficam separadas do texto dos requisitos (DoR, seção [13](../13-dor-dod/index.md)). Cada
 regra tem um registro próprio. Os RFs que aplicam cada regra estão **na ficha do RF**, no
@@ -124,3 +124,9 @@ O consentimento é registrado separadamente para quatro finalidades (cadastro e 
 A primeira conta de Coordenação é criada pela equipe na implantação; as demais, pela Coordenação.
 
 *Origem:* [RF39](index.md#rf39)
+
+### RN21 {#rn21}
+
+No cadastro de doador, são obrigatórios o nome e pelo menos um meio de contato (telefone ou e-mail). Para organizações, o nome da organização substitui o nome da pessoa. Doações anônimas podem ser registradas sem cadastro de doador, a confirmar com a coordenação.
+
+*Origem:* [RF08](index.md#rf08)

@@ -67,6 +67,13 @@ Reunião com Makio para apresentação e avaliação do protótipo do MVP. Os aj
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/EPVsBDcXRdI" title="Avaliação do protótipo com Makio, 26/10/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+### Protótipo no Figma
+
+Versão apresentada ao Makio em 26/10/2026, com os ajustes pedidos na reunião:
+[abrir o protótipo no Figma](https://www.figma.com/design/0qX1e0oO6JqhROswfk3oyI/Prot%C3%B3tipo---M%C3%A3es-Guerreiras?node-id=91-98){target="_blank"}.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F0qX1e0oO6JqhROswfk3oyI%2FProt%25C3%25B3tipo---M%25C3%25A3es-Guerreiras%3Fnode-id%3D91-98" allowfullscreen title="Protótipo do MVP no Figma"></iframe>
+
 <h3 id="feedback-complementar-pelo-whatsapp">Feedback complementar pelo WhatsApp</h3>
 
 <p>

@@ -240,7 +240,7 @@ Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 
 
 **Pendências desta sprint:**
 
-- **D4:** atendido em 26/10/2026: o protótipo das oito telas foi apresentado ao Makio e aprovado com ajustes ([ata de 26/10](../00-atas/index.md#ata-de-26102026), [vídeo e feedback](../00-evidencias/index.md#avaliacao-do-prototipo-26102026)). Os ajustes pedidos entraram na versão 2 do protótipo.
+- **D4:** atendido em 26/10/2026: o protótipo das oito telas foi apresentado ao Makio e aprovado com ajustes ([ata de 26/10](../00-atas/index.md#ata-de-26102026), [vídeo, feedback e protótipo no Figma](../00-evidencias/index.md#avaliacao-do-prototipo-26102026)). Os ajustes pedidos entraram na versão 2 do protótipo.
 - **D3:** a tabela de permissões ainda é proposta, à espera da confirmação da Daiane.
 - **D9:** só o consentimento (RF42) tem decisão do cliente registrada em ata ou gravação; nos demais, a validação de 28/09 aprovou o requisito, e falta registrar a confirmação do comportamento detalhado (no RF08, os critérios CA-RF08-04 a 06 ainda são propostas).
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.

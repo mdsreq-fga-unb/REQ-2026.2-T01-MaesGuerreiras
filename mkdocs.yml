@@ -58,9 +58,6 @@ plugins:
 nav:
   - Home: index.md
   - "Visão do Produto": 01-visao-produto/index.md
-  - "Evolução da Proposta": 00-evolucao/index.md
-  - "Evidências e Gravações": 00-evidencias/index.md
-  - "Atas de Reunião": 00-atas/index.md
   - "Requisitos":
     - "8·Catálogo integrado": 08-requisitos/index.md
     - "8.1·RNFs": 08-requisitos/rnf.md
@@ -75,3 +72,6 @@ nav:
     - "14·Histórico de evolução": 14-historico/index.md
     - "15·Lições Aprendidas": 15-licoes/index.md
     - "16·Referências": 16-referencias/index.md
+  - "Evolução da Proposta": 00-evolucao/index.md
+  - "Evidências e Gravações": 00-evidencias/index.md
+  - "Atas de Reunião": 00-atas/index.md

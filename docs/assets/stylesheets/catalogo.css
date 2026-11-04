@@ -112,42 +112,17 @@
   color: var(--md-default-fg-color--light);
 }
 
-/* ---------- tabela de visão geral ---------- */
-.md-typeset .resumo {
-  overflow-x: auto;
-  border: 1px solid var(--cat-borda);
-  border-radius: 0.6rem;
-  margin: 0.8rem 0 1.5rem;
-}
-.md-typeset .resumo__tabela {
-  display: table;
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  font-size: 0.68rem;
-  margin: 0;
-  border: 0;
-}
-.md-typeset .resumo__tabela th,
-.md-typeset .resumo__tabela td {
-  padding: 0.4rem 0.6rem;
-  border-bottom: 1px solid var(--cat-borda);
-  text-align: left;
-  vertical-align: middle;
-}
-.md-typeset .resumo__tabela thead th {
-  background: var(--cat-cabecalho);
-  position: sticky;
-  top: 0;
+/* ---------- ordem do backlog ---------- */
+.md-typeset .ficha__ordem {
+  display: inline-block;
+  min-width: 2.1rem;
+  margin-right: 0.15rem;
+  font-size: 0.64rem;
   font-weight: 700;
-}
-.md-typeset .resumo__tabela td:first-child,
-.md-typeset .resumo__tabela td:nth-child(5),
-.md-typeset .resumo__tabela td:nth-child(6) {
   font-variant-numeric: tabular-nums;
-  text-align: center;
+  color: var(--cat-neutro);
 }
-.md-typeset .resumo__tabela td:nth-child(2) a { font-weight: 700; white-space: nowrap; }
+.md-typeset .lista-ordem__titulo { margin-top: 1rem; }
 
 /* ---------- fichas ---------- */
 .md-typeset details.ficha {

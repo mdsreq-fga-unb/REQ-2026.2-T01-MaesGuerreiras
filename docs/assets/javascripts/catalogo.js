@@ -1,7 +1,9 @@
 /* Filtros do catálogo integrado.
-   Funciona sem dependências. Sem JavaScript, todas as fichas continuam visíveis.
+   Funciona sem dependências. Sem JavaScript, todas as fichas continuam visíveis, agrupadas por
+   característica, e o número antes do ID mostra a posição na ordem do backlog.
    Links de outras páginas chegam com o filtro no endereço, por exemplo:
-   #mvp-sim, #sprint-7, #release-r1, #cp-cp2, #situacao-a-refinar, #valor-4-esforco-3 */
+   #mvp-sim, #sprint-7, #release-r1, #cp-cp2, #situacao-a-refinar, #valor-4-esforco-3.
+   #ordem abre as fichas numa lista única, na ordem do backlog. */
 (function () {
   "use strict";
 
@@ -14,9 +16,69 @@
     var texto = document.getElementById("f-texto");
     var limpar = document.getElementById("f-limpar");
     var status = document.getElementById("f-status");
-    var linhas = Array.prototype.slice.call(document.querySelectorAll(".resumo__tabela tbody tr"));
+    var modo = document.getElementById("f-modo");
     var fichas = Array.prototype.slice.call(document.querySelectorAll("details.ficha"));
     var extra = null; // filtro de valor x esforço vindo da priorização
+
+    // Grupos por característica: cada título (h2 com id cp1…cp7 ou itens-tecnicos) e o que vem
+    // depois dele até o próximo h2. Guardam onde cada ficha estava, para poder voltar.
+    var grupos = [];
+    Array.prototype.slice.call(document.querySelectorAll("h2[id]")).forEach(function (h2) {
+      if (!/^(cp\d|itens-tecnicos)$/.test(h2.id)) {
+        return;
+      }
+      var grupo = { titulo: h2, itens: [h2], fichas: [] };
+      var el = h2.nextElementSibling;
+      while (el && el.tagName !== "H2") {
+        grupo.itens.push(el);
+        if (el.matches("details.ficha")) {
+          grupo.fichas.push(el);
+        }
+        el = el.nextElementSibling;
+      }
+      grupos.push(grupo);
+    });
+    var lugar = new Map();
+    fichas.forEach(function (d) {
+      var marca = document.createComment("lugar " + d.id);
+      d.parentNode.insertBefore(marca, d);
+      lugar.set(d, marca);
+    });
+
+    // Lista única, usada no modo "Na ordem do backlog".
+    var lista = document.createElement("div");
+    lista.className = "lista-ordem";
+    lista.hidden = true;
+    var tituloLista = document.createElement("h2");
+    tituloLista.className = "lista-ordem__titulo";
+    tituloLista.textContent = "Fichas na ordem do backlog";
+    lista.appendChild(tituloLista);
+    var primeiroGrupo = grupos.length ? grupos[0].titulo : null;
+    if (primeiroGrupo) {
+      primeiroGrupo.parentNode.insertBefore(lista, primeiroGrupo);
+    }
+
+    function posicao(d) {
+      var n = parseInt(d.getAttribute("data-ordem"), 10);
+      return isNaN(n) ? Infinity : n;
+    }
+
+    function aplicarModo() {
+      var emOrdem = modo && modo.value === "ordem";
+      lista.hidden = !emOrdem;
+      if (emOrdem) {
+        fichas.slice().sort(function (a, b) {
+          return posicao(a) - posicao(b);
+        }).forEach(function (d) {
+          lista.appendChild(d);
+        });
+      } else {
+        fichas.forEach(function (d) {
+          var marca = lugar.get(d);
+          marca.parentNode.insertBefore(d, marca.nextSibling);
+        });
+      }
+    }
 
     function ativos() {
       var f = {};
@@ -45,28 +107,43 @@
     }
 
     function aplicar() {
+      aplicarModo();
+      var emOrdem = modo && modo.value === "ordem";
       var f = ativos();
       var termo = (texto.value || "").trim().toLowerCase();
       var filtrando = Object.keys(f).length > 0 || termo.length > 0;
       var visiveis = 0;
-      linhas.forEach(function (tr) {
-        var ok = passa(tr, f, termo);
-        tr.classList.toggle("oculto", !ok);
-        if (ok && tr.getAttribute("data-cp") !== "tec") {
-          visiveis += 1;
-        }
-      });
+      var total = 0;
       fichas.forEach(function (d) {
         var ok = passa(d, f, termo);
         d.classList.toggle("oculto", !ok);
+        if (d.getAttribute("data-cp") !== "tec") {
+          total += 1;
+          if (ok) {
+            visiveis += 1;
+          }
+        }
       });
-      var total = linhas.filter(function (tr) { return tr.getAttribute("data-cp") !== "tec"; }).length;
+      // Título e texto de uma característica somem quando ela fica sem fichas visíveis,
+      // e somem todos no modo "Na ordem do backlog", em que as fichas saem dos grupos.
+      grupos.forEach(function (g) {
+        var algumaVisivel = g.fichas.some(function (d) {
+          return !d.classList.contains("oculto");
+        });
+        var esconder = emOrdem || !algumaVisivel;
+        g.itens.forEach(function (el) {
+          if (!el.matches("details.ficha")) {
+            el.classList.toggle("oculto", esconder);
+          }
+        });
+      });
       var desc = "";
       if (extra) {
         desc = " · valor " + extra.valor + " × esforço " + extra.esforco;
       }
+      var vazio = filtrando && visiveis === 0 ? " Nenhuma ficha atende a esses filtros." : "";
       status.textContent = filtrando
-        ? visiveis + " de " + total + " requisitos" + desc + "."
+        ? visiveis + " de " + total + " requisitos" + desc + "." + vazio
         : "Mostrando os " + total + " requisitos.";
     }
 
@@ -79,6 +156,14 @@
     function lerEndereco() {
       var h = decodeURIComponent((window.location.hash || "").slice(1));
       if (!h) {
+        return;
+      }
+      if (h === "ordem") {
+        if (modo) {
+          modo.value = "ordem";
+        }
+        aplicar();
+        barra.scrollIntoView();
         return;
       }
       var m = /^valor-(\d)-esforco-(\d)$/.exec(h);
@@ -120,9 +205,15 @@
     selects.forEach(function (s) {
       s.addEventListener("change", function () { extra = null; aplicar(); });
     });
+    if (modo) {
+      modo.addEventListener("change", aplicar);
+    }
     texto.addEventListener("input", aplicar);
     limpar.addEventListener("click", function () {
       zerar();
+      if (modo) {
+        modo.value = "cp";
+      }
       aplicar();
       if (window.location.hash && window.history && window.history.replaceState) {
         try {

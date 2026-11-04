@@ -22,79 +22,28 @@ condições, critérios, prioridade, entrega, situação e evolução. As outras
 
 ## Como usar
 
-- **Visão geral:** a tabela abaixo segue a **ordem do backlog** (valor, risco, capacidade de entrega
-  e dependências, ver [Priorização](../09-priorizacao/index.md)). Clique no ID para abrir a ficha.
+- **Ordem do backlog:** o número antes do ID é a posição na ordem do backlog (valor, risco,
+  capacidade de entrega e dependências, ver [Priorização](../09-priorizacao/index.md)). Em
+  *Mostrar*, escolha **Na ordem do backlog** para ver todas as fichas numa lista única, nessa ordem.
 - **Filtros:** combine característica, MVP, release, sprint e situação. Os links das outras páginas
   já chegam com o filtro aplicado.
-- **Fichas:** agrupadas por característica de produto. Cada ficha abre e fecha.
+- **Fichas:** agrupadas por característica de produto, ou na ordem do backlog. Cada ficha abre e fecha.
 - **Granularidade:** cada RF é um item do backlog. Quando o comportamento muda por ator, a ficha
   traz uma declaração de intenção por ator (a, b), sem criar outro ID. As tarefas técnicas da sprint
   ficam no [quadro da equipe no GitHub Projects](https://github.com/orgs/mdsreq-fga-unb/projects/131){target="_blank"}, com responsável, sprint e situação de cada issue.
 
+<div id="ordem"></div>
+
 <div class="filtros" id="filtros" markdown="0">
-<label>Característica<select id="f-cp" data-campo="cp"><option value="">Todos</option><option value="cp1">CP1 · Portal institucional e agenda de atividades</option><option value="cp2">CP2 · Registro de doações de itens</option><option value="cp3">CP3 · Cadastro de famílias e participantes</option><option value="cp4">CP4 · Inscrição em atividades e organização do atendimento</option><option value="cp5">CP5 · Chamada digital e controle de frequência</option><option value="cp6">CP6 · Relatórios e indicadores de impacto</option><option value="cp7">CP7 · Perfis de acesso e proteção de dados</option></select></label><label>MVP<select id="f-mvp" data-campo="mvp"><option value="">Todos</option><option value="sim">Sim (19)</option><option value="complemento">Complemento</option><option value="nao">Não</option></select></label><label>Release<select id="f-release" data-campo="release"><option value="">Todos</option><option value="r1">R1</option><option value="r2">R2</option><option value="r3">R3</option><option value="r4">R4</option><option value="trilha-cp1">Trilha CP1</option></select></label><label>Sprint<select id="f-sprint" data-campo="sprint"><option value="">Todos</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="fechamento">Fechamento</option><option value="nao-planejado">Não planejado</option></select></label><label>Situação<select id="f-situacao" data-campo="situacao"><option value="">Todos</option><option value="em-andamento">Em andamento</option><option value="pronta">Pronta pela DoR</option><option value="a-refinar">A refinar</option><option value="nao-iniciada">Não iniciada</option><option value="concluida">Concluída</option></select></label><label>Buscar<input id="f-texto" type="search" placeholder="ID ou palavra"></label><button type="button" id="f-limpar">Limpar filtros</button><p class="filtros__status" id="f-status" aria-live="polite"></p>
+<label>Característica<select id="f-cp" data-campo="cp"><option value="">Todos</option><option value="cp1">CP1 · Portal institucional e agenda de atividades</option><option value="cp2">CP2 · Registro de doações de itens</option><option value="cp3">CP3 · Cadastro de famílias e participantes</option><option value="cp4">CP4 · Inscrição em atividades e organização do atendimento</option><option value="cp5">CP5 · Chamada digital e controle de frequência</option><option value="cp6">CP6 · Relatórios e indicadores de impacto</option><option value="cp7">CP7 · Perfis de acesso e proteção de dados</option></select></label><label>MVP<select id="f-mvp" data-campo="mvp"><option value="">Todos</option><option value="sim">Sim (19)</option><option value="complemento">Complemento</option><option value="nao">Não</option></select></label><label>Release<select id="f-release" data-campo="release"><option value="">Todos</option><option value="r1">R1</option><option value="r2">R2</option><option value="r3">R3</option><option value="r4">R4</option><option value="trilha-cp1">Trilha CP1</option></select></label><label>Sprint<select id="f-sprint" data-campo="sprint"><option value="">Todos</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="fechamento">Fechamento</option><option value="nao-planejado">Não planejado</option></select></label><label>Situação<select id="f-situacao" data-campo="situacao"><option value="">Todos</option><option value="em-andamento">Em andamento</option><option value="pronta">Pronta pela DoR</option><option value="a-refinar">A refinar</option><option value="nao-iniciada">Não iniciada</option><option value="concluida">Concluída</option></select></label><label>Buscar<input id="f-texto" type="search" placeholder="ID ou palavra"></label><label>Mostrar<select id="f-modo"><option value="cp">Por característica</option><option value="ordem">Na ordem do backlog</option></select></label><button type="button" id="f-limpar">Limpar filtros</button><p class="filtros__status" id="f-status" aria-live="polite"></p>
 </div>
-
-## Visão geral na ordem do backlog {#ordem}
-
-<div class="resumo" markdown="0"><table class="resumo__tabela">
-<thead><tr><th>#</th><th>ID</th><th>Requisito</th><th>CP</th><th title="Valor de negócio, 1 a 4">Valor</th><th title="Esforço técnico, 1 a 4">Esf.</th><th>Risco</th><th>Release</th><th>Sprint</th><th>MVP</th><th>Situação</th></tr></thead>
-<tbody>
-<tr data-id="t01" data-cp="tec" data-release="r1" data-sprint="6" data-mvp="tec" data-situacao="em-andamento"><td>1</td><td><a href="#t01">T01</a></td><td>Ambiente de desenvolvimento</td><td>—</td><td>4</td><td>—</td><td>Alto</td><td>R1</td><td>6</td><td>—</td><td>Em andamento</td></tr>
-<tr data-id="rf41" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2"><td>2</td><td><a href="#rf41">RF41</a></td><td>Autenticar usuário</td><td>CP7</td><td>4</td><td>2</td><td>Alto</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf39" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1"><td>3</td><td><a href="#rf39">RF39</a></td><td>Cadastrar usuário do sistema</td><td>CP7</td><td>4</td><td>1</td><td>Médio</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf40" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2"><td>4</td><td><a href="#rf40">RF40</a></td><td>Atribuir perfil de acesso ao usuário</td><td>CP7</td><td>4</td><td>2</td><td>Alto</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf42" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2"><td>5</td><td><a href="#rf42">RF42</a></td><td>Registrar consentimentos e autorizações (LGPD e Imagem)</td><td>CP7</td><td>4</td><td>2</td><td>Alto</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf11" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1"><td>6</td><td><a href="#rf11">RF11</a></td><td>Cadastrar categoria de item</td><td>CP2</td><td>4</td><td>1</td><td>Baixo</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf08" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2"><td>7</td><td><a href="#rf08">RF08</a></td><td>Cadastrar ou atualizar doador</td><td>CP2</td><td>4</td><td>2</td><td>Baixo</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf09" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2"><td>8</td><td><a href="#rf09">RF09</a></td><td>Registrar doação recebida</td><td>CP2</td><td>4</td><td>2</td><td>Médio</td><td>R1</td><td>6</td><td>Sim</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf12" data-cp="cp2" data-release="r3" data-sprint="6" data-mvp="complemento" data-situacao="em-andamento" data-valor="3" data-esforco="2"><td>9</td><td><a href="#rf12">RF12</a></td><td>Consultar saldo de itens doados</td><td>CP2</td><td>3</td><td>2</td><td>Médio</td><td>R3</td><td>6</td><td>Complemento</td><td><span class="chip chip--sit-em-andamento">Em andamento</span></td></tr>
-<tr data-id="rf14" data-cp="cp3" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>10</td><td><a href="#rf14">RF14</a></td><td>Cadastrar família</td><td>CP3</td><td>4</td><td>2</td><td>Médio</td><td>R1</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf10" data-cp="cp2" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="pronta" data-valor="4" data-esforco="2"><td>11</td><td><a href="#rf10">RF10</a></td><td>Registrar destinação de doação</td><td>CP2</td><td>4</td><td>2</td><td>Médio</td><td>R1</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-pronta">Pronta pela DoR</span></td></tr>
-<tr data-id="rf16" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>12</td><td><a href="#rf16">RF16</a></td><td>Cadastrar participante</td><td>CP3</td><td>4</td><td>2</td><td>Médio</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf18" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>13</td><td><a href="#rf18">RF18</a></td><td>Vincular participante a família</td><td>CP3</td><td>4</td><td>2</td><td>Baixo</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf20" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1"><td>14</td><td><a href="#rf20">RF20</a></td><td>Cadastrar turma de atividade</td><td>CP4</td><td>4</td><td>1</td><td>Baixo</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf23" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>15</td><td><a href="#rf23">RF23</a></td><td>Inscrever participante em turma</td><td>CP4</td><td>4</td><td>2</td><td>Médio</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf19" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>16</td><td><a href="#rf19">RF19</a></td><td>Consultar cadastro de participantes</td><td>CP3</td><td>4</td><td>2</td><td>Baixo</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf27" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2"><td>17</td><td><a href="#rf27">RF27</a></td><td>Abrir chamada do encontro</td><td>CP5</td><td>4</td><td>2</td><td>Alto</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf28" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1"><td>18</td><td><a href="#rf28">RF28</a></td><td>Registrar frequência do participante</td><td>CP5</td><td>4</td><td>1</td><td>Médio</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf29" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1"><td>19</td><td><a href="#rf29">RF29</a></td><td>Justificar falta</td><td>CP5</td><td>3</td><td>1</td><td>Baixo</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf30" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1"><td>20</td><td><a href="#rf30">RF30</a></td><td>Corrigir registro de frequência</td><td>CP5</td><td>3</td><td>1</td><td>Médio</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf31" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1"><td>21</td><td><a href="#rf31">RF31</a></td><td>Consultar frequência do participante</td><td>CP5</td><td>3</td><td>1</td><td>Baixo</td><td>R2</td><td>7</td><td>Sim</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf24" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>22</td><td><a href="#rf24">RF24</a></td><td>Cancelar inscrição de participante</td><td>CP4</td><td>3</td><td>2</td><td>Baixo</td><td>R3</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf25" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2"><td>23</td><td><a href="#rf25">RF25</a></td><td>Registrar participante em lista de espera</td><td>CP4</td><td>3</td><td>2</td><td>Baixo</td><td>R3</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf26" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2"><td>24</td><td><a href="#rf26">RF26</a></td><td>Consultar inscritos da turma</td><td>CP4</td><td>3</td><td>2</td><td>Baixo</td><td>R3</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf15" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3"><td>25</td><td><a href="#rf15">RF15</a></td><td>Atualizar ou inativar cadastro de família</td><td>CP3</td><td>3</td><td>3</td><td>Baixo</td><td>R3</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf17" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3"><td>26</td><td><a href="#rf17">RF17</a></td><td>Atualizar ou inativar cadastro de participante</td><td>CP3</td><td>3</td><td>3</td><td>Baixo</td><td>R3</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf32" data-cp="cp5" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>27</td><td><a href="#rf32">RF32</a></td><td>Sinalizar participante com faltas acima do limite</td><td>CP5</td><td>3</td><td>2</td><td>Médio</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf33" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>28</td><td><a href="#rf33">RF33</a></td><td>Gerar relatório de doações recebidas</td><td>CP6</td><td>3</td><td>2</td><td>Alto</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf34" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>29</td><td><a href="#rf34">RF34</a></td><td>Gerar relatório de doações distribuídas</td><td>CP6</td><td>3</td><td>2</td><td>Alto</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf36" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>30</td><td><a href="#rf36">RF36</a></td><td>Gerar relatório de famílias atendidas</td><td>CP6</td><td>3</td><td>2</td><td>Médio</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf38" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>31</td><td><a href="#rf38">RF38</a></td><td>Exportar relatório gerado</td><td>CP6</td><td>3</td><td>2</td><td>Médio</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf13" data-cp="cp2" data-release="trilha-cp1" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>32</td><td><a href="#rf13">RF13</a></td><td>Publicar lista de itens necessários</td><td>CP2</td><td>3</td><td>2</td><td>—</td><td>Trilha CP1</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf43" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>33</td><td><a href="#rf43">RF43</a></td><td>Registrar e acompanhar solicitação de exclusão de dados</td><td>CP7</td><td>3</td><td>2</td><td>Médio</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf45" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2"><td>34</td><td><a href="#rf45">RF45</a></td><td>Consultar autorização de uso de imagem vigente</td><td>CP7</td><td>3</td><td>2</td><td>Baixo</td><td>R4</td><td>8</td><td>Complemento</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf21" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3"><td>35</td><td><a href="#rf21">RF21</a></td><td>Atualizar turma de atividade</td><td>CP4</td><td>2</td><td>3</td><td>Baixo</td><td>R3</td><td>8</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf22" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="1"><td>36</td><td><a href="#rf22">RF22</a></td><td>Encerrar turma de atividade</td><td>CP4</td><td>2</td><td>1</td><td>Baixo</td><td>R3</td><td>8</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf35" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2"><td>37</td><td><a href="#rf35">RF35</a></td><td>Gerar relatório de frequência por turma</td><td>CP6</td><td>2</td><td>2</td><td>Médio</td><td>R4</td><td>8</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf37" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2"><td>38</td><td><a href="#rf37">RF37</a></td><td>Consultar painel de indicadores</td><td>CP6</td><td>2</td><td>2</td><td>Alto</td><td>R4</td><td>8</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf44" data-cp="cp7" data-release="r4" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2"><td>39</td><td><a href="#rf44">RF44</a></td><td>Consultar histórico de alterações de cadastro</td><td>CP7</td><td>2</td><td>2</td><td>Médio</td><td>R4</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf01" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2"><td>40</td><td><a href="#rf01">RF01</a></td><td>Publicar conteúdo institucional</td><td>CP1</td><td>2</td><td>2</td><td>—</td><td>Trilha CP1</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf02" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="1"><td>41</td><td><a href="#rf02">RF02</a></td><td>Atualizar conteúdo institucional</td><td>CP1</td><td>2</td><td>1</td><td>—</td><td>Trilha CP1</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf03" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2"><td>42</td><td><a href="#rf03">RF03</a></td><td>Cadastrar atividade na agenda</td><td>CP1</td><td>2</td><td>2</td><td>—</td><td>Trilha CP1</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf04" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2"><td>43</td><td><a href="#rf04">RF04</a></td><td>Atualizar atividade na agenda</td><td>CP1</td><td>2</td><td>2</td><td>—</td><td>Trilha CP1</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-a-refinar">A refinar</span></td></tr>
-<tr data-id="rf05" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3"><td>44</td><td><a href="#rf05">RF05</a></td><td>Consultar agenda de atividades</td><td>CP1</td><td>2</td><td>3</td><td>—</td><td>Trilha CP1</td><td>Fechamento</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf06" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2"><td>45</td><td><a href="#rf06">RF06</a></td><td>Registrar solicitação de contato</td><td>CP1</td><td>1</td><td>2</td><td>—</td><td>Trilha CP1</td><td>Não planejado</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-<tr data-id="rf07" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2"><td>46</td><td><a href="#rf07">RF07</a></td><td>Consultar solicitações de contato</td><td>CP1</td><td>1</td><td>2</td><td>—</td><td>Trilha CP1</td><td>Não planejado</td><td>Não</td><td><span class="chip chip--sit-nao-iniciada">Não iniciada</span></td></tr>
-</tbody></table></div>
-
 
 ## CP1 · Portal institucional e agenda de atividades {#cp1}
 
 Disponibilização das informações institucionais e das atividades da associação. **Valor de negócio (VN1):** Centralização das informações destinadas à comunidade e aos apoiadores. Objetivos: OE1, OE5. 7 requisitos.
 
-<details class="ficha" id="rf01" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF01</span> <span class="ficha__nome">Publicar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf01" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" data-ordem="40" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">40º</span> <span class="ficha__id">RF01</span> <span class="ficha__nome">Publicar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -111,8 +60,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf02" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF02</span> <span class="ficha__nome">Atualizar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf02" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="1" data-ordem="41" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">41º</span> <span class="ficha__id">RF02</span> <span class="ficha__nome">Atualizar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -129,8 +78,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf03" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF03</span> <span class="ficha__nome">Cadastrar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf03" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" data-ordem="42" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">42º</span> <span class="ficha__id">RF03</span> <span class="ficha__nome">Cadastrar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -147,8 +96,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf04" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF04</span> <span class="ficha__nome">Atualizar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf04" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" data-ordem="43" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">43º</span> <span class="ficha__id">RF04</span> <span class="ficha__nome">Atualizar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -165,8 +114,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf05" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" markdown="1">
-<summary><span class="ficha__id">RF05</span> <span class="ficha__nome">Consultar agenda de atividades</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf05" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" data-ordem="44" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">44º</span> <span class="ficha__id">RF05</span> <span class="ficha__nome">Consultar agenda de atividades</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -183,8 +132,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf06" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF06</span> <span class="ficha__nome">Registrar solicitação de contato</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Não planejado</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf06" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2" data-ordem="45" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">45º</span> <span class="ficha__id">RF06</span> <span class="ficha__nome">Registrar solicitação de contato</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Não planejado</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -201,8 +150,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf07" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF07</span> <span class="ficha__nome">Consultar solicitações de contato</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Não planejado</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf07" data-cp="cp1" data-release="trilha-cp1" data-sprint="nao-planejado" data-mvp="nao" data-situacao="nao-iniciada" data-valor="1" data-esforco="2" data-ordem="46" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">46º</span> <span class="ficha__id">RF07</span> <span class="ficha__nome">Consultar solicitações de contato</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Não planejado</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -224,8 +173,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (VN2):** Redução de registros de doações não realizados e maior visibilidade sobre os itens recebidos e distribuídos. Objetivos: OE2, OE5. 6 requisitos.
 
-<details class="ficha" id="rf08" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF08</span> <span class="ficha__nome">Cadastrar ou atualizar doador</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf08" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="7" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">7º</span> <span class="ficha__id">RF08</span> <span class="ficha__nome">Cadastrar ou atualizar doador</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -242,8 +191,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf09" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF09</span> <span class="ficha__nome">Registrar doação recebida</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf09" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="8" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">8º</span> <span class="ficha__id">RF09</span> <span class="ficha__nome">Registrar doação recebida</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -260,8 +209,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf10" data-cp="cp2" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="pronta" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF10</span> <span class="ficha__nome">Registrar destinação de doação</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-pronta">Pronta pela DoR</span></span></summary>
+<details class="ficha" id="rf10" data-cp="cp2" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="pronta" data-valor="4" data-esforco="2" data-ordem="11" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">11º</span> <span class="ficha__id">RF10</span> <span class="ficha__nome">Registrar destinação de doação</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-pronta">Pronta pela DoR</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -278,8 +227,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf11" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF11</span> <span class="ficha__nome">Cadastrar categoria de item</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf11" data-cp="cp2" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1" data-ordem="6" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">6º</span> <span class="ficha__id">RF11</span> <span class="ficha__nome">Cadastrar categoria de item</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -296,8 +245,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf12" data-cp="cp2" data-release="r3" data-sprint="6" data-mvp="complemento" data-situacao="em-andamento" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF12</span> <span class="ficha__nome">Consultar saldo de itens doados</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf12" data-cp="cp2" data-release="r3" data-sprint="6" data-mvp="complemento" data-situacao="em-andamento" data-valor="3" data-esforco="2" data-ordem="9" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">9º</span> <span class="ficha__id">RF12</span> <span class="ficha__nome">Consultar saldo de itens doados</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -314,8 +263,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf13" data-cp="cp2" data-release="trilha-cp1" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF13</span> <span class="ficha__nome">Publicar lista de itens necessários</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">Trilha CP1</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf13" data-cp="cp2" data-release="trilha-cp1" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="32" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">32º</span> <span class="ficha__id">RF13</span> <span class="ficha__nome">Publicar lista de itens necessários</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">Trilha CP1</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -337,8 +286,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (VN3):** Centralização dos dados atualmente mantidos de forma isolada. Objetivos: OE3, OE6. 6 requisitos.
 
-<details class="ficha" id="rf14" data-cp="cp3" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF14</span> <span class="ficha__nome">Cadastrar família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf14" data-cp="cp3" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="10" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">10º</span> <span class="ficha__id">RF14</span> <span class="ficha__nome">Cadastrar família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -355,8 +304,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 </details>
 
-<details class="ficha" id="rf15" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3" markdown="1">
-<summary><span class="ficha__id">RF15</span> <span class="ficha__nome">Atualizar ou inativar cadastro de família</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf15" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3" data-ordem="25" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">25º</span> <span class="ficha__id">RF15</span> <span class="ficha__nome">Atualizar ou inativar cadastro de família</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -373,8 +322,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 </details>
 
-<details class="ficha" id="rf16" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF16</span> <span class="ficha__nome">Cadastrar participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf16" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="12" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">12º</span> <span class="ficha__id">RF16</span> <span class="ficha__nome">Cadastrar participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -391,8 +340,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 </details>
 
-<details class="ficha" id="rf17" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3" markdown="1">
-<summary><span class="ficha__id">RF17</span> <span class="ficha__nome">Atualizar ou inativar cadastro de participante</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf17" data-cp="cp3" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="3" data-ordem="26" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">26º</span> <span class="ficha__id">RF17</span> <span class="ficha__nome">Atualizar ou inativar cadastro de participante</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -409,8 +358,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 </details>
 
-<details class="ficha" id="rf18" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF18</span> <span class="ficha__nome">Vincular participante a família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf18" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="13" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">13º</span> <span class="ficha__id">RF18</span> <span class="ficha__nome">Vincular participante a família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -427,8 +376,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 </details>
 
-<details class="ficha" id="rf19" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF19</span> <span class="ficha__nome">Consultar cadastro de participantes</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf19" data-cp="cp3" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="16" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">16º</span> <span class="ficha__id">RF19</span> <span class="ficha__nome">Consultar cadastro de participantes</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -450,8 +399,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 
 Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio (VN4):** Organização e rastreabilidade dos atendimentos realizados. Objetivos: OE3. 7 requisitos.
 
-<details class="ficha" id="rf20" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF20</span> <span class="ficha__nome">Cadastrar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf20" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1" data-ordem="14" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">14º</span> <span class="ficha__id">RF20</span> <span class="ficha__nome">Cadastrar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -468,8 +417,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf21" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" markdown="1">
-<summary><span class="ficha__id">RF21</span> <span class="ficha__nome">Atualizar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf21" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" data-ordem="35" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">35º</span> <span class="ficha__id">RF21</span> <span class="ficha__nome">Atualizar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -486,8 +435,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf22" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF22</span> <span class="ficha__nome">Encerrar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf22" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="1" data-ordem="36" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">36º</span> <span class="ficha__id">RF22</span> <span class="ficha__nome">Encerrar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -504,8 +453,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf23" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF23</span> <span class="ficha__nome">Inscrever participante em turma</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf23" data-cp="cp4" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="15" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">15º</span> <span class="ficha__id">RF23</span> <span class="ficha__nome">Inscrever participante em turma</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -522,8 +471,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf24" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF24</span> <span class="ficha__nome">Cancelar inscrição de participante</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf24" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="22" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">22º</span> <span class="ficha__id">RF24</span> <span class="ficha__nome">Cancelar inscrição de participante</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -540,8 +489,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf25" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF25</span> <span class="ficha__nome">Registrar participante em lista de espera</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf25" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2" data-ordem="23" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">23º</span> <span class="ficha__id">RF25</span> <span class="ficha__nome">Registrar participante em lista de espera</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -558,8 +507,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf26" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF26</span> <span class="ficha__nome">Consultar inscritos da turma</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf26" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="complemento" data-situacao="a-refinar" data-valor="3" data-esforco="2" data-ordem="24" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">24º</span> <span class="ficha__id">RF26</span> <span class="ficha__nome">Consultar inscritos da turma</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -581,8 +530,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN5):** Redução da conferência manual de presença e apoio à aplicação da regra de faltas. Objetivos: OE4, OE5. 6 requisitos.
 
-<details class="ficha" id="rf27" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF27</span> <span class="ficha__nome">Abrir chamada do encontro</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf27" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="2" data-ordem="17" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">17º</span> <span class="ficha__id">RF27</span> <span class="ficha__nome">Abrir chamada do encontro</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -599,8 +548,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 </details>
 
-<details class="ficha" id="rf28" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF28</span> <span class="ficha__nome">Registrar frequência do participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf28" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="a-refinar" data-valor="4" data-esforco="1" data-ordem="18" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">18º</span> <span class="ficha__id">RF28</span> <span class="ficha__nome">Registrar frequência do participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -617,8 +566,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 </details>
 
-<details class="ficha" id="rf29" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF29</span> <span class="ficha__nome">Justificar falta</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf29" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" data-ordem="19" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">19º</span> <span class="ficha__id">RF29</span> <span class="ficha__nome">Justificar falta</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -635,8 +584,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 </details>
 
-<details class="ficha" id="rf30" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF30</span> <span class="ficha__nome">Corrigir registro de frequência</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf30" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" data-ordem="20" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">20º</span> <span class="ficha__id">RF30</span> <span class="ficha__nome">Corrigir registro de frequência</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -653,8 +602,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 </details>
 
-<details class="ficha" id="rf31" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF31</span> <span class="ficha__nome">Consultar frequência do participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf31" data-cp="cp5" data-release="r2" data-sprint="7" data-mvp="sim" data-situacao="nao-iniciada" data-valor="3" data-esforco="1" data-ordem="21" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">21º</span> <span class="ficha__id">RF31</span> <span class="ficha__nome">Consultar frequência do participante</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R2</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -671,8 +620,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 </details>
 
-<details class="ficha" id="rf32" data-cp="cp5" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF32</span> <span class="ficha__nome">Sinalizar participante com faltas acima do limite</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf32" data-cp="cp5" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="27" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">27º</span> <span class="ficha__id">RF32</span> <span class="ficha__nome">Sinalizar participante com faltas acima do limite</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -694,8 +643,8 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 
 Acompanhamento dos resultados e indicadores da associação. **Valor de negócio (VN6):** Apoio à prestação de contas e à captação de novos apoiadores. Objetivos: OE5. 6 requisitos.
 
-<details class="ficha" id="rf33" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF33</span> <span class="ficha__nome">Gerar relatório de doações recebidas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf33" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="28" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">28º</span> <span class="ficha__id">RF33</span> <span class="ficha__nome">Gerar relatório de doações recebidas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -712,8 +661,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf34" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF34</span> <span class="ficha__nome">Gerar relatório de doações distribuídas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf34" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="29" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">29º</span> <span class="ficha__id">RF34</span> <span class="ficha__nome">Gerar relatório de doações distribuídas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -730,8 +679,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf35" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF35</span> <span class="ficha__nome">Gerar relatório de frequência por turma</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf35" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" data-ordem="37" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">37º</span> <span class="ficha__id">RF35</span> <span class="ficha__nome">Gerar relatório de frequência por turma</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -748,8 +697,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf36" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF36</span> <span class="ficha__nome">Gerar relatório de famílias atendidas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf36" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="30" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">30º</span> <span class="ficha__id">RF36</span> <span class="ficha__nome">Gerar relatório de famílias atendidas</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -766,8 +715,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf37" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF37</span> <span class="ficha__nome">Consultar painel de indicadores</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf37" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" data-ordem="38" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">38º</span> <span class="ficha__id">RF37</span> <span class="ficha__nome">Consultar painel de indicadores</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -784,8 +733,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf38" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF38</span> <span class="ficha__nome">Exportar relatório gerado</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf38" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="31" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">31º</span> <span class="ficha__id">RF38</span> <span class="ficha__nome">Exportar relatório gerado</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -807,8 +756,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 Controle de acesso e proteção dos dados tratados pela solução. **Valor de negócio (VN7):** Proteção dos dados das famílias atendidas e conformidade com a LGPD. Objetivos: OE6. 7 requisitos.
 
-<details class="ficha" id="rf39" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1" markdown="1">
-<summary><span class="ficha__id">RF39</span> <span class="ficha__nome">Cadastrar usuário do sistema</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf39" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="1" data-ordem="3" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">3º</span> <span class="ficha__id">RF39</span> <span class="ficha__nome">Cadastrar usuário do sistema</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -825,8 +774,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf40" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF40</span> <span class="ficha__nome">Atribuir perfil de acesso ao usuário</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf40" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="4" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">4º</span> <span class="ficha__id">RF40</span> <span class="ficha__nome">Atribuir perfil de acesso ao usuário</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -843,8 +792,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf41" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF41</span> <span class="ficha__nome">Autenticar usuário</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf41" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="2" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">2º</span> <span class="ficha__id">RF41</span> <span class="ficha__nome">Autenticar usuário</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -861,8 +810,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf42" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF42</span> <span class="ficha__nome">Registrar consentimentos e autorizações (LGPD e Imagem)</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf42" data-cp="cp7" data-release="r1" data-sprint="6" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="5" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">5º</span> <span class="ficha__id">RF42</span> <span class="ficha__nome">Registrar consentimentos e autorizações (LGPD e Imagem)</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 6</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -879,8 +828,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf43" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF43</span> <span class="ficha__nome">Registrar e acompanhar solicitação de exclusão de dados</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf43" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="33" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">33º</span> <span class="ficha__id">RF43</span> <span class="ficha__nome">Registrar e acompanhar solicitação de exclusão de dados</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -897,8 +846,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf44" data-cp="cp7" data-release="r4" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF44</span> <span class="ficha__nome">Consultar histórico de alterações de cadastro</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf44" data-cp="cp7" data-release="r4" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" data-ordem="39" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">39º</span> <span class="ficha__id">RF44</span> <span class="ficha__nome">Consultar histórico de alterações de cadastro</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -915,8 +864,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 </details>
 
-<details class="ficha" id="rf45" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" markdown="1">
-<summary><span class="ficha__id">RF45</span> <span class="ficha__nome">Consultar autorização de uso de imagem vigente</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf45" data-cp="cp7" data-release="r4" data-sprint="8" data-mvp="complemento" data-situacao="nao-iniciada" data-valor="3" data-esforco="2" data-ordem="34" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">34º</span> <span class="ficha__id">RF45</span> <span class="ficha__nome">Consultar autorização de uso de imagem vigente</span> <span class="ficha__chips"><span class="chip chip--mvp-complemento">MVP: Complemento</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -938,8 +887,8 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 
 O backlog é a única fonte do trabalho: além dos RFs, entram itens técnicos e de lançamento. Defeitos encontrados nas revisões entram aqui com o prefixo D (D01, D02…), no topo da ordem.
 
-<details class="ficha ficha--tec" id="t01" data-cp="tec" data-mvp="tec" markdown="1">
-<summary><span class="ficha__id">T01</span> <span class="ficha__nome">Ambiente de desenvolvimento: Nuxt.js, Supabase, deploy e CI</span> <span class="ficha__chips"><span class="chip">Sprint 6</span></span></summary>
+<details class="ficha ficha--tec" id="t01" data-cp="tec" data-mvp="tec" data-ordem="1" data-release="r1" data-sprint="6" data-situacao="em-andamento" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">1º</span> <span class="ficha__id">T01</span> <span class="ficha__nome">Ambiente de desenvolvimento: Nuxt.js, Supabase, deploy e CI</span> <span class="ficha__chips"><span class="chip">Sprint 6</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -949,7 +898,7 @@ O backlog é a única fonte do trabalho: além dos RFs, entram itens técnicos e
 
 </details>
 
-<details class="ficha ficha--tec" id="t02" data-cp="tec" data-mvp="tec" markdown="1">
+<details class="ficha ficha--tec" id="t02" data-cp="tec" data-mvp="tec" data-sprint="8" data-situacao="nao-iniciada" markdown="1">
 <summary><span class="ficha__id">T02</span> <span class="ficha__nome">Plano de transição</span> <span class="ficha__chips"><span class="chip">Sprint 8</span></span></summary>
 
 | Parte do registro | Informação |
@@ -960,7 +909,7 @@ O backlog é a única fonte do trabalho: além dos RFs, entram itens técnicos e
 
 </details>
 
-<details class="ficha ficha--tec" id="t03" data-cp="tec" data-mvp="tec" markdown="1">
+<details class="ficha ficha--tec" id="t03" data-cp="tec" data-mvp="tec" data-sprint="fechamento" data-situacao="nao-iniciada" markdown="1">
 <summary><span class="ficha__id">T03</span> <span class="ficha__nome">Treinamento e manual de uso</span> <span class="ficha__chips"><span class="chip">Sprint Fechamento</span></span></summary>
 
 | Parte do registro | Informação |
@@ -971,7 +920,7 @@ O backlog é a única fonte do trabalho: além dos RFs, entram itens técnicos e
 
 </details>
 
-<details class="ficha ficha--tec" id="t04" data-cp="tec" data-mvp="tec" markdown="1">
+<details class="ficha ficha--tec" id="t04" data-cp="tec" data-mvp="tec" data-sprint="fechamento" data-situacao="nao-iniciada" markdown="1">
 <summary><span class="ficha__id">T04</span> <span class="ficha__nome">Titularidade das contas e backup</span> <span class="ficha__chips"><span class="chip">Sprint Fechamento</span></span></summary>
 
 | Parte do registro | Informação |

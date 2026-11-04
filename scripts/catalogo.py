@@ -9,6 +9,8 @@ O que é verificado:
 2. "Depende de" só aponta para fichas que existem.
 3. O campo "Evolução" de uma ficha não cita critérios de aceitação de outro RF
    (ex.: CA-RF10-06 dentro da ficha do RF14), o que indica nota copiada para o lugar errado.
+4. A posição na ordem do backlog é a mesma no atributo data-ordem, no número antes do ID e no
+   campo Priorização ("Posição N na ordem"), e nenhuma posição se repete.
 """
 
 import re
@@ -101,6 +103,23 @@ def verificar():
                 problemas.append(
                     f"{rf.upper()}: o campo 'Evolução' cita CA-RF{n}, critério de outra ficha. "
                     "A nota pode ter sido copiada para o lugar errado.")
+    posicoes = {}
+    for bloco in re.findall(r'<details class="ficha[^"]*" id="[a-z]+\d\d".*?</details>', texto, re.S):
+        ident = re.search(r'id="([a-z]+\d\d)"', bloco).group(1).upper()
+        atributo = re.search(r'data-ordem="(\d+)"', bloco)
+        if not atributo:
+            continue
+        n = atributo.group(1)
+        numero = re.search(r'class="ficha__ordem"[^>]*>(\d+)º<', bloco)
+        texto_pos = re.search(r"Posição \*\*(\d+)\*\* na ordem", bloco)
+        if not numero or numero.group(1) != n:
+            problemas.append(f"{ident}: o número antes do ID não bate com data-ordem={n}.")
+        if texto_pos and texto_pos.group(1) != n:
+            problemas.append(f"{ident}: Priorização diz posição {texto_pos.group(1)}, mas data-ordem={n}.")
+        posicoes.setdefault(n, []).append(ident)
+    for n, ids in sorted(posicoes.items(), key=lambda x: int(x[0])):
+        if len(ids) > 1:
+            problemas.append(f"Posição {n} repetida em: {', '.join(ids)}.")
     if problemas:
         print("Problemas no catálogo:")
         for p in problemas:

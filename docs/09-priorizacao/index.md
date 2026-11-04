@@ -78,7 +78,8 @@ use os filtros ou um destes atalhos:
 
 ## 9.6 Como atualizar uma prioridade
 
-1. Mude valor, esforço, risco ou posição **na ficha do RF**, no catálogo, e reordene a tabela de
-   visão geral.
+1. Mude valor, esforço, risco ou posição **na ficha do RF**, no catálogo. Ao mudar uma posição,
+   ajuste nas fichas afetadas o atributo `data-ordem`, o número antes do ID e a *Posição* no campo
+   Priorização; `python scripts/catalogo.py verificar` aponta posições repetidas ou que não batem.
 2. Registre a decisão, o motivo e a origem no [Histórico de evolução](../14-historico/index.md).
 3. Se a mudança alterar a release, atualize o [mapa de histórias](../12-mapa/index.md) no mesmo commit.

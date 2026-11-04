@@ -1,27 +1,61 @@
 <script setup lang="ts">
 import type { CategoriaResposta, DoadorResposta, SaldoResposta } from '~/types/contratos'
-import { mensagemErro } from '~/utils/http'
+import { abreviarUnidade, formatarData, formatarNumero, hojeISO } from '~/utils/formato'
+import { campoDoErro, mensagemErro } from '~/utils/http'
+
+// Protótipo: "Registrar entrada (Opção A)", "campos faltando" e "salva" (RF09, RF12, RNF01).
+// A destinação real (RF10) fica para a Sprint 7.
+type Campo = 'categoriaId' | 'quantidade' | 'doadorId' | 'data'
+type Resumo = { item: string, doador: string, data: string, saldoAntes: string, saldoDepois: string, categoria: string }
 
 const { data: categorias } = await useFetch<CategoriaResposta[]>('/api/categorias')
 const { data: doadores } = await useFetch<DoadorResposta[]>('/api/doadores')
-const { data: saldos, error, refresh } = await useFetch<SaldoResposta[]>('/api/doacoes/saldos')
+const { data: saldos, refresh: atualizarSaldos } = await useFetch<SaldoResposta[]>('/api/doacoes/saldos')
 const { data: sessao } = await useFetch('/api/acesso/sessao')
 
-const ehCoord = computed(() => sessao.value?.perfil === 'coordenacao')
-const aviso = ref('')
 const enviando = ref(false)
 const categoriaId = ref('')
-const quantidade = ref(1)
-const data = ref(new Date().toISOString().slice(0, 10))
+const quantidade = ref<number | null>(null)
+const data = ref(hojeISO())
 const doadorId = ref('')
-const saidaCategoriaId = ref('')
-const saidaQuantidade = ref(1)
-const saidaData = ref(new Date().toISOString().slice(0, 10))
-const destinoSintetico = ref('teste-sprint-6')
+const erros = ref<Partial<Record<Campo, string>>>({})
+const avisoGeral = ref('')
+const salvo = ref<Resumo | null>(null)
+
+const NOMES_CAMPO: Record<Campo, string> = {
+  categoriaId: 'Categoria',
+  quantidade: 'Quantidade',
+  doadorId: 'Doador',
+  data: 'Data do recebimento',
+}
+
+const categoriaAtual = computed(() => categorias.value?.find(item => item.id === categoriaId.value))
+const listaErros = computed(() => (Object.keys(erros.value) as Campo[]).map(campo => NOMES_CAMPO[campo]))
+
+function saldoDe(id: string) {
+  return saldos.value?.find(item => item.categoriaId === id)?.saldo ?? 0
+}
+
+function mudarQuantidade(passo: number) {
+  quantidade.value = Math.max(0, (quantidade.value ?? 0) + passo)
+}
+
+function validar() {
+  const novos: Partial<Record<Campo, string>> = {}
+  if (!categoriaId.value) novos.categoriaId = 'Escolha uma categoria da lista.'
+  if (!quantidade.value || quantidade.value <= 0) novos.quantidade = 'A quantidade precisa ser maior que zero.'
+  if (!doadorId.value) novos.doadorId = 'Escolha o doador.'
+  if (!data.value) novos.data = 'Informe a data do recebimento.'
+  erros.value = novos
+  return Object.keys(novos).length === 0
+}
 
 async function receber() {
-  aviso.value = ''
+  avisoGeral.value = ''
+  if (!validar()) return
   enviando.value = true
+  const categoria = categoriaAtual.value
+  const antes = saldoDe(categoriaId.value)
   try {
     await $fetch('/api/doacoes/recebimentos', {
       method: 'POST',
@@ -32,199 +66,329 @@ async function receber() {
         doadorId: doadorId.value,
       },
     })
-    await refresh()
+    await atualizarSaldos()
+    const abrev = abreviarUnidade(categoria?.unidade)
+    salvo.value = {
+      categoria: categoria?.nome ?? '',
+      item: `${formatarNumero(Number(quantidade.value))} ${abrev} · ${categoria?.nome ?? ''}`,
+      doador: doadores.value?.find(item => item.id === doadorId.value)?.nome ?? '',
+      data: formatarData(data.value),
+      saldoAntes: `${formatarNumero(antes)} ${abrev}`,
+      saldoDepois: `${formatarNumero(saldoDe(categoriaId.value))} ${abrev}`,
+    }
   }
   catch (falha) {
-    aviso.value = mensagemErro(falha)
+    const campo = campoDoErro(falha) as Campo | null
+    if (campo && campo in NOMES_CAMPO) {
+      erros.value = { [campo]: mensagemErro(falha) }
+    }
+    else {
+      avisoGeral.value = mensagemErro(falha)
+    }
   }
   finally {
     enviando.value = false
   }
 }
 
-async function saidaSintetica() {
-  aviso.value = ''
-  enviando.value = true
-  try {
-    await $fetch('/api/doacoes/saidas-sinteticas', {
-      method: 'POST',
-      body: {
-        categoriaId: saidaCategoriaId.value,
-        quantidade: Number(saidaQuantidade.value),
-        data: saidaData.value,
-        destinoSintetico: destinoSintetico.value,
-      },
-    })
-    await refresh()
-  }
-  catch (falha) {
-    aviso.value = mensagemErro(falha)
-  }
-  finally {
-    enviando.value = false
-  }
+function novaEntrada() {
+  salvo.value = null
+  categoriaId.value = ''
+  quantidade.value = null
+  doadorId.value = ''
+  data.value = hojeISO()
+  erros.value = {}
 }
 </script>
 
 <template>
-  <main>
-    <h1>Doações</h1>
-    <p>Recebimento (RF09) e saldo (RF12). A destinação real (RF10) fica para a Sprint 7.</p>
-    <p
-      v-if="error || aviso"
-      role="alert"
-    >
-      {{ aviso || mensagemErro(error) }}
-    </p>
+  <div>
+    <CabecalhoPagina
+      secao="Doações"
+      titulo="Registrar doação recebida"
+    />
 
-    <form @submit.prevent="receber">
-      <h2>Recebimento</h2>
-      <label>
-        Categoria
-        <select
-          v-model="categoriaId"
-          required
-        >
-          <option
-            disabled
-            value=""
-          >
-            Selecione
-          </option>
-          <option
-            v-for="categoria in categorias"
-            :key="categoria.id"
-            :value="categoria.id"
-          >
-            {{ categoria.nome }} ({{ categoria.unidade }})
-          </option>
-        </select>
-      </label>
-      <label>
-        Quantidade
-        <input
-          v-model.number="quantidade"
-          type="number"
-          min="0.001"
-          step="0.001"
-          required
-        >
-      </label>
-      <label>
-        Data
-        <input
-          v-model="data"
-          type="date"
-          required
-        >
-      </label>
-      <label>
-        Doador
-        <select
-          v-model="doadorId"
-          required
-        >
-          <option
-            disabled
-            value=""
-          >
-            Selecione
-          </option>
-          <option
-            v-for="doador in doadores"
-            :key="doador.id"
-            :value="doador.id"
-          >
-            {{ doador.nome }}
-          </option>
-        </select>
-      </label>
-      <button
-        type="submit"
-        :disabled="enviando"
+    <main class="pagina pagina--estreita">
+      <section
+        v-if="salvo"
+        role="status"
+        class="cartao sucesso"
       >
-        Registrar entrada
-      </button>
-    </form>
-
-    <h2>Saldo</h2>
-    <table v-if="saldos">
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Saldo</th>
-          <th>Unidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="item in saldos"
-          :key="item.categoriaId"
-        >
-          <td>{{ item.nome }}</td>
-          <td>{{ item.saldo }}</td>
-          <td>{{ item.unidade }}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <form
-      v-if="ehCoord"
-      @submit.prevent="saidaSintetica"
-    >
-      <h2>Saída sintética (teste do cálculo, sem tela de destinação)</h2>
-      <label>
-        Categoria
-        <select
-          v-model="saidaCategoriaId"
-          required
-        >
-          <option
-            disabled
-            value=""
+        <div class="sucesso__topo">
+          <span
+            class="sucesso__icone"
+            aria-hidden="true"
           >
-            Selecione
-          </option>
-          <option
-            v-for="categoria in categorias"
-            :key="categoria.id"
-            :value="categoria.id"
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ><path d="M5 12l5 5L20 7" /></svg>
+          </span>
+          <h2>Entrada salva</h2>
+        </div>
+        <dl class="sucesso__dados">
+          <dt>Item</dt>
+          <dd>{{ salvo.item }}</dd>
+          <dt>Doador</dt>
+          <dd>{{ salvo.doador }}</dd>
+          <dt>Data</dt>
+          <dd>{{ salvo.data }}</dd>
+          <dt>Registrado por</dt>
+          <dd>{{ sessao?.usuario.email }}</dd>
+        </dl>
+        <div class="alerta alerta--sucesso">
+          <span>Saldo de {{ salvo.categoria }} agora: <strong>{{ salvo.saldoDepois }}</strong> (era {{ salvo.saldoAntes }})</span>
+        </div>
+        <div class="acoes">
+          <button
+            type="button"
+            class="botao botao--primario"
+            @click="novaEntrada"
           >
-            {{ categoria.nome }}
-          </option>
-        </select>
-      </label>
-      <label>
-        Quantidade
-        <input
-          v-model.number="saidaQuantidade"
-          type="number"
-          min="0.001"
-          step="0.001"
-          required
+            Registrar outra entrada
+          </button>
+          <NuxtLink
+            to="/painel/saldo"
+            class="botao"
+          >
+            Ver saldo
+          </NuxtLink>
+        </div>
+      </section>
+
+      <template v-else>
+        <div
+          v-if="listaErros.length"
+          role="alert"
+          class="alerta alerta--erro"
         >
-      </label>
-      <label>
-        Data
-        <input
-          v-model="saidaData"
-          type="date"
-          required
+          <strong>Nada foi salvo. Confira {{ listaErros.length === 1 ? '1 campo' : `${listaErros.length} campos` }}:</strong>
+          <ul>
+            <li
+              v-for="nome in listaErros"
+              :key="nome"
+            >
+              {{ nome }}
+            </li>
+          </ul>
+        </div>
+        <div
+          v-if="avisoGeral"
+          role="alert"
+          class="alerta alerta--erro"
         >
-      </label>
-      <label>
-        Destino de teste
-        <input
-          v-model="destinoSintetico"
-          required
+          <strong>Nada foi salvo.</strong>
+          <span>{{ avisoGeral }}</span>
+        </div>
+
+        <form
+          class="cartao"
+          novalidate
+          @submit.prevent="receber"
         >
-      </label>
-      <button
-        type="submit"
-        :disabled="enviando"
-      >
-        Registrar saída de teste
-      </button>
-    </form>
-  </main>
+          <div class="cartao__topo">
+            <h2>O que chegou?</h2>
+            <p>Todos os campos são obrigatórios.</p>
+          </div>
+          <div class="cartao__corpo">
+            <label class="campo">
+              <span class="campo__linha">
+                <span>Categoria</span>
+                <NuxtLink
+                  v-if="sessao?.perfil === 'coordenacao'"
+                  to="/painel/categorias"
+                  class="campo__dica"
+                >ver categorias</NuxtLink>
+              </span>
+              <select
+                v-model="categoriaId"
+                :aria-invalid="!!erros.categoriaId"
+                aria-describedby="dica-categoria erro-categoria"
+              >
+                <option value="">
+                  Escolha a categoria
+                </option>
+                <option
+                  v-for="categoria in categorias"
+                  :key="categoria.id"
+                  :value="categoria.id"
+                >
+                  {{ categoria.nome }} ({{ categoria.unidade }})
+                </option>
+              </select>
+              <span
+                v-if="erros.categoriaId"
+                id="erro-categoria"
+                class="campo__erro"
+              >{{ erros.categoriaId }}</span>
+              <span
+                id="dica-categoria"
+                class="campo__dica"
+              >Só a coordenação cria categorias novas.</span>
+            </label>
+
+            <div class="campo">
+              <label for="quantidade">Quantidade</label>
+              <div class="quantidade">
+                <button
+                  type="button"
+                  class="botao botao--icone"
+                  aria-label="Diminuir quantidade"
+                  @click="mudarQuantidade(-1)"
+                >
+                  −
+                </button>
+                <input
+                  id="quantidade"
+                  v-model.number="quantidade"
+                  type="number"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                  :aria-invalid="!!erros.quantidade"
+                  aria-describedby="erro-quantidade dica-quantidade"
+                >
+                <button
+                  type="button"
+                  class="botao botao--icone"
+                  aria-label="Aumentar quantidade"
+                  @click="mudarQuantidade(1)"
+                >
+                  +
+                </button>
+                <span class="quantidade__unidade">{{ abreviarUnidade(categoriaAtual?.unidade) }}</span>
+              </div>
+              <span
+                v-if="erros.quantidade"
+                id="erro-quantidade"
+                class="campo__erro"
+              >{{ erros.quantidade }}</span>
+              <span
+                id="dica-quantidade"
+                class="campo__dica"
+              >A unidade vem da categoria escolhida.</span>
+            </div>
+
+            <label class="campo">
+              <span class="campo__linha">
+                <span>Doador</span>
+                <NuxtLink
+                  to="/painel/doadores?novo=1"
+                  class="campo__dica"
+                >+ Novo doador</NuxtLink>
+              </span>
+              <select
+                v-model="doadorId"
+                :aria-invalid="!!erros.doadorId"
+                aria-describedby="erro-doador"
+              >
+                <option value="">
+                  Escolha o doador
+                </option>
+                <option
+                  v-for="doador in doadores"
+                  :key="doador.id"
+                  :value="doador.id"
+                >
+                  {{ doador.nome }}{{ doador.telefone ? ` · ${doador.telefone}` : '' }}
+                </option>
+              </select>
+              <span
+                v-if="erros.doadorId"
+                id="erro-doador"
+                class="campo__erro"
+              >{{ erros.doadorId }}</span>
+            </label>
+
+            <label class="campo">
+              Data do recebimento
+              <input
+                v-model="data"
+                type="date"
+                :max="hojeISO()"
+                :aria-invalid="!!erros.data"
+                aria-describedby="erro-data dica-data"
+              >
+              <span
+                v-if="erros.data"
+                id="erro-data"
+                class="campo__erro"
+              >{{ erros.data }}</span>
+              <span
+                id="dica-data"
+                class="campo__dica"
+              >Vem preenchida com hoje. Mude só se a doação chegou em outro dia.</span>
+            </label>
+          </div>
+          <div class="cartao__rodape acoes--fim">
+            <NuxtLink
+              to="/painel"
+              class="botao"
+            >
+              Cancelar
+            </NuxtLink>
+            <button
+              type="submit"
+              class="botao botao--primario"
+              :disabled="enviando"
+            >
+              {{ enviando ? 'Salvando…' : 'Salvar entrada' }}
+            </button>
+          </div>
+        </form>
+      </template>
+    </main>
+  </div>
 </template>
+
+<style scoped>
+.sucesso {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sucesso__topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sucesso__topo h2 {
+  font-size: 20px;
+}
+
+.sucesso__icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sucesso-fundo);
+  color: var(--sucesso-forte);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sucesso__dados {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 20px;
+}
+
+.sucesso__dados dt {
+  color: var(--texto-2);
+}
+
+.sucesso__dados dd {
+  margin: 0;
+  font-weight: 600;
+}
+</style>

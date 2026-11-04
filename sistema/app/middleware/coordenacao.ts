@@ -6,6 +6,6 @@ export default defineNuxtRouteMiddleware(async () => {
   }
 
   if (sessao.value?.perfil !== 'coordenacao') {
-    return navigateTo('/painel', { replace: true })
+    return navigateTo('/painel/sem-permissao', { replace: true })
   }
 })

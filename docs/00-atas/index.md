@@ -89,6 +89,7 @@ Nos feedbacks enviados pelo WhatsApp, Makio solicitou:
 - Retirar o selo “Baixo” do saldo caso não exista uma regra definida para essa classificação.
 - Preencher a data do registro de doação com o dia atual, incluir um botão de incremento (“+”) e não iniciar a quantidade em zero.
 - Retirar da tela inicial os atalhos “Fazer chamada” e “Registrar saída” enquanto essas funcionalidades não estiverem disponíveis, evitando confusão durante os testes.
-*(Situação vigente: Ajustes informados e encaminhamentos.)*
+
+*(Situação vigente, 03/11/2026: os ajustes de tela foram aplicados na versão 2 do protótipo e nas telas da Sprint 6 (issue #32): formulários de usuário, doador e categoria; mensagens de erro; tela do Voluntário e aviso de acesso negado; aviso de doador duplicado e histórico de correções; consentimento antes do cadastro; revogação da imagem; saldo sem o selo "Baixo"; data de hoje, botão "+" e quantidade vazia na entrada; Início sem os atalhos de chamada e de saída. A redefinição de senha pela Coordenação virou o critério [CA-RF39-04](../08-requisitos/index.md#rf39), ainda a validar; o serviço correspondente não existe no back-end. O protótipo validado passa a contar no item D4 da [DoR da Sprint 6](../13-dor-dod/index.md).)*
 
 **Evidências:** [vídeo da reunião e feedbacks pelo WhatsApp](../00-evidencias/index.md#avaliacao-do-prototipo-26102026).

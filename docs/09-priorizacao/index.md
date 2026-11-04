@@ -73,6 +73,8 @@ use os filtros ou um destes atalhos:
 - Prioridade do bloco de LGPD avançada (RF43, RF45), a confirmar com a coordenação.
 - Comunicar ao professor que RF06 e RF07 (valor 1) não estão planejados neste semestre.
 - Confirmar com a cliente as justificativas de RF18 e RF24 na planilha v2.
+- Doação anônima: a [RN21](../08-requisitos/regras.md#rn21) admite registrar doação sem cadastro de doador, mas o RF09 e o sistema exigem doador. Decidir com a coordenação e alinhar RN21, CA-RF08-06 e CA-RF09-01 na mesma mudança.
+- Redefinição de senha pela Coordenação (CA-RF39-04, pedido de 26/10): validar o comportamento e incluir o serviço no back-end.
 
 ## 9.6 Como atualizar uma prioridade
 

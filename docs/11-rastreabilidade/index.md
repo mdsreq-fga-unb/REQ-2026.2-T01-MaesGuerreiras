@@ -30,13 +30,16 @@ Problema (1.4)
 | Requisito → RNF | RF e RNF | Ficha do RF, campo *Condições* (os gerais valem para todos) | Que qualidade ele precisa ter? |
 | Requisito → regra | RF e RN | Ficha do RF, campo *Condições* | Que regra condiciona o comportamento? |
 | Requisito → critério | RF e CA | Dentro da ficha, campo *Critérios* | Como saber se está pronto e aceito? |
-| Requisito → requisito | Dependência | Ficha do RF, campo *Condições* | O que precisa vir antes? |
+| Requisito → requisito | Dependência | Ficha do RF, campo *Condições*: *Depende de* (escrito pela equipe) e *Necessário para* (gerado a partir dos *Depende de*) | O que precisa vir antes? O que é afetado se este mudar? |
 | Requisito → entrega | RF, MVP, release e sprint | Ficha do RF, campo *Entrega* | Quando entra? |
 | Decisão → requisito | Ata ou refinamento e RF | Ficha do RF, campo *Evolução*, e [Histórico](../14-historico/index.md) | Por que mudou? |
 | Critério → evidência | CA e teste ou validação | [DoD](../13-dor-dod/index.md) e [Evidências](../00-evidencias/index.md) | Como sabemos que foi cumprido? |
 
 Cada vínculo é mantido **em um só lugar**. As páginas de RNFs e de regras não listam os RFs que as
-aplicam, para não criar uma segunda cópia que precise ser atualizada.
+aplicam, para não criar uma segunda cópia que precise ser atualizada. O *Necessário para* é o
+inverso do *Depende de* e não é editado à mão: depois de mudar uma dependência, rode
+`python scripts/catalogo.py atualizar`. Antes de cada publicação do site, `python scripts/catalogo.py verificar`
+confere se os dois lados batem e se alguma nota de *Evolução* cita critérios de outro requisito.
 
 ## 11.3 Do problema às características de produto
 

@@ -17,8 +17,7 @@ condições, critérios, prioridade, entrega, situação e evolução. As outras
     requisito. RNFs e regras de negócio têm registros próprios
     ([8.1](rnf.md) e [8.2](regras.md)); a ligação com cada RF é mantida só na ficha do RF.
 
-> **Situação em 27/10/2026 (Sprint 6, de 20/10 a 02/11).** RFs concluídos pela DoD: **0 de 45**
-> (última medição: 17/10). Próxima atualização: revisão da Sprint 6, em 02/11/2026.
+> **Situação em 04/11/2026.** RFs concluídos pela DoD: **0 de 43**. Atualizado a partir das issues ([como funciona](../13-dor-dod/index.md#137-como-a-situacao-e-atualizada)).
 
 ## Como usar
 

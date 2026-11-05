@@ -57,7 +57,7 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
   professor usou o nosso site como exemplo em aula (29/10/2026).
 
 - **Ação de melhoria:** Criamos um catálogo integrado com uma ficha por RF, que reúne declaração,
-  intenção, origem, condições, critérios, prioridade, entrega, situação e evolução. As páginas de
+  história de usuário, origem, condições, critérios, prioridade, entrega, situação e evolução. As páginas de
   priorização, MVP e rastreabilidade passaram a explicar o método e a consultar o catálogo. Toda
   mudança agora é feita na ficha e registrada no histórico de evolução.
 

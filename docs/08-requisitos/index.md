@@ -6,7 +6,7 @@ hide:
 # 8. Catálogo integrado de requisitos
 
 Este catálogo é a **fonte única do escopo vigente**. Cada requisito funcional tem **um registro**,
-com tudo o que é preciso para entendê-lo, implementá-lo e validá-lo: declaração, intenção, origem,
+com tudo o que é preciso para entendê-lo, implementá-lo e validá-lo: declaração, história de usuário, origem,
 condições, critérios, prioridade, entrega, situação e evolução. As outras páginas explicam o método
 ([priorização](../09-priorizacao/index.md), [MVP](../10-mvp/index.md),
 [rastreabilidade](../11-rastreabilidade/index.md)) e **consultam este registro**, sem repetir a lista.
@@ -28,7 +28,7 @@ condições, critérios, prioridade, entrega, situação e evolução. As outras
   já chegam com o filtro aplicado.
 - **Fichas:** agrupadas por característica de produto, ou na ordem do backlog. Cada ficha abre e fecha.
 - **Granularidade:** cada RF é um item do backlog. Quando o comportamento muda por ator, a ficha
-  traz uma declaração de intenção por ator (a, b), sem criar outro ID. As tarefas técnicas da sprint
+  traz uma história de usuário por ator (a, b), sem criar outro ID. As tarefas técnicas da sprint
   ficam no [quadro da equipe no GitHub Projects](https://github.com/orgs/mdsreq-fga-unb/projects/131){target="_blank"}, com responsável, sprint e situação de cada issue.
 
 <div id="ordem"></div>
@@ -47,7 +47,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir a publicação das informações da associação, como histórico, missão, endereço e formas de contato, na área pública. |
-| Intenção e valor | Como **coordenadora**, quero publicar o histórico, a missão, o endereço e os contatos da associação, para que a comunidade e os apoiadores encontrem essas informações em um só lugar. |
+| História de usuário | Como **coordenadora**, quero publicar o histórico, a missão, o endereço e os contatos da associação, para que a comunidade e os apoiadores encontrem essas informações em um só lugar. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C1 Conhecer a associação](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [T01](#t01)<br>**Necessário para:** [RF02](#rf02), [RF03](#rf03), [RF06](#rf06), [RF13](#rf13) |
@@ -65,7 +65,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação altere o histórico, a missão, o endereço e as formas de contato publicados (os mesmos campos do RF01). |
-| Intenção e valor | Como **coordenadora**, quero alterar as informações institucionais publicadas, para mantê-las corretas. |
+| História de usuário | Como **coordenadora**, quero alterar as informações institucionais publicadas, para mantê-las corretas. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C1 Conhecer a associação](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF01](#rf01)<br>**Necessário para:** nenhum requisito |
@@ -83,7 +83,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir o cadastro de uma atividade com data, horário, local e público a que se destina. |
-| Intenção e valor | Como **coordenadora**, quero cadastrar uma atividade com data, horário, local e público, para divulgar oficinas e eventos. |
+| História de usuário | Como **coordenadora**, quero cadastrar uma atividade com data, horário, local e público, para divulgar oficinas e eventos. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C2 Ver a agenda](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF01](#rf01)<br>**Necessário para:** [RF04](#rf04), [RF05](#rf05) |
@@ -101,7 +101,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir a alteração dos dados de uma atividade já divulgada, incluindo seu cancelamento. |
-| Intenção e valor | Como **coordenadora**, quero alterar ou cancelar uma atividade divulgada, para que ninguém compareça com base em informação desatualizada. |
+| História de usuário | Como **coordenadora**, quero alterar ou cancelar uma atividade divulgada, para que ninguém compareça com base em informação desatualizada. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C2 Ver a agenda](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF03](#rf03)<br>**Necessário para:** nenhum requisito |
@@ -119,7 +119,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir a consulta pública às atividades divulgadas, com filtro por período e por tipo de atividade. |
-| Intenção e valor | Como **visitante**, quero consultar as atividades divulgadas por período e tipo, para saber quando e onde posso participar. |
+| História de usuário | Como **visitante**, quero consultar as atividades divulgadas por período e tipo, para saber quando e onde posso participar. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C2 Ver a agenda](../12-mapa/index.md#jornada-c) |
 | Agentes | Visitante |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF03](#rf03)<br>**Necessário para:** nenhum requisito |
@@ -137,7 +137,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que o Visitante envie uma solicitação de contato a coordenação informando nome*, telefone ou e-mail* (ao menos um) e mensagem*. Registrando-a para atendimento posterior. |
-| Intenção e valor | Como **visitante**, quero enviar meu nome, um telefone ou e-mail e uma mensagem, para ser atendido sem precisar ir até a associação. |
+| História de usuário | Como **visitante**, quero enviar meu nome, um telefone ou e-mail e uma mensagem, para ser atendido sem precisar ir até a associação. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C4 Falar com a associação](../12-mapa/index.md#jornada-c) |
 | Agentes | Visitante |
 | Condições | **RNFs:** [RNF13](rnf.md#rnf13), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN01](regras.md#rn01)<br>**Depende de:** [RF01](#rf01)<br>**Necessário para:** [RF07](#rf07) |
@@ -155,7 +155,7 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação consulte as solicitações registradas no RF06 e marque cada uma como atendida. |
-| Intenção e valor | Como **coordenadora**, quero consultar as solicitações de contato e marcar cada uma como atendida, para que nenhum pedido fique sem resposta. |
+| História de usuário | Como **coordenadora**, quero consultar as solicitações de contato e marcar cada uma como atendida, para que nenhum pedido fique sem resposta. |
 | Origem | [CP1 · Portal institucional e agenda de atividades](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE1, OE5 · atividade [C4 Falar com a associação](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF06](#rf06)<br>**Necessário para:** nenhum requisito |
@@ -178,7 +178,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação cadastrem e, se necessário, corrijam os dados de pessoas e organizações que doam itens à associação. *(Campos marcados com \* são obrigatórios nas fichas desta seção.)* |
-| Intenção e valor | Como **voluntária de atendimento**, quero cadastrar e corrigir os dados de pessoas e organizações que doam, para saber de onde veio cada doação. |
+| História de usuário | Como **voluntária de atendimento**, quero cadastrar e corrigir os dados de pessoas e organizações que doam, para saber de onde veio cada doação. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A2 Receber doações](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN21](regras.md#rn21)<br>**Depende de:** [RF41](#rf41)<br>**Necessário para:** [RF09](#rf09) |
@@ -196,7 +196,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação registrem a entrada de itens doados, com categoria de item, quantidade, data e doador de origem. |
-| Intenção e valor | Como **voluntária de atendimento**, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para registrar o recebimento sem atrasar o atendimento. |
+| História de usuário | Como **voluntária de atendimento**, quero registrar a entrada de itens doados com categoria, quantidade, data e doador, para registrar o recebimento sem atrasar o atendimento. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A2 Receber doações](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF08](#rf08), [RF11](#rf11)<br>**Necessário para:** [RF12](#rf12), [RF33](#rf33) |
@@ -214,7 +214,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação registrem a saída de itens doados, com categoria de item, quantidade, data e o destinatário: uma família atendida ou uma turma de atividade (uso interno na associação). |
-| Intenção e valor | Como **voluntária de atendimento**, quero registrar a saída de itens indicando a família que os recebeu ou a turma que os usou internamente, para que a coordenadora saiba para onde foi cada doação. |
+| História de usuário | Como **voluntária de atendimento**, quero registrar a saída de itens indicando a família que os recebeu ou a turma que os usou internamente, para que a coordenadora saiba para onde foi cada doação. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A4 Distribuir itens](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF12](#rf12), [RF14](#rf14), [RF20](#rf20)<br>**Necessário para:** [RF34](#rf34) |
@@ -232,7 +232,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). |
-| Intenção e valor | Como **coordenadora**, quero cadastrar categorias de item com nome e unidade de medida, para que entradas e saídas sejam contadas sempre da mesma forma. |
+| História de usuário | Como **coordenadora**, quero cadastrar categorias de item com nome e unidade de medida, para que entradas e saídas sejam contadas sempre da mesma forma. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A2 Receber doações](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF40](#rf40)<br>**Necessário para:** [RF09](#rf09), [RF13](#rf13) |
@@ -250,7 +250,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria. |
-| Intenção e valor | Como **voluntária de atendimento**, quero consultar a quantidade atual de cada item por categoria, para entregar só o que está disponível. |
+| História de usuário | Como **voluntária de atendimento**, quero consultar a quantidade atual de cada item por categoria, para entregar só o que está disponível. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A4 Distribuir itens](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN02](regras.md#rn02)<br>**Depende de:** [RF09](#rf09)<br>**Necessário para:** [RF10](#rf10) |
@@ -268,7 +268,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação inclua e remova manualmente, na área pública, os itens de que a associação precisa no momento, com a categoria e, se quiser, a quantidade desejada. |
-| Intenção e valor | Como **coordenadora**, quero incluir e remover na área pública os itens de que a associação precisa, para orientar os apoiadores sobre o que doar. |
+| História de usuário | Como **coordenadora**, quero incluir e remover na área pública os itens de que a associação precisa, para orientar os apoiadores sobre o que doar. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [C3 Saber o que doar](../12-mapa/index.md#jornada-c) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN03](regras.md#rn03)<br>**Depende de:** [RF01](#rf01), [RF11](#rf11)<br>**Necessário para:** nenhum requisito |
@@ -291,7 +291,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação cadastrem uma família atendida com nome do responsável familiar*, telefone*, endereço* (logradouro, complemento e cidade), número de moradores e observações. O sistema registra a data do cadastro e a situação "ativa". |
-| Intenção e valor | Como **voluntária de atendimento**, quero cadastrar uma família com nome do responsável, telefone e endereço, para poder destinar doações e inscrever seus membros. |
+| História de usuário | Como **voluntária de atendimento**, quero cadastrar uma família com nome do responsável, telefone e endereço, para poder destinar doações e inscrever seus membros. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [A3 Acolher a família](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), [RNF16](rnf.md#rnf16), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN04](regras.md#rn04), [RN19](regras.md#rn19)<br>**Depende de:** [RF42](#rf42)<br>**Necessário para:** [RF10](#rf10), [RF15](#rf15), [RF18](#rf18), [RF36](#rf36) |
@@ -309,7 +309,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação alterem os dados da família, e que a Coordenação a inative. A família inativa some das buscas padrão, mas o histórico de atendimento e os relatórios do período continuam. |
-| Intenção e valor | a) Como **voluntária de atendimento**, quero atualizar os dados de uma família, para manter o contato em dia.<br>b) Como **coordenadora**, quero inativar uma família que deixou de ser atendida, para tirá-la das buscas sem perder o histórico de atendimento. |
+| História de usuário | a) Como **voluntária de atendimento**, quero atualizar os dados de uma família, para manter o contato em dia.<br>b) Como **coordenadora**, quero inativar uma família que deixou de ser atendida, para tirá-la das buscas sem perder o histórico de atendimento. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [A5 Manter cadastros](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN06](regras.md#rn06)<br>**Depende de:** [RF14](#rf14)<br>**Necessário para:** nenhum requisito |
@@ -327,7 +327,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação cadastrem uma pessoa atendida com nome completo*, data de nascimento*, telefone e observações. O sistema registra a data do cadastro e a situação "ativo". |
-| Intenção e valor | Como **voluntária de atendimento**, quero cadastrar um participante com nome completo e data de nascimento, para registrar cada pessoa atendida. |
+| História de usuário | Como **voluntária de atendimento**, quero cadastrar um participante com nome completo e data de nascimento, para registrar cada pessoa atendida. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [A3 Acolher a família](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), [RNF16](rnf.md#rnf16), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN05](regras.md#rn05), [RN19](regras.md#rn19)<br>**Depende de:** [RF42](#rf42)<br>**Necessário para:** [RF17](#rf17), [RF18](#rf18), [RF23](#rf23) |
@@ -345,7 +345,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação alterem os dados do participante, e que a Coordenação o inative, mantendo o histórico. Ao inativar, as inscrições em turmas em andamento são canceladas com o motivo "desligamento da associação". |
-| Intenção e valor | a) Como **voluntária de atendimento**, quero atualizar os dados de um participante, para manter o cadastro em dia.<br>b) Como **coordenadora**, quero inativar um participante, para liberar as vagas que ele ocupava e preservar o histórico. |
+| História de usuário | a) Como **voluntária de atendimento**, quero atualizar os dados de um participante, para manter o cadastro em dia.<br>b) Como **coordenadora**, quero inativar um participante, para liberar as vagas que ele ocupava e preservar o histórico. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [A5 Manter cadastros](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN06](regras.md#rn06), [RN07](regras.md#rn07)<br>**Depende de:** [RF16](#rf16), [RF24](#rf24)<br>**Necessário para:** nenhum requisito |
@@ -363,7 +363,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação associem o participante à sua família e indiquem o responsável legal. Para menor de 18 anos o responsável legal é obrigatório; a exceção (ex.: criança em acolhimento) exige motivo registrado. |
-| Intenção e valor | Como **voluntária de atendimento**, quero vincular o participante à família e indicar o responsável legal, para saber quem responde por cada criança ou adolescente. |
+| História de usuário | Como **voluntária de atendimento**, quero vincular o participante à família e indicar o responsável legal, para saber quem responde por cada criança ou adolescente. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [A3 Acolher a família](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF13](rnf.md#rnf13), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN08](regras.md#rn08)<br>**Depende de:** [RF14](#rf14), [RF16](#rf16)<br>**Necessário para:** nenhum requisito |
@@ -381,7 +381,7 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação busquem participantes cadastrados por nome, família e atividade em que estão inscritos. |
-| Intenção e valor | Como **educadora voluntária**, quero buscar participantes por nome, família ou atividade, para encontrar o cadastro rapidamente durante o atendimento. |
+| História de usuário | Como **educadora voluntária**, quero buscar participantes por nome, família ou atividade, para encontrar o cadastro rapidamente durante o atendimento. |
 | Origem | [CP3 · Cadastro de famílias e participantes](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3, OE6 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF23](#rf23)<br>**Necessário para:** nenhum requisito |
@@ -404,7 +404,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação cadastre uma turma com atividade*, período (data de início e de término, com término depois do início), dias de encontro (dias da semana e horário) e quantidade de vagas. |
-| Intenção e valor | Como **coordenadora**, quero cadastrar uma turma com atividade, período, dias de encontro e vagas, para organizar a oferta das oficinas. |
+| História de usuário | Como **coordenadora**, quero cadastrar uma turma com atividade, período, dias de encontro e vagas, para organizar a oferta das oficinas. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B1 Montar turmas](../12-mapa/index.md#jornada-b) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN09](regras.md#rn09)<br>**Depende de:** [RF40](#rf40)<br>**Necessário para:** [RF10](#rf10), [RF21](#rf21), [RF22](#rf22), [RF23](#rf23) |
@@ -422,7 +422,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação altere período, dias de encontro e vagas de uma turma em andamento. Se as novas vagas forem menos que os inscritos, o sistema recusa e informa o total de inscritos. Se aumentarem e houver lista de espera, o sistema avisa (RF25). |
-| Intenção e valor | Como **coordenadora**, quero alterar período, dias de encontro e vagas de uma turma em andamento, para ajustar a oferta sem prejudicar quem já está inscrito. |
+| História de usuário | Como **coordenadora**, quero alterar período, dias de encontro e vagas de uma turma em andamento, para ajustar a oferta sem prejudicar quem já está inscrito. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B1 Montar turmas](../12-mapa/index.md#jornada-b) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN09](regras.md#rn09), [RN10](regras.md#rn10), [RN14](regras.md#rn14)<br>**Depende de:** [RF20](#rf20)<br>**Necessário para:** nenhum requisito |
@@ -440,7 +440,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação encerre uma turma, registrando a data. O encerramento antes do fim do período exige o motivo. |
-| Intenção e valor | Como **coordenadora**, quero encerrar uma turma registrando a data, para manter o histórico das turmas realizadas. |
+| História de usuário | Como **coordenadora**, quero encerrar uma turma registrando a data, para manter o histórico das turmas realizadas. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B1 Montar turmas](../12-mapa/index.md#jornada-b) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN11](regras.md#rn11)<br>**Depende de:** [RF20](#rf20)<br>**Necessário para:** nenhum requisito |
@@ -458,7 +458,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação inscrevam um participante ativo em uma turma com vaga. Sem vaga, o sistema recusa a inscrição e informa que a turma está cheia. O encaminhamento à lista de espera estará disponível a partir do RF25 (fora do MVP). |
-| Intenção e valor | Como **educadora voluntária**, quero inscrever um participante ativo em uma turma com vaga, para saber quem frequenta cada atividade. Quando a turma estiver cheia, quero ser informada para poder registrar o participante na lista de espera assim que o RF25 estiver disponível. |
+| História de usuário | Como **educadora voluntária**, quero inscrever um participante ativo em uma turma com vaga, para saber quem frequenta cada atividade. Quando a turma estiver cheia, quero ser informada para poder registrar o participante na lista de espera assim que o RF25 estiver disponível. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN12](regras.md#rn12)<br>**Depende de:** [RF16](#rf16), [RF20](#rf20)<br>**Necessário para:** [RF19](#rf19), [RF24](#rf24), [RF25](#rf25), [RF26](#rf26) |
@@ -476,7 +476,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação cancelem uma inscrição, com motivo obrigatório escolhido em lista: desistência, mudança de endereço, conflito de horário, desligamento da associação ou outro (texto livre obrigatório só nesse caso). |
-| Intenção e valor | Como **educadora voluntária**, quero cancelar uma inscrição informando o motivo, para liberar a vaga e saber por que o participante saiu. |
+| História de usuário | Como **educadora voluntária**, quero cancelar uma inscrição informando o motivo, para liberar a vaga e saber por que o participante saiu. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN07](regras.md#rn07), [RN13](regras.md#rn13)<br>**Depende de:** [RF23](#rf23)<br>**Necessário para:** [RF17](#rf17) |
@@ -494,7 +494,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação registrem o participante em lista de espera quando a turma não tiver vaga. A ordem é a de registro. Quando abrir vaga, o sistema avisa a Coordenação, que confirma a inscrição manualmente (RF23). |
-| Intenção e valor | Como **educadora voluntária**, quero registrar o participante na lista de espera de uma turma cheia, para que ele seja chamado na ordem quando abrir vaga. |
+| História de usuário | Como **educadora voluntária**, quero registrar o participante na lista de espera de uma turma cheia, para que ele seja chamado na ordem quando abrir vaga. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** nenhum específico, mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN12](regras.md#rn12), [RN14](regras.md#rn14)<br>**Depende de:** [RF23](#rf23)<br>**Necessário para:** nenhum requisito |
@@ -512,7 +512,7 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação consultem os inscritos de cada turma. A exibição da lista de espera, na ordem de registro, estará disponível a partir do RF25 (fora do MVP). |
-| Intenção e valor | Como **educadora voluntária**, quero consultar os inscritos de cada turma, para saber quem participa. Quando o RF25 estiver disponível, quero ver também a lista de espera na ordem de registro. |
+| História de usuário | Como **educadora voluntária**, quero consultar os inscritos de cada turma, para saber quem participa. Quando o RF25 estiver disponível, quero ver também a lista de espera na ordem de registro. |
 | Origem | [CP4 · Inscrição em atividades e organização do atendimento](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE3 · atividade [B2 Inscrever participantes](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN14](regras.md#rn14)<br>**Depende de:** [RF23](#rf23) *(a exibição da lista de espera dependerá do RF25, fora do MVP)*<br>**Necessário para:** [RF27](#rf27) |
@@ -535,7 +535,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação abram a chamada de um encontro de turma, na data do encontro, listando os participantes inscritos. |
-| Intenção e valor | Como **educadora voluntária**, quero abrir a chamada do encontro com a lista de inscritos, para registrar a presença no próprio dia, sem papel. |
+| História de usuário | Como **educadora voluntária**, quero abrir a chamada do encontro com a lista de inscritos, para registrar a presença no próprio dia, sem papel. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B3 Fazer a chamada](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF10](rnf.md#rnf10), [RNF16](rnf.md#rnf16), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN15](regras.md#rn15)<br>**Depende de:** [RF26](#rf26)<br>**Necessário para:** [RF28](#rf28) |
@@ -553,7 +553,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação registrem, para cada participante listado em uma chamada aberta, se esteve presente ou ausente. |
-| Intenção e valor | Como **educadora voluntária**, quero marcar cada participante como presente ou ausente, para acabar com a conferência manual da presença. |
+| História de usuário | Como **educadora voluntária**, quero marcar cada participante como presente ou ausente, para acabar com a conferência manual da presença. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B3 Fazer a chamada](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF10](rnf.md#rnf10), [RNF16](rnf.md#rnf16), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN15](regras.md#rn15)<br>**Depende de:** [RF27](#rf27)<br>**Necessário para:** [RF29](#rf29), [RF30](#rf30), [RF31](#rf31), [RF35](#rf35) |
@@ -571,7 +571,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação informem o motivo de uma falta já registrada, que passa a constar como falta justificada. |
-| Intenção e valor | Como **educadora voluntária**, quero informar o motivo de uma falta, para que a falta justificada não conte para o limite de faltas. |
+| História de usuário | Como **educadora voluntária**, quero informar o motivo de uma falta, para que a falta justificada não conte para o limite de faltas. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B4 Ajustar a chamada](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF01](rnf.md#rnf01), [RNF16](rnf.md#rnf16), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN16](regras.md#rn16)<br>**Depende de:** [RF28](#rf28)<br>**Necessário para:** [RF32](#rf32) |
@@ -589,7 +589,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir a correção de um registro de frequência já concluído, conforme as permissões de cada perfil (ver RN17). O registro anterior é sempre preservado. |
-| Intenção e valor | a) Como **educadora voluntária**, quero corrigir a chamada que eu fiz até o fim do mesmo dia, para consertar um erro de marcação.<br>b) Como **coordenadora**, quero corrigir qualquer registro de frequência informando o motivo, para resolver erros depois do dia sem perder o registro anterior. |
+| História de usuário | a) Como **educadora voluntária**, quero corrigir a chamada que eu fiz até o fim do mesmo dia, para consertar um erro de marcação.<br>b) Como **coordenadora**, quero corrigir qualquer registro de frequência informando o motivo, para resolver erros depois do dia sem perder o registro anterior. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B4 Ajustar a chamada](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário (mesmo dia), Coordenação |
 | Condições | **RNFs:** [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN17](regras.md#rn17)<br>**Depende de:** [RF28](#rf28)<br>**Necessário para:** nenhum requisito |
@@ -607,7 +607,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação consultem o histórico de presenças e faltas de um participante por turma e por período. |
-| Intenção e valor | Como **educadora voluntária**, quero consultar o histórico de presenças e faltas de um participante por turma e período, para acompanhar a participação dele. |
+| História de usuário | Como **educadora voluntária**, quero consultar o histórico de presenças e faltas de um participante por turma e período, para acompanhar a participação dele. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B5 Acompanhar faltas](../12-mapa/index.md#jornada-b) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF28](#rf28)<br>**Necessário para:** nenhum requisito |
@@ -625,7 +625,7 @@ Gestão da frequência dos participantes nas atividades. **Valor de negócio (VN
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que o sistema sinalize automaticamente o participante que atingir o limite de faltas não justificadas definido pela Coordenação. A sinalização aparece na seção "Participantes sinalizados" do painel (RF37), com nome, turma e telefone da família. |
-| Intenção e valor | Como **coordenadora**, quero que o sistema sinalize quem atingiu o limite de faltas sem justificativa, para entrar em contato com a família a tempo. |
+| História de usuário | Como **coordenadora**, quero que o sistema sinalize quem atingiu o limite de faltas sem justificativa, para entrar em contato com a família a tempo. |
 | Origem | [CP5 · Chamada digital e controle de frequência](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE4, OE5 · atividade [B5 Acompanhar faltas](../12-mapa/index.md#jornada-b) |
 | Agentes | Sistema, vista pela Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN16](regras.md#rn16), [RN18](regras.md#rn18)<br>**Depende de:** [RF29](#rf29)<br>**Necessário para:** [RF37](#rf37) |
@@ -648,7 +648,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação gere relatório dos itens recebidos por período, categoria e doador. |
-| Intenção e valor | Como **coordenadora**, quero gerar o relatório dos itens recebidos por período, categoria e doador, para prestar contas aos apoiadores. |
+| História de usuário | Como **coordenadora**, quero gerar o relatório dos itens recebidos por período, categoria e doador, para prestar contas aos apoiadores. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [A6 Prestar contas](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF09](#rf09)<br>**Necessário para:** [RF37](#rf37), [RF38](#rf38) |
@@ -666,7 +666,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação gere relatório dos itens destinados por período, categoria e família atendida. |
-| Intenção e valor | Como **coordenadora**, quero gerar o relatório dos itens destinados por período, categoria e família, para mostrar como as doações foram distribuídas. |
+| História de usuário | Como **coordenadora**, quero gerar o relatório dos itens destinados por período, categoria e família, para mostrar como as doações foram distribuídas. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [A6 Prestar contas](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF10](#rf10)<br>**Necessário para:** [RF37](#rf37) |
@@ -684,7 +684,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação gere o relatório de presenças e faltas de uma turma por período, ou de um encontro específico. |
-| Intenção e valor | Como **coordenadora**, quero gerar o relatório de presenças e faltas de uma turma por período ou encontro, para acompanhar a participação nas atividades. |
+| História de usuário | Como **coordenadora**, quero gerar o relatório de presenças e faltas de uma turma por período ou encontro, para acompanhar a participação nas atividades. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [B5 Acompanhar faltas](../12-mapa/index.md#jornada-b) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF28](#rf28)<br>**Necessário para:** nenhum requisito |
@@ -702,7 +702,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação gere relatório das famílias com atendimento registrado no período consultado. |
-| Intenção e valor | Como **coordenadora**, quero gerar o relatório das famílias atendidas no período, para demonstrar o alcance da associação. |
+| História de usuário | Como **coordenadora**, quero gerar o relatório das famílias atendidas no período, para demonstrar o alcance da associação. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [A6 Prestar contas](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF14](#rf14)<br>**Necessário para:** nenhum requisito |
@@ -720,7 +720,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação consulte os indicadores de atendimento da associação, como famílias atendidas, participantes ativos, itens recebidos e itens distribuídos no período, incluindo a seção de participantes sinalizados (RF32). |
-| Intenção e valor | Como **coordenadora**, quero um painel com famílias atendidas, participantes ativos, itens recebidos e distribuídos e participantes sinalizados, para acompanhar o impacto em um só lugar. |
+| História de usuário | Como **coordenadora**, quero um painel com famílias atendidas, participantes ativos, itens recebidos e distribuídos e participantes sinalizados, para acompanhar o impacto em um só lugar. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [A6 Prestar contas](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN18](regras.md#rn18)<br>**Depende de:** [RF32](#rf32), [RF33](#rf33), [RF34](#rf34)<br>**Necessário para:** nenhum requisito |
@@ -738,7 +738,7 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação exporte um relatório gerado em PDF (envio a apoiadores e prestação de contas) ou CSV (planilha). |
-| Intenção e valor | Como **coordenadora**, quero exportar um relatório em PDF ou CSV, para enviá-lo a apoiadores e usá-lo em planilhas. |
+| História de usuário | Como **coordenadora**, quero exportar um relatório em PDF ou CSV, para enviá-lo a apoiadores e usá-lo em planilhas. |
 | Origem | [CP6 · Relatórios e indicadores de impacto](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE5 · atividade [A6 Prestar contas](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF03](rnf.md#rnf03), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF33](#rf33)<br>**Necessário para:** nenhum requisito |
@@ -761,7 +761,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação cadastre Voluntários e outros membros da Coordenação. A primeira conta de Coordenação é criada pela equipe de desenvolvimento na implantação. |
-| Intenção e valor | Como **coordenadora**, quero cadastrar voluntárias e outros membros da coordenação, para que só pessoas autorizadas usem a área restrita. |
+| História de usuário | Como **coordenadora**, quero cadastrar voluntárias e outros membros da coordenação, para que só pessoas autorizadas usem a área restrita. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [A1 Dar acesso à equipe](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF15](rnf.md#rnf15), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN20](regras.md#rn20)<br>**Depende de:** [RF41](#rf41)<br>**Necessário para:** [RF40](#rf40) |
@@ -779,7 +779,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação atribua a cada usuário o perfil Voluntário ou Coordenação, conforme a [tabela de permissões](glossario.md#permissoes-por-perfil). |
-| Intenção e valor | Como **coordenadora**, quero atribuir a cada usuário o perfil Voluntário ou Coordenação, para que cada pessoa acesse apenas o que sua função permite. |
+| História de usuário | Como **coordenadora**, quero atribuir a cada usuário o perfil Voluntário ou Coordenação, para que cada pessoa acesse apenas o que sua função permite. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [A1 Dar acesso à equipe](../12-mapa/index.md#jornada-a) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF39](#rf39)<br>**Necessário para:** [RF11](#rf11), [RF20](#rf20) |
@@ -797,7 +797,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação acessem a área restrita mediante autenticação do usuário cadastrado. |
-| Intenção e valor | Como **voluntária de atendimento**, quero entrar na área restrita com meu usuário e senha, para usar as funções do meu perfil com segurança. |
+| História de usuário | Como **voluntária de atendimento**, quero entrar na área restrita com meu usuário e senha, para usar as funções do meu perfil com segurança. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [A1 Dar acesso à equipe](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF15](rnf.md#rnf15), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [T01](#t01)<br>**Necessário para:** [RF08](#rf08), [RF39](#rf39), [RF42](#rf42) |
@@ -815,7 +815,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação registrem, em um único fluxo, o consentimento do titular, ou do responsável legal, para cada finalidade de tratamento de dados pessoais (cadastro e atendimento, registro de frequência, contato com a família e relatórios a apoiadores) e a autorização ou recusa de uso de imagem em materiais de divulgação da associação, indicando os meios autorizados (site, redes sociais, materiais impressos) e a eventual revogação. Cada consentimento e autorização leva a data do registro. |
-| Intenção e valor | Como **voluntária de atendimento**, quero registrar o consentimento do titular (ou responsável legal) para cada finalidade e a autorização de uso de imagem, para que nenhum dado da família seja usado sem permissão. |
+| História de usuário | Como **voluntária de atendimento**, quero registrar o consentimento do titular (ou responsável legal) para cada finalidade e a autorização de uso de imagem, para que nenhum dado da família seja usado sem permissão. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [A3 Acolher a família](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF13](rnf.md#rnf13), [RNF14](rnf.md#rnf14), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** [RN19](regras.md#rn19)<br>**Depende de:** [RF41](#rf41)<br>**Necessário para:** [RF14](#rf14), [RF16](#rf16), [RF43](#rf43), [RF45](#rf45) |
@@ -833,7 +833,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação registre a solicitação do titular e acompanhe as etapas: recebida, em análise, atendida ou negada com justificativa. Cada etapa guarda a data, e a resposta guarda a data em que o titular foi avisado. |
-| Intenção e valor | Como **coordenadora**, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. |
+| História de usuário | Como **coordenadora**, quero registrar e acompanhar as etapas de uma solicitação de exclusão de dados, para responder ao titular conforme a LGPD. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [D1 Responder ao titular](../12-mapa/index.md#jornada-d) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF13](rnf.md#rnf13), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF42](#rf42)<br>**Necessário para:** nenhum requisito |
@@ -851,7 +851,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que a Coordenação consulte quem alterou dados pessoais ou registros de frequência, o que foi alterado e quando. |
-| Intenção e valor | Como **coordenadora**, quero consultar quem alterou dados pessoais ou registros de frequência, o que mudou e quando, para ter controle sobre as alterações. |
+| História de usuário | Como **coordenadora**, quero consultar quem alterou dados pessoais ou registros de frequência, o que mudou e quando, para ter controle sobre as alterações. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [D2 Auditar alterações](../12-mapa/index.md#jornada-d) |
 | Agentes | Coordenação |
 | Condições | **RNFs:** [RNF07](rnf.md#rnf07), [RNF19](rnf.md#rnf19), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** log do [RNF19](rnf.md#rnf19)<br>**Necessário para:** nenhum requisito |
@@ -869,7 +869,7 @@ Controle de acesso e proteção dos dados tratados pela solução. **Valor de ne
 | Parte do registro | Informação |
 | :--- | :--- |
 | Declaração vigente | Permitir que Voluntário ou Coordenação consultem, por titular, a autorização em vigor para cada meio (site, redes sociais, material impresso) e se ela foi revogada, antes de divulgar a imagem. |
-| Intenção e valor | Como **voluntária de atendimento**, quero consultar a autorização de imagem em vigor de uma pessoa para cada meio, para não divulgar uma imagem sem permissão. |
+| História de usuário | Como **voluntária de atendimento**, quero consultar a autorização de imagem em vigor de uma pessoa para cada meio, para não divulgar uma imagem sem permissão. |
 | Origem | [CP7 · Perfis de acesso e proteção de dados](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE6 · atividade [D1 Responder ao titular](../12-mapa/index.md#jornada-d) |
 | Agentes | Voluntário, Coordenação |
 | Condições | **RNFs:** [RNF14](rnf.md#rnf14), mais os [RNFs gerais](rnf.md#rnfs-gerais)<br>**Regras:** nenhuma específica<br>**Depende de:** [RF42](#rf42)<br>**Necessário para:** nenhum requisito |

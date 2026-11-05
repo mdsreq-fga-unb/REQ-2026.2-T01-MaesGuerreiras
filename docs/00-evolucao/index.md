@@ -25,7 +25,7 @@ divergentes. A orientação foi refazer a estrutura antes de continuar, com um c
 | Aspecto | v0.4 | v0.5 |
 | :--- | :--- | :--- |
 | Requisitos (8) | Lista de RFs, matriz RF × CP × RNF, matriz 4×4 com os RFs em cada célula, lista do MVP | Catálogo integrado: uma ficha por RF, com filtros por característica, MVP, release, sprint e situação |
-| Histórias de usuário | 48 histórias com ID próprio (US01 a US45, com a e b), uma camada a mais sobre os RFs | Intenção "Como…, quero…, para…" dentro da ficha do RF, sem ID próprio |
+| Histórias de usuário | 48 histórias com ID próprio (US01 a US45, com a e b), uma camada a mais sobre os RFs | História de usuário "Como…, quero…, para…" dentro da ficha do RF, sem ID próprio |
 | Critérios de aceitação | Seção 10.5, separados dos requisitos | Dentro da ficha do RF (CA-RF##-nn) |
 | Priorização e MVP | Repetiam a lista de RFs em quadrantes e releases | Explicam método, critério do recorte e validação; o resultado está na ficha |
 | Rastreabilidade | Cadeia na seção 5.2 e matrizes em 8.4 | Tipos de vínculo e onde cada um é mantido (seção 11); vínculos na ficha |

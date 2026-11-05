@@ -431,7 +431,7 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | :--- | :--- | :--- | :--- | :--- |
 | Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Questionário, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP validado com Makio em 28/09/2026 (seção [10](../10-mvp/index.md)). |
-| Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a intenção no formato de história) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua intenção no formato de história, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
+| Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a história de usuário de cada um) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua história de usuário, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Catálogo integrado, Mapa de Histórias | Requisitos organizados em jornadas e releases ([mapa de histórias](../12-mapa/index.md)) e rastreados do problema à evidência ([11](../11-rastreabilidade/index.md)). |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
@@ -449,7 +449,7 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Retrospectiva da Sprint | Organização e Atualização | Atualização da Organização dos Requisitos | Ações de Melhoria Contínua | Melhorias incorporadas à organização dos requisitos e registradas nas Lições Aprendidas (seção [15](../15-licoes/index.md)). |
 | Planejamento da Próxima Release | Elicitação e Descoberta | Identificação de Novos Requisitos | Entrevistas de Acompanhamento, Análise de Domínio de Negócio | Novos requisitos identificados e requisitos existentes revisados a partir do uso real da plataforma. |
 | Planejamento da Próxima Release | Análise e Consenso | Priorização Estratégica | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico | Requisitos das releases seguintes repriorizados para a próxima release. |
-| Planejamento da Próxima Release | Declaração | Declaração de Novos Requisitos | Nova ficha no catálogo (declaração e intenção) | Novos RFs declarados no catálogo e ligados aos objetivos da próxima release. |
+| Planejamento da Próxima Release | Declaração | Declaração de Novos Requisitos | Nova ficha no catálogo (declaração e história de usuário) | Novos RFs declarados no catálogo e ligados aos objetivos da próxima release. |
 | Planejamento da Próxima Release | Organização e Atualização | Revisão do Backlog | Reordenação do catálogo, Mapa de Histórias | Ordem do catálogo e mapa de histórias atualizados para o próximo ciclo. |
 
 **Como as técnicas são aplicadas**
@@ -498,12 +498,12 @@ produzidas.
 | :--- | :--- | :--- | :--- |
 | Negócio | Por que o produto existe? | Narrativa em texto livre (contexto, problema, objetivo geral), declarações curtas (OE1 a OE6), narrativas de impacto (VN1 a VN7) | Seções 1, 2.1, 2.2 e 3 |
 | Usuário | O que o produto precisa oferecer? | Tabela de características de produto (CP1 a CP7), personas e jornadas | Seções 2.3 e 12 |
-| Produto | Como cada requisito se comporta? | **Uma declaração por RF** (verbo + objeto, com agente), com a intenção no formato "Como…, quero…, para…" **na mesma ficha**; catálogo de RNFs com critério verificável; regras de negócio (RN01 a RN20); critérios de aceitação; glossário e tabela de permissões | Seção 8 (catálogo, 8.1, 8.2 e 8.3) |
+| Produto | Como cada requisito se comporta? | **Uma declaração por RF** (verbo + objeto, com agente), com a história de usuário no formato "Como…, quero…, para…" **na mesma ficha**; catálogo de RNFs com critério verificável; regras de negócio (RN01 a RN20); critérios de aceitação; glossário e tabela de permissões | Seção 8 (catálogo, 8.1, 8.2 e 8.3) |
 
 **Uma técnica por nível, sem nível extra.** Até 27/10/2026, cada RF tinha também uma user story com
 ID próprio (RF09 → US09), o que criava um segundo registro do mesmo requisito e mais um nível de
-rastreabilidade. A partir de 29/10/2026, a história deixa de ter ID: ela é a parte *Intenção e
-valor* da ficha do RF. Quando o comportamento muda por ator, a ficha traz uma intenção por ator
+rastreabilidade. A partir de 29/10/2026, a história deixa de ter ID: ela é a parte *História de
+usuário* da ficha do RF. Quando o comportamento muda por ator, a ficha traz uma história por ator
 (a, b). Casos de uso e cenários não são usados; se forem adotados, cada um precisa ter função
 explícita (detalhar fluxos alternativos e de exceção) e ficar ligado à ficha do RF.
 
@@ -511,7 +511,7 @@ explícita (detalhar fluxos alternativos e de exceção) e ficar ligado à ficha
 
 | Fator de influência | Escolha feita pela equipe |
 | :--- | :--- |
-| Cliente próximo e sem formação técnica | Intenção de cada RF em frases curtas, no formato "Como..., quero..., para...", fáceis de discutir com Makio e a coordenação nas reuniões de validação. |
+| Cliente próximo e sem formação técnica | História de usuário de cada RF em frases curtas, no formato "Como..., quero..., para...", fáceis de discutir com Makio e a coordenação nas reuniões de validação. |
 | Abordagem ágil (ScrumXP) | Fichas que amadurecem a cada sprint, em vez de uma especificação completa no início do projeto. Os critérios de aceitação são escritos para os requisitos da próxima sprint, e não para o catálogo inteiro de uma vez. |
 | Equipe em formação | Critérios de aceitação escritos como condições de satisfação simples e numeradas (por exemplo, CA-RF09-01), sem notação BDD, que podem virar testes automatizados diretamente (seção [4.4](#44-praticas-de-xp-adotadas)). |
 | Dados pessoais de famílias e crianças (LGPD) | RNFs declarados em catálogo, cada um com critério verificável, e regras de negócio separadas do texto dos RFs, para que possam ser verificadas e alteradas sem reescrever os requisitos. |

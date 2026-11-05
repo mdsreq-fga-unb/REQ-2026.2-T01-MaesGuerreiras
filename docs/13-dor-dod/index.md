@@ -246,3 +246,28 @@ Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.
 
 **Pendências que impedem a entrada dos requisitos da Sprint 7:** os critérios de aceitação ainda não foram escritos; falta protótipo validado; RF19 e RF20 têm texto pendente desde a ata de 28/09; e o consentimento (RF42) precisa estar pronto antes do cadastro de famílias e participantes (RF14, RF16).
+
+## 13.7 Como a situação é atualizada
+
+A situação das fichas do [catálogo](../08-requisitos/index.md) acompanha as issues. Uma automação
+(`.github/workflows/situacao.yml`) roda sempre que uma issue é aberta, editada, fechada, reaberta ou
+apagada, recalcula a situação, registra a mudança na Evolução da ficha e republica o site.
+
+**Como ligar uma issue a um requisito:**
+
+- Nas issues de desenvolvimento e de correção, uma linha com `Requisitos: RF08, RF09`. Coloque a
+  linha quando o trabalho começar, porque a issue ligada já deixa o requisito em andamento.
+- Na issue de verificação da DoD da sprint, uma caixa por requisito: `- [ ] DoD RF09`. Marque a caixa
+  só depois de aplicar a DoD a esse requisito e registrar a evidência.
+
+| Situação | Quando |
+| :--- | :--- |
+| Em andamento | Há issue ligada, mas falta marcar a DoD ou fechar alguma issue do requisito |
+| Concluída | Todas as caixas de DoD do requisito estão marcadas e as demais issues dele estão fechadas |
+
+- A issue de verificação pode continuar aberta: cada requisito conclui quando a caixa dele é marcada.
+- Reabrir uma issue, desmarcar a caixa ou abrir um bug ligado devolve o requisito para "em andamento".
+- Requisito sem issue ligada mantém a situação escrita pela equipe.
+- A automação só altera a situação e a contagem de concluídos. Declaração, critérios e prioridade
+  continuam sendo editados pela equipe.
+- Só contam issues abertas por integrantes do repositório.

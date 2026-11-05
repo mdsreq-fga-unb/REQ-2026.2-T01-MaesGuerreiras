@@ -126,3 +126,9 @@ Versão apresentada ao Makio em 26/10/2026, com os ajustes pedidos na reunião:
   </figure>
 
 </div>
+
+## Validação da Sprint 6 com Makio
+
+Gravação da validação da Sprint 6 com Makio.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/3ikTwwXo4gc" title="Validação da Sprint 6 com Makio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

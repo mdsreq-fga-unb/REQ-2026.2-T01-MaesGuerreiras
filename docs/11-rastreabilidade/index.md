@@ -49,7 +49,7 @@ confere se os dois lados batem e se alguma nota de *Evolução* cita critérios 
 | Não existe relatório organizado do que foi recebido e distribuído | OE5 | CP6 – Relatórios e indicadores de impacto |
 | A prestação de contas aos parceiros depende da memória das coordenadoras | OE5 | CP6 – Relatórios e indicadores de impacto |
 | O cadastro das famílias fica em um computador da sede, sem ligação com a presença e as doações | OE3 | CP3 – Cadastro de famílias e participantes; CP4 – Inscrição em atividades |
-| A chamada é feita em papel e a regra de faltas depende de conferência manual | OE4 | CP5 – Chamada digital e controle de frequência |
+| A chamada é feita em papel e a regra de faltas depende de conferência manual | OE4 (parcial no MVP) | CP5 – Chamada digital e controle de frequência. O MVP abre a chamada, registra e justifica faltas, corrige e consulta a frequência (RF27 a RF31); a sinalização de quem passou do limite de faltas (RF32) fica para depois do MVP |
 | A Sacola Verde não registra quem foi atendido em cada distribuição | OE2 (parcial) | CP2 – a saída de itens para a família fica registrada no RF10; o sistema de senhas ficou fora do escopo (seção [15](../15-licoes/index.md), Unidade 1) |
 | A comunidade não sabe quais atividades estão ativas, suspensas ou dependem de doação | OE1 | CP1 – Portal institucional e agenda de atividades |
 | Informações institucionais e vagas dependem de Instagram, panfletos e grupos de WhatsApp | OE1 | CP1 – Portal institucional e agenda de atividades |
@@ -71,10 +71,10 @@ Da característica ao requisito, use o filtro do catálogo:
 | Que problema resolve? | Doações anotadas em cadernos e nem sempre registradas | Tabela 11.3 |
 | Que objetivo e característica? | OE2 · CP2 – Registro de doações de itens | Ficha do [RF09](../08-requisitos/index.md#rf09), *Origem* |
 | O que declara? | Permitir que Voluntário ou Coordenação registrem a entrada de itens doados | Ficha, *Declaração vigente* |
-| O que condiciona? | RNF01 (até três passos), RNF19 (histórico de alterações), RN02 (unidade da categoria) | Ficha, *Condições* |
+| O que condiciona? | RNF01 (até três passos), RNF07 (proteção dos dados do doador), RNF19 (histórico de alterações), RN02 (unidade da categoria) | Ficha, *Condições* |
 | Como se avalia? | CA-RF09-01 a CA-RF09-06 | Ficha, *Critérios* |
 | Quando entra? | MVP, release R1, Sprint 6 | Ficha, *Entrega* |
-| Como se comprova? | Teste automatizado no CI e teste com uma voluntária, sem ajuda | [DoD, exemplo 13.5](../13-dor-dod/index.md#135-exemplo-de-aplicacao-rf09-registrar-doacao-recebida) |
+| Como se comprova? | **Evidência prevista** (o RF09 ainda está em andamento): teste automatizado no CI e teste com uma voluntária, sem ajuda | [DoD, exemplo 13.5](../13-dor-dod/index.md#135-exemplo-de-aplicacao-rf09-registrar-doacao-recebida) |
 
 ## 11.5 Quando revisar os vínculos
 

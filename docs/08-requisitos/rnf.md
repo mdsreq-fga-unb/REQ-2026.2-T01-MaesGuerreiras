@@ -58,7 +58,7 @@ O sistema deve apresentar disponibilidade mensal de 99% no intervalo de 8h às 1
 Os dados pessoais das famílias e dos participantes devem trafegar cifrados, ser acessíveis somente conforme o perfil do usuário e ter as credenciais armazenadas de forma irreversível. O sistema deve manter trilha dos acessos a dados pessoais. Classificação: Sommerville – requisito de produto (segurança).
 
 - **Escopo:** Específico (ver fichas no catálogo)
-- **No MVP:** Obrigatório para o MVP. Protege os dados de famílias e participantes (RF14, RF16, RF18 e RF19) e os consentimentos (RF42).
+- **No MVP:** Obrigatório para o MVP. Protege os dados de famílias e participantes (RF14, RF16, RF18 e RF19), os dados de doadores pessoa física (RF08 e RF09) e os consentimentos (RF42).
 
 ### RNF08 · Suportabilidade (Supportability) {#rnf08}
 

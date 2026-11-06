@@ -553,10 +553,10 @@ atividades de Engenharia de Requisitos descritas na seção [5](#5-engenharia-de
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Sprint 1 | 11/08 a 24/08 | Conhecer o cliente e o negócio | Entrevistas com Makio e Daiane; proposta v0.1 | Entrevistas e proposta realizadas *(confirmar)* | Concluída | |
 | Sprint 2 | 25/08 a 07/09 | Visão do Produto e Projeto (Entrega Parcial 1) | Questionário com Daiane; documento v0.3; site no GitHub Pages | Documento e site publicados | Concluída | |
-| Sprint 3 | 08/09 a 21/09 | Backlog detalhado e planejamento técnico | Backlog detalhado; protótipos de baixa fidelidade validados | Backlog detalhado. Protótipos não realizados | Não realizada (protótipos) | |
-| Sprint 4 | 22/09 a 05/10 | Priorizar o MVP e preparar o ambiente (Entrega Parcial 2) | Matriz 4x4; validação do MVP; ambiente e autenticação inicial | Matriz 4x4 e valor de negócio com Makio (25/09); MVP validado (28/09). Ambiente não configurado | Não realizada (ambiente) | |
+| Sprint 3 | 08/09 a 21/09 | Backlog detalhado e planejamento técnico | Backlog detalhado; protótipos de baixa fidelidade validados | Backlog detalhado. Protótipos não realizados | Não realizada (protótipos) | Protótipos feitos depois, na Sprint 6: [avaliação de 26/10](../00-evidencias/index.md#avaliacao-do-prototipo-26102026) |
+| Sprint 4 | 22/09 a 05/10 | Priorizar o MVP e preparar o ambiente (Entrega Parcial 2) | Matriz 4x4; validação do MVP; ambiente e autenticação inicial | Matriz 4x4 e valor de negócio com Makio (25/09); MVP validado (28/09). Ambiente não configurado | Não realizada (ambiente) | [Valor de negócio, 25/09](../00-evidencias/index.md#avaliacao-do-valor-de-negocio-25092026) · [Validação do MVP, 28/09](../00-evidencias/index.md#validacao-do-mvp-28092026) |
 | Sprint 5 | 06/10 a 19/10 | Doações com acesso seguro (Entrega Parcial 3) | RF39 a RF42, RF08 a RF12 | Critérios de aceitação de RF08 a RF12 e RF39 a RF42; replanejamento em 17/10. Nenhuma história implementada | Não realizada (produto) | |
-| Sprint 6 | 20/10 a 02/11 | **Compromisso:** a coordenadora registra doações com acesso seguro | T01 e os [itens da Sprint 6](../08-requisitos/index.md#sprint-6) | T01: esqueleto do sistema integrado (PR #31); Supabase e deploy *(confirmar)*. Histórias em andamento *(confirmar)* | Em andamento | |
+| Sprint 6 | 20/10 a 02/11 | **Compromisso:** a coordenadora registra doações com acesso seguro | T01 e os [itens da Sprint 6](../08-requisitos/index.md#sprint-6) | T01: esqueleto do sistema (PR #31), Supabase e homologação na Vercel. Back-end de acesso, consentimentos e doações (PR #43) e telas conforme o protótipo (PR #51), em homologação; protótipo e Sprint 6 validados com o Makio. Verificação da DoD em 02/11: **nenhum dos 8 RFs concluído**. Faltam testes automatizados por regra e CI ligado ao commit, a correção da #47 e o registro de doação pela coordenadora sem ajuda. Os 8 RFs seguem em andamento na Sprint 7 | Não realizada (DoD) | [Back-end](../00-evidencias/index.md#sprint-6-back-end-de-acesso-consentimentos-e-doacoes-issue-33) · [Protótipo, 26/10](../00-evidencias/index.md#avaliacao-do-prototipo-26102026) · [Validação da Sprint 6](../00-evidencias/index.md#validacao-da-sprint-6-com-makio) · DoD na issue #35 |
 | Sprint 7 | 03/11 a 16/11 | **Previsão:** fechar o MVP (R1, a doação chega à família, e R2, a educadora faz a chamada) | [12 itens da Sprint 7](../08-requisitos/index.md#sprint-7), todos do MVP | — | Prevista | |
 | Sprint 8 | 17/11 a 30/11 | **Previsão:** completar os fluxos (R3), relatórios e LGPD (R4). Sprint reduzida pela apresentação (24/11 a 26/11) | [17 itens da Sprint 8](../08-requisitos/index.md#sprint-8): primeiro os de valor 3, depois os de valor 2; T02 | — | Prevista | |
 | Fechamento | 01/12 a 10/12 | Homologar e transferir o sistema ([6.5](#65-fechamento-minimo-e-adicional)) | Mínimo: homologação, T03, T04. Adicional: [6 itens de valor 2](../08-requisitos/index.md#sprint-fechamento) | — | Prevista | |
@@ -565,7 +565,7 @@ atividades de Engenharia de Requisitos descritas na seção [5](#5-engenharia-de
 
 | Período | RFs previstos | Acumulado | Realizado (DoD) |
 | :--- | :---: | :---: | :---: |
-| Sprint 6 | 8 + T01 | 8 de 43 | |
+| Sprint 6 | 8 + T01 | 8 de 43 | T01 e 0 RFs (verificação de 02/11) |
 | Sprint 7 | 12 (MVP completo) | 20 de 43 | |
 | Sprint 8 | 17 | 37 de 43 | |
 | Fechamento (adicional) | até 6 | 43 de 43 | |
@@ -578,6 +578,11 @@ ainda não tem velocidade medida.
 Se o realizado de uma sprint ficar abaixo do previsto, os itens do fim da ordem do catálogo (valor 2:
 relatórios de frequência, painel, histórico de alterações e portal) são comunicados ao professor e ao
 cliente na mesma revisão.
+
+!!! warning "Sprint 6 abaixo do previsto"
+    Os 8 RFs da Sprint 6 foram implementados e estão em homologação, mas nenhum passou na DoD até
+    02/11. Eles seguem na Sprint 7, junto com os 12 previstos para ela. O efeito sobre os itens de valor 2
+    do fim da ordem é avaliado na revisão da Sprint 7.
 
 ### 6.4 Portão de liberação para uso real
 

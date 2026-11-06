@@ -46,3 +46,17 @@ insert into auth.identities (
 insert into public.perfis (id, nome, perfil) values
   ('11111111-1111-1111-1111-111111111111', 'Coordenadora Exemplo', 'coordenacao'),
   ('22222222-2222-2222-2222-222222222222', 'Voluntária Exemplo', 'voluntario');
+
+insert into public.categorias_item (nome, unidade, criado_por) values
+  ('Alimento', 'quilo', '11111111-1111-1111-1111-111111111111'),
+  ('Roupa', 'unidade', '11111111-1111-1111-1111-111111111111'),
+  ('Higiene', 'pacote', '11111111-1111-1111-1111-111111111111');
+
+insert into public.doadores (tipo, nome, telefone, email, criado_por) values
+  (
+    'pessoa',
+    'Doadora Exemplo',
+    '61999990000',
+    'doadora@exemplo.local',
+    '11111111-1111-1111-1111-111111111111'
+  );

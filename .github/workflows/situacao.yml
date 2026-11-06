@@ -1,0 +1,38 @@
+name: situacao
+on:
+  issues:
+    types: [opened, edited, closed, reopened, deleted]
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: read
+concurrency:
+  group: situacao
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s scripts
+      - run: python scripts/catalogo.py situacao
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: python scripts/catalogo.py verificar
+      - name: Registrar e publicar
+        run: |
+          if git diff --quiet docs/08-requisitos/index.md docs/14-historico/index.md; then
+            echo "Nenhuma situação mudou."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/08-requisitos/index.md docs/14-historico/index.md
+          git commit -m "Atualiza a situação dos requisitos a partir das issues"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # Commit feito com o token da Action não dispara o ci.yml, então o site é publicado aqui.
+          mkdocs gh-deploy --force

@@ -266,3 +266,14 @@
 .md-typeset span.rf.mvp { background: var(--md-primary-fg-color--light); color: #fff; }
 .md-typeset a.rf:hover { outline: 2px solid var(--md-accent-fg-color); }
 .md-typeset .matriz-legenda { font-size: 0.7rem; color: var(--md-default-fg-color--light); }
+
+/* ---------- código de mudança no histórico ---------- */
+.md-typeset .mud {
+  font-weight: 700;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  scroll-margin-top: 8rem;
+}
+.md-typeset tr:has(.mud:target) td {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 14%, transparent);
+}

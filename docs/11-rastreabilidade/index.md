@@ -32,7 +32,7 @@ Problema (1.4)
 | Requisito → critério | RF e CA | Dentro da ficha, campo *Critérios* | Como saber se está pronto e aceito? |
 | Requisito → requisito | Dependência | Ficha do RF, campo *Condições*: *Depende de* (escrito pela equipe) e *Necessário para* (gerado a partir dos *Depende de*) | O que precisa vir antes? O que é afetado se este mudar? |
 | Requisito → entrega | RF, MVP, release e sprint | Ficha do RF, campo *Entrega* | Quando entra? |
-| Decisão → requisito | Ata ou refinamento e RF | Ficha do RF, campo *Evolução*, e [Histórico](../14-historico/index.md) | Por que mudou? |
+| Decisão → requisito | Ata ou refinamento e RF | Linha do [Histórico](../14-historico/index.md) (código `MUD-…`, fonte) e nota na *Evolução* da ficha, com link para essa linha | Por que mudou? |
 | Critério → evidência | CA e teste ou validação | [DoD](../13-dor-dod/index.md) e [Evidências](../00-evidencias/index.md) | Como sabemos que foi cumprido? |
 
 Cada vínculo é mantido **em um só lugar**. As páginas de RNFs e de regras não listam os RFs que as

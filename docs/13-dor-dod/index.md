@@ -26,10 +26,10 @@ usa a unidade de medida da categoria ([RN02](../08-requisitos/regras.md#rn02)); 
 [regras de negócio](../08-requisitos/regras.md) e ligada na ficha do RF,
 não só mencionada de passagem no RF.
 
-**O agente que executa o requisito está definido na tabela de permissões?**
+**O agente que executa o requisito está definido na ficha?**
 
-Nenhum RF entra em sprint sem perfil de acesso definido na
-[tabela de permissões](../08-requisitos/glossario.md#permissoes-por-perfil) e na ficha do RF. RF39 (Cadastrar usuário do
+Nenhum RF entra em sprint sem perfil de acesso definido no
+campo *Agentes* da ficha do RF (veja por perfil no [filtro do catálogo](../08-requisitos/index.md#perfil-voluntario)). RF39 (Cadastrar usuário do
 sistema) é exclusivo da Coordenação; RF41 (Autenticar usuário) é Voluntário ou Coordenação. Se o
 RF ainda estiver com o agente em aberto, ele não está pronto.
 
@@ -172,7 +172,7 @@ seção 13.3).
 | :---: | :--- |
 | ☐ | O requisito tem os dados mínimos (campos obrigatórios/opcionais) descritos? |
 | ☐ | As regras de negócio estão separadas do texto do RF, registradas em 8.2 e ligadas na ficha? |
-| ☐ | O perfil de acesso está definido na tabela de permissões (8.3) e na ficha, e confirmado pela Daiane ou Makio? |
+| ☐ | O perfil de acesso está definido no campo *Agentes* da ficha e confirmado pela Daiane ou Makio? |
 | ☐ | Existe protótipo validado com o cliente ou com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
 | ☐ | O critério de aceitação está escrito como condições de satisfação verificáveis? |
@@ -216,7 +216,7 @@ quando a história é verificada.
 | RNFs aplicáveis | RNF01; CA-RF09-03 | Uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos (no máximo três) | | |
 | RNFs aplicáveis | RNF19 | Uma alteração de teste em um registro de doação aparece com autor, data, hora, valor anterior e novo | | |
 | RNFs aplicáveis | RNF03 | Não se aplica: gravação, não tela de consulta | Não se aplica | — |
-| Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis da tabela de permissões; apenas dados sintéticos até o portão de uso real (seção [6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)) | | |
+| Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis do campo *Agentes* das fichas; apenas dados sintéticos até o portão de uso real (seção [6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)) | | |
 | Em andamento × pronto | — | Se qualquer linha acima não passar, o RF09 fica "em andamento" e não entra na velocidade | | |
 
 ## 13.6 Aplicação da DoR aos requisitos da Sprint 6
@@ -234,14 +234,14 @@ Situação em 28/10/2026. Os oito requisitos da Sprint 6 (filtro [Sprint 6](../0
 | [RF09](../08-requisitos/index.md#rf09) – Registrar doação recebida | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ? | — |
 | [RF12](../08-requisitos/index.md#rf12) – Consultar saldo | — | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ? | — |
 
-Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 8.2 · D3 perfil na tabela de permissões, confirmado pela Daiane · D4 protótipo validado · D5 RNFs listados · D6 critérios de aceitação · D7 dependências · D8 esforço estimado · D9 comportamento confirmado pelo cliente · D10 consentimento antes de dados reais.
+Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 8.2 · D3 perfil no campo Agentes da ficha, confirmado pela Daiane · D4 protótipo validado · D5 RNFs listados · D6 critérios de aceitação · D7 dependências · D8 esforço estimado · D9 comportamento confirmado pelo cliente · D10 consentimento antes de dados reais.
 
 **Justificativas dos "não se aplica":** RF41 e RF08 não têm regra de negócio própria (D2). O RF12 é uma consulta, sem campos de entrada (D1). Nenhum requisito da Sprint 6 trata dado de família ou criança, e os testes usam dados sintéticos (D10).
 
 **Pendências desta sprint:**
 
 - **D4:** atendido em 26/10/2026: o protótipo das oito telas foi apresentado ao Makio e aprovado com ajustes ([ata de 26/10](../00-atas/index.md#ata-de-26102026), [vídeo, feedback e protótipo no Figma](../00-evidencias/index.md#avaliacao-do-prototipo-26102026)). Os ajustes pedidos entraram na versão 2 do protótipo.
-- **D3:** a tabela de permissões ainda é proposta, à espera da confirmação da Daiane.
+- **D3:** os perfis do campo *Agentes* ainda são proposta, à espera da confirmação da Daiane.
 - **D9:** só o consentimento (RF42) tem decisão do cliente registrada em ata ou gravação; nos demais, a validação de 28/09 aprovou o requisito, e falta registrar a confirmação do comportamento detalhado (no RF08, os critérios CA-RF08-04 a 06 ainda são propostas).
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.
 
@@ -251,7 +251,7 @@ Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 
 
 A situação das fichas do [catálogo](../08-requisitos/index.md) acompanha as issues. Uma automação
 (`.github/workflows/situacao.yml`) roda sempre que uma issue é aberta, editada, fechada, reaberta ou
-apagada, recalcula a situação, registra a mudança na Evolução da ficha e republica o site.
+apagada, recalcula a situação, registra a mudança numa linha nova do [Histórico](../14-historico/index.md) (código `MUD-…`) e na Evolução da ficha, com link para essa linha, e republica o site.
 
 **Como ligar uma issue a um requisito:**
 

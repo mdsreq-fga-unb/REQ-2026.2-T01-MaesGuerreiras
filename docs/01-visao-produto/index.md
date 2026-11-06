@@ -498,7 +498,7 @@ produzidas.
 | :--- | :--- | :--- | :--- |
 | Negócio | Por que o produto existe? | Narrativa em texto livre (contexto, problema, objetivo geral), declarações curtas (OE1 a OE6), narrativas de impacto (VN1 a VN7) | Seções 1, 2.1, 2.2 e 3 |
 | Usuário | O que o produto precisa oferecer? | Tabela de características de produto (CP1 a CP7), personas e jornadas | Seções 2.3 e 12 |
-| Produto | Como cada requisito se comporta? | **Uma declaração por RF** (verbo + objeto, com agente), com a história de usuário no formato "Como…, quero…, para…" **na mesma ficha**; catálogo de RNFs com critério verificável; regras de negócio (RN01 a RN20); critérios de aceitação; glossário e tabela de permissões | Seção 8 (catálogo, 8.1, 8.2 e 8.3) |
+| Produto | Como cada requisito se comporta? | **Uma declaração por RF** (verbo + objeto, com agente), com a história de usuário no formato "Como…, quero…, para…" **na mesma ficha**; catálogo de RNFs com critério verificável; regras de negócio (RN01 a RN20); critérios de aceitação; glossário; agente de cada RF no campo *Agentes* da ficha | Seção 8 (catálogo, 8.1, 8.2 e 8.3) |
 
 **Uma técnica por nível, sem nível extra.** Até 27/10/2026, cada RF tinha também uma user story com
 ID próprio (RF09 → US09), o que criava um segundo registro do mesmo requisito e mais um nível de
@@ -588,7 +588,7 @@ reais de doadores) e repetida ao final da Sprint 7 (antes dos dados reais de fam
 | Condição | Como verificar | Sprint 6 | Sprint 7 | Evidência |
 | :--- | :--- | :---: | :---: | :--- |
 | Backup testado | Restauração de uma cópia de segurança feita com sucesso em ambiente de teste (RNF05) | ☐ | ☐ | |
-| Controle de acesso | Testes automatizados das políticas de acesso por perfil passando (RNF07, [tabela de permissões](../08-requisitos/glossario.md#permissoes-por-perfil)) | ☐ | ☐ | |
+| Controle de acesso | Testes automatizados das políticas de acesso por perfil passando (RNF07, campo *Agentes* das fichas no [catálogo](../08-requisitos/index.md#perfil-voluntario)) | ☐ | ☐ | |
 | Consentimento | RF42 concluído pela DoD (RN19) | ☐ | ☐ | |
 | Autorização institucional | Autorização da coordenação para uso de dados reais registrada em ata | ☐ | ☐ | |
 

@@ -97,5 +97,79 @@ class AplicarSituacoes(unittest.TestCase):
         self.assertIn("**0 de 1**", novo)
 
 
+
+def linha_mud(codigo, data, mudou, afetados):
+    return (f'| <span class="mud" id="mud-{codigo}">MUD-{codigo}</span> | {data} | {mudou} | Motivo. | '
+            f"Origem | {afetados} | Equipe |\n")
+
+
+def link(rf):
+    return f"[{rf.upper()}](../08-requisitos/index.md#{rf})"
+
+
+def ficha_com_notas(rf, *notas):
+    return (f'<details class="ficha" id="{rf}" markdown="1">\n<summary>x</summary>\n\n'
+            f"| Evolução | {'<br>'.join(notas)} |\n\n</details>\n")
+
+
+class HistoricoDeMudancas(unittest.TestCase):
+    def setUp(self):
+        self.historico = (linha_mud("001", "29/10/2026", "Nova matriz.", "Todas as fichas")
+                          + linha_mud("002", "31/10/2026", "RF10 muda o destinatário; detalhe.",
+                                      f"{link('rf10')}, {link('rf20')}")
+                          + linha_mud("003", "31/10/2026", "Releases.", f"{link('rf01')} a {link('rf03')}"))
+        self.linhas = catalogo.mudancas_do_historico(self.historico)
+
+    def test_le_links_faixas_e_todas(self):
+        self.assertEqual(self.linhas["002"]["rfs"], {"rf10", "rf20"})
+        self.assertEqual(self.linhas["003"]["rfs"], {"rf01", "rf02", "rf03"})
+        self.assertTrue(self.linhas["001"]["todas"])
+
+    def test_nota_copiada_para_ficha_nao_afetada_e_apontada(self):
+        todas = {"rf14": ficha_com_notas("rf14", f"31/10/2026 · Nota do RF10. ({catalogo.link_mud('002')})")}
+        problemas = catalogo.problemas_do_historico(todas, self.linhas)
+        self.assertTrue(any("copiada para o lugar errado" in p for p in problemas))
+
+    def test_nota_sem_codigo_e_data_diferente_sao_apontadas(self):
+        todas = {"rf10": ficha_com_notas("rf10", "31/10/2026 · Sem código.",
+                                         f"30/10/2026 · Data errada. ({catalogo.link_mud('002')})")}
+        problemas = " ".join(catalogo.problemas_do_historico(todas, self.linhas))
+        self.assertIn("sem código", problemas)
+        self.assertIn("data diferente", problemas)
+
+    def test_completar_cria_nota_que_falta_e_ordena(self):
+        texto = ficha_com_notas("rf20", f"29/10/2026 · Matriz. ({catalogo.link_mud('001')})")
+        novo = catalogo.completar_evolucao(texto, self.linhas)
+        self.assertIn(f"31/10/2026 · RF10 muda o destinatário. ({catalogo.link_mud('002')})", novo)
+        self.assertLess(novo.index("29/10/2026"), novo.index("31/10/2026"))
+        todas = {"rf20": catalogo.FICHA.search(novo).group(0)}
+        self.assertEqual(catalogo.problemas_do_historico(todas, {k: self.linhas[k] for k in ("001", "002")}), [])
+
+    def test_situacao_com_codigo_liga_a_nota_e_gera_linha(self):
+        texto = AVISO + ficha("rf09", "em-andamento", "Em andamento")
+        novo, mudancas = catalogo.aplicar_situacoes(texto, {"rf09": ("concluida", [33, 35])}, "05/11/2026", "031")
+        self.assertIn(catalogo.link_mud("031"), novo)
+        linha = catalogo.linha_da_automacao("031", "05/11/2026", mudancas)
+        self.assertEqual(catalogo.mudancas_do_historico(linha)["031"]["rfs"], {"rf09"})
+
+
+class PermissoesPorPerfil(unittest.TestCase):
+    def ficha(self, rf, cp, nome, agentes):
+        return (f'<details class="ficha" id="{rf}" data-cp="{cp}" markdown="1">\n'
+                f'<summary><span class="ficha__nome">{nome}</span></summary>\n\n| Agentes | {agentes} |\n\n</details>\n')
+
+    def test_le_perfis_e_acoes(self):
+        b = self.ficha("rf30", "cp5", "Corrigir", "Voluntário: corrige no dia · Coordenação: corrige com motivo")
+        self.assertEqual(catalogo.agentes(b), {"Voluntário": "corrige no dia", "Coordenação": "corrige com motivo"})
+        self.assertEqual(catalogo.perfis_da_ficha(b), "voluntario coordenacao")
+
+    def test_marca_perfis(self):
+        texto = ("## CP7 · Perfis {#cp7}\n\n" + self.ficha("rf41", "cp7", "Autenticar", "Voluntário: autentica · Coordenação: autentica")
+                 + self.ficha("rf32", "cp7", "Sinalizar", "Sistema: sinaliza · Coordenação: consulta"))
+        marcado = catalogo.marcar_perfis(texto)
+        self.assertIn('data-perfis="voluntario coordenacao"', marcado)
+        self.assertIn('data-perfis="coordenacao"', marcado)
+
+
 if __name__ == "__main__":
     unittest.main()

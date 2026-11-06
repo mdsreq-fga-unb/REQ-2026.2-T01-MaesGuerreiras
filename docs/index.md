@@ -30,7 +30,7 @@ consultam esse registro, sem repetir listas.
   <div class="estrutura__ligados">
     <a class="estrutura__no" href="08-requisitos/rnf/"><b>RNFs</b><span>aplicam-se aos RFs</span></a>
     <a class="estrutura__no" href="08-requisitos/regras/"><b>Regras de negócio</b><span>condicionam os RFs</span></a>
-    <a class="estrutura__no" href="08-requisitos/glossario/"><b>Glossário e perfis</b><span>termos e acesso</span></a>
+    <a class="estrutura__no" href="08-requisitos/glossario/"><b>Glossário</b><span>termos do domínio</span></a>
   </div>
   <p class="estrutura__legenda">Páginas que consultam o catálogo:</p>
   <div class="estrutura__visoes">

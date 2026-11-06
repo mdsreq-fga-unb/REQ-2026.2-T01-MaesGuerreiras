@@ -245,7 +245,7 @@ Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 
 - **D9:** só o consentimento (RF42) tem decisão do cliente registrada em ata ou gravação; nos demais, a validação de 28/09 aprovou o requisito, e falta registrar a confirmação do comportamento detalhado (no RF08, os critérios CA-RF08-04 a 06 ainda são propostas).
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.
 
-**Pendências que impedem a entrada dos requisitos da Sprint 7:** os critérios de aceitação ainda não foram escritos; falta protótipo validado; RF19 e RF20 têm texto pendente desde a ata de 28/09; e o consentimento (RF42) precisa estar pronto antes do cadastro de famílias e participantes (RF14, RF16).
+**Pendências que impedem a entrada dos requisitos da Sprint 7:** os critérios de aceitação foram escritos em 05/11 ([MUD-033](../14-historico/index.md#mud-033)), mas ainda precisam da confirmação do cliente (D9); falta protótipo validado; RF19 e RF20 têm texto pendente desde a ata de 28/09; e o consentimento (RF42) precisa estar pronto antes do cadastro de famílias e participantes (RF14, RF16).
 
 ## 13.7 Como a situação é atualizada
 

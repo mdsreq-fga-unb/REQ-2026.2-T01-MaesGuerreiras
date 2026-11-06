@@ -2,7 +2,7 @@
    Funciona sem dependências. Sem JavaScript, todas as fichas continuam visíveis, agrupadas por
    característica, e o número antes do ID mostra a posição na ordem do backlog.
    Links de outras páginas chegam com o filtro no endereço, por exemplo:
-   #mvp-sim, #sprint-7, #release-r1, #cp-cp2, #situacao-a-refinar, #valor-4-esforco-3.
+   #mvp-sim, #sprint-7, #release-r1, #cp-cp2, #situacao-a-refinar, #perfil-voluntario, #valor-4-esforco-3.
    #ordem abre as fichas numa lista única, na ordem do backlog. */
 (function () {
   "use strict";
@@ -96,7 +96,13 @@
 
     function passa(el, f, termo) {
       for (var campo in f) {
-        if (el.getAttribute("data-" + campo) !== f[campo]) {
+        var valor = el.getAttribute("data-" + campo);
+        if (campo === "perfis") {
+          // Uma ficha pode ter vários perfis: data-perfis="voluntario coordenacao".
+          if ((" " + (valor || "") + " ").indexOf(" " + f[campo] + " ") === -1) {
+            return false;
+          }
+        } else if (valor !== f[campo]) {
           return false;
         }
       }
@@ -174,7 +180,7 @@
         barra.scrollIntoView();
         return;
       }
-      var campos = ["cp", "mvp", "release", "sprint", "situacao"];
+      var campos = ["cp", "mvp", "release", "sprint", "situacao", "perfil"];
       for (var i = 0; i < campos.length; i += 1) {
         var prefixo = campos[i] + "-";
         if (h.indexOf(prefixo) === 0) {

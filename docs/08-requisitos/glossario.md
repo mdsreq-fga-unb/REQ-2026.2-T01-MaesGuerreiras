@@ -1,6 +1,7 @@
-# 8.3 Glossário e perfis de acesso
+# 8.3 Glossário
 
-Termos do domínio e regras de acesso por perfil. O agente de cada RF está na ficha do RF.
+Termos do domínio. Quem executa cada RF está no campo *Agentes* da ficha, no formato "Perfil: ação";
+para ver só o que um perfil faz, use o filtro *Perfil* do [catálogo](index.md#perfil-voluntario).
 
 ## Glossário
 
@@ -28,25 +29,3 @@ Termos do domínio e regras de acesso por perfil. O agente de cada RF está na f
 | Sinalização | Aviso automático de que um participante passou do limite de faltas não justificadas. |
 | Perfil de acesso | Conjunto de permissões de um usuário: Voluntário ou Coordenação. |
 | Visitante | Quem usa a área pública sem fazer login. |
-
-## Perfis e agentes
-
-Há três agentes: o Visitante (sem login), o Voluntário e a Coordenação (ambos com login). A divisão abaixo é uma proposta e precisa da confirmação da Daiane.
-
-### Permissões por perfil
-
-| Área (RFs) | Visitante | Voluntário | Coordenação |
-| --- | --- | --- | --- |
-| Conteúdo institucional e agenda (RF01 a RF05) | Consulta agenda e conteúdo público | Consulta | Publica e atualiza |
-| Contato (RF06, RF07) | Envia solicitação | Sem acesso | Consulta e marca como atendida |
-| Doações (RF08 a RF10, RF12) | Sem acesso | Registra e consulta | Registra e consulta |
-| Categorias e lista de itens necessários (RF11, RF13) | Vê a lista pública | Sem acesso | Cadastra e publica |
-| Famílias e participantes (RF14 a RF19) | Sem acesso | Cadastra, atualiza e consulta | Tudo do Voluntário, mais inativar |
-| Turmas (RF20 a RF22) | Sem acesso | Sem acesso | Cadastra, atualiza e encerra |
-| Inscrições e espera (RF23 a RF26) | Sem acesso | Sim | Sim |
-| Chamada e frequência (RF27 a RF29, RF31) | Sem acesso | Sim | Sim |
-| Corrigir frequência ([RF30](index.md#rf30)) | Sem acesso | Só as suas, até o fim do dia | Qualquer uma, com motivo |
-| Sinalização, relatórios e painel (RF32 a RF38) | Sem acesso | Sem acesso | Sim |
-| Usuários e perfis (RF39 a RF41) | Sem acesso | Sem acesso | Cadastra, atribui perfil e acessa |
-| Consentimento e imagem (RF42, RF45) | Sem acesso | Registra e consulta | Registra e consulta |
-| Exclusão de dados e histórico (RF43, RF44) | Sem acesso | Sem acesso | Sim |

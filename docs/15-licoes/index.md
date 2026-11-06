@@ -61,7 +61,9 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
   priorização, MVP e rastreabilidade passaram a explicar o método e a consultar o catálogo. Toda
   mudança agora é feita na ficha e registrada no histórico de evolução.
 
-**5. Mudanças que não alcançaram todos os registros afetados**
+## Unidade 3
+
+**1. Mudanças que não alcançaram todos os registros afetados**
 
 - **Desafio:** Na avaliação de organização e atualização (03/11/2026), três falhas apareceram. Uma
   nota sobre o RF10 foi copiada para outras 10 fichas numa substituição em lote. Mudanças de 31/10
@@ -74,19 +76,6 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
   *Depende de*, e o script `scripts/catalogo.py` verifica o catálogo antes de cada publicação do
   site. Ao registrar uma decisão de reunião, a equipe confere também a DoR, as fichas e o histórico
   afetados.
-
-### Avaliação de organização e atualização (03/11/2026)
-
-Exercícios propostos na aula (Cap. 12), aplicados ao site:
-
-| Exercício | Achado | Evidência | Situação | Encaminhamento |
-| :--- | :--- | :--- | :--- | :--- |
-| Consultar uma amostra | A ficha do RF09 reúne origem, condições, critérios, situação e sprint. | [Ficha do RF09](../08-requisitos/index.md#rf09) | Atende | — |
-| Percorrer uma relação | O caminho problema → OE2 → CP2 → RF09 → RN02, RNF01 e RNF19 → critérios → DoD se recupera pelos links. | [11.4](../11-rastreabilidade/index.md#114-exemplo-percorrendo-o-rf09) | Atende | — |
-| Simular uma mudança | Trocar a unidade de uma categoria (RN02) afeta RF09, RF10, RF11 e RF12; antes, só era possível achar quem dependia do RF12 abrindo as outras fichas. | Campo *Necessário para* das fichas | Atendido nesta correção | Manter o campo com `python scripts/catalogo.py atualizar` |
-| Reconstruir uma mudança real | Opção 1 de 31/10 (releases seguindo a matriz): decisão, justificativa e atualização recuperáveis; a comunicação ao cliente e ao professor não estava registrada. | [Histórico 14.2](../14-historico/index.md#142-registro-de-mudancas) | Parcial | Registrar o aviso ao cliente e ao professor na coluna *Comunicado a* |
-
-## Unidade 3
 
 
 ## Unidade 4

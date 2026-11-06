@@ -3,6 +3,37 @@
 !!! note "Caráter histórico"
     As atas registram o estado das decisões **no momento em que foram tomadas**. Pendências e encaminhamentos descritos aqui podem ter sido resolvidos posteriormente. O estado vigente de cada requisito, regra ou decisão está no [Catálogo de requisitos](../08-requisitos/index.md) e no [Histórico de evolução](../14-historico/index.md), não nas atas.
 
+## Ata de 02/11/2026
+
+**Participantes:** Isabella, Luan, Luis, Ian, Pedro, Vitor e Makio (representante do cliente).
+
+**Pauta:**
+
+- Teste, em homologação, das funcionalidades da Sprint 6.
+- Próximos passos.
+
+### 1. Teste das funcionalidades da Sprint 6
+
+Makio testou em homologação todas as funcionalidades da Sprint 6: login (RF41), cadastro de
+usuários e atribuição de perfil (RF39 e RF40), consentimentos e autorização de uso de imagem
+(RF42), cadastro de categorias (RF11), cadastro e correção de doador (RF08), entrada de doação
+(RF09) e consulta de saldo (RF12). As funcionalidades foram validadas sem ajustes novos: os
+ajustes pedidos em 26/10 já tinham entrado na versão 2 do protótipo e nas telas.
+
+Makio também testou e validou a tela de categorias.
+
+### 2. Próximos passos
+
+A próxima reunião com Makio será ao final da Sprint 7 (até 16/11/2026).
+
+*(Situação vigente: a validação de Makio não substitui a verificação da DoD. Na verificação de
+02/11 ([issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35)), nenhum
+RF da Sprint 6 foi marcado como concluído; faltam os testes automatizados por regra, o CI ligado ao
+commit, a correção do aviso de doador duplicado (#47) e o teste de registro de doação pela
+coordenadora sem ajuda.)*
+
+**Evidências:** [gravação da reunião](../00-evidencias/index.md#validacao-da-sprint-6-com-makio-02112026).
+
 ## Ata de 28/09/2026
 
 **Participantes:** Isabella Lacerda Lima, Luan Ludry Souza, Luis Gustavo Lopes Oliveira, Ian
@@ -20,7 +51,7 @@ A equipe revisou o feedback recebido sobre os RFs, item por item, decidindo acei
 parcialmente ou não aceitar cada apontamento, e já ajustou o texto de boa parte dos requisitos
 (agentes por RF, campos de cadastro, terminologia, glossário, regras de encerramento e
 cancelamento). RF19 e RF20 (turma) ficaram pendentes, por dúvida sobre até onde o apontamento cruza para regra de negócio em vez de requisito funcional. RF12 e RF29 dependem de validação com a coordenação da associação. Isabella vai consolidar e reenviar o texto revisado para a equipe.
-*(Situação vigente: RF19 e RF20 foram refinados e estão com situação "A refinar" no catálogo. RF12 continua em andamento; a validação da granularidade do saldo com a coordenação permanece em aberto. RF29 foi incluído no MVP pela nova matriz de 29/10/2026. Ver [catálogo](../08-requisitos/index.md).)*
+*(Situação vigente: RF19 e RF20 foram refinados e estão com situação "A refinar" no catálogo. RF12 continua em andamento; a granularidade do saldo é definida pela própria Coordenação ao cadastrar categorias (RF11), validado por Makio em 02/11/2026 ([MUD-039](../14-historico/index.md#mud-039)). RF29 foi incluído no MVP pela nova matriz de 29/10/2026. Ver [catálogo](../08-requisitos/index.md).)*
 
 ### 2. Requisitos Não Funcionais
 

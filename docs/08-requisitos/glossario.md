@@ -15,7 +15,7 @@ para ver só o que um perfil faz, use o filtro *Perfil* do [catálogo](index.md#
 | Lista de espera | Fila de participantes que aguardam vaga em uma turma cheia, na ordem em que foram registrados. |
 | Frequência | Conjunto de presenças e faltas de um participante. |
 | Falta justificada | Falta em que foi informado o motivo. Ela não conta para o limite de faltas do RF32. |
-| Categoria de item | Grupo de itens doados, como alimentos, roupas, higiene e material escolar, com sua unidade de medida ([RF11](index.md#rf11)). |
+| Categoria de item | Tipo de item doado, como arroz, leite em pó, fralda ou roupa infantil, com sua unidade de medida. A Coordenação cria as categorias e escolhe o nível de detalhe ([RF11](index.md#rf11)), que define o detalhe do saldo ([RF12](index.md#rf12)). |
 | Doação recebida | Entrada de itens na associação, vinda de um doador. |
 | Destinação | Saída de itens doados para uma família ou atividade. |
 | Saldo | Quantidade atual de uma categoria: o que entrou menos o que saiu. |

@@ -232,7 +232,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir o cadastro de categorias para classificar os itens doados, como alimentos, roupas, produtos de higiene e material escolar, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). |
+| Declaração vigente | Permitir o cadastro de categorias para classificar os itens doados, como arroz, feijão, leite em pó, fralda ou roupa infantil, informando o nome da categoria e a unidade de medida usada na contagem dos itens (unidade, quilo ou pacote). O nível de detalhe é escolhido pela Coordenação: itens que não podem ser somados entre si ficam em categorias diferentes. |
 | História de usuário | Como **coordenadora**, quero cadastrar categorias de item com nome e unidade de medida, para que entradas e saídas sejam contadas sempre da mesma forma. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A2 Receber doações](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário: consulta, ao registrar uma doação · Coordenação: cadastra |
@@ -241,7 +241,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **1** · Risco: Baixo · Posição **6** na ordem<br>**Valor (cliente):** Must have, critério: dependência para viabilizar outras funcionalidades. «RF09, RF10 e RF12 classificam tudo por categoria, e a unidade de medida (kg, pacote, unidade) é o que permite somar o saldo. Pode começar com categorias pré-carregadas.»<br>**Esforço (equipe):** esforço 1 · complexidade 1 · lacuna 1 → consolidado 1,0. Formulário simples. Poucas regras para validar.<br>**Leitura da matriz:** Prioridade máxima (valor 4 · esforço 1). Entra no MVP. É base simples de que os outros fluxos dependem (categorias, turmas, frequência e usuários). |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **6** · Iceberg: Topo |
 | Situação | Em andamento (a confirmar) |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 1. ([MUD-015](../14-historico/index.md#mud-015))<br>05/11/2026 · Agentes: o Voluntário passa a constar como quem consulta as categorias ao registrar uma doação; o cadastro continua só com a Coordenação. ([MUD-031](../14-historico/index.md#mud-031)) |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 1. ([MUD-015](../14-historico/index.md#mud-015))<br>05/11/2026 · Agentes: o Voluntário passa a constar como quem consulta as categorias ao registrar uma doação; o cadastro continua só com a Coordenação. ([MUD-031](../14-historico/index.md#mud-031))<br>06/11/2026 · RF11 e RF12: os exemplos de categoria passam de grupos amplos para itens específicos. ([MUD-039](../14-historico/index.md#mud-039)) |
 
 </details>
 
@@ -250,7 +250,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 | Parte do registro | Informação |
 | :--- | :--- |
-| Declaração vigente | Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria. |
+| Declaração vigente | Permitir que Voluntário ou Coordenação consultem a quantidade atual de cada item doado, por categoria. O saldo tem o nível de detalhe das categorias cadastradas pela Coordenação no [RF11](#rf11). |
 | História de usuário | Como **voluntária de atendimento**, quero consultar a quantidade atual de cada item por categoria, para entregar só o que está disponível. |
 | Origem | [CP2 · Registro de doações de itens](../01-visao-produto/index.md#23-caracteristicas-de-produto) · objetivos OE2, OE5 · atividade [A4 Distribuir itens](../12-mapa/index.md#jornada-a) |
 | Agentes | Voluntário: consulta · Coordenação: consulta |
@@ -259,7 +259,7 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Priorização | Valor **3** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio: 3 s em 3G (RNF03) · Posição **9** na ordem<br>**Valor (cliente):** Should have, critério: frequência ou abrangência de uso. «É o ganho mais visível para a voluntária ("temos arroz para as sacolas desta semana?"). Mas nas primeiras semanas o saldo do sistema ainda não bate com o estoque físico, então dá para operar um tempo sem ele. Vira Must quando os dados acumularem. Como é uma consulta simples, deve cair em "Forte candidato ao MVP" na matriz.»<br>**Esforço (equipe):** esforço 1 · complexidade 2 · lacuna 2 → consolidado 1,7. A consulta precisa calcular o saldo por categoria, considerando as entradas e saídas registradas.<br>**Leitura da matriz:** Candidato ao MVP (valor 3 · esforço 2). Entre os primeiros da Fatia 2, conforme a capacidade das sprints. Pode antecipar se sobrar tempo. |
 | Entrega | MVP: **complemento** (Fatia 2), fora do MVP, mas antecipado na Sprint 6, onde já estava em andamento; a leitura do quadrante permite antecipar, e o cálculo de saldo é usado pelo RF10 · Release **R3** · Sprint **6** · Iceberg: Topo |
 | Situação | Em andamento (a confirmar) |
-| Evolução | 17/10/2026 · O replanejamento moveu este RF para a Fatia 2; a validação de 28/09 o mantinha no MVP. Resolvido pela nova matriz (29/10/2026). ([MUD-002](../14-historico/index.md#mud-002))<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 3; esforço 3 → 2; MVP: sim → complemento. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R1 → R3. ([MUD-018](../14-historico/index.md#mud-018))<br>31/10/2026 · A R1 passa a incluir o cálculo de saldo do RF12 no back-end, de que o RF10 depende. ([MUD-019](../14-historico/index.md#mud-019)) |
+| Evolução | 17/10/2026 · O replanejamento moveu este RF para a Fatia 2; a validação de 28/09 o mantinha no MVP. Resolvido pela nova matriz (29/10/2026). ([MUD-002](../14-historico/index.md#mud-002))<br>29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 3; esforço 3 → 2; MVP: sim → complemento. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R1 → R3. ([MUD-018](../14-historico/index.md#mud-018))<br>31/10/2026 · A R1 passa a incluir o cálculo de saldo do RF12 no back-end, de que o RF10 depende. ([MUD-019](../14-historico/index.md#mud-019))<br>06/11/2026 · RF11 e RF12: os exemplos de categoria passam de grupos amplos para itens específicos. ([MUD-039](../14-historico/index.md#mud-039)) |
 
 </details>
 

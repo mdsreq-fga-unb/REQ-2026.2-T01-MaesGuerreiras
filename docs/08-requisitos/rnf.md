@@ -100,7 +100,7 @@ O projeto é conduzido sem orçamento e a associação não pode assumir custo d
 O tratamento de dados pessoais deve estar em conformidade com a Lei nº 13.709/2018, com registro de consentimento por titular, finalidade declarada para cada dado coletado e atendimento às solicitações de exclusão no prazo definido pela associação.
 
 - **Escopo:** Específico (ver fichas no catálogo)
-- **No MVP:** Obrigatório para o MVP. O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF43 ficou fora do MVP, a equipe precisa definir e validar com a associação como serão recebidas e atendidas as solicitações de exclusão.
+- **No MVP:** Obrigatório para o MVP. O MVP cadastra famílias e participantes (RF14, RF16 e RF18) e registra consentimentos (RF42). Como o RF43 ficou fora do MVP, as solicitações de exclusão seguem um procedimento provisório, a validar com a associação antes de qualquer uso de dados reais: a Coordenação recebe o pedido, registra a data e acompanha as etapas (recebida, em análise, atendida ou negada com justificativa), responde ao titular em até 15 dias e, quando o pedido é atendido, pede à equipe de desenvolvimento a exclusão dos dados do titular no sistema.
 
 ### RNF14 · Requisito Externo Legislativo (Direito de Imagem) {#rnf14}
 
@@ -147,5 +147,5 @@ Toda alteração em dados pessoais, em frequência (inclusive justificativa de f
 
 !!! note "Pendências registradas na validação de 28/09/2026"
     Foram registrados o prazo de resposta de 15 dias para solicitações de exclusão e as quatro
-    finalidades de consentimento. O procedimento de recebimento e atendimento dessas solicitações
-    sem o RF43 ainda precisa ser definido com a associação.
+    finalidades de consentimento. O procedimento provisório de recebimento e atendimento dessas solicitações
+    sem o RF43 está no [RNF13](#rnf13) e ainda precisa ser validado com a associação.

@@ -31,6 +31,18 @@ Ficam fora do MVP, e são entregues depois:
 - Relatórios, painel de indicadores e sinalização de faltas (CP6 e parte do CP5).
 - LGPD avançada: solicitação de exclusão, consulta de autorização de imagem e histórico de alterações.
 
+### Enquanto os complementos não entram
+
+Alguns RFs que completam os fluxos do MVP ficaram para depois dele. Até entrarem, o ajuste que
+depende deles é pedido pela Coordenação à equipe de desenvolvimento, que o aplica direto no banco e
+anota o motivo. É um procedimento provisório, a validar com a associação antes do uso com dados reais.
+
+| Fora do MVP | O que acontece até ele entrar |
+| :--- | :--- |
+| [RF15](../08-requisitos/index.md#rf15) e [RF17](../08-requisitos/index.md#rf17) · Atualizar ou inativar família e participante | Telefone e endereço são corrigidos pela equipe a pedido da Coordenação. A inativação é rara no início do uso, e os dados registrados no MVP continuam disponíveis quando esses RFs entrarem. |
+| [RF24](../08-requisitos/index.md#rf24) · Cancelar inscrição | Quem desiste continua inscrito e aparece na chamada até a Coordenação pedir à equipe o cancelamento, que libera a vaga. Como a sinalização de faltas ([RF32](../08-requisitos/index.md#rf32)) e os relatórios (CP6) estão fora do MVP, a ausência a mais não gera alerta nem relatório errado. |
+| [RF43](../08-requisitos/index.md#rf43) · Solicitação de exclusão de dados | Segue o procedimento descrito no [RNF13](../08-requisitos/rnf.md#rnf13). |
+
 ## 10.3 Critério do recorte
 
 O valor de negócio (avaliado com o cliente) e o esforço técnico (avaliado pela equipe) são cruzados
@@ -114,6 +126,29 @@ seção 10.4. Evidência: [planilha de priorização v2](https://docs.google.com
 
 A classificação de cada RNF para o MVP (obrigatório ou associado a RFs do MVP) está no registro do
 próprio RNF, na página de [requisitos não funcionais](../08-requisitos/rnf.md).
+
+### Capacidade: RFs e RNFs
+
+Contar só as funcionalidades subestima o MVP, porque os RNFs obrigatórios também dão trabalho. A
+lacuna de capacidade de cada nota veio da autoavaliação de domínio técnico de cada integrante
+(1 = domina, 4 = nunca usou). As maiores lacunas estão em RNFs: funcionamento com conexão instável
+(RNF16, média 2,8), testes automatizados (RNF17, 2,5), acessibilidade (RNF18, 2,5) e hospedagem sem
+custo na Vercel (RNF12, 2,5). Por isso esses RNFs foram avaliados nas mesmas escalas dos RFs
+([9.2](../09-priorizacao/index.md#92-escalas-usadas-nas-fichas)). O RNF15 (login, expiração de sessão
+e bloqueio por tentativas) já está contado na nota do RF41.
+
+| RNF | Trabalho | Esforço | Complexidade | Lacuna | Consolidado |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| [RNF12](../08-requisitos/rnf.md#rnf12) | Hospedagem sem custo (Vercel) | 1 | 1 | 3 | 1,7 |
+| [RNF16](../08-requisitos/rnf.md#rnf16) | Não perder dados de chamada e cadastro com conexão instável | 3 | 3 | 3 | 3,0 |
+| [RNF17](../08-requisitos/rnf.md#rnf17) | Testes automatizados das regras de doação, inscrição e frequência | 3 | 2 | 3 | 2,7 |
+| [RNF18](../08-requisitos/rnf.md#rnf18) | Acessibilidade (contraste, navegação por teclado e rótulos de campo) | 2 | 2 | 3 | 2,3 |
+
+Pelas faixas de horas da nota de esforço, os 19 RFs do MVP somam de 38 a 110 horas (RF11, RF28,
+RF29 e RF30 com até 2 horas; RF14 e RF41 com 6 a 12 horas; os outros 13 com 2 a 6 horas), e os quatro
+RNFs somam de 14 a 32 horas: no total, de 52 a 142 horas. O MVP é feito nas Sprints 6 e 7 por 6
+integrantes, o que dá cerca de 4 a 12 horas por pessoa por sprint. A conta é refeita no planejamento
+de cada sprint, junto com a [velocidade necessária](../01-visao-produto/index.md#63-velocidade-necessaria).
 
 ## 10.7 Uso com dados reais
 

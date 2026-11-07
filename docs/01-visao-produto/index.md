@@ -121,14 +121,20 @@ Para diferenciar o poder de decisão de cada stakeholder dos efeitos que a impla
 
 | Stakeholder | Relação com a solução | Interesse principal | Poder de decisão | Impacto sofrido | Participação esperada na Engenharia de Requisitos |
 | --- | --- | --- | --- | --- | --- |
-| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alto | Alto | Apresentará as necessidades da associação e esclarecerá as regras do negócio |
-| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação entre a equipe e a associação | Validar o escopo, as prioridades e as entregas do projeto | Alto | Médio | Validará o escopo, as prioridades e as entregas do projeto |
+| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alto | Alto | Apresentará as necessidades da associação e esclarecerá as regras do negócio. **Confirma** os perfis de acesso, as regras de negócio e o uso de dados pessoais |
+| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação entre a equipe e a associação | Validar o escopo, as prioridades e as entregas do projeto | Alto | Médio | Validará o escopo, as prioridades e as entregas do projeto. **Aprova** o escopo (inclusive o MVP), a ordem de prioridade e cada entrega |
 | Demais coordenadoras (Luzia, Liz e Cleide) | Usuárias diretas do painel administrativo | Registrar doações, cadastros e presença de forma rápida, com acesso conforme suas responsabilidades | Médio | Alto | Explicarão os processos atuais, esclarecerão regras operacionais e avaliarão as funcionalidades relacionadas às suas atividades |
-| Voluntárias e voluntários | Usuários diretos do painel administrativo e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades serão apresentadas pelas coordenadoras |
-| Famílias beneficiárias | Pessoas impactadas pela solução e usuárias do portal público | Saber o que está ativo, como participar e ser atendidas com organização | Baixo | Alto | Não participarão das atividades de Engenharia de Requisitos; suas necessidades serão representadas pela coordenação |
+| Voluntárias e voluntários | Usuários diretos do painel administrativo e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Baixo | Médio | Participarão dos testes de uso nas revisões de sprint das funcionalidades que operam, como a chamada feita por uma educadora voluntária (Sprint 7); as demais necessidades serão apresentadas pelas coordenadoras |
+| Famílias beneficiárias | Pessoas impactadas pela solução e usuárias do portal público | Saber o que está ativo, como participar e ser atendidas com organização | Baixo | Alto | Não participarão diretamente das atividades de Engenharia de Requisitos. A coordenação as representa e leva a elas o que as afeta (cadastro, consentimento, uso de imagem), trazendo o retorno antes de o registro se tornar obrigatório |
 | Doadores de itens — pessoas e comércios | Usuários do portal público | Doar de forma simples e consultar as necessidades da associação | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades relacionadas ao portal serão apresentadas pela coordenação |
 | Parceiros institucionais — CEASA-DF, ASFA, UDF, Computadores para Inclusão e Programando o Futuro | Apoiadores institucionais e consumidores de relatórios | Acompanhar o impacto do apoio concedido | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades de relatórios e prestação de contas serão apresentadas pela coordenação |
 | Equipe de desenvolvimento | Responsável pela construção do produto | Entregar uma solução viável, simples de usar e de qualidade | Médio, restrito às decisões técnicas | Alto | Elicitará, analisará, documentará, verificará e atualizará os requisitos, além de implementar a solução |
+
+**Quem decide o quê.** Makio aprova sozinho o escopo, a ordem de prioridade e as entregas; por isso
+"MVP validado" quer dizer escopo do MVP aprovado por ele (validação de 28/09/2026 e revisões
+seguintes). Perfis de acesso, regras de negócio e uso de dados pessoais precisam da confirmação da
+Daiane, mesmo depois da aprovação do Makio: na DoR, isso aparece como o item D3 (perfil confirmado
+pela Daiane) e, antes de qualquer dado real, no [portão de liberação](#64-portao-de-liberacao-para-uso-real).
 
 ### 1.7 Segmentação de "Clientes" (usuários da plataforma)
 
@@ -292,11 +298,12 @@ tecnologias previsto nas primeiras sprints.
 Os benefícios para a associação, as famílias, as voluntárias e os doadores estão descritos como
 impactos pretendidos na seção [3.1](#31-impactos-pretendidos).
 
-Como metas iniciais verificáveis, a equipe pretende permitir o registro de uma doação em até dois
-minutos durante o teste com as coordenadoras e reduzir em pelo menos 80% a quantidade de doações sem
-registro em comparação com a linha de base levantada antes da implantação. Os valores de dois minutos
-e 80% são propostas preliminares, pendentes de discussão na próxima reunião da equipe e posterior
-validação com a cliente; não representam metas já acordadas.
+Metas verificáveis:
+
+| Meta | Como é medida | Quando | Situação |
+| :--- | :--- | :--- | :--- |
+| Registrar uma doação em **até 2 minutos** | Uma coordenadora registra uma doação fictícia em homologação, sem ajuda, do Início até a confirmação. O tempo é cronometrado e anotado na ata, junto com a contagem de passos do [RNF01](../08-requisitos/rnf.md#rnf01) (CA-RF09-03). | Revisão da Sprint 7 (até 16/11/2026) | Proposta da equipe; confirmada pelo Makio na revisão |
+| Reduzir em **pelo menos 80%** as doações sem registro | Comparação com uma linha de base: quantas doações chegam e quantas ficam anotadas no caderno, antes da implantação | Antes do uso real ([6.4](#64-portao-de-liberacao-para-uso-real)) | Preliminar; a linha de base ainda precisa ser levantada com a Daiane |
 
 ## 3. Intervenção Social
 
@@ -336,7 +343,7 @@ concreta no projeto, para que não fique só como preocupação registrada:
 | Exclusão de famílias, doadores e voluntárias com menor acesso ou familiaridade com tecnologia | WhatsApp, redes sociais e panfletos mantidos como canais complementares; acessibilidade da interface ([RNF09](../08-requisitos/rnf.md#rnf09), [RNF18](../08-requisitos/rnf.md#rnf18)) |
 | Maior exposição de dados pessoais de famílias em situação de vulnerabilidade | Perfis de acesso por responsabilidade (CP7), coleta mínima e RNFs de segurança e LGPD ([RNF07](../08-requisitos/rnf.md#rnf07), [RNF13](../08-requisitos/rnf.md#rnf13), [RNF19](../08-requisitos/rnf.md#rnf19)) |
 | Publicação de fotos e depoimentos de crianças e famílias | Publicação só com autorização de uso de imagem registrada ([RF42](../08-requisitos/index.md#rf42), [RNF14](../08-requisitos/rnf.md#rnf14)) |
-| Formalização do atendimento (senhas, cadastro, registro de faltas) percebida como controle ou burocracia | Validação das telas e fluxos com famílias e voluntários antes de tornar o registro obrigatório |
+| Formalização do atendimento (senhas, cadastro, registro de faltas) percebida como controle ou burocracia | Teste das telas e fluxos com voluntárias nas revisões de sprint e retorno das famílias, levado pela coordenação, antes de tornar o registro obrigatório |
 
 Assim, a intervenção social da solução não é apenas "digitalizar os cadernos" da associação. Ela consiste
 em alterar a forma como a comunidade acessa informações sobre as atividades, como o atendimento é

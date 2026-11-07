@@ -23,6 +23,12 @@ perdem informação hoje:
 - **R2 · A educadora faz a chamada:** uma educadora faz a chamada de uma turma e as faltas ficam
   registradas e justificadas.
 
+**O que isso entrega da prestação de contas.** O MVP guarda o que hoje se perde: doações recebidas
+e destinadas, famílias, participantes e frequência, além do saldo por categoria. Esses registros são
+a base da prestação de contas, mas ainda não a apoiam por inteiro: os relatórios e o painel de
+indicadores (CP6) ficam para a R4. Até lá, os dados registrados no MVP ficam guardados e serão
+usados pelos relatórios quando eles entrarem.
+
 ## 10.2 Limites
 
 Ficam fora do MVP, e são entregues depois:

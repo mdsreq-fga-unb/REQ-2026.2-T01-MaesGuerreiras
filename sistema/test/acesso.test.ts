@@ -120,8 +120,19 @@ describe('acesso direto aos serviços', () => {
     expect(statusAcessoDireto('atribuir_perfil', 'voluntario')).toBe(403)
     expect(statusAcessoDireto('cadastrar_categoria', 'voluntario')).toBe(403)
     expect(statusAcessoDireto('registrar_saida_sintetica', 'voluntario')).toBe(403)
+    expect(statusAcessoDireto('cadastrar_turma', 'voluntario')).toBe(403) // RF20 / CA-RF20-04
     expect(statusAcessoDireto('registrar_recebimento', 'voluntario')).toBe(200)
     expect(statusAcessoDireto('consultar_saldo', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('cadastrar_familia', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('cadastrar_participante', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('vincular_participante', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('inscrever_participante', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('registrar_destinacao', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('abrir_chamada', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('registrar_frequencia', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('justificar_falta', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('corrigir_frequencia', 'voluntario')).toBe(200)
+    expect(statusAcessoDireto('consultar_frequencia', 'voluntario')).toBe(200)
   })
 
   it('permite à Coordenação as operações da sprint', () => {

@@ -1,5 +1,4 @@
-// Tipos do banco. Regenerar após cada migration com `npm run db:types`
-// (requer o Supabase local rodando).
+// Tipos do banco para Sprint 6 e Sprint 7.
 export type Json
   = | string
     | number
@@ -180,10 +179,12 @@ export type Database = {
           data: string
           destino_sintetico: string | null
           doador_id: string | null
+          familia_id: string | null
           id: string
           quantidade: number
           registrado_por: string
           tipo: Database['public']['Enums']['tipo_movimentacao']
+          turma_id: string | null
         }
         Insert: {
           categoria_id: string
@@ -191,10 +192,12 @@ export type Database = {
           data: string
           destino_sintetico?: string | null
           doador_id?: string | null
+          familia_id?: string | null
           id?: string
           quantidade: number
           registrado_por: string
           tipo: Database['public']['Enums']['tipo_movimentacao']
+          turma_id?: string | null
         }
         Update: {
           categoria_id?: string
@@ -202,10 +205,12 @@ export type Database = {
           data?: string
           destino_sintetico?: string | null
           doador_id?: string | null
+          familia_id?: string | null
           id?: string
           quantidade?: number
           registrado_por?: string
           tipo?: Database['public']['Enums']['tipo_movimentacao']
+          turma_id?: string | null
         }
         Relationships: []
       }
@@ -254,6 +259,274 @@ export type Database = {
           id?: string
           nome?: string
           papel?: Database['public']['Enums']['papel_titular']
+        }
+        Relationships: []
+      }
+      // Sprint 7
+      familias: {
+        Row: {
+          atualizado_em: string
+          cidade: string
+          complemento: string | null
+          criado_em: string
+          criado_por: string
+          data_cadastro: string
+          id: string
+          logradouro: string
+          nome_responsavel: string
+          numero_moradores: number | null
+          observacoes: string | null
+          situacao: string
+          telefone: string
+          titular_consentimento_id: string | null
+        }
+        Insert: {
+          atualizado_em?: string
+          cidade: string
+          complemento?: string | null
+          criado_em?: string
+          criado_por: string
+          data_cadastro?: string
+          id?: string
+          logradouro: string
+          nome_responsavel: string
+          numero_moradores?: number | null
+          observacoes?: string | null
+          situacao?: string
+          telefone: string
+          titular_consentimento_id?: string | null
+        }
+        Update: {
+          atualizado_em?: string
+          cidade?: string
+          complemento?: string | null
+          criado_em?: string
+          criado_por?: string
+          data_cadastro?: string
+          id?: string
+          logradouro?: string
+          nome_responsavel?: string
+          numero_moradores?: number | null
+          observacoes?: string | null
+          situacao?: string
+          telefone?: string
+          titular_consentimento_id?: string | null
+        }
+        Relationships: []
+      }
+      participantes: {
+        Row: {
+          atualizado_em: string
+          criado_em: string
+          criado_por: string
+          data_cadastro: string
+          data_nascimento: string
+          familia_id: string | null
+          id: string
+          motivo_ausencia_responsavel: string | null
+          nome: string
+          observacoes: string | null
+          responsavel_legal: string | null
+          situacao: string
+          telefone: string | null
+          titular_consentimento_id: string | null
+        }
+        Insert: {
+          atualizado_em?: string
+          criado_em?: string
+          criado_por: string
+          data_cadastro?: string
+          data_nascimento: string
+          familia_id?: string | null
+          id?: string
+          motivo_ausencia_responsavel?: string | null
+          nome: string
+          observacoes?: string | null
+          responsavel_legal?: string | null
+          situacao?: string
+          telefone?: string | null
+          titular_consentimento_id?: string | null
+        }
+        Update: {
+          atualizado_em?: string
+          criado_em?: string
+          criado_por?: string
+          data_cadastro?: string
+          data_nascimento?: string
+          familia_id?: string | null
+          id?: string
+          motivo_ausencia_responsavel?: string | null
+          nome?: string
+          observacoes?: string | null
+          responsavel_legal?: string | null
+          situacao?: string
+          telefone?: string | null
+          titular_consentimento_id?: string | null
+        }
+        Relationships: []
+      }
+      turmas: {
+        Row: {
+          atividade: string
+          atualizado_em: string
+          criado_em: string
+          criado_por: string
+          data_inicio: string
+          data_termino: string
+          dias_semana: string[]
+          horario: string
+          id: string
+          vagas: number
+        }
+        Insert: {
+          atividade: string
+          atualizado_em?: string
+          criado_em?: string
+          criado_por: string
+          data_inicio: string
+          data_termino: string
+          dias_semana?: string[]
+          horario: string
+          id?: string
+          vagas: number
+        }
+        Update: {
+          atividade?: string
+          atualizado_em?: string
+          criado_em?: string
+          criado_por?: string
+          data_inicio?: string
+          data_termino?: string
+          dias_semana?: string[]
+          horario?: string
+          id?: string
+          vagas?: number
+        }
+        Relationships: []
+      }
+      inscricoes: {
+        Row: {
+          criado_em: string
+          criado_por: string
+          data_inscricao: string
+          id: string
+          motivo_cancelamento: string | null
+          participante_id: string
+          situacao: string
+          turma_id: string
+        }
+        Insert: {
+          criado_em?: string
+          criado_por: string
+          data_inscricao?: string
+          id?: string
+          motivo_cancelamento?: string | null
+          participante_id: string
+          situacao?: string
+          turma_id: string
+        }
+        Update: {
+          criado_em?: string
+          criado_por?: string
+          data_inscricao?: string
+          id?: string
+          motivo_cancelamento?: string | null
+          participante_id?: string
+          situacao?: string
+          turma_id?: string
+        }
+        Relationships: []
+      }
+      chamadas: {
+        Row: {
+          aberta_em: string
+          aberta_por: string
+          data_encontro: string
+          id: string
+          turma_id: string
+        }
+        Insert: {
+          aberta_em?: string
+          aberta_por: string
+          data_encontro: string
+          id?: string
+          turma_id: string
+        }
+        Update: {
+          aberta_em?: string
+          aberta_por?: string
+          data_encontro?: string
+          id?: string
+          turma_id?: string
+        }
+        Relationships: []
+      }
+      frequencias: {
+        Row: {
+          atualizado_em: string
+          chamada_id: string
+          id: string
+          justificada: boolean
+          motivo_justificativa: string | null
+          participante_id: string
+          presente: boolean
+          registrado_em: string
+          registrado_por: string
+        }
+        Insert: {
+          atualizado_em?: string
+          chamada_id: string
+          id?: string
+          justificada?: boolean
+          motivo_justificativa?: string | null
+          participante_id: string
+          presente: boolean
+          registrado_em?: string
+          registrado_por: string
+        }
+        Update: {
+          atualizado_em?: string
+          chamada_id?: string
+          id?: string
+          justificada?: boolean
+          motivo_justificativa?: string | null
+          participante_id?: string
+          presente?: boolean
+          registrado_em?: string
+          registrado_por?: string
+        }
+        Relationships: []
+      }
+      frequencias_alteracoes: {
+        Row: {
+          alterado_em: string
+          autor_id: string
+          campo: string
+          frequencia_id: string
+          id: string
+          motivo: string | null
+          valor_anterior: string | null
+          valor_novo: string | null
+        }
+        Insert: {
+          alterado_em?: string
+          autor_id: string
+          campo: string
+          frequencia_id: string
+          id?: string
+          motivo?: string | null
+          valor_anterior?: string | null
+          valor_novo?: string | null
+        }
+        Update: {
+          alterado_em?: string
+          autor_id?: string
+          campo?: string
+          frequencia_id?: string
+          id?: string
+          motivo?: string | null
+          valor_anterior?: string | null
+          valor_novo?: string | null
         }
         Relationships: []
       }

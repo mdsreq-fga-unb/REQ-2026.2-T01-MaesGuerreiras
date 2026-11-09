@@ -63,6 +63,23 @@ describe('RF08 doadores', () => {
       [{ nome: 'Ana', telefone: '6199999', email: 'ana@exemplo.local' }],
     )).toBe(false)
   })
+
+  it('reconhece o mesmo telefone com outra formatação (CA-RF08-05, #47)', () => {
+    const existente = [{ nome: 'teste1', telefone: '(61) 99999-0000', email: 'teste1@exemplo.local' }]
+    expect(doadorDuplicado({ nome: 'teste1', telefone: '61999990000', email: null }, existente)).toBe(true)
+    expect(doadorDuplicado({ nome: 'teste1', telefone: '+55 61 99999-0000', email: null }, existente)).toBe(true)
+    expect(doadorDuplicado({ nome: 'teste1', telefone: '61988880000', email: null }, existente)).toBe(false)
+  })
+
+  it('compara e-mail sem caixa e espaços e nome sem espaços extras (CA-RF08-05)', () => {
+    const existente = [{ nome: 'Ana  Souza', telefone: null, email: 'ana@exemplo.local' }]
+    expect(doadorDuplicado({ nome: ' ana souza ', email: ' ANA@Exemplo.local ' }, existente)).toBe(true)
+  })
+
+  it('não trata como duplicado quando o contato informado não tem dígitos nem e-mail', () => {
+    const existente = [{ nome: 'Ana', telefone: '', email: null }]
+    expect(doadorDuplicado({ nome: 'Ana', telefone: '---', email: '' }, existente)).toBe(false)
+  })
 })
 
 describe('RF09 recebimento e RF12 saldo', () => {

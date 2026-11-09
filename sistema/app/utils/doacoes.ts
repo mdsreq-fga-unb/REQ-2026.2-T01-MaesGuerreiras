@@ -97,18 +97,32 @@ export function alteracoesDoador(anterior: CamposDoador, atual: CamposDoador): A
   })
 }
 
+// Compara só os dígitos: "(61) 99999-0000", "61999990000" e "+55 61 99999-0000" são o mesmo número.
+export function normalizarTelefone(telefone: string | null | undefined): string {
+  const digitos = (telefone ?? '').replace(/\D/g, '')
+  return digitos.length >= 12 && digitos.startsWith('55') ? digitos.slice(2) : digitos
+}
+
+export function normalizarEmail(email: string | null | undefined): string {
+  return (email ?? '').replace(/\s/g, '').toLowerCase()
+}
+
+function normalizarNome(nome: string): string {
+  return nome.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
 export function doadorDuplicado(
   candidato: { nome: string, telefone?: string | null, email?: string | null },
   existentes: { nome: string, telefone?: string | null, email?: string | null }[],
 ): boolean {
-  const nome = candidato.nome.trim().toLowerCase()
-  const telefone = candidato.telefone?.trim()
-  const email = candidato.email?.trim().toLowerCase()
+  const nome = normalizarNome(candidato.nome)
+  const telefone = normalizarTelefone(candidato.telefone)
+  const email = normalizarEmail(candidato.email)
 
   return existentes.some((item) => {
-    if (item.nome.trim().toLowerCase() !== nome) return false
-    const mesmoTelefone = Boolean(telefone && item.telefone?.trim() === telefone)
-    const mesmoEmail = Boolean(email && item.email?.trim().toLowerCase() === email)
+    if (normalizarNome(item.nome) !== nome) return false
+    const mesmoTelefone = Boolean(telefone && normalizarTelefone(item.telefone) === telefone)
+    const mesmoEmail = Boolean(email && normalizarEmail(item.email) === email)
     return mesmoTelefone || mesmoEmail
   })
 }

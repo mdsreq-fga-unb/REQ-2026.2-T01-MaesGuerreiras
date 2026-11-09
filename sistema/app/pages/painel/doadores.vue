@@ -102,7 +102,7 @@ async function salvar(forcar = false) {
   }
   try {
     if (editandoId.value) {
-      await $fetch(`/api/doadores/${editandoId.value}`, { method: 'PATCH', body: corpo })
+      await $fetch(`/api/doadores/${editandoId.value}`, { method: 'PATCH', body: { ...corpo, forcar } })
       sucesso.value = `Correção de "${nome.value.trim()}" salva no histórico.`
     }
     else {
@@ -235,7 +235,8 @@ function autor(id: string) {
           class="acoes alerta__acoes"
         >
           <NuxtLink
-            to="/painel/doacoes"
+            v-if="modo === 'novo'"
+            :to="{ path: '/painel/doacoes', query: { doador: parecidos[0]?.id } }"
             class="botao botao--pequeno"
           >
             Usar o cadastro existente
@@ -246,7 +247,7 @@ function autor(id: string) {
             :disabled="enviando"
             @click="salvar(true)"
           >
-            É outro doador, cadastrar mesmo assim
+            {{ modo === 'novo' ? 'É outro doador, cadastrar mesmo assim' : 'É outro doador, salvar a correção mesmo assim' }}
           </button>
         </div>
       </div>

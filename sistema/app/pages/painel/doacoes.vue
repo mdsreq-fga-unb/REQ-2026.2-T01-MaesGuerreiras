@@ -12,12 +12,14 @@ const { data: categorias } = await useFetch<CategoriaResposta[]>('/api/categoria
 const { data: doadores } = await useFetch<DoadorResposta[]>('/api/doadores')
 const { data: saldos, refresh: atualizarSaldos } = await useFetch<SaldoResposta[]>('/api/doacoes/saldos')
 const { data: sessao } = await useFetch('/api/acesso/sessao')
+const rota = useRoute()
 
 const enviando = ref(false)
 const categoriaId = ref('')
 const quantidade = ref<number | null>(null)
 const data = ref(hojeISO())
-const doadorId = ref('')
+// Vindo de "Usar o cadastro existente" no aviso de duplicidade (CA-RF08-05), o doador já vem escolhido.
+const doadorId = ref(typeof rota.query.doador === 'string' ? rota.query.doador : '')
 const erros = ref<Partial<Record<Campo, string>>>({})
 const avisoGeral = ref('')
 const salvo = ref<Resumo | null>(null)

@@ -6,8 +6,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalogo
 
 
-def issue(numero, estado, corpo, autor="MEMBER"):
-    return {"number": numero, "state": estado, "body": corpo, "author_association": autor}
+def issue(numero, estado, corpo, autor="MEMBER", login=None):
+    return {"number": numero, "state": estado, "body": corpo, "author_association": autor, "user": {"login": login}}
 
 
 def ficha(rf, situacao="nao-iniciada", rotulo="Não iniciada", sprint="6"):
@@ -58,6 +58,14 @@ class CalcularSituacoes(unittest.TestCase):
 
     def test_issue_de_quem_nao_e_da_equipe_e_ignorada(self):
         s = catalogo.calcular_situacoes([issue(99, "closed", "- [x] DoD RF09", autor="NONE")])
+        self.assertEqual(s, {})
+
+    def test_integrante_marcado_como_contributor_conta_pelo_login(self):
+        s = catalogo.calcular_situacoes([issue(62, "open", "Requisitos: RF14", autor="CONTRIBUTOR", login="IanPedersoli")])
+        self.assertEqual(s, {"rf14": ("em-andamento", [62])})
+
+    def test_contributor_fora_da_equipe_continua_ignorado(self):
+        s = catalogo.calcular_situacoes([issue(28, "open", "Requisitos: RF14", autor="CONTRIBUTOR", login="marsicanogeorge")])
         self.assertEqual(s, {})
 
     def test_corpo_vazio_nao_quebra(self):

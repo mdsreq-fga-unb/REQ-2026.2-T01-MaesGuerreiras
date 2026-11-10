@@ -19,7 +19,9 @@ Os requisitos ficam no [catálogo integrado](../08-requisitos/index.md).
 - **Nome:** Associação Mães Guerreiras da Cidade Estrutural 
 - **Tipo:** Associação comunitária sem fins lucrativos, mantida integralmente por trabalho voluntário.
 - **Representante:** Daiane, coordenadora da associação.
-- **Contato principal da equipe:** Makio Augusto Cândido, voluntário.
+- **Contato da equipe:** Makio Augusto Cândido, voluntário. É o único contato direto da equipe com a
+  associação: ele trabalha lá toda semana, mostra o andamento à coordenação e traz o retorno dela para a
+  equipe. Dúvidas para a Daiane ou as demais coordenadoras também vão por ele.
 - **Outros contatos:** Maria Guerra (presidente) e as coordenadoras Luzia, Liz e Cleide. O papel de
   cada pessoa no projeto está no [mapa de stakeholders](#16-mapa-de-stakeholders).
 - **Forma de contato:** Telefone, WhatsApp e Instagram institucional
@@ -121,10 +123,10 @@ Para diferenciar o poder de decisão de cada stakeholder dos efeitos que a impla
 
 | Stakeholder | Relação com a solução | Interesse principal | Poder de decisão | Impacto sofrido | Participação esperada na Engenharia de Requisitos |
 | --- | --- | --- | --- | --- | --- |
-| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alto | Alto | Apresentará as necessidades da associação e esclarecerá as regras do negócio. **Confirma** os perfis de acesso, as regras de negócio e o uso de dados pessoais |
-| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação entre a equipe e a associação | Validar o escopo, as prioridades e as entregas do projeto | Alto | Médio | Validará o escopo, as prioridades e as entregas do projeto. **Aprova** o escopo (inclusive o MVP), a ordem de prioridade e cada entrega |
-| Demais coordenadoras (Luzia, Liz e Cleide) | Usuárias diretas do painel administrativo | Registrar doações, cadastros e presença de forma rápida, com acesso conforme suas responsabilidades | Médio | Alto | Explicarão os processos atuais, esclarecerão regras operacionais e avaliarão as funcionalidades relacionadas às suas atividades |
-| Voluntárias e voluntários | Usuários diretos do painel administrativo e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Baixo | Médio | Participarão dos testes de uso nas revisões de sprint das funcionalidades que operam, como a chamada feita por uma educadora voluntária (Sprint 7); as demais necessidades serão apresentadas pelas coordenadoras |
+| Daiane (coordenação) | Representante do cliente | Garantir que a solução represente a associação e apoie a captação de parcerias | Alto | Alto | Não fala diretamente com a equipe: recebe as entregas por meio de Makio e devolve por ele as necessidades e o retorno. **Confirma** os perfis de acesso, as regras de negócio e o uso de dados pessoais |
+| Makio Augusto Cândido | Voluntário principal que faz a ponte de comunicação entre a equipe e a associação | Validar o escopo, as prioridades e as entregas do projeto | Alto | Médio | Único contato direto da equipe: participa das reuniões, mostra as entregas à coordenação e repassa o retorno. **Aprova** o escopo (inclusive o MVP), a ordem de prioridade e cada entrega |
+| Demais coordenadoras (Luzia, Liz e Cleide) | Usuárias diretas do painel administrativo | Registrar doações, cadastros e presença de forma rápida, com acesso conforme suas responsabilidades | Médio | Alto | Avaliam as funcionalidades das suas atividades quando Makio as apresenta na associação; regras e processos chegam à equipe pelo relato dele |
+| Voluntárias e voluntários | Usuários diretos do painel administrativo e apoiadores das atividades | Saber onde ajudar e registrar as atividades que conduzem | Baixo | Médio | Podem testar as funcionalidades que operam, como a chamada feita por uma educadora voluntária (Sprint 7), quando Makio organiza o teste na associação; as demais necessidades chegam pelas coordenadoras, por meio dele |
 | Famílias beneficiárias | Pessoas impactadas pela solução e usuárias do portal público | Saber o que está ativo, como participar e ser atendidas com organização | Baixo | Alto | Não participarão diretamente das atividades de Engenharia de Requisitos. A coordenação as representa e leva a elas o que as afeta (cadastro, consentimento, uso de imagem), trazendo o retorno antes de o registro se tornar obrigatório |
 | Doadores de itens — pessoas e comércios | Usuários do portal público | Doar de forma simples e consultar as necessidades da associação | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades relacionadas ao portal serão apresentadas pela coordenação |
 | Parceiros institucionais — CEASA-DF, ASFA, UDF, Computadores para Inclusão e Programando o Futuro | Apoiadores institucionais e consumidores de relatórios | Acompanhar o impacto do apoio concedido | Baixo | Médio | Não participarão das atividades de Engenharia de Requisitos; suas necessidades de relatórios e prestação de contas serão apresentadas pela coordenação |
@@ -133,8 +135,9 @@ Para diferenciar o poder de decisão de cada stakeholder dos efeitos que a impla
 **Quem decide o quê.** Makio aprova sozinho o escopo, a ordem de prioridade e as entregas; por isso
 "MVP validado" quer dizer escopo do MVP aprovado por ele (validação de 28/09/2026 e revisões
 seguintes). Perfis de acesso, regras de negócio e uso de dados pessoais precisam da confirmação da
-Daiane, mesmo depois da aprovação do Makio: na DoR, isso aparece como o item D3 (perfil confirmado
-pela Daiane) e, antes de qualquer dado real, no [portão de liberação](#64-portao-de-liberacao-para-uso-real).
+Daiane, mesmo depois da aprovação do Makio. Como a equipe não fala diretamente com ela, Makio leva a
+pergunta e traz a resposta, que a equipe registra em ata. Na DoR, isso aparece como o item D3 (perfil
+confirmado pela Daiane) e, antes de qualquer dado real, no [portão de liberação](#64-portao-de-liberacao-para-uso-real).
 
 ### 1.7 Segmentação de "Clientes" (usuários da plataforma)
 
@@ -279,7 +282,7 @@ estão na seção [10](../10-mvp/index.md); os requisitos selecionados estão ma
 
 | Risco | Mitigação |
 | :--- | :--- |
-| **Não adoção:** se o registro digital não for mais rápido do que anotar no caderno, a coordenação volta ao papel ([1.5](#15-desafios-do-projeto)). | Protótipos validados antes de programar e teste com as próprias coordenadoras, sem ajuda da equipe, a cada sprint ([7.3](#73-processo-de-validacao)). O efeito de abandono é acompanhado em [3.2](#32-efeitos-emergentes-e-respostas). |
+| **Não adoção:** se o registro digital não for mais rápido do que anotar no caderno, a coordenação volta ao papel ([1.5](#15-desafios-do-projeto)). | Protótipos validados antes de programar e teste das funcionalidades na associação, conduzido por Makio, sem ajuda da equipe, a cada sprint ([7.3](#73-processo-de-validacao)). O efeito de abandono é acompanhado em [3.2](#32-efeitos-emergentes-e-respostas). |
 | **Escopo ambicioso frente ao prazo:** a associação tem muitas frentes. | MVP restrito ([10](../10-mvp/index.md)); demais requisitos priorizados ciclo a ciclo ([9](../09-priorizacao/index.md)). |
 | **Dados pessoais de famílias em vulnerabilidade, inclusive durante os testes.** | Autenticação, perfis de acesso e consentimento entram antes do cadastro de famílias (Sprint 6, [6.2](#62-sprints-previsto-realizado)). Só dados sintéticos até o [portão de uso real](#64-portao-de-liberacao-para-uso-real). Fotos e depoimentos só com autorização de uso de imagem registrada. |
 | **Disponibilidade da coordenação:** todas atuam voluntariamente e têm agenda cheia. | Validações curtas, na revisão de cada sprint ([7.2](#72-comunicacao)). |
@@ -302,7 +305,7 @@ Metas verificáveis:
 
 | Meta | Como é medida | Quando | Situação |
 | :--- | :--- | :--- | :--- |
-| Registrar uma doação em **até 2 minutos** | Uma coordenadora registra uma doação fictícia em homologação, sem ajuda, do Início até a confirmação. O tempo é cronometrado e anotado na ata, junto com a contagem de passos do [RNF01](../08-requisitos/rnf.md#rnf01) (CA-RF09-03). | Revisão da Sprint 7 (até 16/11/2026) | Proposta da equipe; confirmada pelo Makio na revisão |
+| Registrar uma doação em **até 2 minutos** | Na associação, Makio pede a uma coordenadora que registre uma doação fictícia em homologação, sem ajuda, do Início até a confirmação. Ele cronometra e repassa o tempo, que é anotado na ata, junto com a contagem de passos do [RNF01](../08-requisitos/rnf.md#rnf01) (CA-RF09-03). | Revisão da Sprint 7 (até 16/11/2026) | Proposta da equipe; confirmada pelo Makio na revisão |
 | Reduzir em **pelo menos 80%** as doações sem registro | Comparação com uma linha de base: quantas doações chegam e quantas ficam anotadas no caderno, antes da implantação | Antes do uso real ([6.4](#64-portao-de-liberacao-para-uso-real)) | Preliminar; a linha de base ainda precisa ser levantada com a Daiane |
 
 ## 3. Intervenção Social
@@ -386,7 +389,7 @@ ScrumXP é o processo mais adequado pelos seguintes motivos:
 
 1. **Validação frequente com usuárias reais:** o principal risco do projeto é o de adoção
    ([1.5](#15-desafios-do-projeto)). O ScrumXP coloca o cliente ao final de cada sprint, permitindo
-   que as coordenadoras testem cada funcionalidade e que a equipe corrija o rumo em poucas semanas.
+   que Makio teste cada funcionalidade e a mostre à coordenação, e que a equipe corrija o rumo em poucas semanas.
    Os demais riscos estão em [2.6](#26-viabilidade-da-proposta).
 2. **Flexibilidade e entregas rápidas:** com uma equipe de 6 integrantes, o ScrumXP permite entregas
    incrementais a cada sprint de 2 semanas, com ajustes rápidos de prioridade.
@@ -441,16 +444,16 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP validado com Makio em 28/09/2026 (seção [10](../10-mvp/index.md)). |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a história de usuário de cada um) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua história de usuário, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Catálogo integrado, Mapa de Histórias | Requisitos organizados em jornadas e releases ([mapa de histórias](../12-mapa/index.md)) e rastreados do problema à evidência ([11](../11-rastreabilidade/index.md)). |
-| Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras e preparados para a sprint. |
+| Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), Critério INVEST | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint. |
-| Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com a coordenação antes do início da sprint. |
+| Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com Makio antes do início da sprint; o que depende da coordenação vai por ele. |
 | Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com usuárias de baixa familiaridade digital. |
 | Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Checklist, Revisão de Critérios de Aceitação, Critério INVEST | Requisitos verificados quanto à clareza, consistência, completude e testabilidade. |
 | Execução da Sprint | Organização e Atualização | Acompanhamento do Backlog | Reunião de acompanhamento da equipe ([7.2](#72-comunicacao)) | Situação das fichas atualizada e alinhada com os objetivos da sprint em andamento. |
 | Revisão da Sprint | Verificação e Validação | Verificação da Conclusão | Checklist da Definição de Pronto (DoD) | Só são apresentados na revisão os requisitos que passam em todos os itens da DoD (seção [13](../13-dor-dod/index.md)); as demais voltam ao backlog. |
-| Revisão da Sprint | Verificação e Validação | Validação com a Coordenação | Coleta de Feedback, Teste com Usuárias Reais | Requisitos e funcionalidades validados pelas coordenadoras em situações reais de uso, com feedback coletado. |
+| Revisão da Sprint | Verificação e Validação | Validação com a Coordenação | Coleta de Feedback, Teste com Usuárias Reais | Requisitos e funcionalidades validados por Makio, que os mostra à coordenação e traz o retorno dela. |
 | Revisão da Sprint | Análise e Consenso | Negociação das Alterações | Análise do Feedback, Negociação | Alterações analisadas e classificadas como incorporadas, adiadas ou retiradas do escopo. |
 | Revisão da Sprint | Organização e Atualização | Atualização dos Requisitos | Revisão das fichas: declaração, critérios e prioridade | Fichas atualizadas conforme o feedback e mudanças registradas no [histórico](../14-historico/index.md). |
 | Retrospectiva da Sprint | Análise e Consenso | Análise de Problemas da ER | Retrospectiva Start/Stop/Continue | Problemas relacionados aos requisitos e à comunicação identificados e analisados. |
@@ -462,12 +465,13 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 
 **Como as técnicas são aplicadas**
 
-- **Entrevistas:** com Daiane e as demais coordenadoras (Maria Guerra, Luzia, Liz e Cleide) sobre o
-  registro de doações em caderno, o cadastro das famílias e a chamada em papel; no planejamento da
-  sprint, com a coordenadora da frente tratada, para detalhar regras como as 3 faltas seguidas sem
-  justificativa e o rodízio mensal do Domingo Recreativo.
+- **Entrevistas:** com Makio, nas reuniões gravadas (ver [Evidências](../00-evidencias/index.md)). As
+  perguntas para a Daiane e as demais coordenadoras (Maria Guerra, Luzia, Liz e Cleide) sobre o caderno de
+  doações, o cadastro das famílias e a chamada em papel vão por ele, que traz as respostas. Na Unidade 1, a
+  coordenação respondeu também um questionário (Sprint 2). No planejamento da sprint, regras como as 3
+  faltas seguidas sem justificativa e o rodízio mensal do Domingo Recreativo são confirmadas da mesma forma.
 - **Análise documental:** cópias ou fotografias dos cadernos de doações, do cadastro do computador da
-  sede e das listas de chamada, compartilhadas por Daiane ou Makio, para identificar campos e formatos.
+  sede e das listas de chamada, compartilhadas por Makio, para identificar campos e formatos.
 - **Brainstorming:** com a equipe e a coordenação, sobre o portal institucional, o registro de
   doações e os relatórios desejados pelos parceiros, usando os termos da associação (Sacola Verde,
   senha, rodízio, Domingo Recreativo).
@@ -477,10 +481,13 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
   sobre o controle de perfis de acesso e o armazenamento seguro dos dados das famílias.
 - **Critérios de aceitação:** escritos como lista de condições de satisfação numeradas, sem notação
   Given-When-Then (ver [5.3](#53-declaracao-dos-requisitos)).
-- **Prototipação de baixa fidelidade:** telas do painel e do portal validadas com as coordenadoras
-  antes de programar, porque a simplicidade é condição para a ferramenta substituir o caderno.
-- **Teste com usuárias reais:** na revisão, as próprias coordenadoras executam a tarefa (registrar uma
-  doação, fazer uma chamada) sem ajuda da equipe.
+- **Prototipação de baixa fidelidade:** telas do painel e do portal validadas com Makio antes de
+  programar, porque a simplicidade é condição para a ferramenta substituir o caderno. Ele também as
+  mostra à coordenação e repassa o retorno.
+- **Teste com usuárias reais:** Makio executa a tarefa em homologação na revisão (registrar uma doação,
+  fazer uma chamada) e, na associação, pede a uma coordenadora ou voluntária que a repita sem ajuda. O
+  resultado chega à equipe pelo relato dele ou por gravação. Esta é a alternativa quando a equipe não
+  tem acesso presencial às usuárias.
 - **Retrospectiva:** formato Start/Stop/Continue, simples de aplicar em um grupo pequeno.
 
 ### 5.2 Rastreabilidade dos Requisitos
@@ -638,7 +645,7 @@ A equipe de desenvolvimento é composta por:
 
 | Papel | Descrição | Responsável | Participantes |
 | :--- | :--- | :--- | :--- |
-| Gerente de Projeto / Scrum Master | Coordena o projeto, garante a comunicação com a coordenação da associação e controla prazos e entregas das sprints. | Luan | Isabella |
+| Gerente de Projeto / Scrum Master | Coordena o projeto, garante a comunicação com Makio (e, por ele, com a coordenação) e controla prazos e entregas das sprints. | Luan | Isabella |
 | Desenvolvedor(a) Front-end | Responsável pela interface do portal e do painel administrativo, em Nuxt.js, com foco na simplicidade exigida pela coordenação. | Isabella | Vitor, Pedro |
 | Desenvolvedor(a) Back-end | Implementa a lógica de negócio, a integração com o Supabase (banco de dados e autenticação) e as server routes em Nuxt.js, incluindo o controle de perfis de acesso. | Luis | Luan, Vitor |
 | Analista de Requisitos | Conduz o processo de Engenharia de Requisitos (elicitação, análise e consenso, declaração, verificação e validação, organização e atualização, seção [5](#5-engenharia-de-requisitos)) a cada sprint, define os requisitos funcionais e não funcionais e garante que as regras da associação (senhas, rodízio, 3 faltas) sejam atendidas. | Ian | Isabella, Pedro |
@@ -699,7 +706,7 @@ A equipe de desenvolvimento é composta por:
   utiliza no dia a dia, tanto entre as voluntárias quanto para avisar a comunidade sobre as
   distribuições e novas turmas. Também será usado para a comunicação diária entre os integrantes da
   equipe.
-- **Google Meet:** utilizado para reuniões da equipe e para conversas com a coordenação, por ser gratuito e de fácil acesso.
+- **Google Meet:** utilizado para reuniões da equipe e para as reuniões com Makio, por ser gratuito e de fácil acesso.
 - **Microsoft Teams:** utilizado para reuniões internas da equipe e alinhamentos acadêmicos com a
   disciplina.
 - **Google Docs:** utilizado para a produção colaborativa da documentação do projeto entre os
@@ -713,9 +720,9 @@ A equipe de desenvolvimento é composta por:
 | :--- | :--- | :--- | :--- |
 | Reunião de acompanhamento da equipe | Semanal *(confirmar: a versão anterior da seção 5 previa reuniões diárias)* | Equipe | Alinhar progresso, obstáculos e prioridades da sprint em andamento |
 | Planejamento da sprint | Início de cada sprint de 2 semanas | Equipe | Selecionar do catálogo os requisitos que passam na DoR |
-| Revisão da sprint | Fim de cada sprint | Equipe e Makio; as coordenadoras da frente tratada | As coordenadoras usam as funcionalidades; o feedback atualiza o catálogo |
+| Revisão da sprint | Fim de cada sprint | Equipe e Makio | Makio usa as funcionalidades em homologação e as mostra à coordenação; o retorno atualiza o catálogo |
 | Retrospectiva | Fim de cada sprint | Equipe | O que funcionou, o que melhorar e [lições aprendidas](../15-licoes/index.md) |
-| Conversa com a coordenação | Contínua, por WhatsApp | Equipe e coordenação | Dúvidas rápidas e ajustes pontuais |
+| Conversa com Makio | Contínua, por WhatsApp | Equipe e Makio | Dúvidas rápidas e ajustes; Makio consulta a coordenação quando a decisão é dela |
 
 #### Registro dos eventos por sprint
 
@@ -736,9 +743,9 @@ validação ocorre em três níveis:
 - **Validação técnica:** a equipe verifica, por meio de checklists e testes, se cada funcionalidade
   atende aos critérios de aceitação da ficha e à [DoD](../13-dor-dod/index.md),
   com atenção especial à proteção dos dados pessoais e à correção dos relatórios.
-- **Validação com a coordenação:** a cada revisão de sprint, Makio e a coordenadora responsável pela
-  frente testam as funcionalidades entregues e confirmam se atendem à forma como a associação
-  realmente trabalha, se possível.
+- **Validação com a coordenação:** a cada revisão de sprint, Makio testa as funcionalidades entregues;
+  depois, na associação, ele as mostra à coordenadora responsável pela frente e traz o retorno dela,
+  que é registrado em ata.
 - **Validação em uso real:** sempre que possível, a funcionalidade é testada durante a própria
   operação (uma coordenadora registra as doações de uma semana, ou a chamada é feita pelo
   sistema em um dia de Reforço Escolar). Esse é o teste decisivo: se o registro digital não for mais

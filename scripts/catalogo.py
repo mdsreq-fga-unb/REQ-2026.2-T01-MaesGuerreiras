@@ -33,6 +33,7 @@ Regra da situação (seção 13.7 da documentação):
 - Em andamento: há issue ligada, mas falta marcar a DoD ou fechar alguma issue do RF.
 - Concluída: todas as caixas de DoD do RF marcadas e as demais issues dele fechadas.
 - RF sem issue ligada mantém o que a equipe escreveu.
+- Só contam issues abertas pela equipe (EQUIPE_NO_GITHUB ou integrante reconhecido pelo GitHub).
 """
 
 import json
@@ -68,6 +69,14 @@ PERFIS = {"Visitante": "visitante", "Voluntário": "voluntario", "Coordenação"
 AGENTES = re.compile(r"^\| Agentes \|(.*)\|$", re.M)
 # Só quem participa do repositório muda o site; qualquer pessoa pode abrir issue em repositório público.
 AUTORES_DA_EQUIPE = {"OWNER", "MEMBER", "COLLABORATOR"}
+# O GitHub marca os integrantes como CONTRIBUTOR (a participação na organização não é pública), então
+# a equipe também é reconhecida pelo login. Ao entrar alguém novo na equipe, acrescente o login aqui.
+EQUIPE_NO_GITHUB = {"isall24", "luanludry", "ianpedersoli", "pedrogomes-phgr", "vitorlustosa", "luiskr34"}
+
+
+def da_equipe(issue):
+    login = ((issue.get("user") or {}).get("login") or "").lower()
+    return issue.get("author_association") in AUTORES_DA_EQUIPE or login in EQUIPE_NO_GITHUB
 
 
 def ler():
@@ -343,7 +352,7 @@ def buscar_issues():
 def calcular_situacoes(issues):
     ligacoes = {}
     for issue in issues:
-        if issue.get("author_association") not in AUTORES_DA_EQUIPE:
+        if not da_equipe(issue):
             continue
         corpo = issue.get("body") or ""
         caixas = {rf.lower(): marca != " " for marca, rf in CAIXA_DOD.findall(corpo)}

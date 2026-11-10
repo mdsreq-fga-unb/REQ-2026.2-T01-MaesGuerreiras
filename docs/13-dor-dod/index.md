@@ -270,4 +270,8 @@ apagada, recalcula a situação, registra a mudança numa linha nova do [Histór
 - Requisito sem issue ligada mantém a situação escrita pela equipe.
 - A automação só altera a situação e a contagem de concluídos. Declaração, critérios e prioridade
   continuam sendo editados pela equipe.
-- Só contam issues abertas por integrantes do repositório.
+- Só contam issues abertas pela equipe. O GitHub mostra os integrantes como "contributor", então a
+  equipe é reconhecida pelo login, numa lista no `scripts/catalogo.py` (`EQUIPE_NO_GITHUB`); quem entrar
+  na equipe precisa ser acrescentado ali.
+- Mover a issue de coluna no quadro do GitHub Projects não dispara a automação. Ela roda quando a issue
+  é editada, fechada ou reaberta, e o requisito só conclui com a caixa `DoD RFxx` marcada.

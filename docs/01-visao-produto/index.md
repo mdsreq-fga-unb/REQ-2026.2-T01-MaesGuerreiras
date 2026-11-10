@@ -376,7 +376,7 @@ tratar o OpenUP como uma variante pesada do RUP tradicional.
 | Estrutura do processo | Papéis, artefatos e marcos definidos, mas propositalmente enxutos e escaláveis para equipes pequenas. | Papéis, eventos e artefatos do Scrum somados às práticas técnicas do XP (programação em pares, integração contínua, testes automatizados, refatoração), com poucos artefatos obrigatórios. |
 | Documentação | Documentação mínima e focada no essencial, adaptável ao tamanho do projeto. | Documentação mínima, com foco em comunicação direta e no funcionamento do produto. |
 | Colaboração com o cliente | Colaboração contínua com stakeholders ao longo de cada iteração, com validação recorrente, não apenas no início e no fim das fases. | Feedback do cliente a cada sprint, favorecendo ajustes rápidos de prioridade. |
-| Práticas técnicas | Recomenda boas práticas de engenharia, mas não prescreve um conjunto fixo de práticas técnicas. | Incorpora explicitamente práticas do XP (pares, TDD/testes automatizados, integração contínua, design simples, propriedade coletiva do código) como parte do processo. |
+| Práticas técnicas | Recomenda boas práticas de engenharia, mas não prescreve um conjunto fixo de práticas técnicas. | Incorpora explicitamente práticas do XP (pares, testes automatizados, integração contínua, design simples, propriedade coletiva do código) como parte do processo. A equipe não adota TDD: o compromisso é ter testes automatizados das regras críticas, escritos junto com a funcionalidade ([RNF17](../08-requisitos/rnf.md#rnf17)). |
 | Indicado para | Equipes pequenas a médias que querem uma estrutura mínima de fases e marcos para orientar o planejamento, mantendo a agilidade. | Equipes pequenas, prazos curtos e cenários em que o aprendizado técnico e o feedback do cliente acontecem durante o próprio desenvolvimento. |
 
 ### 4.3 Justificativa
@@ -405,16 +405,17 @@ ScrumXP é o processo mais adequado pelos seguintes motivos:
 ### 4.4 Práticas de XP Adotadas
 
 Para que o processo seja de fato ScrumXP, e não apenas Scrum, a equipe adota as práticas técnicas do
-eXtreme Programming abaixo. A última coluna mostra como cada uma se liga aos requisitos.
+eXtreme Programming abaixo. A terceira coluna mostra como cada uma se liga aos requisitos, e a última
+mostra se a prática já é feita, com a evidência.
 
-| Prática | Como a equipe aplica | Ligação com os requisitos |
-| :--- | :--- | :--- |
-| **Integração contínua** | Toda alteração enviada ao repositório passa por build e checagens automatizadas antes de ser integrada à branch principal. | O pipeline verifica os critérios de aceitação e os RNFs críticos antes de um requisito ser considerado concluído. |
-| **Testes automatizados** | Funcionalidades críticas (registro de doações, chamada, controle de acesso) recebem testes, priorizados pela Analista de QA. | Os critérios de aceitação da ficha de cada RF alimentam a escrita dos testes. |
-| **Design simples** | Cada requisito é implementado da forma mais simples que atenda ao critério de aceitação. | Nada é construído para requisitos especulativos, que não estão no catálogo. |
-| **Refatoração contínua** | O código é reorganizado sem alterar o comportamento observável, com apoio dos testes. | Mudanças de requisito vindas da revisão ou da retrospectiva podem disparar refatorações. |
-| **Programação em pares, quando possível** | Priorizada nas tarefas de maior risco técnico ou de quem ainda aprende a tecnologia. | A declaração e os critérios da ficha orientam a dupla durante a implementação. |
-| **Propriedade coletiva do código** | Qualquer integrante pode alterar qualquer parte do sistema. | A [rastreabilidade](../11-rastreabilidade/index.md) permite entender o requisito por trás de um trecho de código que a pessoa não escreveu. |
+| Prática | Como a equipe aplica | Ligação com os requisitos | Situação em 10/11/2026 |
+| :--- | :--- | :--- | :--- |
+| **Integração contínua** | Toda alteração enviada ao repositório passa por build e checagens automatizadas antes de ser integrada à branch principal. | O pipeline verifica os critérios de aceitação e os RNFs críticos antes de um requisito ser considerado concluído. | Em uso. O workflow `sistema` roda lint, checagem de tipos, testes, build e os testes do banco em cada PR do sistema; o `ci` verifica o catálogo antes de publicar o site. |
+| **Testes automatizados** | Funcionalidades críticas (registro de doações, chamada, controle de acesso) recebem testes, priorizados pela Analista de QA. | Os critérios de aceitação da ficha de cada RF alimentam a escrita dos testes. | Em uso, ainda parcial: 32 testes Vitest e 2 arquivos de testes do banco (acesso por perfil). Falta ligar cada regra crítica a um teste (DoD, item D5, na issue #35). |
+| **Design simples** | Cada requisito é implementado da forma mais simples que atenda ao critério de aceitação. | Nada é construído para requisitos especulativos, que não estão no catálogo. | Em uso: as telas da Sprint 6 trazem só o que os critérios pedem; o que o back-end ainda não oferece ficou fora e está listado no PR #51. |
+| **Refatoração contínua** | O código é reorganizado sem alterar o comportamento observável, com apoio dos testes. | Mudanças de requisito vindas da revisão ou da retrospectiva podem disparar refatorações. | Aplicada: no PR #51, a interface foi reorganizada em componentes (cabeçalho e menu) e utilitários de formatação e de erro, mantendo os serviços do PR #43; no PR #67, a comparação de telefone, e-mail e nome virou funções reaproveitadas no cadastro e na correção de doador, com testes. |
+| **Programação em pares, quando possível** | Priorizada nas tarefas de maior risco técnico ou de quem ainda aprende a tecnologia. | A declaração e os critérios da ficha orientam a dupla durante a implementação. | Aplicada: Isabella e Pedro implementaram em par, de forma remota, as telas da Sprint 6 (PR #51). |
+| **Propriedade coletiva do código** | Qualquer integrante pode alterar qualquer parte do sistema. | A [rastreabilidade](../11-rastreabilidade/index.md) permite entender o requisito por trás de um trecho de código que a pessoa não escreveu. | Em uso: o aviso de doador duplicado, escrito no back-end da Sprint 6, foi corrigido por outro integrante no PR #67. |
 
 ## 5. Engenharia de Requisitos
 
@@ -715,6 +716,16 @@ A equipe de desenvolvimento é composta por:
 | Revisão da sprint | Fim de cada sprint | Equipe e Makio; as coordenadoras da frente tratada | As coordenadoras usam as funcionalidades; o feedback atualiza o catálogo |
 | Retrospectiva | Fim de cada sprint | Equipe | O que funcionou, o que melhorar e [lições aprendidas](../15-licoes/index.md) |
 | Conversa com a coordenação | Contínua, por WhatsApp | Equipe e coordenação | Dúvidas rápidas e ajustes pontuais |
+
+#### Registro dos eventos por sprint
+
+| Sprint | Planejamento | Revisão | Retrospectiva |
+| :--- | :--- | :--- | :--- |
+| Sprint 6 (20/10 a 02/11) | Sem ata. O planejado está nas issues #32 a #36 (abertas em 27/10) | [Protótipo, 26/10](../00-atas/index.md#ata-de-26102026) · [validação em homologação, 02/11](../00-atas/index.md#ata-de-02112026) | 10/11/2026, ata *a registrar* |
+| Sprint 7 (03/11 a 16/11) | Sem ata. O planejado está nas issues #62 a #66 (abertas em 09/11); entrega do MVP fixada em 16/11/2026 | Prevista até 16/11, com Makio | Prevista para o fim da sprint |
+
+Até a Sprint 5, planejamento, revisão e retrospectiva não tiveram registro próprio; as decisões da
+época estão nas [atas](../00-atas/index.md) de 22/09 e 28/09.
 
 ### 7.3 Processo de Validação
 

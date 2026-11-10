@@ -7,8 +7,8 @@ commit.
 
 ## 12.1 Personas e objetivos
 
-As personas foram definidas a partir das entrevistas com a coordenação e da validação de 28/09/2026.
-**Hipóteses a confirmar com a coordenação** na revisão da Sprint 6: quem registra as doações no dia a
+As personas foram definidas a partir das conversas com Makio, do questionário respondido pela coordenação e da validação de 28/09/2026.
+**Hipóteses a confirmar com a coordenação, por meio de Makio,** na revisão da Sprint 6: quem registra as doações no dia a
 dia e quem faz a chamada.
 
 | Persona | Perfil no sistema ([8.3](../08-requisitos/glossario.md)) | Quem é | Objetivos |

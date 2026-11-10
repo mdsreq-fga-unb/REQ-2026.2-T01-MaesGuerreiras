@@ -37,8 +37,8 @@ RF ainda estiver com o agente em aberto, ele não está pronto.
 requisito tiver interface?**
 
 Requisitos de tela — como RF20 (Cadastrar turma de atividade) ou RF27 (Abrir chamada do
-encontro) — só entram em sprint depois de um wireframe revisado com o cliente (Makio) ou com a
-coordenação (Daiane), registrado como evidência. Requisitos sem interface própria (ex.: RF32, sinalização automática) não dependem
+encontro) — só entram em sprint depois de um wireframe revisado com o cliente (Makio, que o mostra à
+coordenação), registrado como evidência. Requisitos sem interface própria (ex.: RF32, sinalização automática) não dependem
 desse critério.
 
 **Os RNFs aplicáveis ao requisito estão listados?**
@@ -67,7 +67,7 @@ A estimativa de esforço, complexidade e lacuna de capacidade (campo *Priorizaç
 [9](../09-priorizacao/index.md)) precisa existir antes do planejamento da sprint,
 não ser feita de improviso na reunião de planejamento.
 
-**O comportamento do requisito foi confirmado por Makio ou Daiane, com a decisão registrada em ata ou gravação?**
+**O comportamento do requisito foi confirmado por Makio (ou pela Daiane, por meio dele), com a decisão registrada em ata ou gravação?**
 
 Mencionar o requisito em uma reunião não basta: nenhum requisito entra em sprint sem que o cliente
 tenha confirmado o comportamento esperado, com a decisão registrada nas
@@ -172,13 +172,13 @@ seção 13.3).
 | :---: | :--- |
 | ☐ | O requisito tem os dados mínimos (campos obrigatórios/opcionais) descritos? |
 | ☐ | As regras de negócio estão separadas do texto do RF, registradas em 8.2 e ligadas na ficha? |
-| ☐ | O perfil de acesso está definido no campo *Agentes* da ficha e confirmado pela Daiane ou Makio? |
+| ☐ | O perfil de acesso está definido no campo *Agentes* da ficha e confirmado pela Daiane, por meio de Makio? |
 | ☐ | Existe protótipo validado com o cliente ou com a coordenação (quando aplicável)? |
 | ☐ | Os RNFs aplicáveis estão listados? |
 | ☐ | O critério de aceitação está escrito como condições de satisfação verificáveis? |
 | ☐ | As dependências com outros RFs estão mapeadas? |
 | ☐ | O esforço técnico foi estimado e cabe na sprint? |
-| ☐ | O comportamento do requisito foi confirmado por Makio ou Daiane, com a decisão registrada? |
+| ☐ | O comportamento do requisito foi confirmado por Makio (ou pela Daiane, por meio dele), com a decisão registrada? |
 | ☐ | Se envolve dado pessoal, o consentimento (RF42) está coberto antes de dados reais? |
 
 ### DoD
@@ -241,7 +241,7 @@ Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 
 **Pendências desta sprint:**
 
 - **D4:** atendido em 26/10/2026: o protótipo das oito telas foi apresentado ao Makio e aprovado com ajustes ([ata de 26/10](../00-atas/index.md#ata-de-26102026), [vídeo, feedback e protótipo no Figma](../00-evidencias/index.md#avaliacao-do-prototipo-26102026)). Os ajustes pedidos entraram na versão 2 do protótipo.
-- **D3:** os perfis do campo *Agentes* ainda são proposta, à espera da confirmação da Daiane.
+- **D3:** os perfis do campo *Agentes* ainda são proposta, à espera da confirmação da Daiane, que Makio vai levar a ela.
 - **D9:** atendido em 02/11/2026: Makio testou em homologação as funcionalidades dos oito requisitos e as validou sem ajustes novos ([ata de 02/11](../00-atas/index.md#ata-de-02112026)). Antes disso, só o consentimento (RF42) tinha decisão registrada. O aviso de doador duplicado (CA-RF08-05) foi validado no comportamento, mas tem defeito aberto (#47).
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.
 

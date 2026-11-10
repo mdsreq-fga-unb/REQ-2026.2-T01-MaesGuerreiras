@@ -125,7 +125,11 @@ Se a conexão cair durante uma chamada ou um cadastro, os dados já preenchidos 
 
 ### RNF17 · Requisito de Manutenibilidade {#rnf17}
 
-O código deve ficar versionado no GitHub, com README que explique como instalar e rodar, e com testes automatizados para as regras de doação, inscrição e frequência, para que outra pessoa dê continuidade. Alguém de fora da equipe roda o projeto só com o README em até 1 hora. Os testes passam a cada entrega.
+Outra pessoa deve conseguir dar continuidade ao sistema depois da disciplina. A exigência tem três partes:
+
+- **No produto:** testes automatizados das regras de doação, inscrição e frequência, entregues junto com o código.
+- **Na prática da equipe:** código versionado no GitHub e testes passando a cada entrega, conferidos pelo CI.
+- **Na transição:** README que explica como instalar e rodar. Alguém de fora da equipe roda o projeto só com o README em até 1 hora.
 
 - **Escopo:** Geral (todos os RFs)
 - **No MVP:** Obrigatório para o MVP. O MVP inclui doação, inscrição e frequência, rotinas cobertas pelo README e pelos testes previstos no RNF.
@@ -139,7 +143,7 @@ As telas principais (chamada, cadastro, doação e agenda pública) devem atende
 
 ### RNF19 · Requisito de Segurança {#rnf19}
 
-Toda alteração em dados pessoais, em frequência (inclusive justificativa de falta, RF29, e correção de chamada, RF30) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do 44.
+Toda alteração em dados pessoais, em frequência (inclusive justificativa de falta, RF29, e correção de chamada, RF30) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do [RF44](index.md#rf44).
 
 - **Escopo:** Específico (ver fichas no catálogo)
 - **No MVP:** Associado a RFs do MVP. No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF44. As correções de frequência (RF30), que entraram no MVP proposto em 29/10/2026, também exigem esse registro. As demais alterações fora dos RFs selecionados ficam para versões futuras.

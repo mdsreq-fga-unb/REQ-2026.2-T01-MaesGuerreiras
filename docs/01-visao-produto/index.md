@@ -728,7 +728,7 @@ A equipe de desenvolvimento é composta por:
 
 | Sprint | Planejamento | Revisão | Retrospectiva |
 | :--- | :--- | :--- | :--- |
-| Sprint 6 (20/10 a 02/11) | Sem ata. O planejado está nas issues #32 a #36 (abertas em 27/10) | [Protótipo, 26/10](../00-atas/index.md#ata-de-26102026) · [validação em homologação, 02/11](../00-atas/index.md#ata-de-02112026) | 10/11/2026, ata *a registrar* |
+| Sprint 6 (20/10 a 02/11) | Sem ata. O planejado está nas issues #32 a #36 (abertas em 27/10) | [Protótipo, 26/10](../00-atas/index.md#ata-de-26102026) · [validação em homologação, 02/11](../00-atas/index.md#ata-de-02112026) | 10/11/2026, ata *a registrar* · [gravação](../00-evidencias/index.md#retrospectiva-da-sprint-6-10112026) |
 | Sprint 7 (03/11 a 16/11) | Sem ata. O planejado está nas issues #62 a #66 (abertas em 09/11); entrega do MVP fixada em 16/11/2026 | Prevista até 16/11, com Makio | Prevista para o fim da sprint |
 
 Até a Sprint 5, planejamento, revisão e retrospectiva não tiveram registro próprio; as decisões da

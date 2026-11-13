@@ -133,3 +133,9 @@ Gravação da reunião de 02/11/2026, em que Makio testou em homologação as fu
 Sprint 6. Resumo na [ata de 02/11](../00-atas/index.md#ata-de-02112026).
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/3ikTwwXo4gc" title="Validação da Sprint 6 com Makio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Retrospectiva da Sprint 6 - 10/11/2026
+
+Gravação da retrospectiva da Sprint 6, feita pela equipe.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/7EWACGZe6H4" title="Retrospectiva da Sprint 6, 10/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

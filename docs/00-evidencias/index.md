@@ -12,6 +12,21 @@ Reunião da equipe para analisar os feedbacks recebidos sobre os Requisitos Func
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/4JEa_iDmdDwc" title="Reunião de análise de feedbacks, 28/09/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+### Registro da revisão por pares
+
+Registro dos apontamentos recebidos, das decisões da equipe e dos ajustes realizados ou justificativas.
+
+O documento preserva a numeração e as decisões da época da revisão. A versão vigente dos requisitos está no [catálogo integrado](../08-requisitos/index.md).
+
+<iframe
+  src="../assets/evidencias/revisao-por-pares.pdf"
+  width="100%"
+  height="650"
+  title="Registro da revisão por pares">
+</iframe>
+
+[Abrir o PDF](../assets/evidencias/revisao-por-pares.pdf) · [Abrir a planilha original](https://unbbr-my.sharepoint.com/:x:/g/personal/241025944_aluno_unb_br/IQCbSpTTKq4_QYSLvXP93hPDAS0wmCFgCMQMZj8bRtR4hm4?e=mpUoMl)
+
 ## Avaliação do valor de negócio - 25/09/2026
 
 Reunião com Makio para avaliação do valor de negócio dos requisitos, como parte da priorização do

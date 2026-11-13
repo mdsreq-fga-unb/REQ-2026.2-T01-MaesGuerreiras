@@ -58,13 +58,16 @@ cancelamento). RF19 e RF20 (turma) ficaram pendentes, por dúvida sobre até ond
 Por falta de tempo, os Requisitos Não Funcionais não foram revisados em conjunto nesta reunião; Isabella vai dividir essa parte entre a equipe.
 *(Situação vigente: os RNFs foram revisados e estão publicados em [8.1 Requisitos não funcionais](../08-requisitos/rnf.md).)*
 
+Os apontamentos da revisão por pares sobre RFs e RNFs, as decisões da equipe e os ajustes realizados ou justificativas estão no
+[registro da revisão por pares](../00-evidencias/index.md#registro-da-revisao-por-pares).
+A versão vigente dos requisitos está no [catálogo integrado](../08-requisitos/index.md).
+
 ### 3. Reunião com o cliente (Makio)
 
 A avaliação do valor de negócio dos requisitos com Makio foi realizada em **25/09/2026**, e a
 validação do escopo do MVP ocorreu em **28/09/2026**. As gravações estão disponíveis na página
 de Evidências e Gravações: [avaliação do valor de negócio](../00-evidencias/index.md#avaliacao-do-valor-de-negocio-25092026)
 e [validação do MVP](../00-evidencias/index.md#validacao-do-mvp-28092026).
-
 
 ## Ata de 22/09/2026
 

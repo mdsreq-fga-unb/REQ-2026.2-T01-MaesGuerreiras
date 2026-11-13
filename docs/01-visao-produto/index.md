@@ -424,10 +424,12 @@ mostra se a prática já é feita, com a evidência.
 
 A partir das informações apresentadas nas seções anteriores, foram estabelecidas as atividades da
 Engenharia de Requisitos (ER), suas práticas e técnicas, em alinhamento ao processo ScrumXP definido
-na seção [4](#4-estrategias-de-engenharia-de-software). Como a operação da associação é predominantemente manual
-e conduzida por voluntárias com pouco tempo disponível, foram priorizadas técnicas de contato direto
-(entrevistas e brainstorming) e de análise dos registros já existentes, viáveis dentro da disponibilidade
-real da equipe e da coordenação.
+na seção [4](#4-estrategias-de-engenharia-de-software). Como a operação da associação é predominantemente
+manual e conduzida por voluntárias com pouco tempo disponível, o levantamento e o refinamento dos
+requisitos são realizados principalmente nas reuniões com Makio. Ele apresenta as rotinas e as
+necessidades da associação, esclarece dúvidas e consulta a coordenação quando necessário.
+As informações sobre os cadernos de doações, o cadastro de famílias e as listas de chamada foram
+obtidas pelo relato dele.
 
 Ao longo desta seção, distingue-se **prática** (o objetivo exercido, ex.: priorizar requisitos), **técnica**
 (o método concreto usado para isso, ex.: MoSCoW) e **artefato/resultado** (o produto gerado pela
@@ -440,11 +442,11 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 
 | Momentos do ScrumXP | Atividades da ER | Prática | Técnica | Resultados Esperados |
 | :--- | :--- | :--- | :--- | :--- |
-| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Questionário, Análise Documental, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
+| Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Questionário, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP validado com Makio em 28/09/2026 (seção [10](../10-mvp/index.md)). |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a história de usuário de cada um) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua história de usuário, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Catálogo integrado, Mapa de Histórias | Requisitos organizados em jornadas e releases ([mapa de histórias](../12-mapa/index.md)) e rastreados do problema à evidência ([11](../11-rastreabilidade/index.md)). |
-| Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise Documental, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
+| Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), Critério INVEST | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint. |
@@ -470,8 +472,6 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
   doações, o cadastro das famílias e a chamada em papel vão por ele, que traz as respostas. Na Unidade 1, a
   coordenação respondeu também um questionário (Sprint 2). No planejamento da sprint, regras como as 3
   faltas seguidas sem justificativa e o rodízio mensal do Domingo Recreativo são confirmadas da mesma forma.
-- **Análise documental:** cópias ou fotografias dos cadernos de doações, do cadastro do computador da
-  sede e das listas de chamada, compartilhadas por Makio, para identificar campos e formatos.
 - **Brainstorming:** com a equipe e a coordenação, sobre o portal institucional, o registro de
   doações e os relatórios desejados pelos parceiros, usando os termos da associação (Sacola Verde,
   senha, rodízio, Domingo Recreativo).

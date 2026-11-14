@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { InscricaoResposta, ParticipanteResposta, TurmaResposta } from '~/types/contratos'
+import { formatarData } from '~/utils/formato'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 const { data: turmas, error, refresh } = await useFetch<TurmaResposta[]>('/api/turmas')
@@ -145,7 +146,7 @@ async function inscreverParticipante() {
     <CabecalhoPagina
       v-else
       titulo="Turmas de atividades"
-      descricao="Cadastro de turmas e inscrição de participantes (RF20, RF23)"
+      descricao="Cadastro de turmas e inscrição de participantes"
     >
       <template
         v-if="ehCoord"
@@ -307,7 +308,7 @@ async function inscreverParticipante() {
       class="cartao"
     >
       <div class="turma-resumo">
-        <p><strong>Período:</strong> {{ turmaSelecionada.dataInicio }} a {{ turmaSelecionada.dataTermino }}</p>
+        <p><strong>Período:</strong> {{ formatarData(turmaSelecionada.dataInicio) }} a {{ formatarData(turmaSelecionada.dataTermino) }}</p>
         <p><strong>Horário:</strong> {{ turmaSelecionada.diasSemana.join(', ') }} — {{ turmaSelecionada.horario }}</p>
         <p><strong>Ocupação de vagas:</strong> {{ inscritosDaTurma.length }} de {{ turmaSelecionada.vagas }} preenchidas</p>
       </div>
@@ -411,7 +412,7 @@ async function inscreverParticipante() {
             :key="t.id"
           >
             <td><strong>{{ t.atividade }}</strong></td>
-            <td>{{ t.dataInicio }} a {{ t.dataTermino }}</td>
+            <td>{{ formatarData(t.dataInicio) }} a {{ formatarData(t.dataTermino) }}</td>
             <td>{{ t.diasSemana.join(', ') }} — {{ t.horario }}</td>
             <td>
               <span :class="t.totalInscritos >= t.vagas ? 'etiqueta etiqueta--vermelha' : 'etiqueta'">

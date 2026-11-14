@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ConsentimentoResposta, FamiliaResposta } from '~/types/contratos'
+import { formatarData } from '~/utils/formato'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 const { data: familias, error, refresh } = await useFetch<FamiliaResposta[]>('/api/familias')
@@ -102,7 +103,7 @@ const titularesComConsentimento = computed(() => consentimentos.value?.filter(ti
     <CabecalhoPagina
       v-else
       titulo="Famílias atendidas"
-      descricao="Cadastro e consulta de famílias (RF14, RN04)"
+      descricao="Cadastro e consulta de famílias atendidas"
     >
       <template #acoes>
         <button
@@ -323,7 +324,7 @@ const titularesComConsentimento = computed(() => consentimentos.value?.filter(ti
             <td>{{ f.telefone }}</td>
             <td>{{ f.logradouro }}{{ f.complemento ? `, ${f.complemento}` : '' }} - {{ f.cidade }}</td>
             <td><span class="etiqueta etiqueta--verde">{{ f.situacao }}</span></td>
-            <td>{{ f.dataCadastro }}</td>
+            <td>{{ formatarData(f.dataCadastro) }}</td>
           </tr>
         </tbody>
       </table>

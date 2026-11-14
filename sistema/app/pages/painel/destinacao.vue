@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CategoriaResposta, FamiliaResposta, SaldoResposta, TurmaResposta } from '~/types/contratos'
+import { abreviarUnidade, formatarNumero, hojeISO } from '~/utils/formato'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 const { data: categorias } = await useFetch<CategoriaResposta[]>('/api/categorias')
@@ -9,7 +10,8 @@ const { data: turmas } = await useFetch<TurmaResposta[]>('/api/turmas')
 
 const categoriaId = ref('')
 const quantidade = ref<number | undefined>(undefined)
-const data = ref(new Date().toISOString().slice(0, 10))
+// Data local do aparelho: toISOString() usa UTC e, à noite, já devolveria o dia seguinte.
+const data = ref(hojeISO())
 const tipoDestinatario = ref<'familia' | 'turma'>('familia')
 const familiaId = ref('')
 const turmaId = ref('')
@@ -28,7 +30,7 @@ const saldoDisponivel = computed(() => {
 const unidadeMedida = computed(() => {
   if (!categoriaId.value || !categorias.value) return ''
   const cat = categorias.value.find(c => c.id === categoriaId.value)
-  return cat?.unidade ?? ''
+  return cat ? abreviarUnidade(cat.unidade) : ''
 })
 
 async function registrarDestinacao() {
@@ -72,7 +74,7 @@ async function registrarDestinacao() {
   <div>
     <CabecalhoPagina
       titulo="Registrar destinação de doação"
-      descricao="Saída de itens para famílias atendidas ou turmas de atividades (RF10 / RN02)"
+      descricao="Saída de itens para famílias atendidas ou para uso interno em turmas de atividades"
     />
 
     <div
@@ -110,7 +112,7 @@ async function registrarDestinacao() {
               :key="c.id"
               :value="c.id"
             >
-              {{ c.nome }} ({{ c.unidade }})
+              {{ c.nome }} ({{ abreviarUnidade(c.unidade) }})
             </option>
           </select>
         </div>
@@ -119,7 +121,7 @@ async function registrarDestinacao() {
           v-if="categoriaId"
           class="aviso-saldo"
         >
-          <strong>Saldo disponível em estoque:</strong> {{ saldoDisponivel }} {{ unidadeMedida }}
+          <strong>Saldo disponível em estoque:</strong> {{ formatarNumero(saldoDisponivel) }} {{ unidadeMedida }}
         </div>
 
         <div class="campo">

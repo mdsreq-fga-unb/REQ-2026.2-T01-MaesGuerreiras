@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { FrequenciaHistoricoItemResposta, ParticipanteResposta, TurmaResposta } from '~/types/contratos'
+import { formatarData } from '~/utils/formato'
 
 const { data: participantes } = await useFetch<ParticipanteResposta[]>('/api/participantes')
 const { data: turmas } = await useFetch<TurmaResposta[]>('/api/turmas')
@@ -49,7 +50,7 @@ const totalFaltasNaoJustificadas = computed(() => historico.value.filter(h => !h
   <div>
     <CabecalhoPagina
       titulo="Consulta de frequência do participante"
-      descricao="Histórico de presenças, faltas e justificativas por turma e período (RF31, RNF03)"
+      descricao="Histórico de presenças, faltas e justificativas por turma e período"
     />
 
     <div class="cartao">
@@ -133,6 +134,7 @@ const totalFaltasNaoJustificadas = computed(() => historico.value.filter(h => !h
       <div
         v-if="erro"
         class="aviso aviso--erro"
+        role="alert"
       >
         {{ erro }}
       </div>
@@ -141,7 +143,7 @@ const totalFaltasNaoJustificadas = computed(() => historico.value.filter(h => !h
         v-else-if="historico.length === 0"
         class="vazio"
       >
-        Não foram encontrados resultados para a consulta (CA-RF31-04).
+        Não foram encontrados registros de frequência para esta consulta.
       </div>
 
       <div v-else>
@@ -152,7 +154,7 @@ const totalFaltasNaoJustificadas = computed(() => historico.value.filter(h => !h
           </div>
           <div class="card-metrica">
             <span class="metrica-valor metrica--laranja">{{ totalJustificadas }}</span>
-            <span class="metrica-label">Faltas justificadas (RN16)</span>
+            <span class="metrica-label">Faltas justificadas</span>
           </div>
           <div class="card-metrica">
             <span class="metrica-valor metrica--vermelho">{{ totalFaltasNaoJustificadas }}</span>
@@ -174,7 +176,7 @@ const totalFaltasNaoJustificadas = computed(() => historico.value.filter(h => !h
               v-for="h in historico"
               :key="h.frequenciaId"
             >
-              <td><strong>{{ h.dataEncontro }}</strong></td>
+              <td><strong>{{ formatarData(h.dataEncontro) }}</strong></td>
               <td>{{ h.atividade }}</td>
               <td>
                 <span

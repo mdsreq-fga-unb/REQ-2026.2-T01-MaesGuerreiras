@@ -1,44 +1,68 @@
 <script setup lang="ts">
 import type { ChamadaResposta, TurmaResposta } from '~/types/contratos'
+import { formatarData, hojeISO } from '~/utils/formato'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 const { data: turmas } = await useFetch<TurmaResposta[]>('/api/turmas')
 const { data: sessao } = await useFetch<{ perfil: string, usuario: { id: string } }>('/api/acesso/sessao')
+const ehCoord = computed(() => sessao.value?.perfil === 'coordenacao')
 
 const turmaId = ref('')
-const dataHoje = new Date().toISOString().slice(0, 10)
+// Data local do aparelho: toISOString() usa UTC e, à noite, já devolveria o dia seguinte.
+const dataHoje = hojeISO()
 const chamadaAtiva = ref<ChamadaResposta | null>(null)
 
 type InscritoChamada = ChamadaResposta['inscritos'][number]
 
-// Estados para justificativa e correção
+// Justificativa (RF29) e correção (RF30) são ações separadas, cada uma com seu modo.
+const acao = ref<'justificar' | 'corrigir' | null>(null)
 const participanteModal = ref<InscritoChamada | null>(null)
 const motivoJustificativa = ref('')
 const motivoCorrecao = ref('')
 const novaPresenca = ref(true)
+const erroModal = ref('')
 
 const carregando = ref(false)
 const enviando = ref(false)
 const erro = ref('')
 const sucesso = ref('')
 
+// Registro já salvo só muda por "Corrigir" (RF30); o salvamento da chamada envia apenas as marcações novas.
+const pendentes = computed(() =>
+  chamadaAtiva.value?.inscritos.filter(i => !i.frequenciaId && i.presente !== null) ?? [],
+)
+const semMarcacao = computed(() =>
+  chamadaAtiva.value?.inscritos.filter(i => !i.frequenciaId && i.presente === null).length ?? 0,
+)
+const todosSalvos = computed(() =>
+  Boolean(chamadaAtiva.value?.inscritos.length) && chamadaAtiva.value!.inscritos.every(i => i.frequenciaId),
+)
+
+async function carregarChamada() {
+  const dados = await $fetch<ChamadaResposta>('/api/chamadas', {
+    method: 'POST',
+    body: {
+      turmaId: turmaId.value,
+      dataEncontro: dataHoje,
+    },
+  })
+  chamadaAtiva.value = dados
+}
+
 async function abrirOuBuscarChamada() {
-  if (!turmaId.value) return
+  if (!turmaId.value) {
+    chamadaAtiva.value = null
+    return
+  }
   erro.value = ''
   sucesso.value = ''
   carregando.value = true
 
   try {
-    const dados = await $fetch<ChamadaResposta>('/api/chamadas', {
-      method: 'POST',
-      body: {
-        turmaId: turmaId.value,
-        dataEncontro: dataHoje,
-      },
-    })
-    chamadaAtiva.value = dados
+    await carregarChamada()
   }
   catch (falha) {
+    chamadaAtiva.value = null
     erro.value = mensagemErro(falha)
   }
   finally {
@@ -46,34 +70,39 @@ async function abrirOuBuscarChamada() {
   }
 }
 
+function marcar(inscrito: InscritoChamada, presente: boolean) {
+  if (inscrito.frequenciaId) return
+  inscrito.presente = presente
+}
+
 function marcarTodos(presente: boolean) {
   if (!chamadaAtiva.value) return
   for (const i of chamadaAtiva.value.inscritos) {
-    i.presente = presente
+    marcar(i, presente)
   }
 }
 
 async function salvarFrequencias() {
-  if (!chamadaAtiva.value) return
+  if (!chamadaAtiva.value || pendentes.value.length === 0) return
   erro.value = ''
   sucesso.value = ''
   enviando.value = true
 
   try {
-    const registros = chamadaAtiva.value.inscritos
-      .filter(i => i.presente !== null)
-      .map(i => ({
-        participanteId: i.participanteId,
-        presente: Boolean(i.presente),
-      }))
+    const registros = pendentes.value.map(i => ({
+      participanteId: i.participanteId,
+      presente: Boolean(i.presente),
+    }))
 
     await $fetch(`/api/chamadas/${chamadaAtiva.value.id}/frequencias`, {
       method: 'POST',
       body: { registros },
     })
 
-    sucesso.value = 'Frequência registrada com sucesso (RNF01 concluído).'
-    await abrirOuBuscarChamada()
+    await carregarChamada()
+    sucesso.value = registros.length === 1
+      ? 'Frequência de 1 participante registrada.'
+      : `Frequência de ${registros.length} participantes registrada.`
   }
   catch (falha) {
     erro.value = mensagemErro(falha)
@@ -84,61 +113,79 @@ async function salvarFrequencias() {
 }
 
 function abrirJustificativa(inscrito: InscritoChamada) {
+  acao.value = 'justificar'
   participanteModal.value = inscrito
-  motivoJustificativa.value = inscrito.motivoJustificativa || ''
+  motivoJustificativa.value = ''
+  erroModal.value = ''
+}
+
+function abrirCorrecao(inscrito: InscritoChamada) {
+  acao.value = 'corrigir'
+  participanteModal.value = inscrito
+  novaPresenca.value = !inscrito.presente
+  motivoCorrecao.value = ''
+  erroModal.value = ''
+}
+
+function fecharModal() {
+  acao.value = null
+  participanteModal.value = null
+  erroModal.value = ''
 }
 
 async function salvarJustificativa() {
   if (!participanteModal.value?.frequenciaId) return
-  erro.value = ''
+  if (!motivoJustificativa.value.trim()) {
+    erroModal.value = 'Informe o motivo da falta para justificar.'
+    return
+  }
+  erroModal.value = ''
+  sucesso.value = ''
   enviando.value = true
   try {
     await $fetch(`/api/frequencias/${participanteModal.value.frequenciaId}/justificar`, {
       method: 'POST',
-      body: { motivo: motivoJustificativa.value },
+      body: { motivo: motivoJustificativa.value.trim() },
     })
-    sucesso.value = 'Falta justificada com sucesso.'
-    participanteModal.value = null
-    await abrirOuBuscarChamada()
+    const nome = participanteModal.value.nome
+    fecharModal()
+    await carregarChamada()
+    sucesso.value = `Falta de ${nome} justificada.`
   }
   catch (falha) {
-    erro.value = mensagemErro(falha)
+    erroModal.value = mensagemErro(falha)
   }
   finally {
     enviando.value = false
   }
 }
 
-function abrirCorrecao(inscrito: InscritoChamada) {
-  participanteModal.value = inscrito
-  novaPresenca.value = !inscrito.presente
-  motivoCorrecao.value = ''
-}
-
 async function salvarCorrecao() {
   if (!participanteModal.value?.frequenciaId) return
-  erro.value = ''
+  if (ehCoord.value && !motivoCorrecao.value.trim()) {
+    erroModal.value = 'Informe o motivo da correção.'
+    return
+  }
+  erroModal.value = ''
+  sucesso.value = ''
   enviando.value = true
   try {
     await $fetch(`/api/frequencias/${participanteModal.value.frequenciaId}`, {
       method: 'PATCH',
       body: {
         presente: novaPresenca.value,
-        motivoCorrecao: motivoCorrecao.value || undefined,
+        motivoCorrecao: motivoCorrecao.value.trim() || undefined,
       },
     })
-    sucesso.value = 'Correção de frequência salva com sucesso (RN17).'
-    participanteModal.value = null
-    await abrirOuBuscarChamada()
+    const nome = participanteModal.value.nome
+    fecharModal()
+    await carregarChamada()
+    sucesso.value = `Registro de ${nome} corrigido.`
   }
   catch (falha) {
-    const campo = campoDoErro(falha)
-    if (campo === 'motivoCorrecao') {
-      erro.value = 'A Coordenação deve informar o motivo da correção (CA-RF30-04).'
-    }
-    else {
-      erro.value = mensagemErro(falha)
-    }
+    erroModal.value = campoDoErro(falha) === 'motivoCorrecao'
+      ? 'Informe o motivo da correção.'
+      : mensagemErro(falha)
   }
   finally {
     enviando.value = false
@@ -150,7 +197,7 @@ async function salvarCorrecao() {
   <div>
     <CabecalhoPagina
       titulo="Chamada digital e frequência"
-      descricao="Abertura da chamada do dia e registro de frequência (RF27, RF28, RF29, RF30)"
+      descricao="Abertura da chamada do dia, registro de presença, justificativa de falta e correção"
     />
 
     <div
@@ -168,11 +215,11 @@ async function salvarCorrecao() {
       {{ erro }}
     </div>
 
-    <!-- Passo 1: Seleção de turma e abertura da chamada do dia (RF27 / RN15) -->
+    <!-- Passo 1: seleção da turma e abertura da chamada do dia (RF27 / RN15) -->
     <div class="cartao">
       <div class="abertura-chamada">
         <div class="campo">
-          <label for="ch-turma">Selecione a turma para chamada de hoje ({{ dataHoje }}):</label>
+          <label for="ch-turma">Turma da chamada de hoje ({{ formatarData(dataHoje) }})</label>
           <select
             id="ch-turma"
             v-model="turmaId"
@@ -201,14 +248,17 @@ async function salvarCorrecao() {
       </div>
     </div>
 
-    <!-- Passo 2 & 3: Lista de participantes da chamada e marcação de presença (RF28 / RNF01) -->
+    <!-- Passos 2 e 3: lista de inscritos e marcação de presença (RF28 / RNF01) -->
     <div
       v-if="chamadaAtiva"
       class="cartao"
     >
       <div class="chamada-topo">
-        <h2>{{ chamadaAtiva.turma?.atividade }} — Encontro de {{ chamadaAtiva.dataEncontro }}</h2>
-        <div class="botoes-rapidos">
+        <h2>{{ chamadaAtiva.turma?.atividade }} — Encontro de {{ formatarData(chamadaAtiva.dataEncontro) }}</h2>
+        <div
+          v-if="!todosSalvos && chamadaAtiva.inscritos.length > 0"
+          class="botoes-rapidos"
+        >
           <button
             type="button"
             class="botao botao--pequeno botao--secundario"
@@ -241,7 +291,7 @@ async function salvarCorrecao() {
           <tr>
             <th>Participante</th>
             <th>Frequência</th>
-            <th>Justificativa / Histórico</th>
+            <th>Justificativa</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -252,12 +302,26 @@ async function salvarCorrecao() {
           >
             <td><strong>{{ inscrito.nome }}</strong></td>
             <td>
-              <div class="botoes-presenca">
+              <!-- Registro salvo: só muda pela correção, que guarda autor, data e valor anterior (RF30). -->
+              <span
+                v-if="inscrito.frequenciaId"
+                class="etiqueta"
+                :class="inscrito.presente ? 'etiqueta--sucesso' : 'etiqueta--erro'"
+              >
+                {{ inscrito.presente ? 'Presente' : 'Ausente' }}
+              </span>
+              <div
+                v-else
+                class="botoes-presenca"
+                role="group"
+                :aria-label="`Frequência de ${inscrito.nome}`"
+              >
                 <button
                   type="button"
                   class="btn-status"
                   :class="{ 'btn-status--presente': inscrito.presente === true }"
-                  @click="inscrito.presente = true"
+                  :aria-pressed="inscrito.presente === true"
+                  @click="marcar(inscrito, true)"
                 >
                   Presente
                 </button>
@@ -265,7 +329,8 @@ async function salvarCorrecao() {
                   type="button"
                   class="btn-status"
                   :class="{ 'btn-status--ausente': inscrito.presente === false }"
-                  @click="inscrito.presente = false"
+                  :aria-pressed="inscrito.presente === false"
+                  @click="marcar(inscrito, false)"
                 >
                   Ausente
                 </button>
@@ -273,13 +338,13 @@ async function salvarCorrecao() {
             </td>
             <td>
               <span
-                v-if="inscrito.justificada"
+                v-if="inscrito.frequenciaId && inscrito.justificada"
                 class="etiqueta etiqueta--laranja"
               >
                 Falta justificada: {{ inscrito.motivoJustificativa }}
               </span>
               <span
-                v-else-if="inscrito.presente === false"
+                v-else-if="inscrito.frequenciaId && inscrito.presente === false"
                 class="texto-apagado"
               >
                 Falta não justificada
@@ -290,9 +355,12 @@ async function salvarCorrecao() {
               >—</span>
             </td>
             <td>
-              <div class="acoes-linha">
+              <div
+                v-if="inscrito.frequenciaId"
+                class="acoes-linha"
+              >
                 <button
-                  v-if="inscrito.presente === false && inscrito.frequenciaId && !inscrito.justificada"
+                  v-if="inscrito.presente === false && !inscrito.justificada"
                   type="button"
                   class="botao botao--pequeno botao--secundario"
                   @click="abrirJustificativa(inscrito)"
@@ -300,7 +368,6 @@ async function salvarCorrecao() {
                   Justificar falta
                 </button>
                 <button
-                  v-if="inscrito.frequenciaId"
                   type="button"
                   class="botao botao--pequeno botao--secundario"
                   @click="abrirCorrecao(inscrito)"
@@ -308,100 +375,162 @@ async function salvarCorrecao() {
                   Corrigir
                 </button>
               </div>
+              <span
+                v-else
+                class="texto-apagado"
+              >Ainda não salvo</span>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <div class="formulario__acoes">
-        <button
-          type="button"
-          class="botao botao--primario botao--grande"
-          :disabled="enviando"
-          @click="salvarFrequencias"
+      <div
+        v-if="chamadaAtiva.inscritos.length > 0"
+        class="formulario__acoes"
+      >
+        <p
+          v-if="todosSalvos"
+          class="campo__dica"
         >
-          {{ enviando ? 'Gravando chamada...' : 'Salvar frequência da turma' }}
-        </button>
+          Chamada registrada. Para alterar um registro, use "Corrigir".
+        </p>
+        <template v-else>
+          <p
+            v-if="semMarcacao > 0"
+            class="campo__dica"
+          >
+            {{ semMarcacao === 1 ? 'Falta marcar 1 participante.' : `Falta marcar ${semMarcacao} participantes.` }}
+          </p>
+          <button
+            type="button"
+            class="botao botao--primario botao--grande"
+            :disabled="enviando || pendentes.length === 0"
+            @click="salvarFrequencias"
+          >
+            {{ enviando ? 'Gravando chamada...' : 'Salvar frequência da turma' }}
+          </button>
+        </template>
       </div>
     </div>
 
-    <!-- Modal simples para Justificativa (RF29) ou Correção (RF30) -->
+    <!-- Janela de justificativa (RF29) ou de correção (RF30) -->
     <div
-      v-if="participanteModal"
+      v-if="participanteModal && acao"
       class="modal-fundo"
+      @keydown.esc="fecharModal"
     >
-      <div class="modal-cartao">
-        <h3>{{ motivoCorrecao !== undefined && sessao?.perfil === 'coordenacao' ? 'Corrigir frequência' : 'Justificar falta' }}</h3>
+      <div
+        class="modal-cartao"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-titulo"
+      >
+        <h3 id="modal-titulo">
+          {{ acao === 'justificar' ? 'Justificar falta' : 'Corrigir registro de frequência' }}
+        </h3>
         <p><strong>Participante:</strong> {{ participanteModal.nome }}</p>
+        <p>
+          <strong>Registro atual:</strong>
+          {{ participanteModal.presente ? 'Presente' : (participanteModal.justificada ? 'Falta justificada' : 'Ausente') }}
+        </p>
 
         <div
-          v-if="participanteModal.presente !== false"
-          class="campo"
+          v-if="erroModal"
+          class="aviso aviso--erro"
+          role="alert"
         >
-          <label>Nova situação:</label>
-          <select v-model="novaPresenca">
-            <option :value="true">
-              Presente
-            </option>
-            <option :value="false">
-              Ausente
-            </option>
-          </select>
+          {{ erroModal }}
         </div>
 
-        <div
-          v-if="!participanteModal.justificada && participanteModal.presente === false"
-          class="campo"
+        <form
+          v-if="acao === 'justificar'"
+          class="formulario"
+          @submit.prevent="salvarJustificativa"
         >
-          <label for="m-just">Motivo da justificativa de falta (RN16) *:</label>
-          <textarea
-            id="m-just"
-            v-model="motivoJustificativa"
-            rows="3"
-            placeholder="Ex.: Atestado médico, compromisso escolar"
-          />
-        </div>
+          <div class="campo">
+            <label for="m-just">Motivo da falta *</label>
+            <textarea
+              id="m-just"
+              v-model="motivoJustificativa"
+              rows="3"
+              placeholder="Ex.: atestado médico, compromisso escolar"
+            />
+            <p class="campo__dica">
+              A falta continua registrada como falta, mas passa a constar como justificada.
+            </p>
+          </div>
+          <div class="formulario__acoes">
+            <button
+              type="button"
+              class="botao botao--secundario"
+              @click="fecharModal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="botao botao--primario"
+              :disabled="enviando"
+            >
+              {{ enviando ? 'Salvando...' : 'Confirmar justificativa' }}
+            </button>
+          </div>
+        </form>
 
-        <div
-          v-if="sessao?.perfil === 'coordenacao'"
-          class="campo"
+        <form
+          v-else
+          class="formulario"
+          @submit.prevent="salvarCorrecao"
         >
-          <label for="m-corr">Motivo da correção pela Coordenação (RN17 / CA-RF30-04) *:</label>
-          <textarea
-            id="m-corr"
-            v-model="motivoCorrecao"
-            rows="2"
-            placeholder="Motivo obrigatório para correção pela Coordenação"
-          />
-        </div>
-
-        <div class="formulario__acoes">
-          <button
-            type="button"
-            class="botao botao--secundario"
-            @click="participanteModal = null"
-          >
-            Cancelar
-          </button>
-          <button
-            v-if="participanteModal.presente === false && !participanteModal.justificada"
-            type="button"
-            class="botao botao--primario"
-            :disabled="enviando || !motivoJustificativa.trim()"
-            @click="salvarJustificativa"
-          >
-            Confirmar justificativa
-          </button>
-          <button
-            v-else
-            type="button"
-            class="botao botao--primario"
-            :disabled="enviando"
-            @click="salvarCorrecao"
-          >
-            Confirmar correção
-          </button>
-        </div>
+          <div class="campo">
+            <label for="m-situacao">Nova situação *</label>
+            <select
+              id="m-situacao"
+              v-model="novaPresenca"
+            >
+              <option :value="true">
+                Presente
+              </option>
+              <option :value="false">
+                Ausente
+              </option>
+            </select>
+            <p
+              v-if="participanteModal.justificada"
+              class="campo__dica"
+            >
+              A correção retira a justificativa registrada para esta falta.
+            </p>
+          </div>
+          <div class="campo">
+            <label for="m-corr">Motivo da correção {{ ehCoord ? '*' : '(opcional)' }}</label>
+            <textarea
+              id="m-corr"
+              v-model="motivoCorrecao"
+              rows="2"
+              placeholder="Ex.: participante chegou depois da chamada"
+            />
+            <p class="campo__dica">
+              O registro anterior fica guardado, com quem corrigiu, a data e a hora.
+            </p>
+          </div>
+          <div class="formulario__acoes">
+            <button
+              type="button"
+              class="botao botao--secundario"
+              @click="fecharModal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="botao botao--primario"
+              :disabled="enviando || novaPresenca === participanteModal.presente && !participanteModal.justificada"
+            >
+              {{ enviando ? 'Salvando...' : 'Confirmar correção' }}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

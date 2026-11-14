@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ConsentimentoResposta, FamiliaResposta, ParticipanteResposta, TurmaResposta } from '~/types/contratos'
+import { formatarData } from '~/utils/formato'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 import { calcularIdade } from '~/utils/familias'
 
@@ -173,7 +174,7 @@ const ehMenor = computed(() => {
     <CabecalhoPagina
       v-else
       titulo="Participantes atendidos"
-      descricao="Cadastro, vínculo e busca de participantes (RF16, RF18, RF19)"
+      descricao="Cadastro, vínculo com a família e busca de participantes"
     >
       <template #acoes>
         <button
@@ -356,7 +357,7 @@ const ehMenor = computed(() => {
             id="v-motivo"
             v-model="motivoAusenciaResponsavel"
             rows="2"
-            placeholder="Exige motivo registrado para menor de 18 anos sem responsável legal (RN08)"
+            placeholder="Obrigatório para menor de 18 anos sem responsável legal"
           />
         </div>
 
@@ -470,7 +471,7 @@ const ehMenor = computed(() => {
         v-else-if="participantesFiltrados.length === 0"
         class="vazio"
       >
-        Nenhum participante encontrado (CA-RF19-03).
+        Nenhum participante encontrado para esta busca.
       </div>
 
       <table
@@ -493,7 +494,7 @@ const ehMenor = computed(() => {
             :key="p.id"
           >
             <td><strong>{{ p.nome }}</strong></td>
-            <td>{{ p.dataNascimento }} ({{ calcularIdade(p.dataNascimento) }} anos)</td>
+            <td>{{ formatarData(p.dataNascimento) }} ({{ calcularIdade(p.dataNascimento) }} anos)</td>
             <td>
               <span v-if="p.familia">{{ p.familia.nomeResponsavel }}</span>
               <span

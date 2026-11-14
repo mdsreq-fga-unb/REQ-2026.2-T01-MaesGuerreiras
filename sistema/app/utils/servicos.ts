@@ -23,6 +23,22 @@ export const CONTRATOS_SERVICO: ContratoServico[] = [
   { metodo: 'POST', caminho: '/api/doacoes/recebimentos', operacao: 'registrar_recebimento' },
   { metodo: 'POST', caminho: '/api/doacoes/saidas-sinteticas', operacao: 'registrar_saida_sintetica' },
   { metodo: 'GET', caminho: '/api/doacoes/saldos', operacao: 'consultar_saldo' },
+  { metodo: 'GET', caminho: '/api/familias', operacao: 'consultar_participante' },
+  { metodo: 'POST', caminho: '/api/familias', operacao: 'cadastrar_familia' },
+  { metodo: 'GET', caminho: '/api/participantes', operacao: 'consultar_participante' },
+  { metodo: 'POST', caminho: '/api/participantes', operacao: 'cadastrar_participante' },
+  { metodo: 'POST', caminho: '/api/participantes/:id/vinculo-familiar', operacao: 'vincular_participante' },
+  { metodo: 'GET', caminho: '/api/turmas', operacao: 'consultar_participante' },
+  { metodo: 'POST', caminho: '/api/turmas', operacao: 'cadastrar_turma' },
+  { metodo: 'GET', caminho: '/api/turmas/:id/inscricoes', operacao: 'consultar_participante' },
+  { metodo: 'POST', caminho: '/api/turmas/:id/inscricoes', operacao: 'inscrever_participante' },
+  { metodo: 'POST', caminho: '/api/doacoes/destinacoes', operacao: 'registrar_destinacao' },
+  { metodo: 'POST', caminho: '/api/chamadas', operacao: 'abrir_chamada' },
+  { metodo: 'GET', caminho: '/api/chamadas/:id', operacao: 'abrir_chamada' },
+  { metodo: 'POST', caminho: '/api/chamadas/:id/frequencias', operacao: 'registrar_frequencia' },
+  { metodo: 'POST', caminho: '/api/frequencias/:id/justificar', operacao: 'justificar_falta' },
+  { metodo: 'PATCH', caminho: '/api/frequencias/:id', operacao: 'corrigir_frequencia' },
+  { metodo: 'GET', caminho: '/api/frequencias/participante/:id', operacao: 'consultar_frequencia' },
 ]
 
 export function statusAcessoDireto(operacao: Operacao, perfil: Perfil | null): 200 | 401 | 403 {

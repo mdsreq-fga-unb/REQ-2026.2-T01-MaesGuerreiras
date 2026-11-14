@@ -23,9 +23,20 @@ const secoes = computed<Secao[]>(() => {
   const todas: Secao[] = [
     { titulo: '', itens: [{ rotulo: 'Início', para: '/painel', soCoord: false, exato: true }] },
     {
+      titulo: 'Atendimento e turmas',
+      itens: [
+        { rotulo: 'Famílias', para: '/painel/familias', soCoord: false },
+        { rotulo: 'Participantes', para: '/painel/participantes', soCoord: false },
+        { rotulo: 'Turmas', para: '/painel/turmas', soCoord: false },
+        { rotulo: 'Chamada do dia', para: '/painel/chamada', soCoord: false },
+        { rotulo: 'Frequência', para: '/painel/frequencia', soCoord: false },
+      ],
+    },
+    {
       titulo: 'Doações',
       itens: [
         { rotulo: 'Registrar entrada', para: '/painel/doacoes', soCoord: false },
+        { rotulo: 'Destinação de itens', para: '/painel/destinacao', soCoord: false },
         { rotulo: 'Saldo de itens', para: '/painel/saldo', soCoord: false },
         { rotulo: 'Doadores', para: '/painel/doadores', soCoord: false },
         { rotulo: 'Categorias', para: '/painel/categorias', soCoord: true },
@@ -98,22 +109,24 @@ const secoes = computed<Secao[]>(() => {
                 <span>{{ item.rotulo }}</span>
                 <span
                   v-if="item.soCoord"
-                  class="selo-coord"
-                >Coord.</span>
+                  class="menu__exclusivo"
+                >Coordenação</span>
               </NuxtLink>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="menu__usuario">
-      <span
-        class="menu__iniciais"
-        aria-hidden="true"
-      >{{ iniciais(email) }}</span>
-      <div class="menu__quem">
-        <span class="menu__email">{{ email }}</span>
-        <span class="menu__sub">{{ ehCoord ? 'Coordenação' : 'Voluntário' }}</span>
+    <div class="menu__rodape">
+      <div class="menu__usuario">
+        <span
+          class="menu__avatar"
+          aria-hidden="true"
+        >{{ iniciais(email) }}</span>
+        <div class="menu__detalhes">
+          <span class="menu__papel">{{ ehCoord ? 'Coordenação' : 'Voluntário' }}</span>
+          <span class="menu__email">{{ email }}</span>
+        </div>
       </div>
       <button
         type="button"

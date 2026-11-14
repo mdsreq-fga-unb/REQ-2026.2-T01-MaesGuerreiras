@@ -1,5 +1,5 @@
 import type { ParticipanteCorpo, ParticipanteResposta } from '~/types/contratos'
-import { validarParticipante } from '~/utils/familias'
+import { titularConsentimentoInformado, validarParticipante } from '~/utils/familias'
 
 export default defineEventHandler(async (event): Promise<ParticipanteResposta> => {
   const sessao = await exigirOperacao(event, 'cadastrar_participante')
@@ -9,20 +9,24 @@ export default defineEventHandler(async (event): Promise<ParticipanteResposta> =
   if (falha) {
     throw falhaValidacao(falha.campo, falha.mensagem)
   }
+  if (!titularConsentimentoInformado(corpo.titularConsentimentoId)) {
+    throw falhaValidacao('titularConsentimentoId', 'Selecione um titular com consentimento vigente para cadastro e atendimento (RN19).')
+  }
+  const titularConsentimentoId = corpo.titularConsentimentoId.trim()
 
   const cliente = await dbUsuario(event)
 
-  // Integração com consentimento (RF42 / RN19 / CA-RF16-04)
-  if (corpo.titularConsentimentoId) {
-    const { data: consentimentoValido } = await cliente
-      .rpc('consentimento_vigente', {
-        p_titular_id: corpo.titularConsentimentoId,
-        p_finalidade: 'cadastro_atendimento',
-      })
+  const { data: consentimentoValido, error: erroConsentimento } = await cliente
+    .rpc('consentimento_vigente', {
+      p_titular_id: titularConsentimentoId,
+      p_finalidade: 'cadastro_atendimento',
+    })
 
-    if (!consentimentoValido) {
-      throw falhaValidacao('titularConsentimentoId', 'O cadastro exige consentimento prévio registrado para cadastro e atendimento (RN19).')
-    }
+  if (erroConsentimento) {
+    throw createError({ statusCode: 500, statusMessage: 'Não foi possível verificar o consentimento para cadastro.' })
+  }
+  if (!consentimentoValido) {
+    throw falhaValidacao('titularConsentimentoId', 'O cadastro exige consentimento prévio vigente para cadastro e atendimento (RN19).')
   }
 
   const { data, error } = await cliente
@@ -33,7 +37,7 @@ export default defineEventHandler(async (event): Promise<ParticipanteResposta> =
       telefone: corpo.telefone?.trim() || null,
       observacoes: corpo.observacoes?.trim() || null,
       situacao: 'ativo',
-      titular_consentimento_id: corpo.titularConsentimentoId || null,
+      titular_consentimento_id: titularConsentimentoId,
       criado_por: sessao.id,
     })
     .select()

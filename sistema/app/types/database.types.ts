@@ -550,6 +550,16 @@ export type Database = {
         }
         Returns: boolean
       }
+      corrigir_frequencia: {
+        Args: {
+          p_frequencia_id: string
+          p_justificada: boolean
+          p_motivo_correcao: string | null
+          p_motivo_justificativa: string | null
+          p_presente: boolean
+        }
+        Returns: boolean
+      }
       eh_coordenacao: { Args: never, Returns: boolean }
       estado_bloqueio_login: {
         Args: { p_email: string }

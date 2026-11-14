@@ -3,7 +3,7 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(16);
+select plan(20);
 
 insert into auth.users (id, aud, role, email) values
   ('cccccccc-0000-0000-0000-000000000001', 'authenticated', 'authenticated', 'coord7@teste.local'),
@@ -38,6 +38,8 @@ select lives_ok(
             array['terca', 'quinta'], '14:00 - 16:00', 10, 'cccccccc-0000-0000-0000-000000000001')$$,
   'coordenação cadastra turma (RF20)'
 );
+
+update public.turmas set vagas = 1 where id = 'cccccccc-3333-0000-0000-000000000001';
 
 select throws_ok(
   $$insert into public.turmas (atividade, data_inicio, data_termino, dias_semana, horario, vagas, criado_por)
@@ -76,6 +78,19 @@ select lives_ok(
   'voluntário inscreve participante ativo na turma com vaga (RF23)'
 );
 
+insert into public.participantes (id, nome, data_nascimento, criado_por)
+values ('cccccccc-5555-0000-0000-000000000002', 'Segunda Participante', '2014-03-10', 'cccccccc-0000-0000-0000-000000000002');
+
+insert into public.inscricoes (id, turma_id, participante_id, situacao, criado_por)
+values ('cccccccc-6666-0000-0000-000000000002', 'cccccccc-3333-0000-0000-000000000001', 'cccccccc-5555-0000-0000-000000000002', 'cancelada', 'cccccccc-0000-0000-0000-000000000002');
+
+select throws_ok(
+  $$update public.inscricoes set situacao = 'ativa'
+    where id = 'cccccccc-6666-0000-0000-000000000002'$$,
+  'P0001', 'turma cheia',
+  'reativação em turma cheia é recusada pelo banco'
+);
+
 -- Voluntário abre chamada na data de hoje (RF27)
 select lives_ok(
   $$insert into public.chamadas (id, turma_id, data_encontro, aberta_por)
@@ -90,6 +105,38 @@ select lives_ok(
   'voluntário registra presença na chamada (RF28)'
 );
 
+set local request.jwt.claims = '{"sub":"cccccccc-0000-0000-0000-000000000001","role":"authenticated"}';
+select throws_ok(
+  $$select public.corrigir_frequencia(
+      'cccccccc-8888-0000-0000-000000000001',
+      false,
+      false,
+      null,
+      null
+    )$$,
+  'P0001', 'coordenação deve informar o motivo da correção',
+  'correção da Coordenação sem motivo é recusada pelo banco'
+);
+select lives_ok(
+  $$select public.corrigir_frequencia(
+      'cccccccc-8888-0000-0000-000000000001',
+      false,
+      false,
+      null,
+      'Correção validada pela Coordenação'
+    )$$,
+  'Coordenação corrige frequência com motivo'
+);
+select is(
+  (select motivo from public.frequencias_alteracoes
+    where frequencia_id = 'cccccccc-8888-0000-0000-000000000001'
+      and campo = 'presente'
+    order by alterado_em desc limit 1),
+  'Correção validada pela Coordenação',
+  'motivo da Coordenação fica na mesma linha de auditoria'
+);
+
+set local request.jwt.claims = '{"sub":"cccccccc-0000-0000-0000-000000000002","role":"authenticated"}';
 -- Voluntário tenta registrar frequência de participante não inscrito (CA-RF28-03)
 select throws_ok(
   $$insert into public.participantes (id, nome, data_nascimento, criado_por)

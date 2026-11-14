@@ -75,31 +75,38 @@ export default defineEventHandler(async (event) => {
   }
 
   // 3. Atualiza a frequência
-  const { data: atualizada, error: erroUpd } = await cliente
-    .from('frequencias')
-    .update({
-      presente: corpo.presente,
-      justificada: corpo.justificada ?? false,
-      motivo_justificativa: corpo.motivoJustificativa?.trim() || null,
-    })
-    .eq('id', frequenciaId)
-    .select()
-    .single()
+  const { data: corrigida, error: erroUpd } = await cliente.rpc('corrigir_frequencia', {
+    p_frequencia_id: frequenciaId,
+    p_presente: corpo.presente,
+    p_justificada: corpo.justificada ?? false,
+    p_motivo_justificativa: corpo.motivoJustificativa?.trim() || null,
+    p_motivo_correcao: corpo.motivoCorrecao?.trim() || null,
+  })
 
-  if (erroUpd || !atualizada) {
+  if (erroUpd || !corrigida) {
     if (erroUpd?.message?.includes('só corrige frequência')) {
       throw falhaValidacao('perfil', erroUpd.message)
+    }
+    if (erroUpd?.message?.includes('mesmo dia')) {
+      throw falhaValidacao('prazo', erroUpd.message)
+    }
+    if (erroUpd?.message?.includes('motivo da correção')) {
+      throw falhaValidacao('motivoCorrecao', erroUpd.message)
+    }
+    if (!erroUpd) {
+      throw createError({ statusCode: 404, statusMessage: 'Registro de frequência não encontrado.' })
     }
     throw createError({ statusCode: 500, statusMessage: 'Não foi possível corrigir a frequência.' })
   }
 
-  // 4. Garante que os registros de auditoria em frequencias_alteracoes tenham o motivo da Coordenação (CA-RF30-05 / RNF19)
-  if (corpo.motivoCorrecao?.trim()) {
-    await cliente
-      .from('frequencias_alteracoes')
-      .update({ motivo: corpo.motivoCorrecao.trim() })
-      .eq('frequencia_id', frequenciaId)
-      .is('motivo', null)
+  const { data: atualizada, error: erroConsulta } = await cliente
+    .from('frequencias')
+    .select('id, presente, justificada, motivo_justificativa')
+    .eq('id', frequenciaId)
+    .single()
+
+  if (erroConsulta || !atualizada) {
+    throw createError({ statusCode: 500, statusMessage: 'A frequência foi corrigida, mas não foi possível carregar o resultado.' })
   }
 
   return {

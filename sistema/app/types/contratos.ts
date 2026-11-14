@@ -18,6 +18,23 @@ export type SessaoResposta = {
   perfil: Perfil | null
 }
 
+export type ConsentimentoResposta = {
+  titularId: string
+  nome: string
+  papel: PapelTitular
+  consentimentos: Array<{
+    finalidade: ConsentimentoInformado['finalidade']
+    concedido: boolean
+    registradoEm: string
+  }>
+  imagem: {
+    autorizado: boolean
+    meios: AutorizacaoImagemInformada['meios']
+    revogacao: boolean
+    registradoEm: string
+  } | null
+}
+
 export type CadastrarUsuarioCorpo = {
   nome: string
   email: string
@@ -41,23 +58,6 @@ export type RegistrarConsentimentosCorpo = {
   titular: { nome: string, papel: PapelTitular, familiaId?: string | null }
   consentimentos: ConsentimentoInformado[]
   imagem: AutorizacaoImagemInformada
-}
-
-export type ConsentimentoResposta = {
-  titularId: string
-  nome: string
-  papel: PapelTitular
-  consentimentos: Array<{
-    finalidade: ConsentimentoInformado['finalidade']
-    concedido: boolean
-    registradoEm: string
-  }>
-  imagem: {
-    autorizado: boolean
-    meios: AutorizacaoImagemInformada['meios']
-    revogacao: boolean
-    registradoEm: string
-  } | null
 }
 
 export type CategoriaCorpo = {

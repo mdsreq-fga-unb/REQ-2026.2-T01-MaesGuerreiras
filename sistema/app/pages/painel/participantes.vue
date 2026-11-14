@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import type { FamiliaResposta, ParticipanteResposta, TurmaResposta } from '~/types/contratos'
+import type { ConsentimentoResposta, FamiliaResposta, ParticipanteResposta, TurmaResposta } from '~/types/contratos'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 import { calcularIdade } from '~/utils/familias'
 
 const { data: participantes, error, refresh } = await useFetch<ParticipanteResposta[]>('/api/participantes')
 const { data: familias } = await useFetch<FamiliaResposta[]>('/api/familias')
 const { data: turmas } = await useFetch<TurmaResposta[]>('/api/turmas')
+const { data: consentimentos, error: erroConsentimentos } = await useFetch<ConsentimentoResposta[]>('/api/consentimentos')
 
 const modo = ref<'lista' | 'novo' | 'vincular'>('lista')
 const enviando = ref(false)
@@ -14,12 +15,14 @@ const enviando = ref(false)
 const filtroNome = ref('')
 const filtroFamilia = ref('')
 const filtroTurma = ref('')
+const filtroSituacao = ref('')
 
 // Cadastro (RF16)
 const nome = ref('')
 const dataNascimento = ref('')
 const telefone = ref('')
 const observacoes = ref('')
+const titularConsentimentoId = ref('')
 
 // Vínculo (RF18)
 const participanteSelecionado = ref<ParticipanteResposta | null>(null)
@@ -53,6 +56,7 @@ function cancelar() {
   dataNascimento.value = ''
   telefone.value = ''
   observacoes.value = ''
+  titularConsentimentoId.value = ''
   participanteSelecionado.value = null
   familiaIdSelecionada.value = ''
   responsavelLegal.value = ''
@@ -73,6 +77,7 @@ async function cadastrar() {
         dataNascimento: dataNascimento.value,
         telefone: telefone.value || null,
         observacoes: observacoes.value || null,
+        titularConsentimentoId: titularConsentimentoId.value,
       },
     })
     sucesso.value = `Participante "${nome.value.trim()}" cadastrado com sucesso.`
@@ -138,9 +143,18 @@ const participantesFiltrados = computed(() => {
     if (filtroTurma.value && !p.turmas?.some(t => t.id === filtroTurma.value)) {
       return false
     }
+    if (filtroSituacao.value && p.situacao !== filtroSituacao.value) {
+      return false
+    }
     return true
   })
 })
+
+const titularesComConsentimento = computed(() => consentimentos.value?.filter(titular =>
+  titular.consentimentos.some(consentimento =>
+    consentimento.finalidade === 'cadastro_atendimento' && consentimento.concedido,
+  ),
+) ?? [])
 
 const ehMenor = computed(() => {
   if (!participanteSelecionado.value) return false
@@ -196,6 +210,35 @@ const ehMenor = computed(() => {
         class="formulario"
         @submit.prevent="cadastrar"
       >
+        <div class="campo">
+          <label for="p-consentimento">Consentimento para cadastro e atendimento *</label>
+          <select
+            id="p-consentimento"
+            v-model="titularConsentimentoId"
+            required
+          >
+            <option value="">
+              Selecione um titular com consentimento vigente...
+            </option>
+            <option
+              v-for="titular in titularesComConsentimento"
+              :key="titular.titularId"
+              :value="titular.titularId"
+            >
+              {{ titular.nome }}
+            </option>
+          </select>
+          <p
+            v-if="erroConsentimentos || titularesComConsentimento.length === 0"
+            class="texto-apagado"
+          >
+            Não há titular com consentimento vigente disponível.
+            <NuxtLink to="/painel/consentimentos">
+              Registrar consentimento
+            </NuxtLink>
+          </p>
+        </div>
+
         <div class="campo">
           <label for="p-nome">Nome completo *</label>
           <input
@@ -255,7 +298,7 @@ const ehMenor = computed(() => {
           <button
             type="submit"
             class="botao botao--primario"
-            :disabled="enviando"
+            :disabled="enviando || titularesComConsentimento.length === 0"
           >
             {{ enviando ? 'Salvando...' : 'Salvar participante' }}
           </button>
@@ -393,6 +436,24 @@ const ehMenor = computed(() => {
               :value="t.id"
             >
               {{ t.atividade }}
+            </option>
+          </select>
+        </div>
+
+        <div class="filtro-item">
+          <label for="b-situacao">Situação:</label>
+          <select
+            id="b-situacao"
+            v-model="filtroSituacao"
+          >
+            <option value="">
+              Todas as situações
+            </option>
+            <option value="ativo">
+              Ativo
+            </option>
+            <option value="inativo">
+              Inativo
             </option>
           </select>
         </div>

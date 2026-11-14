@@ -1,17 +1,33 @@
 import { describe, expect, it } from 'vitest'
 import {
   calcularIdade,
+  ehSituacaoParticipante,
   validarFamilia,
   validarParticipante,
   validarVinculoFamiliar,
+  titularConsentimentoInformado,
 } from '../app/utils/familias'
 import { pode } from '../app/utils/permissoes'
 
 describe('RF14 cadastro de famílias', () => {
+  it('exige titular selecionado com consentimento vigente para cadastro e atendimento', () => {
+    expect(titularConsentimentoInformado(undefined)).toBe(false)
+    expect(titularConsentimentoInformado('   ')).toBe(false)
+    expect(titularConsentimentoInformado('titular-1')).toBe(true)
+  })
+
   it('Voluntário e Coordenação podem cadastrar família', () => {
     expect(pode('cadastrar_familia', 'voluntario')).toBe(true)
     expect(pode('cadastrar_familia', 'coordenacao')).toBe(true)
     expect(pode('cadastrar_familia', null)).toBe(false)
+  })
+
+  describe('RF19 filtro por situação', () => {
+    it('aceita somente situações cadastradas para participantes', () => {
+      expect(ehSituacaoParticipante('ativo')).toBe(true)
+      expect(ehSituacaoParticipante('inativo')).toBe(true)
+      expect(ehSituacaoParticipante('cancelado')).toBe(false)
+    })
   })
 
   it('valida campos obrigatórios da família (RN04: responsável, telefone e endereço)', () => {

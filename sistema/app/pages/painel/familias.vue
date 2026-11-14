@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { FamiliaResposta } from '~/types/contratos'
+import type { ConsentimentoResposta, FamiliaResposta } from '~/types/contratos'
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 const { data: familias, error, refresh } = await useFetch<FamiliaResposta[]>('/api/familias')
+const { data: consentimentos, error: erroConsentimentos } = await useFetch<ConsentimentoResposta[]>('/api/consentimentos')
 
 const criando = ref(false)
 const enviando = ref(false)
@@ -15,6 +16,7 @@ const complemento = ref('')
 const cidade = ref('Itapoã')
 const numeroMoradores = ref<number | undefined>(undefined)
 const observacoes = ref('')
+const titularConsentimentoId = ref('')
 
 const erroCampo = ref('')
 const aviso = ref('')
@@ -34,6 +36,7 @@ function cancelar() {
   cidade.value = 'Itapoã'
   numeroMoradores.value = undefined
   observacoes.value = ''
+  titularConsentimentoId.value = ''
   erroCampo.value = ''
   aviso.value = ''
 }
@@ -53,6 +56,7 @@ async function cadastrar() {
         cidade: cidade.value,
         numeroMoradores: numeroMoradores.value,
         observacoes: observacoes.value || null,
+        titularConsentimentoId: titularConsentimentoId.value,
       },
     })
     sucesso.value = `Família de "${nomeResponsavel.value.trim()}" cadastrada com sucesso.`
@@ -79,6 +83,12 @@ const familiasFiltradas = computed(() => {
   const termo = busca.value.trim().toLowerCase()
   return familias.value.filter(f => f.nomeResponsavel.toLowerCase().includes(termo))
 })
+
+const titularesComConsentimento = computed(() => consentimentos.value?.filter(titular =>
+  titular.consentimentos.some(consentimento =>
+    consentimento.finalidade === 'cadastro_atendimento' && consentimento.concedido,
+  ),
+) ?? [])
 </script>
 
 <template>
@@ -129,6 +139,35 @@ const familiasFiltradas = computed(() => {
         class="formulario"
         @submit.prevent="cadastrar"
       >
+        <div class="campo">
+          <label for="f-consentimento">Consentimento para cadastro e atendimento *</label>
+          <select
+            id="f-consentimento"
+            v-model="titularConsentimentoId"
+            required
+          >
+            <option value="">
+              Selecione um titular com consentimento vigente...
+            </option>
+            <option
+              v-for="titular in titularesComConsentimento"
+              :key="titular.titularId"
+              :value="titular.titularId"
+            >
+              {{ titular.nome }}
+            </option>
+          </select>
+          <p
+            v-if="erroConsentimentos || titularesComConsentimento.length === 0"
+            class="texto-apagado"
+          >
+            Não há titular com consentimento vigente disponível.
+            <NuxtLink to="/painel/consentimentos">
+              Registrar consentimento
+            </NuxtLink>
+          </p>
+        </div>
+
         <div class="campo">
           <label for="f-responsavel">Nome da pessoa responsável *</label>
           <input
@@ -222,7 +261,7 @@ const familiasFiltradas = computed(() => {
           <button
             type="submit"
             class="botao botao--primario"
-            :disabled="enviando"
+            :disabled="enviando || titularesComConsentimento.length === 0"
           >
             {{ enviando ? 'Salvando...' : 'Salvar família' }}
           </button>

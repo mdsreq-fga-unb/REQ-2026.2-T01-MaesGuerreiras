@@ -3,6 +3,16 @@ export type FalhaValidacao = {
   mensagem: string
 }
 
+export type SituacaoParticipante = 'ativo' | 'inativo'
+
+export function titularConsentimentoInformado(titularConsentimentoId: string | null | undefined): titularConsentimentoId is string {
+  return Boolean(titularConsentimentoId?.trim())
+}
+
+export function ehSituacaoParticipante(valor: unknown): valor is SituacaoParticipante {
+  return valor === 'ativo' || valor === 'inativo'
+}
+
 export type FamiliaEntrada = {
   nomeResponsavel?: string
   telefone?: string

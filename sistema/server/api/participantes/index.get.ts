@@ -1,4 +1,5 @@
 import type { ParticipanteResposta } from '~/types/contratos'
+import { ehSituacaoParticipante } from '~/utils/familias'
 
 type ParticipanteConsulta = {
   id: string
@@ -33,6 +34,10 @@ export default defineEventHandler(async (event): Promise<ParticipanteResposta[]>
   const nome = typeof query.nome === 'string' ? query.nome.trim() : ''
   const familiaId = typeof query.familiaId === 'string' ? query.familiaId.trim() : ''
   const turmaId = typeof query.turmaId === 'string' ? query.turmaId.trim() : ''
+  const situacao = typeof query.situacao === 'string' ? query.situacao.trim() : ''
+  if (situacao && !ehSituacaoParticipante(situacao)) {
+    throw falhaValidacao('situacao', 'A situação deve ser ativo ou inativo.')
+  }
 
   const cliente = await dbUsuario(event)
 
@@ -70,6 +75,9 @@ export default defineEventHandler(async (event): Promise<ParticipanteResposta[]>
   }
   if (familiaId) {
     consulta = consulta.eq('familia_id', familiaId)
+  }
+  if (situacao) {
+    consulta = consulta.eq('situacao', situacao)
   }
 
   const { data, error } = await consulta

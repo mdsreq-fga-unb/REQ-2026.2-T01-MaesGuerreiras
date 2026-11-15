@@ -71,6 +71,25 @@ A comunicação interna acontece por reuniões presenciais e grupos de WhatsApp,
 
 ![Rich Picture da Associação Mães Guerreiras da Cidade Estrutural](../assets/rich-picture.jpg)
 
+*Como ler:* a Rich Picture é uma representação informal do cenário atual da associação, antes do
+sistema. Mostra quem participa (famílias, coordenação e voluntariado, doadores e parceiros), por onde
+a informação circula hoje (Instagram, WhatsApp e cadernos) e, em vermelho, os problemas que motivam o
+projeto. Ela não mostra o que o sistema faz nem quem o usa: isso está no diagrama de contexto abaixo.
+
+#### Diagrama de contexto {#diagrama-de-contexto}
+
+![Diagrama de contexto do sistema Mães Guerreiras](../assets/representacao/diagrama-de-contexto.svg)
+
+*Como ler:* a caixa do centro é o sistema entregue no MVP (a área restrita). As setas cheias são quem
+o usa e os serviços de que ele depende. As caixas tracejadas ficam de fora: o Visitante usa o portal
+e a agenda pública, que não fazem parte do MVP ([10.2](../10-mvp/index.md)); famílias e doadores têm
+os dados registrados pela Voluntária ou pela Coordenação, mas não acessam; os parceiros recebem
+relatórios, também fora do MVP. A educadora voluntária usa o perfil Voluntário.
+
+*Situação:* proposta da equipe em 15/11/2026, a conferir na retrospectiva da Sprint 7 e a mostrar ao
+Makio. Depois da conferência, a versão mantida pela equipe passa a ser a do FigJam
+(ver [5.5](#55-representacao-dos-requisitos)).
+
 ### 1.4 Identificação da Oportunidade ou Problema
 
 A associação tem uma operação consolidada, parceiros institucionais reconhecidos e alcance real na
@@ -445,14 +464,15 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Planejamento da Release | Elicitação e Descoberta | Levantamento de Requisitos | Entrevistas, Questionário, Brainstorming | Rotinas manuais da associação compreendidas e requisitos de alto nível identificados. |
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP validado com Makio em 28/09/2026 (seção [10](../10-mvp/index.md)). |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a história de usuário de cada um) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua história de usuário, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
+| Planejamento da Release | Representação | Representação do Contexto | Rich Picture, Diagrama de Contexto | Cenário atual da associação e fronteira do sistema representados ([1.3](#13-rich-picture)). |
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Catálogo integrado, Mapa de Histórias | Requisitos organizados em jornadas e releases ([mapa de histórias](../12-mapa/index.md)) e rastreados do problema à evidência ([11](../11-rastreabilidade/index.md)). |
 | Planejamento da Release | Verificação e Validação | Revisão dos Requisitos e Validação do Escopo | Walkthrough (professor e monitor), Revisão por pares entre equipes, Feedback do cliente | Apontamentos tratados um a um ([registro da revisão por pares](../00-evidencias/index.md#registro-da-revisao-por-pares)) e MVP validado com Makio ([5.4](#54-verificacao-e-validacao-dos-requisitos)). |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
+| Planejamento da Sprint | Representação | Criação de Protótipos e Diagramas | Prototipação de Baixa Fidelidade (Wireframing), Diagrama de Estados | Wireframes validados com Makio, que os mostra à coordenação, antes de o requisito entrar na sprint (item D4 da DoR; [ata de 26/10](../00-atas/index.md#ata-de-26102026)); regras com estados desenhadas e ligadas às fichas ([5.5](#55-representacao-dos-requisitos)). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), DEEP e INVEST como checklists | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint; resultado do [DEEP](../08-requisitos/index.md#deep) e do [INVEST](../08-requisitos/index.md#invest) registrado no catálogo. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com Makio antes do início da sprint; o que depende da coordenação vai por ele. |
-| Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com Makio, que os mostra à coordenação ([ata de 26/10](../00-atas/index.md#ata-de-26102026)). |
 | Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Revisão dos Critérios de Aceitação, Análise de Consistência (`scripts/catalogo.py verificar`) | Fichas consistentes com o histórico e com as dependências antes de cada publicação do site. |
 | Execução da Sprint | Organização e Atualização | Acompanhamento do Backlog | Reunião de acompanhamento da equipe ([7.2](#72-comunicacao)) | Situação das fichas atualizada e alinhada com os objetivos da sprint em andamento. |
 | Revisão da Sprint | Verificação e Validação | Verificação da Conclusão | Checklist da Definição de Pronto (DoD) | Só são apresentados na revisão os requisitos que passam em todos os itens da DoD (seção [13](../13-dor-dod/index.md)); as demais voltam ao backlog. |
@@ -601,6 +621,70 @@ quando passa em todos os itens da DoD.
    origem e a quem foi comunicada.
 4. O que a equipe aprendeu vai para as [lições aprendidas](../15-licoes/index.md) e, quando faz
    sentido, vira item novo da DoR, da DoD ou do script de verificação.
+
+### 5.5 Representação dos Requisitos
+
+Esta seção reúne, em um só lugar, como a equipe representa os requisitos. **Declarar** é dizer em
+texto o que o sistema deve fazer ([5.3](#53-declaracao-dos-requisitos)); **representar** é mostrar,
+em figura ou modelo, como as partes se ligam. A equipe usa representações informais e semiformais,
+escolhidas pelo que cada uma ajuda a enxergar (o foco).
+
+#### Representações usadas
+
+| Representação | Nível | Foco | O que ajuda a responder | Momento | Onde está |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Rich Picture | Informal | Contextual | Como a associação funciona hoje e onde estão os problemas? | Planejamento da Release | [1.3](#13-rich-picture) |
+| Diagrama de contexto | Semiformal | Contextual | O que é o sistema, quem o usa e o que fica de fora? | Planejamento da Release | [1.3](#diagrama-de-contexto) |
+| Protótipo de telas (wireframes no Figma) | Semiformal | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
+| Diagrama de estados da chamada | Semiformal | Comportamental | Quando a chamada abre, quem corrige e até quando, e que falta conta? | Planejamento da Sprint | [Abaixo](#diagrama-de-estados-da-chamada) |
+
+O foco informacional (os dados e os termos) é atendido em texto, pelo
+[glossário](../08-requisitos/glossario.md) e pelas [regras de negócio](../08-requisitos/regras.md).
+
+#### Quando a equipe desenha um diagrama
+
+Só quando o texto deixa dúvida: requisitos com regra que muda conforme o estado, o perfil ou a data.
+A chamada é o caso do MVP: quatro fichas ([RF27](../08-requisitos/index.md#rf27) a
+[RF30](../08-requisitos/index.md#rf30)) e três regras
+([RN15](../08-requisitos/regras.md#rn15) a [RN17](../08-requisitos/regras.md#rn17)) descrevem o
+mesmo objeto. Cadastros simples, como categoria e doador, ficam só com a declaração e os critérios
+de aceitação.
+
+#### Diagrama de estados da chamada {#diagrama-de-estados-da-chamada}
+
+![Diagrama de estados da chamada e do registro de frequência](../assets/representacao/estados-da-chamada.svg)
+
+*Como ler:* cada caixa arredondada é uma situação em que a chamada (em cima) ou o registro de um
+participante (embaixo) pode estar. Cada seta é uma ação, e o texto entre colchetes é a condição para
+ela acontecer. As regras vêm de [RN15](../08-requisitos/regras.md#rn15) (abertura só na data do
+encontro), [RN16](../08-requisitos/regras.md#rn16) (falta justificada) e
+[RN17](../08-requisitos/regras.md#rn17) (quem corrige e até quando). A sinalização por faltas
+seguidas ([RN18](../08-requisitos/regras.md#rn18)) fica fora do MVP.
+
+*Situação:* proposta da equipe em 15/11/2026, a conferir com as fichas na retrospectiva da Sprint 7
+e a mostrar ao Makio.
+
+#### Ligação com as fichas
+
+A ficha de cada requisito representado ganha o campo **Representações**, com o link para o
+diagrama. Assim se vai do requisito à figura e, pela lista de regras e fichas acima, da figura ao
+requisito. Quando a ficha ou a regra muda, o diagrama é revisto na mesma mudança, e a linha do
+[histórico](../14-historico/index.md) cita os dois.
+
+#### Onde os diagramas são mantidos
+
+No FigJam da equipe, o mesmo espaço do quadro de declarações e das retrospectivas. O site recebe a
+imagem exportada. Até a conferência na retrospectiva da Sprint 7, as duas figuras desta versão valem
+como proposta.
+
+#### O que a equipe não usa
+
+- **Representação formal** (especificação matemática): indicada para sistemas críticos. Aqui, os
+  critérios de aceitação e os testes automatizados dão a precisão necessária.
+- **Casos de uso e cenários:** as histórias de usuário com critérios de aceitação já cobrem o mesmo
+  papel (ver [5.3](#53-declaracao-dos-requisitos)).
+- **Modelo de dados na documentação de requisitos:** o esquema do banco é decisão de projeto e fica
+  no código.
 
 ## 6. Cronograma e Entregas
 

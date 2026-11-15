@@ -932,11 +932,45 @@ O backlog é a única fonte do trabalho: além dos RFs, entram itens técnicos e
 </details>
 
 
-## Verificação DEEP do catálogo (27/10/2026) {#deep}
+## Verificação DEEP do catálogo (13/11/2026) {#deep}
 
-| Característica | Situação |
-| :--- | :--- |
-| **D**etalhado adequadamente | Topo com critérios de aceitação (RF08 a RF12, RF39 a RF42); falta protótipo validado. Itens da Sprint 7 ainda sem critérios. |
-| **E**stimado | Esforço de 1 a 4 por RF; velocidade ainda não medida (primeira medição em 02/11). |
-| **E**mergente | Mudanças registradas no [Histórico de evolução](../14-historico/index.md). |
-| **P**riorizado | Ordem única com os quatro fatores, na tabela acima. |
+O DEEP verifica o backlog como conjunto. A verificação anterior, de 27/10/2026, apontava falta de
+protótipo validado e de critérios para a Sprint 7; os dois pontos foram tratados em 26/10
+([MUD-003](../14-historico/index.md#mud-003)) e 05/11 ([MUD-033](../14-historico/index.md#mud-033)).
+
+| Característica | Situação | Achado |
+| :--- | :--- | :--- |
+| **D**etalhado adequadamente | Os 20 RFs das Sprints 6 e 7 têm critérios de aceitação. Os outros 25 recebem critérios antes da sprint em que entram. | Falta protótipo validado para os 12 RFs da Sprint 7 ([13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6)). |
+| **E**stimado | Esforço de 1 a 4 em cada RF. Velocidade medida na Sprint 6: T01 e 0 RFs pela DoD ([6.3](../01-visao-produto/index.md#63-velocidade-necessaria)). | A velocidade medida ainda não permite prever a Sprint 8. |
+| **E**mergente | Mudanças registradas no [Histórico de evolução](../14-historico/index.md), de MUD-001 a MUD-047. | Nenhum. |
+| **P**riorizado | Ordem única no catálogo; `scripts/catalogo.py verificar` aponta posições repetidas. | Nenhum. |
+
+## Verificação INVEST das histórias da Sprint 7 (13/11/2026) {#invest}
+
+O INVEST verifica cada história de usuário. Foi aplicado como checklist às 12 histórias da
+[Sprint 7](#sprint-7), pela leitura das fichas. Legenda: ✔ atende · ✖ não atende, com o achado ao lado.
+
+| História | I | N | V | E | S | T | Achado |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| [RF14](#rf14) – Cadastrar família | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| [RF16](#rf16) – Cadastrar participante | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| [RF20](#rf20) – Cadastrar turma de atividade | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| [RF18](#rf18) – Vincular participante a família | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF14 e RF16, da mesma sprint. |
+| [RF23](#rf23) – Inscrever participante em turma | ✖ | ✖ | ✔ | ✔ | ✔ | ✔ | Depende de RF16 e RF20. A história traz uma segunda frase sobre a lista de espera e o RF25, que é nota de planejamento e não desejo da usuária. |
+| [RF10](#rf10) – Registrar destinação de doação | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF14 e RF20, da mesma sprint. |
+| [RF19](#rf19) – Consultar cadastro de participantes | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF23. O benefício usa "rapidamente"; a medida está no CA-RF19-05 (até 3 segundos, RNF03). |
+| [RF27](#rf27) – Abrir chamada do encontro | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF20 e RF23. |
+| [RF28](#rf28) – Registrar frequência do participante | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF27. |
+| [RF29](#rf29) – Justificar falta | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF28. |
+| [RF30](#rf30) – Corrigir registro de frequência | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF28. |
+| [RF31](#rf31) – Consultar frequência do participante | ✖ | ✔ | ✔ | ✔ | ✔ | ✔ | Depende de RF28. |
+
+**Como cada letra foi conferida:** **I**, nenhum *Depende de* aponta para outra história da mesma
+sprint; **N**, a história diz o que a pessoa quer sem fixar a tela nem o plano; **V**, o "para…"
+descreve um benefício para a associação; **E**, a ficha tem esforço estimado; **S**, esforço 1 ou 2,
+que cabe em uma sprint; **T**, a ficha tem critérios de aceitação numerados e observáveis.
+
+**Leitura do resultado:** nove das 12 histórias dependem de outra da mesma sprint. As dependências
+já estão nas fichas, e delas sai a ordem de construção: RF14, RF16 e RF20; depois RF18 e RF23;
+depois RF10, RF19 e RF27; depois RF28; por fim RF29, RF30 e RF31. Um atraso nas três primeiras
+atrasa a sprint inteira. As redações das histórias do RF19 e do RF23 ficam para decisão da equipe.

@@ -57,9 +57,9 @@ Reunião com Makio para validação do escopo do MVP definido pela equipe.
   saídas em menos de 3 s no runner do Vitest. A consulta HTTP envia `Server-Timing`.
 - RNF03 (3G/4G): protocolo no `sistema/README.md`; medição e resultado em campo continuam
   pendentes na issue de verificação (#35), não são declarados concluídos aqui.
-- Pendências da DoR registradas na seção 9.6: confirmação dos perfis pela coordenação,
+- Pendências da DoR registradas na seção [13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6): confirmação dos perfis pela coordenação,
   protótipos validados, confirmação de comportamentos detalhados e campos de cadastro de usuário.
-- Impedimentos/escopo futuro: doação anônima (CA-US08-06) aguarda confirmação; famílias,
+- Impedimentos/escopo futuro: doação anônima (CA-RF08-06) aguarda confirmação; famílias,
   participantes e destinação real (RF10) pertencem à Sprint 7.
 
 ## Apresentação da Unidade 2 - 12/10/2026

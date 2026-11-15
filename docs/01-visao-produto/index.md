@@ -446,13 +446,14 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Planejamento da Release | Análise e Consenso | Priorização de Requisitos | Priorização MoSCoW, Matriz de Valor de Negócio × Esforço Técnico (4 × 4) | MVP validado com Makio em 28/09/2026 (seção [10](../10-mvp/index.md)). |
 | Planejamento da Release | Declaração | Especificação dos Requisitos | Catálogo de RFs (com a história de usuário de cada um) e de RNFs | 45 RFs declarados no [catálogo integrado](../08-requisitos/index.md), cada um com sua história de usuário, e 19 RNFs com critério verificável ([8.1](../08-requisitos/rnf.md)), com o vocabulário usado pela associação. |
 | Planejamento da Release | Organização e Atualização | Organização do Backlog | Catálogo integrado, Mapa de Histórias | Requisitos organizados em jornadas e releases ([mapa de histórias](../12-mapa/index.md)) e rastreados do problema à evidência ([11](../11-rastreabilidade/index.md)). |
+| Planejamento da Release | Verificação e Validação | Revisão dos Requisitos e Validação do Escopo | Walkthrough (professor e monitor), Revisão por pares entre equipes, Feedback do cliente | Apontamentos tratados um a um ([registro da revisão por pares](../00-evidencias/index.md#registro-da-revisao-por-pares)) e MVP validado com Makio ([5.4](#54-verificacao-e-validacao-dos-requisitos)). |
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
-| Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), Critério INVEST | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint. |
+| Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), DEEP e INVEST como checklists | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint; resultado do [DEEP](../08-requisitos/index.md#deep) e do [INVEST](../08-requisitos/index.md#invest) registrado no catálogo. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com Makio antes do início da sprint; o que depende da coordenação vai por ele. |
-| Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com usuárias de baixa familiaridade digital. |
-| Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Checklist, Revisão de Critérios de Aceitação, Critério INVEST | Requisitos verificados quanto à clareza, consistência, completude e testabilidade. |
+| Execução da Sprint | Representação | Criação de Protótipos | Prototipação de Baixa Fidelidade (Wireframing) | Wireframes, o artefato produzido, validados com Makio, que os mostra à coordenação ([ata de 26/10](../00-atas/index.md#ata-de-26102026)). |
+| Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Revisão dos Critérios de Aceitação, Análise de Consistência (`scripts/catalogo.py verificar`) | Fichas consistentes com o histórico e com as dependências antes de cada publicação do site. |
 | Execução da Sprint | Organização e Atualização | Acompanhamento do Backlog | Reunião de acompanhamento da equipe ([7.2](#72-comunicacao)) | Situação das fichas atualizada e alinhada com os objetivos da sprint em andamento. |
 | Revisão da Sprint | Verificação e Validação | Verificação da Conclusão | Checklist da Definição de Pronto (DoD) | Só são apresentados na revisão os requisitos que passam em todos os itens da DoD (seção [13](../13-dor-dod/index.md)); as demais voltam ao backlog. |
 | Revisão da Sprint | Verificação e Validação | Validação com a Coordenação | Coleta de Feedback, Teste com Usuárias Reais | Requisitos e funcionalidades validados por Makio, que os mostra à coordenação e traz o retorno dela. |
@@ -536,7 +537,70 @@ explícita (detalhar fluxos alternativos e de exceção) e ficar ligado à ficha
 Alguns artefatos do site apoiam a Engenharia de Requisitos, mas não declaram requisitos: o mapa
 de stakeholders (apoio à identificação), a matriz de valor × esforço e o MVP (análise e consenso,
 seções 9 e 10), o mapa de histórias (organização, seção 12) e a DoR e a DoD
-(verificação, seção 13).
+(verificação, seção 13; ver [5.4](#54-verificacao-e-validacao-dos-requisitos)).
+
+### 5.4 Verificação e Validação dos Requisitos
+
+Esta seção reúne, em um só lugar, como a equipe avalia a qualidade dos requisitos e a adequação
+deles ao que a associação precisa. **Verificação** é o que a equipe faz sobre o que foi declarado
+e representado (o requisito foi feito da maneira correta?). **Validação** é o confronto desse
+entendimento com Makio e, por meio dele, com a coordenação (o requisito feito é o requisito
+certo?). As duas não acontecem em sequência: a [DoR](../13-dor-dod/index.md) é uma verificação da
+equipe, mas dois dos seus itens (protótipo validado e comportamento confirmado pelo cliente) só
+passam depois de uma validação.
+
+#### Estratégia
+
+| Pergunta | Resposta da equipe |
+| :--- | :--- |
+| Quando aplicar? | No planejamento da release (revisões do professor, do monitor e de outra equipe; validação do MVP), no planejamento da sprint (DoR), na execução (revisão dos critérios e verificação automática do catálogo) e na revisão da sprint (DoD e validação com Makio). Fora desses momentos, uma mudança registrada no [histórico](../14-historico/index.md) dispara a conferência das fichas afetadas ([11.5](../11-rastreabilidade/index.md#115-quando-revisar-os-vinculos)). |
+| O que verificar? | As fichas do [catálogo](../08-requisitos/index.md) (declaração, história, critérios, condições e vínculos), o backlog como conjunto e a consistência entre fichas, histórico, DoR e atas. |
+| O que validar? | O escopo do MVP, o valor de cada requisito, o protótipo das telas, os critérios de aceitação e as funcionalidades em homologação. |
+| Quanto rigor? | Leve na descoberta (conversas e reuniões gravadas), moderado antes de cada sprint (checklist da DoR) e mais forte no que envolve dados pessoais de famílias e crianças ([RNF07](../08-requisitos/rnf.md#rnf07), [RNF13](../08-requisitos/rnf.md#rnf13) e o [portão de uso real](#64-portao-de-liberacao-para-uso-real)). |
+| Quais evidências? | Issues, atas, gravações, tabelas da DoR e da DoD e linhas do histórico, indicadas na tabela abaixo. |
+
+#### Técnicas usadas e onde está o resultado de cada uma
+
+| Técnica | Tipo | Quando | O que examina | Resultado |
+| :--- | :--- | :--- | :--- | :--- |
+| Walkthrough (leitura do site pelo professor e pelo monitor, com apontamentos) | Verificação | A cada entrega de unidade | Visão do produto, catálogo, backlog e mapa | Issues #20, #26 e #27 e as mudanças [MUD-004](../14-historico/index.md#mud-004) a [MUD-009](../14-historico/index.md#mud-009); [ata de 22/09](../00-atas/index.md#ata-de-22092026) |
+| Revisão por pares entre equipes | Verificação | Unidade 2 | RFs e RNFs | [Registro da revisão por pares](../00-evidencias/index.md#registro-da-revisao-por-pares): cada apontamento, a decisão da equipe (aceito, aceito em parte ou recusado) e o ajuste ou a justificativa; [ata de 28/09](../00-atas/index.md#ata-de-28092026); [lição 1 da Unidade 2](../15-licoes/index.md#unidade-2) |
+| Checklist da DoR | Verificação | Planejamento da sprint | Cada RF que vai entrar na sprint | [13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6) |
+| Checklist da DoD | Verificação | Antes da revisão da sprint | Cada RF implementado | [13.5](../13-dor-dod/index.md#135-exemplo-de-aplicacao-rf09-registrar-doacao-recebida) e a issue de verificação da DoD da sprint |
+| DEEP, aplicado como checklist | Verificação | No planejamento da sprint | O backlog como conjunto | [Verificação DEEP do catálogo](../08-requisitos/index.md#deep) |
+| INVEST, aplicado como checklist | Verificação | Planejamento da sprint | A história de usuário de cada RF da sprint | [Verificação INVEST](../08-requisitos/index.md#invest) |
+| Análise de consistência automática (`scripts/catalogo.py verificar`) | Verificação | Antes de cada publicação do site | Dependências nos dois sentidos, ordem do backlog, agentes e notas de evolução contra o histórico | Publicação só segue sem problemas apontados ([11.2](../11-rastreabilidade/index.md#112-tipos-de-vinculo)) |
+| Feedback do cliente | Validação | Contínuo (WhatsApp) e nas reuniões | Escopo, valor e comportamento dos requisitos | [Atas](../00-atas/index.md) e [Evidências](../00-evidencias/index.md) |
+| Critérios de aceitação confirmados pelo cliente | Validação | Antes da sprint (item D9 da DoR) | Condições de satisfação de cada RF | Coluna D9 em [13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6) |
+| Protótipo de baixa fidelidade | Validação | Antes da sprint (item D4 da DoR) | Telas e fluxo dos RFs com interface | [Ata de 26/10](../00-atas/index.md#ata-de-26102026), [MUD-003](../14-historico/index.md#mud-003) |
+| Teste em homologação pelo cliente | Validação | Revisão da sprint | Funcionalidades entregues | [Ata de 02/11](../00-atas/index.md#ata-de-02112026) |
+| Uso real na associação | Validação | Depois do portão de liberação | Rotina de doações e de chamada | Previsto ([6.4](#64-portao-de-liberacao-para-uso-real)) |
+
+Cenários, casos de uso e inspeções formais (com papéis definidos) não são usados. O produto não é
+crítico, a equipe é pequena e o cliente não tem formação técnica; o rigor fica nos checklists e
+na conferência automática do catálogo.
+
+#### O que muda por tipo de requisito
+
+| Tipo | Verificação | Validação |
+| :--- | :--- | :--- |
+| Requisito funcional | A ficha tem agente, campos obrigatórios, exceções nos critérios e dependências (DoR, itens D1, D3, D6 e D7). | Makio confirma o comportamento (D9), vê o protótipo (D4) e testa em homologação. |
+| Requisito não funcional | Cada RNF traz a própria medida, e a DoD exige medir de fato (por exemplo, até 3 segundos em 95% das consultas, [RNF03](../08-requisitos/rnf.md#rnf03)). | A coordenação confirma se o nível pedido faz sentido para a rotina e para o custo zero ([RNF12](../08-requisitos/rnf.md#rnf12)). |
+| Regra de negócio | Cada regra tem origem registrada e fica separada do texto do RF ([8.2](../08-requisitos/regras.md); DoR, item D2). | A coordenação confirma, por meio de Makio, se a regra ainda vale (por exemplo, as 3 faltas sem justificativa). |
+
+A validação com o cliente não substitui a DoD: um requisito validado em homologação só é concluído
+quando passa em todos os itens da DoD.
+
+#### O que acontece com um achado
+
+1. O achado é registrado onde surgiu: issue (revisões e defeitos), ata (reuniões com o cliente) ou
+   tabela da DoR e da DoD.
+2. A equipe analisa se ele procede e qual atividade precisa ajustar (declaração, critérios, regra,
+   protótipo ou prioridade).
+3. A ficha é ajustada e a mudança ganha uma linha no [histórico](../14-historico/index.md), com a
+   origem e a quem foi comunicada.
+4. O que a equipe aprendeu vai para as [lições aprendidas](../15-licoes/index.md) e, quando faz
+   sentido, vira item novo da DoR, da DoD ou do script de verificação.
 
 ## 6. Cronograma e Entregas
 
@@ -736,11 +800,12 @@ Até a Sprint 5, planejamento, revisão e retrospectiva não tiveram registro pr
 
 ### 7.3 Processo de Validação
 
-O produto é validado antes de cada entrega parcial (seção [6](#6-cronograma-e-entregas)),
-garantindo que atenda às expectativas da coordenação e à realidade da comunidade atendida. A
-validação ocorre em três níveis:
+O produto é verificado pela equipe e validado com a associação antes de cada entrega parcial
+(seção [6](#6-cronograma-e-entregas)), para que atenda às expectativas da coordenação e à realidade
+da comunidade atendida. As técnicas e os resultados de cada uma estão em
+[5.4](#54-verificacao-e-validacao-dos-requisitos). A avaliação ocorre em três níveis:
 
-- **Validação técnica:** a equipe verifica, por meio de checklists e testes, se cada funcionalidade
+- **Verificação pela equipe:** a equipe confere, por meio de checklists e testes, se cada funcionalidade
   atende aos critérios de aceitação da ficha e à [DoD](../13-dor-dod/index.md),
   com atenção especial à proteção dos dados pessoais e à correção dos relatórios.
 - **Validação com a coordenação:** a cada revisão de sprint, Makio testa as funcionalidades entregues;

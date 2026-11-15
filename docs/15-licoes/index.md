@@ -45,7 +45,7 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
 
 - **Desafio:** Os RFs foram escritos com regras de negócio misturadas ao texto, como campos obrigatórios, limite de vagas e prazo para corrigir a chamada. O monitor apontou o problema, e a equipe ficou em dúvida sobre até onde um apontamento era RF ou regra (RF19 e RF20 ficaram pendentes na ata de 28/09).
 
-- **Ação de melhoria:** As regras de negócio passam a ficar numa lista própria (RN01, RN02, ...), registrada na seção 10.2 e ligada às user stories que as aplicam. O RF descreve só a capacidade (verbo + objeto). Separar as regras também virou item da Definição de Preparado (seção 9).
+- **Ação de melhoria:** As regras de negócio passam a ficar numa lista própria (RN01, RN02, ...), registrada na seção 8.2 e ligada às fichas dos RFs que as aplicam. O RF descreve só a capacidade (verbo + objeto). Separar as regras também virou item da Definição de Preparado (seção 13).
 
 **3. Priorização com o cliente**
 

@@ -5,7 +5,8 @@ equipe. A DoR verifica se um requisito está maduro o suficiente para entrar em 
 verifica se o que foi construído a partir dele cumpre os critérios de qualidade da equipe antes
 de ser mostrado à coordenação na Revisão da Sprint. As duas são **verificação** feita pela
 equipe — a validação com o cliente (seção [7.3](../01-visao-produto/index.md#73-processo-de-validacao))
-é uma etapa posterior e separada. Há uma única DoR e uma única DoD para o projeto inteiro,
+é feita com Makio em dois momentos: antes da sprint (itens D4 e D9 da DoR) e na Revisão da
+Sprint. Há uma única DoR e uma única DoD para o projeto inteiro,
 aplicadas a cada história de usuário. Cada item tem um de três resultados — **passou**, **não
 passou** ou **não se aplica**, este sempre com justificativa —, nunca um percentual. A história
 está pronta quando nenhum item ficou como "não passou".

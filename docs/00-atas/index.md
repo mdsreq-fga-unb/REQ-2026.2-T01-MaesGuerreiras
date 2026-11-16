@@ -3,6 +3,56 @@
 !!! note "Caráter histórico"
     As atas registram o estado das decisões **no momento em que foram tomadas**. Pendências e encaminhamentos descritos aqui podem ter sido resolvidos posteriormente. O estado vigente de cada requisito, regra ou decisão está no [Catálogo de requisitos](../08-requisitos/index.md) e no [Histórico de evolução](../14-historico/index.md), não nas atas.
 
+## Ata de 15/11/2026
+
+**Participantes:** Isabella, Luan, Luis, Ian, Pedro, Vitor e Makio (representante do cliente).
+
+**Pauta:**
+
+- Validação das funcionalidades da Sprint 7 com Makio.
+- Próximos passos.
+
+### 1. Técnica usada: teste de usabilidade baseado em tarefas
+
+A validação seguiu um **teste de usabilidade com protótipo**, também chamado de teste baseado em
+tarefas. Na verificação e validação de requisitos, ele é uma forma de validação por prototipação:
+o cliente usa a tela para confirmar se o requisito representado é o certo. O roteiro teve três
+partes:
+
+- **Cenários de tarefa:** Makio recebeu objetivos, como "cadastre a família da Maria José" e "faça
+  a chamada de hoje", e não instruções de onde clicar.
+- **Pensar em voz alta (think-aloud):** Makio dizia o que estava pensando enquanto usava a tela.
+  Quem conduziu não explicou nada e só perguntou "o que você faria agora?".
+- **Entrevista de encerramento (debriefing):** perguntas finais sobre as palavras usadas nas telas,
+  campos que faltam e regras.
+
+### 2. Resultado
+
+Cada tarefa correspondia a um requisito da Sprint 7. Makio fez todas na versão para celular, sem
+precisar de instrução de onde clicar:
+
+| Tarefa | Requisitos | Resultado |
+| :--- | :--- | :--- |
+| Cadastrar a família da Maria José, começando pelo consentimento | RF42, RF14 | Concluída. Perguntado por que o consentimento vem antes do cadastro, Makio respondeu que é pela proteção de dados. |
+| Cadastrar a Ana Clara, de 9 anos, como nova participante | RF16, RF18 | Concluída. |
+| Criar uma turma de crochê com 20 vagas | RF20 | Concluída. |
+| Inscrever a Ana Clara no crochê, que estava lotado (20 de 20), e depois em uma turma com vaga | RF23 | A inscrição na turma cheia ficou bloqueada; na turma com vaga, foi feita. |
+| Entregar 12 pacotes de leite à Maria José | RF10 | Concluída; a tela mostrou o saldo atualizado. |
+| Fazer a chamada do crochê de hoje | RF27, RF28 | Concluída. |
+| Ver as faltas da Ana Clara no reforço | RF19, RF31 | Concluída; a ficha mostrou o cadastro, as turmas e os encontros com presença e falta. |
+
+Na entrevista de encerramento, Makio disse que as telas são intuitivas e "super fáceis de
+entender". Nenhum ajuste foi pedido na reunião. A justificativa de falta (RF29) e a correção de
+frequência (RF30) não entraram nas tarefas.
+
+### 3. Próximos passos
+
+- Makio vai testar também a versão para computador e avisar a equipe se encontrar algum problema.
+- A validação não substitui a DoD: os RFs da Sprint 7 só são concluídos depois da verificação da
+  DoD ([issue #65](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/65)).
+
+**Evidências:** [gravação da reunião](../00-evidencias/index.md#validacao-da-sprint-7-com-makio-15112026).
+
 ## Ata de 02/11/2026
 
 **Participantes:** Isabella, Luan, Luis, Ian, Pedro, Vitor e Makio (representante do cliente).

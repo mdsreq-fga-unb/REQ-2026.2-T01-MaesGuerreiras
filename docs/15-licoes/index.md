@@ -83,6 +83,39 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
   site. Ao registrar uma decisão de reunião, a equipe confere também a DoR, as fichas e o histórico
   afetados.
 
+**2. Mudanças paralelas sobrescrevendo o site**
+
+- **Desafio:** Um commit feito a partir de uma cópia desatualizada desfez a atualização da
+  automação e quebrou o CI (corrigido no PR #72). Um PR com erro de formatação no catálogo foi
+  aceito com o CI falhando (PR #55). PRs abertos ao mesmo tempo disputaram o mesmo código de
+  mudança (MUD-044).
+
+- **Ação de melhoria:** Antes de editar, a branch parte do main atualizado. O commit lista os
+  arquivos um a um, nunca `git add .`. O merge só acontece com o CI verde, e PRs que mexem no
+  histórico entram no mesmo dia.
+
+**3. Automação que parecia não funcionar**
+
+- **Desafio:** Issues movidas no GitHub Projects não mudavam a situação dos requisitos no site. A
+  automação só reage quando a issue é editada, fechada ou reaberta, e o GitHub mostrava todos os
+  integrantes como "contributor", então as issues da equipe não eram reconhecidas.
+
+- **Ação de melhoria:** A regra ficou escrita na seção 13.7, a equipe passou a ser reconhecida pelo
+  login (PR #69) e as issues usam a linha `Requisitos:` e as caixas `DoD RFxx`. Um modelo de issue
+  com essas linhas prontas evita que elas sejam esquecidas.
+
+**4. Representação desligada dos requisitos**
+
+- **Desafio:** O site apontava para o protótipo da Sprint 6, enquanto as telas da Sprint 7 estavam
+  em outra página do Figma. Telas cortadas esconderam um campo pedido nos critérios (as vagas da
+  turma, CA-RF20-01). E as regras da chamada estavam espalhadas em quatro fichas e três regras de
+  negócio, sem um modelo que as juntasse.
+
+- **Ação de melhoria:** A Visão do Produto ganhou a seção 5.5, sobre as representações usadas; as
+  fichas da chamada ganharam o campo *Representações*, com o diagrama de estados da chamada. Cada
+  tela do protótipo cita os critérios de aceitação que atende e é conferida contra eles antes da
+  validação com o Makio.
+
 
 ## Unidade 4
 

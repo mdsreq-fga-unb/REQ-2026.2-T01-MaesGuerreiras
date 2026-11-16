@@ -18,7 +18,7 @@ condições, critérios, prioridade, entrega, situação e evolução. As outras
     requisito. RNFs e regras de negócio têm registros próprios
     ([8.1](rnf.md) e [8.2](regras.md)); a ligação com cada RF é mantida só na ficha do RF.
 
-> **Situação em 04/11/2026.** RFs concluídos pela DoD: **0 de 43**. Atualizado a partir das issues ([como funciona](../13-dor-dod/index.md#137-como-a-situacao-e-atualizada)).
+> **Situação em 16/11/2026.** RFs concluídos pela DoD: **2 de 43**. Atualizado a partir das issues ([como funciona](../13-dor-dod/index.md#137-como-a-situacao-e-atualizada)).
 
 ## Como usar
 
@@ -209,8 +209,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 </details>
 
-<details class="ficha" id="rf10" data-cp="cp2" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="11" data-perfis="voluntario coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">11º</span> <span class="ficha__id">RF10</span> <span class="ficha__nome">Registrar destinação de doação</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf10" data-cp="cp2" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="concluida" data-valor="4" data-esforco="2" data-ordem="11" data-perfis="voluntario coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">11º</span> <span class="ficha__id">RF10</span> <span class="ficha__nome">Registrar destinação de doação</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-concluida">Concluída</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -222,8 +222,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 | Critérios de aceitação | **CA-RF10-01**: O registro feito por Voluntário ou Coordenação contém categoria, quantidade, data e a família ou atividade destinatária.<br>**CA-RF10-02**: A quantidade usa a unidade da categoria (RN02), e a saída subtrai a quantidade do saldo do RF12.<br>**CA-RF10-03** *(exceção)*: Se faltar categoria, quantidade, data ou destinatário, a saída não é salva e o sistema indica o campo que falta.<br>**CA-RF10-04** *(exceção)*: Quantidade igual a zero ou negativa é recusada, com mensagem, e o saldo não muda.<br>**CA-RF10-05** *(exceção)*: Saída maior que o saldo da categoria é recusada, e o sistema mostra o saldo disponível.<br>**CA-RF10-06**: O destinatário é selecionado em lista: famílias cadastradas (RF14) ou turmas de atividade cadastradas (RF20). Itens destinados a uma turma representam uso interno na associação; não há texto livre.<br>*Evidência prevista:* teste do registro, da subtração e das recusas; registro de saída para uma família e para uma turma. Validação: a coordenação registra uma saída fictícia para uma família cadastrada e para uma turma cadastrada. |
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **11** na ordem<br>**Valor (cliente):** Must have, critério: obrigatoriedade legal, normativa ou institucional. «Sem a saída, o saldo fica errado e não dá para provar para onde os itens foram (ex.: Sacola Verde). É o que responde "onde foi parar minha doação?" na prestação de contas.»<br>**Esforço (equipe):** esforço 2 · complexidade 3 · lacuna 2 → consolidado 2,3. Exige relacionar a saída à família ou atividade e garantir que a quantidade seja descontada corretamente do saldo.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **7** · Iceberg: Topo |
-| Situação | Em andamento |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · A R1 passa a incluir o cálculo de saldo do RF12 no back-end, de que o RF10 depende. ([MUD-019](../14-historico/index.md#mud-019))<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. ([MUD-020](../14-historico/index.md#mud-020))<br>10/11/2026 · Situação: Pronta pela DoR → Em andamento (issues #62, #63 e #65). ([MUD-044](../14-historico/index.md#mud-044)) |
+| Situação | Concluída |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · A R1 passa a incluir o cálculo de saldo do RF12 no back-end, de que o RF10 depende. ([MUD-019](../14-historico/index.md#mud-019))<br>31/10/2026 · Esclarecido que "atividade" significa uso interno na associação (ex.: materiais para uma oficina). Dependência de RF20 adicionada; CA-RF10-06 atualizado. ([MUD-020](../14-historico/index.md#mud-020))<br>10/11/2026 · Situação: Pronta pela DoR → Em andamento (issues #62, #63 e #65). ([MUD-044](../14-historico/index.md#mud-044))<br>16/11/2026 · Situação: Em andamento → Concluída (issues #62, #63 e #65). ([MUD-049](../14-historico/index.md#mud-049)) |
 
 </details>
 
@@ -286,8 +286,8 @@ Gestão das doações de itens recebidas e distribuídas. **Valor de negócio (V
 
 Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (VN3):** Centralização dos dados atualmente mantidos de forma isolada. Objetivos: OE3, OE6. 6 requisitos.
 
-<details class="ficha" id="rf14" data-cp="cp3" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="em-andamento" data-valor="4" data-esforco="2" data-ordem="10" data-perfis="voluntario coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">10º</span> <span class="ficha__id">RF14</span> <span class="ficha__nome">Cadastrar família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
+<details class="ficha" id="rf14" data-cp="cp3" data-release="r1" data-sprint="7" data-mvp="sim" data-situacao="concluida" data-valor="4" data-esforco="2" data-ordem="10" data-perfis="voluntario coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">10º</span> <span class="ficha__id">RF14</span> <span class="ficha__nome">Cadastrar família</span> <span class="ficha__chips"><span class="chip chip--mvp-sim">MVP: Sim</span> <span class="chip">R1</span> <span class="chip">Sprint 7</span> <span class="chip chip--sit-concluida">Concluída</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -299,8 +299,8 @@ Gestão dos dados das famílias e participantes atendidos. **Valor de negócio (
 | Critérios de aceitação | **CA-RF14-01:** Voluntário e Coordenação conseguem cadastrar uma família informando nome do responsável familiar, telefone e endereço, conforme a RN04. Número de moradores e observações são opcionais.<br>**CA-RF14-02 (exceção):** Se faltar nome do responsável, telefone ou endereço, o cadastro não é salvo e o sistema indica o campo obrigatório que falta. A ausência dos campos opcionais não impede o cadastro.<br>**CA-RF14-03:** O cadastro salvo registra automaticamente a data do cadastro e a situação "ativa", preservando os dados informados.<br>**CA-RF14-04:** No fluxo integrado com RF42, o cadastro com dados reais exige o consentimento correspondente previamente registrado, conforme a RN19. <br> Evidência prevista: testes de cadastro com campos obrigatórios preenchidos e ausentes, campos opcionais vazios, persistência dos dados, data e situação automática e integração com o consentimento do RF42. Validação: a coordenação cadastra uma família fictícia e confere os dados registrados.|
 | Priorização | Valor **4** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio: dados pessoais · Posição **10** na ordem<br>**Valor (cliente):** Must have, critério: importância para resolver o problema central. «Substitui o cadastro isolado no computador da sede (OE3). O RF10 precisa da família para registrar a destinação, e o RF36 precisa dela para contar famílias atendidas.»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 2 → consolidado 2,3. Formulário com mais campos e validações, além da integração com consentimento e controle de acesso.<br>**Leitura da matriz:** Forte candidato ao MVP (valor 4 · esforço 2). Entra no MVP. Faz parte do fluxo mínimo de doação, cadastro, inscrição, chamada, acesso e consentimento. |
 | Entrega | MVP: **sim**, definido pela nova matriz (valor dado pela cliente na planilha v2) · Release **R1** · Sprint **7** · Iceberg: Topo |
-| Situação | Em andamento |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>05/11/2026 · Incluídos critérios de aceitação e evidências previstas nas fichas RF14, RF16, RF18, RF19, RF20, RF23, RF27, RF28, RF29, RF30 e RF31. ([MUD-033](../14-historico/index.md#mud-033))<br>10/11/2026 · Situação: A refinar → Em andamento (issues #62, #63 e #65). ([MUD-044](../14-historico/index.md#mud-044)) |
+| Situação | Concluída |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>05/11/2026 · Incluídos critérios de aceitação e evidências previstas nas fichas RF14, RF16, RF18, RF19, RF20, RF23, RF27, RF28, RF29, RF30 e RF31. ([MUD-033](../14-historico/index.md#mud-033))<br>10/11/2026 · Situação: A refinar → Em andamento (issues #62, #63 e #65). ([MUD-044](../14-historico/index.md#mud-044))<br>16/11/2026 · Situação: Em andamento → Concluída (issues #62, #63 e #65). ([MUD-049](../14-historico/index.md#mud-049)) |
 
 </details>
 

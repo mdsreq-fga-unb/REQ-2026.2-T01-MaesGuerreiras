@@ -90,11 +90,6 @@ consultam esse registro, sem repetir listas.
     <h3>Lições Aprendidas</h3>
     <p>Aprendizados da equipe registrados ao final de cada unidade.</p>
   </a>
-  <a href="16-referencias/" class="topic-card">
-    <span class="topic-card__num">16</span>
-    <h3>Referências</h3>
-    <p>Referências bibliográficas utilizadas no projeto.</p>
-  </a>
 </div>
 
 ## Identificação e Histórico de Revisão

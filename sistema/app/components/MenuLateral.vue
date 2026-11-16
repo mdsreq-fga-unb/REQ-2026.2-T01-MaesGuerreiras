@@ -109,24 +109,22 @@ const secoes = computed<Secao[]>(() => {
                 <span>{{ item.rotulo }}</span>
                 <span
                   v-if="item.soCoord"
-                  class="menu__exclusivo"
-                >Coordenação</span>
+                  class="selo-coord"
+                >Coord.</span>
               </NuxtLink>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="menu__rodape">
-      <div class="menu__usuario">
-        <span
-          class="menu__avatar"
-          aria-hidden="true"
-        >{{ iniciais(email) }}</span>
-        <div class="menu__detalhes">
-          <span class="menu__papel">{{ ehCoord ? 'Coordenação' : 'Voluntário' }}</span>
-          <span class="menu__email">{{ email }}</span>
-        </div>
+    <div class="menu__usuario">
+      <span
+        class="menu__iniciais"
+        aria-hidden="true"
+      >{{ iniciais(email) }}</span>
+      <div class="menu__quem">
+        <span class="menu__email">{{ email }}</span>
+        <span class="menu__sub">{{ ehCoord ? 'Coordenação' : 'Voluntário' }}</span>
       </div>
       <button
         type="button"

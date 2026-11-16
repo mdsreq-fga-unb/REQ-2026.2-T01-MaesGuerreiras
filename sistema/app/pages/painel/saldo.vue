@@ -14,7 +14,7 @@ const linhas = computed(() => {
   return (saldos.value ?? []).filter(item => item.nome.toLowerCase().includes(termo))
 })
 
-// Saída sintética: só para a coordenação testar o cálculo antes da destinação real (RF10, Sprint 7).
+// Saída sintética: só para a coordenação testar o cálculo do saldo com dados fictícios.
 const { data: categorias } = await useFetch<CategoriaResposta[]>('/api/categorias', { lazy: true })
 const aviso = ref('')
 const sucesso = ref('')
@@ -186,7 +186,7 @@ async function saidaSintetica() {
           @submit.prevent="saidaSintetica"
         >
           <p class="texto-2 pequeno">
-            Usado só para conferir o saldo antes da tela de destinação (RF10, Sprint 7). Use dados fictícios.
+            Usado para conferir o cálculo do saldo. Utilize apenas dados fictícios.
           </p>
           <div
             v-if="aviso"

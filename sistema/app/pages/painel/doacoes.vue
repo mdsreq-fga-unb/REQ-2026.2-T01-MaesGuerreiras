@@ -4,7 +4,6 @@ import { abreviarUnidade, formatarData, formatarNumero, hojeISO } from '~/utils/
 import { campoDoErro, mensagemErro } from '~/utils/http'
 
 // Protótipo: "Registrar entrada (Opção A)", "campos faltando" e "salva" (RF09, RF12, RNF01).
-// A destinação real (RF10) fica para a Sprint 7.
 type Campo = 'categoriaId' | 'quantidade' | 'doadorId' | 'data'
 type Resumo = { item: string, doador: string, data: string, saldoAntes: string, saldoDepois: string, categoria: string }
 

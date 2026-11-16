@@ -144,7 +144,7 @@ async function registrar() {
       .filter(item => item.nome === nomeSalvo)
       .sort((a, b) => (b.consentimentos[0]?.registradoEm ?? '').localeCompare(a.consentimentos[0]?.registradoEm ?? ''))[0]
     limpar()
-    sucesso.value = 'Consentimento salvo. Na Sprint 7, daqui a família poderá ser cadastrada.'
+    sucesso.value = 'Consentimento salvo. Acesse Famílias para cadastrar a família.'
     if (novo) abrirDetalhe(novo.titularId)
     else modo.value = 'lista'
   }

@@ -26,6 +26,8 @@ defineEmits<{ voltar: [] }>()
       >{{ secao }}</span>
       <h1>{{ titulo }}</h1>
     </div>
-    <slot />
+    <slot name="acoes">
+      <slot />
+    </slot>
   </header>
 </template>

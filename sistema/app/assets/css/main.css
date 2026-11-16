@@ -334,6 +334,12 @@ a {
   cursor: pointer;
 }
 
+.cabecalho__descricao {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--texto-2);
+}
+
 .cabecalho h1 {
   margin-top: 2px;
   font-size: 20px;
@@ -863,4 +869,91 @@ button.escolha {
   .fantasma {
     animation: none;
   }
+}
+
+/* ---------- Telas da Sprint 7 ----------
+   As telas de famílias, participantes, turmas, chamada, frequência e destinação usam estes
+   nomes e não envolvem o conteúdo em .pagina; o espaçamento abaixo faz o papel da .pagina. */
+
+.moldura__conteudo > div:not(:has(> .pagina)) > :not(.cabecalho) {
+  max-width: 1140px;
+  margin: 20px 32px 0;
+}
+
+.moldura__conteudo > div:not(:has(> .pagina)) > :last-child:not(.cabecalho) {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .moldura__conteudo > div:not(:has(> .pagina)) > :not(.cabecalho) {
+    margin: 16px 16px 0;
+  }
+}
+
+.cartao:has(> .tabela) {
+  overflow-x: auto;
+}
+
+.aviso {
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: var(--raio);
+  font-size: 14px;
+}
+
+.aviso--erro {
+  border-color: var(--erro-linha);
+  background: var(--erro-fundo);
+  color: var(--erro);
+}
+
+.aviso--sucesso {
+  border-color: #b7dfc4;
+  background: var(--sucesso-fundo);
+  color: var(--sucesso);
+}
+
+.cartao > .aviso {
+  margin: 16px;
+}
+
+.formulario {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulario__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.botao--grande {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 17px;
+}
+
+.texto-apagado {
+  color: var(--texto-2);
+}
+
+.vazio {
+  padding: 24px 20px;
+  color: var(--texto-2);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

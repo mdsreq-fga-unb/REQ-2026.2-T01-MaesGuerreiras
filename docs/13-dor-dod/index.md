@@ -222,27 +222,27 @@ passou em todos os itens que se aplicam a ele no MVP.
 
 ## 13.6 Aplicação da DoR aos requisitos da Sprint 6
 
-Situação em 28/10/2026, com o item D9 atualizado em 06/11/2026. Os oito requisitos da Sprint 6 (filtro [Sprint 6](../08-requisitos/index.md#sprint-6) do catálogo) passaram pela DoR abaixo. Legenda: ✔ passou · ✖ não passou · — não se aplica · ? a confirmar pela equipe.
+Situação em 28/10/2026, com o item D9 atualizado em 06/11/2026 e o D2 corrigido em 16/11/2026. Os oito requisitos da Sprint 6 (filtro [Sprint 6](../08-requisitos/index.md#sprint-6) do catálogo) passaram pela DoR abaixo. Legenda: ✔ passou · ✖ não passou · — não se aplica · ? a confirmar pela equipe.
 
 | Requisito | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [RF41](../08-requisitos/index.md#rf41) – Autenticar usuário | ✔ | — | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 | [RF39](../08-requisitos/index.md#rf39) – Cadastrar usuário | ? | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
-| [RF40](../08-requisitos/index.md#rf40) – Atribuir perfil | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| [RF40](../08-requisitos/index.md#rf40) – Atribuir perfil | ✔ | — | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 | [RF42](../08-requisitos/index.md#rf42) – Registrar consentimentos | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 | [RF11](../08-requisitos/index.md#rf11) – Cadastrar categoria | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
-| [RF08](../08-requisitos/index.md#rf08) – Cadastrar doador | ✔ | — | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
+| [RF08](../08-requisitos/index.md#rf08) – Cadastrar doador | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 | [RF09](../08-requisitos/index.md#rf09) – Registrar doação recebida | ✔ | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 | [RF12](../08-requisitos/index.md#rf12) – Consultar saldo | — | ✔ | ? | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | — |
 
 Itens (na ordem da seção 13.4): D1 dados mínimos · D2 regras de negócio em 8.2 · D3 perfil no campo Agentes da ficha, confirmado pela Daiane · D4 protótipo validado · D5 RNFs listados · D6 critérios de aceitação · D7 dependências · D8 esforço estimado · D9 comportamento confirmado pelo cliente · D10 consentimento antes de dados reais.
 
-**Justificativas dos "não se aplica":** RF41 e RF08 não têm regra de negócio própria (D2). O RF12 é uma consulta, sem campos de entrada (D1). Nenhum requisito da Sprint 6 trata dado de família ou criança, e os testes usam dados sintéticos (D10).
+**Justificativas dos "não se aplica":** RF41 e RF40 não têm regra de negócio própria (D2). O RF08 passou no D2 depois que a regra [RN21](../08-requisitos/regras.md#rn21) foi registrada em 31/10. O RF12 é uma consulta, sem campos de entrada (D1). Nenhum requisito da Sprint 6 trata dado de família ou criança, e os testes usam dados sintéticos (D10).
 
 **Pendências desta sprint:**
 
 - **D4:** atendido em 26/10/2026: o protótipo das oito telas foi apresentado ao Makio e aprovado com ajustes ([ata de 26/10](../00-atas/index.md#ata-de-26102026), [vídeo, feedback e protótipo no Figma](../00-evidencias/index.md#avaliacao-do-prototipo-26102026)). Os ajustes pedidos entraram na versão 2 do protótipo.
-- **D3:** os perfis do campo *Agentes* ainda são proposta, à espera da confirmação da Daiane, que Makio vai levar a ela.
+- **D3:** os perfis do campo *Agentes* ainda são proposta, à espera da confirmação da Daiane, que Makio vai levar a ela. Até 16/11/2026 a confirmação não tinha sido registrada em ata. Os oito requisitos foram implementados e concluídos pela DoD sem ela, como risco aceito pela equipe: se a Daiane mudar algum perfil, a mudança entra pelo [histórico](../14-historico/index.md) e a ficha é atualizada.
 - **D9:** atendido em 02/11/2026: Makio testou em homologação as funcionalidades dos oito requisitos e as validou sem ajustes novos ([ata de 02/11](../00-atas/index.md#ata-de-02112026)). Antes disso, só o consentimento (RF42) tinha decisão registrada. O aviso de doador duplicado (CA-RF08-05) foi validado no comportamento, mas tem defeito aberto (#47).
 - **D1:** os campos do cadastro de usuário (RF39) ainda não estão definidos na declaração nem nos critérios.
 

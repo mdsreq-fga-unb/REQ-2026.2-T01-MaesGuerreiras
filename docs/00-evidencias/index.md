@@ -149,6 +149,13 @@ Sprint 6. Resumo na [ata de 02/11](../00-atas/index.md#ata-de-02112026).
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/3ikTwwXo4gc" title="Validação da Sprint 6 com Makio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## Validação da Sprint 7 com Makio - 15/11/2026
+
+Gravação da reunião de 15/11/2026, em que Makio validou as funcionalidades da Sprint 7 em um teste
+de usabilidade baseado em tarefas. Resumo na [ata de 15/11](../00-atas/index.md#ata-de-15112026).
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/xxa7t4qYJCY" title="Validação da Sprint 7 com Makio, 15/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Retrospectiva da Sprint 6 - 10/11/2026
 
 Gravação da retrospectiva da Sprint 6, feita pela equipe.

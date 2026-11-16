@@ -146,7 +146,7 @@ As telas principais (chamada, cadastro, doação e agenda pública) devem atende
 Toda alteração em dados pessoais, em frequência (inclusive justificativa de falta, RF29, e correção de chamada, RF30) e em registros de doação guarda autor, data, hora, valor anterior e valor novo por, no mínimo, 12 meses (prazo a validar). Uma alteração de teste em cada tipo de dado aparece no histórico do [RF44](index.md#rf44).
 
 - **Escopo:** Específico (ver fichas no catálogo)
-- **No MVP:** Associado a RFs do MVP. No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF44. As correções de frequência (RF30), que entraram no MVP proposto em 29/10/2026, também exigem esse registro. As demais alterações fora dos RFs selecionados ficam para versões futuras.
+- **No MVP:** Associado a RFs do MVP. No MVP, as correções de dados do doador (RF08) exigem registro de alteração, verificável no log sem depender da tela RF44. As correções de frequência (RF30), que entraram no MVP proposto em 29/10/2026, também exigem esse registro. As demais alterações fora dos RFs selecionados ficam para versões futuras. Em 16/11/2026 a equipe decidiu permitir a correção de registros de doação, com o histórico gravado; ela entra depois do MVP ([MUD-052](../14-historico/index.md#mud-052)).
 
 
 !!! note "Pendências registradas na validação de 28/09/2026"

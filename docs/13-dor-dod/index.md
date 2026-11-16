@@ -202,23 +202,23 @@ seção 13.3).
 
 O exemplo mostra, para uma história do MVP (Sprint 6), como cada item da DoD se liga aos critérios
 de aceitação (ficha do [RF09](../08-requisitos/index.md#rf09) no catálogo),
-à forma de verificação e à evidência registrada. A coluna de evidência é preenchida pela equipe
-quando a história é verificada.
+à forma de verificação e à evidência registrada. Resultado da verificação de 16/11/2026: o RF09
+passou em todos os itens que se aplicam a ele no MVP.
 
 | Item da DoD | Critério ou requisito | Como é verificado | Resultado | Evidência |
 | :--- | :--- | :--- | :--- | :--- |
-| Comportamento igual à ficha | RF09; CA-RF09-01 | Revisão do PR conferindo os campos categoria, quantidade, data e doador com o RF09 | | |
-| Regras de negócio | RN02; CA-RF09-02 | Teste automatizado: a quantidade usa a unidade da categoria e soma ao saldo | | |
-| Critérios, incluindo exceções | CA-RF09-04, CA-RF09-05, CA-RF09-06 | Testes automatizados: campo faltando, quantidade zero ou negativa, categoria fora da lista | | |
-| Padrões de código | — | Lint sem erros no CI | | |
-| Testes das regras críticas | RN02; CA-RF09-02, 04, 05 | Testes acima passando no CI | | |
-| Regressão | — | Suíte inteira passando no CI | | |
-| Implantado em homologação | — | Deploy publicado a partir do commit final | | |
-| RNFs aplicáveis | RNF01; CA-RF09-03 | Uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos (no máximo três) | | |
-| RNFs aplicáveis | RNF19 | Uma alteração de teste em um registro de doação aparece com autor, data, hora, valor anterior e novo | | |
+| Comportamento igual à ficha | RF09; CA-RF09-01 | Revisão do PR conferindo os campos categoria, quantidade, data e doador com o RF09 | Passou | PRs [#43](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/43) (back-end) e [#51](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/51) (telas); validação do Makio em homologação ([ata de 02/11](../00-atas/index.md#ata-de-02112026)) |
+| Regras de negócio | RN02; CA-RF09-02 | Teste automatizado: a quantidade usa a unidade da categoria e soma ao saldo | Passou | Teste "soma entradas… e mantém a unidade da categoria" em [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts) |
+| Critérios, incluindo exceções | CA-RF09-04, CA-RF09-05, CA-RF09-06 | Testes automatizados: campo faltando, quantidade zero ou negativa, categoria fora da lista | Passou | CA-04 e CA-05: testes de campo ausente e quantidade inválida em [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts). CA-06: a categoria é escolhida na tela entre as cadastradas e o banco recusa categoria inexistente (chave estrangeira); falta um teste próprio |
+| Padrões de código | — | Lint sem erros no CI | Passou | `npm run lint` no workflow `sistema`, [execução de 16/11 no main](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
+| Testes das regras críticas | RN02; CA-RF09-02, 04, 05 | Testes acima passando no CI | Passou | [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts) (Vitest) e [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql) (banco), na [execução de 16/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
+| Regressão | — | Suíte inteira passando no CI | Passou | Todos os testes da aplicação e do banco na [execução de 16/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
+| Implantado em homologação | — | Deploy publicado a partir do commit final | Passou | [Homologação na Vercel](https://maes-guerreiras-homologacao.vercel.app/login) |
+| RNFs aplicáveis | RNF01; CA-RF09-03 | Uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos (no máximo três) | Passou | Makio confirmou, em 16/11/2026, que as voluntárias registraram as doações em no máximo três passos |
+| RNFs aplicáveis | RNF19 | Uma alteração de teste em um registro de doação aparece com autor, data, hora, valor anterior e novo | Não se aplica no MVP | No MVP o registro de doação não pode ser alterado depois de salvo: autor e data ficam gravados no próprio registro. A correção com histórico foi decidida em 16/11/2026 e entra depois do MVP ([RNF19](../08-requisitos/rnf.md#rnf19), [MUD-052](../14-historico/index.md#mud-052)) |
 | RNFs aplicáveis | RNF03 | Não se aplica: gravação, não tela de consulta | Não se aplica | — |
-| Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis do campo *Agentes* das fichas; apenas dados sintéticos até o portão de uso real (seção [6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)) | | |
-| Em andamento × pronto | — | Se qualquer linha acima não passar, o RF09 fica "em andamento" e não entra na velocidade | | |
+| Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis do campo *Agentes* das fichas; apenas dados sintéticos até o portão de uso real (seção [6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)) | Passou | [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql): visitante e conta sem perfil não leem doadores; homologação só com dados sintéticos |
+| Em andamento × pronto | — | Se qualquer linha acima não passar, o RF09 fica "em andamento" e não entra na velocidade | Passou | Nenhuma linha ficou como "não passou": RF09 concluído (caixa `DoD RF09` na issue #35) |
 
 ## 13.6 Aplicação da DoR aos requisitos da Sprint 6
 

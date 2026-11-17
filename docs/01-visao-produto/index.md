@@ -452,7 +452,7 @@ obtidas pelo relato dele.
 
 Ao longo desta seção, distingue-se **prática** (o objetivo exercido, ex.: priorizar requisitos), **técnica**
 (o método concreto usado para isso, ex.: MoSCoW) e **artefato/resultado** (o produto gerado pela
-técnica, ex.: backlog priorizado). O catálogo de requisitos, os critérios de aceitação e os wireframes citados abaixo são tratados
+técnica, ex.: backlog priorizado). O catálogo de requisitos, os critérios de aceitação e o protótipo de telas citados abaixo são tratados
 como artefatos (resultado de uma técnica), e não como técnicas em si.
 
 ### 5.1 Atividades e Técnicas da ER e ScrumXP
@@ -470,7 +470,7 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
-| Planejamento da Sprint | Representação | Criação de Protótipos e Diagramas | Prototipação de Baixa Fidelidade (Wireframing), Diagrama de Estados | Wireframes validados com Makio, que os mostra à coordenação, antes de o requisito entrar na sprint (item D4 da DoR; [ata de 26/10](../00-atas/index.md#ata-de-26102026)); regras com estados desenhadas e ligadas às fichas ([5.5](#55-representacao-dos-requisitos)). |
+| Planejamento da Sprint | Representação | Criação de Protótipos e Diagramas | Prototipação de Alta Fidelidade, Diagrama de Estados | Telas do protótipo validadas com Makio, que os mostra à coordenação, antes de o requisito entrar na sprint (item D4 da DoR; [ata de 26/10](../00-atas/index.md#ata-de-26102026)); regras com estados desenhadas e ligadas às fichas ([5.5](#55-representacao-dos-requisitos)). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), DEEP e INVEST como checklists | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint; resultado do [DEEP](../08-requisitos/index.md#deep) e do [INVEST](../08-requisitos/index.md#invest) registrado no catálogo. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com Makio antes do início da sprint; o que depende da coordenação vai por ele. |
 | Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Revisão dos Critérios de Aceitação, Análise de Consistência (`scripts/catalogo.py verificar`) | Fichas consistentes com o histórico e com as dependências antes de cada publicação do site. |
@@ -502,7 +502,7 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
   sobre o controle de perfis de acesso e o armazenamento seguro dos dados das famílias.
 - **Critérios de aceitação:** escritos como lista de condições de satisfação numeradas, sem notação
   Given-When-Then (ver [5.3](#53-declaracao-dos-requisitos)).
-- **Prototipação de baixa fidelidade:** telas do painel e do portal validadas com Makio antes de
+- **Prototipação de alta fidelidade:** telas do painel e do portal validadas com Makio antes de
   programar, porque a simplicidade é condição para a ferramenta substituir o caderno. Ele também as
   mostra à coordenação e repassa o retorno.
 - **Teste com usuárias reais:** Makio executa a tarefa em homologação na revisão (registrar uma doação,
@@ -592,7 +592,7 @@ passam depois de uma validação.
 | Análise de consistência automática (`scripts/catalogo.py verificar`) | Verificação | Antes de cada publicação do site | Dependências nos dois sentidos, ordem do backlog, agentes e notas de evolução contra o histórico | Publicação só segue sem problemas apontados ([11.2](../11-rastreabilidade/index.md#112-tipos-de-vinculo)) |
 | Feedback do cliente | Validação | Contínuo (WhatsApp) e nas reuniões | Escopo, valor e comportamento dos requisitos | [Atas](../00-atas/index.md) e [Evidências](../00-evidencias/index.md) |
 | Critérios de aceitação confirmados pelo cliente | Validação | Antes da sprint (item D9 da DoR) | Condições de satisfação de cada RF | Coluna D9 em [13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6) |
-| Protótipo de baixa fidelidade | Validação | Antes da sprint (item D4 da DoR) | Telas e fluxo dos RFs com interface | [Ata de 26/10](../00-atas/index.md#ata-de-26102026), [MUD-003](../14-historico/index.md#mud-003) |
+| Validação por protótipo (teste de usabilidade com tarefas) | Validação | Antes da sprint (item D4 da DoR) | Telas e fluxo dos RFs com interface | [Ata de 26/10](../00-atas/index.md#ata-de-26102026), [MUD-003](../14-historico/index.md#mud-003) |
 | Teste em homologação pelo cliente | Validação | Revisão da sprint | Funcionalidades entregues | [Ata de 02/11](../00-atas/index.md#ata-de-02112026) |
 | Uso real na associação | Validação | Depois do portão de liberação | Rotina de doações e de chamada | Previsto ([6.4](#64-portao-de-liberacao-para-uso-real)) |
 
@@ -635,12 +635,15 @@ escolhidas pelo que cada uma ajuda a enxergar (o foco).
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Rich Picture | Informal | Contextual | Como a associação funciona hoje e onde estão os problemas? | Planejamento da Release | [1.3](#13-rich-picture) |
 | Diagrama de contexto | Informal | Contextual | O que é o sistema, quem o usa e o que fica de fora? | Planejamento da Release | [1.3](#diagrama-de-contexto) |
-| Protótipo de telas (wireframes no Figma) | Informal | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
+| Protótipo de telas no Figma | Alta fidelidade (design) | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
 | Diagrama de estados da chamada | Semiformal | Comportamental | Quando a chamada abre, quem corrige e até quando, e que falta conta? | Planejamento da Sprint | [Abaixo](#diagrama-de-estados-da-chamada) |
 
 Os níveis seguem a classificação do capítulo 10 da disciplina: o diagrama de contexto está entre as
-representações informais sistêmicas, junto com a Rich Picture, e o protótipo de telas entre as informais
-semiestruturadas. O diagrama de estados usa a notação da UML e por isso é semiformal.
+representações informais sistêmicas, junto com a Rich Picture. O diagrama de estados usa a notação da UML
+e por isso é semiformal. O protótipo de telas tem a identidade visual, os componentes e os dados finais, ou
+seja, é de alta fidelidade. Pelo capítulo, isso já é design, e não uma representação de requisitos: a equipe
+passou direto para a alta fidelidade e usa o protótipo para validar os requisitos com o Makio, sabendo que ele
+também decide a aparência da solução.
 
 O foco informacional (os dados e os termos) é atendido em texto, pelo
 [glossário](../08-requisitos/glossario.md) e pelas [regras de negócio](../08-requisitos/regras.md).

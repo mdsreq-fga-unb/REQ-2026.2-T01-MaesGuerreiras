@@ -162,8 +162,8 @@ Gravação da retrospectiva da Sprint 6, feita pela equipe.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/7EWACGZe6H4" title="Retrospectiva da Sprint 6, 10/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Apresentação da Unidade 3 - 17/11/2026
+## Apresentação da Unidade 3 - 16/11/2026
 
 Gravação da apresentação do projeto referente à Unidade 3 da disciplina.
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/7XBCg7caKd0" title="Apresentação da Unidade 3, 17/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/7XBCg7caKd0" title="Apresentação da Unidade 3, 16/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

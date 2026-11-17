@@ -634,9 +634,13 @@ escolhidas pelo que cada uma ajuda a enxergar (o foco).
 | Representação | Nível | Foco | O que ajuda a responder | Momento | Onde está |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Rich Picture | Informal | Contextual | Como a associação funciona hoje e onde estão os problemas? | Planejamento da Release | [1.3](#13-rich-picture) |
-| Diagrama de contexto | Semiformal | Contextual | O que é o sistema, quem o usa e o que fica de fora? | Planejamento da Release | [1.3](#diagrama-de-contexto) |
-| Protótipo de telas (wireframes no Figma) | Semiformal | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
+| Diagrama de contexto | Informal | Contextual | O que é o sistema, quem o usa e o que fica de fora? | Planejamento da Release | [1.3](#diagrama-de-contexto) |
+| Protótipo de telas (wireframes no Figma) | Informal | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
 | Diagrama de estados da chamada | Semiformal | Comportamental | Quando a chamada abre, quem corrige e até quando, e que falta conta? | Planejamento da Sprint | [Abaixo](#diagrama-de-estados-da-chamada) |
+
+Os níveis seguem a classificação do capítulo 10 da disciplina: o diagrama de contexto está entre as
+representações informais sistêmicas, junto com a Rich Picture, e o protótipo de telas entre as informais
+semiestruturadas. O diagrama de estados usa a notação da UML e por isso é semiformal.
 
 O foco informacional (os dados e os termos) é atendido em texto, pelo
 [glossário](../08-requisitos/glossario.md) e pelas [regras de negócio](../08-requisitos/regras.md).

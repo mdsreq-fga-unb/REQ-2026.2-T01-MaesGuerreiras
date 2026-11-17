@@ -34,11 +34,11 @@ campo *Agentes* da ficha do RF (veja por perfil no [filtro do catálogo](../08-r
 sistema) é exclusivo da Coordenação; RF41 (Autenticar usuário) é Voluntário ou Coordenação. Se o
 RF ainda estiver com o agente em aberto, ele não está pronto.
 
-**Existe protótipo de baixa fidelidade validado com o cliente ou com a coordenação, quando o
+**Existe protótipo validado com o cliente ou com a coordenação, quando o
 requisito tiver interface?**
 
 Requisitos de tela — como RF20 (Cadastrar turma de atividade) ou RF27 (Abrir chamada do
-encontro) — só entram em sprint depois de um wireframe revisado com o cliente (Makio, que o mostra à
+encontro) — só entram em sprint depois de as telas do protótipo serem revisadas com o cliente (Makio, que o mostra à
 coordenação), registrado como evidência. Requisitos sem interface própria (ex.: RF32, sinalização automática) não dependem
 desse critério.
 

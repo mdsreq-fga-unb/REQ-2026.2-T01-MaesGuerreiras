@@ -470,7 +470,8 @@ O quadro mapeia as atividades, práticas e técnicas da ER aos momentos do proce
 | Planejamento da Sprint | Elicitação e Descoberta | Refinamento de Requisitos | Entrevistas, Análise de Tarefas | Requisitos refinados a partir das rotinas reais das coordenadoras, relatadas por Makio, e preparados para a sprint. |
 | Planejamento da Sprint | Análise e Consenso | Análise de Dependências e Viabilidade | Spike Técnico | Consenso sobre dependências, viabilidade técnica e prioridades da sprint. |
 | Planejamento da Sprint | Declaração | Definição de Critérios de Aceitação e Regras de Negócio | Lista de Condições de Satisfação, Lista de Regras de Negócio | Critérios de aceitação escritos na ficha de cada RF e regras de negócio registradas em [8.2](../08-requisitos/regras.md). |
-| Planejamento da Sprint | Representação | Criação de Protótipos e Diagramas | Prototipação de Alta Fidelidade, Diagrama de Estados | Telas do protótipo validadas com Makio, que os mostra à coordenação, antes de o requisito entrar na sprint (item D4 da DoR; [ata de 26/10](../00-atas/index.md#ata-de-26102026)); regras com estados desenhadas e ligadas às fichas ([5.5](#55-representacao-dos-requisitos)). |
+| Planejamento da Sprint | Representação | Criação de Diagramas | Diagrama de Estados | Regras com estados desenhadas e ligadas às fichas ([5.5](#55-representacao-dos-requisitos)). |
+| Planejamento da Sprint | Verificação e Validação | Validação por Protótipo | Teste de usabilidade com tarefas sobre o protótipo de alta fidelidade | Telas do protótipo validadas com Makio, que os mostra à coordenação, antes de o requisito entrar na sprint (item D4 da DoR; [ata de 26/10](../00-atas/index.md#ata-de-26102026)). |
 | Planejamento da Sprint | Verificação e Validação | Verificação da Prontidão | Checklist da Definição de Preparado (DoR), DEEP e INVEST como checklists | Apenas requisitos que passam em todos os itens da DoR (seção [13](../13-dor-dod/index.md)) entram na sprint; resultado do [DEEP](../08-requisitos/index.md#deep) e do [INVEST](../08-requisitos/index.md#invest) registrado no catálogo. |
 | Planejamento da Sprint | Organização e Atualização | Refinamento dos Requisitos | Refinamento do catálogo (backlog grooming) | Fichas refinadas com Makio antes do início da sprint; o que depende da coordenação vai por ele. |
 | Execução da Sprint | Verificação e Validação | Verificação dos Requisitos | Revisão dos Critérios de Aceitação, Análise de Consistência (`scripts/catalogo.py verificar`) | Fichas consistentes com o histórico e com as dependências antes de cada publicação do site. |
@@ -635,15 +636,14 @@ escolhidas pelo que cada uma ajuda a enxergar (o foco).
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Rich Picture | Informal | Contextual | Como a associação funciona hoje e onde estão os problemas? | Planejamento da Release | [1.3](#13-rich-picture) |
 | Diagrama de contexto | Informal | Contextual | O que é o sistema, quem o usa e o que fica de fora? | Planejamento da Release | [1.3](#diagrama-de-contexto) |
-| Protótipo de telas no Figma | Alta fidelidade (design) | Experiencial | A tela e o fluxo servem para quem vai usar? | Planejamento da Sprint (item D4 da DoR) | [Evidências](../00-evidencias/index.md#prototipo-no-figma) |
 | Diagrama de estados da chamada | Semiformal | Comportamental | Quando a chamada abre, quem corrige e até quando, e que falta conta? | Planejamento da Sprint | [Abaixo](#diagrama-de-estados-da-chamada) |
 
 Os níveis seguem a classificação do capítulo 10 da disciplina: o diagrama de contexto está entre as
 representações informais sistêmicas, junto com a Rich Picture. O diagrama de estados usa a notação da UML
-e por isso é semiformal. O protótipo de telas tem a identidade visual, os componentes e os dados finais, ou
-seja, é de alta fidelidade. Pelo capítulo, isso já é design, e não uma representação de requisitos: a equipe
-passou direto para a alta fidelidade e usa o protótipo para validar os requisitos com o Makio, sabendo que ele
-também decide a aparência da solução.
+e por isso é semiformal.
+
+O protótipo do Figma não aparece nesta tabela porque é de alta fidelidade, o que pelo capítulo já é design.
+Ele é usado para validar os requisitos com o Makio (ver [5.4](#54-verificacao-e-validacao-dos-requisitos)).
 
 O foco informacional (os dados e os termos) é atendido em texto, pelo
 [glossário](../08-requisitos/glossario.md) e pelas [regras de negócio](../08-requisitos/regras.md).

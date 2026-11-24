@@ -239,3 +239,22 @@ export function aplicarMovimentacao(
 
   return { movimentacoes: [...movimentacoes, nova], erro: null }
 }
+
+// Linha da view saldos_categoria, como o banco devolve (nomes em snake_case).
+export type LinhaSaldoBanco = {
+  categoria_id: string | null
+  nome: string | null
+  unidade: UnidadeMedida | null
+  saldo: number | string | null
+}
+
+// Converte a linha do banco para o contrato SaldoResposta usado pelas telas (categoriaId).
+// Sem essa conversão, as telas de entrada e de destinação não encontram a categoria e mostram saldo 0.
+export function saldoDaLinha(linha: LinhaSaldoBanco): SaldoCategoria {
+  return {
+    categoriaId: linha.categoria_id ?? '',
+    nome: linha.nome ?? '',
+    unidade: linha.unidade ?? 'unidade',
+    saldo: Number(linha.saldo ?? 0),
+  }
+}

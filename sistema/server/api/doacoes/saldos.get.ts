@@ -1,3 +1,5 @@
+import { saldoDaLinha } from '~/utils/doacoes'
+
 export default defineEventHandler(async (event) => {
   const inicio = Date.now()
   await exigirOperacao(event, 'consultar_saldo')
@@ -13,5 +15,5 @@ export default defineEventHandler(async (event) => {
 
   setHeader(event, 'Server-Timing', `saldo;dur=${Date.now() - inicio}`)
 
-  return data ?? []
+  return (data ?? []).map(saldoDaLinha)
 })

@@ -3,6 +3,7 @@ import {
   alteracoesDoador,
   aplicarMovimentacao,
   calcularSaldos,
+  saldoDaLinha,
   doadorDuplicado,
   validarCategoria,
   validarDoador,
@@ -173,5 +174,14 @@ describe('RNF03 consulta de saldo', () => {
     const duracao = performance.now() - inicio
     expect(saldos[0].saldo).toBe(15)
     expect(duracao).toBeLessThan(3000)
+  })
+})
+
+describe('Contrato do saldo (GET /api/doacoes/saldos)', () => {
+  it('devolve categoriaId, que as telas de entrada e de destinação usam para achar o saldo', () => {
+    const resposta = saldoDaLinha({ categoria_id: 'cat-1', nome: 'Leite em pó', unidade: 'pacote', saldo: '10' })
+    expect(resposta).toEqual({ categoriaId: 'cat-1', nome: 'Leite em pó', unidade: 'pacote', saldo: 10 })
+    const saldos = [resposta]
+    expect(saldos.find(item => item.categoriaId === 'cat-1')?.saldo).toBe(10)
   })
 })

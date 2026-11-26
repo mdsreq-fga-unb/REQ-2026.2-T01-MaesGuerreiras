@@ -684,8 +684,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 
 </details>
 
-<details class="ficha" id="rf35" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="2" data-ordem="37" data-perfis="coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">37º</span> <span class="ficha__id">RF35</span> <span class="ficha__nome">Gerar relatório de frequência por turma</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf35" data-cp="cp6" data-release="r4" data-sprint="8" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="2" data-ordem="37" data-perfis="coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">37º</span> <span class="ficha__id">RF35</span> <span class="ficha__nome">Gerar relatório de frequência por turma</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R4</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -697,8 +697,8 @@ Acompanhamento dos resultados e indicadores da associação. **Valor de negócio
 | Critérios de aceitação | **CA-RF35-01:** A Coordenação consegue gerar o relatório de presenças e faltas de uma turma por período ou por encontro específico.<br>**CA-RF35-02:** O relatório considera somente os participantes e encontros da turma e do recorte consultados.<br>**CA-RF35-03:** O resultado corresponde aos registros de frequência vigentes, incluindo justificativas registradas pelo RF29 e correções realizadas pelo RF30. A falta justificada continua identificável como tal.<br>**CA-RF35-04:** Quando não existem registros de frequência para o recorte, o sistema informa essa ausência, sem transformar falta de registro em presença ou falta.<br>**CA-RF35-05:** Voluntário e Visitante não conseguem gerar nem acessar o relatório restrito, respeitando o RNF07, inclusive por acesso direto à operação.<br>**CA-RF35-06:** A consulta dos resultados atende ao RNF03: até 3 segundos em pelo menos 95% das requisições, em conexão móvel 3G/4G.<br>Evidência prevista: Turmas e encontros com presenças, faltas, justificativas e correções conhecidas, consulta por período e encontro, ausência de registros, testes de acesso e medição do RNF03. |
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: Médio · Posição **37** na ordem<br>**Valor (cliente):** Could have, critério: frequência ou abrangência de uso. «O RF31 e a própria chamada já respondem "quem veio". Pode subir se algum parceiro ou edital de oficina exigir comprovação de frequência.»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 2 → consolidado 2,3. A parte do relatório não é difícil, mas leva mais tempo para implementar.<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 2). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **R4** · Sprint **8** · Iceberg: Base |
-| Situação | Não iniciada |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 4 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 4 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: Não iniciada → Em andamento (issue #125). ([MUD-076](../14-historico/index.md#mud-076)) |
 
 </details>
 

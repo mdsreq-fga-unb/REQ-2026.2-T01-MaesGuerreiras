@@ -78,8 +78,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf03" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" data-ordem="42" data-perfis="coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">42º</span> <span class="ficha__id">RF03</span> <span class="ficha__nome">Cadastrar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf03" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="2" data-ordem="42" data-perfis="coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">42º</span> <span class="ficha__id">RF03</span> <span class="ficha__nome">Cadastrar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -91,8 +91,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Critérios de aceitação | <br>**CA-RF03-01:** A Coordenação consegue cadastrar uma atividade informando data, horário, local e público a que se destina.<br>**CA-RF03-02:** O cadastro salvo preserva os dados informados e permite identificar a atividade cadastrada.<br>**CA-RF03-03:** A atividade cadastrada fica disponível para consulta pública pelo RF05, com os dados registrados.<br>**CA-RF03-04:** Voluntário e Visitante não conseguem cadastrar atividades, inclusive por acesso direto à operação.<br>Evidência prevista: Cadastro de atividades com dados diferentes, conferência da persistência e da consulta pelo RF05 e testes de recusa por perfil.<br>**Pendente de definição:** Explicitar os campos obrigatórios, a identificação da atividade e o dado usado pelo filtro de tipo do RF05. Os critérios não estabelecem essas decisões. |
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: — · Posição **42** na ordem<br>**Valor (cliente):** Could have, critério: contribuição para os objetivos do projeto. «Sobrepõe o RF20: a turma já tem dias e horário. Se os dois existirem separados, a coordenação digita a mesma oficina duas vezes. Vale perguntar se a agenda pode ser gerada a partir das turmas, mais eventos avulsos (Domingo Criativo).»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 2 → consolidado 2,3<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 2). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **Trilha CP1** · **Fechamento** · Iceberg: Base |
-| Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: A refinar → Em andamento (issue #110). ([MUD-060](../14-historico/index.md#mud-060)) |
 
 </details>
 

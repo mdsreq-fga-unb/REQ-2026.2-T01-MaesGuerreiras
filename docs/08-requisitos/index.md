@@ -417,8 +417,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 
 </details>
 
-<details class="ficha" id="rf21" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" data-ordem="35" data-perfis="coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">35º</span> <span class="ficha__id">RF21</span> <span class="ficha__nome">Atualizar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf21" data-cp="cp4" data-release="r3" data-sprint="8" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="3" data-ordem="35" data-perfis="coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">35º</span> <span class="ficha__id">RF21</span> <span class="ficha__nome">Atualizar turma de atividade</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">R3</span> <span class="chip">Sprint 8</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -431,8 +431,8 @@ Gestão das inscrições e dos atendimentos nas atividades. **Valor de negócio 
 ```
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **3** · Risco: Baixo · Posição **35** na ordem<br>**Valor (cliente):** Could have, critério: urgência. «As turmas têm período definido. Mudar dia ou vagas no meio do período é exceção, e dá para contornar encerrando e criando outra.»<br>**Esforço (equipe):** esforço 3 · complexidade 3 · lacuna 2 → consolidado 2,7. Esforço maior, pois precisa checar inscritos e lista de espera antes de salvar.<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 3). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **R3** · Sprint **8** · Iceberg: Meio |
-| Situação | Não iniciada |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 2; MVP: complemento → não. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R2 → R3; sprint 7 → 8. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): valor 4 → 2; MVP: complemento → não. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): release R2 → R3; sprint 7 → 8. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: Não iniciada → Em andamento (issue #117). ([MUD-068](../14-historico/index.md#mud-068)) |
 
 </details>
 

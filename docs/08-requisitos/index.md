@@ -60,8 +60,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf02" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="1" data-ordem="41" data-perfis="coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">41º</span> <span class="ficha__id">RF02</span> <span class="ficha__nome">Atualizar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf02" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="1" data-ordem="41" data-perfis="coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">41º</span> <span class="ficha__id">RF02</span> <span class="ficha__nome">Atualizar conteúdo institucional</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -73,8 +73,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Critérios de aceitação | <br>**CA-RF02-01:** A Coordenação consegue alterar o histórico, a missão, o endereço e as formas de contato publicados pelo RF01.<br>**CA-RF02-02:** Depois de salva a alteração, a consulta pública apresenta os novos valores.<br>**CA-RF02-03:** Os campos que não foram alterados preservam seus valores.<br>**CA-RF02-04:** Voluntário e Visitante não conseguem alterar o conteúdo institucional, inclusive por acesso direto à operação.<br>Evidência prevista: Alteração de cada tipo de informação, conferência pública, preservação dos demais campos e testes de recusa por perfil. |
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **1** · Risco: — · Posição **41** na ordem<br>**Valor (cliente):** Could have, critério: dependência para viabilizar outras funcionalidades. «Só faz sentido junto com o RF01. Pesa porque a equipe sai no fim do semestre: sem ele, mudanças como a da nova sede (junho de 2026) exigiriam um programador para editar o site.»<br>**Esforço (equipe):** esforço 1 · complexidade 1 · lacuna 1 → consolidado 1,0<br>**Leitura da matriz:** Avaliar oportunidade (valor 2 · esforço 1). Pode entrar como ganho rápido, se sobrar tempo. Só faz sentido junto com o RF01. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **Trilha CP1** · **Fechamento** · Iceberg: Base |
-| Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 1. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 1. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: A refinar → Em andamento (issue #109). ([MUD-059](../14-historico/index.md#mud-059)) |
 
 </details>
 

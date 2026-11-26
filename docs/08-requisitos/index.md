@@ -114,8 +114,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf05" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="nao-iniciada" data-valor="2" data-esforco="3" data-ordem="44" data-perfis="visitante" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">44º</span> <span class="ficha__id">RF05</span> <span class="ficha__nome">Consultar agenda de atividades</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-nao-iniciada">Não iniciada</span></span></summary>
+<details class="ficha" id="rf05" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="3" data-ordem="44" data-perfis="visitante" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">44º</span> <span class="ficha__id">RF05</span> <span class="ficha__nome">Consultar agenda de atividades</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -127,8 +127,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Critérios de aceitação | **CA-RF05-01:** O Visitante consegue consultar as atividades divulgadas sem autenticação, identificando data, horário, local e público a que se destinam.<br> **CA-RF05-02:** Ao filtrar por período, a consulta apresenta somente as atividades cujas datas correspondem ao período informado.<br>**CA-RF05-03:** Ao filtrar por tipo de atividade, a consulta apresenta somente as atividades do tipo selecionado. Quando os dois filtros são usados juntos, os resultados atendem às duas condições.<br>**CA-RF05-04:** Quando não existem atividades correspondentes aos filtros, o sistema informa a ausência de resultados e mantém os filtros utilizados.<br>**CA-RF05-05:** A consulta apresenta os resultados em até 3 segundos em pelo menos 95% das requisições, em conexão móvel 3G/4G, conforme o RNF03.<br>Evidência prevista: Consulta pública, filtros isolados e combinados, resultado vazio, conferência das informações atualizadas pelo RF04 e medição do RNF03.<br>**Pendente de definição:** O filtro de tipo depende de esse dado estar definido no cadastro de atividades do RF03. |
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **3** · Risco: — · Posição **44** na ordem<br>**Valor (cliente):** Could have, critério: impacto para os usuários. «É a parte visível do RF03. A comunidade da Estrutural já acompanha avisos pelo WhatsApp, que chega sem a pessoa precisar abrir um site; a adesão a uma página nova é incerta.»<br>**Esforço (equipe):** esforço 3 · complexidade 2 · lacuna 3 → consolidado 2,7<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 3). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **Trilha CP1** · **Fechamento** · Iceberg: Base |
-| Situação | Não iniciada |
-| Evolução | 31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 8 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 8 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: Não iniciada → Em andamento (issue #112). ([MUD-062](../14-historico/index.md#mud-062)) |
 
 </details>
 

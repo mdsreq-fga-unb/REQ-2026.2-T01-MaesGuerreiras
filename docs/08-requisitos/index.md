@@ -96,8 +96,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 
 </details>
 
-<details class="ficha" id="rf04" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="a-refinar" data-valor="2" data-esforco="2" data-ordem="43" data-perfis="coordenacao" markdown="1">
-<summary><span class="ficha__ordem" title="Posição na ordem do backlog">43º</span> <span class="ficha__id">RF04</span> <span class="ficha__nome">Atualizar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-a-refinar">A refinar</span></span></summary>
+<details class="ficha" id="rf04" data-cp="cp1" data-release="trilha-cp1" data-sprint="fechamento" data-mvp="nao" data-situacao="em-andamento" data-valor="2" data-esforco="2" data-ordem="43" data-perfis="coordenacao" markdown="1">
+<summary><span class="ficha__ordem" title="Posição na ordem do backlog">43º</span> <span class="ficha__id">RF04</span> <span class="ficha__nome">Atualizar atividade na agenda</span> <span class="ficha__chips"><span class="chip chip--mvp-nao">MVP: Não</span> <span class="chip">Trilha CP1</span> <span class="chip">Fechamento</span> <span class="chip chip--sit-em-andamento">Em andamento</span></span></summary>
 
 | Parte do registro | Informação |
 | :--- | :--- |
@@ -109,8 +109,8 @@ Disponibilização das informações institucionais e das atividades da associa�
 | Critérios de aceitação | **CA-RF04-01:** A Coordenação consegue alterar os dados de uma atividade cadastrada pelo RF03.<br>**CA-RF04-02:** As alterações salvas são apresentadas na consulta pública do RF05, preservando os campos não alterados.<br>**CA-RF04-03:** A Coordenação consegue cancelar uma atividade divulgada, e a consulta pública deixa de apresentá-la como uma atividade confirmada.<br>**CA-RF04-04:** Voluntário e Visitante não conseguem alterar ou cancelar atividades, inclusive por acesso direto à operação.<br>Evidência prevista: Alteração dos dados, conferência pública, cancelamento e testes de recusa por perfil.<br>**Pendente de definição:** Confirmar se a atividade cancelada continuará visível com essa identificação ou será retirada da consulta pública. |
 | Priorização | Valor **2** (fonte: avaliação da cliente por requisito, planilha de priorização v2) · Esforço **2** · Risco: — · Posição **43** na ordem<br>**Valor (cliente):** Could have, critério: contribuição para os objetivos do projeto. «Uma agenda pública desatualizada é pior que nenhuma: uma mãe que vai até a sede para uma oficina cancelada perde a viagem. Por isso tem o mesmo valor do RF03, e não menos.»<br>**Esforço (equipe):** esforço 2 · complexidade 2 · lacuna 2 → consolidado 2,0<br>**Leitura da matriz:** Entrega futura (valor 2 · esforço 2). Depois do MVP. |
 | Entrega | MVP: **não**, conforme a nova matriz (planilha v2) · Release **Trilha CP1** · **Fechamento** · Iceberg: Base |
-| Situação | A refinar |
-| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057)) |
+| Situação | Em andamento |
+| Evolução | 29/10/2026 · Nova matriz, com o valor dado pela cliente por requisito (planilha v2): esforço 3 → 2. ([MUD-015](../14-historico/index.md#mud-015))<br>31/10/2026 · Releases e sprints alinhadas à nova matriz (opção 1): sprint 7 → Fechamento. ([MUD-018](../14-historico/index.md#mud-018))<br>26/11/2026 · Incluídos critérios de aceitação para os 23 RFs previstos para a Sprint 8 e o fechamento, com evidências previstas e pendências de definição identificadas. ([MUD-057](../14-historico/index.md#mud-057))<br>26/11/2026 · Situação: A refinar → Em andamento (issue #111). ([MUD-061](../14-historico/index.md#mud-061)) |
 
 </details>
 

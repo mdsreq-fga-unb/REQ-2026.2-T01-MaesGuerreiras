@@ -71,6 +71,100 @@ class CalcularSituacoes(unittest.TestCase):
     def test_corpo_vazio_nao_quebra(self):
         self.assertEqual(catalogo.calcular_situacoes([issue(1, "open", None)]), {})
 
+    def test_rf_citado_sem_caixa_em_issue_com_dod_nao_conclui_ao_fechar(self):
+        s = catalogo.calcular_situacoes([issue(40, "closed", "Requisitos: RF09, RF10\n- [x] DoD RF09")])
+        self.assertEqual(s["rf09"][0], "concluida")
+        self.assertEqual(s["rf10"][0], "em-andamento")
+
+    def test_issue_so_com_linha_de_requisitos_continua_concluindo_pela_caixa_em_outra_issue(self):
+        s = catalogo.calcular_situacoes([
+            issue(33, "closed", "Requisitos: RF09, RF10."),
+            issue(35, "open", "- [x] DoD RF09\n- [x] DoD RF10"),
+        ])
+        self.assertEqual(s["rf10"][0], "concluida")
+
+
+def com_datas(i, atualizada):
+    i["updated_at"] = atualizada
+    return i
+
+
+MUDANCAS = {
+    "040": {"data": "20/11/2026", "rfs": {"rf09"}, "todas": False,
+            "mudou": "RF09: critério de aceitação CA-RF09-02 passa a exigir a unidade da categoria. Reaplicar a DoD."},
+    "041": {"data": "21/11/2026", "rfs": {"rf09"}, "todas": False,
+            "mudou": "Situação atualizada pela automação: RF09: Em andamento → Concluída (issue #35)."},
+    "042": {"data": "22/11/2026", "rfs": {"rf09"}, "todas": False, "mudou": "Nova matriz: valor 4 → 3."},
+}
+
+
+class Reverificacao(unittest.TestCase):
+    def test_criterio_mudado_depois_da_dod_volta_para_em_andamento(self):
+        s = catalogo.calcular_situacoes([com_datas(issue(35, "open", "- [x] DoD RF09"), "2026-11-16T12:00:00Z")], MUDANCAS)
+        self.assertEqual(s["rf09"], ("em-andamento", [35], ["MUD-040"]))
+
+    def test_dod_reaplicada_depois_da_mudanca_conclui_de_novo(self):
+        s = catalogo.calcular_situacoes([
+            com_datas(issue(35, "open", "- [x] DoD RF09"), "2026-11-16T12:00:00Z"),
+            com_datas(issue(120, "closed", "- [x] DoD RF09"), "2026-11-23T12:00:00Z"),
+        ], MUDANCAS)
+        self.assertEqual(s["rf09"][0], "concluida")
+
+    def test_mudanca_sem_criterio_ou_da_automacao_nao_reabre(self):
+        so_outras = {c: m for c, m in MUDANCAS.items() if c != "040"}
+        s = catalogo.calcular_situacoes([com_datas(issue(35, "open", "- [x] DoD RF09"), "2026-11-16T12:00:00Z")], so_outras)
+        self.assertEqual(s["rf09"][0], "concluida")
+
+    def test_nota_da_ficha_explica_a_reverificacao(self):
+        texto = AVISO + ficha("rf09", "concluida", "Concluída")
+        novo, mudancas = catalogo.aplicar_situacoes(texto, {"rf09": ("em-andamento", [35], ["MUD-040"])}, "26/11/2026")
+        self.assertIn("reaplicar a DoD após MUD-040", novo)
+        self.assertIn("RF09: Concluída → Em andamento", mudancas[0])
+
+
+    def test_verificar_aponta_mudanca_de_criterio_sem_decisao(self):
+        bloco = ficha("rf09", "concluida", "Concluída").replace(
+            "29/10/2026 · Nota antiga.", "16/11/2026 · Situação: Em andamento → Concluída (issue #35).")
+        linha = {"data": "20/11/2026", "rfs": {"rf09"}, "todas": False, "mudou": "CA-RF09-02 reescrito."}
+        problemas = catalogo.problemas_de_reverificacao({"rf09": bloco}, {"070": linha})
+        self.assertEqual(len(problemas), 1)
+        self.assertIn("MUD-070", problemas[0])
+        linha["mudou"] += " Sem efeito na DoD: só redação."
+        self.assertEqual(catalogo.problemas_de_reverificacao({"rf09": bloco}, {"070": linha}), [])
+
+    def test_mudanca_no_mesmo_dia_da_conclusao_nao_e_apontada(self):
+        bloco = ficha("rf08", "concluida", "Concluída").replace(
+            "29/10/2026 · Nota antiga.", "16/11/2026 · Situação: Em andamento → Concluída (issue #35).")
+        linha = {"data": "16/11/2026", "rfs": {"rf08"}, "todas": False, "mudou": "D2 passa, a ficha ganhou a RN21."}
+        self.assertEqual(catalogo.problemas_de_reverificacao({"rf08": bloco}, {"053": linha}), [])
+
+
+class Avisos(unittest.TestCase):
+    def test_issue_de_fora_da_equipe_que_cita_rf_vira_aviso(self):
+        avisos = catalogo.avisos_das_issues([issue(99, "open", "Divergência sobre o RF12.", autor="NONE", login="marsicanogeorge")])
+        self.assertIn("#99", avisos[0])
+        self.assertIn("RF12", avisos[0])
+
+    def test_rf_sem_caixa_em_issue_com_dod_vira_aviso(self):
+        avisos = catalogo.avisos_das_issues([issue(40, "open", "Requisitos: RF09, RF10\n- [ ] DoD RF09")])
+        self.assertEqual(len(avisos), 1)
+        self.assertIn("RF10", avisos[0])
+
+    def test_issue_da_equipe_bem_formada_nao_gera_aviso(self):
+        self.assertEqual(catalogo.avisos_das_issues([issue(35, "open", "Requisitos: RF09\n- [ ] DoD RF09")]), [])
+
+
+class Equipe(unittest.TestCase):
+    def test_le_logins_ignorando_comentarios(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as pasta:
+            arquivo = Path(pasta) / "equipe.txt"
+            arquivo.write_text("# comentário\nIsall24\n\nluanludry  # Luan\n", encoding="utf-8")
+            self.assertEqual(catalogo.ler_equipe(arquivo), {"isall24", "luanludry"})
+
+    def test_arquivo_da_equipe_tem_os_seis_integrantes(self):
+        self.assertEqual(len(catalogo.EQUIPE_NO_GITHUB), 6)
+
 
 class AplicarSituacoes(unittest.TestCase):
     def test_muda_atributo_selo_situacao_evolucao_e_aviso(self):

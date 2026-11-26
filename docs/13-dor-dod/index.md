@@ -260,6 +260,9 @@ apagada, recalcula a situação, registra a mudança numa linha nova do [Histór
   linha quando o trabalho começar, porque a issue ligada já deixa o requisito em andamento.
 - Na issue de verificação da DoD da sprint, uma caixa por requisito: `- [ ] DoD RF09`. Marque a caixa
   só depois de aplicar a DoD a esse requisito e registrar a evidência.
+- **Uma caixa para cada requisito citado.** Se a issue tem caixas de DoD e a linha `Requisitos:` cita
+  outro RF sem caixa própria, esse RF fica em andamento, mesmo com a issue fechada. Assim, fechar uma
+  issue em que só parte do trabalho foi concluída não conclui os outros requisitos.
 
 | Situação | Quando |
 | :--- | :--- |
@@ -268,11 +271,23 @@ apagada, recalcula a situação, registra a mudança numa linha nova do [Histór
 
 - A issue de verificação pode continuar aberta: cada requisito conclui quando a caixa dele é marcada.
 - Reabrir uma issue, desmarcar a caixa ou abrir um bug ligado devolve o requisito para "em andamento".
+- **Mudança depois da conclusão.** Quando uma linha do [Histórico](../14-historico/index.md) muda
+  critérios de aceitação ou regras de negócio de um requisito já concluído, ela diz qual é a decisão:
+  - **"Reaplicar a DoD"**: o requisito volta para "em andamento" e a equipe abre uma issue com
+    `- [ ] DoD RFxx`. Ele só volta a "concluída" quando essa caixa for marcada, com os critérios novos;
+  - **"Sem efeito na DoD"**, com o motivo (por exemplo, só a redação mudou): a conclusão continua valendo.
+
+  Se a linha não disser nenhuma das duas, `python scripts/catalogo.py verificar` aponta o problema e o
+  CI falha, para que nenhuma conclusão baseada em critérios antigos fique valendo sem decisão.
 - Requisito sem issue ligada mantém a situação escrita pela equipe.
 - A automação só altera a situação e a contagem de concluídos. Declaração, critérios e prioridade
   continuam sendo editados pela equipe.
 - Só contam issues abertas pela equipe. O GitHub mostra os integrantes como "contributor", então a
-  equipe é reconhecida pelo login, numa lista no `scripts/catalogo.py` (`EQUIPE_NO_GITHUB`); quem entrar
-  na equipe precisa ser acrescentado ali.
+  equipe é reconhecida pelo login, listado em `scripts/equipe.txt`. A lista é conferida no planejamento
+  de cada sprint: quem entrar na equipe é acrescentado, quem sair é retirado.
+- **Issues de fora da equipe** (do professor, da cliente ou de outra pessoa) não mudam a situação, mas
+  não ficam esquecidas: quando citam um RF, aparecem como aviso no `situacao` e no `previa`. Se a issue
+  aponta um defeito ou uma mudança, a equipe a registra numa issue própria, com a linha `Requisitos:` e
+  um link para a original, e o requisito volta para "em andamento" até a correção passar pela DoD.
 - Mover a issue de coluna no quadro do GitHub Projects não dispara a automação. Ela roda quando a issue
   é editada, fechada ou reaberta, e o requisito só conclui com a caixa `DoD RFxx` marcada.

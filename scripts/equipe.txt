@@ -1,0 +1,9 @@
+# Logins do GitHub da equipe, um por linha. A automação da situação (scripts/catalogo.py) só conta
+# issues abertas por estes logins ou por quem o GitHub reconhece como membro do repositório.
+# Conferir no planejamento de cada sprint (seção 13.7): quem entrar na equipe é acrescentado aqui.
+isall24
+luanludry
+ianpedersoli
+pedrogomes-phgr
+vitorlustosa
+luiskr34

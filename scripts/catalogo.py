@@ -33,7 +33,14 @@ Regra da situação (seção 13.7 da documentação):
 - Em andamento: há issue ligada, mas falta marcar a DoD ou fechar alguma issue do RF.
 - Concluída: todas as caixas de DoD do RF marcadas e as demais issues dele fechadas.
 - RF sem issue ligada mantém o que a equipe escreveu.
-- Só contam issues abertas pela equipe (EQUIPE_NO_GITHUB ou integrante reconhecido pelo GitHub).
+- Issue ligada a mais de um RF: se ela tem caixas de DoD, cada RF citado precisa da sua própria caixa.
+  RF citado na linha "Requisitos:" sem caixa nessa issue fica em andamento, mesmo com a issue fechada.
+- Reverificação: uma linha do histórico (14.2) que muda critérios ou regras de um RF já concluído diz
+  "Reaplicar a DoD" ou "Sem efeito na DoD". Com "Reaplicar a DoD", o RF volta para em andamento se a
+  mudança for posterior à conclusão (última atualização das issues ligadas), até a caixa "DoD RFxx" ser
+  marcada numa issue nova. Sem nenhuma das duas, "verificar" aponta o problema.
+- Só contam issues abertas pela equipe (scripts/equipe.txt ou integrante reconhecido pelo GitHub).
+  Issues de fora da equipe que citam RFs aparecem como aviso em "situacao" e "previa".
 """
 
 import json
@@ -70,8 +77,25 @@ AGENTES = re.compile(r"^\| Agentes \|(.*)\|$", re.M)
 # Só quem participa do repositório muda o site; qualquer pessoa pode abrir issue em repositório público.
 AUTORES_DA_EQUIPE = {"OWNER", "MEMBER", "COLLABORATOR"}
 # O GitHub marca os integrantes como CONTRIBUTOR (a participação na organização não é pública), então
-# a equipe também é reconhecida pelo login. Ao entrar alguém novo na equipe, acrescente o login aqui.
-EQUIPE_NO_GITHUB = {"isall24", "luanludry", "ianpedersoli", "pedrogomes-phgr", "vitorlustosa", "luiskr34"}
+# a equipe também é reconhecida pelo login, lido de scripts/equipe.txt (um login por linha).
+# A lista é conferida no planejamento de cada sprint (seção 13.7).
+EQUIPE_ARQUIVO = Path(__file__).resolve().parent / "equipe.txt"
+# Linha do histórico que cita critérios ou regras. Depois da conclusão de um RF, ela precisa dizer
+# "Reaplicar a DoD" (o RF volta para em andamento) ou "Sem efeito na DoD" (a conclusão continua valendo).
+MUDA_CRITERIO = re.compile(r"crit[eé]rios? de aceita|CA-RF\d\d|\bRN\d\d\b|regras? de neg[oó]cio", re.I)
+REAPLICAR = re.compile(r"reaplicar a DoD", re.I)
+SEM_EFEITO = re.compile(r"sem efeito na DoD", re.I)
+NOTA_CONCLUSAO = re.compile(r"(\d\d/\d\d/\d{4}) · Situação: [^→|]*→ Concluída")
+
+
+def ler_equipe(arquivo=EQUIPE_ARQUIVO):
+    if not arquivo.exists():
+        return set()
+    logins = (linha.split("#")[0].strip().lower() for linha in arquivo.read_text(encoding="utf-8").splitlines())
+    return {login for login in logins if login}
+
+
+EQUIPE_NO_GITHUB = ler_equipe()
 
 
 def da_equipe(issue):
@@ -264,7 +288,9 @@ def verificar():
     for n, ids in sorted(posicoes.items(), key=lambda x: int(x[0])):
         if len(ids) > 1:
             problemas.append(f"Posição {n} repetida em: {', '.join(ids)}.")
-    problemas += problemas_do_historico(todas, mudancas_do_historico(ler_historico()))
+    linhas = mudancas_do_historico(ler_historico())
+    problemas += problemas_do_historico(todas, linhas)
+    problemas += problemas_de_reverificacao(todas, linhas)
     for rf, bloco in todas.items():
         ag = agentes(bloco)
         if not ag:
@@ -337,7 +363,9 @@ def linha_da_automacao(codigo, data, mudancas):
 
 def buscar_issues():
     repositorio = os.environ.get("GITHUB_REPOSITORY", "mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras")
-    cabecalhos = {"Accept": "application/vnd.github+json", "Authorization": f"Bearer {os.environ['GH_TOKEN']}"}
+    cabecalhos = {"Accept": "application/vnd.github+json"}
+    if os.environ.get("GH_TOKEN"):
+        cabecalhos["Authorization"] = f"Bearer {os.environ['GH_TOKEN']}"
     issues, pagina = [], 1
     while True:
         url = f"https://api.github.com/repos/{repositorio}/issues?state=all&per_page=100&page={pagina}"
@@ -349,24 +377,101 @@ def buscar_issues():
         pagina += 1
 
 
-def calcular_situacoes(issues):
+def ligacoes_da_issue(issue):
+    """RF → caixa de DoD marcada (True/False) ou None quando a issue só cita o RF.
+
+    Issue que tem caixas de DoD precisa de uma caixa para cada RF que cita: o RF sem caixa conta como
+    DoD não aplicada (False), para que fechar a issue não conclua um RF que não passou pela DoD."""
+    corpo = issue.get("body") or ""
+    caixas = {rf.lower(): marca != " " for marca, rf in CAIXA_DOD.findall(corpo)}
+    citados = {rf.lower() for linha in LINHA_REQUISITOS.findall(corpo) for rf in RF_CITADO.findall(linha)}
+    return {rf: caixas.get(rf, False if caixas else None) for rf in caixas.keys() | citados}
+
+
+def dia(instante):
+    """Data local (Brasília) de um horário ISO do GitHub, ou None."""
+    if not instante:
+        return None
+    return datetime.fromisoformat(instante.replace("Z", "+00:00")).astimezone(ZoneInfo("America/Sao_Paulo")).date()
+
+
+def data_da_conclusao(ligadas):
+    datas = [dia(i.get("closed_at") or i.get("updated_at")) for i, _ in ligadas]
+    datas = [d for d in datas if d]
+    return max(datas) if datas else None
+
+
+def mudancas_de_criterio(rf, mudancas):
+    """Linhas do histórico marcadas com "Reaplicar a DoD" que afetam este RF."""
+    return {codigo: datetime.strptime(linha["data"], "%d/%m/%Y").date()
+            for codigo, linha in (mudancas or {}).items()
+            if rf in linha["rfs"] and REAPLICAR.search(linha["mudou"])}
+
+
+def problemas_de_reverificacao(todas, linhas):
+    """Mudança de critério ou regra depois da conclusão, sem a decisão sobre a DoD registrada."""
+    problemas = []
+    for rf, bloco in todas.items():
+        if 'data-situacao="concluida"' not in bloco:
+            continue
+        datas = [datetime.strptime(d, "%d/%m/%Y").date() for d in NOTA_CONCLUSAO.findall(bloco)]
+        if not datas:
+            continue
+        conclusao = max(datas)
+        for codigo, linha in sorted(linhas.items()):
+            mudou = linha["mudou"]
+            if (rf in linha["rfs"] and datetime.strptime(linha["data"], "%d/%m/%Y").date() > conclusao
+                    and MUDA_CRITERIO.search(mudou) and not REAPLICAR.search(mudou) and not SEM_EFEITO.search(mudou)
+                    and not mudou.startswith("Situação atualizada pela automação")):
+                problemas.append(
+                    f"{rf.upper()}: MUD-{codigo} muda critérios ou regras depois da conclusão ({conclusao:%d/%m/%Y}). "
+                    "Escreva na linha 'Reaplicar a DoD' (abra a issue com '- [ ] DoD "
+                    f"{rf.upper()}') ou 'Sem efeito na DoD', com o motivo.")
+    return problemas
+
+
+def calcular_situacoes(issues, mudancas=None):
     ligacoes = {}
     for issue in issues:
         if not da_equipe(issue):
             continue
-        corpo = issue.get("body") or ""
-        caixas = {rf.lower(): marca != " " for marca, rf in CAIXA_DOD.findall(corpo)}
-        citados = {rf.lower() for linha in LINHA_REQUISITOS.findall(corpo) for rf in RF_CITADO.findall(linha)}
-        for rf in caixas.keys() | citados:
-            ligacoes.setdefault(rf, []).append((issue, caixas.get(rf)))
+        for rf, marcada in ligacoes_da_issue(issue).items():
+            ligacoes.setdefault(rf, []).append((issue, marcada))
 
     situacoes = {}
     for rf, ligadas in ligacoes.items():
         caixas = [marcada for _, marcada in ligadas if marcada is not None]
         demais = [issue for issue, marcada in ligadas if marcada is None]
         concluida = bool(caixas) and all(caixas) and all(i["state"] == "closed" for i in demais)
-        situacoes[rf] = ("concluida" if concluida else "em-andamento", sorted(i["number"] for i, _ in ligadas))
+        numeros = sorted(i["number"] for i, _ in ligadas)
+        if concluida:
+            conclusao = data_da_conclusao(ligadas)
+            depois = sorted(c for c, d in mudancas_de_criterio(rf, mudancas).items() if conclusao and d > conclusao)
+            if depois:
+                situacoes[rf] = ("em-andamento", numeros, [f"MUD-{c}" for c in depois])
+                continue
+        situacoes[rf] = ("concluida" if concluida else "em-andamento", numeros)
     return situacoes
+
+
+def avisos_das_issues(issues):
+    """Casos que a automação não resolve sozinha e que a equipe precisa olhar."""
+    avisos = []
+    for issue in sorted(issues, key=lambda i: i["number"]):
+        corpo = issue.get("body") or ""
+        if not da_equipe(issue):
+            citados = sorted({rf.upper() for rf in RF_CITADO.findall((issue.get("title") or "") + " " + corpo)})
+            if citados and issue.get("state") == "open":
+                avisos.append(f"Issue #{issue['number']} (de fora da equipe) cita {', '.join(citados)} e não entra "
+                              "no cálculo. Se ela apontar defeito ou mudança de um RF, registre numa issue da equipe "
+                              "ligada ao RF (linha 'Requisitos:'), citando a original.")
+            continue
+        sem_caixa = sorted(rf.upper() for rf, marcada in ligacoes_da_issue(issue).items()
+                           if marcada is False and not re.search(rf"DoD\s+{rf}\b", corpo, re.I))
+        if sem_caixa:
+            avisos.append(f"Issue #{issue['number']} tem caixas de DoD, mas cita {', '.join(sem_caixa)} sem caixa "
+                          "própria: acrescente '- [ ] DoD RFxx' para cada um.")
+    return avisos
 
 
 def lista_de_issues(numeros):
@@ -383,12 +488,13 @@ def aplicar_situacoes(texto, situacoes, data, codigo=None):
         rf, bloco = m.group(1), m.group(0)
         if rf not in situacoes:
             return bloco
-        nova, numeros = situacoes[rf]
+        nova, numeros, *reverificar = situacoes[rf]
         if f'data-situacao="{nova}"' in bloco:
             return bloco
         rotulo = ROTULOS[nova]
         anterior = re.search(r'chip--sit-[a-z-]+">([^<]*)<', bloco).group(1)
-        nota = f"{data} · Situação: {anterior} → {rotulo} ({lista_de_issues(numeros)})."
+        motivo = f"; reaplicar a DoD após {', '.join(reverificar[0])}" if reverificar else ""
+        nota = f"{data} · Situação: {anterior} → {rotulo} ({lista_de_issues(numeros)}{motivo})."
         if codigo:
             nota += f" ({link_mud(codigo)})"
         bloco = re.sub(r'data-situacao="[^"]*"', f'data-situacao="{nova}"', bloco, count=1)
@@ -396,7 +502,7 @@ def aplicar_situacoes(texto, situacoes, data, codigo=None):
                        f'<span class="chip chip--sit-{nova}">{rotulo}</span>', bloco, count=1)
         bloco = re.sub(r"^\| Situação \|.*\|$", f"| Situação | {rotulo} |", bloco, count=1, flags=re.M)
         bloco = EVOLUCAO.sub(lambda e: f"| Evolução |{e.group(1).rstrip()}<br>{nota} |", bloco, count=1)
-        mudancas.append(f"{rf.upper()}: {anterior} → {rotulo} ({lista_de_issues(numeros)})")
+        mudancas.append(f"{rf.upper()}: {anterior} → {rotulo} ({lista_de_issues(numeros)}{motivo})")
         return bloco
 
     novo = FICHA.sub(trocar_ficha, texto)
@@ -416,14 +522,21 @@ def aplicar_situacoes(texto, situacoes, data, codigo=None):
 def situacao(gravar=True):
     data = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y")
     texto, historico = ler(), ler_historico()
-    codigo = proximo_codigo(mudancas_do_historico(historico))
-    novo, mudancas = aplicar_situacoes(texto, calcular_situacoes(buscar_issues()), data, codigo)
+    linhas = mudancas_do_historico(historico)
+    codigo = proximo_codigo(linhas)
+    issues = buscar_issues()
+    novo, mudancas = aplicar_situacoes(texto, calcular_situacoes(issues, linhas), data, codigo)
     if gravar and novo != texto:
         CATALOGO.write_text(novo, encoding="utf-8")
         if any(re.match(r"RF\d\d:", m) for m in mudancas):
             HISTORICO.write_text(historico.rstrip("\n") + "\n" + linha_da_automacao(codigo, data, mudancas) + "\n",
                                  encoding="utf-8")
     print("\n".join(mudancas) if mudancas else "Nenhuma situação mudou.")
+    avisos = avisos_das_issues(issues)
+    if avisos:
+        print("Avisos:")
+        for aviso in avisos:
+            print(" -", aviso)
 
 
 if __name__ == "__main__":

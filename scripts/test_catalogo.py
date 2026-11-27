@@ -115,6 +115,28 @@ class Reverificacao(unittest.TestCase):
         s = catalogo.calcular_situacoes([com_datas(issue(35, "open", "- [x] DoD RF09"), "2026-11-16T12:00:00Z")], so_outras)
         self.assertEqual(s["rf09"][0], "concluida")
 
+    def test_regra_citada_entre_aspas_nao_reabre(self):
+        # Caso do MUD-063: a linha explica a regra citando "Reaplicar a DoD", mas decide "Sem efeito".
+        linhas = {"063": {"data": "26/11/2026", "rfs": {"rf12"}, "todas": False,
+                          "mudou": 'A linha registra "Reaplicar a DoD" ou "Sem efeito na DoD". RF12: sequência '
+                                   'da entrega registrada. Sem efeito na DoD do RF12.'}}
+        s = catalogo.calcular_situacoes([com_datas(issue(35, "closed", "- [x] DoD RF12"), "2026-11-16T12:00:00Z")], linhas)
+        self.assertEqual(s["rf12"][0], "concluida")
+
+    def test_linha_da_automacao_que_repete_o_motivo_nao_reabre(self):
+        linhas = {"064": {"data": "26/11/2026", "rfs": {"rf12"}, "todas": False,
+                          "mudou": "Situação atualizada pela automação: RF12: Concluída → Em andamento "
+                                   "(issues #33 e #35; reaplicar a DoD após MUD-063)."}}
+        s = catalogo.calcular_situacoes([com_datas(issue(35, "closed", "- [x] DoD RF12"), "2026-11-16T12:00:00Z")], linhas)
+        self.assertEqual(s["rf12"][0], "concluida")
+
+    def test_regra_so_citada_entre_aspas_nao_conta_como_decisao(self):
+        bloco = ficha("rf09", "concluida", "Concluída").replace(
+            "29/10/2026 · Nota antiga.", "16/11/2026 · Situação: Em andamento → Concluída (issue #35).")
+        linha = {"data": "20/11/2026", "rfs": {"rf09"}, "todas": False,
+                 "mudou": 'CA-RF09-02 reescrito; a regra pede "Reaplicar a DoD" ou "Sem efeito na DoD".'}
+        self.assertEqual(len(catalogo.problemas_de_reverificacao({"rf09": bloco}, {"071": linha})), 1)
+
     def test_nota_da_ficha_explica_a_reverificacao(self):
         texto = AVISO + ficha("rf09", "concluida", "Concluída")
         novo, mudancas = catalogo.aplicar_situacoes(texto, {"rf09": ("em-andamento", [35], ["MUD-040"])}, "26/11/2026")

@@ -3,7 +3,7 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(13);
+select plan(14);
 
 insert into auth.users (id, aud, role, email) values
   ('bbbbbbbb-0000-0000-0000-000000000001', 'authenticated', 'authenticated', 'coord@teste.local'),
@@ -54,6 +54,14 @@ select lives_ok(
     values ('entrada', 'bbbbbbbb-1111-0000-0000-000000000001', 10, current_date,
             'bbbbbbbb-2222-0000-0000-000000000001', 'bbbbbbbb-0000-0000-0000-000000000002')$$,
   'voluntário registra doação recebida (RF09)'
+);
+
+select throws_ok(
+  $$insert into public.movimentacoes_estoque (tipo, categoria_id, quantidade, data, doador_id, registrado_por)
+    values ('entrada', 'bbbbbbbb-1111-0000-0000-0000000000ff', 1, current_date,
+            'bbbbbbbb-2222-0000-0000-000000000001', 'bbbbbbbb-0000-0000-0000-000000000002')$$,
+  '23503', null,
+  'doação com categoria não cadastrada é recusada (CA-RF09-06)'
 );
 
 select throws_ok(

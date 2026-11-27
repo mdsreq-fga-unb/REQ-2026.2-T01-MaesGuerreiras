@@ -85,6 +85,9 @@ EQUIPE_ARQUIVO = Path(__file__).resolve().parent / "equipe.txt"
 MUDA_CRITERIO = re.compile(r"crit[eé]rios? de aceita|CA-RF\d\d|\bRN\d\d\b|regras? de neg[oó]cio", re.I)
 REAPLICAR = re.compile(r"reaplicar a DoD", re.I)
 SEM_EFEITO = re.compile(r"sem efeito na DoD", re.I)
+# Texto entre aspas cita a regra ("Reaplicar a DoD" ou "Sem efeito na DoD") sem tomar a decisão.
+ENTRE_ASPAS = re.compile(r'"[^"]*"|“[^”]*”')
+LINHA_DA_AUTOMACAO = "Situação atualizada pela automação"
 NOTA_CONCLUSAO = re.compile(r"(\d\d/\d\d/\d{4}) · Situação: [^→|]*→ Concluída")
 
 
@@ -401,11 +404,19 @@ def data_da_conclusao(ligadas):
     return max(datas) if datas else None
 
 
+def decisao_da_linha(mudou):
+    """Texto em que a decisão sobre a DoD é procurada: sem as citações entre aspas e vazio nas linhas da
+    automação, que só repetem o motivo de uma mudança anterior."""
+    if mudou.startswith(LINHA_DA_AUTOMACAO):
+        return ""
+    return ENTRE_ASPAS.sub("", mudou)
+
+
 def mudancas_de_criterio(rf, mudancas):
     """Linhas do histórico marcadas com "Reaplicar a DoD" que afetam este RF."""
     return {codigo: datetime.strptime(linha["data"], "%d/%m/%Y").date()
             for codigo, linha in (mudancas or {}).items()
-            if rf in linha["rfs"] and REAPLICAR.search(linha["mudou"])}
+            if rf in linha["rfs"] and REAPLICAR.search(decisao_da_linha(linha["mudou"]))}
 
 
 def problemas_de_reverificacao(todas, linhas):
@@ -420,9 +431,10 @@ def problemas_de_reverificacao(todas, linhas):
         conclusao = max(datas)
         for codigo, linha in sorted(linhas.items()):
             mudou = linha["mudou"]
+            decisao = decisao_da_linha(mudou)
             if (rf in linha["rfs"] and datetime.strptime(linha["data"], "%d/%m/%Y").date() > conclusao
-                    and MUDA_CRITERIO.search(mudou) and not REAPLICAR.search(mudou) and not SEM_EFEITO.search(mudou)
-                    and not mudou.startswith("Situação atualizada pela automação")):
+                    and MUDA_CRITERIO.search(mudou) and not REAPLICAR.search(decisao) and not SEM_EFEITO.search(decisao)
+                    and not mudou.startswith(LINHA_DA_AUTOMACAO)):
                 problemas.append(
                     f"{rf.upper()}: MUD-{codigo} muda critérios ou regras depois da conclusão ({conclusao:%d/%m/%Y}). "
                     "Escreva na linha 'Reaplicar a DoD' (abra a issue com '- [ ] DoD "

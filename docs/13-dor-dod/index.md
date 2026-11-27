@@ -203,18 +203,20 @@ seção 13.3).
 O exemplo mostra, para uma história do MVP (Sprint 6), como cada item da DoD se liga aos critérios
 de aceitação (ficha do [RF09](../08-requisitos/index.md#rf09) no catálogo),
 à forma de verificação e à evidência registrada. Resultado da verificação de 16/11/2026: o RF09
-passou em todos os itens que se aplicam a ele no MVP.
+passou em todos os itens que se aplicam a ele no MVP. Em 27/11/2026, na reconciliação da DoD
+([13.8](#138-reconciliacao-da-dod-27112026)), o critério CA-RF09-06 ganhou teste próprio e o RNF01
+passou a registrar o cenário, a versão e a forma de contagem.
 
 | Item da DoD | Critério ou requisito | Como é verificado | Resultado | Evidência |
 | :--- | :--- | :--- | :--- | :--- |
 | Comportamento igual à ficha | RF09; CA-RF09-01 | Revisão do PR conferindo os campos categoria, quantidade, data e doador com o RF09 | Passou | PRs [#43](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/43) (back-end) e [#51](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/51) (telas); validação do Makio em homologação ([ata de 02/11](../00-atas/index.md#ata-de-02112026)) |
 | Regras de negócio | RN02; CA-RF09-02 | Teste automatizado: a quantidade usa a unidade da categoria e soma ao saldo | Passou | Teste "soma entradas… e mantém a unidade da categoria" em [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts) |
-| Critérios, incluindo exceções | CA-RF09-04, CA-RF09-05, CA-RF09-06 | Testes automatizados: campo faltando, quantidade zero ou negativa, categoria fora da lista | Passou | CA-04 e CA-05: testes de campo ausente e quantidade inválida em [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts). CA-06: a categoria é escolhida na tela entre as cadastradas e o banco recusa categoria inexistente (chave estrangeira); falta um teste próprio |
+| Critérios, incluindo exceções | CA-RF09-04, CA-RF09-05, CA-RF09-06 | Testes automatizados: campo faltando, quantidade zero ou negativa, categoria fora da lista | Passou | CA-04 e CA-05: testes de campo ausente e quantidade inválida em [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts). CA-06: a categoria é escolhida na tela entre as cadastradas, e o teste "doação com categoria não cadastrada é recusada (CA-RF09-06)" em [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql) confere que o banco recusa uma categoria inexistente (acrescentado em 27/11; até então, a recusa só tinha sido conferida pela inspeção da chave estrangeira) |
 | Padrões de código | — | Lint sem erros no CI | Passou | `npm run lint` no workflow `sistema`, [execução de 16/11 no main](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
 | Testes das regras críticas | RN02; CA-RF09-02, 04, 05 | Testes acima passando no CI | Passou | [`doacoes.test.ts`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/test/doacoes.test.ts) (Vitest) e [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql) (banco), na [execução de 16/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
 | Regressão | — | Suíte inteira passando no CI | Passou | Todos os testes da aplicação e do banco na [execução de 16/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599) |
 | Implantado em homologação | — | Deploy publicado a partir do commit final | Passou | [Homologação na Vercel](https://maes-guerreiras-homologacao.vercel.app/login) |
-| RNFs aplicáveis | RNF01; CA-RF09-03 | Uma voluntária registra uma doação fictícia sem ajuda, com contagem de passos (no máximo três) | Passou | Makio confirmou, em 16/11/2026, que as voluntárias registraram as doações em no máximo três passos |
+| RNFs aplicáveis | RNF01; CA-RF09-03 | Contagem pela definição do RNF01 (cada tela navegada até o formulário é um passo; o preenchimento não conta) e uma voluntária que registra uma doação fictícia sem ajuda | Passou | **Contagem:** 1 passo (Início → atalho "Registrar doação recebida" ou item "Registrar entrada" do menu → formulário), conferida no código da versão em homologação (main @ 4417d39, de 16/11). **Sem ajuda:** relato de Makio em 16/11/2026 de que as voluntárias registraram doações fictícias em homologação sem ajuda. O relato não registra quem fez nem em quantas tentativas; a observação é repetida e registrada em ata na próxima validação ([10.8](../10-mvp/index.md#108-situacao-do-mvp-27112026)) |
 | RNFs aplicáveis | RNF19 | Uma alteração de teste em um registro de doação aparece com autor, data, hora, valor anterior e novo | Não se aplica no MVP | No MVP o registro de doação não pode ser alterado depois de salvo: autor e data ficam gravados no próprio registro. A correção com histórico foi decidida em 16/11/2026 e entra depois do MVP ([RNF19](../08-requisitos/rnf.md#rnf19), [MUD-052](../14-historico/index.md#mud-052)) |
 | RNFs aplicáveis | RNF03 | Não se aplica: gravação, não tela de consulta | Não se aplica | — |
 | Dados pessoais e LGPD | RNF07 | Doador pode ser pessoa física: acesso só para os perfis do campo *Agentes* das fichas; apenas dados sintéticos até o portão de uso real (seção [6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)) | Passou | [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql): visitante e conta sem perfil não leem doadores; homologação só com dados sintéticos |
@@ -291,3 +293,41 @@ apagada, recalcula a situação, registra a mudança numa linha nova do [Histór
   um link para a original, e o requisito volta para "em andamento" até a correção passar pela DoD.
 - Mover a issue de coluna no quadro do GitHub Projects não dispara a automação. Ela roda quando a issue
   é editada, fechada ou reaberta, e o requisito só conclui com a caixa `DoD RFxx` marcada.
+
+## 13.8 Reconciliação da DoD (27/11/2026)
+
+A revisão do professor (issue #101) pediu que as marcações de conclusão das Sprints 6 e 7 pudessem
+ser reproduzidas a partir dos critérios e das evidências. A equipe conferiu cada caixa `DoD RFxx`
+contra o que está registrado. Seis RFs da Sprint 7 voltaram para "em andamento", porque um RNF
+obrigatório para eles não tinha evidência.
+
+**RNFs que valem para vários RFs.** Uma caixa geral marcada não substitui a evidência de cada RF. A
+tabela liga cada resultado aos RFs e às condições do teste.
+
+| RNF | RFs | Condição do teste | Resultado | Evidência |
+| :--- | :--- | :--- | :--- | :--- |
+| [RNF07](../08-requisitos/rnf.md#rnf07) · controle de acesso | RF39, RF40 e RF41 · RF08, RF09, RF11, RF12 e RF42 · RF14, RF16, RF18, RF20, RF23, RF27, RF28 e RF30 | Testes de banco (pgTAP) com visitante, conta sem perfil, Voluntário e Coordenação, no Postgres do Supabase local no CI e na homologação, dentro de transação desfeita no fim | Passou: 42 de 42 | [`perfis_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/perfis_rls.test.sql) (8), [`doacoes_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/doacoes_rls.test.sql) (14) e [`sprint7_rls.test.sql`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/blob/main/sistema/supabase/tests/sprint7_rls.test.sql) (20); [CI de 24/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/45305751683); homologação em 27/11 |
+| [RNF15](../08-requisitos/rnf.md#rnf15) · login e sessão | RF41 | Manual em homologação, com contas dos dois perfis: sessão de 30 min, bloqueio de 15 min após 5 falhas, senha com 8 caracteres ou mais | Passou | [Verificação de 02/11 na issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35) |
+| [RNF03](../08-requisitos/rnf.md#rnf03) · consulta em até 3 s | RF12 | Chrome, Fast 3G, cache desativado, autenticado, 20 medições de `GET /api/doacoes/saldos` | Passou: máximo de 2,05 s, 20 de 20 abaixo de 3 s | [Verificação de 02/11 na issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35) |
+| RNF03 | RF19 e RF31 | Mesma condição do RF12, nas consultas de participantes e de frequência | **Não medido** | RF19 e RF31 voltaram para em andamento |
+| [RNF16](../08-requisitos/rnf.md#rnf16) · conexão instável | RF14, RF16, RF27 e RF28 | 5 minutos sem conexão durante o cadastro e a chamada, sem perda nem duplicação | **Não implementado**: o sistema não guarda o que foi preenchido nem reenvia quando a conexão volta | RF14, RF16, RF27 e RF28 voltaram para em andamento |
+| [RNF01](../08-requisitos/rnf.md#rnf01) · até três passos | RF09 | Ver a linha do RNF01 em [13.5](#135-exemplo-de-aplicacao-rf09-registrar-doacao-recebida) | Passou na contagem (1 passo) | 13.5 |
+| RNF01 | RF27 e RF28 | Contagem até a conclusão da chamada | Não verificado | Já em andamento pelo RNF16 |
+
+**Checklist da issue #35.** A tarefa "Testar autenticação dos dois perfis… e RNF15" estava
+desmarcada, embora as caixas `DoD RF39`, `DoD RF40` e `DoD RF41` estivessem marcadas. O teste foi
+executado e passou em 02/11, como registra o comentário de verificação da própria issue. A tarefa foi
+marcada em 27/11, com um comentário que aponta essa evidência.
+
+**Situação dos RFs da Sprint 7 depois da reconciliação.**
+
+| Situação | RFs |
+| :--- | :--- |
+| Concluídos pela DoD | RF10, RF18, RF20, RF23, RF29 e RF30 |
+| Em andamento: falta o RNF16 | RF14, RF16, RF27 e RF28 |
+| Em andamento: falta medir o RNF03 | RF19 e RF31 |
+
+Os RFs em andamento voltam a concluídos quando a evidência for registrada na issue #65 e a caixa for
+marcada de novo. A partir da Sprint 8, a issue de DoD da sprint traz, antes de qualquer caixa
+`DoD RFxx` ser marcada, um comentário com a tabela de resultados por RF e por item da DoD, como o da
+verificação de 02/11 na issue #35.

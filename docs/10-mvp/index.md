@@ -160,5 +160,31 @@ de cada sprint, junto com a [velocidade necessária](../01-visao-produto/index.m
 
 Nenhum dado real entra no sistema antes do
 [portão de liberação](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real): backup
-testado, controle de acesso por perfil, consentimento concluído pela DoD e autorização da
-coordenação registrada em ata.
+testado, controle de acesso por perfil, consentimento concluído pela DoD, procedimentos provisórios
+(10.2) validados com a associação e autorização da coordenação registrada em ata.
+
+## 10.8 Situação do MVP (27/11/2026)
+
+O MVP é acompanhado em três camadas, que não se confundem: um RF pode estar concluído pela DoD sem
+ter sido validado por quem vai usá-lo, e o incremento inteiro pode estar pronto em homologação sem
+estar liberado para dados reais.
+
+| Camada | Pergunta | Situação em 27/11 | Evidência |
+| :--- | :--- | :--- | :--- |
+| Conclusão funcional | O RF passou em todos os itens da DoD? | **13 dos 19 RFs do MVP** concluídos. Em andamento: RF14, RF16, RF27 e RF28 (falta o RNF16) e RF19 e RF31 (falta medir o RNF03) | [Reconciliação da DoD](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026); caixas `DoD RFxx` nas issues #35 e #65 |
+| Validação com usuários | Quem vai usar confirmou que o RF resolve a tarefa? | Validado por Makio em homologação: os RFs da Sprint 6 em 02/11 e as tarefas da Sprint 7 em 15/11. **Sem validação:** RF29 (justificar falta) e RF30 (corrigir frequência), que não entraram nas tarefas de 15/11 e têm só testes automatizados, que são verificação; e o registro de doação pela coordenadora sem ajuda (seção [2.7](../01-visao-produto/index.md#27-beneficios-esperados)) | [Ata de 02/11](../00-atas/index.md#ata-de-02112026) · [ata de 15/11](../00-atas/index.md#ata-de-15112026) |
+| Liberação para uso real | O sistema pode receber dados reais da associação? | **Não.** O portão está fechado: faltam o backup testado, a validação dos procedimentos provisórios e a autorização da coordenação | [Portão de liberação](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real) |
+
+**Por que 20 e por que 19.** Em 16/11, o cronograma registrou 20 RFs concluídos e o MVP tem 19. A
+diferença é o [RF12](../08-requisitos/index.md#rf12) (consultar saldo): ele é complemento (Fatia 2),
+mas foi antecipado na Sprint 6 porque o RF10 usa o cálculo do saldo. Os 20 eram, portanto, os 19 do
+MVP mais o RF12. Depois da reconciliação de 27/11, são **14: 13 do MVP mais o RF12**.
+
+**Até as camadas fecharem:**
+
+- **RF29 e RF30** entram nas tarefas da próxima validação com Makio, com a educadora voluntária quando
+  ele conseguir organizar o teste na associação.
+- **Os procedimentos provisórios** da seção 10.2 (correção de cadastro, cancelamento de inscrição e
+  solicitação de exclusão feitos pela equipe a pedido da Coordenação) são apresentados à associação
+  por Makio antes de valerem como alternativa. Até lá, eles não são usados, e o RF24, previsto para a
+  Sprint 8, elimina o do cancelamento ([cronograma](../01-visao-produto/index.md#63-velocidade-necessaria)).

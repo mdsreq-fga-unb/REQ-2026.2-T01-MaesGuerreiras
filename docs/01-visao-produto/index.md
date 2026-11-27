@@ -727,33 +727,58 @@ atividades de Engenharia de Requisitos descritas na seção [5](#5-engenharia-de
 | Sprint 4 | 22/09 a 05/10 | Priorizar o MVP e preparar o ambiente (Entrega Parcial 2) | Matriz 4x4; validação do MVP; ambiente e autenticação inicial | Matriz 4x4 e valor de negócio com Makio (25/09); MVP validado (28/09). Ambiente não configurado | Não realizada (ambiente) | [Valor de negócio, 25/09](../00-evidencias/index.md#avaliacao-do-valor-de-negocio-25092026) · [Validação do MVP, 28/09](../00-evidencias/index.md#validacao-do-mvp-28092026) |
 | Sprint 5 | 06/10 a 19/10 | Doações com acesso seguro (Entrega Parcial 3) | RF39 a RF42, RF08 a RF12 | Critérios de aceitação de RF08 a RF12 e RF39 a RF42; replanejamento em 17/10. Nenhuma história implementada | Não realizada (produto) | |
 | Sprint 6 | 20/10 a 02/11 | **Compromisso:** a coordenadora registra doações com acesso seguro | T01 e os [itens da Sprint 6](../08-requisitos/index.md#sprint-6) | T01: esqueleto do sistema (PR #31), Supabase e homologação na Vercel. Back-end de acesso, consentimentos e doações (PR #43) e telas conforme o protótipo (PR #51), em homologação; protótipo validado com o Makio em 26/10 e funcionalidades da Sprint 6 validadas por ele em homologação em 02/11. Verificação da DoD em 02/11: **nenhum dos 8 RFs concluído**. Faltam testes automatizados por regra e CI ligado ao commit, a correção da #47 e o registro de doação pela coordenadora sem ajuda. Os 8 RFs seguiram para a Sprint 7 e passaram na DoD em 16/11 | Não realizada (DoD) | [Back-end](../00-evidencias/index.md#sprint-6-back-end-de-acesso-consentimentos-e-doacoes-issue-33) · [Protótipo, 26/10](../00-evidencias/index.md#avaliacao-do-prototipo-26102026) · [Validação da Sprint 6](../00-evidencias/index.md#validacao-da-sprint-6-com-makio-02112026) · DoD na issue #35 |
-| Sprint 7 | 03/11 a 16/11 | **Compromisso:** fechar o MVP (R1, a doação chega à família, e R2, a educadora faz a chamada) | [12 itens da Sprint 7](../08-requisitos/index.md#sprint-7), todos do MVP, e os 8 RFs da Sprint 6 que não passaram na DoD | Back-end (PR #68) e telas (PR #82) de famílias, participantes, turmas, destinação e frequência, em homologação. Validação com o Makio em 15/11, em teste de usabilidade baseado em tarefas, sem ajustes pedidos. Verificação da DoD em 16/11: **os 12 RFs da Sprint 7 e os 8 da Sprint 6 concluídos**, MVP completo | Concluída | [Validação da Sprint 7, 15/11](../00-evidencias/index.md#validacao-da-sprint-7-com-makio-15112026) · DoD nas issues #65 e #35 |
-| Sprint 8 | 17/11 a 30/11 | **Previsão:** completar os fluxos (R3), relatórios e LGPD (R4). Sprint reduzida pela apresentação (24/11 a 26/11) | [17 itens da Sprint 8](../08-requisitos/index.md#sprint-8): primeiro os de valor 3, depois os de valor 2; T02 | — | Prevista | |
-| Fechamento | 01/12 a 10/12 | Homologar e transferir o sistema ([6.5](#65-fechamento-minimo-e-adicional)) | Mínimo: homologação, T03, T04. Adicional: [6 itens de valor 2](../08-requisitos/index.md#sprint-fechamento) | — | Prevista | |
+| Sprint 7 | 03/11 a 16/11 | **Compromisso:** fechar o MVP (R1, a doação chega à família, e R2, a educadora faz a chamada) | [12 itens da Sprint 7](../08-requisitos/index.md#sprint-7), todos do MVP, e os 8 RFs da Sprint 6 que não passaram na DoD | Back-end (PR #68) e telas (PR #82) de famílias, participantes, turmas, destinação e frequência, em homologação com dados fictícios. Validação com o Makio em 15/11, em teste de usabilidade baseado em tarefas, sem ajustes pedidos; RF29 e RF30 não entraram nas tarefas. Verificação da DoD em 16/11, reconciliada em 27/11 ([13.8](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026)): **6 dos 12 RFs da Sprint 7 concluídos** (RF10, RF18, RF20, RF23, RF29 e RF30) e os 8 da Sprint 6. RF14, RF16, RF27 e RF28 voltaram para em andamento porque o RNF16 não foi implementado; RF19 e RF31, porque falta a medição do RNF03. O MVP não está completo: R1 depende do RF14, e R2, do RF27 e do RF28 ([10.8](../10-mvp/index.md#108-situacao-do-mvp-27112026)) | Não realizada (MVP incompleto) | [Validação da Sprint 7, 15/11](../00-evidencias/index.md#validacao-da-sprint-7-com-makio-15112026) · DoD nas issues #65 e #35 · [Reconciliação, 27/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/65#issuecomment-7220914844) |
+| Sprint 8 | 17/11 a 30/11 | **Compromisso replanejado em 27/11** ([6.3](#63-velocidade-necessaria)): fechar as pendências do MVP e começar os complementos de R3. Sprint reduzida pelas apresentações (24/11 a 26/11) | Planejado em 17/11: [17 itens da Sprint 8](../08-requisitos/index.md#sprint-8), primeiro os de valor 3, depois os de valor 2; T02. Replanejado em 27/11: RNF16 e RNF03 nos 6 RFs do MVP em andamento; depois RF24, RF25 e RF26 | Até 27/11: critérios de aceitação da Sprint 8 e do Fechamento (PR #107); uma issue por RF (#108 a #131); correção do saldo zerado nas telas de entrada e destinação, achado em 25/11 (PR #90, ainda não publicado em homologação, que roda a versão de 16/11); revisão da automação da situação (PR #113). **Nenhum RF da Sprint 8 implementado.** Impedimentos: apresentações da Unidade 3 e as pendências de DoD do MVP encontradas na reconciliação de 27/11 | Em andamento | Issues #108 a #131 · [PR #107](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/107) · [PR #90](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/pull/90) |
+| Fechamento | 01/12 a 10/12 | Homologar e transferir o sistema ([6.5](#65-fechamento-minimo-e-adicional)) | Mínimo: homologação, T03, T04. Adicional, só se a Sprint 8 fechar o compromisso replanejado: RF15 e RF17 (planejado em 17/11: [6 itens de valor 2](../08-requisitos/index.md#sprint-fechamento)) | — | Prevista | |
 
 ### 6.3 Velocidade necessária
 
 | Período | RFs previstos | Acumulado | Realizado (DoD) |
 | :--- | :---: | :---: | :---: |
 | Sprint 6 | 8 + T01 | 8 de 43 | T01 e 0 RFs (verificação de 02/11) |
-| Sprint 7 | 12 (MVP completo) | 20 de 43 | 20 RFs: 12 da Sprint 7 e 8 da Sprint 6 (verificação de 16/11) · **20 de 43** |
-| Sprint 8 | 17 | 37 de 43 | |
-| Fechamento (adicional) | até 6 | 43 de 43 | |
+| Sprint 7 | 12 (MVP completo) | 20 de 43 | 14 RFs: 6 da Sprint 7 e 8 da Sprint 6 (verificação de 16/11, reconciliada em 27/11) · **14 de 43** |
+| Sprint 8 (planejado em 17/11) | 17 | 37 de 43 | |
+| Sprint 8 (replanejado em 27/11) | 6 do MVP + 3 (RF24 a RF26) | 23 de 43 | |
+| Fechamento (adicional) | até 2 (RF15 e RF17) | 25 de 43 | |
 
 Dos 45 RFs, 43 estão planejados. RF06 e RF07 receberam valor 1 (*Won't have now*) da cliente e
-[não estão planejados](../08-requisitos/index.md#sprint-nao-planejado) neste semestre. A primeira
-velocidade medida foi a da Sprint 7: 20 RFs concluídos pela DoD em uma sprint. Os 17 RFs previstos
-para a Sprint 8 ficam abaixo disso, o que deixa folga para a sprint reduzida pela apresentação
-(24/11 a 26/11). A previsão de 37 de 43 ao fim da Sprint 8 se mantém.
+[não estão planejados](../08-requisitos/index.md#sprint-nao-planejado) neste semestre.
+
+**O que a Sprint 7 mede de capacidade.** Os 20 RFs registrados em 16/11 não eram 20 RFs novos: 8
+vinham da Sprint 6, já implementados e validados em 02/11, e só precisaram de correções e da
+verificação. O trabalho novo da Sprint 7 foram os 12 RFs dela, implementados em cerca de uma semana
+(back-end no PR #68, em 14/11; telas no PR #82, em 16/11), com esforço somado de 19 pontos na escala
+da [priorização](../09-priorizacao/index.md#92-escalas-usadas-nas-fichas). Desses, 6 passaram na DoD
+(9 pontos). A velocidade medida, portanto, é de **cerca de 19 pontos implementados e 9 concluídos
+pela DoD por semana de desenvolvimento**, e não de 20 RFs por sprint.
+
+**Replanejamento da Sprint 8 (proposta da equipe em 27/11/2026).** Os 17 RFs previstos em 17/11 somam
+36 pontos, quase o dobro do que a equipe implementou na Sprint 7, e nenhum deles tinha começado até
+27/11. Até o corte de código (04/12) resta cerca de uma semana. A proposta é:
+
+1. **Primeiro, fechar o MVP:** implementar e verificar o RNF16 nos cadastros e na chamada (RF14, RF16,
+   RF27 e RF28) e medir o RNF03 nas consultas (RF19 e RF31). O RNF16 tem a maior lacuna de capacidade
+   da equipe (seção [10.6](../10-mvp/index.md#106-rnfs-no-mvp)).
+2. **Depois, os complementos na ordem do catálogo:** RF24 (cancelar inscrição), RF25 (lista de espera)
+   e RF26 (inscritos da turma), com 6 pontos. O RF24 também elimina um dos procedimentos provisórios do
+   MVP ([10.2](../10-mvp/index.md#enquanto-os-complementos-nao-entram)).
+3. **No Fechamento, só se a Sprint 8 cumprir os itens 1 e 2:** RF15 e RF17, que eliminam os outros
+   procedimentos provisórios. O compromisso mínimo do Fechamento (homologação, T03 e T04) fica
+   protegido, mesmo que nada do adicional entre ([6.5](#65-fechamento-minimo-e-adicional)).
+
+Os demais RFs da Sprint 8 (RF13, RF32 a RF34, RF36, RF38, RF43, RF45, RF21, RF22, RF35 e RF37) e os 6
+do Fechamento (RF01 a RF05 e RF44) deixam de ter previsão neste semestre. A proposta é confirmada com
+Makio na revisão da Sprint 8 (30/11) e comunicada ao professor na mesma revisão.
 
 Se o realizado de uma sprint ficar abaixo do previsto, os itens do fim da ordem do catálogo (valor 2:
 relatórios de frequência, painel, histórico de alterações e portal) são comunicados ao professor e ao
 cliente na mesma revisão.
 
-!!! note "Sprint 6 recuperada na Sprint 7"
-    Os 8 RFs da Sprint 6 não passaram na DoD em 02/11 e seguiram para a Sprint 7, junto com os 12
-    previstos para ela. Os 20 passaram na DoD em 16/11, e o acumulado voltou ao planejado (20 de 43).
-    Nenhum item de valor 2 do fim da ordem precisou ser cortado.
+!!! warning "Sprint 7 abaixo do previsto"
+    Os 8 RFs da Sprint 6 seguiram para a Sprint 7 e passaram na DoD em 16/11. Dos 12 RFs da Sprint 7,
+    a verificação de 16/11 marcou todos como concluídos, mas a reconciliação de 27/11 (issue #101)
+    mostrou que 6 não tinham evidência de RNFs obrigatórios (RNF16 e RNF03). O acumulado real é de
+    14 de 43, e não 20. Por isso a Sprint 8 foi replanejada acima.
 
 ### 6.4 Portão de liberação para uso real
 
@@ -761,12 +786,19 @@ Nenhum dado real (doadores, famílias, participantes) entra no sistema antes de 
 abaixo serem verificadas e registradas. A verificação é feita ao final da Sprint 6 (antes dos dados
 reais de doadores) e repetida ao final da Sprint 7 (antes dos dados reais de famílias e crianças).
 
-| Condição | Como verificar | Sprint 6 | Sprint 7 | Evidência |
-| :--- | :--- | :---: | :---: | :--- |
-| Backup testado | Restauração de uma cópia de segurança feita com sucesso em ambiente de teste (RNF05) | ☐ | ☐ | |
-| Controle de acesso | Testes automatizados das políticas de acesso por perfil passando (RNF07, campo *Agentes* das fichas no [catálogo](../08-requisitos/index.md#perfil-voluntario)) | ☐ | ☐ | |
-| Consentimento | RF42 concluído pela DoD (RN19) | ☐ | ☐ | |
-| Autorização institucional | Autorização da coordenação para uso de dados reais registrada em ata | ☐ | ☐ | |
+As verificações previstas para o fim da Sprint 6 e da Sprint 7 não foram feitas nessas datas. A
+primeira conferência é de 27/11/2026:
+
+| Condição | Como verificar | Situação em 27/11 | Evidência |
+| :--- | :--- | :---: | :--- |
+| Backup testado | Restauração de uma cópia de segurança feita com sucesso em ambiente de teste (RNF05) | ✖ | Procedimento descrito no `sistema/README.md`; a restauração ainda não foi feita e registrada |
+| Controle de acesso | Testes automatizados das políticas de acesso por perfil passando (RNF07, campo *Agentes* das fichas no [catálogo](../08-requisitos/index.md#perfil-voluntario)) | ✔ | 42 testes de banco (`sistema/supabase/tests`) passando no CI ([execução de 24/11](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/45305751683)) e na homologação em 27/11; detalhe em [13.8](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026) |
+| Consentimento | RF42 concluído pela DoD (RN19) | ✔ | Caixa `DoD RF42` na issue #35 (16/11) |
+| Procedimentos provisórios | Os ajustes feitos pela equipe a pedido da Coordenação enquanto os complementos não entram ([10.2](../10-mvp/index.md#enquanto-os-complementos-nao-entram)) validados com a associação e registrados em ata | ✖ | Ainda não apresentados à associação |
+| Autorização institucional | Autorização da coordenação para uso de dados reais registrada em ata | ✖ | — |
+
+**O portão continua fechado.** Até ele ser liberado, o MVP é um resultado em homologação com dados
+fictícios, e não uma autorização para operar com dados reais.
 
 Até o portão ser liberado, os testes usam apenas dados sintéticos.
 

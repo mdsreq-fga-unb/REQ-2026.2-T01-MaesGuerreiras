@@ -76,11 +76,7 @@ Makio também testou e validou a tela de categorias.
 
 A próxima reunião com Makio será ao final da Sprint 7 (até 16/11/2026).
 
-*(Situação vigente: a validação de Makio não substitui a verificação da DoD. Na verificação de
-02/11 ([issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35)), nenhum
-RF da Sprint 6 foi marcado como concluído; faltam os testes automatizados por regra, o CI ligado ao
-commit, a correção do aviso de doador duplicado (#47) e o teste de registro de doação pela
-coordenadora sem ajuda.)*
+**Resultado da verificação de 02/11/2026:** a validação de Makio não substituiu a DoD. Naquela data, nenhum dos oito RFs da Sprint 6 havia sido concluído pela DoD, conforme a issue #35. Permaneciam pendentes testes automatizados por regra, CI vinculado ao commit, correção do aviso de doador duplicado e teste de registro de doação pela coordenadora sem ajuda. As verificações e mudanças posteriores estão no [Histórico de evolução](../14-historico/index.md) e nas fichas do [catálogo](../08-requisitos/index.md).
 
 **Evidências:** [gravação da reunião](../00-evidencias/index.md#validacao-da-sprint-6-com-makio-02112026).
 
@@ -101,7 +97,7 @@ A equipe revisou o feedback recebido sobre os RFs, item por item, decidindo acei
 parcialmente ou não aceitar cada apontamento, e já ajustou o texto de boa parte dos requisitos
 (agentes por RF, campos de cadastro, terminologia, glossário, regras de encerramento e
 cancelamento). RF19 e RF20 (turma) ficaram pendentes, por dúvida sobre até onde o apontamento cruza para regra de negócio em vez de requisito funcional. RF12 e RF29 dependem de validação com a coordenação da associação. Isabella vai consolidar e reenviar o texto revisado para a equipe.
-*(Situação vigente: RF19 e RF20 foram refinados e estão com situação "A refinar" no catálogo. RF12 continua em andamento; a granularidade do saldo é definida pela própria Coordenação ao cadastrar categorias (RF11), validado por Makio em 02/11/2026 ([MUD-039](../14-historico/index.md#mud-039)). RF29 foi incluído no MVP pela nova matriz de 29/10/2026. Ver [catálogo](../08-requisitos/index.md).)*
+**Atualização posterior:** as pendências acima correspondem ao entendimento registrado nesta reunião. A evolução posterior dos requisitos está nas fichas do [RF12](../08-requisitos/index.md#rf12), [RF19](../08-requisitos/index.md#rf19), [RF20](../08-requisitos/index.md#rf20) e [RF29](../08-requisitos/index.md#rf29), com as decisões e suas datas no [Histórico de evolução](../14-historico/index.md).
 
 ### 2. Requisitos Não Funcionais
 

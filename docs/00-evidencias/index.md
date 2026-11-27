@@ -42,25 +42,33 @@ Reunião com Makio para validação do escopo do MVP definido pela equipe.
 
 ## Sprint 6 — back-end de acesso, consentimentos e doações (issue #33)
 
+Registro das verificações locais realizadas em 31/10/2026. As informações abaixo descrevem aquele conjunto de evidências e não devem ser interpretadas como a situação atual de todos os requisitos.
+
 - Migrations:
-  - `sistema/supabase/migrations/20261031000000_acesso_consentimentos_doacoes.sql`
-  - `sistema/supabase/migrations/20261031100000_integridade_sprint6.sql`
-  - `sistema/supabase/migrations/20261031120000_restringir_rpc_de_acesso.sql`
-  - `sistema/supabase/migrations/20261031130000_restringir_saida_sintetica.sql`
-- Testes automatizados: `sistema/test/acesso.test.ts`, `consentimentos.test.ts`,
-  `doacoes.test.ts` (29 testes passaram localmente em 31/10/2026).
-- Verificações locais em 31/10/2026: `npm run typecheck`, `npm run lint`, `npm run build`,
-  migrations aplicadas ao Supabase local e `supabase db lint --local` sem erros.
-- As verificações acima são locais; não comprovam deploy em homologação, execução do CI,
-  validação com a coordenação nem teste HTTP/RLS ponta a ponta.
-- RNF03 (laboratório): o teste `RNF03 consulta de saldo` calcula 50 categorias com entradas e
-  saídas em menos de 3 s no runner do Vitest. A consulta HTTP envia `Server-Timing`.
-- RNF03 (3G/4G): protocolo no `sistema/README.md`; medição e resultado em campo continuam
-  pendentes na issue de verificação (#35), não são declarados concluídos aqui.
-- Pendências da DoR registradas na seção [13.6](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6): confirmação dos perfis pela coordenação,
-  protótipos validados, confirmação de comportamentos detalhados e campos de cadastro de usuário.
-- Impedimentos/escopo futuro: doação anônima (CA-RF08-06) aguarda confirmação; famílias,
-  participantes e destinação real (RF10) pertencem à Sprint 7.
+    - `sistema/supabase/migrations/20261031000000_acesso_consentimentos_doacoes.sql`
+    - `sistema/supabase/migrations/20261031100000_integridade_sprint6.sql`
+    - `sistema/supabase/migrations/20261031120000_restringir_rpc_de_acesso.sql`
+    - `sistema/supabase/migrations/20261031130000_restringir_saida_sintetica.sql`
+- Testes automatizados: `sistema/test/acesso.test.ts`, `consentimentos.test.ts` e `doacoes.test.ts` — 29 testes passaram localmente em 31/10/2026.
+- Verificações locais em 31/10/2026: `npm run typecheck`, `npm run lint`, `npm run build`, migrations aplicadas ao Supabase local e `supabase db lint --local` sem erros.
+- Essas verificações locais, isoladamente, não comprovam deploy em homologação, execução do CI, validação com a coordenação nem teste HTTP/RLS ponta a ponta.
+- RNF03 — laboratório: o teste `RNF03 consulta de saldo` calcula 50 categorias com entradas e saídas em menos de 3 segundos no runner do Vitest. A consulta HTTP envia `Server-Timing`.
+- RNF03 — conexão móvel: o protocolo de medição está no `sistema/README.md`. Este registro local não apresenta uma medição de atendimento integral ao RNF03 em conexão 3G/4G.
+
+**Alcance da evidência de desempenho:** o teste local do cálculo de saldo e o valor de `Server-Timing`, isoladamente, não comprovam o tempo até o resultado aparecer no navegador. Uma medição de atendimento ao RNF03 deve identificar a versão avaliada, a conexão 3G/4G utilizada, o conjunto de consultas e os resultados, verificando o limite de 3 segundos em pelo menos 95% das requisições.
+
+### Pendências e referências de preparação da Sprint 6
+
+O registro original remete à [aplicação da DoR](../13-dor-dod/index.md#136-aplicacao-da-dor-aos-requisitos-da-sprint-6), que documenta a confirmação dos perfis pela coordenação, a validação dos protótipos e dos comportamentos detalhados e a definição dos campos de cadastro de usuário, com as atualizações e pendências ali identificadas.
+
+### Impedimentos e limites de escopo do registro original
+
+- A possibilidade de doação anônima, mencionada no CA-RF08-06, aguardava confirmação da coordenação.
+- Famílias, participantes e destinação real de doações (RF10) estavam fora da implementação apresentada neste registro da Sprint 6 e pertenciam ao planejamento da Sprint 7.
+
+As decisões posteriores e a situação atual dos requisitos devem ser consultadas no [catálogo integrado](../08-requisitos/index.md) e no [Histórico de evolução](../14-historico/index.md). As validações posteriores estão registradas nas atas de [02/11/2026](../00-atas/index.md#ata-de-02112026) e [15/11/2026](../00-atas/index.md#ata-de-15112026).
+
+**Registro posterior:** a [issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35) relata, em 02/11/2026, 20 medições da consulta HTTP de saldo com Fast 3G simulado, máximo de 2,05 segundos, na versão indicada como `main @ 36a37ed`. Essa evidência se refere à requisição HTTP; não comprova, isoladamente, o tempo até a apresentação completa do resultado na tela.
 
 ## Apresentação da Unidade 2 - 12/10/2026
 

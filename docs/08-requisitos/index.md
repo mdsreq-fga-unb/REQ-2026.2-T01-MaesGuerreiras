@@ -20,6 +20,8 @@ condições, critérios, prioridade, entrega, situação e evolução. As outras
 
 > **Situação em 27/11/2026.** RFs concluídos pela DoD: **13 de 43**. Atualizado a partir das issues ([como funciona](../13-dor-dod/index.md#137-como-a-situacao-e-atualizada)).
 
+O MVP é composto por **19 RFs**. A contagem acima considera todos os **43 requisitos planejados**, incluindo complementos e entregas posteriores ao MVP. O RF12, por exemplo, ficou fora do recorte do MVP, mas teve o cálculo e a tela antecipados na Sprint 6. Na verificação de 16/11/2026, os 19 RFs do MVP e o RF12 totalizavam 20 concluídos. A contagem atual pode variar quando requisitos voltam para verificação ou recebem novas pendências; o motivo fica registrado na evolução de cada ficha e no histórico.
+
 ## Como usar
 
 - **Ordem do backlog:** o número antes do ID é a posição na ordem do backlog (valor, risco,

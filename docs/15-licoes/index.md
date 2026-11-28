@@ -119,3 +119,47 @@ bloco abaixo deve ser preenchido pela equipe logo após a Retrospectiva da unida
 
 ## Unidade 4
 
+## Unidade 4 — Retrospectiva da Sprint 6 (10/11/2026)
+
+A retrospectiva foi organizada em **Começar, Parar e Continuar**. O ponto de partida foi a diferença entre a validação funcional feita por Makio em 02/11 e a verificação da Definição de Pronto: embora as oito funcionalidades da Sprint 6 tenham sido validadas em homologação, **0 de 8 RFs estavam concluídos pela DoD naquela data**. A validação com o cliente, portanto, não foi tratada como sinônimo de conclusão.
+
+### Começar
+
+- **Isabella — contratos entre front-end e back-end:** combinar durante o planejamento os contratos das rotas, incluindo o que cada API recebe e devolve, para que as telas possam avançar sem esperar a integração.
+- **Ian — preparação antecipada e automação:** abrir as issues das sprints com mais antecedência e incluir desde o início as caixas da DoD para que a automação possa atuar.
+- **Luis — aplicar a DoR antes de puxar histórias:** conferir se o protótipo está validado e se as permissões estão confirmadas.
+- **Luan — acompanhamento do trabalho:** definir metas diárias ou semanais para evitar acúmulo e aproveitar mais os componentes do Nuxt.
+- **Vitor — integração frequente:** fazer commits com frequência.
+- **Pedro — integração contínua desde o início:** abrir o PR das telas junto com o back-end, já conectado ao CI e ao `db:test`.
+
+### Parar
+
+- **Isabella:** esperar o back-end ficar pronto para começar a integrar as telas.
+- **Ian:** deixar o refinamento das histórias de usuário para a véspera da sprint seguinte.
+- **Luis:** tratar “validado pelo Makio” como “pronto”, sem conferir os testes e as evidências exigidos pela DoD.
+- **Luan:** deixar sprints abertas e terminar as sprints em cima da hora.
+- **Vitor:** acumular mudanças locais sem fazer commit e abrir PR.
+- **Pedro:** deixar decisões registradas em issues em aberto e sem responsável.
+
+### Continuar
+
+- **Isabella e Pedro:** validar o protótipo com o cliente antes de programar.
+- **Ian:** registrar cada mudança no histórico.
+- **Luis:** manter as reuniões com Makio gravadas.
+- **Luan:** validar o andamento com Makio e organizar as issues por participante.
+- **Vitor:** seguir o protótipo do Figma.
+
+### Relação com os resultados da Sprint 7
+
+| Encaminhamento da retrospectiva | Evidência ou resultado posterior registrado | Leitura |
+|---|---|---|
+| Não confundir validação do cliente com DoD | Em 15/11, Makio concluiu as tarefas do roteiro da Sprint 7 em celular sem instrução; a ata registra expressamente que isso não substitui a DoD. Em 16/11, 6 dos 12 RFs da Sprint 7 estavam concluídos pela DoD; os demais voltaram para “em andamento” por falta de evidências de RNF03/RNF16. | **Princípio mantido.** A validação e a conclusão pela DoD foram registradas separadamente. |
+| Preparar issues e caixas da DoD desde o início; integrar telas com CI e `db:test` | O processo passou a usar linhas `Requisitos:` e caixas `DoD RFxx` nos modelos de issue, conforme a seção 13.7. Os workflows `sistema` associados aos commits `a2fcea6` (16/11) e `7b6b1f9` (24/11) terminaram com sucesso. | **Há evidência de automação e CI por versão.** Isso não demonstra, por si só, que todos os RFs ou RNFs passaram pela DoD. |
+| Combinar contratos de API e iniciar a integração sem esperar todo o back-end | A documentação disponível registra PRs e verificações de integração, mas não apresenta um registro explícito dos contratos de rota acordados no planejamento nem uma comparação que prove que as telas passaram a ser integradas em paralelo. | **Sem comprovação suficiente.** Não afirmar que a ação foi concluída. |
+| Aplicar a DoR antes de iniciar histórias | A DoR da Sprint 6 passou a considerar o protótipo validado em 26/10; a validação foi registrada na ata e incorporada ao item D4. | **Evidência parcial de aplicação**, especialmente quanto ao protótipo; a retrospectiva também citou a confirmação de permissões. |
+| Definir metas diárias/semanais, fazer commits frequentes e atribuir responsáveis | O quadro do GitHub Projects passou a registrar responsável por issue, e os registros de PR/CI mostram integração por commits. Não há, nas evidências consultadas, uma série de metas diárias/semanais que permita avaliar seu cumprimento. | **Responsáveis e integração rastreáveis; metas periódicas sem comprovação específica.** |
+| Refinar histórias antes da sprint e encerrar sprints no prazo | O catálogo e o backlog foram organizados, mas as evidências consultadas não permitem concluir que o refinamento ocorreu sempre antes da sprint ou que todas as sprints foram encerradas sem atraso. | **Sem comprovação suficiente.** |
+| Continuar prototipação validada, reuniões gravadas e histórico de mudanças | A validação do protótipo ocorreu antes da implementação; as reuniões com Makio e a retrospectiva têm gravações; as mudanças seguem registradas no histórico. Na validação de 15/11, Makio concluiu as tarefas previstas sem orientação e não pediu ajustes naquele encontro. | **Práticas mantidas e documentadas.** |
+
+**Síntese:** a Sprint 7 mostra avanço na separação entre validação com o cliente, integração contínua e verificação da DoD. Também há evidências de issues com critérios automatizáveis, responsáveis e histórico. Entretanto, os registros disponíveis não comprovam todos os combinados — especialmente contratos de API, metas diárias/semanais e refinamento antecipado — e não autorizam declarar que todos os RFs foram concluídos. As referências são a [ata de 02/11](../00-atas/index.md#ata-de-02112026), a [ata de 15/11](../00-atas/index.md#ata-de-15112026), a [Definição de Pronto](../13-dor-dod/index.md) e as [evidências de CI](../00-evidencias/index.md#rastreabilidade-das-verificacoes-automatizadas-por-versao).
+

@@ -175,3 +175,19 @@ Gravação da retrospectiva da Sprint 6, feita pela equipe.
 Gravação da apresentação do projeto referente à Unidade 3 da disciplina.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/7XBCg7caKd0" title="Apresentação da Unidade 3, 16/11/2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Rastreabilidade das verificações automatizadas por versão
+
+As execuções abaixo identificam o commit avaliado. Elas comprovam a execução bem-sucedida dos
+workflows e dos testes que estavam incluídos naquela versão; não significam, isoladamente, que todos
+os critérios de aceitação ou RNFs do MVP foram atendidos.
+
+| Data | Incremento/escopo | Commit na `main` | Resultado e alcance |
+| :--- | :--- | :--- | :--- |
+| 16/11/2026 | Merge do PR #82; versão de fechamento da Sprint 7 | [`a2fcea6`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/commit/a2fcea6) | Workflow `sistema` concluído com sucesso; inclui as verificações da aplicação e do banco. [Execução do CI](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/43969005599). |
+| 24/11/2026 | Merge do PR #90; correção do saldo por categoria | [`7b6b1f9`](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/commit/7b6b1f9) | Workflow `sistema` concluído com sucesso; a reconciliação registra 42/42 testes pgTAP de controle de acesso. [Execução do CI](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/actions/runs/45305751683). |
+
+**Limite da evidência:** o CI demonstra que os testes presentes no commit passaram naquele ambiente.
+A cobertura de cada RF deve continuar ligada aos seus critérios e RNFs na [DoD](../13-dor-dod/index.md),
+e resultados ausentes devem permanecer como pendência, não como aprovação presumida.
+

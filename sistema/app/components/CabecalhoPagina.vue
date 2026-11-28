@@ -4,6 +4,7 @@ defineProps<{
   titulo: string
   secao?: string
   voltar?: string
+  descricao?: string
 }>()
 
 defineEmits<{ voltar: [] }>()
@@ -25,6 +26,12 @@ defineEmits<{ voltar: [] }>()
         class="cabecalho__secao"
       >{{ secao }}</span>
       <h1>{{ titulo }}</h1>
+      <p
+        v-if="descricao"
+        class="cabecalho__descricao"
+      >
+        {{ descricao }}
+      </p>
     </div>
     <slot name="acoes">
       <slot />

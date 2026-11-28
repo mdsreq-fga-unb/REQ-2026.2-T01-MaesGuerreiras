@@ -13,10 +13,11 @@ segurança) são conferidos uma vez por sprint, no fechamento.
 
 ### RNF01 · Usabilidade (Usability) {#rnf01}
 
-A solução deve ser operável por voluntárias e voluntários sem formação técnica. O registro de uma doação recebida e a conclusão de uma chamada devem ser alcançáveis em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros. *Definição de passo:* cada tela ou estado distinto que o usuário precisa navegar conta como um passo; o preenchimento de campos dentro de uma mesma tela não conta como passo adicional. Os três passos referem-se à navegação até o formulário (alcançar a funcionalidade), não ao preenchimento e envio (concluir a tarefa).
+A solução deve ser operável por voluntárias e voluntários sem formação técnica. O formulário de registro de uma doação recebida e a tela de chamada devem ser alcançáveis em até três passos a partir da tela inicial da área restrita, sem apoio de terceiros. *Definição de passo:* cada tela ou estado distinto que o usuário precisa abrir ou navegar conta como um passo; ações e campos dentro da mesma tela não contam como passos adicionais. **O resultado medido por este RNF é o acesso à funcionalidade (formulário/tela), não a conclusão operacional da tarefa:** preenchimento, salvamento, envio e marcação de presença são avaliados pelos critérios funcionais correspondentes. Essa definição deve ser usada igualmente nos CA-RF09-03 e CA-RF28-04.
 
 - **Escopo:** Específico (ver fichas no catálogo)
-- **No MVP:** Obrigatório para o MVP. Cobre o registro de doação (RF09) e a conclusão de chamada (RF27/RF28), ambos no núcleo do MVP.
+- **No MVP:** Obrigatório para o MVP. Cobre o acesso ao formulário de doação (RF09) e à tela de chamada (RF27/RF28), ambos no núcleo do MVP.
+- **Situação da evidência em 27/11/2026:** RF09 passou na contagem de acesso (1 passo), registrada na [seção 13.5 da DoD](../13-dor-dod/index.md#135-exemplo-de-aplicacao-rf09-registrar-doacao-recebida). RF27 e RF28 ainda não têm contagem verificada; permanecem em andamento por falta de evidência do RNF16.
 
 ### RNF02 · Usabilidade (Usability) {#rnf02}
 
@@ -27,10 +28,11 @@ A solução deve ser acompanhada de guia de uso em linguagem simples, cobrindo a
 
 ### RNF03 · Desempenho (Performance) {#rnf03}
 
-As telas de consulta devem apresentar resultados em até 3 segundos para 95% das requisições, em conexão móvel 3G/4G.
+As telas de consulta devem apresentar o resultado completo ao usuário em até 3 segundos para pelo menos 95% das consultas, em conexão móvel 3G/4G. **A medida principal é o tempo percebido no navegador**, contado da ação que dispara a consulta até os dados atualizados estarem visíveis na tela; `Server-Timing` ou a duração isolada da requisição HTTP podem ser registrados como diagnóstico, mas não substituem essa medida. Para cada tela consultada, registrar versão/commit, navegador, perfil de rede (3G ou 4G), estado do cache, número de amostras e tempos individuais. Com 20 amostras, pelo menos 19 devem terminar em até 3 segundos.
 
 - **Escopo:** Específico (ver fichas no catálogo)
 - **No MVP:** Obrigatório para o MVP. Aplica-se às consultas de participantes (RF19) e de frequência (RF31) do MVP proposto. Na versão de 28/09, valia também para o saldo (RF12) e os inscritos da turma (RF26), que passaram para a Fatia 2.
+- **Situação da evidência em 27/11/2026:** RF12 teve 20 medições HTTP em Fast 3G, com máximo de 2,05 s, mas essa evidência não mede o tempo completo até a apresentação na tela. RF19 e RF31 não foram medidos. Ver [reconciliação da DoD](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026) e [evidências da Sprint 6](../00-evidencias/index.md#sprint-6-back-end-de-acesso-consentimentos-e-doacoes-issue-33).
 
 ### RNF04 · Desempenho (Performance) {#rnf04}
 
@@ -41,10 +43,11 @@ O sistema deve suportar 30 acessos simultâneos nos dias de maior movimento, com
 
 ### RNF05 · Confiabilidade (Reliability) {#rnf05}
 
-Em caso de falha, o sistema deve ser restaurado em até 4 horas, com perda máxima de 24 horas de dados, a partir de cópia de segurança diária automatizada pela infraestrutura (Supabase).
+Em caso de falha, o serviço deve ser restaurado em até 4 horas, com perda máxima de 24 horas de dados (RTO ≤ 4 h e RPO ≤ 24 h), a partir de cópia de segurança diária automatizada pela infraestrutura (Supabase). A conformidade não é demonstrada apenas pela existência ou configuração do backup: exige um exercício de restauração em ambiente isolado, com registro da versão/configuração utilizada, horário de início e fim, ponto/data dos dados recuperados e conferência de integridade. A restauração deve ser concluída em até 4 horas e os dados recuperados não podem estar defasados em mais de 24 horas.
 
 - **Escopo:** Geral (todos os RFs)
 - **No MVP:** Obrigatório para o MVP. Protege os dados de doações, famílias e participantes registrados pelo MVP. A restauração fica sob responsabilidade técnica da infraestrutura, conforme definido na validação.
+- **Situação da evidência em 27/11/2026:** não há registro de exercício de restauração concluído. O backup diário, por si só, não comprova o prazo de recuperação; o portão de liberação para uso real permanece condicionado a uma restauração testada ([seção 6.4](../01-visao-produto/index.md#64-portao-de-liberacao-para-uso-real)).
 
 ### RNF06 · Confiabilidade (Reliability) {#rnf06}
 
@@ -111,14 +114,14 @@ A solução deve estar em conformidade com a legislação de proteção ao direi
 
 ### RNF15 · Segurança (acesso e sessão) {#rnf15}
 
-O acesso à área restrita deve exigir senha de pelo menos 8 caracteres, encerrar a sessão após 30 minutos sem atividade e bloquear novas tentativas de autenticação por 15 minutos após 5 tentativas consecutivas incorretas. A verificação deve testar a rejeição de senhas mais curtas, a expiração da sessão e o bloqueio na quinta tentativa. Os valores definidos para senha, sessão e bloqueio são preliminares e devem ser validados pela equipe.
+O acesso à área restrita deve exigir senha de pelo menos 8 caracteres, encerrar a sessão após 30 minutos sem atividade e bloquear novas tentativas de autenticação por 15 minutos após 5 tentativas consecutivas incorretas. **Estes são os parâmetros adotados pela equipe para o MVP.** A verificação deve testar a rejeição de senhas com menos de 8 caracteres, a expiração da sessão após 30 minutos de inatividade e o bloqueio após a quinta tentativa consecutiva incorreta. A execução manual em homologação, com contas dos dois perfis, foi registrada em 02/11/2026 na [issue #35](https://github.com/mdsreq-fga-unb/REQ-2026.2-T01-MaesGuerreiras/issues/35) e reconciliada em 27/11/2026 na [seção 13.8 da DoD](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026).
 
 - **Escopo:** Específico (ver fichas no catálogo)
 - **No MVP:** Obrigatório para o MVP. Cadastro de usuários, perfis e autenticação (RF39–RF41) estão no MVP.
 
 ### RNF16 · Confiabilidade (conexão instável) {#rnf16}
 
-Se a conexão cair durante uma chamada ou um cadastro, os dados já preenchidos não devem ser perdidos e devem ser enviados quando a conexão for restabelecida. A verificação deve interromper a conexão por 5 minutos durante cada uma dessas rotinas e confirmar que nenhum registro preenchido foi perdido nem duplicado após a reconexão.
+Se a conexão cair durante um cadastro ou uma chamada, os dados já preenchidos devem permanecer disponíveis durante pelo menos 5 minutos sem conexão e ser enviados após a reconexão, sem perda nem duplicidade. A verificação deve ser executada separadamente para cadastro e chamada, registrando RF, dispositivo, navegador, versão/commit, dados preenchidos antes da queda, duração da interrupção, estado após a reconexão e contagem final de registros no banco. O teste só passa se todos os dados preenchidos forem recuperados e houver exatamente um registro por operação. **Situação em 27/11/2026: não implementado e não verificado**; a reconciliação da DoD registra que o sistema ainda não preserva os dados nem os reenvia após a reconexão ([seção 13.8](../13-dor-dod/index.md#138-reconciliacao-da-dod-27112026)).
 
 - **Escopo:** Específico (ver fichas no catálogo)
 - **No MVP:** Associado a RFs do MVP. Aplica-se aos cadastros RF14/RF16 e à chamada RF27/RF28; portanto, entra no MVP.
